@@ -8,15 +8,9 @@
   inputs =
     {
       # Track channels with commits tested and built by hydra
-      nixos.url = "github:nixos/nixpkgs/nixos-21.11";
+      nixos.url = "github:nixos/nixpkgs/nixos-22.05";
       latest.url = "github:nixos/nixpkgs/nixos-unstable";
-      # For darwin hosts: it can be helpful to track this darwin-specific stable
-      # channel equivalent to the `nixos-*` channels for NixOS. For one, these
-      # channels are more likely to provide cached binaries for darwin systems.
-      # But, perhaps even more usefully, it provides a place for adding
-      # darwin-specific overlays and packages which could otherwise cause build
-      # failures on Linux systems.
-      nixpkgs-darwin-stable.url = "github:NixOS/nixpkgs/nixpkgs-21.11-darwin";
+      nixpkgs-darwin-stable.url = "github:NixOS/nixpkgs/nixpkgs-22.05-darwin";
 
       digga.url = "github:divnix/digga";
       digga.inputs.nixpkgs.follows = "nixos";
@@ -28,7 +22,7 @@
       bud.inputs.nixpkgs.follows = "nixos";
       bud.inputs.devshell.follows = "digga/devshell";
 
-      home.url = "github:nix-community/home-manager/release-21.11";
+      home.url = "github:nix-community/home-manager/release-22.05";
       home.inputs.nixpkgs.follows = "nixos";
 
       darwin.url = "github:LnL7/nix-darwin";
@@ -37,8 +31,9 @@
       deploy.url = "github:serokell/deploy-rs";
       deploy.inputs.nixpkgs.follows = "nixos";
 
-      agenix.url = "github:ryantm/agenix";
-      agenix.inputs.nixpkgs.follows = "nixos";
+      sops-nix.url = github:Mic92/sops-nix;
+      sops-nix.inputs.nixpkgs.follows = "nixos";
+      sops-nix.inputs.nixpkgs-22_05.follows = "nixos";
 
       nvfetcher.url = "github:berberman/nvfetcher";
       nvfetcher.inputs.nixpkgs.follows = "nixos";
@@ -59,7 +54,7 @@
     , home
     , nixos-hardware
     , nur
-    , agenix
+    , sops-nix
     , nvfetcher
     , deploy
     , nixpkgs
@@ -94,7 +89,7 @@
           })
 
           nur.overlay
-          agenix.overlay
+          sops-nix.overlay
           nvfetcher.overlay
 
           (import ./pkgs)
@@ -110,7 +105,7 @@
               digga.nixosModules.bootstrapIso
               digga.nixosModules.nixConfig
               home.nixosModules.home-manager
-              agenix.nixosModules.age
+              sops-nix.nixosModules.sops
               bud.nixosModules.bud
             ];
           };
@@ -139,7 +134,7 @@
               { lib.our = self.lib; }
               digga.darwinModules.nixConfig
               home.darwinModules.home-manager
-              agenix.nixosModules.age
+              sops-nix.nixosModules.sops
             ];
           };
 
@@ -198,7 +193,6 @@
         ;
 
         deploy.nodes = digga.lib.mkDeployNodes self.nixosConfigurations { };
-
       }
   ;
 }

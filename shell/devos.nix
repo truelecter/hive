@@ -2,7 +2,7 @@
 let
 
   inherit (pkgs)
-    agenix
+    sops
     cachix
     editorconfig-checker
     mdbook
@@ -42,7 +42,7 @@ in
 
   commands = [
     (devos nixUnstable)
-    (devos agenix)
+    (devos sops)
     (devos inputs.deploy.packages.${pkgs.system}.deploy-rs)
 
     {
