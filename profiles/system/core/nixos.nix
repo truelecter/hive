@@ -9,8 +9,16 @@
     ./common.nix
   ];
 
-  # This is just a representation of the nix default
-  nix.systemFeatures = ["nixos-test" "benchmark" "big-parallel" "kvm"];
+  users.mutableUsers = lib.mkDefault false;
+
+  nix = {
+    # Improve nix store disk usage
+    autoOptimiseStore = true;
+    optimise.automatic = true;
+    allowedUsers = ["root @wheel"];
+    # This is just a representation of the nix default
+    systemFeatures = ["nixos-test" "benchmark" "big-parallel" "kvm"];
+  };
 
   environment = {
     # Selection of sysadmin tools that can come in handy
@@ -46,13 +54,6 @@
   fonts.fontconfig.defaultFonts = {
     monospace = ["DejaVu Sans Mono for Powerline"];
     sansSerif = ["DejaVu Sans"];
-  };
-
-  nix = {
-    # Improve nix store disk usage
-    autoOptimiseStore = true;
-    optimise.automatic = true;
-    allowedUsers = ["@wheel"];
   };
 
   programs.bash = {

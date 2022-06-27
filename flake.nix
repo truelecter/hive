@@ -91,11 +91,11 @@
         sops-nix.overlay
         nvfetcher.overlay
 
-        (import ./pkgs)
+        (import ./pakages)
       ];
 
       host-profiles =
-        digga.lib.rakeLeaves ./profiles
+        digga.lib.rakeLeaves ./profiles/system
         // {
           users = digga.lib.rakeLeaves ./users;
         };
@@ -104,7 +104,7 @@
         hostDefaults = {
           system = "x86_64-linux";
           channelName = "nixos";
-          imports = [(digga.lib.importExportableModules ./modules)];
+          imports = [(digga.lib.importExportableModules ./modules/system)];
           modules = [
             {lib.our = self.lib;}
             digga.nixosModules.bootstrapIso
@@ -127,7 +127,7 @@
           suites = with profiles; rec {
             base = [
               core.nixos
-              users.nixos
+              users.truelecter
               users.root
               secrets
             ];
@@ -135,64 +135,52 @@
         };
       };
 
-      darwin = {
-        hostDefaults = {
-          system = "x86_64-darwin";
-          channelName = "nixpkgs-darwin-stable";
-          imports = [(digga.lib.importExportableModules ./modules)];
-          modules = [
-            {lib.our = self.lib;}
-            digga.darwinModules.nixConfig
-            home.darwinModules.home-manager
-            sops-nix.nixosModules.sops
-          ];
-        };
+      #region darwin TBD
+      # darwin = {
+      #   hostDefaults = {
+      #     system = "x86_64-darwin";
+      #     channelName = "nixpkgs-darwin-stable";
+      #     imports = [(digga.lib.importExportableModules ./modules)];
+      #     modules = [
+      #       {lib.our = self.lib;}
+      #       digga.darwinModules.nixConfig
+      #       home.darwinModules.home-manager
+      #       sops-nix.nixosModules.sops
+      #     ];
+      #   };
 
-        imports = [(digga.lib.importHosts ./hosts/darwin)];
-        hosts = {
-          /*
-           set host-specific properties here
-           */
-          # Mac = { };
-        };
-        importables = rec {
-          profiles = self.host-profiles;
-          suites = with profiles; rec {
-            base = [
-              core.darwin
-              users.darwin
-            ];
-          };
-        };
-      };
+      #   imports = [(digga.lib.importHosts ./hosts/darwin)];
+      #   hosts = {
+      #     /*
+      #      set host-specific properties here
+      #      */
+      #     # Mac = { };
+      #   };
+      #   importables = rec {
+      #     profiles = self.host-profiles;
+      #     suites = with profiles; rec {
+      #       base = [
+      #         core.darwin
+      #         users.darwin
+      #       ];
+      #     };
+      #   };
+      # };
+      #endregion
 
       home = {
-        imports = [(digga.lib.importExportableModules ./users/modules)];
+        imports = [(digga.lib.importExportableModules ./modules/user)];
         modules = [];
         importables = rec {
-          profiles = digga.lib.rakeLeaves ./users/profiles;
+          profiles = digga.lib.rakeLeaves ./profiles/user;
           suites = with profiles; rec {
             base = [direnv git];
           };
         };
-        users = {
-          # TODO: does this naming convention still make sense with darwin support?
-          #
-          # - it doesn't make sense to make a 'nixos' user available on
-          #   darwin, and vice versa
-          #
-          # - the 'nixos' user might have special significance as the default
-          #   user for fresh systems
-          #
-          # - perhaps a system-agnostic home-manager user is more appropriate?
-          #   something like 'primaryuser'?
-          #
-          # all that said, these only exist within the `hmUsers` attrset, so
-          # it could just be left to the developer to determine what's
-          # appropriate. after all, configuring these hm users is one of the
-          # first steps in customizing the template.
-          nixos = {suites, ...}: {imports = suites.base;};
-          darwin = {suites, ...}: {imports = suites.base;};
+        users = rec {
+          primary-user = {suites, ...}: {imports = suites.base;};
+          "andrii.panasiuk" = primary-user;
+          truelecter = primary-user;
         }; # digga.lib.importers.rakeLeaves ./users/hm;
       };
 

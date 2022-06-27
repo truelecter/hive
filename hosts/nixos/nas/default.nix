@@ -9,10 +9,8 @@
     ++ [
       ./hardware-configuration.nix
       ./modules.nix
-      ./users.nix
       ./zfs-mounts.nix
       ./media-server.nix
-      ./users.nix
     ];
 
   boot.loader = {

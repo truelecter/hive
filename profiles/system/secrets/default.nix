@@ -6,7 +6,7 @@
   ...
 }: {
   imports = [
-    ./../../secrets/secrets.nix
+    ./../../../secrets
   ];
 
   environment.systemPackages = with pkgs; [
