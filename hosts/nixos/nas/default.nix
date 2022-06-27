@@ -1,8 +1,12 @@
-{ config, pkgs, suites, ... }:
 {
+  config,
+  pkgs,
+  suites,
+  ...
+}: {
   imports =
-    suites.base ++
-    [
+    suites.base
+    ++ [
       ./hardware-configuration.nix
       ./modules.nix
       ./users.nix
@@ -18,7 +22,7 @@
       efiSysMountPoint = "/boot";
     }; # efi
     grub = {
-      devices = [ "nodev" ];
+      devices = ["nodev"];
       enable = true;
       efiSupport = true;
       version = 2;

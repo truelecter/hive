@@ -1,7 +1,12 @@
-{ pkgs, extraModulesPath, inputs, lib, ... }:
-let
-
-  inherit (pkgs)
+{
+  pkgs,
+  extraModulesPath,
+  inputs,
+  lib,
+  ...
+}: let
+  inherit
+    (pkgs)
     sops
     cachix
     editorconfig-checker
@@ -9,21 +14,20 @@ let
     nixUnstable
     nixpkgs-fmt
     nvfetcher-bin
+    alejandra
     ;
 
   hooks = import ./hooks;
 
-  pkgWithCategory = category: package: { inherit package category; };
+  pkgWithCategory = category: package: {inherit package category;};
   devos = pkgWithCategory "devos";
   linter = pkgWithCategory "linter";
   docs = pkgWithCategory "docs";
-
-in
-{
+in {
   _file = toString ./.;
 
-  imports = [ "${extraModulesPath}/git/hooks.nix" ];
-  git = { inherit hooks; };
+  imports = ["${extraModulesPath}/git/hooks.nix"];
+  git = {inherit hooks;};
 
   # tempfix: remove when merged https://github.com/numtide/devshell/pull/123
   devshell.startup.load_profiles = pkgs.lib.mkForce (pkgs.lib.noDepEntry ''
@@ -40,26 +44,27 @@ in
     unset _PATH
   '');
 
-  commands = [
-    (devos nixUnstable)
-    (devos sops)
-    (devos inputs.deploy.packages.${pkgs.system}.deploy-rs)
+  commands =
+    [
+      (devos nixUnstable)
+      (devos sops)
+      (devos inputs.deploy.packages.${pkgs.system}.deploy-rs)
 
-    {
-      category = "devos";
-      name = nvfetcher-bin.pname;
-      help = nvfetcher-bin.meta.description;
-      command = "cd $PRJ_ROOT/pkgs; ${nvfetcher-bin}/bin/nvfetcher -c ./sources.toml $@";
-    }
+      {
+        category = "devos";
+        name = nvfetcher-bin.pname;
+        help = nvfetcher-bin.meta.description;
+        command = "cd $PRJ_ROOT/pkgs; ${nvfetcher-bin}/bin/nvfetcher -c ./sources.toml $@";
+      }
 
-    (linter nixpkgs-fmt)
-    (linter editorconfig-checker)
+      (linter nixpkgs-fmt)
+      (linter editorconfig-checker)
+      (linter alejandra)
 
-    (docs mdbook)
-  ]
-  ++ lib.optional (!pkgs.stdenv.buildPlatform.isi686)
+      (docs mdbook)
+    ]
+    ++ lib.optional (!pkgs.stdenv.buildPlatform.isi686)
     (devos cachix)
-  ++ lib.optional (pkgs.stdenv.hostPlatform.isLinux && !pkgs.stdenv.buildPlatform.isDarwin)
-    (devos inputs.nixos-generators.defaultPackage.${pkgs.system})
-  ;
+    ++ lib.optional (pkgs.stdenv.hostPlatform.isLinux && !pkgs.stdenv.buildPlatform.isDarwin)
+    (devos inputs.nixos-generators.defaultPackage.${pkgs.system});
 }

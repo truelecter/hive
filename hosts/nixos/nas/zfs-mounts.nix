@@ -1,8 +1,11 @@
-{ config, pkgs, ... }:
 {
+  config,
+  pkgs,
+  ...
+}: {
   services.zfs = {
     trim.enable = true;
-    autoScrub.pools = [ "tank" ];
+    autoScrub.pools = ["tank"];
   };
 
   # Fix permissions

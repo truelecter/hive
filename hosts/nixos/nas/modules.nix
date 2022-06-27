@@ -1,5 +1,8 @@
-{ config, pkgs, ... }:
 {
+  config,
+  pkgs,
+  ...
+}: {
   virtualisation.docker.enable = true;
 
   security.sudo.wheelNeedsPassword = false;
@@ -30,12 +33,12 @@
   };
 
   boot = {
-    kernelParams = [ "nohibernate" ];
+    kernelParams = ["nohibernate"];
     zfs = {
       enableUnstable = true;
       forceImportRoot = false;
     };
-    supportedFilesystems = [ "zfs" ];
+    supportedFilesystems = ["zfs"];
   };
 
   services.zfs = {
