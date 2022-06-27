@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 {
   virtualisation.docker.enable = true;
+
+  security.sudo.wheelNeedsPassword = false;
+  services.vnstat.enable = true;
+
   environment = {
     variables = {
       EDITOR = "vim";
@@ -12,7 +16,6 @@
 
   console = {
     font = "Lat2-Terminus16";
-    keyMap = "colemak";
   };
 
   # Set the timezone
@@ -23,7 +26,7 @@
     passwordAuthentication = false;
     startWhenNeeded = true;
     kbdInteractiveAuthentication = false;
-    permitRootLogin = false;
+    permitRootLogin = "no";
   };
 
   boot = {

@@ -1,6 +1,7 @@
-{ config, pkgs, ... }:
+{ config, pkgs, suites, ... }:
 {
   imports =
+    suites.base ++
     [
       ./hardware-configuration.nix
       ./modules.nix

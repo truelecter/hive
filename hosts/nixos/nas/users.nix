@@ -1,12 +1,6 @@
 { config, ... }:
 
 {
-  sops.secrets.root-password = {
-    key = "root";
-    sopsFile = ./../secrets/user-passwords.yaml;
-    neededForUsers = true;
-  };
-
   users = {
     mutableUsers = false;
 

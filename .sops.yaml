@@ -1,0 +1,10 @@
+keys:
+  - &truelecter A35AABA719FAC1A001E375F8EEF7F5B1C5AB1F74
+  - &server-nas a246fca904b5211d691236a0383ec09b3c7f3dae
+
+creation_rules:
+  - path_regex: secrets/sops/[^/]+\.yaml$
+    key_groups:
+    - pgp:
+      - *truelecter
+      - *server-nas

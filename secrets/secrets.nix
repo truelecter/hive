@@ -1,9 +1,7 @@
-let
-  # set ssh public keys here for your system and user
-  system = "";
-  user = "";
-  allKeys = [ system user ];
-in
-{
-  "secret.age".publicKeys = allKeys;
+{ ... }: {
+  sops.secrets.root-password = {
+    key = "root";
+    sopsFile = ./sops/user-passwords.yaml;
+    neededForUsers = true;
+  };
 }

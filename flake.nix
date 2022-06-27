@@ -113,14 +113,19 @@
           imports = [ (digga.lib.importHosts ./hosts/nixos) ];
           hosts = {
             /* set host-specific properties here */
-            NixOS = { };
+            # NixOS = { };
           };
           importables = rec {
             profiles = digga.lib.rakeLeaves ./profiles // {
               users = digga.lib.rakeLeaves ./users;
             };
             suites = with profiles; rec {
-              base = [ core.nixos users.nixos users.root ];
+              base = [
+                core.nixos
+                users.nixos
+                users.root
+                secrets
+              ];
             };
           };
         };
@@ -141,7 +146,7 @@
           imports = [ (digga.lib.importHosts ./hosts/darwin) ];
           hosts = {
             /* set host-specific properties here */
-            Mac = { };
+            # Mac = { };
           };
           importables = rec {
             profiles = digga.lib.rakeLeaves ./profiles // {
@@ -188,11 +193,17 @@
         # TODO: similar to the above note: does it make sense to make all of
         # these users available on all systems?
         homeConfigurations = digga.lib.mergeAny
-          (digga.lib.mkHomeConfigurations self.darwinConfigurations)
+          # (digga.lib.mkHomeConfigurations self.darwinConfigurations)
+          {}
           (digga.lib.mkHomeConfigurations self.nixosConfigurations)
         ;
 
-        deploy.nodes = digga.lib.mkDeployNodes self.nixosConfigurations { };
+        deploy.nodes = digga.lib.mkDeployNodes self.nixosConfigurations {
+          nas = {
+            sshUser = "truelecter";
+            hostname = "10.0.7.147";
+          };
+        };
       }
   ;
 }
