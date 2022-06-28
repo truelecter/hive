@@ -9,8 +9,7 @@
     ./common.nix
   ];
 
-  users.mutableUsers = lib.mkDefault false;
-
+  #region nix options
   nix = {
     # Improve nix store disk usage
     autoOptimiseStore = true;
@@ -19,6 +18,7 @@
     # This is just a representation of the nix default
     systemFeatures = ["nixos-test" "benchmark" "big-parallel" "kvm"];
   };
+  #endregion
 
   environment = {
     # Selection of sysadmin tools that can come in handy
@@ -30,31 +30,25 @@
       utillinux
     ];
 
-    shellAliases = let
-      ifSudo = lib.mkIf config.security.sudo.enable;
-    in {
-      # nix
-      nrb = ifSudo "sudo nixos-rebuild";
-
-      # fix nixos-option for flake compat
-      nixos-option = "nixos-option -I nixpkgs=${self}/lib/compat";
-
-      # systemd
-      ctl = "systemctl";
-      stl = ifSudo "s systemctl";
-      utl = "systemctl --user";
-      ut = "systemctl --user start";
-      un = "systemctl --user stop";
-      up = ifSudo "s systemctl start";
-      dn = ifSudo "s systemctl stop";
-      jtl = "journalctl";
+    variables = {
+      EDITOR = "vim";
+      VISUAL = "vim";
     };
   };
 
-  fonts.fontconfig.defaultFonts = {
-    monospace = ["DejaVu Sans Mono for Powerline"];
-    sansSerif = ["DejaVu Sans"];
+  #region Common system defaults
+  time.timeZone = "Europe/Kiev";
+
+  users.mutableUsers = lib.mkDefault false;
+  security.sudo.enable = lib.mkForce true;
+  security.sudo.wheelNeedsPassword = lib.mkForce false;
+
+  console = {
+    font = "Lat2-Terminus16";
   };
+
+  i18n.defaultLocale = "en_US.UTF-8";
+  #endregion
 
   programs.bash = {
     # Enable starship
@@ -67,9 +61,12 @@
     '';
   };
 
-  # For rage encryption, all hosts need a ssh key pair
   services.openssh = {
-    enable = true;
+    enable = lib.mkDefault true;
+    passwordAuthentication = lib.mkForce false;
+    startWhenNeeded = lib.mkDefault true;
+    kbdInteractiveAuthentication = lib.mkForce false;
+    permitRootLogin = lib.mkForce "no";
     openFirewall = lib.mkDefault false;
   };
 

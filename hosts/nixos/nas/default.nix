@@ -2,13 +2,17 @@
   config,
   pkgs,
   suites,
+  profiles,
   ...
 }: {
   imports =
     suites.base
     ++ [
+      profiles.fs.zfs
+      profiles.docker
+    ]
+    ++ [
       ./hardware-configuration.nix
-      ./modules.nix
       ./zfs-mounts.nix
       ./media-server.nix
     ];
@@ -34,7 +38,7 @@
     hostId = "00000000";
   };
 
-  virtualisation.docker.enable = true;
+  services.vnstat.enable = true;
 
   networking.firewall.enable = false;
 

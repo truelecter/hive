@@ -117,9 +117,7 @@
 
         imports = [(digga.lib.importHosts ./hosts/nixos)];
         hosts = {
-          /*
-           set host-specific properties here
-           */
+          # host-specific properties here
           # NixOS = { };
         };
         importables = rec {
@@ -184,9 +182,10 @@
         }; # digga.lib.importers.rakeLeaves ./users/hm;
       };
 
+      # This is digga option, not Nix's
       devshell = ./shell;
 
-      # TODO: similar to the above note: does it make sense to make all of
+      # TODO: does it make sense to make all of
       # these users available on all systems?
       homeConfigurations =
         digga.lib.mergeAny
