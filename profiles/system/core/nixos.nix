@@ -63,10 +63,15 @@
 
   services.openssh = {
     enable = lib.mkDefault true;
+
+    # Use only public keys
     passwordAuthentication = lib.mkForce false;
-    startWhenNeeded = lib.mkDefault true;
     kbdInteractiveAuthentication = lib.mkForce false;
+
+    # root login is never welcome
     permitRootLogin = lib.mkForce "no";
+
+    startWhenNeeded = lib.mkDefault true;
     openFirewall = lib.mkDefault false;
   };
 

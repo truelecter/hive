@@ -1,4 +1,8 @@
-{hmUsers, config, ...}: {
+{
+  hmUsers,
+  config,
+  ...
+}: {
   # home-manager.users = {inherit (hmUsers) truelecter;};
 
   users.users.root = {

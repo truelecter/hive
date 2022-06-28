@@ -10,6 +10,7 @@
     ++ [
       profiles.fs.zfs
       profiles.docker
+      profiles.networking.tailscale
     ]
     ++ [
       ./hardware-configuration.nix
@@ -17,6 +18,7 @@
       ./media-server.nix
     ];
 
+  #region boot
   boot.loader = {
     systemd-boot.enable = false;
     efi = {
@@ -31,6 +33,7 @@
       useOSProber = true;
     }; # grub
   }; # bootloader
+  #endregion
 
   networking = {
     hostName = "nas";

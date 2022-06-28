@@ -104,7 +104,10 @@
         hostDefaults = {
           system = "x86_64-linux";
           channelName = "nixos";
-          imports = [(digga.lib.importExportableModules ./modules/system)];
+          imports = [
+            (digga.lib.importExportableModules ./modules/system/common)
+            (digga.lib.importExportableModules ./modules/system/nixos)
+          ];
           modules = [
             {lib.our = self.lib;}
             digga.nixosModules.bootstrapIso
@@ -134,36 +137,37 @@
       };
 
       #region darwin TBD
-      # darwin = {
-      #   hostDefaults = {
-      #     system = "x86_64-darwin";
-      #     channelName = "nixpkgs-darwin-stable";
-      #     imports = [(digga.lib.importExportableModules ./modules)];
-      #     modules = [
-      #       {lib.our = self.lib;}
-      #       digga.darwinModules.nixConfig
-      #       home.darwinModules.home-manager
-      #       sops-nix.nixosModules.sops
-      #     ];
-      #   };
+      darwin = {
+        hostDefaults = {
+          system = "x86_64-darwin";
+          channelName = "nixpkgs-darwin-stable";
+          imports = [
+            (digga.lib.importExportableModules ./modules/system/common)
+            (digga.lib.importExportableModules ./modules/system/darwin)
+          ];
+          modules = [
+            {lib.our = self.lib;}
+            digga.darwinModules.nixConfig
+            home.darwinModules.home-manager
+            sops-nix.nixosModules.sops
+          ];
+        };
 
-      #   imports = [(digga.lib.importHosts ./hosts/darwin)];
-      #   hosts = {
-      #     /*
-      #      set host-specific properties here
-      #      */
-      #     # Mac = { };
-      #   };
-      #   importables = rec {
-      #     profiles = self.host-profiles;
-      #     suites = with profiles; rec {
-      #       base = [
-      #         core.darwin
-      #         users.darwin
-      #       ];
-      #     };
-      #   };
-      # };
+        imports = [(digga.lib.importHosts ./hosts/darwin)];
+        hosts = {
+          # host-specific properties here
+          # Mac = { };
+        };
+        importables = rec {
+          profiles = self.host-profiles;
+          suites = with profiles; rec {
+            base = [
+              core.darwin
+              users.darwin
+            ];
+          };
+        };
+      };
       #endregion
 
       home = {
@@ -176,9 +180,9 @@
           };
         };
         users = rec {
-          primary-user = {suites, ...}: {imports = suites.base;};
-          "andrii.panasiuk" = primary-user;
-          truelecter = primary-user;
+          primary = {suites, ...}: {imports = suites.base;};
+          "andrii.panasiuk" = primary;
+          truelecter = primary;
         }; # digga.lib.importers.rakeLeaves ./users/hm;
       };
 
