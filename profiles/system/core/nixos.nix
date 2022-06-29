@@ -28,12 +28,8 @@
       iputils
       usbutils
       utillinux
+      hexdump
     ];
-
-    variables = {
-      EDITOR = "vim";
-      VISUAL = "vim";
-    };
   };
 
   #region Common system defaults
@@ -49,17 +45,6 @@
 
   i18n.defaultLocale = "en_US.UTF-8";
   #endregion
-
-  programs.bash = {
-    # Enable starship
-    promptInit = ''
-      eval "$(${pkgs.starship}/bin/starship init bash)"
-    '';
-    # Enable direnv, a tool for managing shell environments
-    interactiveShellInit = ''
-      eval "$(${pkgs.direnv}/bin/direnv hook bash)"
-    '';
-  };
 
   services.openssh = {
     enable = lib.mkDefault true;

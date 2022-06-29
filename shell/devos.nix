@@ -26,6 +26,7 @@ in {
   imports = [
     "${extraModulesPath}/git/hooks.nix"
     ./hooks
+    ./sops
   ];
 
   # tempfix: remove when merged https://github.com/numtide/devshell/pull/123
@@ -48,12 +49,13 @@ in {
       (devos nixUnstable)
       (devos sops)
       (devos inputs.deploy.packages.${pkgs.system}.deploy-rs)
+      (devos inputs.home.packages.${pkgs.system}.home-manager)
 
       {
         category = "devos";
         name = nvfetcher-bin.pname;
         help = nvfetcher-bin.meta.description;
-        command = "cd $PRJ_ROOT/pkgs; ${nvfetcher-bin}/bin/nvfetcher -c ./sources.toml $@";
+        command = "cd $PRJ_ROOT/packages; ${nvfetcher-bin}/bin/nvfetcher -c ./sources.toml $@";
       }
 
       (linter editorconfig-checker)

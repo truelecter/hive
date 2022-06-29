@@ -9,6 +9,18 @@
     ./common.nix
   ];
 
+  # https://github.com/LnL7/nix-darwin/issues/158#issuecomment-974598670
+  programs.zsh.enable = true;
+  programs.zsh.shellInit = ''export OLD_NIX_PATH="$NIX_PATH";'';
+  programs.zsh.interactiveShellInit = ''
+    if [ -n "$OLD_NIX_PATH" ]; then
+      if [ "$NIX_PATH" != "$OLD_NIX_PATH" ]; then
+        NIX_PATH="$OLD_NIX_PATH"
+      fi
+      unset OLD_NIX_PATH
+    fi
+  '';
+
   # Recreate /run/current-system symlink after boot
   services.activate-system.enable = true;
 
@@ -25,6 +37,23 @@
 
     shellAliases = {
       nrb = "sudo darwin-rebuild switch --flake";
+
+      ls = "ls -G";
+
+      hide-desktop-icons = "defaults write com.apple.finder CreateDesktop -bool false && killall Finder";
+      show-desktop-icons = "defaults write com.apple.finder CreateDesktop -bool true && killall Finder";
+
+      empty-trash = "sudo rm -frv /Volumes/*/.Trashes; \
+        sudo rm -frv ~/.Trash; \
+        sudo rm -frv /private/var/log/asl/*.asl; \
+        sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'";
+
+      clear-dns-cache = "sudo dscacheutil -flushcache; \
+        sudo killall -HUP mDNSResponder";
+    };
+
+    variables = {
+      LSCOLORS = "gxfxcxdxcxegedabagccbd";
     };
   };
 
@@ -44,17 +73,5 @@
 
     # Administrative users on Darwin are part of this group.
     trustedUsers = ["@admin"];
-  };
-
-  programs.bash = {
-    # nix-darwin's shell options are very different from those on nixos. there
-    # is no `promptInit` option, for example. so instead, we throw the prompt
-    # init line into `interactiveShellInit`.
-    #
-    # https://github.com/LnL7/nix-darwin/blob/master/modules/programs/bash/default.nix
-    interactiveShellInit = ''
-      eval "$(${pkgs.starship}/bin/starship init bash)"
-      eval "$(${pkgs.direnv}/bin/direnv hook bash)"
-    '';
   };
 }

@@ -17,7 +17,7 @@ with lib; let
 
   tailscaleJoinArgsString = builtins.concatStringsSep " " tailscaleJoinArgsList;
 
-  tailscaleUpScript = "tailscale-autoconnect" ''
+  tailscaleUpScript = pkgs.writeScript "tailscale-autoconnect" ''
     # wait for tailscaled to settle
     sleep 2
 
@@ -47,18 +47,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    systemd.services.tailscale-autoconnect = {
-      description = "Automatic connection to Tailscale";
-
-      # make sure tailscale is running before trying to connect to tailscale
-      after = ["network-pre.target" "tailscale.service"];
-      wants = ["network-pre.target" "tailscale.service"];
-      wantedBy = ["multi-user.target"];
-
-      serviceConfig.Type = "oneshot";
-      script = tailscaleUpScript;
-    };
-
     launchd.daemons.tailscale = {
       serviceConfig = {
         Label = "tl.tailscale.autoconnect";

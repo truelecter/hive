@@ -91,7 +91,7 @@
         sops-nix.overlay
         nvfetcher.overlay
 
-        (import ./pakages)
+        (import ./packages)
       ];
 
       host-profiles =
@@ -136,7 +136,7 @@
         };
       };
 
-      #region darwin TBD
+      #region darwin
       darwin = {
         hostDefaults = {
           system = "x86_64-darwin";
@@ -163,7 +163,7 @@
           suites = with profiles; rec {
             base = [
               core.darwin
-              users.darwin
+              # secrets
             ];
           };
         };
@@ -176,12 +176,17 @@
         importables = rec {
           profiles = digga.lib.rakeLeaves ./profiles/user;
           suites = with profiles; rec {
-            base = [direnv git];
+            base = [
+              # direnv
+              git
+              shell.zsh
+              shell.tmux
+            ];
           };
         };
         users = rec {
           primary = {suites, ...}: {imports = suites.base;};
-          "andrii.panasiuk" = primary;
+          "andrii.panasiuk" = {suites, ...}: {imports = suites.base;};
           truelecter = primary;
         }; # digga.lib.importers.rakeLeaves ./users/hm;
       };
@@ -189,18 +194,15 @@
       # This is digga option, not Nix's
       devshell = ./shell;
 
-      # TODO: does it make sense to make all of
-      # these users available on all systems?
       homeConfigurations =
         digga.lib.mergeAny
-        # (digga.lib.mkHomeConfigurations self.darwinConfigurations)
-        {}
-        (digga.lib.mkHomeConfigurations self.nixosConfigurations);
+        (digga.lib.mkHomeConfigurations self.nixosConfigurations)
+        (digga.lib.mkHomeConfigurations self.darwinConfigurations);
 
       deploy.nodes = digga.lib.mkDeployNodes self.nixosConfigurations {
         nas = {
           sshUser = "truelecter";
-          hostname = "10.0.7.147";
+          hostname = "nas";
         };
       };
     };

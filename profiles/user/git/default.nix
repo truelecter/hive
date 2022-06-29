@@ -1,27 +1,70 @@
 {
+  self,
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   programs.git = {
     enable = true;
 
+    delta.enable = true;
+
+    ignores = [
+      # Linux
+      "*~"
+
+      # MacOS
+      "._*"
+      ".AppleDouble"
+      ".DS_Store"
+      ".localized"
+      ".LSOverride"
+      ".Spotlight-V100"
+      ".Trashes"
+
+      # Windows
+      "Desktop.ini"
+      "ehthumbs.db"
+      "Thumbs.db"
+
+      # NodeJS
+      "node_modules"
+      "npm-debug.log*"
+      "yarn-debug.log*"
+      "yarn-error.log*"
+
+      # vim
+      "%*"
+      "*.sw[a-z]"
+      "*.un~"
+      ".netrwhist"
+      "Session.vim"
+    ];
+
     extraConfig = {
+      init.defaultBranch = "master";
+      pretty.custom = "%C(magenta)%h%C(red)%d %C(yellow)%ar %C(green)%s %C(yellow)(%an)";
+
       pull.rebase = false;
+      push.followTags = true;
+
+      user.useConfigOnly = true;
+
+      core = {
+        abbrev = 12;
+        autocrlf = "input";
+        editor = "vim";
+      };
+
+      "diff \"bin\"".textconv = "hexdump --canonical --no-squeezing";
+
+      # Autocorrent in 2 seconds
+      help.autocorrect = 20;
     };
 
     aliases = {
-      a = "add -p";
-      co = "checkout";
-      cob = "checkout -b";
-      f = "fetch -p";
-      c = "commit";
-      p = "push";
-      ba = "branch -a";
-      bd = "branch -d";
-      bD = "branch -D";
-      d = "diff";
-      dc = "diff --cached";
-      ds = "diff --staged";
-      r = "restore";
-      rs = "restore --staged";
-      st = "status -sb";
+      git = "!exec git";
 
       # reset
       soft = "reset --soft";
