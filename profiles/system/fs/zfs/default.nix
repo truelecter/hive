@@ -8,7 +8,7 @@
   boot = {
     kernelParams = ["nohibernate"];
     zfs = {
-      enableUnstable = true;
+      enableUnstable = false;
       forceImportRoot = false;
     };
     supportedFilesystems = ["zfs"];

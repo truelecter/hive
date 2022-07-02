@@ -16,7 +16,10 @@
       ./hardware-configuration.nix
       ./zfs-mounts.nix
       ./media-server.nix
+      ./torrent.nix
     ];
+
+  environment.systemPackages = [pkgs.lm_sensors pkgs.parted];
 
   #region boot
   boot.loader = {
@@ -43,7 +46,25 @@
 
   services.vnstat.enable = true;
 
-  networking.firewall.enable = false;
+  networking.firewall = {
+    enable = false;
+
+    # always allow traffic from your Tailscale network
+    trustedInterfaces = ["tailscale0"];
+
+    # allow the Tailscale UDP port through the firewall
+    allowedUDPPorts = [config.services.tailscale.port];
+
+    # allow you to SSH in over the public internet
+    allowedTCPPorts = [22];
+  };
 
   system.stateVersion = "22.05";
+
+  # for remote builds
+  users.users.root = {
+    openssh.authorizedKeys.keys = [
+      (builtins.readFile ./../../../secrets/sops/ssh/root_nas.pub)
+    ];
+  };
 }

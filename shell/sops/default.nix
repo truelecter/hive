@@ -1,12 +1,15 @@
-{ pkgs, inputs, lib, ...}:
-let
+{
+  pkgs,
+  inputs,
+  lib,
+  ...
+}: let
   sopsPGPKeyDirs = lib.concatStringsSep " " [
     "${toString ./../..}/keys/hosts"
     "${toString ./../..}/keys/users"
   ];
   gpg = "${pkgs.gnupg}/bin/gpg";
-in
-{
+in {
   devshell.startup.load_gpg_keys = pkgs.lib.noDepEntry ''
     _sopsAddKey() {
       ${gpg} --quiet --import "$key"

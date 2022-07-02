@@ -36,5 +36,24 @@
             "type": "github"
         },
         "version": "7e89520f4bdbacb5861aca209f0b8f89271287e1"
+    },
+    "transmissionic": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "transmissionic",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "6c65726f79",
+            "repo": "Transmissionic",
+            "rev": "6a08343d55b0561767cb9e91c936170c7f84bcbd",
+            "sha256": "sha256-wiRjLLRLP4TVCDaHwCubuH9vNTqjr7CbP9DKPUjvajI=",
+            "type": "github"
+        },
+        "version": "6a08343d55b0561767cb9e91c936170c7f84bcbd"
     }
 }

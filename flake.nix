@@ -186,7 +186,7 @@
         };
         users = rec {
           primary = {suites, ...}: {imports = suites.base;};
-          "andrii.panasiuk" = {suites, ...}: {imports = suites.base;};
+          "andrii.panasiuk" = primary;
           truelecter = primary;
         }; # digga.lib.importers.rakeLeaves ./users/hm;
       };

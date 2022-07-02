@@ -26,4 +26,15 @@
       sha256 = "sha256-qqO+vP7DieCxF5ezNN3rN0ktVj8Ikkmo0xbYdTAjCqc=";
     };
   };
+  transmissionic = {
+    pname = "transmissionic";
+    version = "6a08343d55b0561767cb9e91c936170c7f84bcbd";
+    src = fetchFromGitHub {
+      owner = "6c65726f79";
+      repo = "Transmissionic";
+      rev = "6a08343d55b0561767cb9e91c936170c7f84bcbd";
+      fetchSubmodules = false;
+      sha256 = "sha256-wiRjLLRLP4TVCDaHwCubuH9vNTqjr7CbP9DKPUjvajI=";
+    };
+  };
 }

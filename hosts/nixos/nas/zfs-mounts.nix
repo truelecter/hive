@@ -10,9 +10,10 @@
 
   # Fix permissions
   systemd.tmpfiles.rules = [
-    "z /mnt/db 775 share share"
-    "z /mnt/pv 775 share share"
-    "z /mnt/public/media 775 share share"
+    "d /mnt/db 775 share share"
+    "d /mnt/pv 775 share share"
+    "d /mnt/public/media 775 share share"
+    "d /mnt/public/torrents 775 transmission share"
   ];
 
   fileSystems = {
@@ -28,6 +29,11 @@
 
     "/mnt/public/media" = {
       device = "tank/public/media";
+      fsType = "zfs";
+    };
+
+    "/mnt/public/torrents" = {
+      device = "tank/public/torrents";
       fsType = "zfs";
     };
   };

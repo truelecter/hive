@@ -8,8 +8,8 @@
     announceInterval = 60;
     friendlyName = "DLNA";
     mediaDirs = [
-      "A,/mnt/public/media/Music/"
-      "V,/mnt/public/media/Videos/"
+      "A,/mnt/public/media/music/"
+      "V,/mnt/public/media/videos/"
     ];
   };
 

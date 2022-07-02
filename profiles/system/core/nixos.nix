@@ -29,6 +29,7 @@
       usbutils
       utillinux
       hexdump
+      pciutils
     ];
   };
 
@@ -53,8 +54,8 @@
     passwordAuthentication = lib.mkForce false;
     kbdInteractiveAuthentication = lib.mkForce false;
 
-    # root login is never welcome
-    permitRootLogin = lib.mkForce "no";
+    # root login is never welcome, except for remote builders
+    permitRootLogin = lib.mkForce "prohibit-password";
 
     startWhenNeeded = lib.mkDefault true;
     openFirewall = lib.mkDefault false;

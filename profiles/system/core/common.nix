@@ -38,6 +38,7 @@ in {
       whois
       zsh
       vim
+      ncdu
     ];
 
     shellAliases = let
