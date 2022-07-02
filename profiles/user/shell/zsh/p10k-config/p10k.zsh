@@ -33,7 +33,7 @@
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     # =========================[ Line #1 ]=========================
     # os_icon               # os identifier
-    tfenv
+    # tfenv
     aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
     kubecontext             # current kubernetes context (https://kubernetes.io/)
     context                 # user@hostname
@@ -120,21 +120,38 @@
     # example               # example user-defined segment (see prompt_example function below)
   )
 
-  function prompt_tfenv() {
-    if [[ -z $TFENV_VERSION ]]; then
-      TFENV_VERSION=$(tfenv version-name)
-    fi
+  # function prompt_tfenv() {
+  #   if [[ -z $TFENV_VERSION ]]; then
+  #     TFENV_VERSION=$(tfenv version-name-tmux)
+  #   fi
 
-    p10k segment -f 038 -t "tf ${TFENV_VERSION}"
-  }
+  #   p10k segment -f 038 -t "tf ${TFENV_VERSION}"
+  # }
 
-  function tfenv() {
-    command tfenv "$@"
+  # function tfenv() {
+  #   if [[ "$1" == "use" ]]; then
+  #     command tfenv "$@"
 
-    if [[ "$1" == "use" ]]; then
-      TFENV_VERSION=$(tfenv version-name)
-    fi
-  }
+  #     TFENV_VERSION=$(tfenv version-name)
+
+  #     return $?
+  #   fi
+
+  #   if [[ "$1" == "version-name-tmux" ]]; then
+  #     _TFENV_VERSION=$(command tfenv version-name 2> /dev/null)
+
+  #     # tfenv failed for whatever reason
+  #     if [[ "$?" != "0" ]]; then
+  #       echo "none"
+  #     else
+  #       echo "$_TFENV_VERSION"
+  #     fi
+
+  #     return 0
+  #   fi
+
+  #   command tfenv "$@"
+  # }
 
   # Defines character set used by powerlevel10k. It's best to let `p10k configure` set it for you.
   typeset -g POWERLEVEL9K_MODE=powerline
