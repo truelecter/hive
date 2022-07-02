@@ -8,3 +8,16 @@ Nix allows for easy to manage, collaborative, reproducible deployments. This mea
 This flake is configured with the use of [digga][digga].
 
 [digga]: https://github.com/divnix/digga
+
+## Apply configs
+### NixOS hosts
+```bash
+nix develop
+deploy -s # some checks are currently broken
+```
+### Darwin hosts
+```bash
+nix develop
+# While on darwin host deploy-rs does not support darwin currently
+darwin-rebuild switch --flake .
+```
