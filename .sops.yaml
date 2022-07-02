@@ -8,3 +8,7 @@ creation_rules:
     - pgp:
       - *truelecter
       - *server-nas
+  - path_regex: secrets/sops/ssh.*$
+    key_groups:
+    - pgp:
+      - *truelecter
