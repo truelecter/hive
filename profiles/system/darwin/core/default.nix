@@ -6,7 +6,7 @@
   ...
 }: {
   imports = [
-    ./common.nix
+    ../../common.nix
   ];
 
   # https://github.com/LnL7/nix-darwin/issues/158#issuecomment-974598670
@@ -31,6 +31,7 @@
     systemPackages = with pkgs; [
       m-cli
       terminal-notifier
+      duti
     ];
 
     darwinConfig = "${self}/lib/compat";
@@ -74,4 +75,6 @@
     # Administrative users on Darwin are part of this group.
     trustedUsers = ["@admin"];
   };
+
+  homebrew.enable = true;
 }

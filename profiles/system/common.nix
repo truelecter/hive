@@ -9,7 +9,7 @@
   inherit (pkgs.stdenv.hostPlatform) isDarwin;
 in {
   # Sets nrdxp.cachix.org binary cache which just speeds up some builds
-  imports = [../cachix];
+  imports = [./cachix];
 
   environment = {
     # Selection of sysadmin tools that can come in handy

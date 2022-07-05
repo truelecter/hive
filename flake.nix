@@ -127,7 +127,7 @@
           profiles = self.host-profiles;
           suites = with profiles; rec {
             base = [
-              core.nixos
+              nixos.core
               users.truelecter
               users.root
               secrets
@@ -162,8 +162,21 @@
           profiles = self.host-profiles;
           suites = with profiles; rec {
             base = [
-              core.darwin
+              darwin.core
+              darwin.security.pam
               # secrets
+            ];
+            editors = [
+              darwin.editors.sublime-text
+              darwin.editors.vscode
+            ];
+            system-preferences = [
+              darwin.system-preferences.dock
+              darwin.system-preferences.finder
+              darwin.system-preferences.firewall
+              darwin.system-preferences.general
+              darwin.system-preferences.keyboard
+              darwin.system-preferences.trackpad
             ];
           };
         };
