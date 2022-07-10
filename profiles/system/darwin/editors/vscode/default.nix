@@ -1,3 +1,3 @@
 {pkgs, ...}: {
-  environment.packages = [pkgs.vscode];
+  environment.systemPackages = [pkgs.vscode];
 }

@@ -48,10 +48,10 @@ in {
         ProgramArguments = ["${cfg.package}/bin/tailscaled"];
 
         EnvironmentVariables = builtins.listToAttrs ([
-            {
-              name = "PATH";
-              value = lib.makeBinPath (with pkgs; [openresolv procps glibc]);
-            }
+            # {
+            #   name = "PATH";
+            #   value = lib.makeBinPath (with pkgs; [openresolv procps glibc]);
+            # }
             {
               name = "PORT";
               value = toString cfg.port;

@@ -3,6 +3,7 @@
   pkgs,
   suites,
   profiles,
+  lib,
   ...
 }: {
   imports =
@@ -17,11 +18,16 @@
       ./zfs-mounts.nix
       ./media-server.nix
       ./torrent.nix
+      # ./video.nix
     ];
 
   environment.systemPackages = [pkgs.lm_sensors pkgs.parted];
 
   #region boot
+
+  # Weird bug with NM-wait-online restart on new configuration always fails
+  systemd.services.NetworkManager-wait-online.enable = false;
+  # boot.zfs.enableUnstable = lib.mkForce true;
   boot.loader = {
     systemd-boot.enable = false;
     efi = {

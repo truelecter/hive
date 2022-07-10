@@ -93,7 +93,10 @@ in {
 
   nix = {
     # Improve nix store disk usage
-    gc.automatic = true;
+    gc = {
+      automatic = true;
+      options = "--max-freed $((20 * 1024**3))";
+    };
 
     # Prevents impurities in builds
     useSandbox = true;
@@ -107,6 +110,7 @@ in {
       keep-outputs = true
       keep-derivations = true
       fallback = true
+      builders-use-substitutes = true
     '';
   };
 }

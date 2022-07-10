@@ -30,7 +30,8 @@
     deploy.url = "github:serokell/deploy-rs";
     deploy.inputs.nixpkgs.follows = "nixos";
 
-    sops-nix.url = github:Mic92/sops-nix;
+    sops-nix.url = "github:TrueLecter/sops-nix/darwin";
+    # sops-nix.url = "path:/Users/andrii.panasiuk/Projects/nixos/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixos";
     sops-nix.inputs.nixpkgs-22_05.follows = "nixos";
 
@@ -41,8 +42,13 @@
     naersk.inputs.nixpkgs.follows = "nixos";
 
     nixos-hardware.url = "github:nixos/nixos-hardware";
+    nixos-hardware.inputs.nixpkgs.follows = "nixos";
 
     nixos-generators.url = "github:nix-community/nixos-generators";
+    nixos-generators.inputs.nixpkgs.follows = "nixos";
+
+    nix-npm-buildpackage.url = "github:serokell/nix-npm-buildpackage";
+    nix-npm-buildpackage.inputs.nixpkgs.follows = "nixos";
   };
 
   outputs = {
@@ -82,9 +88,12 @@
       sharedOverlays = [
         (final: prev: {
           __dontExport = true;
+
           lib = prev.lib.extend (lfinal: lprev: {
             our = self.lib;
           });
+
+          inherit inputs;
         })
 
         nur.overlay
@@ -127,7 +136,7 @@
           profiles = self.host-profiles;
           suites = with profiles; rec {
             base = [
-              nixos.core
+              profiles.nixos.core
               users.truelecter
               users.root
               secrets
@@ -149,7 +158,7 @@
             {lib.our = self.lib;}
             digga.darwinModules.nixConfig
             home.darwinModules.home-manager
-            sops-nix.nixosModules.sops
+            sops-nix.darwinModules.sops
           ];
         };
 
@@ -164,7 +173,7 @@
             base = [
               darwin.core
               darwin.security.pam
-              # secrets
+              secrets
             ];
             editors = [
               darwin.editors.sublime-text

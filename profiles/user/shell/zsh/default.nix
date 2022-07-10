@@ -9,6 +9,12 @@
 
   # programs.tmux.shell = lib.mkForce "${pkgs.zsh}/bin/zsh";
 
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+    nix-direnv.enable = true;
+  };
+
   programs.zsh = {
     enable = true;
     enableSyntaxHighlighting = true;
@@ -25,18 +31,27 @@
       enable = true;
 
       plugins = [
-        "aws"
-        "kubectl"
-        "kube-ps1"
+        # "aws"
+        # "kubectl"
+        # "kube-ps1"
         "git"
         "tmux"
       ];
     };
 
     initExtraBeforeCompInit = ''
+      (( ''${+commands[direnv]} )) && emulate zsh -c "$(direnv export zsh)"
+
       # p10k instant prompt
-      P10K_INSTANT_PROMPT="$XDG_CACHE_HOME/p10k-instant-prompt-''${(%):-%n}.zsh"
+      P10K_INSTANT_PROMPT="''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
       [[ ! -r "$P10K_INSTANT_PROMPT" ]] || source "$P10K_INSTANT_PROMPT"
+
+      (( ''${+commands[direnv]} )) && emulate zsh -c "$(direnv hook zsh)"
+    '';
+
+    initExtra = ''
+      [[ -f "$HOME/.sh.local" ]] && source "$HOME/.sh.local"
+      export GPG_TTY=$TTY
     '';
 
     plugins = [

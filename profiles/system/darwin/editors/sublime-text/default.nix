@@ -1,3 +1,3 @@
 {...}: {
-  homebrew.brews = ["sublime-text"];
+  homebrew.casks = ["sublime-text"];
 }

@@ -14,6 +14,7 @@
     nixUnstable
     nvfetcher-bin
     alejandra
+    node2nix
     ;
 
   pkgWithCategory = category: package: {inherit package category;};
@@ -50,6 +51,7 @@ in {
       (devos sops)
       (devos inputs.deploy.packages.${pkgs.system}.deploy-rs)
       (devos inputs.home.packages.${pkgs.system}.home-manager)
+      (devos node2nix)
 
       {
         category = "devos";

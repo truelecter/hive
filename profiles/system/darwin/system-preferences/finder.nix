@@ -17,8 +17,8 @@
     ShowStatusBar = true;
     _FXShowPosixPathInTitle = true;
 
-    DisableAllAnimations = true;
-    WarnOnEmptyTrash = true;
-    ShowRecentTags = false;
+    # DisableAllAnimations = true;
+    # WarnOnEmptyTrash = true;
+    # ShowRecentTags = false;
   };
 }

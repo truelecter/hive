@@ -346,11 +346,11 @@
     },
     "latest_2": {
       "locked": {
-        "lastModified": 1656239181,
-        "narHash": "sha256-oQ3ayOqm4TDUlnj5ef2LavL/9Bv8I5j88IzZIEZJX9g=",
+        "lastModified": 1657020478,
+        "narHash": "sha256-sU5hXEGcOcvz2xoPAuNLBQJLXjwvPpTkoddyXE8gw20=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "f2537a505d45c31fe5d9c27ea9829b6f4c4e6ac5",
+        "rev": "71a4f0dc3d80ba76f437c888c1c3d59f1df98163",
         "type": "github"
       },
       "original": {
@@ -380,6 +380,26 @@
         "type": "github"
       }
     },
+    "nix-npm-buildpackage": {
+      "inputs": {
+        "nixpkgs": [
+          "nixos"
+        ]
+      },
+      "locked": {
+        "lastModified": 1654787802,
+        "narHash": "sha256-53wPtqRsiaR8e3njRHZbO4lPX1W9hHdTarHEx6gE/s0=",
+        "owner": "serokell",
+        "repo": "nix-npm-buildpackage",
+        "rev": "ec9a825ad4a6f1fb2d6bb8371be827c9c8bf5b80",
+        "type": "github"
+      },
+      "original": {
+        "owner": "serokell",
+        "repo": "nix-npm-buildpackage",
+        "type": "github"
+      }
+    },
     "nixlib": {
       "locked": {
         "lastModified": 1636849918,
@@ -397,11 +417,11 @@
     },
     "nixos": {
       "locked": {
-        "lastModified": 1656265786,
-        "narHash": "sha256-A9RkoGrxzsmMm0vily18p92Rasb+MbdDMaSnzmywXKw=",
+        "lastModified": 1657027964,
+        "narHash": "sha256-jseM2zvERPZe5yErbc3wrd6wK8gp0f+e18KJngs5qlo=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "cd90e773eae83ba7733d2377b6cdf84d45558780",
+        "rev": "9e96b1562d67a90ca2f7cfb919f1e86b76a65a2c",
         "type": "github"
       },
       "original": {
@@ -414,7 +434,9 @@
     "nixos-generators": {
       "inputs": {
         "nixlib": "nixlib",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": [
+          "nixos"
+        ]
       },
       "locked": {
         "lastModified": 1655901362,
@@ -432,11 +454,11 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1656353817,
-        "narHash": "sha256-UJEzMQcft/0Ilu4LWV7UH51mr5UCo28GL06BGO+djv4=",
+        "lastModified": 1656933710,
+        "narHash": "sha256-SVG8EqY1OTJWBRY4hpct2ZR2Rk0L8hCFkug3m0ABoZE=",
         "owner": "nixos",
         "repo": "nixos-hardware",
-        "rev": "78e7c2c397b0376526e83162b58de921362e3399",
+        "rev": "3bf48d3587d3f34f745a19ebc968b002ef5b5c5a",
         "type": "github"
       },
       "original": {
@@ -461,29 +483,13 @@
         "type": "github"
       }
     },
-    "nixpkgs-21_11": {
-      "locked": {
-        "lastModified": 1656198488,
-        "narHash": "sha256-xe81o3Kin6a0jXA3mTxcR+jeA1jLKw3TCar5LUo/B5c=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "46af3303651699dc58cfc251d9b18c0f59d857da",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "release-21.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs-darwin-stable": {
       "locked": {
-        "lastModified": 1656219440,
-        "narHash": "sha256-2dhFA29f3dpw4axAKhVj8JsHQzHViG92a7AfkXLHnBY=",
+        "lastModified": 1657027964,
+        "narHash": "sha256-jseM2zvERPZe5yErbc3wrd6wK8gp0f+e18KJngs5qlo=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "4a155658a7c3a9e465c365beb0a50352efa64ca0",
+        "rev": "9e96b1562d67a90ca2f7cfb919f1e86b76a65a2c",
         "type": "github"
       },
       "original": {
@@ -511,28 +517,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1637186689,
-        "narHash": "sha256-NU7BhgnwA/3ibmCeSzFK6xGi+Bari9mPfn+4cBmyEjw=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "7fad01d9d5a3f82081c00fb57918d64145dc904c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixpkgs-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_3": {
-      "locked": {
         "lastModified": 1656250965,
         "narHash": "sha256-B5wj+k8uSe9YNijcTW7BHYAZzrzFQq5NMpmrnOGvxqo=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
+        "path": "/nix/store/98qb8xfcjm4w0jn3if3h1bicwjshg4yx-source",
         "rev": "9a17f325397d137ac4d219ecbd5c7f15154422f4",
-        "type": "github"
+        "type": "path"
       },
       "original": {
         "id": "nixpkgs",
@@ -543,10 +532,9 @@
       "locked": {
         "lastModified": 1656350587,
         "narHash": "sha256-99+cxnZtZbXjPjhzbK27KwBE7jyicXy9Fy9jrc+HjSM=",
-        "owner": "nix-community",
-        "repo": "NUR",
+        "path": "/nix/store/x6l0cskdm2v78fpkxsfa3xsi59zg18i3-source",
         "rev": "ab1036c1224a32a1b33a6842766d7c025adefb3a",
-        "type": "github"
+        "type": "path"
       },
       "original": {
         "id": "nur",
@@ -611,10 +599,11 @@
         "home": "home",
         "latest": "latest_2",
         "naersk": "naersk",
+        "nix-npm-buildpackage": "nix-npm-buildpackage",
         "nixos": "nixos",
         "nixos-generators": "nixos-generators",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs_3",
+        "nixpkgs": "nixpkgs_2",
         "nixpkgs-darwin-stable": "nixpkgs-darwin-stable",
         "nur": "nur",
         "nvfetcher": "nvfetcher",
@@ -625,22 +614,19 @@
       "inputs": {
         "nixpkgs": [
           "nixos"
-        ],
-        "nixpkgs-21_11": "nixpkgs-21_11",
-        "nixpkgs-22_05": [
-          "nixos"
         ]
       },
       "locked": {
-        "lastModified": 1656215886,
-        "narHash": "sha256-67fkBb4GUbuMZTHs08mNycg0hBzboy+5boMD76wLpj4=",
-        "owner": "Mic92",
+        "lastModified": 1657400508,
+        "narHash": "sha256-B4Sy180KA0k1rJopa0MM4zZyClYbrE4Unltwr/Bw8TI=",
+        "owner": "TrueLecter",
         "repo": "sops-nix",
-        "rev": "aff5d8542c9eb566a000302b22fcc10715bc2feb",
+        "rev": "06f83d6617767f11b2fc92ee068649a0fde090a0",
         "type": "github"
       },
       "original": {
-        "owner": "Mic92",
+        "owner": "TrueLecter",
+        "ref": "darwin",
         "repo": "sops-nix",
         "type": "github"
       }

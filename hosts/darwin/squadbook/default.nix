@@ -8,13 +8,17 @@
 }: {
   imports =
     suites.base
+    ++ suites.editors
+    ++ suites.system-preferences
     ++ [
-      # profiles.networking.tailscale
+      profiles.networking.tailscale
       profiles.users."andrii.panasiuk"
+      profiles.users.root
     ];
 
   networking = {
     hostName = lib.mkForce "squadbook";
+    computerName = "Andrii.Panasiuk";
     knownNetworkServices = [
       "Wi-Fi"
       "Thunderbolt Bridge"
@@ -28,10 +32,6 @@
 
   nix = {
     distributedBuilds = true;
-
-    extraOptions = ''
-      builders-use-substitutes = true
-    '';
 
     buildMachines = [
       {

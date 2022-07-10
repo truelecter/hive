@@ -47,11 +47,11 @@ in {
   };
 
   config = mkIf cfg.enable {
-    launchd.daemons.tailscale = {
+    launchd.daemons.tailscale-autoconnect = {
       serviceConfig = {
         Label = "tl.tailscale.autoconnect";
 
-        ProgramArguments = [toString tailscaleUpScript];
+        ProgramArguments = [(toString tailscaleUpScript)];
 
         RunAtLoad = true;
       };
