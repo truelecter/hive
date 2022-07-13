@@ -7,11 +7,11 @@
   system.defaults.dock = {
     autohide = true;
     autohide-delay = "0";
-    autohide-time-modifier = "0";
+    autohide-time-modifier = "0.5";
     dashboard-in-overlay = false;
     enable-spring-load-actions-on-all-items = false;
     expose-animation-duration = "0.1";
-    expose-group-by-app = false;
+    expose-group-by-app = true;
     launchanim = false;
     mineffect = "genie";
     minimize-to-application = true;

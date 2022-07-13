@@ -62,7 +62,7 @@
     # Apple menu > System Preferences > Sound Make a feedback sound when
     # the system volume changed. This setting accepts the integers 0 or
     # 1. Defaults to 1.
-    "com.apple.sound.beep.feedback" = 1;
+    "com.apple.sound.beep.feedback" = 0;
 
     # Set the spring loading delay for directories. The default is the float `1.0`.
     "com.apple.springing.delay" = "0.1";
