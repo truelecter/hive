@@ -6,7 +6,7 @@
   ...
 }: {
   imports = [
-    ../../common.nix
+    ../common.nix
   ];
 
   #region nix options

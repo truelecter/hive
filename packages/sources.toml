@@ -10,3 +10,7 @@ fetch.github = "tfutils/tfenv"
 [transmissionic]
 src.git = "https://github.com/6c65726f79/Transmissionic"
 fetch.github = "6c65726f79/Transmissionic"
+
+[s5cmd]
+src.git = "https://github.com/peak/s5cmd"
+fetch.github = "peak/s5cmd"

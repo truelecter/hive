@@ -27,7 +27,7 @@ in {
   imports = [
     "${extraModulesPath}/git/hooks.nix"
     ./hooks
-    ./sops
+    ./sops.nix
   ];
 
   # tempfix: remove when merged https://github.com/numtide/devshell/pull/123

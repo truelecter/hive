@@ -5,8 +5,6 @@
   pkgs,
   ...
 }: {
-  home.packages = [pkgs.tfenv];
-
   # programs.tmux.shell = lib.mkForce "${pkgs.zsh}/bin/zsh";
 
   programs.direnv = {

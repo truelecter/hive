@@ -204,10 +204,15 @@
               shell.zsh
               shell.tmux
             ];
+            develop = [
+              dev.aws
+              dev.k8s
+              dev.terraform
+            ];
           };
         };
         users = rec {
-          primary = {suites, ...}: {imports = suites.base;};
+          primary = {suites, ...}: {imports = suites.base ++ suites.develop;};
           "andrii.panasiuk" = primary;
           truelecter = primary;
         }; # digga.lib.importers.rakeLeaves ./users/hm;

@@ -6,7 +6,7 @@
   ...
 }: {
   imports = [
-    ../../common.nix
+    ../common.nix
   ];
 
   # https://github.com/LnL7/nix-darwin/issues/158#issuecomment-974598670
@@ -74,6 +74,20 @@
 
     # Administrative users on Darwin are part of this group.
     trustedUsers = ["@admin"];
+  };
+
+  sops.gnupg.sshKeyPaths = lib.mkDefault [
+    "/etc/ssh/ssh_host_rsa_key"
+  ];
+
+  users = {
+    knownGroups = ["keys"];
+    groups.keys = {
+      name = "keys";
+      gid = 30001;
+      members = [ "root" ];
+      description = "Required by sops-nix";
+    };
   };
 
   homebrew.enable = true;
