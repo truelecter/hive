@@ -67,7 +67,7 @@ in {
       ll = "ls -l";
       la = "ls -la";
 
-      path = "printf \"%b\\n\" \"\${PATH//:/\\\\n}\"";
+      path = "printf \\\"%b\\\\n\\\" \\\"\\\${PATH//:/\\\\\\n}\\\"";
       tm = "tmux new-session -A -s main";
 
       issh = "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null";
