@@ -1,4 +1,23 @@
 {
+    "k9s": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "k9s",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "derailed",
+            "repo": "k9s",
+            "rev": "ee07b98755437c6a85cd82dfdb377d2c30337f65",
+            "sha256": "sha256-6A6RxvobT0T/Pbd7Zcn8++I/7OVAhXSZI1NhYeDB3iY=",
+            "type": "github"
+        },
+        "version": "ee07b98755437c6a85cd82dfdb377d2c30337f65"
+    },
     "manix": {
         "cargoLocks": null,
         "extract": null,
@@ -31,11 +50,11 @@
             "name": null,
             "owner": "peak",
             "repo": "s5cmd",
-            "rev": "eea87b1626220b49b98a02749475ef67328798ad",
-            "sha256": "sha256-US7BlmoK8WhzOIASThN+DS8qUzyBMRL+E707Y2N0Qw8=",
+            "rev": "717bf5bb6ab9407cf8907b802987b1641001407c",
+            "sha256": "sha256-N2LKo8ZrHlsW+xFEjasgwJ+zL/TBps9Noc2JrFkX8D0=",
             "type": "github"
         },
-        "version": "eea87b1626220b49b98a02749475ef67328798ad"
+        "version": "717bf5bb6ab9407cf8907b802987b1641001407c"
     },
     "tfenv": {
         "cargoLocks": null,

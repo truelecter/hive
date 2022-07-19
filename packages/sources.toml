@@ -14,3 +14,7 @@ fetch.github = "6c65726f79/Transmissionic"
 [s5cmd]
 src.git = "https://github.com/peak/s5cmd"
 fetch.github = "peak/s5cmd"
+
+[k9s]
+src.manual = "v0.26.0"
+fetch.github = "derailed/k9s"
