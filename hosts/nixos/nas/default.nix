@@ -18,10 +18,9 @@
       ./zfs-mounts.nix
       ./media-server.nix
       ./torrent.nix
+      ./samba.nix
       # ./video.nix
     ];
-
-  environment.systemPackages = [pkgs.lm_sensors pkgs.parted];
 
   #region boot
 
@@ -47,23 +46,11 @@
   networking = {
     hostName = "nas";
     networkmanager.enable = true;
+    firewall.enable = false;
     hostId = "00000000";
   };
 
   services.vnstat.enable = true;
-
-  networking.firewall = {
-    enable = false;
-
-    # always allow traffic from your Tailscale network
-    trustedInterfaces = ["tailscale0"];
-
-    # allow the Tailscale UDP port through the firewall
-    allowedUDPPorts = [config.services.tailscale.port];
-
-    # allow you to SSH in over the public internet
-    allowedTCPPorts = [22];
-  };
 
   system.stateVersion = "22.05";
 
