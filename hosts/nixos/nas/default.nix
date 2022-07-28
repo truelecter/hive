@@ -27,7 +27,7 @@
   # Weird bug with NM-wait-online restart on new configuration always fails
   systemd.services.NetworkManager-wait-online.enable = false;
   # boot.zfs.enableUnstable = lib.mkForce true;
-  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+  boot.binfmt.emulatedSystems = ["aarch64-linux"];
   boot.loader = {
     systemd-boot.enable = false;
     efi = {
@@ -41,7 +41,6 @@
       version = 2;
       useOSProber = true;
     }; # grub
-
   }; # bootloader
   #endregion
 

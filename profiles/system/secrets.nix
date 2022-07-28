@@ -7,10 +7,9 @@
 }: let
   inherit (pkgs.stdenv.hostPlatform) isDarwin;
 in {
-  imports =
-    [
-      ./../../secrets
-    ];
+  imports = [
+    ./../../secrets
+  ];
 
   environment.systemPackages = with pkgs; [
     sops

@@ -85,7 +85,7 @@
     groups.keys = {
       name = "keys";
       gid = 30001;
-      members = [ "root" ];
+      members = ["root"];
       description = "Required by sops-nix";
     };
   };

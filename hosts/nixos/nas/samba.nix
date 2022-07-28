@@ -3,8 +3,6 @@
   pkgs,
   ...
 }: {
-
-
   services.samba = {
     enable = true;
     enableNmbd = true;
