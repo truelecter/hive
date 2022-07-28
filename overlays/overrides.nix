@@ -15,5 +15,6 @@ channels: final: prev: {
     starship
     deploy-rs
     tailscale
+    alejandra
     ;
 }
