@@ -17,12 +17,6 @@ in {
       description = "The port to listen on for tunnel traffic (0=autoselect).";
     };
 
-    interfaceName = mkOption {
-      type = types.str;
-      default = "tailscale0";
-      description = ''The interface name for tunnel traffic. Use "userspace-networking" (beta) to not use TUN.'';
-    };
-
     permitCertUid = mkOption {
       type = types.nullOr types.nonEmptyStr;
       default = null;
@@ -55,10 +49,6 @@ in {
             {
               name = "PORT";
               value = toString cfg.port;
-            }
-            {
-              name = "FLAGS";
-              value = ''--tun ${lib.escapeShellArg cfg.interfaceName}'';
             }
           ]
           ++ (lib.optionals (cfg.permitCertUid != null) [
