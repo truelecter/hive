@@ -15,7 +15,7 @@
 
   programs.zsh = {
     enable = true;
-    enableSyntaxHighlighting = true;
+    enableCompletion = true;
 
     history = {
       extended = true;
@@ -62,6 +62,16 @@
         name = "powerlevel10k-config";
         src = lib.cleanSource ./p10k-config;
         file = "p10k.zsh";
+      }
+      {
+        name = "fast-syntax-highlighting";
+        file = "F-Sy-H.plugin.zsh";
+        src = pkgs.fetchFromGitHub {
+          owner = "zdharma";
+          repo = "fast-syntax-highlighting";
+          rev = "v1.66";
+          sha256 = "sha256-uoLrXfq31GvfHO6GTrg7Hus8da2B4SCM1Frc+mRFbFc=";
+        };
       }
     ];
 
