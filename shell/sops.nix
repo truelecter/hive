@@ -5,8 +5,8 @@
   ...
 }: let
   sopsPGPKeyDirs = lib.concatStringsSep " " [
-    "${toString ./../..}/keys/hosts"
-    "${toString ./../..}/keys/users"
+    "${toString ./..}/keys/hosts"
+    "${toString ./..}/keys/users"
   ];
   gpg = "${pkgs.gnupg}/bin/gpg";
 in {
