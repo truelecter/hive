@@ -199,7 +199,7 @@
           profiles = digga.lib.rakeLeaves ./profiles/user;
           suites = with profiles; rec {
             base = [
-              # direnv
+              shell.direnv
               git
               shell.zsh
               shell.tmux
