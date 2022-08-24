@@ -16,5 +16,9 @@ channels: final: prev: {
     deploy-rs
     tailscale
     alejandra
+    neovim-unwrapped
+    terraform-lss
+    k9s
+    rnix-lsp
     ;
 }

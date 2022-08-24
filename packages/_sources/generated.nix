@@ -4,17 +4,6 @@
   fetchurl,
   fetchFromGitHub,
 }: {
-  k9s = {
-    pname = "k9s";
-    version = "ee07b98755437c6a85cd82dfdb377d2c30337f65";
-    src = fetchFromGitHub {
-      owner = "derailed";
-      repo = "k9s";
-      rev = "ee07b98755437c6a85cd82dfdb377d2c30337f65";
-      fetchSubmodules = false;
-      sha256 = "sha256-6A6RxvobT0T/Pbd7Zcn8++I/7OVAhXSZI1NhYeDB3iY=";
-    };
-  };
   manix = {
     pname = "manix";
     version = "d08e7ca185445b929f097f8bfb1243a8ef3e10e4";
@@ -28,13 +17,13 @@
   };
   s5cmd = {
     pname = "s5cmd";
-    version = "717bf5bb6ab9407cf8907b802987b1641001407c";
+    version = "914e701426e31a5819a422a4880bdbe03304f9df";
     src = fetchFromGitHub {
       owner = "peak";
       repo = "s5cmd";
-      rev = "717bf5bb6ab9407cf8907b802987b1641001407c";
+      rev = "914e701426e31a5819a422a4880bdbe03304f9df";
       fetchSubmodules = false;
-      sha256 = "sha256-N2LKo8ZrHlsW+xFEjasgwJ+zL/TBps9Noc2JrFkX8D0=";
+      sha256 = "sha256-9sCOrwU+vyJ5JkZobi5Ypsch7Num59FpVr6bkmhMheM=";
     };
   };
   tfenv = {
@@ -50,13 +39,13 @@
   };
   transmissionic = {
     pname = "transmissionic";
-    version = "6a08343d55b0561767cb9e91c936170c7f84bcbd";
+    version = "9353f9824ed279fcc8637939241609fc081a46ff";
     src = fetchFromGitHub {
       owner = "6c65726f79";
       repo = "Transmissionic";
-      rev = "6a08343d55b0561767cb9e91c936170c7f84bcbd";
+      rev = "9353f9824ed279fcc8637939241609fc081a46ff";
       fetchSubmodules = false;
-      sha256 = "sha256-wiRjLLRLP4TVCDaHwCubuH9vNTqjr7CbP9DKPUjvajI=";
+      sha256 = "sha256-aZojSGle8jWEz0SZ+GC4cfvKpfVqRuqlAzPDpb2/77M=";
     };
   };
 }

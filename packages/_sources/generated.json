@@ -1,23 +1,4 @@
 {
-    "k9s": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "k9s",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "derailed",
-            "repo": "k9s",
-            "rev": "ee07b98755437c6a85cd82dfdb377d2c30337f65",
-            "sha256": "sha256-6A6RxvobT0T/Pbd7Zcn8++I/7OVAhXSZI1NhYeDB3iY=",
-            "type": "github"
-        },
-        "version": "ee07b98755437c6a85cd82dfdb377d2c30337f65"
-    },
     "manix": {
         "cargoLocks": null,
         "extract": null,
@@ -50,11 +31,11 @@
             "name": null,
             "owner": "peak",
             "repo": "s5cmd",
-            "rev": "717bf5bb6ab9407cf8907b802987b1641001407c",
-            "sha256": "sha256-N2LKo8ZrHlsW+xFEjasgwJ+zL/TBps9Noc2JrFkX8D0=",
+            "rev": "914e701426e31a5819a422a4880bdbe03304f9df",
+            "sha256": "sha256-9sCOrwU+vyJ5JkZobi5Ypsch7Num59FpVr6bkmhMheM=",
             "type": "github"
         },
-        "version": "717bf5bb6ab9407cf8907b802987b1641001407c"
+        "version": "914e701426e31a5819a422a4880bdbe03304f9df"
     },
     "tfenv": {
         "cargoLocks": null,
@@ -88,10 +69,10 @@
             "name": null,
             "owner": "6c65726f79",
             "repo": "Transmissionic",
-            "rev": "6a08343d55b0561767cb9e91c936170c7f84bcbd",
-            "sha256": "sha256-wiRjLLRLP4TVCDaHwCubuH9vNTqjr7CbP9DKPUjvajI=",
+            "rev": "9353f9824ed279fcc8637939241609fc081a46ff",
+            "sha256": "sha256-aZojSGle8jWEz0SZ+GC4cfvKpfVqRuqlAzPDpb2/77M=",
             "type": "github"
         },
-        "version": "6a08343d55b0561767cb9e91c936170c7f84bcbd"
+        "version": "9353f9824ed279fcc8637939241609fc081a46ff"
     }
 }

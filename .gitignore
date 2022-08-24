@@ -1,5 +1,6 @@
 result
 .direnv
+.vscode
 doc/index.html
 
 # Result of bud commands
