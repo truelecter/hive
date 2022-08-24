@@ -14,6 +14,7 @@
       profiles.networking.tailscale
       profiles.users."andrii.panasiuk"
       profiles.users.root
+      profiles.darwin.security.yubikey
     ];
 
   networking = {

@@ -8,9 +8,7 @@
   # programs.tmux.shell = lib.mkForce "${pkgs.zsh}/bin/zsh";
 
   programs.direnv = {
-    enable = true;
     enableZshIntegration = true;
-    nix-direnv.enable = true;
   };
 
   programs.zsh = {
