@@ -8,8 +8,12 @@ src.git = "https://github.com/tfutils/tfenv"
 fetch.github = "tfutils/tfenv"
 
 [transmissionic]
-src.git = "https://github.com/6c65726f79/Transmissionic"
-fetch.github = "6c65726f79/Transmissionic"
+# src.git = "https://github.com/6c65726f79/Transmissionic"
+src.github_tag = "6c65726f79/Transmissionic"
+fetch.tarball = "https://github.com/6c65726f79/Transmissionic/releases/download/$ver/Transmissionic-webui-$ver.zip"
+# fetch.github = "6c65726f79/Transmissionic"
+# Use fixed commit, because of https://github.com/serokell/nix-npm-buildpackage/pull/34
+#src.manual = "6a08343d55b0561767cb9e91c936170c7f84bcbd"
 
 [s5cmd]
 src.git = "https://github.com/peak/s5cmd"

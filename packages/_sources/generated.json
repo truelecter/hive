@@ -69,10 +69,10 @@
             "name": null,
             "owner": "6c65726f79",
             "repo": "Transmissionic",
-            "rev": "9353f9824ed279fcc8637939241609fc081a46ff",
-            "sha256": "sha256-aZojSGle8jWEz0SZ+GC4cfvKpfVqRuqlAzPDpb2/77M=",
+            "rev": "6a08343d55b0561767cb9e91c936170c7f84bcbd",
+            "sha256": "sha256-wiRjLLRLP4TVCDaHwCubuH9vNTqjr7CbP9DKPUjvajI=",
             "type": "github"
         },
-        "version": "9353f9824ed279fcc8637939241609fc081a46ff"
+        "version": "6a08343d55b0561767cb9e91c936170c7f84bcbd"
     }
 }

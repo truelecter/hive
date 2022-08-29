@@ -4,22 +4,30 @@
   lib,
   sources,
   inputs,
+  fetchzip,
   ...
-}: let
-  buildNpmPackage = (pkgs.callPackage inputs.nix-npm-buildpackage {}).buildNpmPackage;
-in
-  buildNpmPackage {
-    pname = "transmissionic-web";
+}: stdenvNoCC.mkDerivation {
+  pname = "transmissionic-web";
+  version = "1.6.2";
 
-    inherit (sources.transmissionic) version src;
+  src = fetchzip {
+    url = "https://github.com/6c65726f79/Transmissionic/releases/download/v1.6.2/Transmissionic-webui-v1.6.2.zip";
+    sha256 = "159izwp6jc0css31m2ykm9z9c4ndg6dk0ajhcnafgswa3842wmxa";
+  };
 
-    npmBuild = "npm run build:webui";
-    postInstall = "cp -r dist/* $out";
+  dontConfigure = true;
+  dontBuild = true;
 
-    meta = with lib; {
-      description = "Transmissionic, but only WebUI";
-      homepage = "https://github.com/6c65726f79/Transmissionic";
-      license = licenses.mit;
-      platforms = pkgs.nodejs-12_x.meta.platforms;
-    };
-  }
+  installPhase = ''
+    mkdir -p $out
+    cp -r * $out
+  '';
+
+  meta = with lib; {
+    description = "Transmissionic, but only WebUI";
+    homepage = "https://github.com/6c65726f79/Transmissionic";
+    license = licenses.mit;
+  };
+}
+
+#
