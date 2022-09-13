@@ -19,6 +19,7 @@
       rpc-whitelist-enabled = true;
       rpc-whitelist = "*";
       preallocation = 1;
+      incomplete-dir-enabled = false;
     };
   };
 
