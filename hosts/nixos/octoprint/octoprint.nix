@@ -28,6 +28,8 @@
     };
   };
 
+  users.users.octoprint.extraGroups = ["gpio"];
+
   security.sudo.extraRules = [
     {
       users = ["octoprint"];

@@ -36,6 +36,6 @@
   system.stateVersion = "22.05";
 
   users.users.truelecter = {
-    extraGroups = ["video"];
+    extraGroups = ["video" "gpio"];
   };
 }

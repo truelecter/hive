@@ -9,10 +9,4 @@
     SUBSYSTEM=="gpio", KERNEL=="gpio*", ACTION=="add",RUN+="${pkgs.bash}/bin/bash -c 'chown root:gpio /sys%p/active_low /sys%p/direction /sys%p/edge /sys%p/value ; chmod 660 /sys%p/active_low /sys%p/direction /sys%p/edge /sys%p/value'"
     KERNEL=="vchiq",GROUP="video",MODE="0660"
   '';
-
-  # add user with gpio group
-  users.users = {
-    truelecter.extraGroups = ["gpio"];
-    octoprint.extraGroups = ["gpio"];
-  };
 }
