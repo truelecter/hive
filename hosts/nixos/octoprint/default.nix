@@ -13,7 +13,7 @@
     ]
     ++ [
       ./hardware-configuration.nix
-      ./octoprint.nix
+      # ./octoprint.nix
       ./wifi.nix
       ./gpio.nix
       ./camera.nix
