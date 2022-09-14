@@ -18,6 +18,7 @@ jobs:
       with:
         name: truelecter
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+        extraPullNames: nix-community mic92 nrdxp
     - name: Build system for NAS
       run: nix build '.#nixosConfigurations.nas.config.system.build.toplevel'
     - name: Build system for Klipper on RPI 4
