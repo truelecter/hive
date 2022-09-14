@@ -6,7 +6,8 @@
   inputs,
   fetchzip,
   ...
-}: stdenvNoCC.mkDerivation {
+}:
+stdenvNoCC.mkDerivation {
   pname = "transmissionic-web";
   version = "1.6.2";
 
@@ -29,5 +30,5 @@
     license = licenses.mit;
   };
 }
-
 #
+

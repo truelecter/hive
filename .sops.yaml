@@ -2,14 +2,20 @@ keys:
   - &truelecter A35AABA719FAC1A001E375F8EEF7F5B1C5AB1F74
   - &server-nas 70732b3ee3a1c10a8b6b849a959a413b28c00df9
   - &squadbook  4b2db161a7459a355a6f7b3006f1ae8861b01531
+  - &octoprint  50b24bfd5de5ee6397d7138de6f9c0f528fd86f3
 
 creation_rules:
+  - path_regex: secrets/sops/envs.yaml
+    key_groups:
+    - pgp:
+      - *truelecter
   - path_regex: secrets/sops/[^/]+\.yaml$
     key_groups:
     - pgp:
       - *truelecter
       - *server-nas
       - *squadbook
+      - *octoprint
   - path_regex: secrets/sops/ssh.*$
     key_groups:
     - pgp:

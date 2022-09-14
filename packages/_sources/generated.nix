@@ -4,6 +4,39 @@
   fetchurl,
   fetchFromGitHub,
 }: {
+  eeprom-editor = {
+    pname = "eeprom-editor";
+    version = "3.2.0";
+    src = fetchFromGitHub {
+      owner = "cp2004";
+      repo = "OctoPrint-EEPROM-Marlin";
+      rev = "3.2.0";
+      fetchSubmodules = false;
+      sha256 = "sha256-GNeDo6PIVQ+yHglHne/WJtfgYh8KF09GY9gzfr1Le5Q=";
+    };
+  };
+  libcamera = {
+    pname = "libcamera";
+    version = "e68e0f1ed2880ea26b5e317f94e2bbd5332e1598";
+    src = fetchFromGitHub {
+      owner = "raspberrypi";
+      repo = "libcamera";
+      rev = "e68e0f1ed2880ea26b5e317f94e2bbd5332e1598";
+      fetchSubmodules = false;
+      sha256 = "sha256-maeLpR3zNuSROlaGAYZMJ/Bp1GodWIchXNkjLgRrY6Y=";
+    };
+  };
+  libcamera-apps = {
+    pname = "libcamera-apps";
+    version = "6bade0b112aca37fd9762d180203e376867ff09c";
+    src = fetchFromGitHub {
+      owner = "raspberrypi";
+      repo = "libcamera-apps";
+      rev = "6bade0b112aca37fd9762d180203e376867ff09c";
+      fetchSubmodules = false;
+      sha256 = "sha256-K57+9YTZNLHi0ljabDm1r/h5nkAIvS7Gvj25e+rcpcs=";
+    };
+  };
   manix = {
     pname = "manix";
     version = "d08e7ca185445b929f097f8bfb1243a8ef3e10e4";
@@ -15,15 +48,48 @@
       sha256 = "sha256-GqPuYscLhkR5E2HnSFV4R48hCWvtM3C++3zlJhiK/aw=";
     };
   };
+  moonraker = {
+    pname = "moonraker";
+    version = "5d856b9c490e6288e63daeba1056bbc064935449";
+    src = fetchFromGitHub {
+      owner = "Arksine";
+      repo = "moonraker";
+      rev = "5d856b9c490e6288e63daeba1056bbc064935449";
+      fetchSubmodules = false;
+      sha256 = "sha256-bVJFvFVu1Av0B4+HDQlKr1V//pS57b1b9jutWCMOxSc=";
+    };
+  };
+  octoprint-display-layer-progress = {
+    pname = "octoprint-display-layer-progress";
+    version = "1.28.0";
+    src = fetchFromGitHub {
+      owner = "OllisGit";
+      repo = "OctoPrint-DisplayLayerProgress";
+      rev = "1.28.0";
+      fetchSubmodules = false;
+      sha256 = "sha256-FoQGv7a3ktodyQKOwR69/9Up+wPoW5NDq+k5LfP9WYs=";
+    };
+  };
+  rtsp-simple-server = {
+    pname = "rtsp-simple-server";
+    version = "85ce12199aa324a8399407aac41f8b2fbaad279d";
+    src = fetchFromGitHub {
+      owner = "aler9";
+      repo = "rtsp-simple-server";
+      rev = "85ce12199aa324a8399407aac41f8b2fbaad279d";
+      fetchSubmodules = false;
+      sha256 = "sha256-egmTcEhfBxUw8fOpcft0Sna7zXxAfI264yZECDpWYQE=";
+    };
+  };
   s5cmd = {
     pname = "s5cmd";
-    version = "914e701426e31a5819a422a4880bdbe03304f9df";
+    version = "d21a491f957016b4850fa88d8648e872ca7b8ee0";
     src = fetchFromGitHub {
       owner = "peak";
       repo = "s5cmd";
-      rev = "914e701426e31a5819a422a4880bdbe03304f9df";
+      rev = "d21a491f957016b4850fa88d8648e872ca7b8ee0";
       fetchSubmodules = false;
-      sha256 = "sha256-9sCOrwU+vyJ5JkZobi5Ypsch7Num59FpVr6bkmhMheM=";
+      sha256 = "sha256-p3cSW3D5+cMqGp6+6sme/vlTV8YljM64kvyRufRe7xg=";
     };
   };
   tfenv = {
@@ -35,17 +101,6 @@
       rev = "c05c364a0565b0bee63d97b763def4521d620884";
       fetchSubmodules = false;
       sha256 = "sha256-2Fpaj/UQDE7PNFX9GNr4tygvKmm/X0yWVVerJ+Y6eks=";
-    };
-  };
-  transmissionic = {
-    pname = "transmissionic";
-    version = "9353f9824ed279fcc8637939241609fc081a46ff";
-    src = fetchFromGitHub {
-      owner = "6c65726f79";
-      repo = "Transmissionic";
-      rev = "9353f9824ed279fcc8637939241609fc081a46ff";
-      fetchSubmodules = false;
-      sha256 = "sha256-aZojSGle8jWEz0SZ+GC4cfvKpfVqRuqlAzPDpb2/77M=";
     };
   };
 }

@@ -29,14 +29,20 @@
   # boot.zfs.enableUnstable = lib.mkForce true;
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
   boot.loader = {
-    systemd-boot.enable = false;
+    # systemd-boot.enable = false;
+    systemd-boot = {
+      enable = true;
+      consoleMode = "auto";
+      editor = false;
+      configurationLimit = 10;
+    };
     efi = {
       canTouchEfiVariables = true;
       efiSysMountPoint = "/boot";
     }; # efi
     grub = {
       devices = ["nodev"];
-      enable = true;
+      # enable = true;
       efiSupport = true;
       version = 2;
       useOSProber = true;

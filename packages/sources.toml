@@ -7,14 +7,37 @@ fetch.github = "mlvzk/manix"
 src.git = "https://github.com/tfutils/tfenv"
 fetch.github = "tfutils/tfenv"
 
-[transmissionic]
-# src.git = "https://github.com/6c65726f79/Transmissionic"
-src.github_tag = "6c65726f79/Transmissionic"
-fetch.tarball = "https://github.com/6c65726f79/Transmissionic/releases/download/$ver/Transmissionic-webui-$ver.zip"
-# fetch.github = "6c65726f79/Transmissionic"
-# Use fixed commit, because of https://github.com/serokell/nix-npm-buildpackage/pull/34
-#src.manual = "6a08343d55b0561767cb9e91c936170c7f84bcbd"
+#[transmissionic]
+#src.github_tag = "6c65726f79/Transmissionic"
+#fetch.tarball = "https://github.com/6c65726f79/Transmissionic/releases/download/$ver/Transmissionic-webui-$ver.zip"
 
 [s5cmd]
 src.git = "https://github.com/peak/s5cmd"
 fetch.github = "peak/s5cmd"
+
+[libcamera]
+#src.git = "https://github.com/raspberrypi/libcamera"
+fetch.github = "raspberrypi/libcamera"
+src.manual = "e68e0f1ed2880ea26b5e317f94e2bbd5332e1598"
+
+[libcamera-apps]
+#src.git = "https://github.com/raspberrypi/libcamera-apps"
+fetch.github = "raspberrypi/libcamera-apps"
+src.manual = "6bade0b112aca37fd9762d180203e376867ff09c"
+
+[rtsp-simple-server]
+#src.git = "https://github.com/aler9/rtsp-simple-server"
+fetch.github = "aler9/rtsp-simple-server"
+src.manual = "85ce12199aa324a8399407aac41f8b2fbaad279d"
+
+[octoprint-display-layer-progress]
+src.manual = "1.28.0"
+fetch.github = "OllisGit/OctoPrint-DisplayLayerProgress"
+
+[eeprom-editor]
+src.manual = "3.2.0"
+fetch.github = "cp2004/OctoPrint-EEPROM-Marlin"
+
+[moonraker]
+src.git = "https://github.com/Arksine/moonraker"
+fetch.github = "Arksine/moonraker"

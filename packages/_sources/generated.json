@@ -1,4 +1,61 @@
 {
+    "eeprom-editor": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "eeprom-editor",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "cp2004",
+            "repo": "OctoPrint-EEPROM-Marlin",
+            "rev": "3.2.0",
+            "sha256": "sha256-GNeDo6PIVQ+yHglHne/WJtfgYh8KF09GY9gzfr1Le5Q=",
+            "type": "github"
+        },
+        "version": "3.2.0"
+    },
+    "libcamera": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "libcamera",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "raspberrypi",
+            "repo": "libcamera",
+            "rev": "e68e0f1ed2880ea26b5e317f94e2bbd5332e1598",
+            "sha256": "sha256-maeLpR3zNuSROlaGAYZMJ/Bp1GodWIchXNkjLgRrY6Y=",
+            "type": "github"
+        },
+        "version": "e68e0f1ed2880ea26b5e317f94e2bbd5332e1598"
+    },
+    "libcamera-apps": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "libcamera-apps",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "raspberrypi",
+            "repo": "libcamera-apps",
+            "rev": "6bade0b112aca37fd9762d180203e376867ff09c",
+            "sha256": "sha256-K57+9YTZNLHi0ljabDm1r/h5nkAIvS7Gvj25e+rcpcs=",
+            "type": "github"
+        },
+        "version": "6bade0b112aca37fd9762d180203e376867ff09c"
+    },
     "manix": {
         "cargoLocks": null,
         "extract": null,
@@ -18,6 +75,63 @@
         },
         "version": "d08e7ca185445b929f097f8bfb1243a8ef3e10e4"
     },
+    "moonraker": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "moonraker",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "Arksine",
+            "repo": "moonraker",
+            "rev": "5d856b9c490e6288e63daeba1056bbc064935449",
+            "sha256": "sha256-bVJFvFVu1Av0B4+HDQlKr1V//pS57b1b9jutWCMOxSc=",
+            "type": "github"
+        },
+        "version": "5d856b9c490e6288e63daeba1056bbc064935449"
+    },
+    "octoprint-display-layer-progress": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "octoprint-display-layer-progress",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "OllisGit",
+            "repo": "OctoPrint-DisplayLayerProgress",
+            "rev": "1.28.0",
+            "sha256": "sha256-FoQGv7a3ktodyQKOwR69/9Up+wPoW5NDq+k5LfP9WYs=",
+            "type": "github"
+        },
+        "version": "1.28.0"
+    },
+    "rtsp-simple-server": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "rtsp-simple-server",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "aler9",
+            "repo": "rtsp-simple-server",
+            "rev": "85ce12199aa324a8399407aac41f8b2fbaad279d",
+            "sha256": "sha256-egmTcEhfBxUw8fOpcft0Sna7zXxAfI264yZECDpWYQE=",
+            "type": "github"
+        },
+        "version": "85ce12199aa324a8399407aac41f8b2fbaad279d"
+    },
     "s5cmd": {
         "cargoLocks": null,
         "extract": null,
@@ -31,11 +145,11 @@
             "name": null,
             "owner": "peak",
             "repo": "s5cmd",
-            "rev": "914e701426e31a5819a422a4880bdbe03304f9df",
-            "sha256": "sha256-9sCOrwU+vyJ5JkZobi5Ypsch7Num59FpVr6bkmhMheM=",
+            "rev": "d21a491f957016b4850fa88d8648e872ca7b8ee0",
+            "sha256": "sha256-p3cSW3D5+cMqGp6+6sme/vlTV8YljM64kvyRufRe7xg=",
             "type": "github"
         },
-        "version": "914e701426e31a5819a422a4880bdbe03304f9df"
+        "version": "d21a491f957016b4850fa88d8648e872ca7b8ee0"
     },
     "tfenv": {
         "cargoLocks": null,
@@ -55,24 +169,5 @@
             "type": "github"
         },
         "version": "c05c364a0565b0bee63d97b763def4521d620884"
-    },
-    "transmissionic": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "transmissionic",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "6c65726f79",
-            "repo": "Transmissionic",
-            "rev": "6a08343d55b0561767cb9e91c936170c7f84bcbd",
-            "sha256": "sha256-wiRjLLRLP4TVCDaHwCubuH9vNTqjr7CbP9DKPUjvajI=",
-            "type": "github"
-        },
-        "version": "6a08343d55b0561767cb9e91c936170c7f84bcbd"
     }
 }

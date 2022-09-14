@@ -38,6 +38,8 @@ in {
       zsh
       vim
       ncdu
+      file
+      gnused
     ];
 
     shellAliases = let
@@ -94,7 +96,7 @@ in {
     # Improve nix store disk usage
     gc = {
       automatic = true;
-      options = "--max-freed $((20 * 1024**3))";
+      options = "--max-freed $((20 * 1024**3)) --delete-older-than 8d";
     };
 
     # Prevents impurities in builds

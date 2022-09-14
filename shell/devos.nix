@@ -15,6 +15,7 @@
     nvfetcher-bin
     alejandra
     node2nix
+    gnupg
     ;
 
   pkgWithCategory = category: package: {inherit package category;};
@@ -45,13 +46,20 @@ in {
     unset _PATH
   '');
 
+  devshell.startup.cachix_watch = pkgs.lib.noDepEntry ''
+    echo Do not forget cachix watch-store --compression-level 6 truelecter &
+  '';
+
   commands =
     [
       (devos nixUnstable)
       (devos sops)
       (devos inputs.deploy.packages.${pkgs.system}.deploy-rs)
       (devos inputs.home.packages.${pkgs.system}.home-manager)
+      (devos inputs.nixos-generators.packages.${pkgs.system}.nixos-generators)
       (devos node2nix)
+      (devos gnupg)
+      (devos cachix)
 
       {
         category = "devos";
@@ -65,8 +73,6 @@ in {
 
       (docs mdbook)
     ]
-    ++ lib.optional (!pkgs.stdenv.buildPlatform.isi686)
-    (devos cachix)
     ++ lib.optional (pkgs.stdenv.hostPlatform.isLinux && !pkgs.stdenv.buildPlatform.isDarwin)
     (devos inputs.nixos-generators.defaultPackage.${pkgs.system});
 }

@@ -6,7 +6,6 @@
   ...
 }: {
   home.packages = with pkgs; [
-    tfenv
-    terragrunt
+    oci-cli
   ];
 }

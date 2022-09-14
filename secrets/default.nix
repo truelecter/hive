@@ -29,6 +29,11 @@ in {
         key = "tailscale";
         sopsFile = ./sops/keys.yaml;
       };
+
+      xata-password-env = {
+        key = "wireless291Env";
+        sopsFile = ./sops/keys.yaml;
+      };
     })
   ];
 }
