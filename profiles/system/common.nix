@@ -96,7 +96,7 @@ in {
     # Improve nix store disk usage
     gc = {
       automatic = true;
-      options = "--max-freed $((20 * 1024**3)) --delete-older-than 8d";
+      options = "--max-freed $((20 * 1024**3))";
     };
 
     # Prevents impurities in builds

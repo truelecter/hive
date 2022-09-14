@@ -1,0 +1,17 @@
+name: "Test"
+on:
+  pull_request:
+  push:
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: cachix/install-nix-action@v17
+    - uses: cachix/cachix-action@v10
+      with:
+        name: truelecter
+        authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+    - run: nix build '.#nixosConfigurations.nas.config.system.build.toplevel'
+    - run: nix build '.#nixosConfigurations.octoprint.config.system.build.toplevel'
+    - run: nix build '.#darwinConfigurations.squadbook.config.system.build.toplevel'
