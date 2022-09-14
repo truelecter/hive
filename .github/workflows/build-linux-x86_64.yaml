@@ -1,4 +1,4 @@
-name: "Build configurations"
+name: "Build Linux x86_64 configurations"
 on:
   pull_request:
   push:
@@ -20,8 +20,9 @@ jobs:
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
         extraPullNames: nix-community,mic92,nrdxp
     - name: Build system for NAS
-      run: nix build '.#nixosConfigurations.nas.config.system.build.toplevel'
-    - name: Build system for Klipper on RPI 4
-      run: nix build '.#nixosConfigurations.octoprint.config.system.build.toplevel'
-    - name: Build system for Mac Book
-      run: nix build '.#darwinConfigurations.squadbook.config.system.build.toplevel'
+      run: |
+        nix \
+          --log-format bar-with-logs \
+          --option keep-going true \
+          --show-trace \
+          build '.#nixosConfigurations.nas.config.system.build.toplevel'
