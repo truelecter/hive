@@ -19,8 +19,7 @@ jobs:
         name: truelecter
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
         extraPullNames: nix-community,mic92,nrdxp
-    - name: Build command (aarch64)
-      if: matrix.system == 'aarch64'
+    - name: Build
       uses: uraimo/run-on-arch-action@v2
       with:
         arch: aarch64
