@@ -6,11 +6,11 @@ env:
   CIRRUS_SHELL: "/bin/bash"
 
 task:
-  name: Build Linux aarch64
+  name: Build Linux amd64
   # Use the maximum timeout. Needed when rebuilding packages on a channel update.
   # timeout_in: 120m
 
-  arm_container:
+  container:
     # Defined in https://github.com/nix-community/docker-nixpkgs
     image: nixpkgs/nix-flakes:nixos-22.05
 
@@ -27,4 +27,4 @@ task:
   - echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
   - echo "build-users-group =" >> /etc/nix/nix.conf
   - git config --global --add safe.directory "$(pwd)"
-  - nix build '.#nixosConfigurations.octoprint.config.system.build.toplevel' | cachix push mycache
+  - nix build '.#nixosConfigurations.nas.config.system.build.toplevel' | cachix push mycache
