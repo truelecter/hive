@@ -14,7 +14,7 @@ task:
     # Defined in https://github.com/nix-community/docker-nixpkgs
     image: nixpkgs/cachix-flakes:nixos-22.05
 
-  prepare_nix:
+  prepare_nix_script:
   - echo "max-jobs = auto" >> /etc/nix/nix.conf
   - echo "trusted-users = root" >> /etc/nix/nix.conf
   - echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
