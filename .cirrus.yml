@@ -24,7 +24,7 @@ task:
   - cachix use mic92
   - cachix use nrdxp
 
-  cachix_watch_background_script: while true; do cachix watch truelecter || true; done
+  cachix_watch_background_script: while true; do cachix watch-store truelecter || true; done
 
   build_script:
   - git config --global --add safe.directory "$(pwd)"
