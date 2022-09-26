@@ -12,19 +12,20 @@ task:
 
   container:
     # Defined in https://github.com/nix-community/docker-nixpkgs
-    image: nixpkgs/nix-flakes:nixos-22.05
+    image: nixpkgs/cachix-flakes:nixos-22.05
 
-  install_cachix_script: nix-env --quiet -j8 -iA cachix -f https://cachix.org/api/v1/install
-  prepare_cachix_script:
-  - echo $CACHIX_AUTH_TOKEN | cachix authtoken --stdin
-  - cachix use nix-community
-  - cachix use mic92
-  - cachix use nrdxp
-  cachix_watch_background_script: while true; do cachix watch truelecter || true; done
-  build_script:
+  prepare_nix:
   - echo "max-jobs = auto" >> /etc/nix/nix.conf
   - echo "trusted-users = root" >> /etc/nix/nix.conf
   - echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
   - echo "build-users-group =" >> /etc/nix/nix.conf
+  - echo $CACHIX_AUTH_TOKEN | cachix authtoken --stdin
+  - cachix use nix-community
+  - cachix use mic92
+  - cachix use nrdxp
+
+  cachix_watch_background_script: while true; do cachix watch truelecter || true; done
+
+  build_script:
   - git config --global --add safe.directory "$(pwd)"
   - nix build '.#nixosConfigurations.nas.config.system.build.toplevel' | cachix push mycache
