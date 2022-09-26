@@ -11,6 +11,18 @@
     latest.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-darwin-stable.url = "github:NixOS/nixpkgs/nixpkgs-22.05-darwin";
 
+    flake-utils.url = "github:numtide/flake-utils";
+
+    devshell = {
+      url = "github:numtide/devshell";
+      inputs.nixpkgs.follows = "nixos";
+    };
+
+    flake-utils-plus = {
+      url = "github:gytis-ivaskevicius/flake-utils-plus/?ref=refs/pull/120/head";
+      inputs.flake-utils.follows = "flake-utils";
+    };
+
     digga = {
       url = "github:divnix/digga";
 
@@ -19,6 +31,8 @@
         nixlib.follows = "nixos";
         home-manager.follows = "home";
         deploy.follows = "deploy";
+        flake-utils-plus.follows = "flake-utils-plus";
+        devshell.follows = "devshell";
       };
     };
 
@@ -26,7 +40,7 @@
       url = "github:divnix/bud";
       inputs = {
         nixpkgs.follows = "nixos";
-        devshell.follows = "digga/devshell";
+        devshell.follows = "devshell";
       };
     };
 
@@ -55,7 +69,10 @@
 
     nvfetcher = {
       url = "github:berberman/nvfetcher";
-      inputs.nixpkgs.follows = "nixos";
+      inputs = {
+        nixpkgs.follows = "nixos";
+        flake-utils.follows = "flake-utils";
+      };
     };
 
     naersk = {
@@ -73,9 +90,25 @@
       inputs.nixpkgs.follows = "nixos";
     };
 
+    mach-nix = {
+      url = "github:DavHau/mach-nix";
+      inputs = {
+        nixpkgs.follows = "nixos";
+        flake-utils.follows = "flake-utils";
+        pypi-deps-db.follows = "pypi-deps-db";
+      };
+    };
+
     nix-npm-buildpackage = {
       url = "github:serokell/nix-npm-buildpackage";
       inputs.nixpkgs.follows = "nixos";
+    };
+    #endregion
+
+    #region Not flakes
+    pypi-deps-db = {
+      flake = false;
+      url = "github:DavHau/pypi-deps-db";
     };
     #endregion
 
@@ -101,6 +134,7 @@
     nixpkgs,
     nixos-generators,
     latest,
+    mach-nix,
     ...
   } @ inputs:
     digga.lib.mkFlake
@@ -121,7 +155,7 @@
         latest = {};
       };
 
-      lib = import ./lib {lib = digga.lib // nixos.lib;};
+      lib = import ./lib {lib = digga.lib // nixos.lib // mach-nix.lib;};
 
       sharedOverlays = [
         (final: prev: {

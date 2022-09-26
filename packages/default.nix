@@ -7,4 +7,5 @@ final: prev: rec {
   libcamera-apps = final.callPackage ./libcamera-apps.nix {};
   rtsp-simple-server = final.callPackage ./rtsp-simple-server.nix {};
   moonraker = final.callPackage ./moonraker.nix {};
+  klipper-screen = final.callPackage ./klipper-screen.nix {};
 }

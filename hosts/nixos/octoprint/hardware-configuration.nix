@@ -22,7 +22,7 @@
     };
     consoleLogLevel = 8;
     initrd.availableKernelModules = ["usbhid" "usb_storage"];
-    kernelParams = ["console=ttyS0,115200n8" "console=tty1" "dtdebug=1"];
+    kernelParams = ["console=ttyS0,115200n8" "console=tty1" "dtdebug=1" "video=DSI-1:800x480@60,rotate=180"];
     kernelPatches = [
       {
         name = "rpi-diff";
@@ -89,7 +89,7 @@
   };
 
   hardware.raspberry-pi."4" = {
-    fkms-3d.enable = false;
+    fkms-3d.enable = true;
   };
 
   hardware.enableRedistributableFirmware = true;

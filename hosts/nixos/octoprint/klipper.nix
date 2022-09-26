@@ -34,7 +34,6 @@ in {
         config_path = moonrakerCfg.configDir;
       };
     };
-
   };
 
   systemd.services.moonraker = {
@@ -46,8 +45,15 @@ in {
   };
 
   users.users = {
-    moonraker.extraGroups = ["gpio" "video" "dma-heap" "klipper"];
+    klipper = {
+      isSystemUser = true;
+      group = "klipper";
+      extraGroups = ["dialout"];
+    };
+    moonraker.extraGroups = ["gpio" "video" "dma-heap" "klipper" "dialout"];
   };
+
+  users.groups.klipper = {};
 
   systemd.services.klipper = {
     serviceConfig = {
@@ -61,21 +67,33 @@ in {
   services.klipper = {
     enable = true;
 
-    settings = lib.recursiveUpdate (builtins.fromTOML (builtins.readFile ./klipper/klipper.toml)) {
-      virtual_sdcard = {
-        path = gcodePath;
+    # TODO make function to have list of files to combine
+    settings =
+      lib.recursiveUpdate
+      (
+        lib.recursiveUpdate
+        (builtins.fromTOML (builtins.readFile ./klipper/klipper-btt-skr3.toml))
+        (
+          lib.recursiveUpdate
+          (builtins.fromTOML (builtins.readFile ./klipper/klipper-fluidd.toml))
+          (builtins.fromTOML (builtins.readFile ./klipper/macro.toml))
+        )
+      )
+      {
+        virtual_sdcard = {
+          path = gcodePath;
+        };
       };
-    };
 
     firmwares.mcu = {
       enable = true;
-      configFile = ./klipper/firmware-config;
+      configFile = ./klipper/firmware-config-skr-3-uart;
     };
   };
 
   services.fluidd = {
     enable = true;
-    nginx.locations."/webcam".proxyPass = "https://octoprint.saga-monitor.ts.net:8888/cam/index.m3u8";
+    # nginx.locations."/webcam".proxyPass = "https://octoprint.saga-monitor.ts.net:8888/cam/index.m3u8";
   };
 
   services.nginx.clientMaxBodySize = "1000m";

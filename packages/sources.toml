@@ -41,3 +41,15 @@ fetch.github = "cp2004/OctoPrint-EEPROM-Marlin"
 [moonraker]
 src.git = "https://github.com/Arksine/moonraker"
 fetch.github = "Arksine/moonraker"
+
+[klipper]
+src.git = "https://github.com/Klipper3d/klipper"
+fetch.github = "Klipper3d/klipper"
+
+[klipper-screen]
+src.git = "https://github.com/jordanruthe/KlipperScreen"
+fetch.github = "jordanruthe/KlipperScreen"
+
+[mainsail]
+src.git = "https://github.com/mainsail-crew/mainsail"
+fetch.github = "mainsail-crew/mainsail"

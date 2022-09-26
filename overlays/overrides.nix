@@ -21,7 +21,6 @@ channels: final: prev: {
     k9s
     rnix-lsp
     ffmpeg_5
-    klipper
     klipper-flash
     klipper-firmware
     klipper-genconf

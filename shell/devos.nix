@@ -16,6 +16,7 @@
     alejandra
     node2nix
     gnupg
+    nix-index
     ;
 
   pkgWithCategory = category: package: {inherit package category;};
@@ -60,6 +61,7 @@ in {
       (devos node2nix)
       (devos gnupg)
       (devos cachix)
+      (devos nix-index)
 
       {
         category = "devos";

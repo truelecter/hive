@@ -18,6 +18,44 @@
         },
         "version": "3.2.0"
     },
+    "klipper": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "klipper",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "Klipper3d",
+            "repo": "klipper",
+            "rev": "51da02b7f8b4a691154b9c5c8f982d35beac9883",
+            "sha256": "sha256-n8da29LN5/fsUOD1KpbQUItwpAEPEN+IJzDolgrXB5s=",
+            "type": "github"
+        },
+        "version": "51da02b7f8b4a691154b9c5c8f982d35beac9883"
+    },
+    "klipper-screen": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "klipper-screen",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "jordanruthe",
+            "repo": "KlipperScreen",
+            "rev": "35571fce8acd70badf8deea9445060b2da4d4f4d",
+            "sha256": "sha256-QyQDOMpFDywRMUmGzHui8RZNrsMbVbOY0NTxqIrQ0I0=",
+            "type": "github"
+        },
+        "version": "35571fce8acd70badf8deea9445060b2da4d4f4d"
+    },
     "libcamera": {
         "cargoLocks": null,
         "extract": null,
@@ -56,6 +94,25 @@
         },
         "version": "6bade0b112aca37fd9762d180203e376867ff09c"
     },
+    "mainsail": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "mainsail",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "mainsail-crew",
+            "repo": "mainsail",
+            "rev": "6a40e6047d980d59bb1497057b0ab0acf8bc1527",
+            "sha256": "sha256-wcJRKaRwqnRJ6Hw0zeGHtFZN8EIK3peH670Xu8LQ6YM=",
+            "type": "github"
+        },
+        "version": "6a40e6047d980d59bb1497057b0ab0acf8bc1527"
+    },
     "manix": {
         "cargoLocks": null,
         "extract": null,
@@ -88,11 +145,11 @@
             "name": null,
             "owner": "Arksine",
             "repo": "moonraker",
-            "rev": "5d856b9c490e6288e63daeba1056bbc064935449",
-            "sha256": "sha256-bVJFvFVu1Av0B4+HDQlKr1V//pS57b1b9jutWCMOxSc=",
+            "rev": "df24e3ea7764e23148fb2f90033dc6d626071a11",
+            "sha256": "sha256-RzJQUyWSH6P3kkkgnYehHx+QLzxUn8dNQpyJCXGqwI4=",
             "type": "github"
         },
-        "version": "5d856b9c490e6288e63daeba1056bbc064935449"
+        "version": "df24e3ea7764e23148fb2f90033dc6d626071a11"
     },
     "octoprint-display-layer-progress": {
         "cargoLocks": null,
@@ -145,11 +202,11 @@
             "name": null,
             "owner": "peak",
             "repo": "s5cmd",
-            "rev": "d21a491f957016b4850fa88d8648e872ca7b8ee0",
-            "sha256": "sha256-p3cSW3D5+cMqGp6+6sme/vlTV8YljM64kvyRufRe7xg=",
+            "rev": "83ce8bc6a1016bcea46da48e9090f8e761478149",
+            "sha256": "sha256-8WoIUTRd2Ooot70hsAYVz9bEKKkK9Hs279RL+8D2Qfk=",
             "type": "github"
         },
-        "version": "d21a491f957016b4850fa88d8648e872ca7b8ee0"
+        "version": "83ce8bc6a1016bcea46da48e9090f8e761478149"
     },
     "tfenv": {
         "cargoLocks": null,

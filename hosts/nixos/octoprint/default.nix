@@ -18,6 +18,7 @@
       ./gpio.nix
       ./camera.nix
       ./klipper.nix
+      ./klipper-screen.nix
     ];
 
   disabledModules = ["services/misc/klipper.nix"];

@@ -15,6 +15,28 @@
       sha256 = "sha256-GNeDo6PIVQ+yHglHne/WJtfgYh8KF09GY9gzfr1Le5Q=";
     };
   };
+  klipper = {
+    pname = "klipper";
+    version = "51da02b7f8b4a691154b9c5c8f982d35beac9883";
+    src = fetchFromGitHub {
+      owner = "Klipper3d";
+      repo = "klipper";
+      rev = "51da02b7f8b4a691154b9c5c8f982d35beac9883";
+      fetchSubmodules = false;
+      sha256 = "sha256-n8da29LN5/fsUOD1KpbQUItwpAEPEN+IJzDolgrXB5s=";
+    };
+  };
+  klipper-screen = {
+    pname = "klipper-screen";
+    version = "35571fce8acd70badf8deea9445060b2da4d4f4d";
+    src = fetchFromGitHub {
+      owner = "jordanruthe";
+      repo = "KlipperScreen";
+      rev = "35571fce8acd70badf8deea9445060b2da4d4f4d";
+      fetchSubmodules = false;
+      sha256 = "sha256-QyQDOMpFDywRMUmGzHui8RZNrsMbVbOY0NTxqIrQ0I0=";
+    };
+  };
   libcamera = {
     pname = "libcamera";
     version = "e68e0f1ed2880ea26b5e317f94e2bbd5332e1598";
@@ -37,6 +59,17 @@
       sha256 = "sha256-K57+9YTZNLHi0ljabDm1r/h5nkAIvS7Gvj25e+rcpcs=";
     };
   };
+  mainsail = {
+    pname = "mainsail";
+    version = "6a40e6047d980d59bb1497057b0ab0acf8bc1527";
+    src = fetchFromGitHub {
+      owner = "mainsail-crew";
+      repo = "mainsail";
+      rev = "6a40e6047d980d59bb1497057b0ab0acf8bc1527";
+      fetchSubmodules = false;
+      sha256 = "sha256-wcJRKaRwqnRJ6Hw0zeGHtFZN8EIK3peH670Xu8LQ6YM=";
+    };
+  };
   manix = {
     pname = "manix";
     version = "d08e7ca185445b929f097f8bfb1243a8ef3e10e4";
@@ -50,13 +83,13 @@
   };
   moonraker = {
     pname = "moonraker";
-    version = "5d856b9c490e6288e63daeba1056bbc064935449";
+    version = "df24e3ea7764e23148fb2f90033dc6d626071a11";
     src = fetchFromGitHub {
       owner = "Arksine";
       repo = "moonraker";
-      rev = "5d856b9c490e6288e63daeba1056bbc064935449";
+      rev = "df24e3ea7764e23148fb2f90033dc6d626071a11";
       fetchSubmodules = false;
-      sha256 = "sha256-bVJFvFVu1Av0B4+HDQlKr1V//pS57b1b9jutWCMOxSc=";
+      sha256 = "sha256-RzJQUyWSH6P3kkkgnYehHx+QLzxUn8dNQpyJCXGqwI4=";
     };
   };
   octoprint-display-layer-progress = {
@@ -83,13 +116,13 @@
   };
   s5cmd = {
     pname = "s5cmd";
-    version = "d21a491f957016b4850fa88d8648e872ca7b8ee0";
+    version = "83ce8bc6a1016bcea46da48e9090f8e761478149";
     src = fetchFromGitHub {
       owner = "peak";
       repo = "s5cmd";
-      rev = "d21a491f957016b4850fa88d8648e872ca7b8ee0";
+      rev = "83ce8bc6a1016bcea46da48e9090f8e761478149";
       fetchSubmodules = false;
-      sha256 = "sha256-p3cSW3D5+cMqGp6+6sme/vlTV8YljM64kvyRufRe7xg=";
+      sha256 = "sha256-8WoIUTRd2Ooot70hsAYVz9bEKKkK9Hs279RL+8D2Qfk=";
     };
   };
   tfenv = {
