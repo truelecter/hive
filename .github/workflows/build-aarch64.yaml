@@ -51,7 +51,7 @@ jobs:
 
           nix-env --quiet -j8 -iA cachix -f https://cachix.org/api/v1/install
           cachix use nix-community
-          cachix use mic92,nrdxp
+          cachix use mic92
           cachix use nrdxp
 
           echo "::group::Build"
