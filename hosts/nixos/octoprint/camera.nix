@@ -47,7 +47,7 @@ in {
       "${ov5647}/ov5647.dtb"
       "${disable-bt}/disable-bt.dtb"
       "${uart0}/uart0.dtb"
-      # "${rpi-ft5406}/rpi-ft5406.dtb"
+      "${rpi-ft5406}/rpi-ft5406.dtb"
     ];
   };
 
