@@ -1,0 +1,45 @@
+
+env:
+  CACHIX_SIGNING_KEY: ENCRYPTED[!cec502ed813cbcd0237697d2031f750186ff20eed5815b1ad950ad2f2d701702ae6ba2f0cb4cb1985687a696c8ee492c!]
+  # Save some traffic by excluding the full git history
+  CIRRUS_CLONE_DEPTH: "1"
+
+task:
+  name: Build Linux aarch64
+  # Use the maximum timeout. Needed when rebuilding packages on a channel update.
+  # timeout_in: 120m
+
+  arm_container:
+    # Defined in https://github.com/nix-community/docker-nixpkgs
+    image: nixpkgs/nix-flakes:nixos-22.05
+
+  install_cachix_script: nix-env --quiet -j8 -iA cachix -f https://cachix.org/api/v1/install
+  cachix_watch_background_script: while true; do cachix watch truelecter || true; done
+
+  matrix:
+  - name: modules_test
+    container:
+      # Besides virtualization, this also enables privileged containers which are required for
+      # sandboxed builds
+      kvm: true
+      # Needed for package builds
+      memory: 8G
+      # A maximum of 16 CPUs is shared among all concurrent tasks.
+      # https://cirrus-ci.org/faq/#are-there-any-limits
+      cpu: 4
+    environment:
+      matrix:
+        - scenario: default
+        - scenario: netns
+        - scenario: netnsRegtest
+    # This script is run as root
+    build_script:
+      - echo "max-jobs = auto" >> /etc/nix/nix.conf
+      - echo "trusted-users = root" >> /etc/nix/nix.conf
+      - echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf
+      - echo "build-users-group =" >> /etc/nix/nix.conf
+      - nix shell --inputs-from . nixpkgs#{bash,coreutils,gawk,cachix} -c ./test/ci/build.sh
+
+  - name: flake
+    build_script:
+      - nix flake check
