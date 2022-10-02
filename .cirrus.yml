@@ -5,6 +5,7 @@ env:
   CIRRUS_CLONE_DEPTH: "1"
   CIRRUS_SHELL: "/bin/bash"
   INPUT_EXTRA_NIX_CONFIG: "experimental-features"
+  USER: "root"
 
 task:
   name: Build Linux amd64
