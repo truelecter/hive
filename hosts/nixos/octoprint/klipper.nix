@@ -72,7 +72,7 @@ in {
       lib.recursiveUpdate
       (
         lib.recursiveUpdate
-        (builtins.fromTOML (builtins.readFile ./klipper/klipper-btt-skr3.toml))
+        (builtins.fromTOML (builtins.readFile ./klipper/klipper-creality-4.2.2.toml))
         (
           lib.recursiveUpdate
           (builtins.fromTOML (builtins.readFile ./klipper/klipper-fluidd.toml))

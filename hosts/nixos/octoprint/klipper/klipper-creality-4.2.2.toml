@@ -38,9 +38,16 @@ samples = 3
 sensor_pin = "^PB1"
 control_pin = "PB0"
 speed = 150.0
-z_offset = 1.400
-x_offset = 34
-y_offset = -57
+
+# Ductinator
+# x_offset = 34
+# y_offset = -57
+# z_offset = 1.400
+
+# Briss Fang 5.0
+x_offset = -50
+y_offset = -34
+z_offset = 3.194
 
 [bed_mesh]
 speed = 150
@@ -61,7 +68,7 @@ gear_ratio = "50:17"
 
 # old_rd * actual / requested
 
-rotation_distance = 21.664
+rotation_distance = 21.955
 nozzle_diameter = 0.4
 filament_diameter = 1.75
 heater_pin = "PA1"
@@ -72,7 +79,7 @@ pid_Kp = 21.527
 pid_Ki = 1.063
 pid_Kd = 108.982
 min_temp = 0
-max_temp = 250
+max_temp = 255
 
 # Monofilament coPET METALIC
 pressure_advance = 0.2105
@@ -92,6 +99,9 @@ max_temp = 130
 
 [fan]
 pin = "PA0"
+#hardware_pwm = true
+#cycle_time = 0.01
+#kick_start_time = 1.000
 
 [mcu]
 serial = "/dev/serial/by-id/usb-1a86_USB_Serial-if00-port0"
