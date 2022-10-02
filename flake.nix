@@ -32,6 +32,10 @@
       };
     };
 
+    nur = {
+      url = "github:nix-community/NUR";
+    };
+
     bud = {
       url = "github:divnix/bud";
       inputs = {
