@@ -41,4 +41,4 @@ task:
 
   build_script:
   - git config --global --add safe.directory "$(pwd)"
-  - nix build '.#nixosConfigurations.nas.config.system.build.toplevel' | cachix push mycache
+  - nix build '.#nixosConfigurations.nas.config.system.build.toplevel' | cachix push truelecter
