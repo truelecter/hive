@@ -4,7 +4,7 @@ env:
   # Save some traffic by excluding the full git history
   CIRRUS_CLONE_DEPTH: "1"
   CIRRUS_SHELL: "/bin/bash"
-  INPUT_EXTRA_NIX_CONFIG: "experimental-features"
+  INPUT_EXTRA_NIX_CONFIG: ""
   INPUT_INSTALL_OPTIONS: ""
   INPUT_INSTALL_URL: ""
   INPUT_NIX_PATH: ""
@@ -23,7 +23,7 @@ task:
 
   prepare_env_script:
   - apt update
-  - apt -y install sudo curl
+  - apt -y install sudo curl xz-utils
   install_nix_script: ./.ci/install-nix.sh
   install_cachix:
   - nix-env -iA cachix -f https://cachix.org/api/v1/install
