@@ -47,9 +47,9 @@ else
   # "fix" the following error when running nix*
   # error: the group 'nixbld' specified in 'build-users-group' does not exist
   add_config "build-users-group ="
-  mkdir -p /etc/nix
-  chmod 0755 /etc/nix
-  cp $workdir/nix.conf /etc/nix/nix.conf
+  sudo mkdir -p /etc/nix
+  sudo chmod 0755 /etc/nix
+  sudo cp $workdir/nix.conf /etc/nix/nix.conf
 fi
 
 if [[ $INPUT_INSTALL_OPTIONS != "" ]]; then
