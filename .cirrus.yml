@@ -4,7 +4,7 @@ env:
   # Save some traffic by excluding the full git history
   CIRRUS_CLONE_DEPTH: "1"
   CIRRUS_SHELL: "/bin/bash"
-  INPUT_EXTRA_NIX_CONFIG: "sandbox=false"
+  INPUT_EXTRA_NIX_CONFIG: "sandbox = false"
   INPUT_INSTALL_OPTIONS: ""
   INPUT_INSTALL_URL: ""
   INPUT_NIX_PATH: ""
