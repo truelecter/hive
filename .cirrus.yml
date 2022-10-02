@@ -5,7 +5,7 @@ env:
   CIRRUS_CLONE_DEPTH: "1"
   CIRRUS_SHELL: "/bin/bash"
   INPUT_EXTRA_NIX_CONFIG: ""
-  INPUT_INSTALL_OPTIONS: ""
+  INPUT_INSTALL_OPTIONS: "sandbox=false\nexperimental-features = nix-command flakes"
   INPUT_INSTALL_URL: ""
   INPUT_NIX_PATH: ""
   USER: "root"
