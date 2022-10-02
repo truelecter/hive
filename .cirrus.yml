@@ -9,6 +9,7 @@ env:
   INPUT_INSTALL_URL: ""
   INPUT_NIX_PATH: ""
   USER: "root"
+  HOME: "/root"
   PATH: "/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/per-user/$USER/profile/bin:$PATH"
 
 task:
