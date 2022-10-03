@@ -115,7 +115,7 @@ max_z_velocity = 5
 max_z_accel = 100
 
 [safe_z_home]
-home_xy_position = "100, 117.5"
+home_xy_position = "20, 20"
 speed = 50
 z_hop = 10
 z_hop_speed = 5
