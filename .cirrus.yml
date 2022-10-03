@@ -20,6 +20,8 @@ linux_amd64_task:
     # Defined in https://github.com/nix-community/docker-nixpkgs
     # image: nixpkgs/cachix-flakes:nixos-22.05
     image: ubuntu:20.04
+    cpu: 4
+    memory: 8G
 
   prepare_container_env_script:
   - apt update
@@ -41,7 +43,7 @@ linux_amd64_task:
 
   build_script:
   - git config --global --add safe.directory "$(pwd)"
-  - nix build '.#nixosConfigurations.nas.config.system.build.toplevel' | cachix push truelecter
+  - nix build '.#nixosConfigurations.nas.config.system.build.toplevel'
 
 linux_aarch64_task:
   name: Build Linux aarch64
@@ -52,6 +54,8 @@ linux_aarch64_task:
     # Defined in https://github.com/nix-community/docker-nixpkgs
     # image: nixpkgs/cachix-flakes:nixos-22.05
     image: ubuntu:20.04
+    cpu: 4
+    memory: 8G
 
   prepare_container_env_script:
   - apt update
@@ -75,4 +79,4 @@ linux_aarch64_task:
 
   build_script:
   - git config --global --add safe.directory "$(pwd)"
-  - nix build '.#nixosConfigurations.octoprint.config.system.build.toplevel' | cachix push truelecter
+  - nix build '.#nixosConfigurations.octoprint.config.system.build.toplevel'
