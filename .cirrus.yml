@@ -43,7 +43,7 @@ linux_amd64_task:
 
   build_script:
   - git config --global --add safe.directory "$(pwd)"
-  - nix build '.#nixosConfigurations.nas.config.system.build.toplevel'
+  - nix build -j1 '.#nixosConfigurations.nas.config.system.build.toplevel'
 
 linux_aarch64_task:
   name: Build Linux aarch64
@@ -79,4 +79,4 @@ linux_aarch64_task:
 
   build_script:
   - git config --global --add safe.directory "$(pwd)"
-  - nix build '.#nixosConfigurations.octoprint.config.system.build.toplevel'
+  - nix build -j1 '.#nixosConfigurations.octoprint.config.system.build.toplevel'
