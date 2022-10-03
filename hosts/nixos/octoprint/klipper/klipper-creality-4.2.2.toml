@@ -82,7 +82,8 @@ min_temp = 0
 max_temp = 255
 
 # Monofilament coPET METALIC
-pressure_advance = 0.2105
+#pressure_advance = 0.2105
+pressure_advance = 0.325
 # Monofilament PLA CHERRY RED
 # pressure_advance = 0.2065
 
