@@ -13,8 +13,7 @@ env:
 
 linux_amd64_task:
   name: Build Linux amd64
-  # Use the maximum timeout. Needed when rebuilding packages on a channel update.
-  # timeout_in: 120m
+  timeout_in: 120m
 
   container:
     # Defined in https://github.com/nix-community/docker-nixpkgs
@@ -48,7 +47,7 @@ linux_amd64_task:
 linux_aarch64_task:
   name: Build Linux aarch64
   # Use the maximum timeout. Needed when rebuilding packages on a channel update.
-  # timeout_in: 120m
+  timeout_in: 120m
 
   arm_container:
     # Defined in https://github.com/nix-community/docker-nixpkgs
@@ -79,4 +78,4 @@ linux_aarch64_task:
 
   build_script:
   - git config --global --add safe.directory "$(pwd)"
-  - nix build -j1 '.#nixosConfigurations.octoprint.config.system.build.toplevel'
+  - nix build -j4 '.#nixosConfigurations.octoprint.config.system.build.toplevel'
