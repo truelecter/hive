@@ -9,6 +9,7 @@ env:
   INPUT_INSTALL_URL: ""
   INPUT_NIX_PATH: ""
   USER: "root"
+  HOME: "/$USER"
   PATH: "/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/per-user/$USER/profile/bin:$PATH"
 
 linux_amd64_task:
@@ -78,4 +79,4 @@ linux_aarch64_task:
 
   build_script:
   - git config --global --add safe.directory "$(pwd)"
-  - nix build -j4 '.#nixosConfigurations.octoprint.config.system.build.toplevel'
+  - nix build -j2 '.#nixosConfigurations.octoprint.config.system.build.toplevel'
