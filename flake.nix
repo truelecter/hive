@@ -196,6 +196,7 @@
             home.nixosModules.home-manager
             sops-nix.nixosModules.sops
             bud.nixosModules.bud
+            # "${latest}/nixos/modules/services/misc/jellyfin.nix"
           ];
         };
 

@@ -24,6 +24,8 @@ in {
     enable = true;
     address = "0.0.0.0";
     allowSystemControl = true;
+    user = klipperCfg.user;
+    group = klipperCfg.group;
 
     settings = lib.recursiveUpdate (builtins.fromTOML (builtins.readFile ./klipper/moonraker.toml)) {
       database = {
@@ -38,60 +40,52 @@ in {
 
   systemd.services.moonraker = {
     serviceConfig = {
-      SupplementaryGroups = "gpio video dma-heap klipper";
+      SupplementaryGroups = config.users.users.klipper.extraGroups;
       Environment = "PYTHONPATH=${pkgs.python39Packages.libgpiod}";
       BindReadOnlyPaths = "${pkgs.python39Packages.libgpiod}/lib/python3.9:/usr/lib/python3.9:norbind";
     };
   };
 
-  users.users = {
-    klipper = {
+  users = {
+    groups.klipper = {};
+    users.klipper = {
       isSystemUser = true;
       group = "klipper";
-      extraGroups = ["dialout"];
-    };
-    moonraker.extraGroups = ["gpio" "video" "dma-heap" "klipper" "dialout"];
-  };
-
-  users.groups.klipper = {};
-
-  systemd.services.klipper = {
-    serviceConfig = {
-      ExecStartPost = [
-        "${pkgs.coreutils}/bin/sleep 5"
-        "+${pkgs.coreutils}/bin/chmod 775 ${klipperCfg.apiSocket}"
-      ];
+      extraGroups = ["dialout gpio video dma-heap klipper"];
     };
   };
+
+  environment.etc = builtins.listToAttrs (
+    builtins.map (
+      path: {
+        name = "klipper.d/${builtins.baseNameOf path}";
+        value = {
+          user = klipperCfg.user;
+          group = klipperCfg.group;
+          source = path;
+        };
+      }
+    )
+    (lib.filesystem.listFilesRecursive ./klipper/config.d)
+  );
 
   services.klipper = {
     enable = true;
 
-    # TODO make function to have list of files to combine
-    settings =
-      lib.recursiveUpdate
-      (
-        lib.recursiveUpdate
-        (builtins.fromTOML (builtins.readFile ./klipper/klipper-creality-4.2.2.toml))
-        (
-          lib.recursiveUpdate
-          (builtins.fromTOML (builtins.readFile ./klipper/klipper-fluidd.toml))
-          (builtins.fromTOML (builtins.readFile ./klipper/macro.toml))
-        )
-      )
-      {
-        virtual_sdcard = {
-          path = gcodePath;
-        };
-      };
+    user = "klipper";
+    group = "klipper";
 
-    firmwares.mcu = {
-      enable = true;
-      configFile = ./klipper/firmware-config-skr-3-uart;
+    # TODO make function to have list of files to combine
+    settings ={
+      "include /etc/klipper.d/*.cfg" = {};
+      virtual_sdcard = {
+        path = gcodePath;
+      };
     };
   };
 
-  services.fluidd = {
+
+  services.mainsail = {
     enable = true;
     # nginx.locations."/webcam".proxyPass = "https://octoprint.saga-monitor.ts.net:8888/cam/index.m3u8";
   };

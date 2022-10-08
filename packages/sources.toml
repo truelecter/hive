@@ -50,6 +50,10 @@ fetch.github = "Klipper3d/klipper"
 src.git = "https://github.com/jordanruthe/KlipperScreen"
 fetch.github = "jordanruthe/KlipperScreen"
 
+[transmissionic]
+src.github = "6c65726f79/Transmissionic"
+fetch.url = "https://github.com/6c65726f79/Transmissionic/releases/download/$ver/Transmissionic-webui-$ver.zip"
+
 [mainsail]
-src.git = "https://github.com/mainsail-crew/mainsail"
-fetch.github = "mainsail-crew/mainsail"
+src.github = "mainsail-crew/mainsail"
+fetch.url = "https://github.com/mainsail-crew/mainsail/releases/download/$ver/mainsail.zip"

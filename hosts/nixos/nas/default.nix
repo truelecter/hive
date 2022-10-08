@@ -19,6 +19,7 @@
       ./media-server.nix
       ./torrent.nix
       ./samba.nix
+      ./video-card.nix
       # ./video.nix
     ];
 
@@ -28,13 +29,14 @@
   systemd.services.NetworkManager-wait-online.enable = false;
   # boot.zfs.enableUnstable = lib.mkForce true;
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
+  powerManagement.cpuFreqGovernor = "performance";
   boot.loader = {
     # systemd-boot.enable = false;
     systemd-boot = {
-      enable = true;
+      enable = false;
       consoleMode = "auto";
       editor = false;
-      configurationLimit = 10;
+      configurationLimit = 1;
     };
     efi = {
       canTouchEfiVariables = true;
@@ -42,10 +44,10 @@
     }; # efi
     grub = {
       devices = ["nodev"];
-      # enable = true;
+      enable = true;
       efiSupport = true;
       version = 2;
-      useOSProber = true;
+      useOSProber = false;
     }; # grub
   }; # bootloader
   #endregion

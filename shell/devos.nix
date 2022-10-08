@@ -12,7 +12,7 @@
     editorconfig-checker
     mdbook
     nixUnstable
-    nvfetcher-bin
+    nvfetcher
     alejandra
     node2nix
     gnupg
@@ -65,9 +65,9 @@ in {
 
       {
         category = "devos";
-        name = nvfetcher-bin.pname;
-        help = nvfetcher-bin.meta.description;
-        command = "cd $PRJ_ROOT/packages; ${nvfetcher-bin}/bin/nvfetcher -c ./sources.toml $@";
+        name = nvfetcher.pname;
+        help = nvfetcher.meta.description;
+        command = "cd $PRJ_ROOT/packages; export TMPDIR=\"$(mktemp -d 2>/dev/null || mktemp -d -t 'mytmpdir')\"; ${nvfetcher}/bin/nvfetcher -c ./sources.toml $@";
       }
 
       (linter editorconfig-checker)
