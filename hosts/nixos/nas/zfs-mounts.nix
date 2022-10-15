@@ -10,6 +10,7 @@
 
   # Fix permissions
   systemd.tmpfiles.rules = [
+    "d /tmp/cache 777 root root"
     "d /mnt/db 775 share share"
     "d /mnt/pv 775 share share"
     "d /mnt/public/media 775 share share"
@@ -17,6 +18,11 @@
   ];
 
   fileSystems = {
+    "/tmp/cache" = {
+      device = "/dev/disk/by-label/cache";
+      fsType = "ext4";
+    };
+
     "/mnt/db" = {
       device = "tank/db";
       fsType = "zfs";
