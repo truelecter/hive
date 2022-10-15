@@ -7,6 +7,28 @@
   gcodePath = "/var/lib/gcode";
   klipperCfg = config.services.klipper;
   moonrakerCfg = config.services.moonraker;
+
+  rpiFirmware =
+    (pkgs.klipper-firmware.override {
+      mcu = "rpi";
+      firmwareConfig = ./klipper/firmware-config-rpi-4;
+    })
+    .overrideAttrs (o: rec {
+      patches = [
+        ./klipper/rpi-fw.patch
+      ];
+
+      preBuild = ''
+        NIX_CFLAGS_COMPILE="-DNIXOS_GPIO_H_INCLUDE_PATH=\"${pkgs.linuxHeaders}/include/linux/gpio.h\" $NIX_CFLAGS_COMPILE"
+        NIX_CFLAGS_COMPILE="-DNIXOS_SCHED_H_INCLUDE_PATH=\"${pkgs.linuxHeaders}/include/linux/sched.h\" $NIX_CFLAGS_COMPILE"
+        NIX_CFLAGS_COMPILE="-DNIXOS_SCHED_TYPES_H_INCLUDE_PATH=\"${pkgs.linuxHeaders}/include/linux/sched/types.h\" $NIX_CFLAGS_COMPILE"
+      '';
+
+      installPhase = ''
+        mkdir -p $out
+        cp -r out/klipper.elf $out
+      '';
+    });
 in {
   boot.kernelModules = ["gpiod"];
 
@@ -76,7 +98,7 @@ in {
     group = "klipper";
 
     # TODO make function to have list of files to combine
-    settings ={
+    settings = {
       "include /etc/klipper.d/*.cfg" = {};
       virtual_sdcard = {
         path = gcodePath;
@@ -84,11 +106,17 @@ in {
     };
   };
 
-
-  services.mainsail = {
+  tl.services.mainsail = {
     enable = true;
-    # nginx.locations."/webcam".proxyPass = "https://octoprint.saga-monitor.ts.net:8888/cam/index.m3u8";
+    nginx.locations."/webcam".proxyPass = "https://octoprint.saga-monitor.ts.net:8888/cam/index.m3u8";
   };
+
+  tl.services.klipper-mcu = {
+    firmware-package = rpiFirmware;
+    enable = true;
+  };
+
+  systemd.services.klipper-mcu.serviceConfig.SupplementaryGroups = ["spi" "gpio"];
 
   services.nginx.clientMaxBodySize = "1000m";
 }

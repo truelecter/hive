@@ -79,4 +79,4 @@ linux_aarch64_task:
 
   build_script:
   - git config --global --add safe.directory "$(pwd)"
-  - nix build -j2 '.#nixosConfigurations.octoprint.config.system.build.toplevel'
+  - until nix build '.#nixosConfigurations.octoprint.config.system.build.toplevel'; do echo retrying...; done

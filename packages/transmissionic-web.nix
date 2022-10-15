@@ -11,7 +11,7 @@ stdenvNoCC.mkDerivation rec {
   pname = "transmissionic-web";
   inherit (sources.transmissionic) version src;
 
-  nativeBuildInputs = [ unzip ];
+  nativeBuildInputs = [unzip];
 
   dontConfigure = true;
   dontBuild = true;

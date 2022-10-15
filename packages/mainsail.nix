@@ -1,11 +1,16 @@
-{ lib, stdenvNoCC, fetchurl, unzip, sources }:
-
+{
+  lib,
+  stdenvNoCC,
+  fetchurl,
+  unzip,
+  sources,
+}:
 stdenvNoCC.mkDerivation rec {
   pname = "mainsail";
 
   inherit (sources.mainsail) version src;
 
-  nativeBuildInputs = [ unzip ];
+  nativeBuildInputs = [unzip];
 
   dontConfigure = true;
   dontBuild = true;

@@ -1,0 +1,35 @@
+diff --git a/src/linux/gpio.c b/src/linux/gpio.c
+index ccc66a7fd176..84ba8f439e49 100644
+--- a/src/linux/gpio.c
++++ b/src/linux/gpio.c
+@@ -4,13 +4,14 @@
+ //
+ // This file may be distributed under the terms of the GNU GPLv3 license.
+ 
++#include NIXOS_GPIO_H_INCLUDE_PATH
++
+ #include <fcntl.h> // open
+ #include <stdio.h> // snprintf
+ #include <stdlib.h> // atexit
+ #include <string.h> // memset
+ #include <sys/ioctl.h> // ioctl
+ #include <unistd.h> // close
+-#include </usr/include/linux/gpio.h> // GPIOHANDLE_REQUEST_OUTPUT
+ #include "command.h" // shutdown
+ #include "gpio.h" // gpio_out_write
+ #include "internal.h" // report_errno
+diff --git a/src/linux/main.c b/src/linux/main.c
+index 4c5478ebf6ca..7ebd9f174881 100644
+--- a/src/linux/main.c
++++ b/src/linux/main.c
+@@ -4,7 +4,9 @@
+ //
+ // This file may be distributed under the terms of the GNU GPLv3 license.
+ 
+-#include </usr/include/sched.h> // sched_setscheduler
++#include NIXOS_SCHED_H_INCLUDE_PATH
++#include NIXOS_SCHED_TYPES_H_INCLUDE_PATH
++
+ #include <stdio.h> // fprintf
+ #include <string.h> // memset
+ #include <unistd.h> // getopt

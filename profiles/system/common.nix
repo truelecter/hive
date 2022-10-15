@@ -40,6 +40,7 @@ in {
       ncdu
       file
       gnused
+      lsof
     ];
 
     shellAliases = let
