@@ -44,7 +44,7 @@ linux_amd64_task:
 
   build_script:
   - git config --global --add safe.directory "$(pwd)"
-  - until cachix watch-exec nix build --keep-going -vvv '.#nixosConfigurations.nas.config.system.build.toplevel'; do echo removing /homeless-shelter..; rm -rf /homeless-shelter; echo retrying...; done
+  - until cachix watch-exec -c 9 -j 8 -- nix build --keep-going -vvv '.#nixosConfigurations.nas.config.system.build.toplevel'; do echo removing /homeless-shelter..; rm -rf /homeless-shelter; echo retrying...; done
 
 linux_aarch64_task:
   name: Build Linux aarch64
@@ -80,4 +80,4 @@ linux_aarch64_task:
 
   build_script:
   - git config --global --add safe.directory "$(pwd)"
-  - until cachix watch-exec nix build --keep-going -vvv '.#nixosConfigurations.octoprint.config.system.build.toplevel'; do echo removing /homeless-shelter..; rm -rf /homeless-shelter; echo retrying...; done
+  - until cachix watch-exec -c 9 -j 8 -- nix build --keep-going -vvv '.#nixosConfigurations.octoprint.config.system.build.toplevel'; do echo removing /homeless-shelter..; rm -rf /homeless-shelter; echo retrying...; done
