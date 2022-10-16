@@ -1,6 +1,7 @@
 {
     "eeprom-editor": {
         "cargoLocks": null,
+        "date": null,
         "extract": null,
         "name": "eeprom-editor",
         "passthru": null,
@@ -20,6 +21,7 @@
     },
     "klipper": {
         "cargoLocks": null,
+        "date": "2022-10-06",
         "extract": null,
         "name": "klipper",
         "passthru": null,
@@ -31,14 +33,15 @@
             "name": null,
             "owner": "Klipper3d",
             "repo": "klipper",
-            "rev": "51da02b7f8b4a691154b9c5c8f982d35beac9883",
-            "sha256": "sha256-n8da29LN5/fsUOD1KpbQUItwpAEPEN+IJzDolgrXB5s=",
+            "rev": "7290c14531211d027b430f36db5645ce496be900",
+            "sha256": "sha256-+BSsk2G6g4IJsbG6pggYb9vcaezqNUXEAXXAcMMhAfw=",
             "type": "github"
         },
-        "version": "51da02b7f8b4a691154b9c5c8f982d35beac9883"
+        "version": "7290c14531211d027b430f36db5645ce496be900"
     },
     "klipper-screen": {
         "cargoLocks": null,
+        "date": "2022-10-04",
         "extract": null,
         "name": "klipper-screen",
         "passthru": null,
@@ -50,14 +53,15 @@
             "name": null,
             "owner": "jordanruthe",
             "repo": "KlipperScreen",
-            "rev": "35571fce8acd70badf8deea9445060b2da4d4f4d",
-            "sha256": "sha256-QyQDOMpFDywRMUmGzHui8RZNrsMbVbOY0NTxqIrQ0I0=",
+            "rev": "a83bbed85a70d9c0ec9db0c72457da4f6740498c",
+            "sha256": "sha256-boxJimH/nUEQDh6EKiC+tDVDQxVoxvmhANaanl8xhKs=",
             "type": "github"
         },
-        "version": "35571fce8acd70badf8deea9445060b2da4d4f4d"
+        "version": "a83bbed85a70d9c0ec9db0c72457da4f6740498c"
     },
     "libcamera": {
         "cargoLocks": null,
+        "date": null,
         "extract": null,
         "name": "libcamera",
         "passthru": null,
@@ -77,6 +81,7 @@
     },
     "libcamera-apps": {
         "cargoLocks": null,
+        "date": null,
         "extract": null,
         "name": "libcamera-apps",
         "passthru": null,
@@ -96,25 +101,22 @@
     },
     "mainsail": {
         "cargoLocks": null,
+        "date": null,
         "extract": null,
         "name": "mainsail",
         "passthru": null,
         "pinned": false,
         "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
             "name": null,
-            "owner": "mainsail-crew",
-            "repo": "mainsail",
-            "rev": "6a40e6047d980d59bb1497057b0ab0acf8bc1527",
-            "sha256": "sha256-wcJRKaRwqnRJ6Hw0zeGHtFZN8EIK3peH670Xu8LQ6YM=",
-            "type": "github"
+            "sha256": "sha256-WRBxWCrHhAgtarjEU8izAuUBZTxOoQxZ+MjzCQ0C3P4=",
+            "type": "url",
+            "url": "https://github.com/mainsail-crew/mainsail/releases/download/v2.3.1/mainsail.zip"
         },
-        "version": "6a40e6047d980d59bb1497057b0ab0acf8bc1527"
+        "version": "v2.3.1"
     },
     "manix": {
         "cargoLocks": null,
+        "date": "2021-04-20",
         "extract": null,
         "name": "manix",
         "passthru": null,
@@ -134,6 +136,7 @@
     },
     "moonraker": {
         "cargoLocks": null,
+        "date": "2022-09-27",
         "extract": null,
         "name": "moonraker",
         "passthru": null,
@@ -145,14 +148,15 @@
             "name": null,
             "owner": "Arksine",
             "repo": "moonraker",
-            "rev": "df24e3ea7764e23148fb2f90033dc6d626071a11",
-            "sha256": "sha256-RzJQUyWSH6P3kkkgnYehHx+QLzxUn8dNQpyJCXGqwI4=",
+            "rev": "60b871adbe3ed363ca999d3a080cf335a71baddb",
+            "sha256": "sha256-sdYLgfDPPMY8q3xCEX/n5tzbuiYRmoAK+zgd5SnPBQU=",
             "type": "github"
         },
-        "version": "df24e3ea7764e23148fb2f90033dc6d626071a11"
+        "version": "60b871adbe3ed363ca999d3a080cf335a71baddb"
     },
     "octoprint-display-layer-progress": {
         "cargoLocks": null,
+        "date": null,
         "extract": null,
         "name": "octoprint-display-layer-progress",
         "passthru": null,
@@ -172,6 +176,7 @@
     },
     "rtsp-simple-server": {
         "cargoLocks": null,
+        "date": null,
         "extract": null,
         "name": "rtsp-simple-server",
         "passthru": null,
@@ -191,6 +196,7 @@
     },
     "s5cmd": {
         "cargoLocks": null,
+        "date": "2022-09-20",
         "extract": null,
         "name": "s5cmd",
         "passthru": null,
@@ -210,6 +216,7 @@
     },
     "tfenv": {
         "cargoLocks": null,
+        "date": "2022-10-01",
         "extract": null,
         "name": "tfenv",
         "passthru": null,
@@ -221,10 +228,25 @@
             "name": null,
             "owner": "tfutils",
             "repo": "tfenv",
-            "rev": "c05c364a0565b0bee63d97b763def4521d620884",
-            "sha256": "sha256-2Fpaj/UQDE7PNFX9GNr4tygvKmm/X0yWVVerJ+Y6eks=",
+            "rev": "1ccfddb22005b34eacaf06a9c33f58f14e816ec9",
+            "sha256": "sha256-UNvLJQB47IRcNZpoUGXTW2g63ApijnIB3oUb7Zu4lUY=",
             "type": "github"
         },
-        "version": "c05c364a0565b0bee63d97b763def4521d620884"
+        "version": "1ccfddb22005b34eacaf06a9c33f58f14e816ec9"
+    },
+    "transmissionic": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "transmissionic",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-JrOref90eUQDT3IgG0NaTIHzabgTTpvEVZG22dBgY7g=",
+            "type": "url",
+            "url": "https://github.com/6c65726f79/Transmissionic/releases/download/v1.7.0/Transmissionic-webui-v1.7.0.zip"
+        },
+        "version": "v1.7.0"
     }
 }

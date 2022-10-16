@@ -4,24 +4,25 @@
   lib,
   sources,
   inputs,
-  fetchzip,
+  unzip,
   ...
 }:
-stdenvNoCC.mkDerivation {
+stdenvNoCC.mkDerivation rec {
   pname = "transmissionic-web";
-  version = "1.6.2";
+  inherit (sources.transmissionic) version src;
 
-  src = fetchzip {
-    url = "https://github.com/6c65726f79/Transmissionic/releases/download/v1.6.2/Transmissionic-webui-v1.6.2.zip";
-    sha256 = "159izwp6jc0css31m2ykm9z9c4ndg6dk0ajhcnafgswa3842wmxa";
-  };
+  nativeBuildInputs = [unzip];
 
   dontConfigure = true;
   dontBuild = true;
 
+  unpackPhase = ''
+    mkdir transmissionic
+    unzip $src -d transmissionic
+  '';
+
   installPhase = ''
-    mkdir -p $out
-    cp -r * $out
+    cp -r transmissionic/web $out
   '';
 
   meta = with lib; {

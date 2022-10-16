@@ -17,25 +17,27 @@
   };
   klipper = {
     pname = "klipper";
-    version = "51da02b7f8b4a691154b9c5c8f982d35beac9883";
+    version = "7290c14531211d027b430f36db5645ce496be900";
     src = fetchFromGitHub {
       owner = "Klipper3d";
       repo = "klipper";
-      rev = "51da02b7f8b4a691154b9c5c8f982d35beac9883";
+      rev = "7290c14531211d027b430f36db5645ce496be900";
       fetchSubmodules = false;
-      sha256 = "sha256-n8da29LN5/fsUOD1KpbQUItwpAEPEN+IJzDolgrXB5s=";
+      sha256 = "sha256-+BSsk2G6g4IJsbG6pggYb9vcaezqNUXEAXXAcMMhAfw=";
     };
+    date = "2022-10-06";
   };
   klipper-screen = {
     pname = "klipper-screen";
-    version = "35571fce8acd70badf8deea9445060b2da4d4f4d";
+    version = "a83bbed85a70d9c0ec9db0c72457da4f6740498c";
     src = fetchFromGitHub {
       owner = "jordanruthe";
       repo = "KlipperScreen";
-      rev = "35571fce8acd70badf8deea9445060b2da4d4f4d";
+      rev = "a83bbed85a70d9c0ec9db0c72457da4f6740498c";
       fetchSubmodules = false;
-      sha256 = "sha256-QyQDOMpFDywRMUmGzHui8RZNrsMbVbOY0NTxqIrQ0I0=";
+      sha256 = "sha256-boxJimH/nUEQDh6EKiC+tDVDQxVoxvmhANaanl8xhKs=";
     };
+    date = "2022-10-04";
   };
   libcamera = {
     pname = "libcamera";
@@ -61,13 +63,10 @@
   };
   mainsail = {
     pname = "mainsail";
-    version = "6a40e6047d980d59bb1497057b0ab0acf8bc1527";
-    src = fetchFromGitHub {
-      owner = "mainsail-crew";
-      repo = "mainsail";
-      rev = "6a40e6047d980d59bb1497057b0ab0acf8bc1527";
-      fetchSubmodules = false;
-      sha256 = "sha256-wcJRKaRwqnRJ6Hw0zeGHtFZN8EIK3peH670Xu8LQ6YM=";
+    version = "v2.3.1";
+    src = fetchurl {
+      url = "https://github.com/mainsail-crew/mainsail/releases/download/v2.3.1/mainsail.zip";
+      sha256 = "sha256-WRBxWCrHhAgtarjEU8izAuUBZTxOoQxZ+MjzCQ0C3P4=";
     };
   };
   manix = {
@@ -80,17 +79,19 @@
       fetchSubmodules = false;
       sha256 = "sha256-GqPuYscLhkR5E2HnSFV4R48hCWvtM3C++3zlJhiK/aw=";
     };
+    date = "2021-04-20";
   };
   moonraker = {
     pname = "moonraker";
-    version = "df24e3ea7764e23148fb2f90033dc6d626071a11";
+    version = "60b871adbe3ed363ca999d3a080cf335a71baddb";
     src = fetchFromGitHub {
       owner = "Arksine";
       repo = "moonraker";
-      rev = "df24e3ea7764e23148fb2f90033dc6d626071a11";
+      rev = "60b871adbe3ed363ca999d3a080cf335a71baddb";
       fetchSubmodules = false;
-      sha256 = "sha256-RzJQUyWSH6P3kkkgnYehHx+QLzxUn8dNQpyJCXGqwI4=";
+      sha256 = "sha256-sdYLgfDPPMY8q3xCEX/n5tzbuiYRmoAK+zgd5SnPBQU=";
     };
+    date = "2022-09-27";
   };
   octoprint-display-layer-progress = {
     pname = "octoprint-display-layer-progress";
@@ -124,16 +125,26 @@
       fetchSubmodules = false;
       sha256 = "sha256-8WoIUTRd2Ooot70hsAYVz9bEKKkK9Hs279RL+8D2Qfk=";
     };
+    date = "2022-09-20";
   };
   tfenv = {
     pname = "tfenv";
-    version = "c05c364a0565b0bee63d97b763def4521d620884";
+    version = "1ccfddb22005b34eacaf06a9c33f58f14e816ec9";
     src = fetchFromGitHub {
       owner = "tfutils";
       repo = "tfenv";
-      rev = "c05c364a0565b0bee63d97b763def4521d620884";
+      rev = "1ccfddb22005b34eacaf06a9c33f58f14e816ec9";
       fetchSubmodules = false;
-      sha256 = "sha256-2Fpaj/UQDE7PNFX9GNr4tygvKmm/X0yWVVerJ+Y6eks=";
+      sha256 = "sha256-UNvLJQB47IRcNZpoUGXTW2g63ApijnIB3oUb7Zu4lUY=";
+    };
+    date = "2022-10-01";
+  };
+  transmissionic = {
+    pname = "transmissionic";
+    version = "v1.7.0";
+    src = fetchurl {
+      url = "https://github.com/6c65726f79/Transmissionic/releases/download/v1.7.0/Transmissionic-webui-v1.7.0.zip";
+      sha256 = "sha256-JrOref90eUQDT3IgG0NaTIHzabgTTpvEVZG22dBgY7g=";
     };
   };
 }

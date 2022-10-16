@@ -4,7 +4,6 @@
   makeWrapper,
   sources,
   inputs,
-
   wrapGAppsHook,
   gtk3,
   gobject-introspection,

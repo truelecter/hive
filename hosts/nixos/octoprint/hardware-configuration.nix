@@ -22,7 +22,7 @@
     };
     consoleLogLevel = 8;
     initrd.availableKernelModules = ["usbhid" "usb_storage"];
-    kernelParams = ["console=ttyS0,115200n8" "console=tty1" "dtdebug=1" "video=DSI-1:800x480@60,rotate=180"];
+    kernelParams = ["console=ttyS0,115200n8" "console=tty1" "video=DSI-1:800x480@60,rotate=180" "cma=128M"];
     kernelPatches = [
       {
         name = "rpi-diff";

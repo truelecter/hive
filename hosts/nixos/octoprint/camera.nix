@@ -4,25 +4,7 @@
   lib,
   self,
   ...
-}: let
-  build-overlay = overlay:
-    pkgs.runCommandCC overlay {nativeBuildInputs = [pkgs.dtc];} ''
-      mkdir $out
-      cd $out
-      builddtb() {
-        $CC -x assembler-with-cpp -E $1 -o temp
-        # egrep -v '^#' < temp > temp2
-        dtc temp -o $2
-        rm temp
-        # temp2
-      }
-      builddtb ${self}/hosts/nixos/octoprint/overlays/${overlay}.dts ${overlay}.dtb
-    '';
-  ov5647 = build-overlay "ov5647";
-  disable-bt = build-overlay "disable-bt";
-  uart0 = build-overlay "uart0";
-  rpi-ft5406 = build-overlay "rpi-ft5406";
-in {
+}: {
   environment.systemPackages = [
     pkgs.dtc
     pkgs.v4l-utils
@@ -32,33 +14,6 @@ in {
     pkgs.libcamera-apps
     pkgs.gdb
     # pkgs.rpi-videocore
-  ];
-
-  hardware.raspberry-pi."4" = {
-    i2c0.enable = true;
-    i2c1.enable = false;
-    # apply-overlays-dtmerge.enable = true;
-  };
-
-  hardware.deviceTree = {
-    enable = true;
-    filter = lib.mkForce "bcm2711-rpi-4-b.dtb";
-    overlays = [
-      "${ov5647}/ov5647.dtb"
-      "${disable-bt}/disable-bt.dtb"
-      "${uart0}/uart0.dtb"
-      "${rpi-ft5406}/rpi-ft5406.dtb"
-    ];
-  };
-
-  nixpkgs.overlays = [
-    # patch to not mess with dts
-    (final: prev: {
-      deviceTree.applyOverlays = prev.callPackage ./apply-overlays-dtmerge.nix {};
-    })
-    (final: prev: {
-      ffmpeg = prev.ffmpeg_5;
-    })
   ];
 
   tl.services.tailscale-tls.enable = true;

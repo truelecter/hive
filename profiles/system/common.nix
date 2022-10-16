@@ -40,6 +40,7 @@ in {
       ncdu
       file
       gnused
+      lsof
     ];
 
     shellAliases = let
@@ -112,6 +113,7 @@ in {
       keep-derivations = true
       fallback = true
       builders-use-substitutes = true
+      warn-dirty = false
     '';
   };
 }
