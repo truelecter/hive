@@ -40,11 +40,12 @@ linux_amd64_task:
   - cachix use nrdxp
   - cachix use truelecter
 
-  # cachix_watch_background_script: while true; do cachix watch-store truelecter || true; done
+  cachix_watch_background_script: while true; do cachix watch-store truelecter || true; done
 
   build_script:
   - git config --global --add safe.directory "$(pwd)"
-  - until cachix watch-exec -c 9 -j 8 -- nix build --keep-going -vvv '.#nixosConfigurations.nas.config.system.build.toplevel'; do echo removing /homeless-shelter..; rm -rf /homeless-shelter; echo retrying...; done
+  - until nix build --keep-going -vvv '.#nixosConfigurations.nas.config.system.build.toplevel'; do echo removing /homeless-shelter..; rm -rf /homeless-shelter; echo retrying...; done
+  - nix build --json '.#nixosConfigurations.nas.config.system.build.toplevel' | jq -r '.[].outputs | to_entries[].value' | cachix push truelecter
 
 linux_aarch64_task:
   name: Build Linux aarch64
@@ -76,8 +77,10 @@ linux_aarch64_task:
   - cachix use mic92
   - cachix use nrdxp
   - cachix use truelecter
-  # cachix_watch_background_script: while true; do cachix watch-store truelecter || true; done
+
+  cachix_watch_background_script: while true; do cachix watch-store truelecter || true; done
 
   build_script:
   - git config --global --add safe.directory "$(pwd)"
-  - until cachix watch-exec -c 9 -j 8 -- nix build --keep-going -vvv '.#nixosConfigurations.octoprint.config.system.build.toplevel'; do echo removing /homeless-shelter..; rm -rf /homeless-shelter; echo retrying...; done
+  - until nix build --keep-going -vvv '.#nixosConfigurations.octoprint.config.system.build.toplevel'; do echo removing /homeless-shelter..; rm -rf /homeless-shelter; echo retrying...; done
+  - nix build --json '.#nixosConfigurations.octoprint.config.system.build.toplevel' | jq -r '.[].outputs | to_entries[].value' | cachix push truelecter
