@@ -10,4 +10,8 @@
     group = "share";
     openFirewall = true;
   };
+
+  systemd.services.jellyfin.serviceConfig = {
+    BindPaths = "/tmp/cache";
+  };
 }
