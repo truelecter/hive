@@ -20,7 +20,7 @@ linux_amd64_task:
     # Defined in https://github.com/nix-community/docker-nixpkgs
     # image: nixpkgs/cachix-flakes:nixos-22.05
     image: ubuntu:20.04
-    cpu: 4
+    cpu: 8
     memory: 8G
 
   prepare_container_env_script:
@@ -38,12 +38,13 @@ linux_amd64_task:
   - cachix use nix-community
   - cachix use mic92
   - cachix use nrdxp
+  - cachix use truelecter
 
-  cachix_watch_background_script: while true; do cachix watch-store truelecter || true; done
+  # cachix_watch_background_script: while true; do cachix watch-store truelecter || true; done
 
   build_script:
   - git config --global --add safe.directory "$(pwd)"
-  - nix build -j1 '.#nixosConfigurations.nas.config.system.build.toplevel'
+  - until cachix watch-exec nix build --keep-going -vvv '.#nixosConfigurations.nas.config.system.build.toplevel'; do echo removing /homeless-shelter..; rm -rf /homeless-shelter; echo retrying...; done
 
 linux_aarch64_task:
   name: Build Linux aarch64
@@ -54,7 +55,7 @@ linux_aarch64_task:
     # Defined in https://github.com/nix-community/docker-nixpkgs
     # image: nixpkgs/cachix-flakes:nixos-22.05
     image: ubuntu:20.04
-    cpu: 4
+    cpu: 8
     memory: 8G
 
   prepare_container_env_script:
@@ -74,9 +75,9 @@ linux_aarch64_task:
   - cachix use nix-community
   - cachix use mic92
   - cachix use nrdxp
-
-  cachix_watch_background_script: while true; do cachix watch-store truelecter || true; done
+  - cachix use truelecter
+  # cachix_watch_background_script: while true; do cachix watch-store truelecter || true; done
 
   build_script:
   - git config --global --add safe.directory "$(pwd)"
-  - until nix build --keep-going -vvv '.#nixosConfigurations.octoprint.config.system.build.toplevel'; do echo removing /homeless-shelter..; rm -rf /homeless-shelter; echo retrying...; done
+  - until cachix watch-exec nix build --keep-going -vvv '.#nixosConfigurations.octoprint.config.system.build.toplevel'; do echo removing /homeless-shelter..; rm -rf /homeless-shelter; echo retrying...; done
