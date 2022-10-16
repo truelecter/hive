@@ -79,4 +79,4 @@ linux_aarch64_task:
 
   build_script:
   - git config --global --add safe.directory "$(pwd)"
-  - until nix build '.#nixosConfigurations.octoprint.config.system.build.toplevel'; do echo removing /homeless-shelter..; rm -rf /homeless-shelter; echo retrying...; done
+  - until nix build --keep-going -vvvv '.#nixosConfigurations.octoprint.config.system.build.toplevel'; do echo removing /homeless-shelter..; rm -rf /homeless-shelter; echo retrying...; done
