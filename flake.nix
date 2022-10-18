@@ -63,7 +63,7 @@
       url = "github:TrueLecter/sops-nix/darwin";
       inputs = {
         nixpkgs.follows = "nixos";
-        nixpkgs-22_05.follows = "nixos";
+        # nixpkgs-22_05.follows = "nixos";
       };
     };
 
@@ -82,7 +82,7 @@
 
     nixos-hardware = {
       url = "github:nixos/nixos-hardware";
-      inputs.nixpkgs.follows = "nixos";
+      # inputs.nixpkgs.follows = "nixos";
     };
 
     nixos-generators = {
@@ -103,6 +103,24 @@
       url = "github:serokell/nix-npm-buildpackage";
       inputs.nixpkgs.follows = "nixos";
     };
+
+    nix-on-droid = {
+      url = "github:t184256/nix-on-droid";
+      inputs = {
+        flake-utils.follows = "flake-utils";
+        home-manager.follows = "home";
+        nixpkgs.follows = "nixos";
+      };
+    };
+
+    nixos-wsl = {
+      url = "github:nix-community/NixOS-WSL";
+
+      inputs = {
+        flake-utils.follows = "flake-utils";
+        nixpkgs.follows = "nixos";
+      };
+    };
     #endregion
 
     #region Not flakes
@@ -114,7 +132,7 @@
 
     #region nvim plugins
     jabs-nvim = {
-      url = github:matbme/JABS.nvim;
+      url = "github:matbme/JABS.nvim";
       flake = false;
     };
     #endregion
@@ -135,6 +153,7 @@
     nixos-generators,
     latest,
     mach-nix,
+    nixos-wsl,
     ...
   } @ inputs:
     digga.lib.mkFlake
@@ -181,6 +200,7 @@
           users = digga.lib.rakeLeaves ./users;
         };
 
+      #region nixos
       nixos = {
         hostDefaults = {
           system = "x86_64-linux";
@@ -196,6 +216,7 @@
             home.nixosModules.home-manager
             sops-nix.nixosModules.sops
             bud.nixosModules.bud
+            nixos-wsl.nixosModules.wsl
             # "${latest}/nixos/modules/services/misc/jellyfin.nix"
           ];
         };
@@ -225,6 +246,7 @@
           };
         };
       };
+      #endregion
 
       #region darwin
       darwin = {
@@ -320,6 +342,9 @@
         octoprint = {
           sshUser = "truelecter";
           hostname = "octoprint";
+        };
+        tl-pc-wsl = {
+          sshUser = "truelecter";
         };
       };
     };

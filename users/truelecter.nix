@@ -6,7 +6,6 @@
   home-manager.users = {inherit (hmUsers) truelecter;};
 
   users.users.truelecter = {
-    uid = 1000;
     isNormalUser = true;
     shell = pkgs.zsh;
     extraGroups = ["wheel" "docker"];

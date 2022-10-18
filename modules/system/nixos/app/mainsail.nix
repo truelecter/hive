@@ -7,7 +7,7 @@
 }:
 with lib; let
   cfg = config.tl.services.mainsail;
-  moonraker = config.services.moonraker;
+  moonrakerCfg = config.services.moonraker;
 in {
   options.tl.services.mainsail = {
     enable = mkEnableOption "Mainsail is the popular web interface for Klipper";
@@ -42,7 +42,7 @@ in {
   config = mkIf cfg.enable {
     services.nginx = {
       enable = true;
-      upstreams.mainsail-apiserver.servers."${moonraker.address}:${toString moonraker.port}" = {};
+      upstreams.mainsail-apiserver.servers."${moonrakerCfg.address}:${toString moonrakerCfg.port}" = {};
       virtualHosts."${cfg.hostName}" = mkMerge [
         cfg.nginx
         {

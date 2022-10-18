@@ -46,8 +46,8 @@ in {
     enable = true;
     address = "0.0.0.0";
     allowSystemControl = true;
-    user = klipperCfg.user;
-    group = klipperCfg.group;
+
+    inherit (klipperCfg) user group;
 
     settings = lib.recursiveUpdate (builtins.fromTOML (builtins.readFile ./klipper/moonraker.toml)) {
       database = {
@@ -82,8 +82,8 @@ in {
       path: {
         name = "klipper.d/${builtins.baseNameOf path}";
         value = {
-          user = klipperCfg.user;
-          group = klipperCfg.group;
+          inherit (klipperCfg) user group;
+
           source = path;
         };
       }

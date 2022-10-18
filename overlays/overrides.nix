@@ -24,5 +24,6 @@ channels: final: prev: {
     klipper-flash
     klipper-firmware
     klipper-genconf
+    statix
     ;
 }

@@ -17,6 +17,7 @@
     node2nix
     gnupg
     nix-index
+    statix
     ;
 
   pkgWithCategory = category: package: {inherit package category;};
@@ -62,6 +63,7 @@ in {
       (devos gnupg)
       (devos cachix)
       (devos nix-index)
+      (devos statix)
 
       {
         category = "devos";

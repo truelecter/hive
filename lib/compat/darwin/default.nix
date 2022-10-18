@@ -1,4 +1,4 @@
-{...}: let
+{_}: let
   inherit (default.inputs.nixpkgs-stable) lib;
 
   default = (import ../.).defaultNix;

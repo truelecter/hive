@@ -9,17 +9,15 @@
 
   flake-plugins =
     # Simple, from the installation viewpoint, plugins. Names must match flake inputs.
-    (
-      pkgs.lib.genAttrs [
-        "jabs-nvim"
-      ]
-      (plugin-name:
-        pkgs.vimUtils.buildVimPlugin {
-          name = plugin-name;
-          dontBuild = true;
-          src = inputs.${plugin-name};
-        })
-    );
+    pkgs.lib.genAttrs [
+      "jabs-nvim"
+    ]
+    (plugin-name:
+      pkgs.vimUtils.buildVimPlugin {
+        name = plugin-name;
+        dontBuild = true;
+        src = inputs.${plugin-name};
+      });
 in {
   home.packages = with pkgs; [
     # python39Packages.python-lsp-server

@@ -21,8 +21,11 @@
   disable-bt = build-overlay "disable-bt";
   uart0 = build-overlay "uart0";
   rpi-ft5406 = build-overlay "rpi-ft5406";
-  spi = build-overlay "spi";
+  spi4 = build-overlay "spi4";
+  spi6 = build-overlay "spi6";
 in {
+  environment.systemPackages = [ pkgs.gpio-utils ];
+
   users.groups.gpio = {};
   users.groups.spi = {};
 
@@ -40,7 +43,8 @@ in {
       "${disable-bt}/disable-bt.dtb"
       "${uart0}/uart0.dtb"
       "${rpi-ft5406}/rpi-ft5406.dtb"
-      "${spi}/spi.dtb"
+      "${spi4}/spi4.dtb"
+      "${spi6}/spi6.dtb"
     ];
   };
 
