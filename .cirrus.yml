@@ -19,7 +19,7 @@ linux_amd64_task:
     # image: nixpkgs/cachix-flakes:nixos-22.05
     image: ubuntu:20.04
     cpu: 8
-    memory: 8G
+    memory: 12G
 
   prepare_container_env_script:
   - apt update
@@ -55,7 +55,7 @@ linux_aarch64_task:
     # image: nixpkgs/cachix-flakes:nixos-22.05
     image: ubuntu:20.04
     cpu: 8
-    memory: 8G
+    memory: 12G
 
   prepare_container_env_script:
   - apt update
