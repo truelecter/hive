@@ -1,8 +1,6 @@
 
 env:
   CACHIX_AUTH_TOKEN: ENCRYPTED[!dcaeae1286059bec7770e082fd6f3ba7688e548b5f652673973329068380578d8cbfa21ab8b19f1532c8a2824b3faf46!]
-  # Save some traffic by excluding the full git history
-  CIRRUS_CLONE_DEPTH: "1"
   CIRRUS_SHELL: "/bin/bash"
   INPUT_EXTRA_NIX_CONFIG: "sandbox = false"
   INPUT_INSTALL_OPTIONS: ""
