@@ -343,7 +343,7 @@
           sshUser = "truelecter";
           hostname = "octoprint";
         };
-        tl-pc-wsl = {
+        hyperos = {
           sshUser = "truelecter";
         };
       };

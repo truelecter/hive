@@ -21,6 +21,7 @@
   disable-bt = build-overlay "disable-bt";
   uart0 = build-overlay "uart0";
   rpi-ft5406 = build-overlay "rpi-ft5406";
+  spi0 = build-overlay "spi0";
   spi4 = build-overlay "spi4";
   spi6 = build-overlay "spi6";
 in {
@@ -43,8 +44,9 @@ in {
       "${disable-bt}/disable-bt.dtb"
       "${uart0}/uart0.dtb"
       "${rpi-ft5406}/rpi-ft5406.dtb"
-      "${spi4}/spi4.dtb"
-      "${spi6}/spi6.dtb"
+      "${spi0}/spi0.dtb"
+      # "${spi4}/spi4.dtb"
+      # "${spi6}/spi6.dtb"
     ];
   };
 
