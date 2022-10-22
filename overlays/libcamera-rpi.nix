@@ -6,6 +6,7 @@ final: prev: {
       o.buildInputs
       ++ [
         final.libyaml
+        final.gnutls
       ];
 
     mesonBuildType = "release";
