@@ -1,27 +1,7 @@
 {
-    "eeprom-editor": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "eeprom-editor",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "cp2004",
-            "repo": "OctoPrint-EEPROM-Marlin",
-            "rev": "3.2.0",
-            "sha256": "sha256-GNeDo6PIVQ+yHglHne/WJtfgYh8KF09GY9gzfr1Le5Q=",
-            "type": "github"
-        },
-        "version": "3.2.0"
-    },
     "klipper": {
         "cargoLocks": null,
-        "date": "2022-10-06",
+        "date": "2022-10-21",
         "extract": null,
         "name": "klipper",
         "passthru": null,
@@ -33,15 +13,15 @@
             "name": null,
             "owner": "Klipper3d",
             "repo": "klipper",
-            "rev": "7290c14531211d027b430f36db5645ce496be900",
-            "sha256": "sha256-+BSsk2G6g4IJsbG6pggYb9vcaezqNUXEAXXAcMMhAfw=",
+            "rev": "ebc3b0def3091e015d328ded88ec0fc53b7eba79",
+            "sha256": "sha256-xNq4LLuWD5DXAVGjuLBtngjnzvQaGfttjOYIiRJgCXs=",
             "type": "github"
         },
-        "version": "7290c14531211d027b430f36db5645ce496be900"
+        "version": "ebc3b0def3091e015d328ded88ec0fc53b7eba79"
     },
     "klipper-screen": {
         "cargoLocks": null,
-        "date": "2022-10-04",
+        "date": "2022-10-15",
         "extract": null,
         "name": "klipper-screen",
         "passthru": null,
@@ -53,11 +33,11 @@
             "name": null,
             "owner": "jordanruthe",
             "repo": "KlipperScreen",
-            "rev": "a83bbed85a70d9c0ec9db0c72457da4f6740498c",
-            "sha256": "sha256-boxJimH/nUEQDh6EKiC+tDVDQxVoxvmhANaanl8xhKs=",
+            "rev": "1332045128082a1bf5e8469bf542738527cb372e",
+            "sha256": "sha256-AzJ7FDEX6qQq+8bzWvNcMnR/5LFKg62SEIam+jlAuuQ=",
             "type": "github"
         },
-        "version": "a83bbed85a70d9c0ec9db0c72457da4f6740498c"
+        "version": "1332045128082a1bf5e8469bf542738527cb372e"
     },
     "libcamera": {
         "cargoLocks": null,
@@ -136,7 +116,7 @@
     },
     "moonraker": {
         "cargoLocks": null,
-        "date": "2022-09-27",
+        "date": "2022-10-22",
         "extract": null,
         "name": "moonraker",
         "passthru": null,
@@ -148,17 +128,17 @@
             "name": null,
             "owner": "Arksine",
             "repo": "moonraker",
-            "rev": "60b871adbe3ed363ca999d3a080cf335a71baddb",
-            "sha256": "sha256-sdYLgfDPPMY8q3xCEX/n5tzbuiYRmoAK+zgd5SnPBQU=",
+            "rev": "779997c2b8aa1df2b484440ef1d3a6b09058fcff",
+            "sha256": "sha256-o8CPQFpPl9oT6mavaQe5YqnzRDOMNqHGMJqhgeSmE7c=",
             "type": "github"
         },
-        "version": "60b871adbe3ed363ca999d3a080cf335a71baddb"
+        "version": "779997c2b8aa1df2b484440ef1d3a6b09058fcff"
     },
-    "octoprint-display-layer-progress": {
+    "rpi-fw": {
         "cargoLocks": null,
-        "date": null,
+        "date": "2022-10-21",
         "extract": null,
-        "name": "octoprint-display-layer-progress",
+        "name": "rpi-fw",
         "passthru": null,
         "pinned": false,
         "src": {
@@ -166,13 +146,73 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "owner": "OllisGit",
-            "repo": "OctoPrint-DisplayLayerProgress",
-            "rev": "1.28.0",
-            "sha256": "sha256-FoQGv7a3ktodyQKOwR69/9Up+wPoW5NDq+k5LfP9WYs=",
+            "owner": "raspberrypi",
+            "repo": "firmware",
+            "rev": "42e091c8e7edb79b5a6b493daaea2485d621d9e5",
+            "sha256": "sha256-L93AYakaP5yASYbpYYSMLdLpDS5d4WUzt0xCY45Rbpg=",
             "type": "github"
         },
-        "version": "1.28.0"
+        "version": "42e091c8e7edb79b5a6b493daaea2485d621d9e5"
+    },
+    "rpi-fw-bluez": {
+        "cargoLocks": null,
+        "date": "2022-10-18",
+        "extract": null,
+        "name": "rpi-fw-bluez",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "RPi-Distro",
+            "repo": "bluez-firmware",
+            "rev": "90d0bdffd25cc8a1717d3fec6cc7bbde56ee83c7",
+            "sha256": "sha256-BXvdkqUk45BmtSt2vuqiT5MljjUhX60l3/tBvZqjpGg=",
+            "type": "github"
+        },
+        "version": "90d0bdffd25cc8a1717d3fec6cc7bbde56ee83c7"
+    },
+    "rpi-fw-nonfree": {
+        "cargoLocks": null,
+        "date": "2022-07-14",
+        "extract": null,
+        "name": "rpi-fw-nonfree",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "RPi-Distro",
+            "repo": "firmware-nonfree",
+            "rev": "d9c88346cab86e23394ebf6cb6cb3069602d29f4",
+            "sha256": "sha256-1OqFWJMcQnQ03HXB2Kb2Tni+iao6Si3D5s/H1jLaK00=",
+            "type": "github"
+        },
+        "version": "d9c88346cab86e23394ebf6cb6cb3069602d29f4"
+    },
+    "rpi-linux": {
+        "cargoLocks": null,
+        "date": "2022-10-17",
+        "extract": null,
+        "name": "rpi-linux",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "raspberrypi",
+            "repo": "linux",
+            "rev": "dbd073e4028580a09b6ee507e0c137441cb52650",
+            "sha256": "sha256-GukSJ+WHY+R0dZeCfqqXqdw97HVmqD5HeizgqMnQd8M=",
+            "type": "github"
+        },
+        "version": "dbd073e4028580a09b6ee507e0c137441cb52650"
     },
     "rtsp-simple-server": {
         "cargoLocks": null,
@@ -243,10 +283,10 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-JrOref90eUQDT3IgG0NaTIHzabgTTpvEVZG22dBgY7g=",
+            "sha256": "sha256-uAXoSvwVGb6+aSiJ5VKJUab0MzcQKCxYfkoDbhqWmfo=",
             "type": "url",
-            "url": "https://github.com/6c65726f79/Transmissionic/releases/download/v1.7.0/Transmissionic-webui-v1.7.0.zip"
+            "url": "https://github.com/6c65726f79/Transmissionic/releases/download/v1.7.1/Transmissionic-webui-v1.7.1.zip"
         },
-        "version": "v1.7.0"
+        "version": "v1.7.1"
     }
 }

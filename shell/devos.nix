@@ -46,6 +46,10 @@ in {
     # Exert exorbitant privilige and leave no trace
     export PATH=''${_PATH}
     unset _PATH
+
+    # Fix for MacOS nvfetcher
+    # https://github.com/msteen/nix-prefetch/issues/28
+    export TMPDIR=/tmp
   '');
 
   devshell.startup.cachix_watch = pkgs.lib.noDepEntry ''
