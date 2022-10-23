@@ -80,4 +80,4 @@ linux_aarch64_task:
 
   build_script:
   - git config --global --add safe.directory "$(pwd)"
-  - until nix build -vv '.#nixosConfigurations.octorpint.config.system.build.toplevel' --json | jq -r '.[].outputs | to_entries[].value' | cachix push truelecter; do echo removing /homeless-shelter..; rm -rf /homeless-shelter; nix-store --verify --repair --check-contents; echo retrying...; done
+  - until nix build -vv '.#nixosConfigurations.octoprint.config.system.build.toplevel' --json | jq -r '.[].outputs | to_entries[].value' | cachix push truelecter; do echo removing /homeless-shelter..; rm -rf /homeless-shelter; nix-store --verify --repair --check-contents; echo retrying...; done
