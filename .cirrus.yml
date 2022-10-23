@@ -37,15 +37,15 @@ linux_amd64_task:
   - cachix use mic92
   - cachix use nrdxp
   - cachix use truelecter
-
-  cachix_watch_background_script: while true; do cachix watch-store truelecter || true; done
+  # cachix_watch_background_script: while true; do cachix watch-store truelecter || true; done
 
   build_script:
   - git config --global --add safe.directory "$(pwd)"
-  - until nix build --keep-going -vv '.#nixosConfigurations.nas.config.system.build.toplevel'; do echo removing /homeless-shelter..; rm -rf /homeless-shelter; echo retrying...; done
-  - nix-store --verify --repair --check-contents
-  - nix build -vv '.#nixosConfigurations.nas.config.system.build.toplevel' --json | jq -r '.[].outputs | to_entries[].value' | cachix push truelecter
-  - sleep 60
+  - until cachix watch-exec nix -- build --keep-going -vv '.#nixosConfigurations.nas.config.system.build.toplevel'; do echo removing /homeless-shelter..; rm -rf /homeless-shelter; nix-store --verify --repair --check-contents; echo retrying...; done
+  # - until nix build --keep-going -vv '.#nixosConfigurations.nas.config.system.build.toplevel'; do echo removing /homeless-shelter..; rm -rf /homeless-shelter; echo retrying...; done
+  # - nix-store --verify --repair --check-contents
+  # - nix build -vv '.#nixosConfigurations.nas.config.system.build.toplevel' --json | jq -r '.[].outputs | to_entries[].value' | cachix push truelecter
+  # - sleep 60
 
 linux_aarch64_task:
   name: Build Linux aarch64
@@ -78,11 +78,6 @@ linux_aarch64_task:
   - cachix use nrdxp
   - cachix use truelecter
 
-  cachix_watch_background_script: while true; do cachix watch-store truelecter || true; done
-
   build_script:
   - git config --global --add safe.directory "$(pwd)"
-  - until nix build --keep-going -vv '.#nixosConfigurations.octoprint.config.system.build.toplevel'; do echo removing /homeless-shelter..; rm -rf /homeless-shelter; echo retrying...; done
-  - nix-store --verify --repair --check-contents
-  - nix build -vv '.#nixosConfigurations.octoprint.config.system.build.toplevel' --json | jq -r '.[].outputs | to_entries[].value' | cachix push truelecter
-  - sleep 60
+  - until cachix watch-exec nix -- build --keep-going -vv '.#nixosConfigurations.octoprint.config.system.build.toplevel'; do echo removing /homeless-shelter..; rm -rf /homeless-shelter; nix-store --verify --repair --check-contents; echo retrying...; done

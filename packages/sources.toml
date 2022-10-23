@@ -30,14 +30,6 @@ src.manual = "6bade0b112aca37fd9762d180203e376867ff09c"
 fetch.github = "aler9/rtsp-simple-server"
 src.manual = "85ce12199aa324a8399407aac41f8b2fbaad279d"
 
-[octoprint-display-layer-progress]
-src.manual = "1.28.0"
-fetch.github = "OllisGit/OctoPrint-DisplayLayerProgress"
-
-[eeprom-editor]
-src.manual = "3.2.0"
-fetch.github = "cp2004/OctoPrint-EEPROM-Marlin"
-
 [moonraker]
 src.git = "https://github.com/Arksine/moonraker"
 fetch.github = "Arksine/moonraker"
@@ -57,3 +49,19 @@ fetch.url = "https://github.com/6c65726f79/Transmissionic/releases/download/$ver
 [mainsail]
 src.github = "mainsail-crew/mainsail"
 fetch.url = "https://github.com/mainsail-crew/mainsail/releases/download/$ver/mainsail.zip"
+
+[rpi-linux]
+src.git = "https://github.com/raspberrypi/linux"
+fetch.github = "raspberrypi/linux"
+
+[rpi-fw-nonfree]
+src.git = "https://github.com/RPi-Distro/firmware-nonfree"
+fetch.github = "RPi-Distro/firmware-nonfree"
+
+[rpi-fw-bluez]
+src.git = "https://github.com/RPi-Distro/bluez-firmware"
+fetch.github = "RPi-Distro/bluez-firmware"
+
+[rpi-fw]
+src.git = "https://github.com/raspberrypi/firmware"
+fetch.github = "raspberrypi/firmware"
