@@ -1,7 +1,7 @@
 final: prev: {
-  linuxPackages_rpi4 = prev.linuxPackages_rpi4.overrideAttrs (o: rec {
+  linuxPackages_rpi4 = prev.linuxPackages_rpi4.extend (prev.lib.const (ksuper: {
     inherit (prev.sources.rpi-linux) version src;
-  });
+  }));
 
   raspberrypiWirelessFirmware = prev.raspberrypiWirelessFirmware.overrideAttrs (o: rec {
     src = [
