@@ -25,7 +25,7 @@
   spi4 = build-overlay "spi4";
   spi6 = build-overlay "spi6";
 in {
-  environment.systemPackages = [ pkgs.gpio-utils ];
+  environment.systemPackages = [pkgs.gpio-utils];
 
   users.groups.gpio = {};
   users.groups.spi = {};

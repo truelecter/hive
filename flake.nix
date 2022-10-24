@@ -231,6 +231,7 @@
             modules = [
               nixos-hardware.nixosModules.raspberry-pi-4
               "${latest}/nixos/modules/services/misc/klipper.nix"
+              "${latest}/nixos/modules/services/misc/moonraker.nix"
             ];
           };
         };
