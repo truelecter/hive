@@ -2,7 +2,7 @@ name: Update flake.lock
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *' # runs everyday at At 00:00
+    - cron: '0 0 * * 6' # At 00:00 on Saturday
 
 # TODO: Add nvfetcher
 jobs:
