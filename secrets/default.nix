@@ -34,6 +34,11 @@ in {
         key = "wireless291Env";
         sopsFile = ./sops/keys.yaml;
       };
+
+      k3s-token = {
+        key = "k3sToken";
+        sopsFile = ./sops/keys.yaml;
+      };
     })
   ];
 }
