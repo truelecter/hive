@@ -41,6 +41,9 @@ in {
 
         ProgramArguments = ["${cfg.package}/bin/tailscaled"];
 
+        StandardErrorPath = "/tmp/com.tailscale.tailscaled.err.log";
+        StandardOutPath = "/tmp/com.tailscale.tailscaled.log";
+
         EnvironmentVariables = builtins.listToAttrs ([
             # {
             #   name = "PATH";
