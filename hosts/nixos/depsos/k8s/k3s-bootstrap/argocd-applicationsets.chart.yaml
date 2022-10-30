@@ -13,28 +13,18 @@ spec:
   valuesContent: |-
     resources:
     - apiVersion: argoproj.io/v1alpha1
-      kind: ApplicationSet
+      kind: Application
       metadata:
-        name: cluster-addons
+        name: app-of-apps
       spec:
-        generators:
-        - git:
-            repoURL: https://github.com/truelecter/k8s-infra.git
-            revision: HEAD
-            directories:
-            - path: cluster-addons/*
-        template:
-          metadata:
-            name: '{{ path.basename }}'
-          spec:
-            project: cluster-addons
-            source:
-              repoURL: https://github.com/truelecter/k8s-infra.git
-              targetRevision: HEAD
-              path: '{{ path }}'
-            destination:
-              server: https://kubernetes.default.svc
-              namespace: '{{ path.basename }}'
+        project: infra
+        source:
+          repoURL: https://github.com/truelecter/k8s-infra.git
+          targetRevision: HEAD
+          path: applications
+        destination:
+          server: https://kubernetes.default.svc
+          namespace: argocd
     - apiVersion: argoproj.io/v1alpha1
       kind: ApplicationSet
       metadata:
@@ -64,7 +54,7 @@ spec:
     - apiVersion: argoproj.io/v1alpha1
       kind: AppProject
       metadata:
-        name: cluster-addons
+        name: infra
         namespace: argocd
       spec:
         description: Cluster wide addons
