@@ -217,14 +217,17 @@
             sops-nix.nixosModules.sops
             bud.nixosModules.bud
             nixos-wsl.nixosModules.wsl
-            # "${latest}/nixos/modules/services/misc/jellyfin.nix"
+            {
+              disabledModules = [
+                "services/cluster/k3s/default.nix"
+              ];
+            }
+            "${latest}/nixos/modules/services/cluster/k3s/default.nix"
           ];
         };
 
         imports = [(digga.lib.importHosts ./hosts/nixos)];
         hosts = {
-          # host-specific properties here
-          # NixOS = { };
           octoprint = {
             system = "aarch64-linux";
             channelName = "nixos";
@@ -346,6 +349,10 @@
         };
         hyperos = {
           sshUser = "truelecter";
+        };
+        depsos = {
+          sshUser = "truelecter";
+          sshOpts = ["-p" "2265"];
         };
       };
     };

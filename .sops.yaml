@@ -3,7 +3,8 @@ keys:
   - &server-nas 70732b3ee3a1c10a8b6b849a959a413b28c00df9
   - &squadbook  4b2db161a7459a355a6f7b3006f1ae8861b01531
   - &octoprint  50b24bfd5de5ee6397d7138de6f9c0f528fd86f3
-  - &hyperos  999b95e23737a2732682322e53a49ea746050874
+  - &hyperos    999b95e23737a2732682322e53a49ea746050874
+  - &depsos     356a82c0e351bd86b093e96706f5748b0e47bff0
 
 creation_rules:
   - path_regex: secrets/sops/envs.yaml
@@ -18,6 +19,7 @@ creation_rules:
       - *squadbook
       - *octoprint
       - *hyperos
+      - *depsos
   - path_regex: secrets/sops/ssh.*$
     key_groups:
     - pgp:

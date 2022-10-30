@@ -26,16 +26,21 @@ in {
       default = null;
       description = "File path containing the k3s YAML config. This is useful when the config is generated (for example on boot).";
     };
+
+    extraFlags = mkOption {
+      type = types.str;
+      default = "";
+      description = "Extra options for k3s";
+    };
   };
 
   config = mkIf cfg.enable {
     services.k3s = {
       enable = true;
-      docker = lib.mkForce false;
       role = "agent";
       tokenFile = cfg.tokenFile;
       serverAddr = cfg.serverAddr;
-      extraFlags = "--container-runtime-endpoint unix:///run/containerd/containerd.sock";
+      extraFlags = "--container-runtime-endpoint unix:///run/containerd/containerd.sock ${cfg.extraFlags}";
       # --node-ip ${config.networking.doctorwho.currentHost.ipv4} --snapshotter=zfs
     };
 

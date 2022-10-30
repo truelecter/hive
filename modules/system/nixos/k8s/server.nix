@@ -33,6 +33,12 @@ in {
       default = null;
       description = "File path containing the k3s YAML config. This is useful when the config is generated (for example on boot).";
     };
+
+    extraFlags = mkOption {
+      type = types.str;
+      default = "";
+      description = "Extra options for k3s";
+    };
   };
 
   config = mkIf cfg.enable {
@@ -40,7 +46,6 @@ in {
 
     services.k3s = {
       enable = true;
-      docker = lib.mkForce false;
 
       tokenFile = cfg.tokenFile;
       serverAddr = cfg.serverAddr;
@@ -48,7 +53,7 @@ in {
 
       inherit (cfg) configPath disableAgent;
 
-      extraFlags = "--no-deploy traefik --flannel-backend=host-gw --container-runtime-endpoint unix:///run/containerd/containerd.sock";
+      extraFlags = "--container-runtime-endpoint unix:///run/containerd/containerd.sock ${cfg.extraFlags}";
     };
 
     systemd.services.k3s = {

@@ -25,5 +25,10 @@ channels: final: prev: {
     klipper-genconf
     statix
     raspberrypi-eeprom
+    k3s
+    containerd
+    cni
+    cni-plugins
+    cni-plugin-flannel
     ;
 }
