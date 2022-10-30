@@ -6,7 +6,7 @@ metadata:
 spec:
   repo: https://argoproj.github.io/argo-helm
   chart: argo-cd
-  version: "5.8.7"
+  version: 5.8.7
   helmVersion: v3
   bootstrap: true
   targetNamespace: argocd
@@ -16,5 +16,3 @@ spec:
         type: LoadBalancer
       ingress:
         enabled: true
-      extraArgs:
-      - --insecure

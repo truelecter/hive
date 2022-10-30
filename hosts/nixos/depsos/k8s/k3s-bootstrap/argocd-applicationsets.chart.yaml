@@ -20,7 +20,7 @@ spec:
         generators:
         - git:
             repoURL: https://github.com/truelecter/k8s-infra.git
-            revision: master
+            revision: HEAD
             directories:
             - path: cluster-addons/*
         template:
@@ -30,7 +30,7 @@ spec:
             project: cluster-addons
             source:
               repoURL: https://github.com/truelecter/k8s-infra.git
-              targetRevision: master
+              targetRevision: HEAD
               path: '{{ path }}'
             destination:
               server: https://kubernetes.default.svc
@@ -43,7 +43,7 @@ spec:
         generators:
         - git:
             repoURL: https://github.com/truelecter/k8s-infra.git
-            revision: master
+            revision: HEAD
             directories:
             - path: services/*
         template:
@@ -56,8 +56,26 @@ spec:
             project: '{{ path[1] }}'
             source:
               repoURL: https://github.com/truelecter/k8s-infra.git
-              targetRevision: master
+              targetRevision: HEAD
               path: '{{ path }}'
             destination:
               server: https://kubernetes.default.svc
               namespace: '{{ path.basename }}'
+    - apiVersion: argoproj.io/v1alpha1
+      kind: AppProject
+      metadata:
+        name: cluster-addons
+        namespace: argocd
+      spec:
+        description: Cluster wide addons
+        sourceRepos:
+        - '*'
+        namespaceResourceWhitelist:
+        - group: '*'
+          kind: '*'
+        clusterResourceWhitelist:
+        - group: '*'
+          kind: '*'
+        destinations:
+        - namespace: '*'
+          server: https://kubernetes.default.svc
