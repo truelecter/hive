@@ -16,7 +16,7 @@
   tl.k8s.server = {
     enable = true;
     tokenFile = config.sops.secrets.k3s-token.path;
-    extraFlags = "--cluster-cidr=10.8.0.0/16 --disable=traefik --flannel-backend=none --disable-network-policy --node-external-ip=\${NODE_EXTERNAL_IP}";
+    extraFlags = "--cluster-cidr=10.8.0.0/16 --disable=traefik --flannel-backend=none --disable-network-policy --disable servicelb";
   };
 
   systemd.services.k3s.serviceConfig.EnvironmentFile = config.sops.secrets.k3s-depsos-external-ip.path;
