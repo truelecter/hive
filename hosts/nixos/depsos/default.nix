@@ -28,8 +28,15 @@
       "interface-name:wg-v6.cali"
     ];
   };
+
   systemd.services.NetworkManager-wait-online.enable = false;
   services.openssh.ports = [22 2265];
+
+  users.users.root = {
+    openssh.authorizedKeys.keys = [
+      (builtins.readFile ./../../../secrets/sops/ssh/root_nas.pub)
+    ];
+  };
 
   system.stateVersion = "22.05";
 }

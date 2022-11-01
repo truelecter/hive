@@ -1,5 +1,5 @@
 self: super: {
-  python3Packages = super.python3Packages.override {
+  python39Packages = super.python39Packages.override {
     overrides = pfinal: pprev: {
       dbus-next = pprev.dbus-next.overridePythonAttrs (old: {
         # temporary fix for https://github.com/NixOS/nixpkgs/issues/197408

@@ -25,6 +25,22 @@ spec:
         destination:
           server: https://kubernetes.default.svc
           namespace: argocd
+        syncPolicy:
+          automated:
+            prune: true
+            selfHeal: true
+          syncOptions:
+          - Validate=false
+          - CreateNamespace=true
+          - PrunePropagationPolicy=foreground
+          - PruneLast=true
+          retry:
+            limit: 5
+            backoff:
+              duration: 5s
+              factor: 2
+              maxDuration: 3m
+        revisionHistoryLimit: 5
     - apiVersion: argoproj.io/v1alpha1
       kind: ApplicationSet
       metadata:
@@ -51,6 +67,22 @@ spec:
             destination:
               server: https://kubernetes.default.svc
               namespace: '{{ path.basename }}'
+            syncPolicy:
+              automated:
+                prune: true
+                selfHeal: true
+              syncOptions:
+              - Validate=false
+              - CreateNamespace=true
+              - PrunePropagationPolicy=foreground
+              - PruneLast=true
+              retry:
+                limit: 5
+                backoff:
+                  duration: 5s
+                  factor: 2
+                  maxDuration: 3m
+            revisionHistoryLimit: 5
     - apiVersion: argoproj.io/v1alpha1
       kind: AppProject
       metadata:

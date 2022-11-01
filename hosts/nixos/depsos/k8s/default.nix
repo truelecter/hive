@@ -16,8 +16,10 @@
   tl.k8s.server = {
     enable = true;
     tokenFile = config.sops.secrets.k3s-token.path;
-    extraFlags = "--cluster-cidr=10.8.0.0/16 --disable=traefik --flannel-backend=none";
+    extraFlags = "--cluster-cidr=10.8.0.0/16 --disable=traefik --flannel-backend=none --disable-network-policy --node-external-ip=\${NODE_EXTERNAL_IP}";
   };
+
+  systemd.services.k3s.serviceConfig.EnvironmentFile = config.sops.secrets.k3s-depsos-external-ip.path;
 
   virtualisation.containerd = {
     settings = {
@@ -30,5 +32,5 @@
 
   # TODO remove ugly hacks with calico
 
-  environment.systemPackages = [pkgs.k9s];
+  environment.systemPackages = with pkgs; [k9s argocd];
 }

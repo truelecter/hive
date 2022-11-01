@@ -3,6 +3,7 @@
 
   inputs = {
     #region Flakes
+    k8s.url = "github:nixos/nixpkgs/3933d8bb9120573c0d8d49dc5e890cb211681490";
     nixos.url = "github:nixos/nixpkgs/nixos-22.05";
     latest.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-darwin-stable.url = "github:NixOS/nixpkgs/nixpkgs-22.05-darwin";
@@ -24,6 +25,7 @@
 
       inputs = {
         nixpkgs.follows = "nixos";
+        latest.follows = "latest";
         nixlib.follows = "nixos";
         home-manager.follows = "home";
         deploy.follows = "deploy";
@@ -216,7 +218,7 @@
             home.nixosModules.home-manager
             sops-nix.nixosModules.sops
             bud.nixosModules.bud
-            nixos-wsl.nixosModules.wsl
+            # nixos-wsl.nixosModules.wsl
             {
               disabledModules = [
                 "services/cluster/k3s/default.nix"

@@ -62,7 +62,7 @@ in {
       (devos sops)
       (devos inputs.deploy.packages.${pkgs.system}.deploy-rs)
       (devos inputs.home.packages.${pkgs.system}.home-manager)
-      (devos inputs.nixos-generators.packages.${pkgs.system}.nixos-generators)
+      (devos inputs.nixos-generators.packages.${pkgs.system}.nixos-generate)
       (devos node2nix)
       (devos gnupg)
       (devos cachix)

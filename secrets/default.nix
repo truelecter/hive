@@ -39,6 +39,11 @@ in {
         key = "k3sToken";
         sopsFile = ./sops/keys.yaml;
       };
+
+      k3s-depsos-external-ip = {
+        key = "depsosK3sEnv";
+        sopsFile = ./sops/external-ips.yaml;
+      };
     })
   ];
 }

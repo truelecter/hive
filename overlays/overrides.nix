@@ -2,6 +2,15 @@ channels: final: prev: {
   __dontExport = true; # overrides clutter up actual creations
 
   inherit
+    (channels.k8s)
+    containerd
+    cni
+    cni-plugins
+    cni-plugin-flannel
+    k3s
+    ;
+
+  inherit
     (channels.latest)
     cachix
     dhall
@@ -17,6 +26,8 @@ channels: final: prev: {
     tailscale
     alejandra
     terraform-lss
+    direnv
+    nix-direnv
     k9s
     rnix-lsp
     ffmpeg_5
@@ -25,9 +36,5 @@ channels: final: prev: {
     klipper-genconf
     statix
     raspberrypi-eeprom
-    containerd
-    cni
-    cni-plugins
-    cni-plugin-flannel
     ;
 }
