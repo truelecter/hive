@@ -28,7 +28,6 @@ channels: final: prev: {
     terraform-lss
     direnv
     nix-direnv
-    k9s
     rnix-lsp
     ffmpeg_5
     klipper-flash
@@ -36,5 +35,6 @@ channels: final: prev: {
     klipper-genconf
     statix
     raspberrypi-eeprom
+    k9s
     ;
 }
