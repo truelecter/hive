@@ -33,5 +33,5 @@
 
   # TODO remove ugly hacks with calico
 
-  environment.systemPackages = with pkgs; [k9s argocd];
+  environment.systemPackages = with pkgs; [kubectl k9s argocd];
 }
