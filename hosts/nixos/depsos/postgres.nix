@@ -6,6 +6,7 @@
     dataDir = "/srv/db/pg-12";
     ensureDatabases = [
       "cqdata"
+      "authentik"
     ];
     identMap = ''
       map-name truelecter truelecter
@@ -15,6 +16,12 @@
         name = "pandora";
         ensurePermissions = {
           "DATABASE cqdata" = "ALL PRIVILEGES";
+        };
+      }
+      {
+        name = "authentik";
+        ensurePermissions = {
+          "DATABASE authentik" = "ALL PRIVILEGES";
         };
       }
       {
