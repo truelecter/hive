@@ -42,48 +42,6 @@ spec:
               maxDuration: 3m
         revisionHistoryLimit: 5
     - apiVersion: argoproj.io/v1alpha1
-      kind: ApplicationSet
-      metadata:
-        name: services
-      spec:
-        generators:
-        - git:
-            repoURL: https://github.com/truelecter/k8s-infra.git
-            revision: HEAD
-            directories:
-            - path: services/*
-        template:
-          metadata:
-            name: '{{ path[1] }}-{{ path.basename }}'
-            labels:
-              name: '{{ path.basename }}'
-              env: '{{ path[1] }}'
-          spec:
-            project: '{{ path[1] }}'
-            source:
-              repoURL: https://github.com/truelecter/k8s-infra.git
-              targetRevision: HEAD
-              path: '{{ path }}'
-            destination:
-              server: https://kubernetes.default.svc
-              namespace: '{{ path.basename }}'
-            syncPolicy:
-              automated:
-                prune: true
-                selfHeal: true
-              syncOptions:
-              - Validate=false
-              - CreateNamespace=true
-              - PrunePropagationPolicy=foreground
-              - PruneLast=true
-              retry:
-                limit: 5
-                backoff:
-                  duration: 5s
-                  factor: 2
-                  maxDuration: 3m
-            revisionHistoryLimit: 5
-    - apiVersion: argoproj.io/v1alpha1
       kind: AppProject
       metadata:
         name: infra
