@@ -4,5 +4,7 @@ final: prev: {
       if prev.hostPlatform.isDarwin
       then (builtins.filter (x: x != "netgo") o.tags)
       else o.tags;
+
+    doCheck = false;
   });
 }

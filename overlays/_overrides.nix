@@ -36,5 +36,6 @@ channels: final: prev: {
     statix
     raspberrypi-eeprom
     k9s
+    nix
     ;
 }
