@@ -71,9 +71,16 @@ in {
 
       {
         category = "devos";
-        name = nvfetcher.pname;
+        name = "update-packages";
         help = nvfetcher.meta.description;
-        command = "cd $PRJ_ROOT/packages; export TMPDIR=\"$(mktemp -d 2>/dev/null || mktemp -d -t 'mytmpdir')\"; ${nvfetcher}/bin/nvfetcher -c ./sources.toml $@";
+        command = "export TMPDIR=\"/tmp\"; ${nvfetcher}/bin/nvfetcher -t -o \"$PRJ_ROOT/packages/sources/pkgs\" -c \"$PRJ_ROOT/packages/sources.toml\" $@";
+      }
+
+      {
+        category = "devos";
+        name = "update-vscode-exts";
+        help = nvfetcher.meta.description;
+        command = "export TMPDIR=\"/tmp\"; ${nvfetcher}/bin/nvfetcher -t -o \"$PRJ_ROOT/packages/sources/vscode\" -c $PRJ_ROOT/packages/sources-vscode-extensions.toml $@";
       }
 
       (linter editorconfig-checker)

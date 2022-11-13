@@ -322,11 +322,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1667469118,
-        "narHash": "sha256-2YrDEmeYKCDOCuDDrjHoaUOVO3hyh9cIrWAJET1HPg8=",
+        "lastModified": 1667907331,
+        "narHash": "sha256-bHkAwkYlBjkupPUFcQjimNS8gxWSWjOTevEuwdnp5m0=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "d78b3488a76d251701ab58a9b7f0dd092b806c1e",
+        "rev": "6639e3a837fc5deb6f99554072789724997bc8e5",
         "type": "github"
       },
       "original": {
@@ -513,15 +513,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1666812839,
-        "narHash": "sha256-0nBDgjPU+iDsvz89W+cDEyhnFGSwCJmwDl/gMGqYiU0=",
-        "owner": "nix-community",
+        "lastModified": 1668336973,
+        "narHash": "sha256-pDYM0eIHxYigjEpAWvBzZdw326sNInLAhaxkQmGLgV0=",
+        "owner": "truelecter",
         "repo": "nixos-generators",
-        "rev": "41f3518bc194389df22a3d198215eae75e6b5ab9",
+        "rev": "6edcaaa756918b35a6a6d5798b950e1e88ef8bee",
         "type": "github"
       },
       "original": {
-        "owner": "nix-community",
+        "owner": "truelecter",
+        "ref": "fix/module-identity-II",
         "repo": "nixos-generators",
         "type": "github"
       }

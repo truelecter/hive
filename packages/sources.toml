@@ -61,3 +61,7 @@ fetch.github = "RPi-Distro/bluez-firmware"
 [rpi-fw]
 src.git = "https://github.com/raspberrypi/firmware"
 fetch.github = "raspberrypi/firmware"
+
+[pam-reattach]
+src.git = "https://github.com/fabianishere/pam_reattach"
+fetch.github = "fabianishere/pam_reattach"

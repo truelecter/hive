@@ -88,7 +88,7 @@
     };
 
     nixos-generators = {
-      url = "github:nix-community/nixos-generators";
+      url = "github:truelecter/nixos-generators/fix/module-identity-II";
       inputs.nixpkgs.follows = "nixos";
     };
 
@@ -256,7 +256,7 @@
       #region darwin
       darwin = {
         hostDefaults = {
-          system = "x86_64-darwin";
+          system = "aarch64-darwin";
           channelName = "nixpkgs-darwin-stable";
           imports = [
             (digga.lib.importExportableModules ./modules/system/common)
@@ -271,17 +271,16 @@
         };
 
         imports = [(digga.lib.importHosts ./hosts/darwin)];
-        hosts = {
-          # host-specific properties here
-          # Mac = { };
-        };
+        hosts = {};
         importables = rec {
           profiles = self.host-profiles;
           suites = with profiles; rec {
             base = [
               darwin.core
               darwin.security.pam
+              darwin.security.one-password
               secrets
+              darwin.messengers
             ];
             editors = [
               darwin.editors.sublime-text
@@ -302,31 +301,34 @@
 
       home = {
         imports = [(digga.lib.importExportableModules ./modules/user)];
-        modules = [];
         importables = rec {
           profiles = digga.lib.rakeLeaves ./profiles/user;
-          suites = with profiles; rec {
+          suites = with profiles; {
             base = [
               shell.direnv
               git
               shell.zsh
-              shell.tmux
+              profiles.shell.tmux
               shell.nvim
+              home-manager-base
             ];
             develop = [
               dev.aws
               dev.k8s
-              dev.oci
               dev.terraform
               dev.nix
             ];
-            darwin-fixes = [
+            develop-gui = [
+              dev.vscode
+            ];
+            darwin = [
+              darwin.shell.iterm
               darwin.smart-card-fix
             ];
           };
         };
         users = rec {
-          "andrii.panasiuk" = {suites, ...}: {imports = suites.base ++ suites.develop ++ suites.darwin-fixes;};
+          "andrii.panasiuk" = {suites, ...}: {imports = suites.base ++ suites.develop ++ suites.develop-gui ++ suites.darwin;};
           truelecter = {suites, ...}: {imports = suites.base;};
         }; # digga.lib.importers.rakeLeaves ./users/hm;
       };

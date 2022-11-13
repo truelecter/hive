@@ -1,0 +1,303 @@
+["arrterian.nix-env-selector"]
+src.vsmarketplace = "arrterian.nix-env-selector"
+fetch.vsmarketplace = "arrterian.nix-env-selector"
+
+["bbenoist.nix"]
+src.vsmarketplace = "bbenoist.nix"
+fetch.vsmarketplace = "bbenoist.nix"
+
+["davidanson.vscode-markdownlint"]
+src.vsmarketplace = "davidanson.vscode-markdownlint"
+fetch.vsmarketplace = "davidanson.vscode-markdownlint"
+
+["4ops.packer"]
+src.vsmarketplace = "4ops.packer"
+fetch.vsmarketplace = "4ops.packer"
+
+["apollographql.vscode-apollo"]
+src.vsmarketplace = "apollographql.vscode-apollo"
+fetch.vsmarketplace = "apollographql.vscode-apollo"
+
+["christian-kohler.npm-intellisense"]
+src.vsmarketplace = "christian-kohler.npm-intellisense"
+fetch.vsmarketplace = "christian-kohler.npm-intellisense"
+
+["christian-kohler.path-intellisense"]
+src.vsmarketplace = "christian-kohler.path-intellisense"
+fetch.vsmarketplace = "christian-kohler.path-intellisense"
+
+["coolbear.systemd-unit-file"]
+src.vsmarketplace = "coolbear.systemd-unit-file"
+fetch.vsmarketplace = "coolbear.systemd-unit-file"
+
+["cschlosser.doxdocgen"]
+src.vsmarketplace = "cschlosser.doxdocgen"
+fetch.vsmarketplace = "cschlosser.doxdocgen"
+
+["davidnussio.vscode-jq-playground"]
+src.vsmarketplace = "davidnussio.vscode-jq-playground"
+fetch.vsmarketplace = "davidnussio.vscode-jq-playground"
+
+["dbaeumer.vscode-eslint"]
+src.vsmarketplace = "dbaeumer.vscode-eslint"
+fetch.vsmarketplace = "dbaeumer.vscode-eslint"
+
+["donjayamanne.githistory"]
+src.vsmarketplace = "donjayamanne.githistory"
+fetch.vsmarketplace = "donjayamanne.githistory"
+
+["eamodio.gitlens"]
+src.vsmarketplace = "eamodio.gitlens"
+fetch.vsmarketplace = "eamodio.gitlens"
+
+["editorconfig.editorconfig"]
+src.vsmarketplace = "editorconfig.editorconfig"
+fetch.vsmarketplace = "editorconfig.editorconfig"
+
+["eg2.vscode-npm-script"]
+src.vsmarketplace = "eg2.vscode-npm-script"
+fetch.vsmarketplace = "eg2.vscode-npm-script"
+
+["erd0s.terraform-autocomplete"]
+src.vsmarketplace = "erd0s.terraform-autocomplete"
+fetch.vsmarketplace = "erd0s.terraform-autocomplete"
+
+["golang.go"]
+src.vsmarketplace = "golang.go"
+fetch.vsmarketplace = "golang.go"
+
+["graphql.vscode-graphql"]
+src.vsmarketplace = "graphql.vscode-graphql"
+fetch.vsmarketplace = "graphql.vscode-graphql"
+
+["graphql.vscode-graphql-execution"]
+src.vsmarketplace = "graphql.vscode-graphql-execution"
+fetch.vsmarketplace = "graphql.vscode-graphql-execution"
+
+["graphql.vscode-graphql-syntax"]
+src.vsmarketplace = "graphql.vscode-graphql-syntax"
+fetch.vsmarketplace = "graphql.vscode-graphql-syntax"
+
+["hashicorp.terraform"]
+src.vsmarketplace = "hashicorp.terraform"
+fetch.vsmarketplace = "hashicorp.terraform"
+
+["ipedrazas.kubernetes-snippets"]
+src.vsmarketplace = "ipedrazas.kubernetes-snippets"
+fetch.vsmarketplace = "ipedrazas.kubernetes-snippets"
+
+["iterative.dvc"]
+src.vsmarketplace = "iterative.dvc"
+fetch.vsmarketplace = "iterative.dvc"
+
+["ivory-lab.jenkinsfile-support"]
+src.vsmarketplace = "ivory-lab.jenkinsfile-support"
+fetch.vsmarketplace = "ivory-lab.jenkinsfile-support"
+
+["janjoerke.jenkins-pipeline-linter-connector"]
+src.vsmarketplace = "janjoerke.jenkins-pipeline-linter-connector"
+fetch.vsmarketplace = "janjoerke.jenkins-pipeline-linter-connector"
+
+["jeff-hykin.better-cpp-syntax"]
+src.vsmarketplace = "jeff-hykin.better-cpp-syntax"
+fetch.vsmarketplace = "jeff-hykin.better-cpp-syntax"
+
+["jnoortheen.nix-ide"]
+src.vsmarketplace = "jnoortheen.nix-ide"
+fetch.vsmarketplace = "jnoortheen.nix-ide"
+
+["josetr.cmake-language-support-vscode"]
+src.vsmarketplace = "josetr.cmake-language-support-vscode"
+fetch.vsmarketplace = "josetr.cmake-language-support-vscode"
+
+["jq-syntax-highlighting.jq-syntax-highlighting"]
+src.vsmarketplace = "jq-syntax-highlighting.jq-syntax-highlighting"
+fetch.vsmarketplace = "jq-syntax-highlighting.jq-syntax-highlighting"
+
+["kamadorueda.alejandra"]
+src.vsmarketplace = "kamadorueda.alejandra"
+fetch.vsmarketplace = "kamadorueda.alejandra"
+
+["lunuan.kubernetes-templates"]
+src.vsmarketplace = "lunuan.kubernetes-templates"
+fetch.vsmarketplace = "lunuan.kubernetes-templates"
+
+["maarti.jenkins-doc"]
+src.vsmarketplace = "maarti.jenkins-doc"
+fetch.vsmarketplace = "maarti.jenkins-doc"
+
+["ms-azuretools.vscode-docker"]
+src.vsmarketplace = "ms-azuretools.vscode-docker"
+fetch.vsmarketplace = "ms-azuretools.vscode-docker"
+
+["ms-dotnettools.vscode-dotnet-runtime"]
+src.vsmarketplace = "ms-dotnettools.vscode-dotnet-runtime"
+fetch.vsmarketplace = "ms-dotnettools.vscode-dotnet-runtime"
+
+["ms-kubernetes-tools.vscode-kubernetes-tools"]
+src.vsmarketplace = "ms-kubernetes-tools.vscode-kubernetes-tools"
+fetch.vsmarketplace = "ms-kubernetes-tools.vscode-kubernetes-tools"
+
+["ms-python.isort"]
+src.vsmarketplace = "ms-python.isort"
+fetch.vsmarketplace = "ms-python.isort"
+
+["ms-python.python"]
+src.vsmarketplace = "ms-python.python"
+fetch.vsmarketplace = "ms-python.python"
+
+["ms-python.vscode-pylance"]
+src.vsmarketplace = "ms-python.vscode-pylance"
+fetch.vsmarketplace = "ms-python.vscode-pylance"
+
+["ms-toolsai.jupyter"]
+src.vsmarketplace = "ms-toolsai.jupyter"
+fetch.vsmarketplace = "ms-toolsai.jupyter"
+
+["ms-toolsai.jupyter-keymap"]
+src.vsmarketplace = "ms-toolsai.jupyter-keymap"
+fetch.vsmarketplace = "ms-toolsai.jupyter-keymap"
+
+["ms-toolsai.jupyter-renderers"]
+src.vsmarketplace = "ms-toolsai.jupyter-renderers"
+fetch.vsmarketplace = "ms-toolsai.jupyter-renderers"
+
+["ms-toolsai.vscode-jupyter-cell-tags"]
+src.vsmarketplace = "ms-toolsai.vscode-jupyter-cell-tags"
+fetch.vsmarketplace = "ms-toolsai.vscode-jupyter-cell-tags"
+
+["ms-toolsai.vscode-jupyter-slideshow"]
+src.vsmarketplace = "ms-toolsai.vscode-jupyter-slideshow"
+fetch.vsmarketplace = "ms-toolsai.vscode-jupyter-slideshow"
+
+["ms-vscode-remote.remote-containers"]
+src.vsmarketplace = "ms-vscode-remote.remote-containers"
+fetch.vsmarketplace = "ms-vscode-remote.remote-containers"
+
+["ms-vscode-remote.remote-ssh"]
+src.vsmarketplace = "ms-vscode-remote.remote-ssh"
+fetch.vsmarketplace = "ms-vscode-remote.remote-ssh"
+
+["ms-vscode-remote.remote-ssh-edit"]
+src.vsmarketplace = "ms-vscode-remote.remote-ssh-edit"
+fetch.vsmarketplace = "ms-vscode-remote.remote-ssh-edit"
+
+["ms-vscode-remote.remote-wsl"]
+src.vsmarketplace = "ms-vscode-remote.remote-wsl"
+fetch.vsmarketplace = "ms-vscode-remote.remote-wsl"
+
+["ms-vscode-remote.vscode-remote-extensionpack"]
+src.vsmarketplace = "ms-vscode-remote.vscode-remote-extensionpack"
+fetch.vsmarketplace = "ms-vscode-remote.vscode-remote-extensionpack"
+
+["ms-vscode.cmake-tools"]
+src.vsmarketplace = "ms-vscode.cmake-tools"
+fetch.vsmarketplace = "ms-vscode.cmake-tools"
+
+["ms-vscode.cpptools-extension-pack"]
+src.vsmarketplace = "ms-vscode.cpptools-extension-pack"
+fetch.vsmarketplace = "ms-vscode.cpptools-extension-pack"
+
+["ms-vscode.cpptools-themes"]
+src.vsmarketplace = "ms-vscode.cpptools-themes"
+fetch.vsmarketplace = "ms-vscode.cpptools-themes"
+
+["ms-vscode.makefile-tools"]
+src.vsmarketplace = "ms-vscode.makefile-tools"
+fetch.vsmarketplace = "ms-vscode.makefile-tools"
+
+["natqe.reload"]
+src.vsmarketplace = "natqe.reload"
+fetch.vsmarketplace = "natqe.reload"
+
+["nelite.vscode-anime-motivator"]
+src.vsmarketplace = "nelite.vscode-anime-motivator"
+fetch.vsmarketplace = "nelite.vscode-anime-motivator"
+
+["nicolasvuillamy.vscode-groovy-lint"]
+src.vsmarketplace = "nicolasvuillamy.vscode-groovy-lint"
+fetch.vsmarketplace = "nicolasvuillamy.vscode-groovy-lint"
+
+["octref.vetur"]
+src.vsmarketplace = "octref.vetur"
+fetch.vsmarketplace = "octref.vetur"
+
+["platformio.platformio-ide"]
+src.vsmarketplace = "platformio.platformio-ide"
+fetch.vsmarketplace = "platformio.platformio-ide"
+
+["plorefice.devicetree"]
+src.vsmarketplace = "plorefice.devicetree"
+fetch.vsmarketplace = "plorefice.devicetree"
+
+["redhat.java"]
+src.vsmarketplace = "redhat.java"
+fetch.vsmarketplace = "redhat.java"
+
+["redhat.vscode-commons"]
+src.vsmarketplace = "redhat.vscode-commons"
+fetch.vsmarketplace = "redhat.vscode-commons"
+
+["redhat.vscode-xml"]
+src.vsmarketplace = "redhat.vscode-xml"
+fetch.vsmarketplace = "redhat.vscode-xml"
+
+["redhat.vscode-yaml"]
+src.vsmarketplace = "redhat.vscode-yaml"
+fetch.vsmarketplace = "redhat.vscode-yaml"
+
+["tabeyti.jenkins-jack"]
+src.vsmarketplace = "tabeyti.jenkins-jack"
+fetch.vsmarketplace = "tabeyti.jenkins-jack"
+
+["tim-koehler.helm-intellisense"]
+src.vsmarketplace = "tim-koehler.helm-intellisense"
+fetch.vsmarketplace = "tim-koehler.helm-intellisense"
+
+["twxs.cmake"]
+src.vsmarketplace = "twxs.cmake"
+fetch.vsmarketplace = "twxs.cmake"
+
+["visualstudioexptteam.intellicode-api-usage-examples"]
+src.vsmarketplace = "visualstudioexptteam.intellicode-api-usage-examples"
+fetch.vsmarketplace = "visualstudioexptteam.intellicode-api-usage-examples"
+
+["visualstudioexptteam.vscodeintellicode"]
+src.vsmarketplace = "visualstudioexptteam.vscodeintellicode"
+fetch.vsmarketplace = "visualstudioexptteam.vscodeintellicode"
+
+["vscjava.vscode-java-debug"]
+src.vsmarketplace = "vscjava.vscode-java-debug"
+fetch.vsmarketplace = "vscjava.vscode-java-debug"
+
+["vscjava.vscode-java-dependency"]
+src.vsmarketplace = "vscjava.vscode-java-dependency"
+fetch.vsmarketplace = "vscjava.vscode-java-dependency"
+
+["vscjava.vscode-java-pack"]
+src.vsmarketplace = "vscjava.vscode-java-pack"
+fetch.vsmarketplace = "vscjava.vscode-java-pack"
+
+["vscjava.vscode-java-test"]
+src.vsmarketplace = "vscjava.vscode-java-test"
+fetch.vsmarketplace = "vscjava.vscode-java-test"
+
+["vscjava.vscode-maven"]
+src.vsmarketplace = "vscjava.vscode-maven"
+fetch.vsmarketplace = "vscjava.vscode-maven"
+
+["whi-tw.klipper-config-syntax"]
+src.vsmarketplace = "whi-tw.klipper-config-syntax"
+fetch.vsmarketplace = "whi-tw.klipper-config-syntax"
+
+["xadillax.viml"]
+src.vsmarketplace = "xadillax.viml"
+fetch.vsmarketplace = "xadillax.viml"
+
+["yzane.markdown-pdf"]
+src.vsmarketplace = "yzane.markdown-pdf"
+fetch.vsmarketplace = "yzane.markdown-pdf"
+
+["roscop.activefileinstatusbar"]
+src.vsmarketplace = "roscop.activefileinstatusbar"
+fetch.vsmarketplace = "roscop.activefileinstatusbar"

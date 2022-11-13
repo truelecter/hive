@@ -63,6 +63,10 @@
       help.autocorrect = 20;
     };
 
+    includes = [
+      {path = "~/.gitconfig.local";}
+    ];
+
     aliases = {
       git = "!exec git";
 

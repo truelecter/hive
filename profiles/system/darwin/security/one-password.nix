@@ -5,7 +5,7 @@
   pkgs,
   ...
 }: {
-  home.packages = with pkgs; [
-    oci-cli
+  homebrew.casks = [
+    "1password"
   ];
 }

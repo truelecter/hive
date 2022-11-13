@@ -32,6 +32,7 @@
       m-cli
       terminal-notifier
       duti
+      # darwin.iproute2mac
     ];
 
     darwinConfig = "${self}/lib/compat";
@@ -90,5 +91,23 @@
     };
   };
 
-  homebrew.enable = true;
+  homebrew = {
+    enable = true;
+  };
+
+  homebrew.brews = [
+    "iproute2mac"
+  ];
+
+  homebrew.casks = [
+    "iterm2"
+    "launchcontrol"
+  ];
+
+  fonts.fontDir.enable = true;
+  fonts.fonts = [
+    pkgs.terminus-nerdfont
+  ];
+
+  # nixpkgs.config.allowBroken = true;
 }

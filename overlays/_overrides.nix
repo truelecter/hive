@@ -36,6 +36,9 @@ channels: final: prev: {
     statix
     raspberrypi-eeprom
     k9s
-    nix
+    kubelogin-oidc
+    vscodium
     ;
+
+  nix-unstable = channels.latest.nix;
 }

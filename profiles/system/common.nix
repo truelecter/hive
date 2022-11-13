@@ -115,5 +115,7 @@ in {
       builders-use-substitutes = true
       warn-dirty = false
     '';
+
+    package = pkgs.nix-unstable;
   };
 }
