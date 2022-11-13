@@ -21,7 +21,7 @@
     },
     "klipper-screen": {
         "cargoLocks": null,
-        "date": "2022-11-10",
+        "date": "2022-11-12",
         "extract": null,
         "name": "klipper-screen",
         "passthru": null,
@@ -33,11 +33,11 @@
             "name": null,
             "owner": "jordanruthe",
             "repo": "KlipperScreen",
-            "rev": "f05cbe9f0b94cdd052d5061bad77272204a8b764",
-            "sha256": "sha256-9J6cmX4NlZ6XbrpATRtXuFH0Ov+eSlAUO/vk1gc1gac=",
+            "rev": "300eed4d29c571a1d21d2c4d08522122ed2f74f9",
+            "sha256": "sha256-b3TEfv5NCZhWn+M2ooaEFbrPHZMbzigWekxOvFVsDKE=",
             "type": "github"
         },
-        "version": "f05cbe9f0b94cdd052d5061bad77272204a8b764"
+        "version": "300eed4d29c571a1d21d2c4d08522122ed2f74f9"
     },
     "libcamera": {
         "cargoLocks": null,
@@ -116,7 +116,7 @@
     },
     "moonraker": {
         "cargoLocks": null,
-        "date": "2022-11-07",
+        "date": "2022-11-13",
         "extract": null,
         "name": "moonraker",
         "passthru": null,
@@ -128,11 +128,31 @@
             "name": null,
             "owner": "Arksine",
             "repo": "moonraker",
-            "rev": "5a3b1b6e5cb91ca4a30f35c5a599fbae5c2d47b5",
-            "sha256": "sha256-W0UFVtvT9kxg7m+7un3Gfcz1B73nWftC9+8nddc4rkU=",
+            "rev": "490d27b7deddf6ac8cacb7e0b49ec629224e6cca",
+            "sha256": "sha256-cCOnyU8/3oUGxycOtORNB7Aad/GnZU4Zz++EDmk8R7o=",
             "type": "github"
         },
-        "version": "5a3b1b6e5cb91ca4a30f35c5a599fbae5c2d47b5"
+        "version": "490d27b7deddf6ac8cacb7e0b49ec629224e6cca"
+    },
+    "otf2bdf": {
+        "cargoLocks": null,
+        "date": "2021-09-18",
+        "extract": null,
+        "name": "otf2bdf",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "jirutka",
+            "repo": "otf2bdf",
+            "rev": "4fb7b6546c62e212475ecd61dee7d7255a60fc99",
+            "sha256": "sha256-8z1uqUhUPK+fMW3PLkvF3eSlSJpo0x+6NQ6vYsEMqoM=",
+            "type": "github"
+        },
+        "version": "4fb7b6546c62e212475ecd61dee7d7255a60fc99"
     },
     "pam-reattach": {
         "cargoLocks": null,

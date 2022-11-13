@@ -65,3 +65,7 @@ fetch.github = "raspberrypi/firmware"
 [pam-reattach]
 src.git = "https://github.com/fabianishere/pam_reattach"
 fetch.github = "fabianishere/pam_reattach"
+
+[otf2bdf]
+src.git = "https://github.com/jirutka/otf2bdf"
+fetch.github = "jirutka/otf2bdf"
