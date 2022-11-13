@@ -6,7 +6,13 @@
   ...
 }: {
   boot = {
-    kernelPackages = pkgs.linuxPackages_rpi4;
+    kernelPackages = let
+      crossPkgs = import pkgs.path {
+        localSystem.system = "x86_64-linux";
+        crossSystem.system = "aarch64-linux";
+      };
+    in
+      crossPkgs.linuxPackages_rpi4;
     loader = {
       grub.enable = false;
       generic-extlinux-compatible = {

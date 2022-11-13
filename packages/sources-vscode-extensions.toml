@@ -301,3 +301,7 @@ fetch.vsmarketplace = "yzane.markdown-pdf"
 ["roscop.activefileinstatusbar"]
 src.vsmarketplace = "roscop.activefileinstatusbar"
 fetch.vsmarketplace = "roscop.activefileinstatusbar"
+
+["PKief.material-icon-theme"]
+src.vsmarketplace = "PKief.material-icon-theme"
+fetch.vsmarketplace = "PKief.material-icon-theme"

@@ -44,7 +44,7 @@ with lib; let
   '';
 in {
   options = {
-    security.pam.enableSudoTouchIdAuth = mkEnableOption ''
+    security.pam.enableSudoTouchIdAuthWithReattach = mkEnableOption ''
       Enable sudo authentication with Touch ID
       When enabled, this option adds the following line to /etc/pam.d/sudo:
           auth       optional      /usr/local/lib/pam/pam_reattach.so
@@ -59,7 +59,7 @@ in {
     system.activationScripts.extraActivation.text = ''
       # PAM settings
       echo >&2 "setting up pam..."
-      ${mkSudoTouchIdAuthScript cfg.enableSudoTouchIdAuth}
+      ${mkSudoTouchIdAuthScript cfg.enableSudoTouchIdAuthWithReattach}
     '';
 
     homebrew.brews = ["pam-reattach"];

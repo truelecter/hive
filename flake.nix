@@ -25,7 +25,8 @@
 
       inputs = {
         nixpkgs.follows = "nixos";
-        latest.follows = "latest";
+        nixpkgs-unstable.follows = "latest";
+        darwin.follows = "darwin";
         nixlib.follows = "nixos";
         home-manager.follows = "home";
         deploy.follows = "deploy";

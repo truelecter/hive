@@ -38,6 +38,8 @@ channels: final: prev: {
     k9s
     kubelogin-oidc
     vscodium
+    iosevka
+    nil
     ;
 
   nix-unstable = channels.latest.nix;

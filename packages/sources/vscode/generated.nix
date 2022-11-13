@@ -10,6 +10,15 @@
       sha256 = "sha256-aYvTxdd+6ESSEDFtb8hwITVjLdbwTV5ZabpwAywGwVc=";
     };
   };
+  "\"PKief.material-icon-theme\"" = {
+    pname = "\"PKief.material-icon-theme\"";
+    version = "4.22.0";
+    src = fetchurl {
+      url = "https://PKief.gallery.vsassets.io/_apis/public/gallery/publisher/PKief/extension/material-icon-theme/4.22.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "material-icon-theme-4.22.0.zip";
+      sha256 = "sha256-U9P9BcuZi+SUcvTg/fC2SkjGRD4CvgJEc1i+Ft2OOUc=";
+    };
+  };
   "\"apollographql.vscode-apollo\"" = {
     pname = "\"apollographql.vscode-apollo\"";
     version = "1.19.11";
@@ -188,6 +197,24 @@
       url = "https://hashicorp.gallery.vsassets.io/_apis/public/gallery/publisher/hashicorp/extension/terraform/2.24.3/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
       name = "terraform-2.24.3.zip";
       sha256 = "sha256-Unt2qftM2ijBfBcq0UDIEngmhw0A7p6VRriLuhwrnWU=";
+    };
+  };
+  "\"iocave.customize-ui\"" = {
+    pname = "\"iocave.customize-ui\"";
+    version = "0.1.65";
+    src = fetchurl {
+      url = "https://iocave.gallery.vsassets.io/_apis/public/gallery/publisher/iocave/extension/customize-ui/0.1.65/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "customize-ui-0.1.65.zip";
+      sha256 = "sha256-6VhsHDVOcxI0fehcAs3UC2jS74hh84g+F6MCQo6voy8=";
+    };
+  };
+  "\"iocave.monkey-patch\"" = {
+    pname = "\"iocave.monkey-patch\"";
+    version = "0.1.23";
+    src = fetchurl {
+      url = "https://iocave.gallery.vsassets.io/_apis/public/gallery/publisher/iocave/extension/monkey-patch/0.1.23/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "monkey-patch-0.1.23.zip";
+      sha256 = "sha256-RUXdQRpA2iUVZNqJFVzZV9sl/AoEe6+tWG9k41/V7xs=";
     };
   };
   "\"ipedrazas.kubernetes-snippets\"" = {

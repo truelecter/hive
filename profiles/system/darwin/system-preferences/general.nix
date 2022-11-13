@@ -51,7 +51,7 @@
 
     NSTextShowsControlCharacters = true;
 
-    NSWindowResizeTime = "0.001";
+    NSWindowResizeTime = 0.001;
 
     PMPrintingExpandedStateForPrint = true;
     PMPrintingExpandedStateForPrint2 = true;
@@ -65,7 +65,7 @@
     "com.apple.sound.beep.feedback" = 0;
 
     # Set the spring loading delay for directories. The default is the float `1.0`.
-    "com.apple.springing.delay" = "0.1";
+    "com.apple.springing.delay" = 0.1;
     # Enable spring loading (expose) for directories.
     "com.apple.springing.enabled" = true;
   };

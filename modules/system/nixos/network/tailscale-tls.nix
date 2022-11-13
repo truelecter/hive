@@ -1,4 +1,3 @@
-# Tailscale port to darwin
 {
   config,
   lib,

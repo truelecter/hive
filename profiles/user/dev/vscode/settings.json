@@ -1,22 +1,14 @@
 {
-  "[terraform]": {
-      "editor.defaultFormatter": "hashicorp.terraform",
-      "editor.formatOnSave": true
-  },
   "[yaml]": {
       "editor.formatOnSave": false
   },
-  "alejandra.program": "/etc/profiles/per-user/andrii.panasiuk/bin/alejandra",
-  "C_Cpp.files.exclude": {
-      "**/.direnv": true,
-      "**/.vscode": true
-  },
-  "diffEditor.ignoreTrimWhitespace": false,
-  "editor.bracketPairColorization.enabled": true,
-  "editor.guides.bracketPairs": true,
-  "editor.renderWhitespace": "all",
-  "editor.suggestSelection": "first",
-  "editor.tabSize": 2,
+  "yaml.format.singleQuote": true,
+
+  "update.mode": "none",
+  "extensions.autoCheckUpdates": false,
+  "terminal.integrated.macOptionClickForcesSelection": true,
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  "redhat.telemetry.enabled": false,
   "explorer.confirmDelete": false,
   "files.eol": "\n",
   "files.exclude": {
@@ -25,6 +17,26 @@
       "**/.project": true,
       "**/.settings": true
   },
+
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.fontFamily": "Iosevka",
+  "editor.fontLigatures": false,
+  "editor.fontSize": 14,
+  "editor.fontWeight": "normal",
+  "editor.guides.bracketPairs": true,
+  "editor.renderWhitespace": "all",
+  "editor.suggestSelection": "first",
+  "editor.tabSize": 2,
+  "terminal.integrated.fontFamily": "Iosevka",
+  "terminal.integrated.fontSize": 14,
+  "security.workspace.trust.untrustedFiles": "open",
+  "workbench.preferredDarkColorTheme": "Abyss",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.editorAssociations": {
+      "*.ipynb": "jupyter.notebook.ipynb"
+  },
+
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
@@ -39,48 +51,10 @@
       "switch:command"
   ],
   "gitlens.views.branches.branches.layout": "list",
-  "go.toolsManagement.autoUpdate": true,
-  "jupyter.jupyterServerType": "local",
+
   "markdown-pdf.headerTemplate": "<div style=\"font-size: 9px; margin-left: 1cm;\">Andrii Panasiuk</div>",
-  "nix.enableLanguageServer": true,
-  "nix.formatterPath": "/etc/profiles/per-user/andrii.panasiuk/bin/alejandra",
-  "nix.serverPath": "/etc/profiles/per-user/andrii.panasiuk/bin/rnix-lsp",
-  "npm.keybindingsChangedWarningShown": true,
-  "python.defaultInterpreterPath": "C:\\Python39\\python.exe",
-  "redhat.telemetry.enabled": false,
-  "security.workspace.trust.untrustedFiles": "open",
-  "terraform.experimentalFeatures.validateOnSave": true,
+
   "vetur.experimental.templateInterpolationService": true,
   "vetur.format.options.useTabs": true,
-  "vetur.validation.templateProps": true,
-  "vs-kubernetes": {
-      "vs-kubernetes.knownKubeconfigs": [
-          "/home/truelecter/.kube/config",
-          "/home/truelecter/.kube/tws-kv-net-we11.config"
-      ],
-      "vs-kubernetes.kubeconfig": "/home/truelecter/.kube/config",
-      "vscode-kubernetes": {
-          "helm-path": {
-              "linux": "/home/truelecter/.vs-kubernetes/tools/helm/linux-amd64/helm"
-          },
-          "kubectl-path": {
-              "linux": "/home/truelecter/.vs-kubernetes/tools/kubectl/kubectl"
-          },
-          "minikube-path": {
-              "linux": "/home/truelecter/.vs-kubernetes/tools/minikube/linux-amd64/minikube"
-          }
-      },
-      "vscode-kubernetes.helm-path.linux": "/home/truelecter/.vs-kubernetes/tools/helm/linux-amd64/helm",
-      "vscode-kubernetes.helm-path.mac": "/etc/profiles/per-user/andrii.panasiuk/bin/helm",
-      "vscode-kubernetes.kubectl-path.linux": "/home/truelecter/.vs-kubernetes/tools/kubectl/kubectl",
-      "vscode-kubernetes.kubectl-path.mac": "/etc/profiles/per-user/andrii.panasiuk/bin/kubectl",
-      "vscode-kubernetes.minikube-path.linux": "/home/truelecter/.vs-kubernetes/tools/minikube/linux-amd64/minikube"
-  },
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "window.zoomLevel": 1,
-  "workbench.colorTheme": "Visual Studio 2019 Dark",
-  "workbench.editorAssociations": {
-      "*.ipynb": "jupyter.notebook.ipynb"
-  },
-  "yaml.format.singleQuote": true
+  "vetur.validation.templateProps": true
 }
