@@ -1,7 +1,11 @@
 {
   "Profiles": [
     {
-      "Guid": "AE700452-6C71-4D8A-81D5-D614DBE22414",
+      "Ansi 5 Color": {
+        "Green Component": 0,
+        "Blue Component": 0.73333334922790527,
+        "Red Component": 0.73333334922790527
+      },
       "Tags": [
         "Dynamic"
       ],
@@ -10,11 +14,7 @@
         "Blue Component": 1,
         "Red Component": 0.3333333432674408
       },
-      "Ansi 6 Color": {
-        "Green Component": 0.73333334922790527,
-        "Blue Component": 0.73333334922790527,
-        "Red Component": 0
-      },
+      "Use Non-ASCII Font": false,
       "Draw Powerline Glyphs": false,
       "Bold Color": {
         "Green Component": 1,
@@ -22,21 +22,25 @@
         "Red Component": 1
       },
       "Open Password Manager Automatically": false,
-      "Horizontal Spacing": 1,
-      "Normal Font": "SourceCodeProForPowerline-Regular 14",
+      "Has Hotkey": false,
+      "Ansi 8 Color": {
+        "Green Component": 0.3333333432674408,
+        "Blue Component": 0.3333333432674408,
+        "Red Component": 0.3333333432674408
+      },
       "Rows": 25,
       "Default Bookmark": "No",
-      "Ansi 3 Color": {
+      "Ansi 9 Color": {
+        "Green Component": 0.3333333432674408,
+        "Blue Component": 0.3333333432674408,
+        "Red Component": 1
+      },
+      "Ansi 7 Color": {
         "Green Component": 0.73333334922790527,
-        "Blue Component": 0,
+        "Blue Component": 0.73333334922790527,
         "Red Component": 0.73333334922790527
       },
-      "Ansi 2 Color": {
-        "Green Component": 0.73333334922790527,
-        "Blue Component": 0,
-        "Red Component": 0
-      },
-      "Right Option Key Sends": 0,
+      "Allow Title Reporting": true,
       "Non-ASCII Anti Aliased": true,
       "Use Bright Bold": true,
       "Ansi 10 Color": {
@@ -63,23 +67,21 @@
         "Red Component": 0.73333334922790527
       },
       "Bound Hosts": [],
-      "Working Directory": "\/Users\/andrii.panasiuk",
       "Blinking Cursor": true,
       "Disable Window Resizing": true,
       "Sync Title": false,
       "Prompt Before Closing 2": false,
       "BM Growl": true,
+      "Mouse Reporting": true,
       "Command": "",
       "Description": "",
-      "Dynamic Profile Filename": "\/Users\/andrii.panasiuk\/Library\/Application Support\/iTerm2\/DynamicProfiles\/profile.json",
-      "Space": 0,
       "Screen": -1,
       "Selection Color": {
         "Green Component": 0.8353000283241272,
         "Blue Component": 1,
         "Red Component": 0.70980000495910645
       },
-      "Mouse Reporting": true,
+      "Space": 0,
       "Columns": 80,
       "Idle Code": 0,
       "Hide After Opening": true,
@@ -359,7 +361,7 @@
           "Text": "f"
         }
       },
-      "Window Type": 8,
+      "Window Type": 1,
       "Blink Allowed": false,
       "Cursor Type": 2,
       "Background Image Location": "",
@@ -390,46 +392,42 @@
         "Blue Component": 0.73333334922790527,
         "Red Component": 0.73333334922790527
       },
-      "Ansi 0 Color": {
-        "Green Component": 0,
-        "Blue Component": 0,
-        "Red Component": 0
-      },
+      "Transparency": 0,
       "Ansi 1 Color": {
         "Green Component": 0,
         "Blue Component": 0,
         "Red Component": 0.73333334922790527
       },
       "Custom Directory": "No",
-      "Transparency": 0,
+      "Ansi 0 Color": {
+        "Green Component": 0,
+        "Blue Component": 0,
+        "Red Component": 0
+      },
       "Ansi 4 Color": {
         "Green Component": 0,
         "Blue Component": 0.73333334922790527,
         "Red Component": 0
       },
-      "Ansi 5 Color": {
-        "Green Component": 0,
-        "Blue Component": 0.73333334922790527,
-        "Red Component": 0.73333334922790527
-      },
-      "Use Non-ASCII Font": false,
-      "Has Hotkey": false,
-      "Ansi 8 Color": {
-        "Green Component": 0.3333333432674408,
-        "Blue Component": 0.3333333432674408,
-        "Red Component": 0.3333333432674408
-      },
-      "Ansi 9 Color": {
-        "Green Component": 0.3333333432674408,
-        "Blue Component": 0.3333333432674408,
-        "Red Component": 1
-      },
-      "Ansi 7 Color": {
+      "Right Option Key Sends": 0,
+      "Ansi 6 Color": {
         "Green Component": 0.73333334922790527,
         "Blue Component": 0.73333334922790527,
+        "Red Component": 0
+      },
+      "Guid": "AE700452-6C71-4D8A-81D5-D614DBE22414",
+      "Normal Font": "Iosevka 13",
+      "Horizontal Spacing": 1,
+      "Ansi 3 Color": {
+        "Green Component": 0.73333334922790527,
+        "Blue Component": 0,
         "Red Component": 0.73333334922790527
       },
-      "Allow Title Reporting": true
+      "Ansi 2 Color": {
+        "Green Component": 0.73333334922790527,
+        "Blue Component": 0,
+        "Red Component": 0
+      }
     }
   ]
 }

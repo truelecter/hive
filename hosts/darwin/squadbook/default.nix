@@ -36,20 +36,6 @@
 
     buildMachines = [
       {
-        system = "x86_64-linux";
-
-        supportedFeatures = [
-          "big-parallel"
-        ];
-
-        speedFactor = 2;
-        maxJobs = 5;
-        hostName = "nix-docker";
-
-        sshUser = "root";
-        sshKey = "/etc/nix/docker_rsa";
-      }
-      {
         systems = [
           "x86_64-linux"
           "aarch64-linux"
