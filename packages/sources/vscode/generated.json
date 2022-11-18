@@ -74,6 +74,21 @@
         },
         "version": "1.0.1"
     },
+    "\"bungcip.better-toml\"": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "\"bungcip.better-toml\"",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": "better-toml-0.3.2.zip",
+            "sha256": "sha256-g+LfgjAnSuSj/nSmlPdB0t29kqTmegZB5B1cYzP8kCI=",
+            "type": "url",
+            "url": "https://bungcip.gallery.vsassets.io/_apis/public/gallery/publisher/bungcip/extension/better-toml/0.3.2/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+        },
+        "version": "0.3.2"
+    },
     "\"christian-kohler.npm-intellisense\"": {
         "cargoLocks": null,
         "date": null,
@@ -202,12 +217,12 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "name": "gitlens-2022.11.1204.zip",
-            "sha256": "sha256-TSWapc2P+lyipaRZPkYaaDaYZNL2hjLKSag2XZSelag=",
+            "name": "gitlens-2022.11.1404.zip",
+            "sha256": "sha256-yI31doEA29fdF3PiIw8ySerDYX5q2402lSPFJYdFf18=",
             "type": "url",
-            "url": "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2022.11.1204/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2022.11.1404/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "2022.11.1204"
+        "version": "2022.11.1404"
     },
     "\"editorconfig.editorconfig\"": {
         "cargoLocks": null,
@@ -328,36 +343,6 @@
             "url": "https://hashicorp.gallery.vsassets.io/_apis/public/gallery/publisher/hashicorp/extension/terraform/2.24.3/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
         "version": "2.24.3"
-    },
-    "\"iocave.customize-ui\"": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "\"iocave.customize-ui\"",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": "customize-ui-0.1.65.zip",
-            "sha256": "sha256-6VhsHDVOcxI0fehcAs3UC2jS74hh84g+F6MCQo6voy8=",
-            "type": "url",
-            "url": "https://iocave.gallery.vsassets.io/_apis/public/gallery/publisher/iocave/extension/customize-ui/0.1.65/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
-        },
-        "version": "0.1.65"
-    },
-    "\"iocave.monkey-patch\"": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "\"iocave.monkey-patch\"",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": "monkey-patch-0.1.23.zip",
-            "sha256": "sha256-RUXdQRpA2iUVZNqJFVzZV9sl/AoEe6+tWG9k41/V7xs=",
-            "type": "url",
-            "url": "https://iocave.gallery.vsassets.io/_apis/public/gallery/publisher/iocave/extension/monkey-patch/0.1.23/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
-        },
-        "version": "0.1.23"
     },
     "\"ipedrazas.kubernetes-snippets\"": {
         "cargoLocks": null,
@@ -523,6 +508,21 @@
             "url": "https://maarti.gallery.vsassets.io/_apis/public/gallery/publisher/maarti/extension/jenkins-doc/1.7.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
         "version": "1.7.0"
+    },
+    "\"mads-hartmann.bash-ide-vscode\"": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "\"mads-hartmann.bash-ide-vscode\"",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": "bash-ide-vscode-1.14.0.zip",
+            "sha256": "sha256-v7Sbu0YpVKCARcs7m0cnc7S3wmgPlmW8sut2QKMDHxU=",
+            "type": "url",
+            "url": "https://mads-hartmann.gallery.vsassets.io/_apis/public/gallery/publisher/mads-hartmann/extension/bash-ide-vscode/1.14.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+        },
+        "version": "1.14.0"
     },
     "\"ms-azuretools.vscode-docker\"": {
         "cargoLocks": null,

@@ -6,7 +6,7 @@
   ...
 }: {
   imports = [
-    ../common.nix
+    ../../common.nix
   ];
 
   # https://github.com/LnL7/nix-darwin/issues/158#issuecomment-974598670
@@ -102,6 +102,7 @@
   homebrew.casks = [
     "iterm2"
     "launchcontrol"
+    "alt-tab"
   ];
 
   fonts.fontDir.enable = true;
@@ -109,5 +110,9 @@
     pkgs.terminus-nerdfont
   ];
 
-  # nixpkgs.config.allowBroken = true;
+  system.defaults = {
+    CustomUserPreferences = {
+      "com.lwouis.alt-tab-macos" = lib.importJSON ./alt-tab.plist.json;
+    };
+  };
 }

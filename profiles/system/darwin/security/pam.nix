@@ -4,5 +4,5 @@
   pkgs,
   ...
 }: {
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.enableSudoTouchIdAuthWithReattach = true;
 }

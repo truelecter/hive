@@ -27,7 +27,15 @@
       };
     };
     consoleLogLevel = 8;
-    initrd.availableKernelModules = ["usbhid" "usb_storage"];
+    initrd.availableKernelModules = lib.mkForce [
+      "xhci_pci"
+      "uas"
+      "usbhid"
+      "usb_storage"
+      "vc4"
+      "pcie_brcmstb" # required for the pcie bus to work
+      "reset-raspberrypi" # required for vl805 firmware to load
+    ];
     kernelParams = ["console=ttyS0,115200n8" "console=tty1" "video=DSI-1:800x480@60,rotate=180" "cma=128M"];
     kernelPatches = [
       {
@@ -89,7 +97,7 @@
       options = ["nofail"];
     };
     "/" = {
-      device = "/dev/disk/by-label/NIXOS_SD";
+      device = lib.mkForce "/dev/disk/by-label/NIXOS_SD";
       fsType = "ext4";
     };
   };
@@ -99,6 +107,13 @@
   };
 
   hardware.enableRedistributableFirmware = true;
+
+  nixpkgs.overlays = [
+    (final: super: {
+      makeModulesClosure = x:
+        super.makeModulesClosure (x // {allowMissing = true;});
+    })
+  ];
 
   environment.systemPackages = with pkgs; [
     libraspberrypi

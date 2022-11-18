@@ -59,6 +59,13 @@
 
     startWhenNeeded = lib.mkDefault true;
     openFirewall = lib.mkDefault false;
+    hostKeys = [
+      {
+        type = "rsa";
+        bits = 4096;
+        path = "/etc/ssh/ssh_host_rsa_key";
+      }
+    ];
   };
 
   # Service that makes Out of Memory Killer more effective

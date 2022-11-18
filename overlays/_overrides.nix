@@ -25,7 +25,7 @@ channels: final: prev: {
     deploy-rs
     tailscale
     alejandra
-    terraform-lss
+    terraform-ls
     direnv
     nix-direnv
     rnix-lsp
@@ -40,6 +40,8 @@ channels: final: prev: {
     vscodium
     iosevka
     nil
+    lnav
+    podman
     ;
 
   nix-unstable = channels.latest.nix;

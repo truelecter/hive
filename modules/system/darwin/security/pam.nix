@@ -21,7 +21,7 @@ with lib; let
   # should be deleted when the option is disabled.
   mkSudoTouchIdAuthScript = isEnabled: let
     file = "/etc/pam.d/sudo";
-    option = "security.pam.enableSudoTouchIdAuth";
+    option = "security.pam.custom.enableSudoTouchIdAuth";
   in ''
     ${
       if isEnabled
@@ -47,7 +47,7 @@ in {
     security.pam.enableSudoTouchIdAuthWithReattach = mkEnableOption ''
       Enable sudo authentication with Touch ID
       When enabled, this option adds the following line to /etc/pam.d/sudo:
-          auth       optional      /usr/local/lib/pam/pam_reattach.so
+          auth       optional       ''${pkgs.pam-reattach}/lib/pam/pam_reattach.so
           auth       sufficient     pam_tid.so
       (Note that macOS resets this file when doing a system update. As such, sudo
       authentication with Touch ID won't work after a system update until the nix-darwin
@@ -56,12 +56,10 @@ in {
   };
 
   config = {
-    system.activationScripts.extraActivation.text = ''
+    system.activationScripts.pam.text = ''
       # PAM settings
-      echo >&2 "setting up pam..."
+      echo >&2 "setting up custom pam..."
       ${mkSudoTouchIdAuthScript cfg.enableSudoTouchIdAuthWithReattach}
     '';
-
-    homebrew.brews = ["pam-reattach"];
   };
 }

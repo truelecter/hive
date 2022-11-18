@@ -41,6 +41,8 @@ in {
       file
       gnused
       lsof
+      lnav
+      lsd
     ];
 
     shellAliases = let

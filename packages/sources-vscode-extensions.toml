@@ -305,3 +305,11 @@ fetch.vsmarketplace = "roscop.activefileinstatusbar"
 ["PKief.material-icon-theme"]
 src.vsmarketplace = "PKief.material-icon-theme"
 fetch.vsmarketplace = "PKief.material-icon-theme"
+
+["mads-hartmann.bash-ide-vscode"]
+src.vsmarketplace = "mads-hartmann.bash-ide-vscode"
+fetch.vsmarketplace = "mads-hartmann.bash-ide-vscode"
+
+["bungcip.better-toml"]
+src.vsmarketplace = "bungcip.better-toml"
+fetch.vsmarketplace = "bungcip.better-toml"

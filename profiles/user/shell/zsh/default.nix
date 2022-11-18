@@ -32,6 +32,7 @@
         # "kube-ps1"
         "git"
         "tmux"
+        "thefuck"
       ];
     };
 

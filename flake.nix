@@ -285,7 +285,6 @@
             ];
             editors = [
               darwin.editors.sublime-text
-              darwin.editors.vscode
             ];
             system-preferences = [
               darwin.system-preferences.dock

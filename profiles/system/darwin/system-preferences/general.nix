@@ -21,6 +21,7 @@
     AppleMeasurementUnits = "Centimeters";
     AppleMetricUnits = 1;
 
+    ApplePressAndHoldEnabled = false;
     AppleShowAllExtensions = true;
     AppleShowAllFiles = true;
 
@@ -101,4 +102,9 @@
 
   # The filesystem path to which screencaptures should be written.
   system.defaults.screencapture.location = "/tmp";
+
+  system.defaults.ActivityMonitor = {
+    IconType = 6;
+    ShowCategory = 101;
+  };
 }

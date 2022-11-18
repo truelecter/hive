@@ -2,7 +2,24 @@
   pkgs,
   lib,
   ...
-}: {
+}: let
+  chromium = pkgs.stdenv.mkDerivation rec {
+    name = "Chromium";
+    version = "101.0.4904.0";
+    revision = "973630";
+    src = builtins.fetchurl {
+      url = "https://storage.googleapis.com/chromium-browser-snapshots/Mac_Arm/${revision}/chrome-mac.zip";
+      sha256 = "16qk18xydaf69xwz5shdz3p4h4ggrcgcmman3dhd2xbhnksf1cgd";
+    };
+    sourceRoot = "chrome-mac/Chromium.app";
+    buildInputs = with pkgs; [undmg unzip];
+    phases = ["installPhase"];
+    installPhase = ''
+      mkdir -p "$out/Applications/${name}.app"
+      cp -pR * "$out/Applications/${name}.app"
+    '';
+  };
+in {
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
@@ -31,7 +48,7 @@
       ivory-lab.jenkinsfile-support
       jnoortheen.nix-ide
       jq-syntax-highlighting.jq-syntax-highlighting
-      kamadorueda.alejandra
+      # kamadorueda.alejandra
       lunuan.kubernetes-templates
       maarti.jenkins-doc
       ms-azuretools.vscode-docker
@@ -51,15 +68,22 @@
       tim-koehler.helm-intellisense
       whi-tw.klipper-config-syntax
       xadillax.viml
-      yzane.markdown-pdf
+      # yzane.markdown-pdf
       roscop.activefileinstatusbar
       PKief.material-icon-theme
+      bungcip.better-toml
+      mads-hartmann.bash-ide-vscode
     ];
     userSettings =
       lib.recursiveUpdate
       (builtins.fromJSON (builtins.readFile ./settings.json))
       {
         "python.defaultInterpreterPath" = "${pkgs.python39}/bin/python3";
+        # "markdown-pdf.executablePath" = "${chromium.outPath}/Applications/Chromium.app/Contents/MacOS/Chromium";
       };
+  };
+
+  home.shellAliases = {
+    code = "codium";
   };
 }
