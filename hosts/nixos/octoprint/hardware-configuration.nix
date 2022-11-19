@@ -8,7 +8,10 @@
   boot = {
     kernelPackages = let
       crossPkgs = import pkgs.path {
-        localSystem.system = "x86_64-linux";
+        localSystem.system =
+          if (builtins.getEnv "CI" == "true")
+          then "aarch64-linux"
+          else "x86_64-linux";
         crossSystem.system = "aarch64-linux";
       };
     in
