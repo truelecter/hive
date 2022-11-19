@@ -17,6 +17,7 @@
       "**/.project": true,
       "**/.settings": true
   },
+  "files.trimTrailingWhitespace": true,
 
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.bracketPairColorization.enabled": true,
@@ -31,6 +32,7 @@
   "terminal.integrated.fontFamily": "Iosevka",
   "terminal.integrated.fontSize": 14,
   "security.workspace.trust.untrustedFiles": "open",
+  "workbench.fontAliasing": "antialiased",
   "workbench.preferredDarkColorTheme": "Abyss",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.editorAssociations": {
@@ -56,5 +58,7 @@
 
   "vetur.experimental.templateInterpolationService": true,
   "vetur.format.options.useTabs": true,
-  "vetur.validation.templateProps": true
+  "vetur.validation.templateProps": true,
+
+  "typescript.updateImportsOnFileMove.enabled": "always"
 }

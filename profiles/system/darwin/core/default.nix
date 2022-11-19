@@ -32,7 +32,7 @@
       m-cli
       terminal-notifier
       duti
-      # darwin.iproute2mac
+      iproute2mac
     ];
 
     darwinConfig = "${self}/lib/compat";
@@ -93,17 +93,15 @@
 
   homebrew = {
     enable = true;
+    taps = [
+      "homebrew/cask-drivers"
+    ];
+    casks = [
+      "iterm2"
+      "launchcontrol"
+      "alt-tab"
+    ];
   };
-
-  homebrew.brews = [
-    "iproute2mac"
-  ];
-
-  homebrew.casks = [
-    "iterm2"
-    "launchcontrol"
-    "alt-tab"
-  ];
 
   fonts.fontDir.enable = true;
   fonts.fonts = [

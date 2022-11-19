@@ -42,7 +42,11 @@ channels: final: prev: {
     nil
     lnav
     podman
+    _1password
+    android-tools
     ;
+
+  iproute2mac = channels.latest.darwin.iproute2mac;
 
   nix-unstable = channels.latest.nix;
 }

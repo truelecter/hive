@@ -328,7 +328,18 @@
           };
         };
         users = rec {
-          "andrii.panasiuk" = {suites, ...}: {imports = suites.base ++ suites.develop ++ suites.develop-gui ++ suites.darwin;};
+          "andrii.panasiuk" = {
+            suites,
+            profiles,
+            ...
+          }: {
+            imports =
+              suites.base
+              ++ suites.develop
+              ++ suites.develop-gui
+              ++ suites.darwin
+              ++ [profiles.dev.android];
+          };
           truelecter = {suites, ...}: {imports = suites.base;};
         }; # digga.lib.importers.rakeLeaves ./users/hm;
       };
