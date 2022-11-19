@@ -44,7 +44,7 @@ linux_amd64_task:
   # - until cachix watch-exec nix -- build --keep-going -vv '.#nixosConfigurations.nas.config.system.build.toplevel'; do echo removing /homeless-shelter..; rm -rf /homeless-shelter; nix-store --verify --repair --check-contents; echo retrying...; done
   # - until nix build --keep-going -vv '.#nixosConfigurations.nas.config.system.build.toplevel'; do echo removing /homeless-shelter..; rm -rf /homeless-shelter; echo retrying...; done
   # - nix-store --verify --repair --check-contents
-  - until nix build -vv '.#nixosConfigurations.nas.config.system.build.toplevel' --json | jq -r '.[].outputs | to_entries[].value' | cachix push truelecter; do echo removing /homeless-shelter..; rm -rf /homeless-shelter; nix-store --verify --repair --check-contents; echo retrying...; done
+  - until nix build -vv '.#nixosConfigurations.nas.config.system.build.toplevel' --json | jq -r '.[].outputs | to_entries[].value' | cachix push truelecter; do echo removing /homeless-shelter..; rm -rf /homeless-shelter; rm -rf /var/empty; mkdir -p /var/empty; nix-store --verify --repair --check-contents; echo retrying...; done
   # - sleep 60
 
 linux_aarch64_task:
@@ -80,4 +80,4 @@ linux_aarch64_task:
 
   build_script:
   - git config --global --add safe.directory "$(pwd)"
-  - until nix build -vv '.#nixosConfigurations.octoprint.config.system.build.toplevel' --json | jq -r '.[].outputs | to_entries[].value' | cachix push truelecter; do echo removing /homeless-shelter..; rm -rf /homeless-shelter; nix-store --verify --repair --check-contents; echo retrying...; done
+  - until nix build -vv '.#nixosConfigurations.octoprint.config.system.build.toplevel' --json | jq -r '.[].outputs | to_entries[].value' | cachix push truelecter; do echo removing /homeless-shelter..; rm -rf /homeless-shelter; rm -rf /var/empty; mkdir -p /var/empty; nix-store --verify --repair --check-contents; echo retrying...; done
