@@ -338,7 +338,9 @@
               ++ suites.develop
               ++ suites.develop-gui
               ++ suites.darwin
-              ++ [profiles.dev.android];
+              ++ [
+                profiles.dev.android
+              ];
           };
           truelecter = {suites, ...}: {imports = suites.base;};
         }; # digga.lib.importers.rakeLeaves ./users/hm;

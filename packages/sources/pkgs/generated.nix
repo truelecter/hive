@@ -3,27 +3,27 @@
 {
   klipper = {
     pname = "klipper";
-    version = "5e34b45063c5ad9c2ec9d30e92aa51c2d6dec509";
+    version = "c51f169c06921152a2e9c386016660d0bb09f767";
     src = fetchFromGitHub ({
       owner = "Klipper3d";
       repo = "klipper";
-      rev = "5e34b45063c5ad9c2ec9d30e92aa51c2d6dec509";
+      rev = "c51f169c06921152a2e9c386016660d0bb09f767";
       fetchSubmodules = false;
-      sha256 = "sha256-fGoW5xRtJ1jdbfpwqsw1TKX5L4XP0z2CKjcZYldpxMc=";
+      sha256 = "sha256-l5dOj4cKrKdQ0grmbIdXm5dmkrQv6L+NqCMN1i3z3SE=";
     });
-    date = "2022-11-11";
+    date = "2022-11-21";
   };
   klipper-screen = {
     pname = "klipper-screen";
-    version = "300eed4d29c571a1d21d2c4d08522122ed2f74f9";
+    version = "818f1ab4657d1fb88665b393cbbfc39a59a6ce63";
     src = fetchFromGitHub ({
       owner = "jordanruthe";
       repo = "KlipperScreen";
-      rev = "300eed4d29c571a1d21d2c4d08522122ed2f74f9";
+      rev = "818f1ab4657d1fb88665b393cbbfc39a59a6ce63";
       fetchSubmodules = false;
-      sha256 = "sha256-b3TEfv5NCZhWn+M2ooaEFbrPHZMbzigWekxOvFVsDKE=";
+      sha256 = "sha256-4CodR2khfDxPzYtcoRYXvaa0yguYEmiOaRQPIj7oQXk=";
     });
-    date = "2022-11-12";
+    date = "2022-11-21";
   };
   libcamera = {
     pname = "libcamera";
@@ -49,10 +49,10 @@
   };
   mainsail = {
     pname = "mainsail";
-    version = "v2.3.1";
+    version = "v2.4.0";
     src = fetchurl {
-      url = "https://github.com/mainsail-crew/mainsail/releases/download/v2.3.1/mainsail.zip";
-      sha256 = "sha256-WRBxWCrHhAgtarjEU8izAuUBZTxOoQxZ+MjzCQ0C3P4=";
+      url = "https://github.com/mainsail-crew/mainsail/releases/download/v2.4.0/mainsail.zip";
+      sha256 = "sha256-3aGB6dCNRTIYJaenbfOoYGzSzn/oGgfhThWmhUiW9jE=";
     };
   };
   manix = {
@@ -69,15 +69,15 @@
   };
   moonraker = {
     pname = "moonraker";
-    version = "490d27b7deddf6ac8cacb7e0b49ec629224e6cca";
+    version = "b67a08a65b3137935c6dc9e936286a4e4077fc0f";
     src = fetchFromGitHub ({
       owner = "Arksine";
       repo = "moonraker";
-      rev = "490d27b7deddf6ac8cacb7e0b49ec629224e6cca";
+      rev = "b67a08a65b3137935c6dc9e936286a4e4077fc0f";
       fetchSubmodules = false;
-      sha256 = "sha256-cCOnyU8/3oUGxycOtORNB7Aad/GnZU4Zz++EDmk8R7o=";
+      sha256 = "sha256-WLZF/qD3D9WLDL4fYBE8HWXWKSTX9a16b5FY5P9Bqzg=";
     });
-    date = "2022-11-13";
+    date = "2022-11-22";
   };
   otf2bdf = {
     pname = "otf2bdf";
@@ -105,15 +105,15 @@
   };
   rpi-fw = {
     pname = "rpi-fw";
-    version = "6cbf00359959cf7381f4e3773037c7d5573d94b2";
+    version = "b8a7365c70c68a85a52200cd84b94ea7332bce94";
     src = fetchFromGitHub ({
       owner = "raspberrypi";
       repo = "firmware";
-      rev = "6cbf00359959cf7381f4e3773037c7d5573d94b2";
+      rev = "b8a7365c70c68a85a52200cd84b94ea7332bce94";
       fetchSubmodules = false;
-      sha256 = "sha256-+OufEKRoHv36VczSIzYQkG08B0sW/23Etd0akYyGpmE=";
+      sha256 = "sha256-sKC1mTSqBq+1sXYOGSgWXeldHYAGs6vWH0AlpXodKQs=";
     });
-    date = "2022-11-11";
+    date = "2022-11-18";
   };
   rpi-fw-bluez = {
     pname = "rpi-fw-bluez";
@@ -141,15 +141,15 @@
   };
   rpi-linux = {
     pname = "rpi-linux";
-    version = "46937443a928d407705747a54f6533b013ddbc4d";
+    version = "c4c123dbeca7625b2cd47013d5a38a73519bc102";
     src = fetchFromGitHub ({
       owner = "raspberrypi";
       repo = "linux";
-      rev = "46937443a928d407705747a54f6533b013ddbc4d";
+      rev = "c4c123dbeca7625b2cd47013d5a38a73519bc102";
       fetchSubmodules = false;
-      sha256 = "sha256-LlLGVrWpul1nXb4LRv1IJdKT/q/+5VdfU5b2VHUAbN0=";
+      sha256 = "sha256-6Gcp6f189KVExvOMBA2StNP7024kFBzvXIE5pJyM+jI=";
     });
-    date = "2022-11-12";
+    date = "2022-11-21";
   };
   rtsp-simple-server = {
     pname = "rtsp-simple-server";

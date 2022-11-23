@@ -22,5 +22,6 @@
     dive
     kubelogin-oidc
     kubernetes-helm
+    minikube
   ];
 }

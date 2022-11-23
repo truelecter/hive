@@ -20,4 +20,17 @@
     tfenv
     terragrunt
   ];
+
+  home.file = {
+    ".terraformrc" = let
+      plugin-cache-dir = "${config.xdg.cacheHome}/terraform/plugin-cache";
+    in {
+      onChange = ''
+        mkdir -p ${plugin-cache-dir}
+      '';
+      text = ''
+        plugin_cache_dir = "${plugin-cache-dir}"
+      '';
+    };
+  };
 }
