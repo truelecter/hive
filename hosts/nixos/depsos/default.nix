@@ -16,6 +16,7 @@
       ./hardware-configuration.nix
       ./k8s
       ./postgres.nix
+      ./mongo.nix
     ];
 
   networking.networkmanager = {
