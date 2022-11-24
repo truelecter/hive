@@ -104,7 +104,7 @@
   system.defaults.screencapture.location = "/tmp";
 
   system.defaults.ActivityMonitor = {
-    IconType = 6;
+    IconType = 5;
     ShowCategory = 101;
   };
 }
