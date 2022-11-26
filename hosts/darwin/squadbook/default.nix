@@ -10,6 +10,7 @@
     suites.base
     ++ suites.editors
     ++ suites.system-preferences
+    ++ suites.games
     ++ [
       profiles.networking.tailscale
       profiles.users."andrii.panasiuk"

@@ -286,6 +286,9 @@
             editors = [
               darwin.editors.sublime-text
             ];
+            games = [
+              darwin.games.steam
+            ];
             system-preferences = [
               darwin.system-preferences.dock
               darwin.system-preferences.finder

@@ -38,7 +38,7 @@ in {
       eamodio.gitlens
       editorconfig.editorconfig
       eg2.vscode-npm-script
-      erd0s.terraform-autocomplete
+      # erd0s.terraform-autocomplete
       golang.go
       graphql.vscode-graphql
       graphql.vscode-graphql-execution
@@ -79,7 +79,6 @@ in {
       (builtins.fromJSON (builtins.readFile ./settings.json))
       {
         "python.defaultInterpreterPath" = "${pkgs.python39}/bin/python3";
-        # "markdown-pdf.executablePath" = "${chromium.outPath}/Applications/Chromium.app/Contents/MacOS/Chromium";
       };
   };
 
