@@ -11,12 +11,16 @@
 
   #region nix options
   nix = {
-    # Improve nix store disk usage
-    autoOptimiseStore = true;
+    settings = {
+      # Improve nix store disk usage
+      auto-optimise-store = true;
+      allowed-users = ["root @wheel"];
+
+      # This is just a representation of the nix default
+      system-features = ["nixos-test" "benchmark" "big-parallel" "kvm"];
+    };
+
     optimise.automatic = true;
-    allowedUsers = ["root @wheel"];
-    # This is just a representation of the nix default
-    systemFeatures = ["nixos-test" "benchmark" "big-parallel" "kvm"];
   };
   #endregion
 

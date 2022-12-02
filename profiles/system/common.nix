@@ -43,6 +43,7 @@ in {
       lsof
       lnav
       lsd
+      iftop
     ];
 
     shellAliases = let
@@ -100,17 +101,19 @@ in {
   ];
 
   nix = {
+    settings = {
+      # Prevents impurities in builds
+      sandbox = true;
+
+      # Give root user and wheel group special Nix privileges.
+      trusted-users = ["root" "@wheel"];
+    };
+
     # Improve nix store disk usage
     gc = {
       automatic = true;
       options = "--max-freed $((20 * 1024**3))";
     };
-
-    # Prevents impurities in builds
-    useSandbox = true;
-
-    # Give root user and wheel group special Nix privileges.
-    trustedUsers = ["root" "@wheel"];
 
     # Generally useful nix option defaults
     extraOptions = ''

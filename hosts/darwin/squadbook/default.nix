@@ -16,6 +16,7 @@
       profiles.users."andrii.panasiuk"
       profiles.users.root
       profiles.darwin.security.yubikey
+      profiles.darwin._3dprint
     ];
 
   networking = {

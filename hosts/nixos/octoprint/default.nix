@@ -20,10 +20,10 @@
       ./klipper
     ];
 
-  disabledModules = [
-    "services/misc/klipper.nix"
-    "services/misc/moonraker.nix"
-  ];
+  # disabledModules = [
+  #   "services/misc/klipper.nix"
+  #   "services/misc/moonraker.nix"
+  # ];
 
   environment.variables = {
     LIBCAMERA_IPA_PROXY_PATH = "${pkgs.libcamera}/libexec/libcamera";

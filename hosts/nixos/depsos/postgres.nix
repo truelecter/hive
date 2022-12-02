@@ -1,4 +1,9 @@
 {pkgs, ...}: {
+  i18n.supportedLocales = [
+    "uk_UA.UTF-8/UTF-8"
+    "en_US.UTF-8/UTF-8"
+  ];
+
   services.postgresql = {
     enable = true;
     package = pkgs.postgresql_12;
@@ -28,6 +33,7 @@
         name = "truelecter";
         ensurePermissions = {
           "ALL TABLES IN SCHEMA public" = "ALL PRIVILEGES";
+          "DATABASE cqdata" = "ALL PRIVILEGES";
         };
       }
       {

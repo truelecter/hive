@@ -44,6 +44,7 @@ channels: final: prev: {
     podman
     _1password
     android-tools
+    jemalloc
     ;
 
   iproute2mac = channels.latest.darwin.iproute2mac;

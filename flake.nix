@@ -4,9 +4,9 @@
   inputs = {
     #region Flakes
     k8s.url = "github:nixos/nixpkgs/3933d8bb9120573c0d8d49dc5e890cb211681490";
-    nixos.url = "github:nixos/nixpkgs/nixos-22.05";
+    nixos.url = "github:nixos/nixpkgs/nixos-22.11";
     latest.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-darwin-stable.url = "github:NixOS/nixpkgs/nixpkgs-22.05-darwin";
+    nixpkgs-darwin-stable.url = "github:NixOS/nixpkgs/nixpkgs-22.11-darwin";
 
     flake-utils.url = "github:numtide/flake-utils";
 
@@ -235,8 +235,6 @@
             channelName = "nixos";
             modules = [
               nixos-hardware.nixosModules.raspberry-pi-4
-              "${latest}/nixos/modules/services/misc/klipper.nix"
-              "${latest}/nixos/modules/services/misc/moonraker.nix"
             ];
           };
         };

@@ -10,7 +10,7 @@ final: prev: rec {
   moonraker = final.callPackage ./moonraker.nix {};
   klipper-screen = final.callPackage ./klipper-screen.nix {};
   mainsail = final.callPackage ./mainsail.nix {};
-  jemalloc = final.callPackage ./jemalloc.nix {};
+  # jemalloc = final.callPackage ./jemalloc.nix {};
   pam-reattach = final.callPackage ./pam-reattach.nix {};
   otf2bdf = final.callPackage ./otf2bdf.nix {};
 
