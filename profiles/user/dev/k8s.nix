@@ -16,12 +16,14 @@
     # };
   };
 
-  home.packages = with pkgs; [
+  home.packages = let
+    helm-wapped = (pkgs.wrapHelm pkgs.kubernetes-helm { plugins = [ pkgs.kubernetes-helmPlugins.helm-diff ]; });
+  in with pkgs; [
     kubectl
     k9s
     dive
     kubelogin-oidc
-    kubernetes-helm
+    helm-wapped
     minikube
   ];
 }
