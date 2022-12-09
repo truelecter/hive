@@ -16,6 +16,10 @@
     # pkgs.rpi-videocore
   ];
 
+  environment.variables = {
+    LIBCAMERA_IPA_PROXY_PATH = "${pkgs.libcamera}/libexec/libcamera";
+  };
+
   tl.services.tailscale-tls.enable = true;
 
   services.rtsp-simple-server = {

@@ -1,7 +1,7 @@
 {
     "klipper": {
         "cargoLocks": null,
-        "date": "2022-11-21",
+        "date": "2022-12-07",
         "extract": null,
         "name": "klipper",
         "passthru": null,
@@ -13,15 +13,15 @@
             "name": null,
             "owner": "Klipper3d",
             "repo": "klipper",
-            "rev": "c51f169c06921152a2e9c386016660d0bb09f767",
-            "sha256": "sha256-l5dOj4cKrKdQ0grmbIdXm5dmkrQv6L+NqCMN1i3z3SE=",
+            "rev": "336cc92a0a06a78358d1c17c7c620655a6eaa055",
+            "sha256": "sha256-n8JGAm04qqQXzX0FDwJ79qhxVDehd8vqReNFqORQUvQ=",
             "type": "github"
         },
-        "version": "c51f169c06921152a2e9c386016660d0bb09f767"
+        "version": "336cc92a0a06a78358d1c17c7c620655a6eaa055"
     },
     "klipper-screen": {
         "cargoLocks": null,
-        "date": "2022-11-21",
+        "date": "2022-12-05",
         "extract": null,
         "name": "klipper-screen",
         "passthru": null,
@@ -33,11 +33,11 @@
             "name": null,
             "owner": "jordanruthe",
             "repo": "KlipperScreen",
-            "rev": "818f1ab4657d1fb88665b393cbbfc39a59a6ce63",
-            "sha256": "sha256-4CodR2khfDxPzYtcoRYXvaa0yguYEmiOaRQPIj7oQXk=",
+            "rev": "753be13a0c3e2f08db310c1425af42d746ba6067",
+            "sha256": "sha256-VU3AVoTcHgLiOkIKizECcZwQuPZ1YlEg72N4uRAIS0s=",
             "type": "github"
         },
-        "version": "818f1ab4657d1fb88665b393cbbfc39a59a6ce63"
+        "version": "753be13a0c3e2f08db310c1425af42d746ba6067"
     },
     "libcamera": {
         "cargoLocks": null,
@@ -116,7 +116,7 @@
     },
     "moonraker": {
         "cargoLocks": null,
-        "date": "2022-11-22",
+        "date": "2022-11-30",
         "extract": null,
         "name": "moonraker",
         "passthru": null,
@@ -128,11 +128,11 @@
             "name": null,
             "owner": "Arksine",
             "repo": "moonraker",
-            "rev": "b67a08a65b3137935c6dc9e936286a4e4077fc0f",
-            "sha256": "sha256-WLZF/qD3D9WLDL4fYBE8HWXWKSTX9a16b5FY5P9Bqzg=",
+            "rev": "dde9bcc752c4827ff0ffc01ed99c6f487122c04f",
+            "sha256": "sha256-zsmQdvz1baiysCe8n1dgab044sUHEOrYMCcsgh77bo8=",
             "type": "github"
         },
-        "version": "b67a08a65b3137935c6dc9e936286a4e4077fc0f"
+        "version": "dde9bcc752c4827ff0ffc01ed99c6f487122c04f"
     },
     "otf2bdf": {
         "cargoLocks": null,
@@ -174,9 +174,24 @@
         },
         "version": "0fbdc4cebce66179cb2daee3d88944acd6cef505"
     },
+    "python-networkmanager": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "python-networkmanager",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-3m65IdlKunVJ9CjtKzqkgqXVQ+y2lly6oPu1VasxudU=",
+            "type": "url",
+            "url": "https://pypi.io/packages/source/p/python-networkmanager/python-networkmanager-2.2.tar.gz"
+        },
+        "version": "2.2"
+    },
     "rpi-fw": {
         "cargoLocks": null,
-        "date": "2022-11-18",
+        "date": "2022-12-08",
         "extract": null,
         "name": "rpi-fw",
         "passthru": null,
@@ -188,11 +203,11 @@
             "name": null,
             "owner": "raspberrypi",
             "repo": "firmware",
-            "rev": "b8a7365c70c68a85a52200cd84b94ea7332bce94",
-            "sha256": "sha256-sKC1mTSqBq+1sXYOGSgWXeldHYAGs6vWH0AlpXodKQs=",
+            "rev": "79fda7c033649dc04993a3bb1534d2f83d46359c",
+            "sha256": "sha256-ICwQagy1kIqfMbzjE9CMp/La3we0iR+gwlqrTYWwNio=",
             "type": "github"
         },
-        "version": "b8a7365c70c68a85a52200cd84b94ea7332bce94"
+        "version": "79fda7c033649dc04993a3bb1534d2f83d46359c"
     },
     "rpi-fw-bluez": {
         "cargoLocks": null,
@@ -236,7 +251,7 @@
     },
     "rpi-linux": {
         "cargoLocks": null,
-        "date": "2022-11-21",
+        "date": "2022-12-08",
         "extract": null,
         "name": "rpi-linux",
         "passthru": null,
@@ -248,11 +263,11 @@
             "name": null,
             "owner": "raspberrypi",
             "repo": "linux",
-            "rev": "c4c123dbeca7625b2cd47013d5a38a73519bc102",
-            "sha256": "sha256-6Gcp6f189KVExvOMBA2StNP7024kFBzvXIE5pJyM+jI=",
+            "rev": "912e47c9ce65853994543ef14ada1534791d5ac8",
+            "sha256": "sha256-lu/iT1HxnG8/vmGMPPj3+NpRB6jvT5s1QQFJ1dzbYVg=",
             "type": "github"
         },
-        "version": "c4c123dbeca7625b2cd47013d5a38a73519bc102"
+        "version": "912e47c9ce65853994543ef14ada1534791d5ac8"
     },
     "rtsp-simple-server": {
         "cargoLocks": null,

@@ -94,7 +94,7 @@
     };
 
     mach-nix = {
-      url = "github:DavHau/mach-nix";
+      url = "github:DavHau/mach-nix/65266b5cc867fec2cb6a25409dd7cd12251f6107";
       inputs = {
         nixpkgs.follows = "nixos";
         flake-utils.follows = "flake-utils";
@@ -218,13 +218,6 @@
             home.nixosModules.home-manager
             sops-nix.nixosModules.sops
             bud.nixosModules.bud
-            # nixos-wsl.nixosModules.wsl
-            {
-              disabledModules = [
-                "services/cluster/k3s/default.nix"
-              ];
-            }
-            "${latest}/nixos/modules/services/cluster/k3s/default.nix"
           ];
         };
 

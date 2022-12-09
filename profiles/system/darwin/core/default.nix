@@ -25,7 +25,6 @@
   services.activate-system.enable = true;
 
   services.nix-daemon.enable = true;
-  users.nix.configureBuildUsers = true;
 
   environment = {
     systemPackages = with pkgs; [
@@ -73,8 +72,12 @@
       "darwin=/etc/nix/inputs/darwin"
     ];
 
-    # Administrative users on Darwin are part of this group.
-    trustedUsers = ["@admin"];
+    settings = {
+      # Administrative users on Darwin are part of this group.
+      trusted-users = ["@admin"];
+    };
+
+    configureBuildUsers = true;
   };
 
   sops.gnupg.sshKeyPaths = lib.mkDefault [

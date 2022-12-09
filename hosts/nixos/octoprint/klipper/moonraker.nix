@@ -19,6 +19,8 @@ in {
     };
   };
 
+  security.polkit.enable = true;
+
   environment.etc = builtins.listToAttrs (
     builtins.map (
       path: {

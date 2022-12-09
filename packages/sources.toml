@@ -69,3 +69,7 @@ fetch.github = "fabianishere/pam_reattach"
 [otf2bdf]
 src.git = "https://github.com/jirutka/otf2bdf"
 fetch.github = "jirutka/otf2bdf"
+
+[python-networkmanager]
+src.pypi = "python-networkmanager"
+fetch.pypi = "python-networkmanager"

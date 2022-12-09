@@ -8,10 +8,38 @@
   gtk3,
   gobject-introspection,
   cairo,
+  python3,
 }: let
-  pythonEnv = inputs.mach-nix.lib.${stdenvNoCC.system}.mkPython {
+  pythonEnv_old = inputs.mach-nix.lib.${stdenvNoCC.system}.mkPython {
     requirements = builtins.readFile "${sources.klipper-screen.src}/scripts/KlipperScreen-requirements.txt";
+    ignoreDataOutdated = true;
+    python = "python39";
   };
+
+  reqs = python-packages:
+    with python-packages; [
+      # direct requirements.txt
+      jinja2
+      websocket-client
+      pygobject3
+      pycairo
+      netifaces
+      requests
+
+      # python-networkmanager with deps
+      (
+        buildPythonPackage {
+          inherit (sources.python-networkmanager) pname version src;
+
+          propagatedBuildInputs = [
+            dbus-python
+            six
+          ];
+        }
+      )
+    ];
+
+  pythonEnv = python3.withPackages reqs;
 in
   stdenvNoCC.mkDerivation rec {
     pname = "klipper-screen";
