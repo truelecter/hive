@@ -10,12 +10,6 @@
   cairo,
   python3,
 }: let
-  pythonEnv_old = inputs.mach-nix.lib.${stdenvNoCC.system}.mkPython {
-    requirements = builtins.readFile "${sources.klipper-screen.src}/scripts/KlipperScreen-requirements.txt";
-    ignoreDataOutdated = true;
-    python = "python39";
-  };
-
   reqs = python-packages:
     with python-packages; [
       # direct requirements.txt

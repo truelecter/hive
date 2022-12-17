@@ -8,6 +8,7 @@
 }: {
   imports =
     suites.base
+    ++ suites.remote-dev
     ++ [
       profiles.networking.tailscale
     ]

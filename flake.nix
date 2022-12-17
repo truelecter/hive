@@ -93,15 +93,6 @@
       inputs.nixpkgs.follows = "nixos";
     };
 
-    mach-nix = {
-      url = "github:DavHau/mach-nix/65266b5cc867fec2cb6a25409dd7cd12251f6107";
-      inputs = {
-        nixpkgs.follows = "nixos";
-        flake-utils.follows = "flake-utils";
-        pypi-deps-db.follows = "pypi-deps-db";
-      };
-    };
-
     nix-npm-buildpackage = {
       url = "github:serokell/nix-npm-buildpackage";
       inputs.nixpkgs.follows = "nixos";
@@ -123,13 +114,14 @@
         nixpkgs.follows = "nixos";
       };
     };
+
+    vscode-server = {
+      url = "github:msteen/nixos-vscode-server";
+    };
     #endregion
 
     #region Not flakes
-    pypi-deps-db = {
-      flake = false;
-      url = "github:DavHau/pypi-deps-db";
-    };
+
     #endregion
 
     #region nvim plugins
@@ -154,7 +146,7 @@
     nixpkgs,
     nixos-generators,
     latest,
-    mach-nix,
+    vscode-server,
     nixos-wsl,
     ...
   } @ inputs:
@@ -176,7 +168,7 @@
         latest = {};
       };
 
-      lib = import ./lib {lib = digga.lib // nixos.lib // mach-nix.lib;};
+      lib = import ./lib {lib = digga.lib // nixos.lib;};
 
       sharedOverlays = [
         (final: prev: {
@@ -218,6 +210,7 @@
             home.nixosModules.home-manager
             sops-nix.nixosModules.sops
             bud.nixosModules.bud
+            vscode-server.nixosModule
           ];
         };
 
@@ -239,6 +232,10 @@
               users.truelecter
               users.root
               secrets
+            ];
+
+            remote-dev = [
+              users.truelecter-dev
             ];
           };
         };
@@ -279,6 +276,7 @@
             ];
             games = [
               darwin.games.steam
+              darwin.games.minecraft
             ];
             system-preferences = [
               darwin.system-preferences.dock
@@ -294,7 +292,12 @@
       #endregion
 
       home = {
-        imports = [(digga.lib.importExportableModules ./modules/user)];
+        modules = [
+          vscode-server.nixosModules.home
+        ];
+        imports = [
+          (digga.lib.importExportableModules ./modules/user)
+        ];
         importables = rec {
           profiles = digga.lib.rakeLeaves ./profiles/user;
           suites = with profiles; {
