@@ -22,6 +22,8 @@ add_config() {
 add_config "max-jobs = auto"
 # Allow binary caches for user
 add_config "trusted-users = root $USER"
+# Fix for build-users-group
+add_config "build-users-group = nixbld"
 # Append extra nix configuration if provided
 if [[ $INPUT_EXTRA_NIX_CONFIG != "" ]]; then
   add_config "$INPUT_EXTRA_NIX_CONFIG"
