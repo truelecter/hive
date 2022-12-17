@@ -26,12 +26,12 @@ linux_amd64_task:
   # - apt -y install sudo jq curl xz-utils openssh-server
   # install_nix_script: ./.ci/install-nix.sh
   prepare_nix_env_script:
-  - nix-env -iA jq
   - nix-env -iA cachix -f https://cachix.org/api/v1/install
   # TODO pin or something
   - nix-channel --add https://nixos.org/channels/nixpkgs-unstable
   - nix-channel --update
   - nix-env -iA nixpkgs.git
+  - nix-env -iA nixpkgs.jq
   prepare_cachix_script:
   - echo $CACHIX_AUTH_TOKEN | cachix authtoken --stdin
   - cachix use nix-community
