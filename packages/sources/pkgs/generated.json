@@ -1,7 +1,7 @@
 {
     "klipper": {
         "cargoLocks": null,
-        "date": "2022-12-07",
+        "date": "2022-12-18",
         "extract": null,
         "name": "klipper",
         "passthru": null,
@@ -13,15 +13,15 @@
             "name": null,
             "owner": "Klipper3d",
             "repo": "klipper",
-            "rev": "336cc92a0a06a78358d1c17c7c620655a6eaa055",
-            "sha256": "sha256-n8JGAm04qqQXzX0FDwJ79qhxVDehd8vqReNFqORQUvQ=",
+            "rev": "4af87865875755b421873e7e4e43ece958ab00ee",
+            "sha256": "sha256-AL6iScGIAJ0d2RwfB+cDDZUiTn+l0UMpLVvEpSwRIDc=",
             "type": "github"
         },
-        "version": "336cc92a0a06a78358d1c17c7c620655a6eaa055"
+        "version": "4af87865875755b421873e7e4e43ece958ab00ee"
     },
     "klipper-screen": {
         "cargoLocks": null,
-        "date": "2022-12-05",
+        "date": "2022-12-13",
         "extract": null,
         "name": "klipper-screen",
         "passthru": null,
@@ -33,11 +33,11 @@
             "name": null,
             "owner": "jordanruthe",
             "repo": "KlipperScreen",
-            "rev": "753be13a0c3e2f08db310c1425af42d746ba6067",
-            "sha256": "sha256-VU3AVoTcHgLiOkIKizECcZwQuPZ1YlEg72N4uRAIS0s=",
+            "rev": "b96adf55edd9389fc8f7e182a9104d790e86375a",
+            "sha256": "sha256-6LalpQhW5HmdNwrXGx4homLg0EDp0N7Y/cPNNYPkBFc=",
             "type": "github"
         },
-        "version": "753be13a0c3e2f08db310c1425af42d746ba6067"
+        "version": "b96adf55edd9389fc8f7e182a9104d790e86375a"
     },
     "libcamera": {
         "cargoLocks": null,
@@ -88,11 +88,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-3aGB6dCNRTIYJaenbfOoYGzSzn/oGgfhThWmhUiW9jE=",
+            "sha256": "sha256-+g6RIfXn06qzDYcFSjZlxwXbwyWcGvf5++KbO59pu0M=",
             "type": "url",
-            "url": "https://github.com/mainsail-crew/mainsail/releases/download/v2.4.0/mainsail.zip"
+            "url": "https://github.com/mainsail-crew/mainsail/releases/download/v2.4.1/mainsail.zip"
         },
-        "version": "v2.4.0"
+        "version": "v2.4.1"
     },
     "manix": {
         "cargoLocks": null,
@@ -191,7 +191,7 @@
     },
     "rpi-fw": {
         "cargoLocks": null,
-        "date": "2022-12-08",
+        "date": "2022-12-15",
         "extract": null,
         "name": "rpi-fw",
         "passthru": null,
@@ -203,15 +203,15 @@
             "name": null,
             "owner": "raspberrypi",
             "repo": "firmware",
-            "rev": "79fda7c033649dc04993a3bb1534d2f83d46359c",
-            "sha256": "sha256-ICwQagy1kIqfMbzjE9CMp/La3we0iR+gwlqrTYWwNio=",
+            "rev": "494eb71e5adfca31ec65dd535fce73de3c7c2efa",
+            "sha256": "sha256-27EUEOMvu4uPSACpqnOk18OZpOp0OEXGCDSVpyr8d1k=",
             "type": "github"
         },
-        "version": "79fda7c033649dc04993a3bb1534d2f83d46359c"
+        "version": "494eb71e5adfca31ec65dd535fce73de3c7c2efa"
     },
     "rpi-fw-bluez": {
         "cargoLocks": null,
-        "date": "2022-10-18",
+        "date": "2022-12-15",
         "extract": null,
         "name": "rpi-fw-bluez",
         "passthru": null,
@@ -223,11 +223,11 @@
             "name": null,
             "owner": "RPi-Distro",
             "repo": "bluez-firmware",
-            "rev": "90d0bdffd25cc8a1717d3fec6cc7bbde56ee83c7",
-            "sha256": "sha256-BXvdkqUk45BmtSt2vuqiT5MljjUhX60l3/tBvZqjpGg=",
+            "rev": "3ae4cba9340fbd746f0ed896c836cd4ec95a4266",
+            "sha256": "sha256-h/e5wQasQ32pgWy6RDzp2EZ+tUNljzcUR7E2ArvU0TI=",
             "type": "github"
         },
-        "version": "90d0bdffd25cc8a1717d3fec6cc7bbde56ee83c7"
+        "version": "3ae4cba9340fbd746f0ed896c836cd4ec95a4266"
     },
     "rpi-fw-nonfree": {
         "cargoLocks": null,
@@ -251,7 +251,7 @@
     },
     "rpi-linux": {
         "cargoLocks": null,
-        "date": "2022-12-08",
+        "date": "2022-12-16",
         "extract": null,
         "name": "rpi-linux",
         "passthru": null,
@@ -263,11 +263,11 @@
             "name": null,
             "owner": "raspberrypi",
             "repo": "linux",
-            "rev": "912e47c9ce65853994543ef14ada1534791d5ac8",
-            "sha256": "sha256-lu/iT1HxnG8/vmGMPPj3+NpRB6jvT5s1QQFJ1dzbYVg=",
+            "rev": "e5c6e2c80b6fc1ff9cbb010f5d0cff97dcb9a023",
+            "sha256": "sha256-Hza6pjiS+JC7e50wzTrijhDrhczt4PG52Ykatxao/u0=",
             "type": "github"
         },
-        "version": "912e47c9ce65853994543ef14ada1534791d5ac8"
+        "version": "e5c6e2c80b6fc1ff9cbb010f5d0cff97dcb9a023"
     },
     "rtsp-simple-server": {
         "cargoLocks": null,
