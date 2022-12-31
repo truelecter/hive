@@ -13,6 +13,8 @@
     root = "/srv/containerd";
   };
 
+  virtualisation.docker.extraOptions = "-g /srv/docker";
+
   tl.k8s.server = {
     enable = true;
     tokenFile = config.sops.secrets.k3s-token.path;
