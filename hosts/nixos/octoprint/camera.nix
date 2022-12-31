@@ -17,7 +17,7 @@
   ];
 
   environment.variables = {
-    LIBCAMERA_IPA_PROXY_PATH = "${pkgs.libcamera}/libexec/libcamera";
+    LIBCAMERA_IPA_PROXY_PATH = "${pkgs.libcamera-rpi}/libexec/libcamera";
   };
 
   tl.services.tailscale-tls.enable = true;
@@ -48,7 +48,7 @@
       };
     };
     env = {
-      LIBCAMERA_IPA_PROXY_PATH = "${pkgs.libcamera}/libexec/libcamera";
+      LIBCAMERA_IPA_PROXY_PATH = "${pkgs.libcamera-rpi}/libexec/libcamera";
     };
   };
 
@@ -58,10 +58,19 @@
     SUBSYSTEM=="dma_heap", GROUP="dma-heap", MODE="0660"
   '';
 
-  systemd.services.rtsp-simple-server = {
+  systemd.services.rtsp-simple-server = let
+    ldconfig = pkgs.writeScriptBin "ldconfig" ''
+      #!${pkgs.stdenv.shell}
+      echo 'libcamera.so => ${pkgs.libcamera-rpi}/lib/libcamera.so'
+      echo 'libcamera-base.so => ${pkgs.libcamera-rpi}/lib/libcamera-base.so'
+    '';
+  in {
     after = ["tailscale-tls.service"];
     partOf = ["tailscale-tls.service"];
 
     serviceConfig.SupplementaryGroups = lib.mkForce "video tailscale-tls dma-heap";
+    path = [
+      ldconfig
+    ];
   };
 }

@@ -12,7 +12,7 @@
       mcu = "rpi";
       firmwareConfig = ./firmwares/firmware-config-rpi-4;
     })
-    .overrideAttrs (o: rec {
+    .overrideAttrs (o: {
       patches = [
         ./firmwares/rpi-fw.patch
       ];

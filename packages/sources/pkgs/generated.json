@@ -1,7 +1,7 @@
 {
     "klipper": {
         "cargoLocks": null,
-        "date": "2022-12-18",
+        "date": "2022-12-30",
         "extract": null,
         "name": "klipper",
         "passthru": null,
@@ -13,11 +13,11 @@
             "name": null,
             "owner": "Klipper3d",
             "repo": "klipper",
-            "rev": "4af87865875755b421873e7e4e43ece958ab00ee",
-            "sha256": "sha256-AL6iScGIAJ0d2RwfB+cDDZUiTn+l0UMpLVvEpSwRIDc=",
+            "rev": "f57ff2c07e25c3946e598dc2b3a5525c63a2c8e5",
+            "sha256": "sha256-MsnQldEbBqwcVE4j/LrmICy++XDz2zw/jKdmjAC2NEs=",
             "type": "github"
         },
-        "version": "4af87865875755b421873e7e4e43ece958ab00ee"
+        "version": "f57ff2c07e25c3946e598dc2b3a5525c63a2c8e5"
     },
     "klipper-screen": {
         "cargoLocks": null,
@@ -41,7 +41,7 @@
     },
     "libcamera": {
         "cargoLocks": null,
-        "date": null,
+        "date": "2022-11-30",
         "extract": null,
         "name": "libcamera",
         "passthru": null,
@@ -53,15 +53,15 @@
             "name": null,
             "owner": "raspberrypi",
             "repo": "libcamera",
-            "rev": "e68e0f1ed2880ea26b5e317f94e2bbd5332e1598",
-            "sha256": "sha256-maeLpR3zNuSROlaGAYZMJ/Bp1GodWIchXNkjLgRrY6Y=",
+            "rev": "0684c3735eb5392d79b9919b62d8b04ac9b50cc1",
+            "sha256": "sha256-7SjpitVWNB/4kxe8KEuJh4yuZXy5MmG5X9KEygTd8g0=",
             "type": "github"
         },
-        "version": "e68e0f1ed2880ea26b5e317f94e2bbd5332e1598"
+        "version": "0684c3735eb5392d79b9919b62d8b04ac9b50cc1"
     },
     "libcamera-apps": {
         "cargoLocks": null,
-        "date": null,
+        "date": "2022-12-01",
         "extract": null,
         "name": "libcamera-apps",
         "passthru": null,
@@ -73,11 +73,11 @@
             "name": null,
             "owner": "raspberrypi",
             "repo": "libcamera-apps",
-            "rev": "6bade0b112aca37fd9762d180203e376867ff09c",
-            "sha256": "sha256-K57+9YTZNLHi0ljabDm1r/h5nkAIvS7Gvj25e+rcpcs=",
+            "rev": "9c5d3191b3f4f71b0db7ab1111f7d5cdf4eb16da",
+            "sha256": "sha256-L1oQ9qHWTPOM52j8OEzgmwDu758puPwyFlq4/7ZEq0A=",
             "type": "github"
         },
-        "version": "6bade0b112aca37fd9762d180203e376867ff09c"
+        "version": "9c5d3191b3f4f71b0db7ab1111f7d5cdf4eb16da"
     },
     "mainsail": {
         "cargoLocks": null,
@@ -116,7 +116,7 @@
     },
     "moonraker": {
         "cargoLocks": null,
-        "date": "2022-11-30",
+        "date": "2022-12-30",
         "extract": null,
         "name": "moonraker",
         "passthru": null,
@@ -128,11 +128,11 @@
             "name": null,
             "owner": "Arksine",
             "repo": "moonraker",
-            "rev": "dde9bcc752c4827ff0ffc01ed99c6f487122c04f",
-            "sha256": "sha256-zsmQdvz1baiysCe8n1dgab044sUHEOrYMCcsgh77bo8=",
+            "rev": "e3bcfb5ea0a3256bdbe19855d20c4431b57cd398",
+            "sha256": "sha256-M1OR0z/fiQxtAdnxAhZTsKU2cgznff9Hjeiz9uEbv/A=",
             "type": "github"
         },
-        "version": "dde9bcc752c4827ff0ffc01ed99c6f487122c04f"
+        "version": "e3bcfb5ea0a3256bdbe19855d20c4431b57cd398"
     },
     "otf2bdf": {
         "cargoLocks": null,
@@ -191,7 +191,7 @@
     },
     "rpi-fw": {
         "cargoLocks": null,
-        "date": "2022-12-15",
+        "date": "2022-12-19",
         "extract": null,
         "name": "rpi-fw",
         "passthru": null,
@@ -203,15 +203,15 @@
             "name": null,
             "owner": "raspberrypi",
             "repo": "firmware",
-            "rev": "494eb71e5adfca31ec65dd535fce73de3c7c2efa",
-            "sha256": "sha256-27EUEOMvu4uPSACpqnOk18OZpOp0OEXGCDSVpyr8d1k=",
+            "rev": "4849b548c1ffda841481c54e62fff249ed00b32c",
+            "sha256": "sha256-bTZgbSRjXFnu70udhsJ9BTs6Q2w7hTqJ0RNvnQncwhU=",
             "type": "github"
         },
-        "version": "494eb71e5adfca31ec65dd535fce73de3c7c2efa"
+        "version": "4849b548c1ffda841481c54e62fff249ed00b32c"
     },
     "rpi-fw-bluez": {
         "cargoLocks": null,
-        "date": "2022-12-15",
+        "date": "2022-12-19",
         "extract": null,
         "name": "rpi-fw-bluez",
         "passthru": null,
@@ -223,11 +223,11 @@
             "name": null,
             "owner": "RPi-Distro",
             "repo": "bluez-firmware",
-            "rev": "3ae4cba9340fbd746f0ed896c836cd4ec95a4266",
-            "sha256": "sha256-h/e5wQasQ32pgWy6RDzp2EZ+tUNljzcUR7E2ArvU0TI=",
+            "rev": "dd840d991939f5046959b8c564596c7228f9d41d",
+            "sha256": "sha256-lYaXNLuIMa3oRg5toEGAX8uWqZQWz2tXn+Qq4GoE4Cc=",
             "type": "github"
         },
-        "version": "3ae4cba9340fbd746f0ed896c836cd4ec95a4266"
+        "version": "dd840d991939f5046959b8c564596c7228f9d41d"
     },
     "rpi-fw-nonfree": {
         "cargoLocks": null,
@@ -251,7 +251,7 @@
     },
     "rpi-linux": {
         "cargoLocks": null,
-        "date": "2022-12-16",
+        "date": "2022-12-19",
         "extract": null,
         "name": "rpi-linux",
         "passthru": null,
@@ -263,15 +263,15 @@
             "name": null,
             "owner": "raspberrypi",
             "repo": "linux",
-            "rev": "e5c6e2c80b6fc1ff9cbb010f5d0cff97dcb9a023",
-            "sha256": "sha256-Hza6pjiS+JC7e50wzTrijhDrhczt4PG52Ykatxao/u0=",
+            "rev": "3f4092766eaf692ed79b69f59c98dbe38e557fe7",
+            "sha256": "sha256-DaY0IhgtH75LphCOw4nhiEq2w8Cdkxsjg+dYK1JpE70=",
             "type": "github"
         },
-        "version": "e5c6e2c80b6fc1ff9cbb010f5d0cff97dcb9a023"
+        "version": "3f4092766eaf692ed79b69f59c98dbe38e557fe7"
     },
     "rtsp-simple-server": {
         "cargoLocks": null,
-        "date": null,
+        "date": "2022-12-30",
         "extract": null,
         "name": "rtsp-simple-server",
         "passthru": null,
@@ -283,11 +283,11 @@
             "name": null,
             "owner": "aler9",
             "repo": "rtsp-simple-server",
-            "rev": "85ce12199aa324a8399407aac41f8b2fbaad279d",
-            "sha256": "sha256-egmTcEhfBxUw8fOpcft0Sna7zXxAfI264yZECDpWYQE=",
+            "rev": "090342a4130da79457e942869f1b71d82d340ed8",
+            "sha256": "sha256-Vpi2RN6aPwicYrnZVpcYJhuJHDjazdSGr//N5gcZ0qs=",
             "type": "github"
         },
-        "version": "85ce12199aa324a8399407aac41f8b2fbaad279d"
+        "version": "090342a4130da79457e942869f1b71d82d340ed8"
     },
     "s5cmd": {
         "cargoLocks": null,

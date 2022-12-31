@@ -51,8 +51,12 @@ in {
 
       serviceConfig.Type = "oneshot";
       script = ''
-        # wait for tailscaled to settle
-        sleep 2
+        status="Starting"
+
+        until [ $status = "Running" ]; do
+          sleep 2
+          status=$(${pkgs.tailscale}/bin/tailscale status -json | ${pkgs.jq}/bin/jq -r .BackendState)
+        done
 
         mkdir -p "${cfg.target}"
 

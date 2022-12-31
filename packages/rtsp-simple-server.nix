@@ -38,7 +38,7 @@ in
 
     inherit (sources.rtsp-simple-server) version src;
 
-    vendorSha256 = "sha256-C8+PVFLpFsowjnwMXwyC9TnNcsb8FEPBcWRgtExO7mw=";
+    vendorSha256 = "sha256-LbYBTj5pUEka2tvDypsoG5uGyyd4df3xfPM2FhSNysw=";
 
     # Tests need docker
     doCheck = false;
