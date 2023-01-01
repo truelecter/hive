@@ -2,7 +2,8 @@
   imports = [
     ./klipper.nix
     ./moonraker.nix
-    ./mainsail.nix
+    ./moonraker-tg-bot.nix
+    ./web-ui.nix
     ./klipper-screen.nix
   ];
 }

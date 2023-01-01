@@ -3,15 +3,15 @@
 {
   klipper = {
     pname = "klipper";
-    version = "f57ff2c07e25c3946e598dc2b3a5525c63a2c8e5";
+    version = "40d8c2ef1653ed59dc1d9fe4cb4e26b2e98a8967";
     src = fetchFromGitHub ({
       owner = "Klipper3d";
       repo = "klipper";
-      rev = "f57ff2c07e25c3946e598dc2b3a5525c63a2c8e5";
+      rev = "40d8c2ef1653ed59dc1d9fe4cb4e26b2e98a8967";
       fetchSubmodules = false;
-      sha256 = "sha256-MsnQldEbBqwcVE4j/LrmICy++XDz2zw/jKdmjAC2NEs=";
+      sha256 = "sha256-Q73T2qxDjR7C/LXB4ozs+nbUCUxwQ52fFpaCVFZIdFs=";
     });
-    date = "2022-12-30";
+    date = "2022-12-31";
   };
   klipper-screen = {
     pname = "klipper-screen";
@@ -81,6 +81,18 @@
     });
     date = "2022-12-30";
   };
+  moonraker-telegram-bot = {
+    pname = "moonraker-telegram-bot";
+    version = "eadd93d8c37f3b8123b0b19cc0b6972f1cd76adb";
+    src = fetchFromGitHub ({
+      owner = "nlef";
+      repo = "moonraker-telegram-bot";
+      rev = "eadd93d8c37f3b8123b0b19cc0b6972f1cd76adb";
+      fetchSubmodules = false;
+      sha256 = "sha256-EAxi9bWY8QRdMGbzalM9heJ4ylXpXqfxZCHrjCZbZes=";
+    });
+    date = "2023-01-01";
+  };
   otf2bdf = {
     pname = "otf2bdf";
     version = "4fb7b6546c62e212475ecd61dee7d7255a60fc99";
@@ -112,6 +124,18 @@
       url = "https://pypi.io/packages/source/p/python-networkmanager/python-networkmanager-2.2.tar.gz";
       sha256 = "sha256-3m65IdlKunVJ9CjtKzqkgqXVQ+y2lly6oPu1VasxudU=";
     };
+  };
+  rel = {
+    pname = "rel";
+    version = "cc9adca9e74c52bbfbf4512188948001049c1833";
+    src = fetchFromGitHub ({
+      owner = "bubbleboy14";
+      repo = "registeredeventlistener";
+      rev = "cc9adca9e74c52bbfbf4512188948001049c1833";
+      fetchSubmodules = false;
+      sha256 = "sha256-fg0EZ2jDjmuQNmFXnNmmi3/Jcufg0mb0IBNi3UXgiYk=";
+    });
+    date = "2021-12-13";
   };
   rpi-fw = {
     pname = "rpi-fw";
@@ -163,15 +187,15 @@
   };
   rtsp-simple-server = {
     pname = "rtsp-simple-server";
-    version = "090342a4130da79457e942869f1b71d82d340ed8";
+    version = "cce3fb440fd8afe88740df464dc6749857ab4baf";
     src = fetchFromGitHub ({
       owner = "aler9";
       repo = "rtsp-simple-server";
-      rev = "090342a4130da79457e942869f1b71d82d340ed8";
+      rev = "cce3fb440fd8afe88740df464dc6749857ab4baf";
       fetchSubmodules = false;
-      sha256 = "sha256-Vpi2RN6aPwicYrnZVpcYJhuJHDjazdSGr//N5gcZ0qs=";
+      sha256 = "sha256-Ha00x7OArabaWR5aF4Qj8rUmaBZAN38bUxuiLtH9gMM=";
     });
-    date = "2022-12-30";
+    date = "2022-12-31";
   };
   s5cmd = {
     pname = "s5cmd";
@@ -203,6 +227,14 @@
     src = fetchurl {
       url = "https://github.com/6c65726f79/Transmissionic/releases/download/v1.7.1/Transmissionic-webui-v1.7.1.zip";
       sha256 = "sha256-uAXoSvwVGb6+aSiJ5VKJUab0MzcQKCxYfkoDbhqWmfo=";
+    };
+  };
+  wsaccel = {
+    pname = "wsaccel";
+    version = "0.6.4";
+    src = fetchurl {
+      url = "https://pypi.io/packages/source/w/wsaccel/wsaccel-0.6.4.tar.gz";
+      sha256 = "sha256-y/ZqiLyvbGrRbVDqKSFYkVJrbpk8S8ftRLBE7m/jrT0=";
     };
   };
 }

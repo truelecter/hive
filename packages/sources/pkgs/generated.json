@@ -1,7 +1,7 @@
 {
     "klipper": {
         "cargoLocks": null,
-        "date": "2022-12-30",
+        "date": "2022-12-31",
         "extract": null,
         "name": "klipper",
         "passthru": null,
@@ -13,11 +13,11 @@
             "name": null,
             "owner": "Klipper3d",
             "repo": "klipper",
-            "rev": "f57ff2c07e25c3946e598dc2b3a5525c63a2c8e5",
-            "sha256": "sha256-MsnQldEbBqwcVE4j/LrmICy++XDz2zw/jKdmjAC2NEs=",
+            "rev": "40d8c2ef1653ed59dc1d9fe4cb4e26b2e98a8967",
+            "sha256": "sha256-Q73T2qxDjR7C/LXB4ozs+nbUCUxwQ52fFpaCVFZIdFs=",
             "type": "github"
         },
-        "version": "f57ff2c07e25c3946e598dc2b3a5525c63a2c8e5"
+        "version": "40d8c2ef1653ed59dc1d9fe4cb4e26b2e98a8967"
     },
     "klipper-screen": {
         "cargoLocks": null,
@@ -134,6 +134,26 @@
         },
         "version": "e3bcfb5ea0a3256bdbe19855d20c4431b57cd398"
     },
+    "moonraker-telegram-bot": {
+        "cargoLocks": null,
+        "date": "2023-01-01",
+        "extract": null,
+        "name": "moonraker-telegram-bot",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "nlef",
+            "repo": "moonraker-telegram-bot",
+            "rev": "eadd93d8c37f3b8123b0b19cc0b6972f1cd76adb",
+            "sha256": "sha256-EAxi9bWY8QRdMGbzalM9heJ4ylXpXqfxZCHrjCZbZes=",
+            "type": "github"
+        },
+        "version": "eadd93d8c37f3b8123b0b19cc0b6972f1cd76adb"
+    },
     "otf2bdf": {
         "cargoLocks": null,
         "date": "2021-09-18",
@@ -188,6 +208,26 @@
             "url": "https://pypi.io/packages/source/p/python-networkmanager/python-networkmanager-2.2.tar.gz"
         },
         "version": "2.2"
+    },
+    "rel": {
+        "cargoLocks": null,
+        "date": "2021-12-13",
+        "extract": null,
+        "name": "rel",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "bubbleboy14",
+            "repo": "registeredeventlistener",
+            "rev": "cc9adca9e74c52bbfbf4512188948001049c1833",
+            "sha256": "sha256-fg0EZ2jDjmuQNmFXnNmmi3/Jcufg0mb0IBNi3UXgiYk=",
+            "type": "github"
+        },
+        "version": "cc9adca9e74c52bbfbf4512188948001049c1833"
     },
     "rpi-fw": {
         "cargoLocks": null,
@@ -271,7 +311,7 @@
     },
     "rtsp-simple-server": {
         "cargoLocks": null,
-        "date": "2022-12-30",
+        "date": "2022-12-31",
         "extract": null,
         "name": "rtsp-simple-server",
         "passthru": null,
@@ -283,11 +323,11 @@
             "name": null,
             "owner": "aler9",
             "repo": "rtsp-simple-server",
-            "rev": "090342a4130da79457e942869f1b71d82d340ed8",
-            "sha256": "sha256-Vpi2RN6aPwicYrnZVpcYJhuJHDjazdSGr//N5gcZ0qs=",
+            "rev": "cce3fb440fd8afe88740df464dc6749857ab4baf",
+            "sha256": "sha256-Ha00x7OArabaWR5aF4Qj8rUmaBZAN38bUxuiLtH9gMM=",
             "type": "github"
         },
-        "version": "090342a4130da79457e942869f1b71d82d340ed8"
+        "version": "cce3fb440fd8afe88740df464dc6749857ab4baf"
     },
     "s5cmd": {
         "cargoLocks": null,
@@ -343,5 +383,20 @@
             "url": "https://github.com/6c65726f79/Transmissionic/releases/download/v1.7.1/Transmissionic-webui-v1.7.1.zip"
         },
         "version": "v1.7.1"
+    },
+    "wsaccel": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "wsaccel",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-y/ZqiLyvbGrRbVDqKSFYkVJrbpk8S8ftRLBE7m/jrT0=",
+            "type": "url",
+            "url": "https://pypi.io/packages/source/w/wsaccel/wsaccel-0.6.4.tar.gz"
+        },
+        "version": "0.6.4"
     }
 }

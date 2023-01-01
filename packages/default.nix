@@ -13,6 +13,7 @@ final: prev: rec {
   # jemalloc = final.callPackage ./jemalloc.nix {};
   pam-reattach = final.callPackage ./pam-reattach.nix {};
   otf2bdf = final.callPackage ./otf2bdf.nix {};
+  moonraker-telegram-bot = final.callPackage ./moonraker-telegram-bot.nix {};
 
   vscode-extensions = let
     lib = final.lib;

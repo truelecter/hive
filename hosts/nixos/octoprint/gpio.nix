@@ -55,9 +55,9 @@ in {
     (final: prev: {
       deviceTree.applyOverlays = prev.callPackage ./apply-overlays-dtmerge.nix {};
     })
-    (final: prev: {
-      ffmpeg = prev.ffmpeg_5;
-    })
+    # (final: prev: {
+    #   ffmpeg = prev.ffmpeg_5;
+    # })
   ];
 
   services.udev.extraRules = ''

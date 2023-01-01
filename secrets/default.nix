@@ -44,6 +44,12 @@ in {
         key = "depsosK3sEnv";
         sopsFile = ./sops/external-ips.yaml;
       };
+
+      moonraker-tg-bot = {
+        owner = "moonraker-tg-bot";
+        key = "printer-tg-bot";
+        sopsFile = ./sops/keys.yaml;
+      };
     })
   ];
 }
