@@ -16,6 +16,10 @@
         host = "rtsp://127.0.0.1:8554/cam";
         fps = 30;
       };
+      timelapse = {
+        height = 0.2;
+        last_frame_duration = 1;
+      };
     };
   };
 }

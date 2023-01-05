@@ -5,6 +5,7 @@
   sources,
   inputs,
   python3,
+  gnused,
 }: let
   reqs = python-packages:
     with python-packages; [
@@ -45,6 +46,10 @@ in
 
     inherit (sources.moonraker-telegram-bot) version src;
 
+    buildInputs = [
+      gnused
+    ];
+
     nativeBuildInputs = [
       makeWrapper
     ];
@@ -55,6 +60,8 @@ in
     installPhase = ''
       mkdir -p $out/bin $out/lib/moonraker-telegram-bot
       cp -r ./bot/. $out/lib/moonraker-telegram-bot/
+
+      sed -e 's/^[^#]*cv2.destroyAllWindows()/# &/' -i $out/lib/moonraker-telegram-bot/camera.py
 
       makeWrapper ${pythonEnv}/bin/python $out/bin/moonraker-telegram-bot \
         --add-flags "$out/lib/moonraker-telegram-bot/main.py"
