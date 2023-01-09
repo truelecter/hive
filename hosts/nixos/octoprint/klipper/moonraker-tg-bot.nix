@@ -19,8 +19,8 @@
       timelapse = {
         height = 0.2;
         last_frame_duration = 1;
-        time = 60;
-        target_fps = 25;
+        time = 45;
+        target_fps = 15;
       };
     };
   };
