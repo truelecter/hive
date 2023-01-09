@@ -6,7 +6,6 @@ on:
 jobs:
   build-system:
     runs-on: ubuntu-latest
-    container: nixpkgs/cachix-flakes:nixos-22.11
 
     steps:
     - name: Set up QEMU
@@ -14,6 +13,14 @@ jobs:
 
     - name: Checkout
       uses: actions/checkout@v3
+
+    - uses: cachix/install-nix-action@v18
+      with:
+        github_access_token: ${{ secrets.GITHUB_TOKEN }}
+        nix_path: nixpkgs=channel:nixos-unstable
+        extra_nix_config: |
+          extra-platforms = aarch64-linux
+          # sandbox false
 
     - uses: cachix/cachix-action@v12
       with:
@@ -29,7 +36,7 @@ jobs:
 
     - name: Build system
       run: |
-        until nix build --option sandbox false --option extra-platforms aarch64-linux -vv '.#nixosConfigurations.octoprint.config.system.build.toplevel' --json | jq -r '.[].outputs | to_entries[].value' | cachix push truelecter; do
+        until nix build -vv '.#nixosConfigurations.octoprint.config.system.build.toplevel' --json | jq -r '.[].outputs | to_entries[].value' | cachix push truelecter; do
           echo removing /homeless-shelter..
           rm -rf /homeless-shelter
           rm -rf /var/empty
