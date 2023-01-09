@@ -1,0 +1,39 @@
+name: Build system profiles
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build-system:
+    runs-on: ubuntu-latest
+    container: nixpkgs/cachix-flakes:nixos-22.11
+
+    steps:
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v2
+
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - uses: cachix/cachix-action@v12
+      with:
+        name: truelecter
+        authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+
+    - name: Setup used caches
+      run: |
+        cachix use nix-community
+        cachix use mic92
+        cachix use nrdxp
+        cachix use truelecter
+
+    - name: Build system
+      run: |
+        until nix build --option sandbox false --option extra-platforms aarch64-linux -vv '.#nixosConfigurations.octoprint.config.system.build.toplevel' --json | jq -r '.[].outputs | to_entries[].value' | cachix push truelecter; do
+          echo removing /homeless-shelter..
+          rm -rf /homeless-shelter
+          rm -rf /var/empty
+          mkdir -p /var/empty
+          nix-store --verify --repair --check-contents
+          echo retrying...
+        done
