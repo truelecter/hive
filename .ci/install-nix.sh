@@ -2,7 +2,7 @@
 # Creds to https://github.com/cachix/install-nix-action/blob/master/install-nix.sh
 set -euo pipefail
 
-INPUT_INSTALL_URL = "https://nixos.org/nix/install"
+INPUT_INSTALL_URL="https://nixos.org/nix/install"
 
 if type -p nix &>/dev/null ; then
   echo "Aborting: Nix is already installed at $(type -p nix)"
