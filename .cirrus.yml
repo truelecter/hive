@@ -47,7 +47,7 @@ linux_task:
   - cachix use truelecter
 
   build_script:
-  - nix build -v ".#nixosConfigurations.$NIXOS_HOST.config.system.build.toplevel" --json | jq -r '.[].outputs | to_entries[].value' | cachix push truelecter
+  - cachix watch-exec truelecter nix build -vv ".#nixosConfigurations.$NIXOS_HOST.config.system.build.toplevel"
 
   matrix:
   - name: Build octoprint
@@ -97,7 +97,7 @@ macos_task:
   - cachix use truelecter
 
   build_script:
-  - nix build -v ".#darwinConfigurations.$NIXOS_HOST.config.system.build.toplevel" --json | jq -r '.[].outputs | to_entries[].value' | cachix push truelecter
+  - cachix watch-exec truelecter nix build -vv ".#darwinConfigurations.$NIXOS_HOST.config.system.build.toplevel"
 
   matrix:
   - name: Build squadbook
