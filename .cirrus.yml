@@ -69,8 +69,8 @@ macos_task:
 
   env:
     NIXOS_HOST: nonexisting
-    USER: "root"
-    HOME: "/var/root"
+    USER: "admin"
+    HOME: "/Users/admin"
     PATH: "/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/per-user/$USER/profile/bin:$PATH"
     NIX_SSL_CERT_FILE: /nix/var/nix/profiles/default/etc/ssl/certs/ca-bundle.crt
 
