@@ -46,7 +46,6 @@ in {
       };
 
       moonraker-tg-bot = {
-        owner = "moonraker-tg-bot";
         key = "printer-tg-bot";
         sopsFile = ./sops/keys.yaml;
       };

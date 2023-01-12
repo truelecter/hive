@@ -2,35 +2,33 @@
 # Creds to https://github.com/cachix/install-nix-action/blob/master/install-nix.sh
 set -euo pipefail
 
+INPUT_INSTALL_URL="https://nixos.org/nix/install"
+
 if type -p nix &>/dev/null ; then
   echo "Aborting: Nix is already installed at $(type -p nix)"
   exit
 fi
 
-# GitHub command to put the following log messages into a group which is collapsed by default
-echo "::group::Installing Nix"
+echo "Installing Nix..."
 
 # Create a temporary workdir
 workdir=$(mktemp -d)
+
 trap 'rm -rf "$workdir"' EXIT
+
+cat > "$workdir/nix.conf" <<EOF
+max-jobs = auto
+trusted-users = root $USER
+build-users-group = nixbld
+experimental-features = nix-command flakes
+extra-platforms = aarch64-linux i686-linux
+# sandbox = false
+EOF
 
 # Configure Nix
 add_config() {
   echo "$1" | tee -a "$workdir/nix.conf" >/dev/null
 }
-# Set jobs to number of cores
-add_config "max-jobs = auto"
-# Allow binary caches for user
-add_config "trusted-users = root $USER"
-# Fix for build-users-group
-add_config "build-users-group = nixbld"
-# Append extra nix configuration if provided
-if [[ $INPUT_EXTRA_NIX_CONFIG != "" ]]; then
-  add_config "$INPUT_EXTRA_NIX_CONFIG"
-fi
-if [[ ! $INPUT_EXTRA_NIX_CONFIG =~ "experimental-features" ]]; then
-  add_config "experimental-features = nix-command flakes"
-fi
 
 # Nix installer flags
 installer_options=(
@@ -54,16 +52,9 @@ else
   sudo cp $workdir/nix.conf /etc/nix/nix.conf
 fi
 
-if [[ $INPUT_INSTALL_OPTIONS != "" ]]; then
-  IFS=' ' read -r -a extra_installer_options <<< "$INPUT_INSTALL_OPTIONS"
-  installer_options=("${extra_installer_options[@]}" "${installer_options[@]}")
-fi
-
-echo "installer options: ${installer_options[*]}"
-
 # There is --retry-on-errors, but only newer curl versions support that
 curl_retries=5
-while ! curl -sS -o "$workdir/install" -v --fail -L "${INPUT_INSTALL_URL:-https://nixos.org/nix/install}"
+while ! curl -sS -o "$workdir/install" -v --fail -L "${INPUT_INSTALL_URL}"
 do
   sleep 1
   ((curl_retries--))
@@ -78,18 +69,6 @@ sh "$workdir/install" "${installer_options[@]}"
 if [[ $OSTYPE =~ darwin ]]; then
   # macOS needs certificates hints
   cert_file=/nix/var/nix/profiles/default/etc/ssl/certs/ca-bundle.crt
-  echo "NIX_SSL_CERT_FILE=$cert_file" >> "$GITHUB_ENV"
   export NIX_SSL_CERT_FILE=$cert_file
   sudo launchctl setenv NIX_SSL_CERT_FILE "$cert_file"
 fi
-
-# Set paths
-# echo "/nix/var/nix/profiles/default/bin" >> "$GITHUB_PATH"
-# echo "/nix/var/nix/profiles/per-user/$USER/profile/bin" >> "$GITHUB_PATH"
-
-if [[ $INPUT_NIX_PATH != "" ]]; then
-  echo "NIX_PATH=${INPUT_NIX_PATH}" >> "$GITHUB_ENV"
-fi
-
-# Close the log message group which was opened above
-echo "::endgroup::"
