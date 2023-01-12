@@ -21,7 +21,7 @@ max-jobs = auto
 trusted-users = root $USER
 build-users-group = nixbld
 experimental-features = nix-command flakes
-extra-platforms = aarch64-linux
+extra-platforms = aarch64-linux i686-linux
 # sandbox = false
 EOF
 
