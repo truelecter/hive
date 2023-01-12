@@ -2,9 +2,6 @@
 env:
   CACHIX_AUTH_TOKEN: ENCRYPTED[49049427742875d9a675cd5f545a8618efaf30387016eec43bf52b4de63539c6f9f63ab3d6d8ee2f751eeaeab5f6bf99]
   CIRRUS_SHELL: "/bin/bash"
-  USER: "root"
-  HOME: "/root"
-  PATH: "/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/per-user/$USER/profile/bin:$PATH"
 
 linux_task:
   name: Build NixOS systems
@@ -12,6 +9,9 @@ linux_task:
 
   env:
     NIXOS_HOST: nonexisting
+    USER: "root"
+    HOME: "/root"
+    PATH: "/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/per-user/$USER/profile/bin:$PATH"
 
   compute_engine_instance:
     image_project: cirrus-images
@@ -69,6 +69,10 @@ macos_task:
 
   env:
     NIXOS_HOST: nonexisting
+    USER: "root"
+    HOME: "/var/root"
+    PATH: "/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/per-user/$USER/profile/bin:$PATH"
+    NIX_SSL_CERT_FILE: /nix/var/nix/profiles/default/etc/ssl/certs/ca-bundle.crt
 
   macos_instance:
     image: ghcr.io/cirruslabs/macos-ventura-xcode:14.2
