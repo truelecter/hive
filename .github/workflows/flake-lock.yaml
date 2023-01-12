@@ -16,6 +16,10 @@ jobs:
         with:
           extra_nix_config: |
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+      - name: Update nvfetcher packages
+        run: nix develop --command bash -c "update-packages"
+      - name: Update nvfetcher VSCode extentions
+        run: nix develop --command bash -c "update-vscode-exts"
       - name: Update flake.lock
         uses: DeterminateSystems/update-flake-lock@v14
         with:
