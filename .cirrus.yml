@@ -53,15 +53,15 @@ linux_task:
   - name: Build octoprint
     env:
       NIXOS_HOST: octoprint
-  # - name: Build nas
-  #   env:
-  #     NIXOS_HOST: nas
-  # - name: Build depsos
-  #   env:
-  #     NIXOS_HOST: depsos
-  # - name: Build hyperos
-  #   env:
-  #     NIXOS_HOST: hyperos
+  - name: Build nas
+    env:
+      NIXOS_HOST: nas
+  - name: Build depsos
+    env:
+      NIXOS_HOST: depsos
+  - name: Build hyperos
+    env:
+      NIXOS_HOST: hyperos
 
 macos_task:
   name: Build Nix-Darwin system
@@ -97,7 +97,7 @@ macos_task:
   - cachix use truelecter
 
   build_script:
-  - nix build -v ".#nixosConfigurations.$NIXOS_HOST.config.system.build.toplevel" --json | jq -r '.[].outputs | to_entries[].value' | cachix push truelecter
+  - nix build -v ".#darwinConfigurations.$NIXOS_HOST.config.system.build.toplevel" --json | jq -r '.[].outputs | to_entries[].value' | cachix push truelecter
 
   matrix:
   - name: Build squadbook
