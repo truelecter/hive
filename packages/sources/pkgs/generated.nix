@@ -71,15 +71,15 @@
   };
   moonraker = {
     pname = "moonraker";
-    version = "c9a1d0f3bb7b8231570db86ce8b2da1f291474e7";
+    version = "a154c5fa512affa20d4290e7320f3be74b2365ff";
     src = fetchFromGitHub ({
       owner = "Arksine";
       repo = "moonraker";
-      rev = "c9a1d0f3bb7b8231570db86ce8b2da1f291474e7";
+      rev = "a154c5fa512affa20d4290e7320f3be74b2365ff";
       fetchSubmodules = false;
-      sha256 = "sha256-TtbeEU5MrkxWdI7IaYz8FNS7wufpk2Edc2ejlZmY8cE=";
+      sha256 = "sha256-+Wz3UI5x3e1A/eNLEuIzoYpvsnNEjuoBQGnBAl+9pII=";
     });
-    date = "2023-01-10";
+    date = "2023-01-12";
   };
   moonraker-telegram-bot = {
     pname = "moonraker-telegram-bot";
