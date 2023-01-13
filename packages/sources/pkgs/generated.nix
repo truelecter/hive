@@ -71,15 +71,15 @@
   };
   moonraker = {
     pname = "moonraker";
-    version = "c9a1d0f3bb7b8231570db86ce8b2da1f291474e7";
+    version = "a154c5fa512affa20d4290e7320f3be74b2365ff";
     src = fetchFromGitHub ({
       owner = "Arksine";
       repo = "moonraker";
-      rev = "c9a1d0f3bb7b8231570db86ce8b2da1f291474e7";
+      rev = "a154c5fa512affa20d4290e7320f3be74b2365ff";
       fetchSubmodules = false;
-      sha256 = "sha256-TtbeEU5MrkxWdI7IaYz8FNS7wufpk2Edc2ejlZmY8cE=";
+      sha256 = "sha256-+Wz3UI5x3e1A/eNLEuIzoYpvsnNEjuoBQGnBAl+9pII=";
     });
-    date = "2023-01-10";
+    date = "2023-01-12";
   };
   moonraker-telegram-bot = {
     pname = "moonraker-telegram-bot";
@@ -145,7 +145,7 @@
       repo = "firmware";
       rev = "3a232374735c2bc5b7188ba2dfc0cbba8fa30d97";
       fetchSubmodules = false;
-      sha256 = "sha256-tdaH+zZwmILNFBge2gMqtzj/1Hydj9cxhPvhw+7jTrU=";
+      sha256 = "sha256-00XrEDj2n3627MJ75waI3M0t40MFevFgGOnpHjjP0dQ=";
     });
     date = "2023-01-05";
   };
@@ -181,7 +181,7 @@
       repo = "linux";
       rev = "64039ee02ef6c90ddbecbb6e5b178aca64743710";
       fetchSubmodules = false;
-      sha256 = "sha256-flgHQYVLDLM6NNyLeiolJ86+e+BMgy2iiL9ubrZiU2E=";
+      sha256 = "sha256-zfNtMtsiq6QOY/0kEr+dEGO4dKFrBbC4FnuV/cauIzI=";
     });
     date = "2023-01-12";
   };
@@ -195,7 +195,6 @@
       fetchSubmodules = false;
       sha256 = "sha256-ouHkxWLcGGKKKdNTs2qSzuaUGAW73vxvq9EbgiXpzsg=";
     });
-    date = "2023-01-11";
   };
   s5cmd = {
     pname = "s5cmd";

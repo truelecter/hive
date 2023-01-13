@@ -11,19 +11,19 @@
     pkgs.ustreamer
     pkgs.libcamera
     pkgs.ffmpeg_5
-    pkgs.libcamera-apps
+    # pkgs.libcamera-apps
     pkgs.gdb
     # pkgs.rpi-videocore
   ];
 
-  environment.variables = {
-    LIBCAMERA_IPA_PROXY_PATH = "${pkgs.libcamera-rpi}/libexec/libcamera";
-  };
+  # environment.variables = {
+  #   LIBCAMERA_IPA_PROXY_PATH = "${pkgs.libcamera-rpi}/libexec/libcamera";
+  # };
 
   tl.services.tailscale-tls.enable = true;
 
   services.rtsp-simple-server = {
-    enable = true;
+    enable = false;
     settings = {
       hlsAlwaysRemux = true;
       hlsVariant = "lowLatency";
@@ -50,9 +50,9 @@
         # };
       };
     };
-    env = {
-      LIBCAMERA_IPA_PROXY_PATH = "${pkgs.libcamera-rpi}/libexec/libcamera";
-    };
+    # env = {
+    #   LIBCAMERA_IPA_PROXY_PATH = "${pkgs.libcamera-rpi}/libexec/libcamera";
+    # };
   };
 
   users.groups.dma-heap = {};
@@ -61,19 +61,19 @@
     SUBSYSTEM=="dma_heap", GROUP="dma-heap", MODE="0660"
   '';
 
-  systemd.services.rtsp-simple-server = let
-    ldconfig = pkgs.writeScriptBin "ldconfig" ''
-      #!${pkgs.stdenv.shell}
-      echo 'libcamera.so => ${pkgs.libcamera-rpi}/lib/libcamera.so'
-      echo 'libcamera-base.so => ${pkgs.libcamera-rpi}/lib/libcamera-base.so'
-    '';
-  in {
-    after = ["tailscale-tls.service"];
-    partOf = ["tailscale-tls.service"];
+  # systemd.services.rtsp-simple-server = let
+  #   ldconfig = pkgs.writeScriptBin "ldconfig" ''
+  #     #!${pkgs.stdenv.shell}
+  #     echo 'libcamera.so => ${pkgs.libcamera-rpi}/lib/libcamera.so'
+  #     echo 'libcamera-base.so => ${pkgs.libcamera-rpi}/lib/libcamera-base.so'
+  #   '';
+  # in {
+  #   after = ["tailscale-tls.service"];
+  #   partOf = ["tailscale-tls.service"];
 
-    serviceConfig.SupplementaryGroups = lib.mkForce "video tailscale-tls dma-heap";
-    path = [
-      ldconfig
-    ];
-  };
+  #   serviceConfig.SupplementaryGroups = lib.mkForce "video tailscale-tls dma-heap";
+  #   path = [
+  #     ldconfig
+  #   ];
+  # };
 }

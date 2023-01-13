@@ -23,9 +23,9 @@ fetch.github = "raspberrypi/libcamera-apps"
 # src.manual = "6bade0b112aca37fd9762d180203e376867ff09c"
 
 [rtsp-simple-server]
-src.git = "https://github.com/aler9/rtsp-simple-server"
+# src.git = "https://github.com/aler9/rtsp-simple-server"
 fetch.github = "aler9/rtsp-simple-server"
-# src.manual = "85ce12199aa324a8399407aac41f8b2fbaad279d"
+src.manual = "79562b15ab342bb34d29ffc3cae6a076ed51490a"
 
 [moonraker]
 src.git = "https://github.com/Arksine/moonraker"

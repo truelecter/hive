@@ -116,7 +116,7 @@
     },
     "moonraker": {
         "cargoLocks": null,
-        "date": "2023-01-10",
+        "date": "2023-01-12",
         "extract": null,
         "name": "moonraker",
         "passthru": null,
@@ -128,11 +128,11 @@
             "name": null,
             "owner": "Arksine",
             "repo": "moonraker",
-            "rev": "c9a1d0f3bb7b8231570db86ce8b2da1f291474e7",
-            "sha256": "sha256-TtbeEU5MrkxWdI7IaYz8FNS7wufpk2Edc2ejlZmY8cE=",
+            "rev": "a154c5fa512affa20d4290e7320f3be74b2365ff",
+            "sha256": "sha256-+Wz3UI5x3e1A/eNLEuIzoYpvsnNEjuoBQGnBAl+9pII=",
             "type": "github"
         },
-        "version": "c9a1d0f3bb7b8231570db86ce8b2da1f291474e7"
+        "version": "a154c5fa512affa20d4290e7320f3be74b2365ff"
     },
     "moonraker-telegram-bot": {
         "cargoLocks": null,
@@ -244,7 +244,7 @@
             "owner": "raspberrypi",
             "repo": "firmware",
             "rev": "3a232374735c2bc5b7188ba2dfc0cbba8fa30d97",
-            "sha256": "sha256-tdaH+zZwmILNFBge2gMqtzj/1Hydj9cxhPvhw+7jTrU=",
+            "sha256": "sha256-00XrEDj2n3627MJ75waI3M0t40MFevFgGOnpHjjP0dQ=",
             "type": "github"
         },
         "version": "3a232374735c2bc5b7188ba2dfc0cbba8fa30d97"
@@ -304,14 +304,14 @@
             "owner": "raspberrypi",
             "repo": "linux",
             "rev": "64039ee02ef6c90ddbecbb6e5b178aca64743710",
-            "sha256": "sha256-flgHQYVLDLM6NNyLeiolJ86+e+BMgy2iiL9ubrZiU2E=",
+            "sha256": "sha256-zfNtMtsiq6QOY/0kEr+dEGO4dKFrBbC4FnuV/cauIzI=",
             "type": "github"
         },
         "version": "64039ee02ef6c90ddbecbb6e5b178aca64743710"
     },
     "rtsp-simple-server": {
         "cargoLocks": null,
-        "date": "2023-01-11",
+        "date": null,
         "extract": null,
         "name": "rtsp-simple-server",
         "passthru": null,
