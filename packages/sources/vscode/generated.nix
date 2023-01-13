@@ -462,11 +462,11 @@
   };
   "\"ms-vscode.cmake-tools\"" = {
     pname = "\"ms-vscode.cmake-tools\"";
-    version = "1.13.37";
+    version = "1.13.38";
     src = fetchurl {
-      url = "https://ms-vscode.gallery.vsassets.io/_apis/public/gallery/publisher/ms-vscode/extension/cmake-tools/1.13.37/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "cmake-tools-1.13.37.zip";
-      sha256 = "sha256-MqA3XJTliXRUB+hhW2rZxIBkFeWbPIw8TJ8eaxTjSMg=";
+      url = "https://ms-vscode.gallery.vsassets.io/_apis/public/gallery/publisher/ms-vscode/extension/cmake-tools/1.13.38/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "cmake-tools-1.13.38.zip";
+      sha256 = "sha256-U1LnYrTEguX7DqMn5HgawCI3ZeVEuhpiNGNA+Mh3IT4=";
     };
   };
   "\"ms-vscode.cpptools-extension-pack\"" = {
@@ -552,11 +552,11 @@
   };
   "\"redhat.java\"" = {
     pname = "\"redhat.java\"";
-    version = "1.14.2023011110";
+    version = "1.14.2023011309";
     src = fetchurl {
-      url = "https://redhat.gallery.vsassets.io/_apis/public/gallery/publisher/redhat/extension/java/1.14.2023011110/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "java-1.14.2023011110.zip";
-      sha256 = "sha256-fMcsjaAv6xQcE0KiUwY+R4VaBJ7KZNkwbpviaUMrJl4=";
+      url = "https://redhat.gallery.vsassets.io/_apis/public/gallery/publisher/redhat/extension/java/1.14.2023011309/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "java-1.14.2023011309.zip";
+      sha256 = "sha256-/ltjo5fR4n+YMRvn0GrkrhA1MvQJE6LdgPcqPqMdKqo=";
     };
   };
   "\"redhat.vscode-commons\"" = {
@@ -574,7 +574,7 @@
     src = fetchurl {
       url = "https://redhat.gallery.vsassets.io/_apis/public/gallery/publisher/redhat/extension/vscode-xml/0.24.2023011210/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
       name = "vscode-xml-0.24.2023011210.zip";
-      sha256 = "sha256-G1LYgQQGC4PUNdpAgw6PeNwg5Kp/XzcAJ1vl1ED8AHU=";
+      sha256 = "sha256-uuWpT2/gZ/bH5FgU4KUOl2Hg/Nb+x0KU5SUrBkPEEl0=";
     };
   };
   "\"redhat.vscode-yaml\"" = {

@@ -1,7 +1,7 @@
 {
     "klipper": {
         "cargoLocks": null,
-        "date": "2023-01-08",
+        "date": "2023-01-13",
         "extract": null,
         "name": "klipper",
         "passthru": null,
@@ -13,11 +13,31 @@
             "name": null,
             "owner": "Klipper3d",
             "repo": "klipper",
-            "rev": "bca2671efb8ae6035bb8600619b7a7c4e76169c3",
-            "sha256": "sha256-Ag33eeokWhqHxGJIBjWPWBI5ld1c+uqjY/zGntpwhDE=",
+            "rev": "4671cf2d0e3ec864e72766cb1f6e24f1a308f794",
+            "sha256": "sha256-OkOq+8cipcH2wAVwN+yrW83QxoUg3hXbrjk90VE1ZaA=",
             "type": "github"
         },
-        "version": "bca2671efb8ae6035bb8600619b7a7c4e76169c3"
+        "version": "4671cf2d0e3ec864e72766cb1f6e24f1a308f794"
+    },
+    "klipper-led_effect": {
+        "cargoLocks": null,
+        "date": "2022-11-15",
+        "extract": null,
+        "name": "klipper-led_effect",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "julianschill",
+            "repo": "klipper-led_effect",
+            "rev": "5d16b1c26b9e233a388b3126b59e54ee5fea709b",
+            "sha256": "sha256-l9/I2YflDtiG72gL3rMy6SW8rD4iPJJ/IKDgrSVOi08=",
+            "type": "github"
+        },
+        "version": "5d16b1c26b9e233a388b3126b59e54ee5fea709b"
     },
     "klipper-screen": {
         "cargoLocks": null,
@@ -231,7 +251,7 @@
     },
     "rpi-fw": {
         "cargoLocks": null,
-        "date": "2023-01-05",
+        "date": "2023-01-13",
         "extract": null,
         "name": "rpi-fw",
         "passthru": null,
@@ -243,11 +263,11 @@
             "name": null,
             "owner": "raspberrypi",
             "repo": "firmware",
-            "rev": "3a232374735c2bc5b7188ba2dfc0cbba8fa30d97",
-            "sha256": "sha256-00XrEDj2n3627MJ75waI3M0t40MFevFgGOnpHjjP0dQ=",
+            "rev": "2e7137e0840f76f056589aba7f82d5b7236d8f1c",
+            "sha256": "sha256-pH9CWlc4xqdU/FBLtHHnM5Ja6ZYxB5HRL0ZP2xoWaYo=",
             "type": "github"
         },
-        "version": "3a232374735c2bc5b7188ba2dfc0cbba8fa30d97"
+        "version": "2e7137e0840f76f056589aba7f82d5b7236d8f1c"
     },
     "rpi-fw-bluez": {
         "cargoLocks": null,
@@ -291,7 +311,7 @@
     },
     "rpi-linux": {
         "cargoLocks": null,
-        "date": "2023-01-12",
+        "date": "2023-01-13",
         "extract": null,
         "name": "rpi-linux",
         "passthru": null,
@@ -303,11 +323,11 @@
             "name": null,
             "owner": "raspberrypi",
             "repo": "linux",
-            "rev": "64039ee02ef6c90ddbecbb6e5b178aca64743710",
-            "sha256": "sha256-zfNtMtsiq6QOY/0kEr+dEGO4dKFrBbC4FnuV/cauIzI=",
+            "rev": "da4c8e0ffe7a868b989211045657d600be3046a1",
+            "sha256": "sha256-NL4R7chwElWFnReg567xJHMPZblsaDLA9y0t5GCEFgw=",
             "type": "github"
         },
-        "version": "64039ee02ef6c90ddbecbb6e5b178aca64743710"
+        "version": "da4c8e0ffe7a868b989211045657d600be3046a1"
     },
     "rtsp-simple-server": {
         "cargoLocks": null,
@@ -398,5 +418,25 @@
             "url": "https://pypi.io/packages/source/w/wsaccel/wsaccel-0.6.4.tar.gz"
         },
         "version": "0.6.4"
+    },
+    "zig": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "zig",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "ziglang",
+            "repo": "zig",
+            "rev": "d42a719e8f7ba31a9e18d6be9d58691b0b38c69a",
+            "sha256": "sha256-FwXvZBpe7rSKte17TkeeQs4is2/nsYyi9oxcv/09NSY=",
+            "type": "github"
+        },
+        "version": "d42a719e8f7ba31a9e18d6be9d58691b0b38c69a"
     }
 }

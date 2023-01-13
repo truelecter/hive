@@ -9,6 +9,7 @@ final: prev: rec {
   rtsp-simple-server = final.callPackage ./rtsp-simple-server.nix {};
   moonraker = final.callPackage ./moonraker.nix {};
   klipper-screen = final.callPackage ./klipper-screen.nix {};
+  klipper-led_effect = final.callPackage ./klipper-led_effect.nix {};
   mainsail = final.callPackage ./mainsail.nix {};
   # jemalloc = final.callPackage ./jemalloc.nix {};
   pam-reattach = final.callPackage ./pam-reattach.nix {};
