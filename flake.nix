@@ -183,7 +183,7 @@
 
         nur.overlay
         sops-nix.overlay
-        nvfetcher.overlay
+        nvfetcher.overlays.default
 
         (import ./packages)
       ];
