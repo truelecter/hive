@@ -25,11 +25,12 @@ jobs:
           rm packages/sources/pkgs/generated.json
           rm packages/sources/pkgs/generated.nix
           nix develop --command bash -c "update-packages"
-      - name: Update nvfetcher VSCode extentions
-        run: |
-          rm packages/sources/vscode/generated.json
-          rm packages/sources/vscode/generated.nix
-          nix develop --command bash -c "update-vscode-exts"
+      # Sometimes breaks for some reason
+      # - name: Update nvfetcher VSCode extentions
+      #   run: |
+      #     rm packages/sources/vscode/generated.json
+      #     rm packages/sources/vscode/generated.nix
+      #     nix develop --command bash -c "update-vscode-exts"
       - name: Update flake.lock
         uses: DeterminateSystems/update-flake-lock@v14
         with:
