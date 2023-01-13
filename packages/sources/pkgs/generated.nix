@@ -3,15 +3,15 @@
 {
   klipper = {
     pname = "klipper";
-    version = "bca2671efb8ae6035bb8600619b7a7c4e76169c3";
+    version = "4671cf2d0e3ec864e72766cb1f6e24f1a308f794";
     src = fetchFromGitHub ({
       owner = "Klipper3d";
       repo = "klipper";
-      rev = "bca2671efb8ae6035bb8600619b7a7c4e76169c3";
+      rev = "4671cf2d0e3ec864e72766cb1f6e24f1a308f794";
       fetchSubmodules = false;
-      sha256 = "sha256-Ag33eeokWhqHxGJIBjWPWBI5ld1c+uqjY/zGntpwhDE=";
+      sha256 = "sha256-OkOq+8cipcH2wAVwN+yrW83QxoUg3hXbrjk90VE1ZaA=";
     });
-    date = "2023-01-08";
+    date = "2023-01-13";
   };
   klipper-screen = {
     pname = "klipper-screen";
@@ -139,15 +139,15 @@
   };
   rpi-fw = {
     pname = "rpi-fw";
-    version = "3a232374735c2bc5b7188ba2dfc0cbba8fa30d97";
+    version = "2e7137e0840f76f056589aba7f82d5b7236d8f1c";
     src = fetchFromGitHub ({
       owner = "raspberrypi";
       repo = "firmware";
-      rev = "3a232374735c2bc5b7188ba2dfc0cbba8fa30d97";
+      rev = "2e7137e0840f76f056589aba7f82d5b7236d8f1c";
       fetchSubmodules = false;
-      sha256 = "sha256-00XrEDj2n3627MJ75waI3M0t40MFevFgGOnpHjjP0dQ=";
+      sha256 = "sha256-jIKhQxp9D83OAZ8X2Vra9THHBE0j5Z2gRMDSVqIhopY=";
     });
-    date = "2023-01-05";
+    date = "2023-01-13";
   };
   rpi-fw-bluez = {
     pname = "rpi-fw-bluez";
@@ -175,15 +175,15 @@
   };
   rpi-linux = {
     pname = "rpi-linux";
-    version = "64039ee02ef6c90ddbecbb6e5b178aca64743710";
+    version = "da4c8e0ffe7a868b989211045657d600be3046a1";
     src = fetchFromGitHub ({
       owner = "raspberrypi";
       repo = "linux";
-      rev = "64039ee02ef6c90ddbecbb6e5b178aca64743710";
+      rev = "da4c8e0ffe7a868b989211045657d600be3046a1";
       fetchSubmodules = false;
-      sha256 = "sha256-zfNtMtsiq6QOY/0kEr+dEGO4dKFrBbC4FnuV/cauIzI=";
+      sha256 = "sha256-hNLVfhalmRhhRfvu2mR/qDmmGl//Ic1eqR7N1HFj2CY=";
     });
-    date = "2023-01-12";
+    date = "2023-01-13";
   };
   rtsp-simple-server = {
     pname = "rtsp-simple-server";
