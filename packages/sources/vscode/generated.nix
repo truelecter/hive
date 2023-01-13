@@ -129,11 +129,11 @@
   };
   "\"eamodio.gitlens\"" = {
     pname = "\"eamodio.gitlens\"";
-    version = "2023.1.1215";
+    version = "2023.1.1304";
     src = fetchurl {
-      url = "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2023.1.1215/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "gitlens-2023.1.1215.zip";
-      sha256 = "sha256-VtRuOxQZTwqDC7NXvCrW85ZgJNOFakqYhmpPfr7Y9BY=";
+      url = "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2023.1.1304/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "gitlens-2023.1.1304.zip";
+      sha256 = "sha256-RPZ5JSqKJimRlQsZ1VOoNImFHSXgGFMt1gTTtt94WS0=";
     };
   };
   "\"editorconfig.editorconfig\"" = {
@@ -372,11 +372,11 @@
   };
   "\"ms-toolsai.jupyter\"" = {
     pname = "\"ms-toolsai.jupyter\"";
-    version = "2023.1.2000131034";
+    version = "2023.1.2000141019";
     src = fetchurl {
-      url = "https://ms-toolsai.gallery.vsassets.io/_apis/public/gallery/publisher/ms-toolsai/extension/jupyter/2023.1.2000131034/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "jupyter-2023.1.2000131034.zip";
-      sha256 = "sha256-/HtF6OdDgXqOUm3SY/ocNv8YCwRW1j9W9XDSwo27fnA=";
+      url = "https://ms-toolsai.gallery.vsassets.io/_apis/public/gallery/publisher/ms-toolsai/extension/jupyter/2023.1.2000141019/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "jupyter-2023.1.2000141019.zip";
+      sha256 = "sha256-fDBcLzL+iN4XUdvcFkK3wbEwj+esQz9UEQYBENKtwRI=";
     };
   };
   "\"ms-toolsai.jupyter-keymap\"" = {
@@ -574,7 +574,7 @@
     src = fetchurl {
       url = "https://redhat.gallery.vsassets.io/_apis/public/gallery/publisher/redhat/extension/vscode-xml/0.24.2023011210/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
       name = "vscode-xml-0.24.2023011210.zip";
-      sha256 = "sha256-uuWpT2/gZ/bH5FgU4KUOl2Hg/Nb+x0KU5SUrBkPEEl0=";
+      sha256 = "sha256-G1LYgQQGC4PUNdpAgw6PeNwg5Kp/XzcAJ1vl1ED8AHU=";
     };
   };
   "\"redhat.vscode-yaml\"" = {
