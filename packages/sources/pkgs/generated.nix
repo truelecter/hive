@@ -157,7 +157,7 @@
       repo = "firmware";
       rev = "2e7137e0840f76f056589aba7f82d5b7236d8f1c";
       fetchSubmodules = false;
-      sha256 = "sha256-pH9CWlc4xqdU/FBLtHHnM5Ja6ZYxB5HRL0ZP2xoWaYo=";
+      sha256 = "sha256-jIKhQxp9D83OAZ8X2Vra9THHBE0j5Z2gRMDSVqIhopY=";
     });
     date = "2023-01-13";
   };
@@ -193,7 +193,7 @@
       repo = "linux";
       rev = "da4c8e0ffe7a868b989211045657d600be3046a1";
       fetchSubmodules = false;
-      sha256 = "sha256-NL4R7chwElWFnReg567xJHMPZblsaDLA9y0t5GCEFgw=";
+      sha256 = "sha256-hNLVfhalmRhhRfvu2mR/qDmmGl//Ic1eqR7N1HFj2CY=";
     });
     date = "2023-01-13";
   };
