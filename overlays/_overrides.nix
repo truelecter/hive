@@ -12,7 +12,7 @@ channels: final: prev: {
 
   inherit
     (channels.latest)
-    cachix
+    # cachix
     dhall
     discord
     element-desktop
@@ -49,6 +49,4 @@ channels: final: prev: {
     ;
 
   iproute2mac = channels.latest.darwin.iproute2mac;
-
-  nix-unstable = channels.latest.nix;
 }
