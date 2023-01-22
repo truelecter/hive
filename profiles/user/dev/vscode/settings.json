@@ -4,6 +4,7 @@
   },
   "yaml.format.singleQuote": true,
 
+  "terminal.integrated.scrollback": 1000000000000,
   "update.mode": "none",
   "extensions.autoCheckUpdates": false,
   "terminal.integrated.macOptionClickForcesSelection": true,
