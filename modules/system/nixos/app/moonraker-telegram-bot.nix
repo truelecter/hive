@@ -59,7 +59,7 @@ in {
 
     settings = mkOption {
       type = format.type;
-      default = { };
+      default = {};
       example = {
         secrets = {
           secrets_path = "/etc/moonraker-tg-bot-secrets.conf";
@@ -82,7 +82,8 @@ in {
         };
       };
       fullConfig = lib.recursiveUpdate cfg.settings forcedConfig;
-    in format.generate "moonraker-telegram-bot.conf" fullConfig;
+    in
+      format.generate "moonraker-telegram-bot.conf" fullConfig;
 
     users = {
       users."${cfg.user}" = {

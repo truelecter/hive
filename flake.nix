@@ -4,9 +4,8 @@
   inputs = {
     #region Flakes
     k8s.url = "github:nixos/nixpkgs/3933d8bb9120573c0d8d49dc5e890cb211681490";
-    nixos.url = "github:nixos/nixpkgs/nixos-22.11";
+    nixos.url = "github:nixos/nixpkgs/release-22.11";
     latest.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-darwin-stable.url = "github:NixOS/nixpkgs/nixpkgs-22.11-darwin";
 
     flake-utils.url = "github:numtide/flake-utils";
 
@@ -54,7 +53,7 @@
 
     darwin = {
       url = "github:LnL7/nix-darwin";
-      inputs.nixpkgs.follows = "nixpkgs-darwin-stable";
+      inputs.nixpkgs.follows = "nixos";
     };
 
     deploy = {
@@ -117,6 +116,9 @@
 
     vscode-server = {
       url = "github:msteen/nixos-vscode-server";
+      inputs = {
+        nixpkgs.follows = "nixos";
+      };
     };
     #endregion
 
@@ -158,10 +160,6 @@
 
       channels = {
         nixos = {
-          imports = [(digga.lib.importOverlays ./overlays)];
-          overlays = [];
-        };
-        nixpkgs-darwin-stable = {
           imports = [(digga.lib.importOverlays ./overlays)];
           overlays = [];
         };
@@ -246,7 +244,7 @@
       darwin = {
         hostDefaults = {
           system = "aarch64-darwin";
-          channelName = "nixpkgs-darwin-stable";
+          channelName = "nixos";
           imports = [
             (digga.lib.importExportableModules ./modules/system/common)
             (digga.lib.importExportableModules ./modules/system/darwin)

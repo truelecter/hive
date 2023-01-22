@@ -5,8 +5,12 @@ final: prev: rec {
   # then, call packages with `final.callPackage`
   tfenv = final.callPackage ./tfenv.nix {};
   transmissionic-web = final.callPackage ./transmissionic-web.nix {};
-  libcamera-apps = final.callPackage ./libcamera-apps.nix {};
-  rtsp-simple-server = final.callPackage ./rtsp-simple-server.nix {};
+  libcamera-apps = final.callPackage ./libcamera-apps.nix {
+    libcamera-rpi = final.libcamera-rpi;
+  };
+  rtsp-simple-server = final.callPackage ./rtsp-simple-server.nix {
+    libcamera-rpi = final.libcamera-rpi;
+  };
   moonraker = final.callPackage ./moonraker.nix {};
   klipper-screen = final.callPackage ./klipper-screen.nix {};
   klipper-led_effect = final.callPackage ./klipper-led_effect.nix {};

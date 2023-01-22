@@ -47,7 +47,7 @@
     "darwin": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgs-darwin-stable"
+          "nixos"
         ]
       },
       "locked": {
@@ -470,16 +470,16 @@
     },
     "nixos": {
       "locked": {
-        "lastModified": 1673957332,
-        "narHash": "sha256-njH7Szk1BLVWGMw7IRibgGejSlxXHj9saZHfH20gHdk=",
+        "lastModified": 1674375969,
+        "narHash": "sha256-cK0uY7A5nNv3By70O0uTFJxeizsTNn2aLPmb1tSEzaQ=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "b83e7f5a04a3acc8e92228b0c4bae68933d504eb",
+        "rev": "581f27ee1473fcb9ed5a33629269ce901b7d7359",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "nixos-22.11",
+        "ref": "release-22.11",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -561,22 +561,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-darwin-stable": {
-      "locked": {
-        "lastModified": 1674200616,
-        "narHash": "sha256-I7IedG3GRjmuLd6uiQjrn1c4F0BgzdWQzwYk4ExoQQ0=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "5f876994432996374765fb4150d3280636b26c38",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixpkgs-22.11-darwin",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs-for-bootstrap": {
       "locked": {
         "lastModified": 1669834992,
@@ -600,20 +584,6 @@
         "owner": "NixOS",
         "repo": "nixpkgs",
         "rev": "676c80dcc2f0ba780c8ab204f92c5abd69fa1245",
-        "type": "github"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "type": "indirect"
-      }
-    },
-    "nixpkgs_3": {
-      "locked": {
-        "lastModified": 1655361562,
-        "narHash": "sha256-chPaIIhmdL6jdZWpf/K6yQCsuBNOYuMqbJsNpLfrdTE=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "0b59d075675dc28bf9ebab466033280096c8d4fe",
         "type": "github"
       },
       "original": {
@@ -756,7 +726,6 @@
         "nixos-hardware": "nixos-hardware",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs_2",
-        "nixpkgs-darwin-stable": "nixpkgs-darwin-stable",
         "nur": "nur",
         "nvfetcher": "nvfetcher",
         "sops-nix": "sops-nix",
@@ -801,7 +770,9 @@
     },
     "vscode-server": {
       "inputs": {
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": [
+          "nixos"
+        ]
       },
       "locked": {
         "lastModified": 1662442857,

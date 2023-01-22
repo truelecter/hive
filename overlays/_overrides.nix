@@ -12,7 +12,6 @@ channels: final: prev: {
 
   inherit
     (channels.latest)
-    # cachix
     dhall
     discord
     element-desktop
