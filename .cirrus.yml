@@ -50,6 +50,7 @@ linux_task:
 
   build_script:
   - nix build ".#nixosConfigurations.$NIXOS_HOST.config.system.build.toplevel"
+  - nix develop --command "menu"
   # for cachix to finish uploading things
   - sleep 60
 
@@ -104,6 +105,7 @@ macos_task:
 
   build_script:
   - nix build ".#darwinConfigurations.$NIXOS_HOST.config.system.build.toplevel"
+  - nix develop --command "menu"
   # for cachix to finish uploading things
   - sleep 60
 
