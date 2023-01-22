@@ -45,7 +45,6 @@ channels: final: prev: {
     _1password
     android-tools
     jemalloc
-    zig
     ;
 
   iproute2mac = channels.latest.darwin.iproute2mac;
