@@ -37,13 +37,15 @@ in {
       whois
       zsh
       vim
-      ncdu
       file
       gnused
       lsof
       lnav
       lsd
       iftop
+      ncdu
+    ] ++ lib.optionals isDarwin [
+      # ncdu # ncdu broken on Darwin (NixOS/nixpkgs#208890)
     ];
 
     shellAliases = let
