@@ -44,8 +44,6 @@ in {
       lsd
       iftop
       ncdu
-    ] ++ lib.optionals isDarwin [
-      # ncdu # ncdu broken on Darwin (NixOS/nixpkgs#208890)
     ];
 
     shellAliases = let
