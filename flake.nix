@@ -6,6 +6,7 @@
     k8s.url = "github:nixos/nixpkgs/3933d8bb9120573c0d8d49dc5e890cb211681490";
     nixos.url = "github:nixos/nixpkgs/release-22.11";
     latest.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.follows = "nixos";
 
     flake-utils.url = "github:numtide/flake-utils";
 
