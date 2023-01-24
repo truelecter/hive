@@ -97,23 +97,6 @@
       inputs.nixpkgs.follows = "nixos";
     };
 
-    nix-on-droid = {
-      url = "github:t184256/nix-on-droid";
-      inputs = {
-        home-manager.follows = "home";
-        nixpkgs.follows = "nixos";
-      };
-    };
-
-    nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL";
-
-      inputs = {
-        flake-utils.follows = "flake-utils";
-        nixpkgs.follows = "nixos";
-      };
-    };
-
     vscode-server = {
       url = "github:msteen/nixos-vscode-server";
       inputs = {
@@ -145,11 +128,9 @@
     sops-nix,
     nvfetcher,
     deploy,
-    nixpkgs,
     nixos-generators,
     latest,
     vscode-server,
-    nixos-wsl,
     ...
   } @ inputs:
     digga.lib.mkFlake
