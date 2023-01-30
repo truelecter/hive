@@ -18,6 +18,7 @@
       ./k8s
       ./postgres.nix
       ./mongo.nix
+      ./wireguard.nix
     ];
 
   networking.networkmanager = {

@@ -31,7 +31,7 @@ in {
       };
 
       xata-password-env = {
-        key = "wireless291Env";
+        key = "wireless290Env";
         sopsFile = ./sops/keys.yaml;
       };
 
@@ -47,6 +47,11 @@ in {
 
       moonraker-tg-bot = {
         key = "printer-tg-bot";
+        sopsFile = ./sops/keys.yaml;
+      };
+
+      depsos-wg-pk = {
+        key = "depsosWG";
         sopsFile = ./sops/keys.yaml;
       };
     })
