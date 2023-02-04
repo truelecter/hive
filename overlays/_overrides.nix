@@ -12,15 +12,8 @@ channels: final: prev: {
 
   inherit
     (channels.latest)
-    dhall
-    discord
-    element-desktop
-    rage
     nix-index
     nixpkgs-fmt
-    qutebrowser
-    signal-desktop
-    starship
     deploy-rs
     tailscale
     alejandra
@@ -29,15 +22,11 @@ channels: final: prev: {
     nix-direnv
     rnix-lsp
     ffmpeg_5
-    klipper-flash
-    klipper-firmware
-    klipper-genconf
     statix
     raspberrypi-eeprom
     k9s
     kubelogin-oidc
     vscodium
-    iosevka
     nil
     lnav
     podman
