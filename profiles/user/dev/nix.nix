@@ -7,9 +7,16 @@
   ...
 }: {
   programs.vscode.userSettings = {
-    "nix.serverPath" = "${pkgs.nil}/bin/nil";
+    "nix.serverPath" = "nil";
+    "nix.serverSettings" = {
+      "nil" = {
+        "formatting" = {
+          "command" = ["alejandra"];
+        };
+      };
+    };
     "nix.enableLanguageServer" = true;
-    "nix.formatterPath" = "${pkgs.alejandra}/bin/alejandra";
+    "[nix]" = {"editor.formatOnSave" = true;};
   };
 
   home.packages = with pkgs; [
