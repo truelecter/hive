@@ -9,6 +9,7 @@
     enable = true;
 
     delta.enable = true;
+    lfs.enable = true;
 
     ignores = [
       # Linux
