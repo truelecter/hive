@@ -1,7 +1,7 @@
 {
     "klipper": {
         "cargoLocks": null,
-        "date": "2023-02-14",
+        "date": "2023-02-23",
         "extract": null,
         "name": "klipper",
         "passthru": null,
@@ -13,11 +13,11 @@
             "name": null,
             "owner": "Klipper3d",
             "repo": "klipper",
-            "rev": "aca0c71a2b2eb1679923ca2491aadad38cc43081",
-            "sha256": "sha256-r4HshUW0SbJW7tZYp0JfaOu0rWRMJZYuWQl7vZFvQFQ=",
+            "rev": "a5fb20765e9f3872a21ab0debb7c9b46bc119ffd",
+            "sha256": "sha256-wlkl5vx+6cgPFu3frV8h+hMocBXLCBhW9XEhLGKkH2Q=",
             "type": "github"
         },
-        "version": "aca0c71a2b2eb1679923ca2491aadad38cc43081"
+        "version": "a5fb20765e9f3872a21ab0debb7c9b46bc119ffd"
     },
     "klipper-led_effect": {
         "cargoLocks": null,
@@ -41,7 +41,7 @@
     },
     "klipper-screen": {
         "cargoLocks": null,
-        "date": "2023-02-13",
+        "date": "2023-02-20",
         "extract": null,
         "name": "klipper-screen",
         "passthru": null,
@@ -53,11 +53,11 @@
             "name": null,
             "owner": "jordanruthe",
             "repo": "KlipperScreen",
-            "rev": "e426b06b8be78d9a30965e62914d4f3e7d8cf5da",
-            "sha256": "sha256-IDsHcKlhkiNfXU5U69fLLNY4Dr7JB8CAbSE8xR+gj0U=",
+            "rev": "d6693fbeccc00ced07b871b22cc8919bbad3b755",
+            "sha256": "sha256-LweO5EVWr3OxziHrjtQDdWyUBCVUJ17afkw7RCZWgcg=",
             "type": "github"
         },
-        "version": "e426b06b8be78d9a30965e62914d4f3e7d8cf5da"
+        "version": "d6693fbeccc00ced07b871b22cc8919bbad3b755"
     },
     "libcamera": {
         "cargoLocks": null,
@@ -81,7 +81,7 @@
     },
     "libcamera-apps": {
         "cargoLocks": null,
-        "date": "2023-02-15",
+        "date": "2023-02-22",
         "extract": null,
         "name": "libcamera-apps",
         "passthru": null,
@@ -93,11 +93,11 @@
             "name": null,
             "owner": "raspberrypi",
             "repo": "libcamera-apps",
-            "rev": "e90d21d4c880ab3617a527fae69a7f83e5192cdc",
-            "sha256": "sha256-TneWuTKxzO7AB8/O5MUEcc4oLccy21FSExh226IQRgE=",
+            "rev": "aa849e6c86a1b198e97c92f48f126459aff4e92f",
+            "sha256": "sha256-KUWL34SMvXP3lnDVCNDD14wsF8h7LKn3IJ5E30qLn0Q=",
             "type": "github"
         },
-        "version": "e90d21d4c880ab3617a527fae69a7f83e5192cdc"
+        "version": "aa849e6c86a1b198e97c92f48f126459aff4e92f"
     },
     "mainsail": {
         "cargoLocks": null,
@@ -136,7 +136,7 @@
     },
     "moonraker": {
         "cargoLocks": null,
-        "date": "2023-02-17",
+        "date": "2023-02-24",
         "extract": null,
         "name": "moonraker",
         "passthru": null,
@@ -148,11 +148,11 @@
             "name": null,
             "owner": "Arksine",
             "repo": "moonraker",
-            "rev": "0a811b9e44ff1d4b68836f75143d26d09fad5840",
-            "sha256": "sha256-YQ4hUxL6W6+GeECRDKGnGknD8H+BhFqfvBU/mNUDVZY=",
+            "rev": "fd5ea0c6a45fb04baf21014d1505f3d4ade791db",
+            "sha256": "sha256-VvWXFxJcAd7tvM4wgrN5LWhmZDXXmN4E/Vcm0HzGjdw=",
             "type": "github"
         },
-        "version": "0a811b9e44ff1d4b68836f75143d26d09fad5840"
+        "version": "fd5ea0c6a45fb04baf21014d1505f3d4ade791db"
     },
     "moonraker-telegram-bot": {
         "cargoLocks": null,
@@ -251,7 +251,7 @@
     },
     "rpi-fw": {
         "cargoLocks": null,
-        "date": "2023-02-10",
+        "date": "2023-02-23",
         "extract": null,
         "name": "rpi-fw",
         "passthru": null,
@@ -263,11 +263,11 @@
             "name": null,
             "owner": "raspberrypi",
             "repo": "firmware",
-            "rev": "cc64c94b50fa2120ef6f2825fb3105f6691197a6",
-            "sha256": "sha256-Sng24lerS++Wr4j/iM1zbMAjOEEsl4vf/lfwYxWkluI=",
+            "rev": "33500e46e829f0b689424ee38531f2b859cdd297",
+            "sha256": "sha256-O9YBfbT/H44N08BYZSn+y76d/+VfoDoD1Gg8Wa1/iSA=",
             "type": "github"
         },
-        "version": "cc64c94b50fa2120ef6f2825fb3105f6691197a6"
+        "version": "33500e46e829f0b689424ee38531f2b859cdd297"
     },
     "rpi-fw-bluez": {
         "cargoLocks": null,
