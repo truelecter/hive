@@ -43,17 +43,17 @@ in
     # Tests need docker
     doCheck = false;
 
-    tags = [
-      "rpicamera"
-    ];
+    # tags = [
+    #   "rpicamera"
+    # ];
 
     ldflags = [
       "-X github.com/aler9/rtsp-simple-server/internal/core.version=v${version}"
     ];
 
-    preBuild = ''
-      cp ${exe}/exe internal/rpicamera/exe/
-    '';
+    # preBuild = ''
+    #   cp ${exe}/exe internal/rpicamera/exe/
+    # '';
 
     meta = with lib; {
       description = "Ready-to-use RTSP server and RTSP proxy that allows to read and publish video and audio streams";

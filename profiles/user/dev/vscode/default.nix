@@ -73,6 +73,7 @@ in {
       PKief.material-icon-theme
       bungcip.better-toml
       mads-hartmann.bash-ide-vscode
+      ericadamski.carbon-now-sh
     ];
     userSettings =
       lib.recursiveUpdate

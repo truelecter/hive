@@ -21,8 +21,8 @@ channels: final: prev: {
     direnv
     nix-direnv
     rnix-lsp
-    ffmpeg_5
     statix
+    ffmpeg_5-full
     raspberrypi-eeprom
     k9s
     kubelogin-oidc

@@ -5,19 +5,15 @@ final: prev: rec {
   # then, call packages with `final.callPackage`
   tfenv = final.callPackage ./tfenv.nix {};
   transmissionic-web = final.callPackage ./transmissionic-web.nix {};
-  libcamera-apps = final.callPackage ./libcamera-apps.nix {
-    libcamera-rpi = final.libcamera-rpi;
-  };
   rtsp-simple-server = final.callPackage ./rtsp-simple-server.nix {
     libcamera-rpi = final.libcamera-rpi;
   };
   moonraker = final.callPackage ./moonraker.nix {};
   klipper-screen = final.callPackage ./klipper-screen.nix {};
   klipper-led_effect = final.callPackage ./klipper-led_effect.nix {};
-  mainsail = final.callPackage ./mainsail.nix {};
+  mainsail = final.callPackage ./mainsail2.nix {};
   # jemalloc = final.callPackage ./jemalloc.nix {};
   pam-reattach = final.callPackage ./pam-reattach.nix {};
-  otf2bdf = final.callPackage ./otf2bdf.nix {};
   moonraker-telegram-bot = final.callPackage ./moonraker-telegram-bot.nix {};
 
   vscode-extensions = let

@@ -9,21 +9,13 @@
     pkgs.dtc
     pkgs.v4l-utils
     pkgs.ustreamer
-    pkgs.libcamera
-    pkgs.ffmpeg_5
-    # pkgs.libcamera-apps
     pkgs.gdb
-    # pkgs.rpi-videocore
   ];
-
-  # environment.variables = {
-  #   LIBCAMERA_IPA_PROXY_PATH = "${pkgs.libcamera-rpi}/libexec/libcamera";
-  # };
 
   tl.services.tailscale-tls.enable = true;
 
   services.rtsp-simple-server = {
-    enable = false;
+    enable = true;
     settings = {
       hlsAlwaysRemux = true;
       hlsVariant = "lowLatency";
@@ -36,23 +28,16 @@
 
       paths = {
         cam = {
-          runOnInit = builtins.replaceStrings ["\n"] [""] "${pkgs.ffmpeg_5}/bin/ffmpeg -vcodec h264 -framerate 25 -video_size 1280x720 -f v4l2
-            -i /dev/v4l/by-id/usb-Alpha_Imaging_Tech._Corp._Razer_Kiyo-video-index0
+          runOnInit = builtins.replaceStrings ["\n"] [""] "${pkgs.ffmpeg_5-full}/bin/ffmpeg -vcodec h264 -framerate 25 -video_size 1280x720 -f v4l2
+            -i /dev/v4l/by-id/usb-046d_HD_Pro_Webcam_C920_89E7787F-video-index0
             -c:v libx264 -preset ultrafast -pix_fmt yuv420p
             -flags low_delay -strict experimental -g 50 -crf 18
             -f rtsp rtsp://localhost:8554/cam";
           runOnInitRestart = true;
+          runOnReady = "/bin/sh -c '${pkgs.v4l-utils}/bin/v4l2-ctl -c focus_auto=0; ${pkgs.v4l-utils}/bin/v4l2-ctl -c sharpness=140 -c focus_absolute=30'";
         };
-        # cam = {
-        #   source = "rpiCamera";
-        #   rpiCameraWidth = 1920;
-        #   rpiCameraHeight = 1080;
-        # };
       };
     };
-    # env = {
-    #   LIBCAMERA_IPA_PROXY_PATH = "${pkgs.libcamera-rpi}/libexec/libcamera";
-    # };
   };
 
   users.groups.dma-heap = {};
@@ -61,19 +46,10 @@
     SUBSYSTEM=="dma_heap", GROUP="dma-heap", MODE="0660"
   '';
 
-  # systemd.services.rtsp-simple-server = let
-  #   ldconfig = pkgs.writeScriptBin "ldconfig" ''
-  #     #!${pkgs.stdenv.shell}
-  #     echo 'libcamera.so => ${pkgs.libcamera-rpi}/lib/libcamera.so'
-  #     echo 'libcamera-base.so => ${pkgs.libcamera-rpi}/lib/libcamera-base.so'
-  #   '';
-  # in {
-  #   after = ["tailscale-tls.service"];
-  #   partOf = ["tailscale-tls.service"];
+  systemd.services.rtsp-simple-server = {
+    after = ["tailscale-tls.service"];
+    partOf = ["tailscale-tls.service"];
 
-  #   serviceConfig.SupplementaryGroups = lib.mkForce "video tailscale-tls dma-heap";
-  #   path = [
-  #     ldconfig
-  #   ];
-  # };
+    serviceConfig.SupplementaryGroups = lib.mkForce "video tailscale-tls dma-heap";
+  };
 }

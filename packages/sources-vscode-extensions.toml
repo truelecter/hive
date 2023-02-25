@@ -313,3 +313,7 @@ fetch.vsmarketplace = "mads-hartmann.bash-ide-vscode"
 ["bungcip.better-toml"]
 src.vsmarketplace = "bungcip.better-toml"
 fetch.vsmarketplace = "bungcip.better-toml"
+
+["ericadamski.carbon-now-sh"]
+src.vsmarketplace = "ericadamski.carbon-now-sh"
+fetch.vsmarketplace = "ericadamski.carbon-now-sh"

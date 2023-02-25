@@ -13,6 +13,7 @@
     devshell = {
       url = "github:numtide/devshell";
       inputs.nixpkgs.follows = "nixos";
+      inputs.flake-utils.follows = "flake-utils";
     };
 
     flake-utils-plus = {
@@ -31,6 +32,7 @@
         home-manager.follows = "home";
         deploy.follows = "deploy";
         flake-utils-plus.follows = "flake-utils-plus";
+        flake-utils.follows = "flake-utils";
         devshell.follows = "devshell";
       };
     };
@@ -44,6 +46,15 @@
       inputs = {
         nixpkgs.follows = "nixos";
         devshell.follows = "devshell";
+        beautysh.follows = "beautysh";
+      };
+    };
+
+    beautysh = {
+      url = "github:lovesegfault/beautysh";
+      inputs = {
+        # flake-utils.follows = "flake-utils";
+        nixpkgs.follows = "nixos";
       };
     };
 

@@ -5,5 +5,6 @@
     ./moonraker-tg-bot.nix
     ./web-ui.nix
     ./klipper-screen.nix
+    ./canbus.nix
   ];
 }

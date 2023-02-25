@@ -52,6 +52,15 @@ fetch.github = "nlef/moonraker-telegram-bot"
 src.github = "mainsail-crew/mainsail"
 fetch.url = "https://github.com/mainsail-crew/mainsail/releases/download/$ver/mainsail.zip"
 
+[mainsail-raw]
+src.git = "https://github.com/mainsail-crew/mainsail"
+src.branch = "develop"
+fetch.github = "mainsail-crew/mainsail"
+
+[cypress-aarch64]
+src.manual = "10.10.0"
+fetch.url = "https://cdn.cypress.io/desktop/$ver/linux-arm64/cypress.zip"
+
 [transmissionic]
 src.github = "6c65726f79/Transmissionic"
 fetch.url = "https://github.com/6c65726f79/Transmissionic/releases/download/$ver/Transmissionic-webui-$ver.zip"
