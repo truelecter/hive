@@ -31,7 +31,7 @@
       m-cli
       terminal-notifier
       duti
-      iproute2mac
+      # iproute2mac
     ];
 
     darwinConfig = "${self}/lib/compat";

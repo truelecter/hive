@@ -35,5 +35,7 @@ channels: final: prev: {
     jemalloc
     ;
 
-  iproute2mac = channels.latest.darwin.iproute2mac;
+  # Until libressl dropped here:
+  # https://github.com/NixOS/nixpkgs/blob/master/pkgs/os-specific/darwin/apple-source-releases/network_cmds/default.nix#L6
+  # iproute2mac = channels.latest.darwin.iproute2mac;
 }
