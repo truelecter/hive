@@ -100,9 +100,6 @@
     SleepDisabled = true;
   };
 
-  # The filesystem path to which screencaptures should be written.
-  system.defaults.screencapture.location = "/tmp";
-
   system.defaults.ActivityMonitor = {
     IconType = 5;
     ShowCategory = 101;
