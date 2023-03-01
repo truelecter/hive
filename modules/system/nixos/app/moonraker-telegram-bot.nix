@@ -43,7 +43,7 @@ in {
 
     server = mkOption {
       type = types.str;
-      default = "localhost";
+      default = "localhost:7125";
       description = lib.mdDoc ''
         Moonraker server address
       '';
