@@ -11,7 +11,7 @@ linux_task:
     NIXOS_HOST: nonexisting
     USER: "root"
     HOME: "/root"
-    PATH: "/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/per-user/$USER/profile/bin:$PATH"
+    PATH: "$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/per-user/$USER/profile/bin:$PATH"
 
   compute_engine_instance:
     image_project: cirrus-images
@@ -36,8 +36,6 @@ linux_task:
   # TODO pin or something
   - nix-channel --add https://nixos.org/channels/nixpkgs-unstable
   - nix-channel --update
-  - nix-env -iA nixpkgs.git
-  - nix-env -iA nixpkgs.jq
   - git config --global --add safe.directory "$(pwd)"
   prepare_cachix_script:
   - echo $CACHIX_AUTH_TOKEN | cachix authtoken --stdin
@@ -76,7 +74,7 @@ macos_task:
     NIXOS_HOST: nonexisting
     USER: "admin"
     HOME: "/Users/admin"
-    PATH: "/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/per-user/$USER/profile/bin:$PATH"
+    PATH: "$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/per-user/$USER/profile/bin:$PATH"
     NIX_SSL_CERT_FILE: /nix/var/nix/profiles/default/etc/ssl/certs/ca-bundle.crt
     CIRRUS_SHELL: "/bin/zsh"
 
@@ -92,8 +90,6 @@ macos_task:
   # TODO pin or something
   - nix-channel --add https://nixos.org/channels/nixpkgs-unstable
   - nix-channel --update
-  - nix-env -iA nixpkgs.git
-  - nix-env -iA nixpkgs.jq
   - git config --global --add safe.directory "$(pwd)"
   prepare_cachix_script:
   - echo $CACHIX_AUTH_TOKEN | cachix authtoken --stdin
