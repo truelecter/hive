@@ -96,13 +96,16 @@ macos_task:
   - nix-env -iA nixpkgs.jq
   - git config --global --add safe.directory "$(pwd)"
   prepare_cachix_script:
+  - source /etc/bashrc
   - echo $CACHIX_AUTH_TOKEN | cachix authtoken --stdin
   - cachix use nix-community
   - cachix use mic92
   - cachix use nrdxp
   - cachix use truelecter
 
-  cachix_background_script: cachix watch-store --compression-method xz --compression-level 9 --jobs 2 truelecter
+  cachix_background_script:
+  - source /etc/bashrc
+  - cachix watch-store --compression-method xz --compression-level 9 --jobs 2 truelecter
 
   build_script:
   - nix build ".#darwinConfigurations.$NIXOS_HOST.config.system.build.toplevel"
