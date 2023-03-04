@@ -18,8 +18,8 @@
         MatchIsTouchscreen "on"
         MatchDevicePath "/dev/input/event*"
         Driver "evdev"
-        Option "InvertX" "true"
-        Option "InvertY" "true"
+        # Option "InvertX" "true"
+        # Option "InvertY" "true"
       EndSection
     '';
 
