@@ -129,11 +129,11 @@
   };
   "\"eamodio.gitlens\"" = {
     pname = "\"eamodio.gitlens\"";
-    version = "2023.2.2004";
+    version = "2023.3.404";
     src = fetchurl {
-      url = "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2023.2.2004/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "gitlens-2023.2.2004.zip";
-      sha256 = "sha256-YJwqKD5Jg1PzQXWQRzjSQbr5AZMeE2qILM/wZTnXI/c=";
+      url = "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2023.3.404/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "gitlens-2023.3.404.zip";
+      sha256 = "sha256-Gs/IuR03VnjNm/cwzw/2dZ37XXVQs+hs3AP1dZQo9YY=";
     };
   };
   "\"editorconfig.editorconfig\"" = {
@@ -174,47 +174,47 @@
   };
   "\"golang.go\"" = {
     pname = "\"golang.go\"";
-    version = "0.37.1";
+    version = "0.38.0";
     src = fetchurl {
-      url = "https://golang.gallery.vsassets.io/_apis/public/gallery/publisher/golang/extension/go/0.37.1/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "go-0.37.1.zip";
-      sha256 = "sha256-xOiMVUkcgwkMjYfNzFB3Qhfg26jf5nssaTfw0U+sAX0=";
+      url = "https://golang.gallery.vsassets.io/_apis/public/gallery/publisher/golang/extension/go/0.38.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "go-0.38.0.zip";
+      sha256 = "sha256-wOWouVz4mE4BzmgQOLQyVWsMadMqeUkFWHnruxStU0Q=";
     };
   };
   "\"graphql.vscode-graphql\"" = {
     pname = "\"graphql.vscode-graphql\"";
-    version = "0.8.5";
+    version = "0.8.6";
     src = fetchurl {
-      url = "https://graphql.gallery.vsassets.io/_apis/public/gallery/publisher/graphql/extension/vscode-graphql/0.8.5/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "vscode-graphql-0.8.5.zip";
-      sha256 = "sha256-hmMD3+Om1SPBST1wnyHRwvJESLbpYl2aaiNZPYmYRNQ=";
+      url = "https://graphql.gallery.vsassets.io/_apis/public/gallery/publisher/graphql/extension/vscode-graphql/0.8.6/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "vscode-graphql-0.8.6.zip";
+      sha256 = "sha256-iQWDYdz/TG8pxPEq9RirNtY4kwhpK+gO0It6OTdrM+0=";
     };
   };
   "\"graphql.vscode-graphql-execution\"" = {
     pname = "\"graphql.vscode-graphql-execution\"";
-    version = "0.1.7";
+    version = "0.1.8";
     src = fetchurl {
-      url = "https://graphql.gallery.vsassets.io/_apis/public/gallery/publisher/graphql/extension/vscode-graphql-execution/0.1.7/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "vscode-graphql-execution-0.1.7.zip";
-      sha256 = "sha256-YMp/56BGAuVuMcTJtKsCi+UlznUKMK5guxZy2P682ws=";
+      url = "https://graphql.gallery.vsassets.io/_apis/public/gallery/publisher/graphql/extension/vscode-graphql-execution/0.1.8/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "vscode-graphql-execution-0.1.8.zip";
+      sha256 = "sha256-Mg2jidiaiQ4+ay/MOA6wVO79a7BeOROXhpm4+pAshFs=";
     };
   };
   "\"graphql.vscode-graphql-syntax\"" = {
     pname = "\"graphql.vscode-graphql-syntax\"";
-    version = "1.0.6";
+    version = "1.1.0";
     src = fetchurl {
-      url = "https://graphql.gallery.vsassets.io/_apis/public/gallery/publisher/graphql/extension/vscode-graphql-syntax/1.0.6/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "vscode-graphql-syntax-1.0.6.zip";
-      sha256 = "sha256-OScAXEchvHsCn3sjWcm9641yzgT+7iwO40rOAeHlmVw=";
+      url = "https://graphql.gallery.vsassets.io/_apis/public/gallery/publisher/graphql/extension/vscode-graphql-syntax/1.1.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "vscode-graphql-syntax-1.1.0.zip";
+      sha256 = "sha256-qazU0UyZ9de6Huj2AYZqqBo4jVW/ZQmFJhV7XXAblxo=";
     };
   };
   "\"hashicorp.terraform\"" = {
     pname = "\"hashicorp.terraform\"";
-    version = "2.25.2";
+    version = "2.25.4";
     src = fetchurl {
-      url = "https://hashicorp.gallery.vsassets.io/_apis/public/gallery/publisher/hashicorp/extension/terraform/2.25.2/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "terraform-2.25.2.zip";
-      sha256 = "sha256-fbhm+oiIQQZoEZeOeMcjaQX30OuwM1x+2f1VNwSvkI0=";
+      url = "https://hashicorp.gallery.vsassets.io/_apis/public/gallery/publisher/hashicorp/extension/terraform/2.25.4/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "terraform-2.25.4.zip";
+      sha256 = "sha256-oR72zKvjmFjr78KbEbnyyzfB5TeTloQRzmRfVeTEmPc=";
     };
   };
   "\"ipedrazas.kubernetes-snippets\"" = {
@@ -228,11 +228,11 @@
   };
   "\"iterative.dvc\"" = {
     pname = "\"iterative.dvc\"";
-    version = "0.6.8";
+    version = "0.6.12";
     src = fetchurl {
-      url = "https://iterative.gallery.vsassets.io/_apis/public/gallery/publisher/iterative/extension/dvc/0.6.8/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "dvc-0.6.8.zip";
-      sha256 = "sha256-D4Dodn92h2aIf09NNdRQUZkC8exQRpTff2iKOSIQ90A=";
+      url = "https://iterative.gallery.vsassets.io/_apis/public/gallery/publisher/iterative/extension/dvc/0.6.12/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "dvc-0.6.12.zip";
+      sha256 = "sha256-onwE+pg4o5IoV4C5ZvqjlHG78STx8bR7cDIYDhqzGao=";
     };
   };
   "\"ivory-lab.jenkinsfile-support\"" = {
@@ -327,11 +327,11 @@
   };
   "\"ms-azuretools.vscode-docker\"" = {
     pname = "\"ms-azuretools.vscode-docker\"";
-    version = "1.23.3";
+    version = "1.24.0";
     src = fetchurl {
-      url = "https://ms-azuretools.gallery.vsassets.io/_apis/public/gallery/publisher/ms-azuretools/extension/vscode-docker/1.23.3/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "vscode-docker-1.23.3.zip";
-      sha256 = "sha256-0qflugzWA1pV0PVWGTzOjdxM/0G8hTLOozoXCAdQnRY=";
+      url = "https://ms-azuretools.gallery.vsassets.io/_apis/public/gallery/publisher/ms-azuretools/extension/vscode-docker/1.24.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "vscode-docker-1.24.0.zip";
+      sha256 = "sha256-zZ34KQrRPqVbfGdpYACuLMiMj4ZIWSnJIPac1yXD87k=";
     };
   };
   "\"ms-dotnettools.vscode-dotnet-runtime\"" = {
@@ -354,47 +354,47 @@
   };
   "\"ms-python.isort\"" = {
     pname = "\"ms-python.isort\"";
-    version = "2023.9.10461023";
+    version = "2023.9.10591013";
     src = fetchurl {
-      url = "https://ms-python.gallery.vsassets.io/_apis/public/gallery/publisher/ms-python/extension/isort/2023.9.10461023/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "isort-2023.9.10461023.zip";
-      sha256 = "sha256-6RlR2rKRQ41gou/ltBGPQzoWUY3LbN23zCKfZt+Qdhs=";
+      url = "https://ms-python.gallery.vsassets.io/_apis/public/gallery/publisher/ms-python/extension/isort/2023.9.10591013/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "isort-2023.9.10591013.zip";
+      sha256 = "sha256-JUbawqpXOEbNBIfgR6M5MX+bLDyJn+33oNv+TgGTotE=";
     };
   };
   "\"ms-python.python\"" = {
     pname = "\"ms-python.python\"";
-    version = "2023.3.10481011";
+    version = "2023.5.10621945";
     src = fetchurl {
-      url = "https://ms-python.gallery.vsassets.io/_apis/public/gallery/publisher/ms-python/extension/python/2023.3.10481011/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "python-2023.3.10481011.zip";
-      sha256 = "sha256-y3wPEqw9vDxbO5vmda5d2OaaRABZ5Sw2j+pQ5uUuvHw=";
+      url = "https://ms-python.gallery.vsassets.io/_apis/public/gallery/publisher/ms-python/extension/python/2023.5.10621945/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "python-2023.5.10621945.zip";
+      sha256 = "sha256-7Yv5Hot/oF3ABNrWHo2j+EseQZ4EslNsVlQQxTM3b8Y=";
     };
   };
   "\"ms-python.vscode-pylance\"" = {
     pname = "\"ms-python.vscode-pylance\"";
-    version = "2023.2.31";
+    version = "2023.3.11";
     src = fetchurl {
-      url = "https://ms-python.gallery.vsassets.io/_apis/public/gallery/publisher/ms-python/extension/vscode-pylance/2023.2.31/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "vscode-pylance-2023.2.31.zip";
-      sha256 = "sha256-HNiBrXhjGcdhc767VwMlweV74/1Jz4cS9P6cFEoI9r4=";
+      url = "https://ms-python.gallery.vsassets.io/_apis/public/gallery/publisher/ms-python/extension/vscode-pylance/2023.3.11/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "vscode-pylance-2023.3.11.zip";
+      sha256 = "sha256-aGnBNASxqA4pA9900DItMjkTiLQtZdiS/YnJ7yXE0bI=";
     };
   };
   "\"ms-toolsai.jupyter\"" = {
     pname = "\"ms-toolsai.jupyter\"";
-    version = "2023.2.1000521025";
+    version = "2023.3.1000641008";
     src = fetchurl {
-      url = "https://ms-toolsai.gallery.vsassets.io/_apis/public/gallery/publisher/ms-toolsai/extension/jupyter/2023.2.1000521025/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "jupyter-2023.2.1000521025.zip";
-      sha256 = "sha256-Fom5KYNCvRQaYpGbvcum5TANe5cTvCbY/XUx4yN48ls=";
+      url = "https://ms-toolsai.gallery.vsassets.io/_apis/public/gallery/publisher/ms-toolsai/extension/jupyter/2023.3.1000641008/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "jupyter-2023.3.1000641008.zip";
+      sha256 = "sha256-A1VpjQaMzYIRhmlRMgpS9IeyfocIbT24qOuw31uA6vY=";
     };
   };
   "\"ms-toolsai.jupyter-keymap\"" = {
     pname = "\"ms-toolsai.jupyter-keymap\"";
-    version = "1.0.0";
+    version = "1.1.0";
     src = fetchurl {
-      url = "https://ms-toolsai.gallery.vsassets.io/_apis/public/gallery/publisher/ms-toolsai/extension/jupyter-keymap/1.0.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "jupyter-keymap-1.0.0.zip";
-      sha256 = "sha256-aP9mRvNfJ/fXSZk286FPo9gH80qwqm8mTDQ2BR+lfHI=";
+      url = "https://ms-toolsai.gallery.vsassets.io/_apis/public/gallery/publisher/ms-toolsai/extension/jupyter-keymap/1.1.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "jupyter-keymap-1.1.0.zip";
+      sha256 = "sha256-krDtR+ZJiJf1Kxcu5mdXOaSAiJb2bXC1H0XWWviWeMQ=";
     };
   };
   "\"ms-toolsai.jupyter-renderers\"" = {
@@ -426,20 +426,20 @@
   };
   "\"ms-vscode-remote.remote-containers\"" = {
     pname = "\"ms-vscode-remote.remote-containers\"";
-    version = "0.279.0";
+    version = "0.283.0";
     src = fetchurl {
-      url = "https://ms-vscode-remote.gallery.vsassets.io/_apis/public/gallery/publisher/ms-vscode-remote/extension/remote-containers/0.279.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "remote-containers-0.279.0.zip";
-      sha256 = "sha256-LlPeXeL+n9tGNeju+7FfZq96kn9Uj9V/5eRyg5av+oQ=";
+      url = "https://ms-vscode-remote.gallery.vsassets.io/_apis/public/gallery/publisher/ms-vscode-remote/extension/remote-containers/0.283.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "remote-containers-0.283.0.zip";
+      sha256 = "sha256-LaZzDLfQHFaOnkvKzq0vmUvAi+Q6sJrJPlAhWX0fY40=";
     };
   };
   "\"ms-vscode-remote.remote-ssh\"" = {
     pname = "\"ms-vscode-remote.remote-ssh\"";
-    version = "0.97.2023022015";
+    version = "0.99.2023030315";
     src = fetchurl {
-      url = "https://ms-vscode-remote.gallery.vsassets.io/_apis/public/gallery/publisher/ms-vscode-remote/extension/remote-ssh/0.97.2023022015/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "remote-ssh-0.97.2023022015.zip";
-      sha256 = "sha256-EjHyWvwGTo6s4MeL4oOApiHe/yIdlzwzI2NMMy7x2Lk=";
+      url = "https://ms-vscode-remote.gallery.vsassets.io/_apis/public/gallery/publisher/ms-vscode-remote/extension/remote-ssh/0.99.2023030315/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "remote-ssh-0.99.2023030315.zip";
+      sha256 = "sha256-ORnjrwilx6wP+xjZY4bDStm6Nj5/PYInbi3Q/qr/KSI=";
     };
   };
   "\"ms-vscode-remote.remote-ssh-edit\"" = {
@@ -453,11 +453,11 @@
   };
   "\"ms-vscode-remote.remote-wsl\"" = {
     pname = "\"ms-vscode-remote.remote-wsl\"";
-    version = "0.76.0";
+    version = "0.76.1";
     src = fetchurl {
-      url = "https://ms-vscode-remote.gallery.vsassets.io/_apis/public/gallery/publisher/ms-vscode-remote/extension/remote-wsl/0.76.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "remote-wsl-0.76.0.zip";
-      sha256 = "sha256-YM0hXmQUe/9UEBYaFEMFLrXEBz/7qQ9/kwBconhyOAM=";
+      url = "https://ms-vscode-remote.gallery.vsassets.io/_apis/public/gallery/publisher/ms-vscode-remote/extension/remote-wsl/0.76.1/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "remote-wsl-0.76.1.zip";
+      sha256 = "sha256-ijMDQ0gmgzNBgNNsvUh5v0kX5NEIdWiX/2344LfmcCw=";
     };
   };
   "\"ms-vscode-remote.vscode-remote-extensionpack\"" = {
@@ -471,11 +471,11 @@
   };
   "\"ms-vscode.cmake-tools\"" = {
     pname = "\"ms-vscode.cmake-tools\"";
-    version = "1.14.13";
+    version = "1.14.15";
     src = fetchurl {
-      url = "https://ms-vscode.gallery.vsassets.io/_apis/public/gallery/publisher/ms-vscode/extension/cmake-tools/1.14.13/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "cmake-tools-1.14.13.zip";
-      sha256 = "sha256-k5N1fHbQxwG6Hk95PdSNu/ChsbemPgQ0I6/Ja4GgVTE=";
+      url = "https://ms-vscode.gallery.vsassets.io/_apis/public/gallery/publisher/ms-vscode/extension/cmake-tools/1.14.15/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "cmake-tools-1.14.15.zip";
+      sha256 = "sha256-Fo6G17FAZxCJ/r5MxMcD2WuSgGuAe45Y64fOKfPQNM4=";
     };
   };
   "\"ms-vscode.cpptools-extension-pack\"" = {
@@ -534,11 +534,11 @@
   };
   "\"octref.vetur\"" = {
     pname = "\"octref.vetur\"";
-    version = "0.37.2";
+    version = "0.37.3";
     src = fetchurl {
-      url = "https://octref.gallery.vsassets.io/_apis/public/gallery/publisher/octref/extension/vetur/0.37.2/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "vetur-0.37.2.zip";
-      sha256 = "sha256-RzKvow7rmlZy7sECnnNKYrUFFQKSihHooFrx/DbLGY4=";
+      url = "https://octref.gallery.vsassets.io/_apis/public/gallery/publisher/octref/extension/vetur/0.37.3/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "vetur-0.37.3.zip";
+      sha256 = "sha256-3hi1LOZto5AYaomB9ihkAt4j/mhkCDJ8Jqa16piwHIQ=";
     };
   };
   "\"platformio.platformio-ide\"" = {
@@ -547,7 +547,7 @@
     src = fetchurl {
       url = "https://platformio.gallery.vsassets.io/_apis/public/gallery/publisher/platformio/extension/platformio-ide/3.0.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
       name = "platformio-ide-3.0.0.zip";
-      sha256 = "sha256-iBc23STY/fqerAIwyEEbRP7L6EJfNBXmpZHidIiMY7g=";
+      sha256 = "sha256-+0haTk/xbPoustJVE81tI9X8gcfiamx8nZBm7kGGY6c=";
     };
   };
   "\"plorefice.devicetree\"" = {
@@ -561,11 +561,11 @@
   };
   "\"redhat.java\"" = {
     pname = "\"redhat.java\"";
-    version = "1.15.2023021503";
+    version = "1.16.2023030303";
     src = fetchurl {
-      url = "https://redhat.gallery.vsassets.io/_apis/public/gallery/publisher/redhat/extension/java/1.15.2023021503/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "java-1.15.2023021503.zip";
-      sha256 = "sha256-noj3KXVOaRkGFhYG0fpA0gwiI9/fZ4E+AsFo0VuvEhE=";
+      url = "https://redhat.gallery.vsassets.io/_apis/public/gallery/publisher/redhat/extension/java/1.16.2023030303/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "java-1.16.2023030303.zip";
+      sha256 = "sha256-OWnqOiM7Q2FnxIIte7MhZT8n80Ivj35ncIA7eaXidOY=";
     };
   };
   "\"redhat.vscode-commons\"" = {
@@ -579,11 +579,11 @@
   };
   "\"redhat.vscode-xml\"" = {
     pname = "\"redhat.vscode-xml\"";
-    version = "0.25.2023021603";
+    version = "0.25.2023022303";
     src = fetchurl {
-      url = "https://redhat.gallery.vsassets.io/_apis/public/gallery/publisher/redhat/extension/vscode-xml/0.25.2023021603/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "vscode-xml-0.25.2023021603.zip";
-      sha256 = "sha256-/PPAWpacSw07MWMVG8n2h2XOlTBVkcvevjwHbN64Jas=";
+      url = "https://redhat.gallery.vsassets.io/_apis/public/gallery/publisher/redhat/extension/vscode-xml/0.25.2023022303/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "vscode-xml-0.25.2023022303.zip";
+      sha256 = "sha256-jR8KTnq62HINhgzGt/jRUntz4WKEy1LdqHSIvwN6LVI=";
     };
   };
   "\"redhat.vscode-yaml\"" = {
@@ -651,20 +651,20 @@
   };
   "\"vscjava.vscode-java-debug\"" = {
     pname = "\"vscjava.vscode-java-debug\"";
-    version = "0.48.2023021407";
+    version = "0.49.2023022723";
     src = fetchurl {
-      url = "https://vscjava.gallery.vsassets.io/_apis/public/gallery/publisher/vscjava/extension/vscode-java-debug/0.48.2023021407/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "vscode-java-debug-0.48.2023021407.zip";
-      sha256 = "sha256-4v4W+gbSKmpXbt/tRjxuYrSGJi3lWYj+V9U3zJS6EcY=";
+      url = "https://vscjava.gallery.vsassets.io/_apis/public/gallery/publisher/vscjava/extension/vscode-java-debug/0.49.2023022723/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "vscode-java-debug-0.49.2023022723.zip";
+      sha256 = "sha256-DeG3LQk1PREso7qOG0oUrocD2kzRwO5F6qpLVYwm4R8=";
     };
   };
   "\"vscjava.vscode-java-dependency\"" = {
     pname = "\"vscjava.vscode-java-dependency\"";
-    version = "0.21.2023021500";
+    version = "0.21.2023030400";
     src = fetchurl {
-      url = "https://vscjava.gallery.vsassets.io/_apis/public/gallery/publisher/vscjava/extension/vscode-java-dependency/0.21.2023021500/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "vscode-java-dependency-0.21.2023021500.zip";
-      sha256 = "sha256-SqD4ui9tn4pbZzfMAWANb8YrsV6diPsq0ItSR/WjwkY=";
+      url = "https://vscjava.gallery.vsassets.io/_apis/public/gallery/publisher/vscjava/extension/vscode-java-dependency/0.21.2023030400/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "vscode-java-dependency-0.21.2023030400.zip";
+      sha256 = "sha256-ORbQVVUHTZJMMmZV5MlktsGW+Pjyl4x5O64Kxnb11aI=";
     };
   };
   "\"vscjava.vscode-java-pack\"" = {
@@ -678,20 +678,20 @@
   };
   "\"vscjava.vscode-java-test\"" = {
     pname = "\"vscjava.vscode-java-test\"";
-    version = "0.37.2023021802";
+    version = "0.38.2023030203";
     src = fetchurl {
-      url = "https://vscjava.gallery.vsassets.io/_apis/public/gallery/publisher/vscjava/extension/vscode-java-test/0.37.2023021802/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "vscode-java-test-0.37.2023021802.zip";
-      sha256 = "sha256-i9Fh50I7xzTKpsY2rZiqYoaurihhmSjsiMHhL14pGVA=";
+      url = "https://vscjava.gallery.vsassets.io/_apis/public/gallery/publisher/vscjava/extension/vscode-java-test/0.38.2023030203/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "vscode-java-test-0.38.2023030203.zip";
+      sha256 = "sha256-rKuNH7kBx8Cpsd48KOsmd09eh7bJ78VG0P96lYxQXt0=";
     };
   };
   "\"vscjava.vscode-maven\"" = {
     pname = "\"vscjava.vscode-maven\"";
-    version = "0.40.2023020103";
+    version = "0.40.2023030203";
     src = fetchurl {
-      url = "https://vscjava.gallery.vsassets.io/_apis/public/gallery/publisher/vscjava/extension/vscode-maven/0.40.2023020103/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "vscode-maven-0.40.2023020103.zip";
-      sha256 = "sha256-dEut3km/atuQv5S7mOkAaKPaNB99HOMXN7vEYOZ/6rU=";
+      url = "https://vscjava.gallery.vsassets.io/_apis/public/gallery/publisher/vscjava/extension/vscode-maven/0.40.2023030203/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "vscode-maven-0.40.2023030203.zip";
+      sha256 = "sha256-SmzU18Uo60JFVSNX4Nt3IStWkUqruFh6L0Nr37iost8=";
     };
   };
   "\"whi-tw.klipper-config-syntax\"" = {
