@@ -22,9 +22,9 @@ jobs:
           nix-channel --update
       - name: Update nvfetcher packages
         run: |
-          rm packages/sources/pkgs/generated.json
-          rm packages/sources/pkgs/generated.nix
           nix develop --command bash -c "update-packages"
+        # rm packages/sources/pkgs/generated.json
+        # rm packages/sources/pkgs/generated.nix
       # Sometimes breaks for some reason
       # - name: Update nvfetcher VSCode extentions
       #   run: |
