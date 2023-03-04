@@ -16,7 +16,7 @@
     },
     "klipper": {
         "cargoLocks": null,
-        "date": "2023-02-23",
+        "date": "2023-02-28",
         "extract": null,
         "name": "klipper",
         "passthru": null,
@@ -28,11 +28,11 @@
             "name": null,
             "owner": "Klipper3d",
             "repo": "klipper",
-            "rev": "a5fb20765e9f3872a21ab0debb7c9b46bc119ffd",
-            "sha256": "sha256-wlkl5vx+6cgPFu3frV8h+hMocBXLCBhW9XEhLGKkH2Q=",
+            "rev": "e6ef48cdf7b7e23f422cbe0ec46091001b840674",
+            "sha256": "sha256-n306KHeGLwSuE98H2bc8XjxnIMgOGfxeQ08RD5SnemM=",
             "type": "github"
         },
-        "version": "a5fb20765e9f3872a21ab0debb7c9b46bc119ffd"
+        "version": "e6ef48cdf7b7e23f422cbe0ec46091001b840674"
     },
     "klipper-led_effect": {
         "cargoLocks": null,
@@ -56,7 +56,7 @@
     },
     "klipper-screen": {
         "cargoLocks": null,
-        "date": "2023-02-20",
+        "date": "2023-03-03",
         "extract": null,
         "name": "klipper-screen",
         "passthru": null,
@@ -68,15 +68,15 @@
             "name": null,
             "owner": "jordanruthe",
             "repo": "KlipperScreen",
-            "rev": "d6693fbeccc00ced07b871b22cc8919bbad3b755",
-            "sha256": "sha256-LweO5EVWr3OxziHrjtQDdWyUBCVUJ17afkw7RCZWgcg=",
+            "rev": "a5b639fba2b1ec088c5983517f5d1505c014be4a",
+            "sha256": "sha256-TiaVVbrmKtvRZBcJWtApsBmeUnSnfHLg3hacKnTq8Bg=",
             "type": "github"
         },
-        "version": "d6693fbeccc00ced07b871b22cc8919bbad3b755"
+        "version": "a5b639fba2b1ec088c5983517f5d1505c014be4a"
     },
     "libcamera": {
         "cargoLocks": null,
-        "date": "2023-01-24",
+        "date": "2023-03-02",
         "extract": null,
         "name": "libcamera",
         "passthru": null,
@@ -88,15 +88,15 @@
             "name": null,
             "owner": "raspberrypi",
             "repo": "libcamera",
-            "rev": "9b860a664e9cd7ca4889c6f8d7f0e8d402199de3",
-            "sha256": "sha256-qkSHyvV/7Ga6DJacQJs5wLYjkqF57HQtPv9JCqftruE=",
+            "rev": "923f5d707bb760bd3e724b3373568fa88c68454f",
+            "sha256": "sha256-G7K161m8VovKJTz1u+62irhLz9Y3C9PzKZhl6UMRFv4=",
             "type": "github"
         },
-        "version": "9b860a664e9cd7ca4889c6f8d7f0e8d402199de3"
+        "version": "923f5d707bb760bd3e724b3373568fa88c68454f"
     },
     "libcamera-apps": {
         "cargoLocks": null,
-        "date": "2023-02-22",
+        "date": "2023-03-01",
         "extract": null,
         "name": "libcamera-apps",
         "passthru": null,
@@ -108,11 +108,11 @@
             "name": null,
             "owner": "raspberrypi",
             "repo": "libcamera-apps",
-            "rev": "aa849e6c86a1b198e97c92f48f126459aff4e92f",
-            "sha256": "sha256-KUWL34SMvXP3lnDVCNDD14wsF8h7LKn3IJ5E30qLn0Q=",
+            "rev": "54a781dffdd101954dcfa6acd0bd80006f67da83",
+            "sha256": "sha256-A6UriYk8bHRL6wp6ehXOnUnbJH2/mNDkxwGemD/UYpw=",
             "type": "github"
         },
-        "version": "aa849e6c86a1b198e97c92f48f126459aff4e92f"
+        "version": "54a781dffdd101954dcfa6acd0bd80006f67da83"
     },
     "mainsail": {
         "cargoLocks": null,
@@ -131,7 +131,7 @@
     },
     "mainsail-raw": {
         "cargoLocks": null,
-        "date": "2023-02-22",
+        "date": "2023-02-28",
         "extract": null,
         "name": "mainsail-raw",
         "passthru": null,
@@ -143,11 +143,11 @@
             "name": null,
             "owner": "mainsail-crew",
             "repo": "mainsail",
-            "rev": "3743023514507577b88540362bc8fbeae086add3",
-            "sha256": "sha256-81skOJkZjXJNeYaNiqeZ2LP7Ef6U7LxC/GDjX2Kc0lw=",
+            "rev": "f3c42954f1119157631772622786af7db28a7f98",
+            "sha256": "sha256-dR0H2LydYhQdsX7eSDlk/7SuOT5D0YDYzgFjt+r3Ip8=",
             "type": "github"
         },
-        "version": "3743023514507577b88540362bc8fbeae086add3"
+        "version": "f3c42954f1119157631772622786af7db28a7f98"
     },
     "manix": {
         "cargoLocks": null,
@@ -171,7 +171,7 @@
     },
     "moonraker": {
         "cargoLocks": null,
-        "date": "2023-02-24",
+        "date": "2023-02-27",
         "extract": null,
         "name": "moonraker",
         "passthru": null,
@@ -183,11 +183,11 @@
             "name": null,
             "owner": "Arksine",
             "repo": "moonraker",
-            "rev": "160f6d64be4ee9488fb123cbe56569b47fcda31c",
-            "sha256": "sha256-5xwRklCxjZXpA345LMY7KuCPL+dMjBjAlSlGWDMpW30=",
+            "rev": "18f5ff4eeda3cfbe1b26f22d86e30aa1f0de86eb",
+            "sha256": "sha256-0Yvk52z1qyl74icsUdBaCXApP6C63urHfOSijsd1+bE=",
             "type": "github"
         },
-        "version": "160f6d64be4ee9488fb123cbe56569b47fcda31c"
+        "version": "18f5ff4eeda3cfbe1b26f22d86e30aa1f0de86eb"
     },
     "moonraker-telegram-bot": {
         "cargoLocks": null,
@@ -286,7 +286,7 @@
     },
     "rpi-fw": {
         "cargoLocks": null,
-        "date": "2023-02-23",
+        "date": "2023-03-02",
         "extract": null,
         "name": "rpi-fw",
         "passthru": null,
@@ -298,11 +298,11 @@
             "name": null,
             "owner": "raspberrypi",
             "repo": "firmware",
-            "rev": "33500e46e829f0b689424ee38531f2b859cdd297",
-            "sha256": "sha256-E9GaYSrRVaTaaMCwiacTxhsxlcxcMyfTiW4Tdc4Tvz8=",
+            "rev": "889323796bb8feb99c7a96ba5e6445895cab47ce",
+            "sha256": "sha256-0eDiUmPLwa1uhIjEC0aLNRLkr0S05P4+R0sD5aq02QE=",
             "type": "github"
         },
-        "version": "33500e46e829f0b689424ee38531f2b859cdd297"
+        "version": "889323796bb8feb99c7a96ba5e6445895cab47ce"
     },
     "rpi-fw-bluez": {
         "cargoLocks": null,
@@ -359,7 +359,7 @@
             "owner": "raspberrypi",
             "repo": "linux",
             "rev": "14b35093ca68bf2c81bbc90aace5007142b40b40",
-            "sha256": "sha256-/5UStX6DUxWQ2WFWvB5u1TszLUzCo+b/qiBVetEkBTE=",
+            "sha256": "sha256-oy+VgoB4IdFZjGwkx88dDSpwWZj2D5t3PyXPIwDsY1Q=",
             "type": "github"
         },
         "version": "14b35093ca68bf2c81bbc90aace5007142b40b40"
