@@ -11,15 +11,15 @@
   };
   klipper = {
     pname = "klipper";
-    version = "e6ef48cdf7b7e23f422cbe0ec46091001b840674";
+    version = "4b1536d62f2b5c5e0beb4692dbe4d0d1fa2bcb1b";
     src = fetchFromGitHub ({
       owner = "Klipper3d";
       repo = "klipper";
-      rev = "e6ef48cdf7b7e23f422cbe0ec46091001b840674";
+      rev = "4b1536d62f2b5c5e0beb4692dbe4d0d1fa2bcb1b";
       fetchSubmodules = false;
-      sha256 = "sha256-n306KHeGLwSuE98H2bc8XjxnIMgOGfxeQ08RD5SnemM=";
+      sha256 = "sha256-EUGUmRIohQeBi2trd489L8CC1TeaLI1JlLsSZQsH+1Q=";
     });
-    date = "2023-02-28";
+    date = "2023-03-07";
   };
   klipper-led_effect = {
     pname = "klipper-led_effect";
@@ -35,15 +35,15 @@
   };
   klipper-screen = {
     pname = "klipper-screen";
-    version = "a5b639fba2b1ec088c5983517f5d1505c014be4a";
+    version = "be473bf626c45cd1bfc9535261985b5fb91246ff";
     src = fetchFromGitHub ({
       owner = "jordanruthe";
       repo = "KlipperScreen";
-      rev = "a5b639fba2b1ec088c5983517f5d1505c014be4a";
+      rev = "be473bf626c45cd1bfc9535261985b5fb91246ff";
       fetchSubmodules = false;
-      sha256 = "sha256-TiaVVbrmKtvRZBcJWtApsBmeUnSnfHLg3hacKnTq8Bg=";
+      sha256 = "sha256-QmjaBMqY1SU0ADQkqE9b2zN0+3sZwqfGWezMsgEBdtQ=";
     });
-    date = "2023-03-03";
+    date = "2023-03-10";
   };
   libcamera = {
     pname = "libcamera";
@@ -59,15 +59,15 @@
   };
   libcamera-apps = {
     pname = "libcamera-apps";
-    version = "54a781dffdd101954dcfa6acd0bd80006f67da83";
+    version = "21157c5001a0a090cbd69c9e04c3a9dcfdfa8617";
     src = fetchFromGitHub ({
       owner = "raspberrypi";
       repo = "libcamera-apps";
-      rev = "54a781dffdd101954dcfa6acd0bd80006f67da83";
+      rev = "21157c5001a0a090cbd69c9e04c3a9dcfdfa8617";
       fetchSubmodules = false;
-      sha256 = "sha256-A6UriYk8bHRL6wp6ehXOnUnbJH2/mNDkxwGemD/UYpw=";
+      sha256 = "sha256-t7f5GqdRqOHwRDD6dTWV3jUIFeSqMGsypdIDIV9eR6A=";
     });
-    date = "2023-03-01";
+    date = "2023-03-10";
   };
   mainsail = {
     pname = "mainsail";
@@ -79,15 +79,15 @@
   };
   mainsail-raw = {
     pname = "mainsail-raw";
-    version = "f3c42954f1119157631772622786af7db28a7f98";
+    version = "52d0ea4ec57b94582386666fc6389e7d260741f4";
     src = fetchFromGitHub ({
       owner = "mainsail-crew";
       repo = "mainsail";
-      rev = "f3c42954f1119157631772622786af7db28a7f98";
+      rev = "52d0ea4ec57b94582386666fc6389e7d260741f4";
       fetchSubmodules = false;
-      sha256 = "sha256-dR0H2LydYhQdsX7eSDlk/7SuOT5D0YDYzgFjt+r3Ip8=";
+      sha256 = "sha256-A3MDoZwH4t1AAzFJHJ8UsV0Abge0zAzYkmKQwfTCUt8=";
     });
-    date = "2023-02-28";
+    date = "2023-03-10";
   };
   manix = {
     pname = "manix";
@@ -103,15 +103,15 @@
   };
   moonraker = {
     pname = "moonraker";
-    version = "18f5ff4eeda3cfbe1b26f22d86e30aa1f0de86eb";
+    version = "80920dd8723b7dac6d176500fed88d81149f22b2";
     src = fetchFromGitHub ({
       owner = "Arksine";
       repo = "moonraker";
-      rev = "18f5ff4eeda3cfbe1b26f22d86e30aa1f0de86eb";
+      rev = "80920dd8723b7dac6d176500fed88d81149f22b2";
       fetchSubmodules = false;
-      sha256 = "sha256-0Yvk52z1qyl74icsUdBaCXApP6C63urHfOSijsd1+bE=";
+      sha256 = "sha256-nsekJZG/wXrG0pJKJuF2+jSTxwrSVVRDm77egrsfkPw=";
     });
-    date = "2023-02-27";
+    date = "2023-03-05";
   };
   moonraker-telegram-bot = {
     pname = "moonraker-telegram-bot";
@@ -171,15 +171,15 @@
   };
   rpi-fw = {
     pname = "rpi-fw";
-    version = "889323796bb8feb99c7a96ba5e6445895cab47ce";
+    version = "379d5bfa60bf3b0afff413a18344aaaf3bde0083";
     src = fetchFromGitHub ({
       owner = "raspberrypi";
       repo = "firmware";
-      rev = "889323796bb8feb99c7a96ba5e6445895cab47ce";
+      rev = "379d5bfa60bf3b0afff413a18344aaaf3bde0083";
       fetchSubmodules = false;
-      sha256 = "sha256-0eDiUmPLwa1uhIjEC0aLNRLkr0S05P4+R0sD5aq02QE=";
+      sha256 = "sha256-/orq95SIThKpwS0VD6KyLrSMkUgQuP1RNe/SJz2Jo/Y=";
     });
-    date = "2023-03-02";
+    date = "2023-03-10";
   };
   rpi-fw-bluez = {
     pname = "rpi-fw-bluez";
