@@ -11,15 +11,15 @@
   };
   klipper = {
     pname = "klipper";
-    version = "4b1536d62f2b5c5e0beb4692dbe4d0d1fa2bcb1b";
+    version = "c54d83c9f134d47f00da5ecd0d762e01748aaa59";
     src = fetchFromGitHub ({
       owner = "Klipper3d";
       repo = "klipper";
-      rev = "4b1536d62f2b5c5e0beb4692dbe4d0d1fa2bcb1b";
+      rev = "c54d83c9f134d47f00da5ecd0d762e01748aaa59";
       fetchSubmodules = false;
-      sha256 = "sha256-EUGUmRIohQeBi2trd489L8CC1TeaLI1JlLsSZQsH+1Q=";
+      sha256 = "sha256-zPK1dzUFLQmno4A7jEStininVcYpUh0WAFjlAqnTLS0=";
     });
-    date = "2023-03-07";
+    date = "2023-03-15";
   };
   klipper-led_effect = {
     pname = "klipper-led_effect";
@@ -35,15 +35,15 @@
   };
   klipper-screen = {
     pname = "klipper-screen";
-    version = "be473bf626c45cd1bfc9535261985b5fb91246ff";
+    version = "b963c55140ffd82ee9be9fb346d82b34329fcd00";
     src = fetchFromGitHub ({
       owner = "jordanruthe";
       repo = "KlipperScreen";
-      rev = "be473bf626c45cd1bfc9535261985b5fb91246ff";
+      rev = "b963c55140ffd82ee9be9fb346d82b34329fcd00";
       fetchSubmodules = false;
-      sha256 = "sha256-QmjaBMqY1SU0ADQkqE9b2zN0+3sZwqfGWezMsgEBdtQ=";
+      sha256 = "sha256-IIbyennF9DydcE9LWWnhUhAlAi03y7D9lxY+UWI5jck=";
     });
-    date = "2023-03-10";
+    date = "2023-03-17";
   };
   libcamera = {
     pname = "libcamera";
@@ -71,23 +71,23 @@
   };
   mainsail = {
     pname = "mainsail";
-    version = "v2.4.1";
+    version = "v2.5.0";
     src = fetchurl {
-      url = "https://github.com/mainsail-crew/mainsail/releases/download/v2.4.1/mainsail.zip";
-      sha256 = "sha256-+g6RIfXn06qzDYcFSjZlxwXbwyWcGvf5++KbO59pu0M=";
+      url = "https://github.com/mainsail-crew/mainsail/releases/download/v2.5.0/mainsail.zip";
+      sha256 = "sha256-GC9OCKCl9iO+iE9vURqp6rpV5GLS8X8Ah2C++Bvuawg=";
     };
   };
   mainsail-raw = {
     pname = "mainsail-raw";
-    version = "52d0ea4ec57b94582386666fc6389e7d260741f4";
+    version = "7ad25e38515bfde3e47ba7a01b3c16c01d1174a6";
     src = fetchFromGitHub ({
       owner = "mainsail-crew";
       repo = "mainsail";
-      rev = "52d0ea4ec57b94582386666fc6389e7d260741f4";
+      rev = "7ad25e38515bfde3e47ba7a01b3c16c01d1174a6";
       fetchSubmodules = false;
-      sha256 = "sha256-A3MDoZwH4t1AAzFJHJ8UsV0Abge0zAzYkmKQwfTCUt8=";
+      sha256 = "sha256-SQwxMNIYfr7yU/FqkRdbNJ0YiAGYg2qDEwyAzvoecz0=";
     });
-    date = "2023-03-10";
+    date = "2023-03-12";
   };
   manix = {
     pname = "manix";
@@ -159,27 +159,27 @@
   };
   rel = {
     pname = "rel";
-    version = "f3b57c98bf661dbc21ed4039a859fddf48d6ba75";
+    version = "26d62ef6ebaf3e84c90363b579e0885ab1d458b8";
     src = fetchFromGitHub ({
       owner = "bubbleboy14";
       repo = "registeredeventlistener";
-      rev = "f3b57c98bf661dbc21ed4039a859fddf48d6ba75";
+      rev = "26d62ef6ebaf3e84c90363b579e0885ab1d458b8";
       fetchSubmodules = false;
-      sha256 = "sha256-J3nP6BLAa+/QcQTtVWa00Iu0JDb/AsobU59UQArlz7s=";
+      sha256 = "sha256-SDW3W8wCq/5ci4qOvPlclbBg9dlhKyXHz8vZ/Rb9qk0=";
     });
-    date = "2023-02-09";
+    date = "2023-03-16";
   };
   rpi-fw = {
     pname = "rpi-fw";
-    version = "379d5bfa60bf3b0afff413a18344aaaf3bde0083";
+    version = "a585b376a2e7e657287543d196ae1f8881ede559";
     src = fetchFromGitHub ({
       owner = "raspberrypi";
       repo = "firmware";
-      rev = "379d5bfa60bf3b0afff413a18344aaaf3bde0083";
+      rev = "a585b376a2e7e657287543d196ae1f8881ede559";
       fetchSubmodules = false;
-      sha256 = "sha256-/orq95SIThKpwS0VD6KyLrSMkUgQuP1RNe/SJz2Jo/Y=";
+      sha256 = "sha256-Z3ypa82CO3b9+ycPecI0uORYsiCWHdTqrAd5/WgYbG4=";
     });
-    date = "2023-03-10";
+    date = "2023-03-17";
   };
   rpi-fw-bluez = {
     pname = "rpi-fw-bluez";
@@ -254,10 +254,10 @@
   };
   transmissionic = {
     pname = "transmissionic";
-    version = "v1.7.1";
+    version = "v1.8.0";
     src = fetchurl {
-      url = "https://github.com/6c65726f79/Transmissionic/releases/download/v1.7.1/Transmissionic-webui-v1.7.1.zip";
-      sha256 = "sha256-uAXoSvwVGb6+aSiJ5VKJUab0MzcQKCxYfkoDbhqWmfo=";
+      url = "https://github.com/6c65726f79/Transmissionic/releases/download/v1.8.0/Transmissionic-webui-v1.8.0.zip";
+      sha256 = "sha256-IhbJCv9SWjLspJYv6dBKrooGk+vA7sq1N3WzMne6PEw=";
     };
   };
   wsaccel = {
