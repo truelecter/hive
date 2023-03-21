@@ -11,7 +11,7 @@ final: prev: rec {
   moonraker = final.callPackage ./moonraker.nix {};
   klipper-screen = final.callPackage ./klipper-screen.nix {};
   klipper-led_effect = final.callPackage ./klipper-led_effect.nix {};
-  mainsail = final.callPackage ./mainsail2.nix {};
+  mainsail = final.callPackage ./mainsail.nix {};
   # jemalloc = final.callPackage ./jemalloc.nix {};
   pam-reattach = final.callPackage ./pam-reattach.nix {};
   moonraker-telegram-bot = final.callPackage ./moonraker-telegram-bot.nix {};
