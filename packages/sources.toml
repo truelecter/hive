@@ -48,9 +48,9 @@ src.git = "https://github.com/nlef/moonraker-telegram-bot"
 src.branch = "development"
 fetch.github = "nlef/moonraker-telegram-bot"
 
-[mainsail]
-src.github = "mainsail-crew/mainsail"
-fetch.url = "https://github.com/mainsail-crew/mainsail/releases/download/$ver/mainsail.zip"
+# [mainsail]
+# src.github = "mainsail-crew/mainsail"
+# fetch.url = "https://github.com/mainsail-crew/mainsail/releases/download/$ver/mainsail.zip"
 
 [mainsail-raw]
 src.git = "https://github.com/mainsail-crew/mainsail"
@@ -65,21 +65,21 @@ fetch.url = "https://cdn.cypress.io/desktop/$ver/linux-arm64/cypress.zip"
 src.github = "6c65726f79/Transmissionic"
 fetch.url = "https://github.com/6c65726f79/Transmissionic/releases/download/$ver/Transmissionic-webui-$ver.zip"
 
-[rpi-linux]
-src.git = "https://github.com/raspberrypi/linux"
-fetch.github = "raspberrypi/linux"
+# [rpi-linux]
+# src.git = "https://github.com/raspberrypi/linux"
+# fetch.github = "raspberrypi/linux"
 
-[rpi-fw-nonfree]
-src.git = "https://github.com/RPi-Distro/firmware-nonfree"
-fetch.github = "RPi-Distro/firmware-nonfree"
+# [rpi-fw-nonfree]
+# src.git = "https://github.com/RPi-Distro/firmware-nonfree"
+# fetch.github = "RPi-Distro/firmware-nonfree"
 
-[rpi-fw-bluez]
-src.git = "https://github.com/RPi-Distro/bluez-firmware"
-fetch.github = "RPi-Distro/bluez-firmware"
+# [rpi-fw-bluez]
+# src.git = "https://github.com/RPi-Distro/bluez-firmware"
+# fetch.github = "RPi-Distro/bluez-firmware"
 
-[rpi-fw]
-src.git = "https://github.com/raspberrypi/firmware"
-fetch.github = "raspberrypi/firmware"
+# [rpi-fw]
+# src.git = "https://github.com/raspberrypi/firmware"
+# fetch.github = "raspberrypi/firmware"
 
 [pam-reattach]
 src.git = "https://github.com/fabianishere/pam_reattach"
