@@ -16,7 +16,7 @@
     },
     "klipper": {
         "cargoLocks": null,
-        "date": "2023-03-07",
+        "date": "2023-03-21",
         "extract": null,
         "name": "klipper",
         "passthru": null,
@@ -28,11 +28,11 @@
             "name": null,
             "owner": "Klipper3d",
             "repo": "klipper",
-            "rev": "4b1536d62f2b5c5e0beb4692dbe4d0d1fa2bcb1b",
-            "sha256": "sha256-EUGUmRIohQeBi2trd489L8CC1TeaLI1JlLsSZQsH+1Q=",
+            "rev": "52f4e20c26039a67da7c223fc72fd34a8ef9a294",
+            "sha256": "sha256-aIzIioHZddRwsflIHrc6Boj3EQdSPppznXSt3etkmJM=",
             "type": "github"
         },
-        "version": "4b1536d62f2b5c5e0beb4692dbe4d0d1fa2bcb1b"
+        "version": "52f4e20c26039a67da7c223fc72fd34a8ef9a294"
     },
     "klipper-led_effect": {
         "cargoLocks": null,
@@ -56,7 +56,7 @@
     },
     "klipper-screen": {
         "cargoLocks": null,
-        "date": "2023-03-10",
+        "date": "2023-03-22",
         "extract": null,
         "name": "klipper-screen",
         "passthru": null,
@@ -68,11 +68,11 @@
             "name": null,
             "owner": "jordanruthe",
             "repo": "KlipperScreen",
-            "rev": "be473bf626c45cd1bfc9535261985b5fb91246ff",
-            "sha256": "sha256-QmjaBMqY1SU0ADQkqE9b2zN0+3sZwqfGWezMsgEBdtQ=",
+            "rev": "da9f9702313a819e66caacab0099a4554b6572eb",
+            "sha256": "sha256-HozOsdAdavLcquiVNVdNHRTc0aar0eou1Za98sacWCE=",
             "type": "github"
         },
-        "version": "be473bf626c45cd1bfc9535261985b5fb91246ff"
+        "version": "da9f9702313a819e66caacab0099a4554b6572eb"
     },
     "libcamera": {
         "cargoLocks": null,
@@ -114,24 +114,9 @@
         },
         "version": "21157c5001a0a090cbd69c9e04c3a9dcfdfa8617"
     },
-    "mainsail": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "mainsail",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-+g6RIfXn06qzDYcFSjZlxwXbwyWcGvf5++KbO59pu0M=",
-            "type": "url",
-            "url": "https://github.com/mainsail-crew/mainsail/releases/download/v2.4.1/mainsail.zip"
-        },
-        "version": "v2.4.1"
-    },
     "mainsail-raw": {
         "cargoLocks": null,
-        "date": "2023-03-10",
+        "date": "2023-03-12",
         "extract": null,
         "name": "mainsail-raw",
         "passthru": null,
@@ -143,11 +128,11 @@
             "name": null,
             "owner": "mainsail-crew",
             "repo": "mainsail",
-            "rev": "52d0ea4ec57b94582386666fc6389e7d260741f4",
-            "sha256": "sha256-A3MDoZwH4t1AAzFJHJ8UsV0Abge0zAzYkmKQwfTCUt8=",
+            "rev": "7ad25e38515bfde3e47ba7a01b3c16c01d1174a6",
+            "sha256": "sha256-SQwxMNIYfr7yU/FqkRdbNJ0YiAGYg2qDEwyAzvoecz0=",
             "type": "github"
         },
-        "version": "52d0ea4ec57b94582386666fc6389e7d260741f4"
+        "version": "7ad25e38515bfde3e47ba7a01b3c16c01d1174a6"
     },
     "manix": {
         "cargoLocks": null,
@@ -171,7 +156,7 @@
     },
     "moonraker": {
         "cargoLocks": null,
-        "date": "2023-03-05",
+        "date": "2023-03-20",
         "extract": null,
         "name": "moonraker",
         "passthru": null,
@@ -183,11 +168,11 @@
             "name": null,
             "owner": "Arksine",
             "repo": "moonraker",
-            "rev": "80920dd8723b7dac6d176500fed88d81149f22b2",
-            "sha256": "sha256-nsekJZG/wXrG0pJKJuF2+jSTxwrSVVRDm77egrsfkPw=",
+            "rev": "110cbd108409aecb4e5654b0f811cad047cd909b",
+            "sha256": "sha256-K4ypZCVxnU/64oR3FefjS/aiaVLMHr6ceZIfHqwFfs8=",
             "type": "github"
         },
-        "version": "80920dd8723b7dac6d176500fed88d81149f22b2"
+        "version": "110cbd108409aecb4e5654b0f811cad047cd909b"
     },
     "moonraker-telegram-bot": {
         "cargoLocks": null,
@@ -266,7 +251,7 @@
     },
     "rel": {
         "cargoLocks": null,
-        "date": "2023-02-09",
+        "date": "2023-03-16",
         "extract": null,
         "name": "rel",
         "passthru": null,
@@ -278,91 +263,11 @@
             "name": null,
             "owner": "bubbleboy14",
             "repo": "registeredeventlistener",
-            "rev": "f3b57c98bf661dbc21ed4039a859fddf48d6ba75",
-            "sha256": "sha256-J3nP6BLAa+/QcQTtVWa00Iu0JDb/AsobU59UQArlz7s=",
+            "rev": "26d62ef6ebaf3e84c90363b579e0885ab1d458b8",
+            "sha256": "sha256-SDW3W8wCq/5ci4qOvPlclbBg9dlhKyXHz8vZ/Rb9qk0=",
             "type": "github"
         },
-        "version": "f3b57c98bf661dbc21ed4039a859fddf48d6ba75"
-    },
-    "rpi-fw": {
-        "cargoLocks": null,
-        "date": "2023-03-10",
-        "extract": null,
-        "name": "rpi-fw",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "raspberrypi",
-            "repo": "firmware",
-            "rev": "379d5bfa60bf3b0afff413a18344aaaf3bde0083",
-            "sha256": "sha256-/orq95SIThKpwS0VD6KyLrSMkUgQuP1RNe/SJz2Jo/Y=",
-            "type": "github"
-        },
-        "version": "379d5bfa60bf3b0afff413a18344aaaf3bde0083"
-    },
-    "rpi-fw-bluez": {
-        "cargoLocks": null,
-        "date": "2023-01-05",
-        "extract": null,
-        "name": "rpi-fw-bluez",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "RPi-Distro",
-            "repo": "bluez-firmware",
-            "rev": "9556b08ace2a1735127894642cc8ea6529c04c90",
-            "sha256": "sha256-gKGK0XzNrws5REkKg/JP6SZx3KsJduu53SfH3Dichkc=",
-            "type": "github"
-        },
-        "version": "9556b08ace2a1735127894642cc8ea6529c04c90"
-    },
-    "rpi-fw-nonfree": {
-        "cargoLocks": null,
-        "date": "2023-01-25",
-        "extract": null,
-        "name": "rpi-fw-nonfree",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "RPi-Distro",
-            "repo": "firmware-nonfree",
-            "rev": "7f29411baead874b859eda53efdc2472345ea454",
-            "sha256": "sha256-54JKmwypD7PRQdd7k6IcF7wL8ifMavEM0UwZwmA24O4=",
-            "type": "github"
-        },
-        "version": "7f29411baead874b859eda53efdc2472345ea454"
-    },
-    "rpi-linux": {
-        "cargoLocks": null,
-        "date": "2023-02-08",
-        "extract": null,
-        "name": "rpi-linux",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "raspberrypi",
-            "repo": "linux",
-            "rev": "14b35093ca68bf2c81bbc90aace5007142b40b40",
-            "sha256": "sha256-oy+VgoB4IdFZjGwkx88dDSpwWZj2D5t3PyXPIwDsY1Q=",
-            "type": "github"
-        },
-        "version": "14b35093ca68bf2c81bbc90aace5007142b40b40"
+        "version": "26d62ef6ebaf3e84c90363b579e0885ab1d458b8"
     },
     "rtsp-simple-server": {
         "cargoLocks": null,
@@ -433,11 +338,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-uAXoSvwVGb6+aSiJ5VKJUab0MzcQKCxYfkoDbhqWmfo=",
+            "sha256": "sha256-IhbJCv9SWjLspJYv6dBKrooGk+vA7sq1N3WzMne6PEw=",
             "type": "url",
-            "url": "https://github.com/6c65726f79/Transmissionic/releases/download/v1.7.1/Transmissionic-webui-v1.7.1.zip"
+            "url": "https://github.com/6c65726f79/Transmissionic/releases/download/v1.8.0/Transmissionic-webui-v1.8.0.zip"
         },
-        "version": "v1.7.1"
+        "version": "v1.8.0"
     },
     "wsaccel": {
         "cargoLocks": null,
