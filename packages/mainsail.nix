@@ -1,28 +1,33 @@
 {
   lib,
-  stdenvNoCC,
-  fetchurl,
-  unzip,
+  buildNpmPackage,
+  fetchFromGitHub,
   sources,
+  cypress,
+  zip,
 }:
-stdenvNoCC.mkDerivation rec {
+buildNpmPackage {
   pname = "mainsail";
 
-  inherit (sources.mainsail) version src;
+  inherit (sources.mainsail-raw) version src;
 
-  nativeBuildInputs = [unzip];
+  npmDepsHash = "sha256-QpV8rR7p5YGMKJJie5DHnykSjH1xMEoc04bpczcpvFg=";
 
-  dontConfigure = true;
-  dontBuild = true;
+  # convert to native
+  nativeBuildInputs = [
+    cypress
+    zip
+  ];
 
-  unpackPhase = ''
-    mkdir mainsail
-    unzip $src -d mainsail
+  prePatch = ''
+    export CYPRESS_INSTALL_BINARY=0
+    export CYPRESS_RUN_BINARY=${cypress}/bin/Cypress
   '';
 
   installPhase = ''
     mkdir -p $out/share/mainsail
-    cp -r mainsail $out/share/mainsail/htdocs
+    rm dist/mainsail.zip
+    cp -r dist $out/share/mainsail/htdocs
   '';
 
   meta = with lib; {

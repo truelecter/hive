@@ -363,11 +363,11 @@
   };
   "\"ms-python.python\"" = {
     pname = "\"ms-python.python\"";
-    version = "2023.5.10811015";
+    version = "2023.5.10821010";
     src = fetchurl {
-      url = "https://ms-python.gallery.vsassets.io/_apis/public/gallery/publisher/ms-python/extension/python/2023.5.10811015/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "python-2023.5.10811015.zip";
-      sha256 = "sha256-ER62GNYTEyKpoCqUJcNrKBOBsi38Ck8uIcDf9z7lYuw=";
+      url = "https://ms-python.gallery.vsassets.io/_apis/public/gallery/publisher/ms-python/extension/python/2023.5.10821010/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "python-2023.5.10821010.zip";
+      sha256 = "sha256-Yt/qtcVjZV1BKtwRj4T9UJ0AsLQkJhV1RHhjmlgsmqM=";
     };
   };
   "\"ms-python.vscode-pylance\"" = {
@@ -547,7 +547,7 @@
     src = fetchurl {
       url = "https://platformio.gallery.vsassets.io/_apis/public/gallery/publisher/platformio/extension/platformio-ide/3.1.1/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
       name = "platformio-ide-3.1.1.zip";
-      sha256 = "sha256-g9yTG3DjVUS2w9eHGAai5LoIfEGus+FPhqDnCi4e90Q=";
+      sha256 = "sha256-fwEct7Tj8bfTOLRozSZJGWoLzWRSvYz/KxcnfpO8Usg=";
     };
   };
   "\"plorefice.devicetree\"" = {
