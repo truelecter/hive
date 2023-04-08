@@ -11,15 +11,15 @@
   };
   klipper = {
     pname = "klipper";
-    version = "52f4e20c26039a67da7c223fc72fd34a8ef9a294";
+    version = "83308a10510ca4efa022c463b5e6455192f8a0a7";
     src = fetchFromGitHub ({
       owner = "Klipper3d";
       repo = "klipper";
-      rev = "52f4e20c26039a67da7c223fc72fd34a8ef9a294";
+      rev = "83308a10510ca4efa022c463b5e6455192f8a0a7";
       fetchSubmodules = false;
-      sha256 = "sha256-aIzIioHZddRwsflIHrc6Boj3EQdSPppznXSt3etkmJM=";
+      sha256 = "sha256-d0xLQFoWfe/cPs4Jk8Y44UTn1Y0sPtSDUUB+Lw3pobQ=";
     });
-    date = "2023-03-21";
+    date = "2023-04-07";
   };
   klipper-led_effect = {
     pname = "klipper-led_effect";
@@ -35,51 +35,51 @@
   };
   klipper-screen = {
     pname = "klipper-screen";
-    version = "da9f9702313a819e66caacab0099a4554b6572eb";
+    version = "a1c602b46d7e7f19614be9b50767b5cf38342193";
     src = fetchFromGitHub ({
       owner = "jordanruthe";
       repo = "KlipperScreen";
-      rev = "da9f9702313a819e66caacab0099a4554b6572eb";
+      rev = "a1c602b46d7e7f19614be9b50767b5cf38342193";
       fetchSubmodules = false;
-      sha256 = "sha256-HozOsdAdavLcquiVNVdNHRTc0aar0eou1Za98sacWCE=";
+      sha256 = "sha256-QyWg82r/vD9j2ZWpSm7+4xtoZ8YxGMZQcfbgfWXW9d4=";
     });
-    date = "2023-03-22";
+    date = "2023-03-24";
   };
   libcamera = {
     pname = "libcamera";
-    version = "923f5d707bb760bd3e724b3373568fa88c68454f";
+    version = "06bbff9c23d5a85acd65595216c6b75094891f72";
     src = fetchFromGitHub ({
       owner = "raspberrypi";
       repo = "libcamera";
-      rev = "923f5d707bb760bd3e724b3373568fa88c68454f";
+      rev = "06bbff9c23d5a85acd65595216c6b75094891f72";
       fetchSubmodules = false;
-      sha256 = "sha256-G7K161m8VovKJTz1u+62irhLz9Y3C9PzKZhl6UMRFv4=";
+      sha256 = "sha256-H3Zv2CFH4BU5+vBC28wIGSkTUuWaQhqjUdv8R/bfdRc=";
     });
-    date = "2023-03-02";
+    date = "2023-03-13";
   };
   libcamera-apps = {
     pname = "libcamera-apps";
-    version = "21157c5001a0a090cbd69c9e04c3a9dcfdfa8617";
+    version = "cd9e4e1b8f791a44cea7ee19917bd40fce1acafa";
     src = fetchFromGitHub ({
       owner = "raspberrypi";
       repo = "libcamera-apps";
-      rev = "21157c5001a0a090cbd69c9e04c3a9dcfdfa8617";
+      rev = "cd9e4e1b8f791a44cea7ee19917bd40fce1acafa";
       fetchSubmodules = false;
-      sha256 = "sha256-t7f5GqdRqOHwRDD6dTWV3jUIFeSqMGsypdIDIV9eR6A=";
+      sha256 = "sha256-xjwZ/ATyoIPtn5ubt6u3Lf72VsKHh05BBimv0Vm9W/M=";
     });
-    date = "2023-03-10";
+    date = "2023-03-31";
   };
   mainsail-raw = {
     pname = "mainsail-raw";
-    version = "7ad25e38515bfde3e47ba7a01b3c16c01d1174a6";
+    version = "6b68be112107a24476e8f0dc66d571566065c082";
     src = fetchFromGitHub ({
       owner = "mainsail-crew";
       repo = "mainsail";
-      rev = "7ad25e38515bfde3e47ba7a01b3c16c01d1174a6";
+      rev = "6b68be112107a24476e8f0dc66d571566065c082";
       fetchSubmodules = false;
-      sha256 = "sha256-SQwxMNIYfr7yU/FqkRdbNJ0YiAGYg2qDEwyAzvoecz0=";
+      sha256 = "sha256-k/5gYu0gkTrq/8CY61/2602DiFtxJg58c8b8qMVZ1EE=";
     });
-    date = "2023-03-12";
+    date = "2023-04-02";
   };
   manix = {
     pname = "manix";
@@ -95,15 +95,15 @@
   };
   moonraker = {
     pname = "moonraker";
-    version = "110cbd108409aecb4e5654b0f811cad047cd909b";
+    version = "31e589abdeac2c45a48bb3aba1cb103f45eed5a0";
     src = fetchFromGitHub ({
       owner = "Arksine";
       repo = "moonraker";
-      rev = "110cbd108409aecb4e5654b0f811cad047cd909b";
+      rev = "31e589abdeac2c45a48bb3aba1cb103f45eed5a0";
       fetchSubmodules = false;
-      sha256 = "sha256-K4ypZCVxnU/64oR3FefjS/aiaVLMHr6ceZIfHqwFfs8=";
+      sha256 = "sha256-cfLq6uAAzWuf6IP5HiYdJBEoTnrk5Lnf2RcabRq/ck4=";
     });
-    date = "2023-03-20";
+    date = "2023-04-04";
   };
   moonraker-telegram-bot = {
     pname = "moonraker-telegram-bot";
