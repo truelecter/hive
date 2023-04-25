@@ -32,10 +32,9 @@ channels: final: prev: {
     podman
     _1password
     android-tools
-    jemalloc
     ;
 
   # Until libressl dropped here:
   # https://github.com/NixOS/nixpkgs/blob/master/pkgs/os-specific/darwin/apple-source-releases/network_cmds/default.nix#L6
-  # iproute2mac = channels.latest.darwin.iproute2mac;
+  iproute2mac = channels.latest.darwin.iproute2mac;
 }
