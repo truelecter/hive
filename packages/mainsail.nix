@@ -1,7 +1,6 @@
 {
   lib,
   buildNpmPackage,
-  fetchFromGitHub,
   sources,
   cypress,
   zip,
@@ -11,7 +10,7 @@ buildNpmPackage {
 
   inherit (sources.mainsail-raw) version src;
 
-  npmDepsHash = "sha256-QpV8rR7p5YGMKJJie5DHnykSjH1xMEoc04bpczcpvFg=";
+  npmDepsHash = "sha256-244N6lCTLvaHttJmcnWOqQrN6OXjzOM1Xkt+nmpBHyw=";
 
   # convert to native
   nativeBuildInputs = [
