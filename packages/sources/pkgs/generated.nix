@@ -11,15 +11,15 @@
   };
   klipper = {
     pname = "klipper";
-    version = "b17ae55f5bd3a079ab3626b1e6fd5c60416e6ba0";
+    version = "bec1d957d216986da8da216aca557c4d31623fd2";
     src = fetchFromGitHub ({
       owner = "Klipper3d";
       repo = "klipper";
-      rev = "b17ae55f5bd3a079ab3626b1e6fd5c60416e6ba0";
+      rev = "bec1d957d216986da8da216aca557c4d31623fd2";
       fetchSubmodules = false;
-      sha256 = "sha256-e1luOJdTeSB/UNl/W91tBuuQ5f2fKfo1CSMQiE+A1T4=";
+      sha256 = "sha256-xRoftng7uTFiA4tRob2lbHa+AWAOecHOEg/DNLhJ1LQ=";
     });
-    date = "2023-04-24";
+    date = "2023-04-25";
   };
   klipper-led_effect = {
     pname = "klipper-led_effect";
@@ -107,15 +107,15 @@
   };
   moonraker-telegram-bot = {
     pname = "moonraker-telegram-bot";
-    version = "b9b47003e13b8a23af696594aac8ba53c777f5a7";
+    version = "28bcb8087487f0c3d618bd48f57bb20a3df29f44";
     src = fetchFromGitHub ({
       owner = "nlef";
       repo = "moonraker-telegram-bot";
-      rev = "b9b47003e13b8a23af696594aac8ba53c777f5a7";
+      rev = "28bcb8087487f0c3d618bd48f57bb20a3df29f44";
       fetchSubmodules = false;
-      sha256 = "sha256-kvr3Ywg1Mc4yJerNJochPiHBD20zcpPbB7n3HEDQzZA=";
+      sha256 = "sha256-OnhlXsW7xWj+owVy2rSa6mSXbAuJo5hHSK0xSek/TFE=";
     });
-    date = "2023-02-05";
+    date = "2023-04-28";
   };
   otf2bdf = {
     pname = "otf2bdf";
