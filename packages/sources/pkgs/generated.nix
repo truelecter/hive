@@ -11,15 +11,15 @@
   };
   klipper = {
     pname = "klipper";
-    version = "bec1d957d216986da8da216aca557c4d31623fd2";
+    version = "a3eebab4f2b90822f76de91487ff3d4158b80494";
     src = fetchFromGitHub ({
       owner = "Klipper3d";
       repo = "klipper";
-      rev = "bec1d957d216986da8da216aca557c4d31623fd2";
+      rev = "a3eebab4f2b90822f76de91487ff3d4158b80494";
       fetchSubmodules = false;
-      sha256 = "sha256-xRoftng7uTFiA4tRob2lbHa+AWAOecHOEg/DNLhJ1LQ=";
+      sha256 = "sha256-pJNlE1aWDigG3kg9fHOvy+RV2kOLbkWUotXEAWQOZGQ=";
     });
-    date = "2023-04-25";
+    date = "2023-05-04";
   };
   klipper-led_effect = {
     pname = "klipper-led_effect";
@@ -71,15 +71,15 @@
   };
   mainsail-raw = {
     pname = "mainsail-raw";
-    version = "370d7d414287bd12a1aa7ffa18a5c6ef4f746d4a";
+    version = "0e86652d1c0cd0b933c77599658461f4764cc931";
     src = fetchFromGitHub ({
       owner = "mainsail-crew";
       repo = "mainsail";
-      rev = "370d7d414287bd12a1aa7ffa18a5c6ef4f746d4a";
+      rev = "0e86652d1c0cd0b933c77599658461f4764cc931";
       fetchSubmodules = false;
-      sha256 = "sha256-wyhIo1d0tOeRbi5RXlG8FvVGUq0wa+JIJOPYHi6d1FY=";
+      sha256 = "sha256-YgSBhWhwKnVZce7jC8BaXTwW4m0mCeWF4zixQkFQhhs=";
     });
-    date = "2023-04-21";
+    date = "2023-05-04";
   };
   manix = {
     pname = "manix";
@@ -107,15 +107,15 @@
   };
   moonraker-telegram-bot = {
     pname = "moonraker-telegram-bot";
-    version = "28bcb8087487f0c3d618bd48f57bb20a3df29f44";
+    version = "b31a3fe909c5b3ef8ec5e4e4460ec8b10ad82957";
     src = fetchFromGitHub ({
       owner = "nlef";
       repo = "moonraker-telegram-bot";
-      rev = "28bcb8087487f0c3d618bd48f57bb20a3df29f44";
+      rev = "b31a3fe909c5b3ef8ec5e4e4460ec8b10ad82957";
       fetchSubmodules = false;
-      sha256 = "sha256-OnhlXsW7xWj+owVy2rSa6mSXbAuJo5hHSK0xSek/TFE=";
+      sha256 = "sha256-OWXhGxDm7jP7t+V0HvZ8TsBpvHQCUhmO54Ofr3zvJKg=";
     });
-    date = "2023-04-28";
+    date = "2023-04-30";
   };
   otf2bdf = {
     pname = "otf2bdf";
