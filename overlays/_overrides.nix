@@ -26,7 +26,8 @@ channels: final: prev: {
     raspberrypi-eeprom
     k9s
     kubelogin-oidc
-    vscodium
+    # vscodium
+    
     nil
     lnav
     podman

@@ -11,15 +11,15 @@
   };
   klipper = {
     pname = "klipper";
-    version = "33b18fd62ba73c90054a7b94b68c341bb3f40d9a";
+    version = "7511151ac95acb9f55efffa2ad5780bf2683d977";
     src = fetchFromGitHub ({
       owner = "Klipper3d";
       repo = "klipper";
-      rev = "33b18fd62ba73c90054a7b94b68c341bb3f40d9a";
+      rev = "7511151ac95acb9f55efffa2ad5780bf2683d977";
       fetchSubmodules = false;
-      sha256 = "sha256-sLakykhstlOVSU8akBYfAAgAqwNxuPDC4FTY3FX7rUM=";
+      sha256 = "sha256-yceqf3kO2wJks8eKTffFYjuxkPKFWkOJpAaL3pRiDpQ=";
     });
-    date = "2023-05-07";
+    date = "2023-05-14";
   };
   klipper-led_effect = {
     pname = "klipper-led_effect";
@@ -35,15 +35,15 @@
   };
   klipper-screen = {
     pname = "klipper-screen";
-    version = "1e741ee4390fe3abda87ba7f89e2d93d66712e2e";
+    version = "a77148b6036c196bff86dcab4705341b3e8aa0b8";
     src = fetchFromGitHub ({
       owner = "jordanruthe";
       repo = "KlipperScreen";
-      rev = "1e741ee4390fe3abda87ba7f89e2d93d66712e2e";
+      rev = "a77148b6036c196bff86dcab4705341b3e8aa0b8";
       fetchSubmodules = false;
-      sha256 = "sha256-12ogWkUwtYnE4A1wX0J0yVb1ioKb6RIW7kSniPdv+LM=";
+      sha256 = "sha256-0VZ8f+b3hUjU5AUK2NJmfyzScb3M1c++PuraZk8wRAs=";
     });
-    date = "2023-05-11";
+    date = "2023-05-14";
   };
   libcamera = {
     pname = "libcamera";
@@ -71,15 +71,15 @@
   };
   mainsail-raw = {
     pname = "mainsail-raw";
-    version = "23da8818c344eb8f77366f16cac6ca1237d3cda8";
+    version = "140d796f518cbb2eb72b2394a02c9dfa504fe1fd";
     src = fetchFromGitHub ({
       owner = "mainsail-crew";
       repo = "mainsail";
-      rev = "23da8818c344eb8f77366f16cac6ca1237d3cda8";
+      rev = "140d796f518cbb2eb72b2394a02c9dfa504fe1fd";
       fetchSubmodules = false;
-      sha256 = "sha256-WazKqZ2OFCUaDRbn5RE3KYceuxW5jB8gie+mYpBsu0A=";
+      sha256 = "sha256-+EqLxCUOBdjBwN9AmNuvXVGAQPQCUchrqvhEodcORHI=";
     });
-    date = "2023-05-09";
+    date = "2023-05-12";
   };
   manix = {
     pname = "manix";
@@ -107,15 +107,15 @@
   };
   moonraker-telegram-bot = {
     pname = "moonraker-telegram-bot";
-    version = "b31a3fe909c5b3ef8ec5e4e4460ec8b10ad82957";
+    version = "b1285e0155040b92fba34b80f07c63dda91dfa5b";
     src = fetchFromGitHub ({
       owner = "nlef";
       repo = "moonraker-telegram-bot";
-      rev = "b31a3fe909c5b3ef8ec5e4e4460ec8b10ad82957";
+      rev = "b1285e0155040b92fba34b80f07c63dda91dfa5b";
       fetchSubmodules = false;
-      sha256 = "sha256-OWXhGxDm7jP7t+V0HvZ8TsBpvHQCUhmO54Ofr3zvJKg=";
+      sha256 = "sha256-+fy0NUP8XTCs4KGIq5dsgF558d9NXOmFFGT7CkT5bN0=";
     });
-    date = "2023-04-30";
+    date = "2023-05-13";
   };
   otf2bdf = {
     pname = "otf2bdf";

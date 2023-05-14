@@ -16,7 +16,7 @@
     },
     "klipper": {
         "cargoLocks": null,
-        "date": "2023-05-07",
+        "date": "2023-05-14",
         "extract": null,
         "name": "klipper",
         "passthru": null,
@@ -28,11 +28,11 @@
             "name": null,
             "owner": "Klipper3d",
             "repo": "klipper",
-            "rev": "33b18fd62ba73c90054a7b94b68c341bb3f40d9a",
-            "sha256": "sha256-sLakykhstlOVSU8akBYfAAgAqwNxuPDC4FTY3FX7rUM=",
+            "rev": "7511151ac95acb9f55efffa2ad5780bf2683d977",
+            "sha256": "sha256-yceqf3kO2wJks8eKTffFYjuxkPKFWkOJpAaL3pRiDpQ=",
             "type": "github"
         },
-        "version": "33b18fd62ba73c90054a7b94b68c341bb3f40d9a"
+        "version": "7511151ac95acb9f55efffa2ad5780bf2683d977"
     },
     "klipper-led_effect": {
         "cargoLocks": null,
@@ -56,7 +56,7 @@
     },
     "klipper-screen": {
         "cargoLocks": null,
-        "date": "2023-05-11",
+        "date": "2023-05-14",
         "extract": null,
         "name": "klipper-screen",
         "passthru": null,
@@ -68,11 +68,11 @@
             "name": null,
             "owner": "jordanruthe",
             "repo": "KlipperScreen",
-            "rev": "1e741ee4390fe3abda87ba7f89e2d93d66712e2e",
-            "sha256": "sha256-12ogWkUwtYnE4A1wX0J0yVb1ioKb6RIW7kSniPdv+LM=",
+            "rev": "a77148b6036c196bff86dcab4705341b3e8aa0b8",
+            "sha256": "sha256-0VZ8f+b3hUjU5AUK2NJmfyzScb3M1c++PuraZk8wRAs=",
             "type": "github"
         },
-        "version": "1e741ee4390fe3abda87ba7f89e2d93d66712e2e"
+        "version": "a77148b6036c196bff86dcab4705341b3e8aa0b8"
     },
     "libcamera": {
         "cargoLocks": null,
@@ -116,7 +116,7 @@
     },
     "mainsail-raw": {
         "cargoLocks": null,
-        "date": "2023-05-09",
+        "date": "2023-05-12",
         "extract": null,
         "name": "mainsail-raw",
         "passthru": null,
@@ -128,11 +128,11 @@
             "name": null,
             "owner": "mainsail-crew",
             "repo": "mainsail",
-            "rev": "23da8818c344eb8f77366f16cac6ca1237d3cda8",
-            "sha256": "sha256-WazKqZ2OFCUaDRbn5RE3KYceuxW5jB8gie+mYpBsu0A=",
+            "rev": "140d796f518cbb2eb72b2394a02c9dfa504fe1fd",
+            "sha256": "sha256-+EqLxCUOBdjBwN9AmNuvXVGAQPQCUchrqvhEodcORHI=",
             "type": "github"
         },
-        "version": "23da8818c344eb8f77366f16cac6ca1237d3cda8"
+        "version": "140d796f518cbb2eb72b2394a02c9dfa504fe1fd"
     },
     "manix": {
         "cargoLocks": null,
@@ -176,7 +176,7 @@
     },
     "moonraker-telegram-bot": {
         "cargoLocks": null,
-        "date": "2023-04-30",
+        "date": "2023-05-13",
         "extract": null,
         "name": "moonraker-telegram-bot",
         "passthru": null,
@@ -188,11 +188,11 @@
             "name": null,
             "owner": "nlef",
             "repo": "moonraker-telegram-bot",
-            "rev": "b31a3fe909c5b3ef8ec5e4e4460ec8b10ad82957",
-            "sha256": "sha256-OWXhGxDm7jP7t+V0HvZ8TsBpvHQCUhmO54Ofr3zvJKg=",
+            "rev": "b1285e0155040b92fba34b80f07c63dda91dfa5b",
+            "sha256": "sha256-+fy0NUP8XTCs4KGIq5dsgF558d9NXOmFFGT7CkT5bN0=",
             "type": "github"
         },
-        "version": "b31a3fe909c5b3ef8ec5e4e4460ec8b10ad82957"
+        "version": "b1285e0155040b92fba34b80f07c63dda91dfa5b"
     },
     "otf2bdf": {
         "cargoLocks": null,
