@@ -214,6 +214,10 @@
               nixos-hardware.nixosModules.raspberry-pi-4
             ];
           };
+          oracle = {
+            system = "aarch64-linux";
+            channelName = "nixos";
+          };
         };
         importables = rec {
           profiles = self.host-profiles;
@@ -353,6 +357,10 @@
         };
         hyperos = {
           sshUser = "truelecter";
+        };
+        oracle = {
+          sshUser = "truelecter";
+          hostname = "oracle";
         };
         depsos = {
           sshUser = "truelecter";

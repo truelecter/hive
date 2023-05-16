@@ -5,6 +5,7 @@ keys:
   - &octoprint  50b24bfd5de5ee6397d7138de6f9c0f528fd86f3
   - &hyperos    999b95e23737a2732682322e53a49ea746050874
   - &depsos     356a82c0e351bd86b093e96706f5748b0e47bff0
+  - &oracle     70e8bfb15ea96c3752baafcfc43cfc3d2c42d68e
 
 creation_rules:
   - path_regex: secrets/sops/envs.yaml
@@ -20,6 +21,7 @@ creation_rules:
       - *octoprint
       - *hyperos
       - *depsos
+      - *oracle
   - path_regex: secrets/sops/ssh.*$
     key_groups:
     - pgp:
