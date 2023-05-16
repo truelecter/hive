@@ -65,6 +65,9 @@ linux_task:
   - name: Build hyperos
     env:
       NIXOS_HOST: hyperos
+  - name: Build oracle
+    env:
+      NIXOS_HOST: oracle
 
 macos_task:
   name: Build Nix-Darwin system
