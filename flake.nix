@@ -303,6 +303,7 @@
               profiles.shell.tmux
               shell.nvim
               home-manager-base
+              ssh
             ];
             develop = [
               dev.aws
