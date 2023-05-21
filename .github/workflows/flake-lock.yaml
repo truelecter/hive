@@ -22,15 +22,7 @@ jobs:
           nix-channel --update
       - name: Update nvfetcher packages
         run: |
-          nix develop --command bash -c "update-packages"
-        # rm packages/sources/pkgs/generated.json
-        # rm packages/sources/pkgs/generated.nix
-      # Sometimes breaks for some reason
-      - name: Update nvfetcher VSCode extentions
-        run: |
-          nix develop --command bash -c "update-vscode-exts"
-        # rm packages/sources/vscode/generated.json
-        # rm packages/sources/vscode/generated.nix
+          nix develop --command bash -c "update-cell-sources ALL"
       - name: Update flake.lock
         uses: DeterminateSystems/update-flake-lock@v14
         with:
