@@ -25,6 +25,8 @@ jobs:
       - name: Update nvfetcher packages
         run: |
           nix develop --command bash -c "update-cell-sources ALL"
+          git add .
+          git commit -m "Updated cell sources"
           rm .git/hooks/*
       - name: Update flake.lock
         uses: DeterminateSystems/update-flake-lock@v19
