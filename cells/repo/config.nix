@@ -87,6 +87,9 @@ in {
         };
       };
       pre-commit = {
+        skip = [
+          {ref = "update_flake_lock_action";}
+        ];
         commands = {
           treefmt = {
             run = "treefmt --fail-on-change {staged_files}";
