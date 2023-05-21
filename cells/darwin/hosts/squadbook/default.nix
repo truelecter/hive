@@ -124,26 +124,26 @@ in {
         sshUser = "root";
         sshKey = "/etc/nix/builder_nas";
       }
-      {
-        systems = [
-          "x86_64-linux"
-          "i686-linux"
-        ];
+      # {
+      #   systems = [
+      #     "x86_64-linux"
+      #     "i686-linux"
+      #   ];
 
-        supportedFeatures = [
-          "nixos-test"
-          "benchmark"
-          "kvm"
-          "big-parallel"
-        ];
+      #   supportedFeatures = [
+      #     "nixos-test"
+      #     "benchmark"
+      #     "kvm"
+      #     "big-parallel"
+      #   ];
 
-        speedFactor = 10;
-        maxJobs = 4;
-        hostName = "depsos";
+      #   speedFactor = 10;
+      #   maxJobs = 4;
+      #   hostName = "depsos";
 
-        sshUser = "root";
-        sshKey = "/etc/nix/builder_nas";
-      }
+      #   sshUser = "root";
+      #   sshKey = "/etc/nix/builder_nas";
+      # }
     ];
   };
 }
