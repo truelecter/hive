@@ -10,6 +10,7 @@
   imports = [
     common.core
     common.cachix
+    common.gui
     inputs.home.darwinModules.home-manager
     inputs.cells.tailscale.darwinModules.tailscale-autoconnect
   ];
