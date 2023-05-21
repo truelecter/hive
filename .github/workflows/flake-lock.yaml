@@ -20,9 +20,6 @@ jobs:
         run: |
           nix-channel --add https://nixos.org/channels/nixpkgs-unstable
           nix-channel --update
-      - name: Update nvfetcher packages
-        run: |
-          nix develop --command bash -c "update-cell-sources ALL"
       - name: Update flake.lock
         uses: DeterminateSystems/update-flake-lock@v14
         with:
@@ -30,3 +27,6 @@ jobs:
           pr-labels: |
             dependencies
             automated
+      - name: Update nvfetcher packages
+        run: |
+          nix develop --command bash -c "update-cell-sources ALL"
