@@ -8,8 +8,7 @@
 
   l = inputs.nixpkgs.lib // builtins;
 
-  sources =
-    import ./sources/generated.nix {inherit (nixpkgs) fetchgit fetchurl fetchFromGitHub dockerTools;};
+  sources = nixpkgs.callPackage ./sources/generated.nix {};
 
   buildVscodeExtension = name': value': let
     fullname = l.removePrefix "\"" (l.removeSuffix "\"" name');
