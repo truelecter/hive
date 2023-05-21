@@ -13,6 +13,8 @@ in {
     profiles.common.networking.tailscale
     profiles.remote-builds
 
+    inputs.cells.k8s.nixosModules.k8s
+
     ./_hardware-configuration.nix
     ./_k8s
     ./_postgres.nix

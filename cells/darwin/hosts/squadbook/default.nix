@@ -60,6 +60,10 @@ in {
   bee.pkgs = import inputs.nixos {
     inherit system;
     config.allowUnfree = true;
+    overlays = [
+      inputs.cells.common.overlays.latest-overrides
+      inputs.cells.common.overlays.common-packages
+    ];
   };
 
   networking = {

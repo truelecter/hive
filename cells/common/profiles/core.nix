@@ -122,5 +122,10 @@ in {
       warn-dirty = false
       experimental-features = flakes nix-command
     '';
+
+    nixPath = [
+      "nixpkgs=${inputs.nixos}"
+      "home-manager=${inputs.home}"
+    ];
   };
 }

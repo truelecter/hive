@@ -1,6 +1,5 @@
 {
   pkgs,
-  self,
   lib,
   ...
 }: let
@@ -15,7 +14,7 @@
         rm temp
         # temp2
       }
-      builddtb ${self}/hosts/nixos/octoprint/overlays/${overlay}.dts ${overlay}.dtb
+      builddtb ${./_overlays}/${overlay}.dts ${overlay}.dtb
     '';
   ov5647 = build-overlay "ov5647";
   disable-bt = build-overlay "disable-bt";

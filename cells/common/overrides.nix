@@ -28,9 +28,10 @@ in {
     wrapHelm
     kubectl
     kubernetes-helmPlugins
+    direnv
     #
-
-    ffmpeg_5-full
+    
     tailscale
+    ffmpeg_5-full
     ;
 }

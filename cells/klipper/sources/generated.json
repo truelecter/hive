@@ -1,7 +1,6 @@
 {
     "klipper": {
         "cargoLocks": null,
-        "date": "2023-05-14",
         "extract": null,
         "name": "klipper",
         "passthru": null,
@@ -13,15 +12,14 @@
             "name": null,
             "owner": "Klipper3d",
             "repo": "klipper",
-            "rev": "7511151ac95acb9f55efffa2ad5780bf2683d977",
-            "sha256": "sha256-yceqf3kO2wJks8eKTffFYjuxkPKFWkOJpAaL3pRiDpQ=",
+            "rev": "37315bf3365484c3ba6adef2b7da2b4464980e8a",
+            "sha256": "sha256-xE405ONnD6IUSSrGROUZBQZbMNFs+0zgiMGaMWkt0RA=",
             "type": "github"
         },
-        "version": "7511151ac95acb9f55efffa2ad5780bf2683d977"
+        "version": "37315bf3365484c3ba6adef2b7da2b4464980e8a"
     },
     "klipper-led_effect": {
         "cargoLocks": null,
-        "date": "2023-02-04",
         "extract": null,
         "name": "klipper-led_effect",
         "passthru": null,
@@ -41,7 +39,6 @@
     },
     "klipper-screen": {
         "cargoLocks": null,
-        "date": "2023-05-18",
         "extract": null,
         "name": "klipper-screen",
         "passthru": null,
@@ -53,15 +50,14 @@
             "name": null,
             "owner": "jordanruthe",
             "repo": "KlipperScreen",
-            "rev": "6b62adbfef7787d6012691992b63d6e9e2b222d7",
-            "sha256": "sha256-BtaQCu9kxQQvYAnEQ+HWR8zevXldbHXdGLqwjj+B4nE=",
+            "rev": "6781043942fe7241e65d784b144dc6df5ce6dcd5",
+            "sha256": "sha256-WpNDcGvCfqLbWHm9AU/rh+yUL4W7svTwi0miyz5tSCQ=",
             "type": "github"
         },
-        "version": "6b62adbfef7787d6012691992b63d6e9e2b222d7"
+        "version": "6781043942fe7241e65d784b144dc6df5ce6dcd5"
     },
     "mainsail": {
         "cargoLocks": null,
-        "date": "2023-05-18",
         "extract": null,
         "name": "mainsail",
         "passthru": null,
@@ -81,7 +77,6 @@
     },
     "moonraker": {
         "cargoLocks": null,
-        "date": "2023-05-07",
         "extract": null,
         "name": "moonraker",
         "passthru": null,
@@ -101,7 +96,6 @@
     },
     "moonraker-telegram-bot": {
         "cargoLocks": null,
-        "date": "2023-05-13",
         "extract": null,
         "name": "moonraker-telegram-bot",
         "passthru": null,
@@ -121,7 +115,6 @@
     },
     "python-networkmanager": {
         "cargoLocks": null,
-        "date": null,
         "extract": null,
         "name": "python-networkmanager",
         "passthru": null,
@@ -133,5 +126,38 @@
             "url": "https://pypi.io/packages/source/p/python-networkmanager/python-networkmanager-2.2.tar.gz"
         },
         "version": "2.2"
+    },
+    "rel": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "rel",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "bubbleboy14",
+            "repo": "registeredeventlistener",
+            "rev": "db67af684650c8915b7ee279969a813d438ecaf7",
+            "sha256": "sha256-gwirX/X/0Q2fo7607ILjB3kMBIvoksUmWkQvjG6KsYg=",
+            "type": "github"
+        },
+        "version": "db67af684650c8915b7ee279969a813d438ecaf7"
+    },
+    "wsaccel": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "wsaccel",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-y/ZqiLyvbGrRbVDqKSFYkVJrbpk8S8ftRLBE7m/jrT0=",
+            "type": "url",
+            "url": "https://pypi.io/packages/source/w/wsaccel/wsaccel-0.6.4.tar.gz"
+        },
+        "version": "0.6.4"
     }
 }

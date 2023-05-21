@@ -10,6 +10,9 @@ in {
     suites.base
 
     profiles.common.networking.tailscale
+
+    inputs.cells.klipper.nixosModules.klipper
+
     inputs.nixos-hardware.nixosModules.raspberry-pi-4
 
     ./_hardware-configuration.nix
@@ -27,12 +30,10 @@ in {
     overlays = [
       (final: prev: {
         deviceTree.applyOverlays = prev.callPackage ./_apply-overlays-dtmerge.nix {};
+        makeModulesClosure = x: prev.makeModulesClosure (x // {allowMissing = true;});
+        linuxPackages_rpi4 = (import inputs.latest {inherit system;}).linuxPackages_rpi4;
       })
-
-      (final: super: {
-        makeModulesClosure = x:
-          super.makeModulesClosure (x // {allowMissing = true;});
-      })
+      inputs.cells.klipper.overlays.klipper
     ];
   };
 

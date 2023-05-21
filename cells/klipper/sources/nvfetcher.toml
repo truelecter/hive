@@ -24,6 +24,15 @@ src.git = "https://github.com/nlef/moonraker-telegram-bot"
 src.branch = "development"
 fetch.github = "nlef/moonraker-telegram-bot"
 
+[rel]
+src.git = "https://github.com/bubbleboy14/registeredeventlistener"
+fetch.github = "bubbleboy14/registeredeventlistener"
+
+[wsaccel]
+src.pypi = "wsaccel"
+fetch.pypi = "wsaccel"
+
+
 [mainsail]
 src.git = "https://github.com/mainsail-crew/mainsail"
 src.branch = "develop"
