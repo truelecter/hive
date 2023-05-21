@@ -1,6 +1,6 @@
 {
   programs.direnv = {
-    enable = builtins.trace "TODO: find a way to override direnv" true;
+    enable = true;
     nix-direnv = {
       enable = true;
     };

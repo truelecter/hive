@@ -17,20 +17,18 @@ This flake is configured with the use of [hive][hive].
 
 ## Apply configs
 
-<!-- ### NixOS hosts
+### NixOS hosts
 
 ```bash
-nix develop
-deploy -s # some checks are currently broken
+colmena build
+colmena apply
 # OR
-deploy -s ".<hostname>"
-``` -->
+colmena apply --on "nixos-$HOST"
+```
 
 ### Darwin hosts
 
 ```bash
-nix develop
-# While on darwin host deploy-rs does not support darwin currently
 darwin-rebuild switch --flake .
 ```
 
