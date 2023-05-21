@@ -1,0 +1,40 @@
+name: Update flake.lock
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 6' # At 00:00 on Saturday
+
+# TODO: Add nvfetcher
+jobs:
+  lockfile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install Nix
+        uses: cachix/install-nix-action@v18
+        with:
+          extra_nix_config: |
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+      - name: Setup channel
+        run: |
+          nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+          nix-channel --update
+      - name: Update nvfetcher packages
+        run: |
+          nix develop --command bash -c "update-packages"
+        # rm packages/sources/pkgs/generated.json
+        # rm packages/sources/pkgs/generated.nix
+      # Sometimes breaks for some reason
+      - name: Update nvfetcher VSCode extentions
+        run: |
+          nix develop --command bash -c "update-vscode-exts"
+        # rm packages/sources/vscode/generated.json
+        # rm packages/sources/vscode/generated.nix
+      - name: Update flake.lock
+        uses: DeterminateSystems/update-flake-lock@v14
+        with:
+          pr-title: "Update flake.lock"
+          pr-labels: |
+            dependencies
+            automated

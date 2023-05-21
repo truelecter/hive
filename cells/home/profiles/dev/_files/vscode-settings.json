@@ -1,0 +1,65 @@
+{
+  "[yaml]": {
+      "editor.formatOnSave": false
+  },
+  "yaml.format.singleQuote": true,
+
+  "terminal.integrated.scrollback": 1000000000000,
+  "update.mode": "none",
+  "extensions.autoCheckUpdates": false,
+  "terminal.integrated.macOptionClickForcesSelection": true,
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  "redhat.telemetry.enabled": false,
+  "explorer.confirmDelete": false,
+  "files.eol": "\n",
+  "files.exclude": {
+      "**/.classpath": true,
+      "**/.factorypath": true,
+      "**/.project": true,
+      "**/.settings": true
+  },
+  "files.trimTrailingWhitespace": true,
+
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.fontFamily": "Iosevka",
+  "editor.fontLigatures": false,
+  "editor.fontSize": 14,
+  "editor.fontWeight": "normal",
+  "editor.guides.bracketPairs": true,
+  "editor.renderWhitespace": "all",
+  "editor.suggestSelection": "first",
+  "editor.tabSize": 2,
+  "terminal.integrated.fontFamily": "Iosevka",
+  "terminal.integrated.fontSize": 14,
+  "security.workspace.trust.untrustedFiles": "open",
+  "workbench.fontAliasing": "antialiased",
+  "workbench.preferredDarkColorTheme": "Abyss",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.editorAssociations": {
+      "*.ipynb": "jupyter.notebook.ipynb"
+  },
+
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "git.ignoreRebaseWarning": true,
+  "gitlens.advanced.messages": {
+      "suppressCreatePullRequestPrompt": true
+  },
+  "gitlens.gitCommands.skipConfirmations": [
+      "fetch:command",
+      "stash-apply:command",
+      "stash-push:command",
+      "switch:command"
+  ],
+  "gitlens.views.branches.branches.layout": "list",
+
+  "markdown-pdf.headerTemplate": "<div style=\"font-size: 9px; margin-left: 1cm;\">Andrii Panasiuk</div>",
+
+  "vetur.experimental.templateInterpolationService": true,
+  "vetur.format.options.useTabs": true,
+  "vetur.validation.templateProps": true,
+
+  "typescript.updateImportsOnFileMove.enabled": "always"
+}

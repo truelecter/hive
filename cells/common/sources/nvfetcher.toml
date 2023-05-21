@@ -1,0 +1,11 @@
+[transmissionic]
+src.github = "6c65726f79/Transmissionic"
+fetch.url = "https://github.com/6c65726f79/Transmissionic/releases/download/$ver/Transmissionic-webui-$ver.zip"
+
+[tfenv]
+src.git = "https://github.com/tfutils/tfenv"
+fetch.github = "tfutils/tfenv"
+
+[s5cmd]
+src.git = "https://github.com/peak/s5cmd"
+fetch.github = "peak/s5cmd"

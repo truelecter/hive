@@ -1,0 +1,62 @@
+{
+    "libcamera": {
+        "cargoLocks": null,
+        "date": "2023-03-13",
+        "extract": null,
+        "name": "libcamera",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "raspberrypi",
+            "repo": "libcamera",
+            "rev": "06bbff9c23d5a85acd65595216c6b75094891f72",
+            "sha256": "sha256-H3Zv2CFH4BU5+vBC28wIGSkTUuWaQhqjUdv8R/bfdRc=",
+            "type": "github"
+        },
+        "version": "06bbff9c23d5a85acd65595216c6b75094891f72"
+    },
+    "libcamera-apps": {
+        "cargoLocks": null,
+        "date": "2023-05-11",
+        "extract": null,
+        "name": "libcamera-apps",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "raspberrypi",
+            "repo": "libcamera-apps",
+            "rev": "6e0c66a1b2c3f6bfa3d03d06b4a75d7c4006b28b",
+            "sha256": "sha256-jfqS6518G8RKzQz8FS9xVBQakGX39C4OO+0l/MHmNU4=",
+            "type": "github"
+        },
+        "version": "6e0c66a1b2c3f6bfa3d03d06b4a75d7c4006b28b"
+    },
+    "rtsp-simple-server": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "rtsp-simple-server",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "aler9",
+            "repo": "rtsp-simple-server",
+            "rev": "79562b15ab342bb34d29ffc3cae6a076ed51490a",
+            "sha256": "sha256-ouHkxWLcGGKKKdNTs2qSzuaUGAW73vxvq9EbgiXpzsg=",
+            "type": "github"
+        },
+        "version": "79562b15ab342bb34d29ffc3cae6a076ed51490a"
+    }
+}

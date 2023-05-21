@@ -1,0 +1,1 @@
+Currently, you'll need to manually edit config.txt on FIRMWARE partition with start_x=1 in order to dectect camera.

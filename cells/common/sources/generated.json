@@ -1,0 +1,57 @@
+{
+    "s5cmd": {
+        "cargoLocks": null,
+        "date": "2023-02-02",
+        "extract": null,
+        "name": "s5cmd",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "peak",
+            "repo": "s5cmd",
+            "rev": "3e080613218175bb7b1f62cf45cee16eee901792",
+            "sha256": "sha256-jhjptEDak591vziIj6CIc4I85MM73EVi+OyBAfFOtkg=",
+            "type": "github"
+        },
+        "version": "3e080613218175bb7b1f62cf45cee16eee901792"
+    },
+    "tfenv": {
+        "cargoLocks": null,
+        "date": "2022-10-01",
+        "extract": null,
+        "name": "tfenv",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "tfutils",
+            "repo": "tfenv",
+            "rev": "1ccfddb22005b34eacaf06a9c33f58f14e816ec9",
+            "sha256": "sha256-UNvLJQB47IRcNZpoUGXTW2g63ApijnIB3oUb7Zu4lUY=",
+            "type": "github"
+        },
+        "version": "1ccfddb22005b34eacaf06a9c33f58f14e816ec9"
+    },
+    "transmissionic": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "transmissionic",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-IhbJCv9SWjLspJYv6dBKrooGk+vA7sq1N3WzMne6PEw=",
+            "type": "url",
+            "url": "https://github.com/6c65726f79/Transmissionic/releases/download/v1.8.0/Transmissionic-webui-v1.8.0.zip"
+        },
+        "version": "v1.8.0"
+    }
+}

@@ -1,0 +1,137 @@
+{
+    "klipper": {
+        "cargoLocks": null,
+        "date": "2023-05-14",
+        "extract": null,
+        "name": "klipper",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "Klipper3d",
+            "repo": "klipper",
+            "rev": "7511151ac95acb9f55efffa2ad5780bf2683d977",
+            "sha256": "sha256-yceqf3kO2wJks8eKTffFYjuxkPKFWkOJpAaL3pRiDpQ=",
+            "type": "github"
+        },
+        "version": "7511151ac95acb9f55efffa2ad5780bf2683d977"
+    },
+    "klipper-led_effect": {
+        "cargoLocks": null,
+        "date": "2023-02-04",
+        "extract": null,
+        "name": "klipper-led_effect",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "julianschill",
+            "repo": "klipper-led_effect",
+            "rev": "35cf587fe958fe15a07c11b60564856582890460",
+            "sha256": "sha256-AZase17sO85Bp14DocUn+m6jT8P5ABXBJFdH7t4ANog=",
+            "type": "github"
+        },
+        "version": "35cf587fe958fe15a07c11b60564856582890460"
+    },
+    "klipper-screen": {
+        "cargoLocks": null,
+        "date": "2023-05-18",
+        "extract": null,
+        "name": "klipper-screen",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "jordanruthe",
+            "repo": "KlipperScreen",
+            "rev": "6b62adbfef7787d6012691992b63d6e9e2b222d7",
+            "sha256": "sha256-BtaQCu9kxQQvYAnEQ+HWR8zevXldbHXdGLqwjj+B4nE=",
+            "type": "github"
+        },
+        "version": "6b62adbfef7787d6012691992b63d6e9e2b222d7"
+    },
+    "mainsail": {
+        "cargoLocks": null,
+        "date": "2023-05-18",
+        "extract": null,
+        "name": "mainsail",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "mainsail-crew",
+            "repo": "mainsail",
+            "rev": "84814080291e6f037230491c3e273ddd49ed6e53",
+            "sha256": "sha256-/FJoQFIWJFqBK7ILo2QPoTrEN7uqWP1HI/Emd7Ds5xI=",
+            "type": "github"
+        },
+        "version": "84814080291e6f037230491c3e273ddd49ed6e53"
+    },
+    "moonraker": {
+        "cargoLocks": null,
+        "date": "2023-05-07",
+        "extract": null,
+        "name": "moonraker",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "Arksine",
+            "repo": "moonraker",
+            "rev": "b21f177e951f70a0967b4967b1d43d2bfde02e1b",
+            "sha256": "sha256-QXsN+wQYxPHllvJTyBbAfGsVAsR8nYzdrZHkh01O0+Q=",
+            "type": "github"
+        },
+        "version": "b21f177e951f70a0967b4967b1d43d2bfde02e1b"
+    },
+    "moonraker-telegram-bot": {
+        "cargoLocks": null,
+        "date": "2023-05-13",
+        "extract": null,
+        "name": "moonraker-telegram-bot",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "nlef",
+            "repo": "moonraker-telegram-bot",
+            "rev": "b1285e0155040b92fba34b80f07c63dda91dfa5b",
+            "sha256": "sha256-+fy0NUP8XTCs4KGIq5dsgF558d9NXOmFFGT7CkT5bN0=",
+            "type": "github"
+        },
+        "version": "b1285e0155040b92fba34b80f07c63dda91dfa5b"
+    },
+    "python-networkmanager": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "python-networkmanager",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-3m65IdlKunVJ9CjtKzqkgqXVQ+y2lly6oPu1VasxudU=",
+            "type": "url",
+            "url": "https://pypi.io/packages/source/p/python-networkmanager/python-networkmanager-2.2.tar.gz"
+        },
+        "version": "2.2"
+    }
+}
