@@ -1,7 +1,7 @@
 repository:
-  allow_merge_commit: false
+  allow_merge_commit: true
   allow_rebase_merge: true
-  allow_squash_merge: false
+  allow_squash_merge: true
   default_branch: master
   delete_branch_on_merge: true
   description: The Hive - The secretly open NixOS-Society

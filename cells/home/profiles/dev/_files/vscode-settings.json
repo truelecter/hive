@@ -1,6 +1,6 @@
 {
   "[yaml]": {
-      "editor.formatOnSave": false
+    "editor.formatOnSave": false
   },
   "yaml.format.singleQuote": true,
 
@@ -13,10 +13,10 @@
   "explorer.confirmDelete": false,
   "files.eol": "\n",
   "files.exclude": {
-      "**/.classpath": true,
-      "**/.factorypath": true,
-      "**/.project": true,
-      "**/.settings": true
+    "**/.classpath": true,
+    "**/.factorypath": true,
+    "**/.project": true,
+    "**/.settings": true
   },
   "files.trimTrailingWhitespace": true,
 
@@ -37,7 +37,7 @@
   "workbench.preferredDarkColorTheme": "Abyss",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.editorAssociations": {
-      "*.ipynb": "jupyter.notebook.ipynb"
+    "*.ipynb": "jupyter.notebook.ipynb"
   },
 
   "git.autofetch": true,
@@ -45,13 +45,13 @@
   "git.enableSmartCommit": true,
   "git.ignoreRebaseWarning": true,
   "gitlens.advanced.messages": {
-      "suppressCreatePullRequestPrompt": true
+    "suppressCreatePullRequestPrompt": true
   },
   "gitlens.gitCommands.skipConfirmations": [
-      "fetch:command",
-      "stash-apply:command",
-      "stash-push:command",
-      "switch:command"
+    "fetch:command",
+    "stash-apply:command",
+    "stash-push:command",
+    "switch:command"
   ],
   "gitlens.views.branches.branches.layout": "list",
 

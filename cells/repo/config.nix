@@ -40,6 +40,7 @@ in {
       export NODE_PATH=${inputs.nixpkgs.nodePackages.prettier-plugin-toml}/lib/node_modules:$NODE_PATH
     '';
     data = {
+      global.excludes = ["cells/*/sources/generated.*" "cells/secrets/*"];
       formatter = {
         nix = {
           command = "alejandra";
@@ -106,8 +107,8 @@ in {
         # homepage = "CONFIGURE-ME";
         # topics = "CONFIGURE-ME";
         default_branch = "master";
-        allow_squash_merge = false;
-        allow_merge_commit = false;
+        allow_squash_merge = true;
+        allow_merge_commit = true;
         allow_rebase_merge = true;
         delete_branch_on_merge = true;
         private = false;

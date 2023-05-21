@@ -32,7 +32,6 @@ fetch.github = "bubbleboy14/registeredeventlistener"
 src.pypi = "wsaccel"
 fetch.pypi = "wsaccel"
 
-
 [mainsail]
 src.git = "https://github.com/mainsail-crew/mainsail"
 src.branch = "develop"

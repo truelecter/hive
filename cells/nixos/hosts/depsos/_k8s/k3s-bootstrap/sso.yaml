@@ -8,5 +8,5 @@ roleRef:
   kind: ClusterRole
   name: cluster-admin
 subjects:
-- kind: Group
-  name: K8s admins
+  - kind: Group
+    name: K8s admins
