@@ -2,7 +2,7 @@
   inputs,
   cell,
 }: let
-  k8s = import inputs.latest {
+  k8s = import inputs.k8s {
     inherit (inputs.nixpkgs) system;
     config.allowUnfree = true;
   };

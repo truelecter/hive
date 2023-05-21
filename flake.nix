@@ -46,7 +46,7 @@
   # nixpkgs & home-manager
   inputs = {
     latest.url = "github:nixos/nixpkgs/nixos-unstable";
-    k8s.url = "github:nixos/nixpkgs/3933d8bb9120573c0d8d49dc5e890cb211681490";
+    k8s.url = "github:nixos/nixpkgs/3005f20ce0aaa58169cdee57c8aa12e5f1b6e1b3";
     nixos.url = "github:nixos/nixpkgs/release-22.11";
     nixpkgs.follows = "nixos";
 
