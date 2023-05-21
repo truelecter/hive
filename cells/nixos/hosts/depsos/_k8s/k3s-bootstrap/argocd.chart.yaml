@@ -11,6 +11,9 @@ spec:
   bootstrap: true
   targetNamespace: argocd
   valuesContent: |-
+    configs:
+      secret:
+        createSecret: false
     server:
       service:
         type: LoadBalancer
