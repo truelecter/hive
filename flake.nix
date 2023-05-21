@@ -143,6 +143,9 @@
       nixosConfigurations = hive.collect self "nixosConfigurations";
       homeConfigurations = hive.collect self "homeConfigurations";
       darwinConfigurations = hive.collect self "darwinConfigurations";
+    }
+    {
+      darwinConfigurations.squadbook = self.darwinConfigurations.darwin-squadbook;
     };
   # --- Flake Local Nix Configuration ----------------------------
   # nixConfig = {
