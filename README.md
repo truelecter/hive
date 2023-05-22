@@ -2,12 +2,12 @@
 
 This repository is home to the nix code that builds my systems.
 
-[![octoprint](https://img.shields.io/cirrus/github/truelecter/infra?label=octoprint&logo=nixos&logoColor=white&task=Build%20octoprint)][octoprint]
-[![depsos](https://img.shields.io/cirrus/github/truelecter/infra?label=depsos&logo=nixos&logoColor=white&task=Build%20depsos)][depsos]
-[![hyperos](https://img.shields.io/cirrus/github/truelecter/infra?label=hyperos&logo=nixos&logoColor=white&task=Build%20hyperos)][hyperos]
-[![nas](https://img.shields.io/cirrus/github/truelecter/infra?label=nas&logo=nixos&logoColor=white&task=Build%20nas)][nas]
-[![squadbook](https://img.shields.io/cirrus/github/truelecter/infra?label=squadbook&logo=nixos&logoColor=white&task=Build%20squadbook)][squadbook]
-[![oracle](https://img.shields.io/cirrus/github/truelecter/infra?label=oracle&logo=nixos&logoColor=white&task=Build%20oracle)][oracle]
+[![octoprint](https://img.shields.io/cirrus/github/truelecter/hive?label=octoprint&logo=nixos&logoColor=white&task=Build%20octoprint)][octoprint]
+[![depsos](https://img.shields.io/cirrus/github/truelecter/hive?label=depsos&logo=nixos&logoColor=white&task=Build%20depsos)][depsos]
+[![hyperos](https://img.shields.io/cirrus/github/truelecter/hive?label=hyperos&logo=nixos&logoColor=white&task=Build%20hyperos)][hyperos]
+[![nas](https://img.shields.io/cirrus/github/truelecter/hive?label=nas&logo=nixos&logoColor=white&task=Build%20nas)][nas]
+[![squadbook](https://img.shields.io/cirrus/github/truelecter/hive?label=squadbook&logo=nixos&logoColor=white&task=Build%20squadbook)][squadbook]
+[![oracle](https://img.shields.io/cirrus/github/truelecter/hive?label=oracle&logo=nixos&logoColor=white&task=Build%20oracle)][oracle]
 
 ## Why Nix?
 
