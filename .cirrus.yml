@@ -16,8 +16,9 @@ linux_task:
 
   container:
     image: nixos/nix:2.15.0
-    cpu: 8
-    memory: 12G
+    cpu: 4
+    memory: 4G
+
 
   prepare_nix_env_script:
   - nix-env -iA cachix -f https://cachix.org/api/v1/install
@@ -63,8 +64,8 @@ linux_aarch64_task:
 
   arm_container:
     image: nixos/nix:2.15.0
-    cpu: 8
-    memory: 12G
+    cpu: 4
+    memory: 4G
 
   # TODO add cache?
   # nix_cache:
