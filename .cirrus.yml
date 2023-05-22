@@ -19,31 +19,13 @@ linux_task:
     cpu: 8
     memory: 12G
 
-  # compute_engine_instance:
-  #   image_project: ubuntu-os-cloud
-  #   image: family/ubuntu-2004-lts
-  #   platform: linux
-  #   architecture: amd64
-  #   cpu: 8
-  #   memory: 12G
-  #   disk: 200
-  #   nested_virtualization: true
-
-  # TODO add cache?
-  # nix_cache:
-
-  # prepare_container_env_script:
-  # - apt update
-  # - apt -y install sudo jq curl xz-utils openssh-server
-  # install_nix_script: ./.ci/install-nix.sh
-  # setup_binfmt_script: docker run --privileged --rm tonistiigi/binfmt --install all
   prepare_nix_env_script:
   - nix-env -iA cachix -f https://cachix.org/api/v1/install
   # TODO pin or something
   - nix-channel --add https://nixos.org/channels/nixpkgs-unstable
   - nix-channel --update
   - git config --global --add safe.directory "$(pwd)"
-  prepare_cachix_script:
+
   - echo $CACHIX_AUTH_TOKEN | cachix authtoken --stdin
   - cachix use nix-community
   - cachix use mic92
@@ -59,12 +41,12 @@ linux_task:
   - sleep 60
 
   matrix:
-  # - name: Build nas
-  #   env:
-  #     NIXOS_HOST: nas
-  # - name: Build depsos
-  #   env:
-  #     NIXOS_HOST: depsos
+  - name: Build nas
+    env:
+      NIXOS_HOST: nas
+  - name: Build depsos
+    env:
+      NIXOS_HOST: depsos
   - name: Build hyperos
     env:
       NIXOS_HOST: hyperos
@@ -79,29 +61,62 @@ linux_aarch64_task:
     HOME: "/root"
     PATH: "$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/per-user/$USER/profile/bin:$PATH"
 
-  container:
+  arm_container:
     image: nixos/nix:2.15.0
     cpu: 8
     memory: 12G
 
-  # compute_engine_instance:
-  #   image_project: ubuntu-os-cloud
-  #   image: family/ubuntu-2004-lts-arm64
-  #   platform: linux
-  #   architecture: arm64
-  #   cpu: 8
-  #   memory: 12G
-  #   disk: 200
-  #   nested_virtualization: true
+  # TODO add cache?
+  # nix_cache:
+
+  prepare_env_script:
+  - nix-env -iA cachix -f https://cachix.org/api/v1/install
+  # TODO pin or something
+  - nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+  - nix-channel --update
+  - git config --global --add safe.directory "$(pwd)"
+
+  - echo $CACHIX_AUTH_TOKEN | cachix authtoken --stdin
+  - cachix use nix-community
+  - cachix use mic92
+  - cachix use nrdxp
+  - cachix use truelecter
+
+  cachix_background_script: cachix watch-store --compression-method xz --compression-level 9 --jobs 2 truelecter
+
+  build_systems_script:
+  - $NIX build ".#nixosConfigurations.nixos-$NIXOS_HOST.config.system.build.toplevel"
+  - $NIX develop --command "menu"
+  # for cachix to finish uploading things
+  - sleep 60
+
+  matrix:
+  - name: Build octoprint
+    env:
+      NIXOS_HOST: octoprint
+  - name: Build oracle
+    env:
+      NIXOS_HOST: oracle
+
+macos_task:
+  name: Build Nix-Darwin system
+  timeout_in: 120m
+
+  env:
+    NIXOS_HOST: nonexisting
+    USER: "admin"
+    HOME: "/Users/admin"
+    PATH: "$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/per-user/$USER/profile/bin:$PATH"
+    NIX_SSL_CERT_FILE: /nix/var/nix/profiles/default/etc/ssl/certs/ca-bundle.crt
+    CIRRUS_SHELL: "/bin/zsh"
+
+  macos_instance:
+    image: ghcr.io/cirruslabs/macos-ventura-xcode:14.2
 
   # TODO add cache?
   # nix_cache:
 
-  # prepare_container_env_script:
-  # - apt update
-  # - apt -y install sudo jq curl xz-utils openssh-server
-  # install_nix_script: ./.ci/install-nix.sh
-  # setup_binfmt_script: docker run --privileged --rm tonistiigi/binfmt --install all
+  install_nix_script: ./.ci/install-nix.sh
   prepare_nix_env_script:
   - nix-env -iA cachix -f https://cachix.org/api/v1/install
   # TODO pin or something
@@ -115,64 +130,16 @@ linux_aarch64_task:
   - cachix use nrdxp
   - cachix use truelecter
 
-  cachix_background_script: cachix watch-store --compression-method xz --compression-level 9 --jobs 2 truelecter
+  cachix_background_script:
+  - cachix watch-store --compression-method xz --compression-level 9 --jobs 2 truelecter
 
   build_script:
-  - $NIX build ".#nixosConfigurations.nixos-$NIXOS_HOST.config.system.build.toplevel"
-  - $NIX develop --command "menu"
+  - nix build ".#darwinConfigurations.darwin-$NIXOS_HOST.config.system.build.toplevel"
+  - nix develop --command "menu"
   # for cachix to finish uploading things
   - sleep 60
 
   matrix:
-  # - name: Build octoprint
-  #   env:
-  #     NIXOS_HOST: octoprint
-  - name: Build oracle
+  - name: Build squadbook
     env:
-      NIXOS_HOST: oracle
-
-# macos_task:
-#   name: Build Nix-Darwin system
-#   timeout_in: 120m
-
-#   env:
-#     NIXOS_HOST: nonexisting
-#     USER: "admin"
-#     HOME: "/Users/admin"
-#     PATH: "$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/per-user/$USER/profile/bin:$PATH"
-#     NIX_SSL_CERT_FILE: /nix/var/nix/profiles/default/etc/ssl/certs/ca-bundle.crt
-#     CIRRUS_SHELL: "/bin/zsh"
-
-#   macos_instance:
-#     image: ghcr.io/cirruslabs/macos-ventura-xcode:14.2
-
-#   # TODO add cache?
-#   # nix_cache:
-
-#   install_nix_script: ./.ci/install-nix.sh
-#   prepare_nix_env_script:
-#   - nix-env -iA cachix -f https://cachix.org/api/v1/install
-#   # TODO pin or something
-#   - nix-channel --add https://nixos.org/channels/nixpkgs-unstable
-#   - nix-channel --update
-#   - git config --global --add safe.directory "$(pwd)"
-#   prepare_cachix_script:
-#   - echo $CACHIX_AUTH_TOKEN | cachix authtoken --stdin
-#   - cachix use nix-community
-#   - cachix use mic92
-#   - cachix use nrdxp
-#   - cachix use truelecter
-
-#   cachix_background_script:
-#   - cachix watch-store --compression-method xz --compression-level 9 --jobs 2 truelecter
-
-#   build_script:
-#   - nix build ".#darwinConfigurations.darwin-$NIXOS_HOST.config.system.build.toplevel"
-#   - nix develop --command "menu"
-#   # for cachix to finish uploading things
-#   - sleep 60
-
-#   matrix:
-#   - name: Build squadbook
-#     env:
-#       NIXOS_HOST: squadbook
+      NIXOS_HOST: squadbook
