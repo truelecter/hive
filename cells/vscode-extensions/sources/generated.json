@@ -202,12 +202,12 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "name": "gitlens-2023.5.2112.zip",
-            "sha256": "sha256-u9L3RRX21s9tUUM1Dy/ciEdkev8gMLJLeJLMQfPh9+g=",
+            "name": "gitlens-2023.5.2205.zip",
+            "sha256": "sha256-1j9lLD4VtYgEZadw+AbQNjAAa0W8b89vQpInv0f5b+0=",
             "type": "url",
-            "url": "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2023.5.2112/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2023.5.2205/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "2023.5.2112"
+        "version": "2023.5.2205"
     },
     "\"editorconfig.editorconfig\"": {
         "cargoLocks": null,
@@ -356,12 +356,12 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "name": "dvc-0.8.18.zip",
-            "sha256": "sha256-6vR/EuoZ9Q0h9MmdD2xrjWB3qGXZIzth6IOhpIwBiaE=",
+            "name": "dvc-0.8.19.zip",
+            "sha256": "sha256-rYk7sQtxfP8tNami2DtEiDbxYb5nQaOvMo/PRWdjRHI=",
             "type": "url",
-            "url": "https://iterative.gallery.vsassets.io/_apis/public/gallery/publisher/iterative/extension/dvc/0.8.18/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://iterative.gallery.vsassets.io/_apis/public/gallery/publisher/iterative/extension/dvc/0.8.19/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "0.8.18"
+        "version": "0.8.19"
     },
     "\"ivory-lab.jenkinsfile-support\"": {
         "cargoLocks": null,
@@ -502,6 +502,20 @@
             "url": "https://mads-hartmann.gallery.vsassets.io/_apis/public/gallery/publisher/mads-hartmann/extension/bash-ide-vscode/1.37.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
         "version": "1.37.0"
+    },
+    "\"mkhl.direnv\"": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "\"mkhl.direnv\"",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": "direnv-0.12.1.zip",
+            "sha256": "sha256-i05yQ9SsYzZbYfPT4/dTNX3un4Zv/Nk39KoZKvK5P1I=",
+            "type": "url",
+            "url": "https://mkhl.gallery.vsassets.io/_apis/public/gallery/publisher/mkhl/extension/direnv/0.12.1/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+        },
+        "version": "0.12.1"
     },
     "\"ms-azuretools.vscode-docker\"": {
         "cargoLocks": null,
@@ -706,12 +720,12 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "name": "remote-wsl-0.78.6.zip",
-            "sha256": "sha256-KkZrayJYOaYzKKTi0Gevhn7sAqILkRur85oXAWLmRrU=",
+            "name": "remote-wsl-0.78.7.zip",
+            "sha256": "sha256-tX1SkHzoNA/9YT1qPuY8ekAXmuvKb15DexnL1X3YD6c=",
             "type": "url",
-            "url": "https://ms-vscode-remote.gallery.vsassets.io/_apis/public/gallery/publisher/ms-vscode-remote/extension/remote-wsl/0.78.6/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://ms-vscode-remote.gallery.vsassets.io/_apis/public/gallery/publisher/ms-vscode-remote/extension/remote-wsl/0.78.7/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "0.78.6"
+        "version": "0.78.7"
     },
     "\"ms-vscode-remote.vscode-remote-extensionpack\"": {
         "cargoLocks": null,
@@ -734,12 +748,12 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "name": "cmake-tools-1.15.9.zip",
-            "sha256": "sha256-IuQ5Gyx5a95awVhIZxg/bOrJ5h74fijhV0+M/a/7BA8=",
+            "name": "cmake-tools-1.15.10.zip",
+            "sha256": "sha256-NSDW7hWf5jmzZWB48cNesZSq36zVsO84NV+sVDVfaqU=",
             "type": "url",
-            "url": "https://ms-vscode.gallery.vsassets.io/_apis/public/gallery/publisher/ms-vscode/extension/cmake-tools/1.15.9/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://ms-vscode.gallery.vsassets.io/_apis/public/gallery/publisher/ms-vscode/extension/cmake-tools/1.15.10/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "1.15.9"
+        "version": "1.15.10"
     },
     "\"ms-vscode.cpptools-extension-pack\"": {
         "cargoLocks": null,
@@ -916,12 +930,12 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "name": "vscode-yaml-1.12.2.zip",
-            "sha256": "sha256-EjHQvWiEEfLxM+c/SWAJ2H9ltGEgzMSC84Zyl5u+eqQ=",
+            "name": "vscode-yaml-1.13.0.zip",
+            "sha256": "sha256-8FUVGnUohSCpBUc+4h8yJIH+ICOOhzfuEpGsp7t2Xh0=",
             "type": "url",
-            "url": "https://redhat.gallery.vsassets.io/_apis/public/gallery/publisher/redhat/extension/vscode-yaml/1.12.2/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://redhat.gallery.vsassets.io/_apis/public/gallery/publisher/redhat/extension/vscode-yaml/1.13.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "1.12.2"
+        "version": "1.13.0"
     },
     "\"roscop.activefileinstatusbar\"": {
         "cargoLocks": null,
@@ -1098,12 +1112,12 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "name": "viml-2.1.2.zip",
-            "sha256": "sha256-n91Rj1Rpp7j7gndkt0bV+jT1nRMv7+coVoSL5c7Ii3A=",
+            "name": "viml-2.2.0.zip",
+            "sha256": "sha256-WNwTWJ3fDdIc9gsfOdtAd6Rg3xH0sbs6ONo7fKjtJuI=",
             "type": "url",
-            "url": "https://xadillax.gallery.vsassets.io/_apis/public/gallery/publisher/xadillax/extension/viml/2.1.2/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://xadillax.gallery.vsassets.io/_apis/public/gallery/publisher/xadillax/extension/viml/2.2.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "2.1.2"
+        "version": "2.2.0"
     },
     "\"yzane.markdown-pdf\"": {
         "cargoLocks": null,

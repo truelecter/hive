@@ -317,3 +317,7 @@ fetch.vsmarketplace = "bungcip.better-toml"
 ["ericadamski.carbon-now-sh"]
 src.vsmarketplace = "ericadamski.carbon-now-sh"
 fetch.vsmarketplace = "ericadamski.carbon-now-sh"
+
+["mkhl.direnv"]
+src.vsmarketplace = "mkhl.direnv"
+fetch.vsmarketplace = "mkhl.direnv"

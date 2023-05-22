@@ -78,6 +78,7 @@ in {
       bungcip.better-toml
       mads-hartmann.bash-ide-vscode
       ericadamski.carbon-now-sh
+      mkhl.direnv
     ];
     userSettings =
       lib.recursiveUpdate
