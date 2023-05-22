@@ -77,7 +77,7 @@ linux_aarch64_task:
     image_project: cirrus-images
     image: family/docker-kvm
     platform: linux
-    architecture: aarch64
+    architecture: arm64
     cpu: 8
     memory: 12G
     disk: 200
