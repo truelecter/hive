@@ -1,6 +1,7 @@
 
 env:
   CACHIX_AUTH_TOKEN: ENCRYPTED[b9defe725a79a0699b0f8916ee1e7654a4ef73e0a70ede58b9cc51ec5d8638da982e48e6dd6bfc9c6b3c215fe819c2a5]
+  NIX: nix --extra-experimental-features nix-command --extra-experimental-features flakes
   # CIRRUS_SHELL: "/bin/bash"
 
 linux_task:
@@ -52,8 +53,8 @@ linux_task:
   cachix_background_script: cachix watch-store --compression-method xz --compression-level 9 --jobs 2 truelecter
 
   build_script:
-  - nix build ".#nixosConfigurations.nixos-$NIXOS_HOST.config.system.build.toplevel"
-  - nix develop --command "menu"
+  - $NIX build ".#nixosConfigurations.nixos-$NIXOS_HOST.config.system.build.toplevel"
+  - $NIX develop --command "menu"
   # for cachix to finish uploading things
   - sleep 60
 
@@ -117,8 +118,8 @@ linux_aarch64_task:
   cachix_background_script: cachix watch-store --compression-method xz --compression-level 9 --jobs 2 truelecter
 
   build_script:
-  - nix build ".#nixosConfigurations.nixos-$NIXOS_HOST.config.system.build.toplevel"
-  - nix develop --command "menu"
+  - $NIX build ".#nixosConfigurations.nixos-$NIXOS_HOST.config.system.build.toplevel"
+  - $NIX develop --command "menu"
   # for cachix to finish uploading things
   - sleep 60
 
