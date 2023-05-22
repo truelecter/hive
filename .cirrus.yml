@@ -1,7 +1,7 @@
 
 env:
   CACHIX_AUTH_TOKEN: ENCRYPTED[b9defe725a79a0699b0f8916ee1e7654a4ef73e0a70ede58b9cc51ec5d8638da982e48e6dd6bfc9c6b3c215fe819c2a5]
-  CIRRUS_SHELL: "/bin/bash"
+  # CIRRUS_SHELL: "/bin/bash"
 
 linux_task:
   name: Build NixOS x86_64 systems
