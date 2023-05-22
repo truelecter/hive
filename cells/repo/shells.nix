@@ -80,7 +80,10 @@ in
     default = {
       name = "infra";
 
-      imports = [std.std.devshellProfiles.default];
+      imports = [
+        ./_sops.nix
+        std.std.devshellProfiles.default
+      ];
 
       nixago = [
         (std.lib.cfg.conform {data = {inherit (inputs) cells;};})
