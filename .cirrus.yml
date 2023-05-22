@@ -17,7 +17,7 @@ linux_task:
   container:
     image: nixos/nix:2.15.0
     cpu: 4
-    memory: 4G
+    memory: 8G
 
 
   prepare_nix_env_script:
@@ -65,7 +65,7 @@ linux_aarch64_task:
   arm_container:
     image: nixos/nix:2.15.0
     cpu: 4
-    memory: 4G
+    memory: 8G
 
   # TODO add cache?
   # nix_cache:
