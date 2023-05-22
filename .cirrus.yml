@@ -15,7 +15,7 @@ linux_task:
 
   compute_engine_instance:
     image_project: ubuntu-os-cloud
-    image_family: ubuntu-2004-lts
+    image: family/ubuntu-2004-lts
     platform: linux
     architecture: amd64
     cpu: 8
@@ -75,7 +75,7 @@ linux_aarch64_task:
 
   compute_engine_instance:
     image_project: ubuntu-os-cloud
-    image_family: ubuntu-2004-lts-arm64
+    image: family/ubuntu-2004-lts-arm64
     platform: linux
     architecture: arm64
     cpu: 8
