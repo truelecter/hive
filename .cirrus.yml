@@ -15,7 +15,7 @@ linux_task:
 
   compute_engine_instance:
     image_project: cirrus-images
-    image: family/docker-kvm
+    image: ubuntu-2004-lts/ubuntu-2004-focal-v20230302
     platform: linux
     architecture: amd64
     cpu: 8
@@ -75,7 +75,7 @@ linux_aarch64_task:
 
   compute_engine_instance:
     image_project: cirrus-images
-    image: family/docker-kvm
+    image: ubuntu-2004-lts-arm64/ubuntu-2004-focal-arm64-v20230302
     platform: linux
     architecture: arm64
     cpu: 8
