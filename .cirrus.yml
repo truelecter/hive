@@ -14,7 +14,7 @@ linux_task:
     PATH: "$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/per-user/$USER/profile/bin:$PATH"
 
   compute_engine_instance:
-    # image_project: ubuntu-os-cloud
+    image_project: cirrus-images
     image_family: ubuntu-2004-lts
     platform: linux
     architecture: amd64
@@ -74,7 +74,7 @@ linux_aarch64_task:
     PATH: "$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/per-user/$USER/profile/bin:$PATH"
 
   compute_engine_instance:
-    # image_project: ubuntu-os-cloud
+    image_project: cirrus-images
     image_family: ubuntu-2004-lts-arm64
     platform: linux
     architecture: arm64
