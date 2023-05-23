@@ -6,7 +6,7 @@ env:
 
 common_task_template: &REGULAR_TASK_TEMPLATE
   timeout_in: 120m
-  skip: "!changesInclude('.cirrus.yml', 'flake.{nix,lock}', 'cells/**', '.ci/*') || $CIRRUS_BRANCH == 'auto/upgrade-dependencies'"
+  skip: "!changesInclude('.cirrus.yml', 'flake.{nix,lock}', 'cells/**', '.ci/*') || ($CIRRUS_BRANCH == 'auto/upgrade-dependencies' && $CIRRUS_PR == '')"
 
 common_scripts_template: &REGULAR_SCRIPTS_TEMPLATE
   # TODO add cache?
