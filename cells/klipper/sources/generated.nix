@@ -25,13 +25,13 @@
   };
   klipper-screen = {
     pname = "klipper-screen";
-    version = "6781043942fe7241e65d784b144dc6df5ce6dcd5";
+    version = "5d4459ff0b4716f46ddacecab9c692cd6ecff199";
     src = fetchFromGitHub ({
       owner = "jordanruthe";
       repo = "KlipperScreen";
-      rev = "6781043942fe7241e65d784b144dc6df5ce6dcd5";
+      rev = "5d4459ff0b4716f46ddacecab9c692cd6ecff199";
       fetchSubmodules = false;
-      sha256 = "sha256-WpNDcGvCfqLbWHm9AU/rh+yUL4W7svTwi0miyz5tSCQ=";
+      sha256 = "sha256-S6nbAF56uUMWubSQ39EqietWStW7WhTtEm1zju1sDII=";
     });
   };
   mainsail = {

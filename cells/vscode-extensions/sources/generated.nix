@@ -214,7 +214,7 @@
     src = fetchurl {
       url = "https://hashicorp.gallery.vsassets.io/_apis/public/gallery/publisher/hashicorp/extension/terraform/2.26.2023051115/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
       name = "terraform-2.26.2023051115.zip";
-      sha256 = "sha256-8RvVJh0GgTRMUolmH1j1qA5qZoBopkS2tv9s227cSic=";
+      sha256 = "sha256-VDaxfDdCQT1f5A1xt/gcc9pNE8H38l7/Vz8p4Yhq0DU=";
     };
   };
   "\"ipedrazas.kubernetes-snippets\"" = {
@@ -570,11 +570,11 @@
   };
   "\"redhat.java\"" = {
     pname = "\"redhat.java\"";
-    version = "1.19.2023052004";
+    version = "1.19.2023052304";
     src = fetchurl {
-      url = "https://redhat.gallery.vsassets.io/_apis/public/gallery/publisher/redhat/extension/java/1.19.2023052004/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "java-1.19.2023052004.zip";
-      sha256 = "sha256-S28pP3VhDba0vr7f86ffKTJbDsVv3mSM8CYNJNoCsec=";
+      url = "https://redhat.gallery.vsassets.io/_apis/public/gallery/publisher/redhat/extension/java/1.19.2023052304/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "java-1.19.2023052304.zip";
+      sha256 = "sha256-uPCDXm3CZdAkk/6jZ6w2bPENulAsOMw6pWrVifasoxA=";
     };
   };
   "\"redhat.vscode-commons\"" = {

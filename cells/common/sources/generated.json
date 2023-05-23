@@ -1,7 +1,6 @@
 {
     "s5cmd": {
         "cargoLocks": null,
-        "date": "2023-02-02",
         "extract": null,
         "name": "s5cmd",
         "passthru": null,
@@ -21,7 +20,6 @@
     },
     "tfenv": {
         "cargoLocks": null,
-        "date": "2022-10-01",
         "extract": null,
         "name": "tfenv",
         "passthru": null,
@@ -41,7 +39,6 @@
     },
     "transmissionic": {
         "cargoLocks": null,
-        "date": null,
         "extract": null,
         "name": "transmissionic",
         "passthru": null,
