@@ -52,7 +52,6 @@
       shopt -s nullglob
       CELLS=($PRJ_ROOT/cells/*/)
       shopt -u nullglob
-      echo "''${CELLS[@]}"
     else
       CELL_PATH="$PRJ_ROOT/cells/$CELL/"
 
@@ -126,5 +125,13 @@ in
         ]
         ++ l.optional (nixpkgs.stdenv.hostPlatform.isLinux && !nixpkgs.stdenv.buildPlatform.isDarwin)
         (infra inputs.nixos-generators.defaultPackage.${nixpkgs.system});
+    };
+
+    ci = {
+      name = "ci";
+
+      packages = [
+        update-cell-sources
+      ];
     };
   }
