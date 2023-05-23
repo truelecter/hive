@@ -1,7 +1,6 @@
 {
     "libcamera": {
         "cargoLocks": null,
-        "date": "2023-03-13",
         "extract": null,
         "name": "libcamera",
         "passthru": null,
@@ -21,7 +20,6 @@
     },
     "libcamera-apps": {
         "cargoLocks": null,
-        "date": "2023-05-11",
         "extract": null,
         "name": "libcamera-apps",
         "passthru": null,
@@ -41,7 +39,6 @@
     },
     "rtsp-simple-server": {
         "cargoLocks": null,
-        "date": null,
         "extract": null,
         "name": "rtsp-simple-server",
         "passthru": null,
