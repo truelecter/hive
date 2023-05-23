@@ -6,7 +6,7 @@ env:
 
 common_task_template: &REGULAR_TASK_TEMPLATE
   timeout_in: 120m
-  only_if: "changesInclude('.cirrus.yml', 'flake.{nix,lock}', 'cells/**', '.ci/*') && $CIRRUS_REPO_OWNER == 'truelecter' && $CIRRUS_PR == ''"
+  only_if: "changesInclude('.cirrus.yml', 'flake.{nix,lock}', 'cells/**', '.ci/*')"
   # auto_cancellation: "$CIRRUS_BRANCH != 'master' || $CIRRUS_BRANCH == 'master'"
 
 common_scripts_template: &REGULAR_SCRIPTS_TEMPLATE
