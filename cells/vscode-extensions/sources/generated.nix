@@ -228,11 +228,11 @@
   };
   "\"iterative.dvc\"" = {
     pname = "\"iterative.dvc\"";
-    version = "0.8.19";
+    version = "0.8.20";
     src = fetchurl {
-      url = "https://iterative.gallery.vsassets.io/_apis/public/gallery/publisher/iterative/extension/dvc/0.8.19/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "dvc-0.8.19.zip";
-      sha256 = "sha256-rYk7sQtxfP8tNami2DtEiDbxYb5nQaOvMo/PRWdjRHI=";
+      url = "https://iterative.gallery.vsassets.io/_apis/public/gallery/publisher/iterative/extension/dvc/0.8.20/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "dvc-0.8.20.zip";
+      sha256 = "sha256-T98bP4VER7sxAoT1fkocInkQtD3pmSn6mApw8wtCWew=";
     };
   };
   "\"ivory-lab.jenkinsfile-support\"" = {
@@ -570,11 +570,11 @@
   };
   "\"redhat.java\"" = {
     pname = "\"redhat.java\"";
-    version = "1.19.2023052004";
+    version = "1.19.2023052304";
     src = fetchurl {
-      url = "https://redhat.gallery.vsassets.io/_apis/public/gallery/publisher/redhat/extension/java/1.19.2023052004/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
-      name = "java-1.19.2023052004.zip";
-      sha256 = "sha256-S28pP3VhDba0vr7f86ffKTJbDsVv3mSM8CYNJNoCsec=";
+      url = "https://redhat.gallery.vsassets.io/_apis/public/gallery/publisher/redhat/extension/java/1.19.2023052304/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "java-1.19.2023052304.zip";
+      sha256 = "sha256-uPCDXm3CZdAkk/6jZ6w2bPENulAsOMw6pWrVifasoxA=";
     };
   };
   "\"redhat.vscode-commons\"" = {
