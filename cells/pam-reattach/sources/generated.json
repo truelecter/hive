@@ -1,7 +1,6 @@
 {
     "pam-reattach": {
         "cargoLocks": null,
-        "date": "2022-07-15",
         "extract": null,
         "name": "pam-reattach",
         "passthru": null,
