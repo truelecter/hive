@@ -27,12 +27,13 @@ jobs:
           nix develop '.#ci' --command bash -c "update-cell-sources ALL"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
-          git commit -am "Updated cell sources"
+          git commit -am "deps(sources): Updated cell sources"
       - name: Update flake.lock
         uses: DeterminateSystems/update-flake-lock@v19
         with:
-          commit-msg: "flake.lock: Update"
-          pr-title: "Update flake.lock"
+          commit-msg: "deps(flake-lock): Updated flake.lock"
+          pr-title: "[Automated] Update 'flake.lock' and sources"
+          branch: "auto/upgrade-dependencies"
           pr-labels: |
             dependencies
             automated
