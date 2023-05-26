@@ -10,8 +10,7 @@
     common.core
     common.cachix
     inputs.home.nixosModules.home-manager
-    inputs.cells.tailscale.nixosModules.tailscale-autoconnect
-    inputs.cells.tailscale.nixosModules.tailscale-tls
+    inputs.cells.tailscale.nixosModules.tailscale
   ];
 
   #region nix options
