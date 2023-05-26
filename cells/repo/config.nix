@@ -112,7 +112,7 @@ in {
         default_branch = "master";
         allow_squash_merge = true;
         allow_merge_commit = true;
-        allow_rebase_merge = true;
+        allow_rebase_merge = false;
         delete_branch_on_merge = true;
         private = false;
         has_issues = false;

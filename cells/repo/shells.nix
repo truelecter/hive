@@ -85,7 +85,37 @@ in
       ];
 
       nixago = [
-        (std.lib.cfg.conform {data = {inherit (inputs) cells;};})
+        (std.lib.cfg.conform {
+          data = {
+            inherit (inputs) cells;
+            commit = {
+              header = {
+                length = 89;
+                imperative = true;
+              };
+              body.required = false;
+              gpg.required = true;
+              maximumOfOneCommit = false;
+              conventional = {
+                types = [
+                  "fix"
+                  "feat"
+                  "build"
+                  "chore"
+                  "ci"
+                  "docs"
+                  "style"
+                  "refactor"
+                  "test"
+                ];
+                scopes = [
+                  "ci"
+                ];
+                descriptionLength = 72;
+              };
+            };
+          };
+        })
         config.treefmt
         config.editorconfig
         config.githubsettings
