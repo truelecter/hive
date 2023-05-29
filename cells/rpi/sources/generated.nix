@@ -14,13 +14,13 @@
   };
   libcamera-apps = {
     pname = "libcamera-apps";
-    version = "6e0c66a1b2c3f6bfa3d03d06b4a75d7c4006b28b";
+    version = "a6267d51949d0602eedf60f3ddf8c6685f652812";
     src = fetchFromGitHub ({
       owner = "raspberrypi";
       repo = "libcamera-apps";
-      rev = "6e0c66a1b2c3f6bfa3d03d06b4a75d7c4006b28b";
+      rev = "a6267d51949d0602eedf60f3ddf8c6685f652812";
       fetchSubmodules = false;
-      sha256 = "sha256-jfqS6518G8RKzQz8FS9xVBQakGX39C4OO+0l/MHmNU4=";
+      sha256 = "sha256-Cjdhj5H+qSQ/eMON5FsmIe7dw0rujxBWleLzOEwIHLE=";
     });
   };
   rtsp-simple-server = {
