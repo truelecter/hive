@@ -33,7 +33,7 @@ in {
     enable = mkEnableOption "Tailscale client daemon";
 
     authFile = mkOption {
-      type = types.str;
+      type = types.path;
       example = "/run/secrets/tailscale-key";
       description = "File location store tailscale auth-key";
     };
