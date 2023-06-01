@@ -8,9 +8,9 @@
   ...
 }: let
   exe = stdenv.mkDerivation rec {
-    pname = "rtsp-simple-server-exe";
+    pname = "mediamtx-exe";
 
-    inherit (sources.rtsp-simple-server) version src;
+    inherit (sources.mediamtx) version src;
 
     nativeBuildInputs = [
       pkg-config
@@ -33,9 +33,9 @@
   };
 in
   buildGoModule rec {
-    pname = "rtsp-simple-server";
+    pname = "mediamtx";
 
-    inherit (sources.rtsp-simple-server) version src;
+    inherit (sources.mediamtx) version src;
 
     vendorSha256 = "sha256-ZX8o7zakdw4IXkSOqvugk2zv5u2w0B5XhxENrTeoSKM=";
 
@@ -47,7 +47,7 @@ in
     # ];
 
     ldflags = [
-      "-X github.com/aler9/rtsp-simple-server/internal/core.version=v${version}"
+      "-X github.com/aler9/mediamtx/internal/core.version=v${version}"
     ];
 
     # preBuild = ''

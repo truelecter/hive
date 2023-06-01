@@ -31,7 +31,7 @@ in {
       (final: prev: {
         deviceTree.applyOverlays = prev.callPackage ./_apply-overlays-dtmerge.nix {};
         makeModulesClosure = x: prev.makeModulesClosure (x // {allowMissing = true;});
-        linuxPackages_rpi4 = (import inputs.latest {inherit system;}).linuxPackages_rpi4;
+        # linuxPackages_rpi4 = (import inputs.latest {inherit system;}).linuxPackages_rpi4;
       })
       inputs.cells.klipper.overlays.klipper
     ];

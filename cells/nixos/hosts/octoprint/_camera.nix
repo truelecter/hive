@@ -14,7 +14,7 @@
 
   tl.services.tailscale-tls.enable = true;
 
-  services.rtsp-simple-server = {
+  services.mediamtx = {
     enable = true;
     settings = {
       hlsAlwaysRemux = true;
@@ -46,7 +46,7 @@
     SUBSYSTEM=="dma_heap", GROUP="dma-heap", MODE="0660"
   '';
 
-  systemd.services.rtsp-simple-server = {
+  systemd.services.mediamtx = {
     after = ["tailscale-tls.service"];
     partOf = ["tailscale-tls.service"];
 
