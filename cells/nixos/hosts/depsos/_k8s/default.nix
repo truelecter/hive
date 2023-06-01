@@ -34,7 +34,7 @@
     ];
   };
 
-  systemd.services.k3s.serviceConfig.EnvironmentFile = config.sops.secrets.k3s-depsos-external-ip.path;
+  systemd.services.k3s.serviceConfig.EnvironmentFile = lib.mkForce config.sops.secrets.k3s-depsos-external-ip.path;
 
   virtualisation.containerd = {
     settings = {

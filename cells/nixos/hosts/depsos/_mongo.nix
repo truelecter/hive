@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   services.mongodb = {
-    enable = true;
+    enable = false;
     bind_ip = "0.0.0.0";
     dbpath = "/srv/db/mongo";
   };
