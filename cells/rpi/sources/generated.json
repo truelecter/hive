@@ -1,6 +1,7 @@
 {
     "libcamera": {
         "cargoLocks": null,
+        "date": "2023-03-13",
         "extract": null,
         "name": "libcamera",
         "passthru": null,
@@ -20,6 +21,7 @@
     },
     "libcamera-apps": {
         "cargoLocks": null,
+        "date": "2023-05-25",
         "extract": null,
         "name": "libcamera-apps",
         "passthru": null,
@@ -37,10 +39,11 @@
         },
         "version": "a6267d51949d0602eedf60f3ddf8c6685f652812"
     },
-    "rtsp-simple-server": {
+    "mediamtx": {
         "cargoLocks": null,
+        "date": "2023-06-01",
         "extract": null,
-        "name": "rtsp-simple-server",
+        "name": "mediamtx",
         "passthru": null,
         "pinned": false,
         "src": {
@@ -48,12 +51,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "owner": "aler9",
-            "repo": "rtsp-simple-server",
-            "rev": "79562b15ab342bb34d29ffc3cae6a076ed51490a",
-            "sha256": "sha256-ouHkxWLcGGKKKdNTs2qSzuaUGAW73vxvq9EbgiXpzsg=",
+            "owner": "bluenviron",
+            "repo": "mediamtx",
+            "rev": "34e33fe5136eaa280ea1ccddc77e0dafbe8c5952",
+            "sha256": "sha256-xch5ijadUS4Y6R2NjSDESAJkWRQA48Cj5uNMeEOjuw8=",
             "type": "github"
         },
-        "version": "79562b15ab342bb34d29ffc3cae6a076ed51490a"
+        "version": "34e33fe5136eaa280ea1ccddc77e0dafbe8c5952"
     }
 }

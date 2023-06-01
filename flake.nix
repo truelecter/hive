@@ -2,43 +2,56 @@
   description = "The Hive - The secretly open NixOS-Society";
 
   inputs = {
-    std.url = "github:divnix/std";
-    std.inputs.nixpkgs.follows = "nixpkgs";
-    std.inputs.arion.follows = "arion";
-    std.inputs.microvm.follows = "microvm";
-    dmerge.follows = "std/dmerge";
+    std = {
+      url = "github:divnix/std";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        # arion.follows = "arion";
+        # microvm.follows = "microvm";
+      };
+    };
 
-    hive.url = "github:divnix/hive?ref=refs/pull/9/head";
-    hive.inputs.haumea.follows = "flops/haumea";
-    flops.url = "github:gtrunsec/flops";
-    haumea.follows = "flops/haumea";
+    haumea = {
+      url = "github:nix-community/haumea/v0.2.2";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    hive = {
+      url = "github:divnix/hive?ref=refs/pull/9/head";
+      inputs = {
+        haumea.follows = "haumea";
+        nixos-generators.follows = "nixos-generators";
+        colmena.follows = "colmena";
+        # disko.follows = "disko";
+      };
+    };
   };
-  inputs.hive.inputs = {
-    nixos-generators.follows = "nixos-generators";
-    colmena.follows = "colmena";
-    disko.follows = "disko";
-  };
+
   # tools
   inputs = {
     nix-filter.url = "github:numtide/nix-filter";
+
     nixos-generators.url = "github:nix-community/nixos-generators";
+    nixos-generators.inputs.nixpkgs.follows = "nixpkgs";
+
     nixos-hardware.url = "github:nixos/nixos-hardware";
-    disko.url = "github:nix-community/disko";
-    disko.inputs.nixpkgs.follows = "nixpkgs";
+
+    # disko.url = "github:nix-community/disko";
+    # disko.inputs.nixpkgs.follows = "nixpkgs";
 
     colmena.url = "github:zhaofengli/colmena";
     colmena.inputs.nixpkgs.follows = "nixpkgs";
 
-    microvm.url = "github:astro/microvm.nix";
+    # microvm.url = "github:astro/microvm.nix";
+    # microvm.inputs.nixpkgs.follows = "nixpkgs";
 
-    arion.url = "github:hercules-ci/arion";
-    arion.inputs.nixpkgs.follows = "nixpkgs";
+    # arion.url = "github:hercules-ci/arion";
+    # arion.inputs.nixpkgs.follows = "nixpkgs";
 
     sops-nix = {
       url = "github:TrueLecter/sops-nix/darwin";
       inputs = {
         nixpkgs.follows = "nixos";
-        # nixpkgs-22_05.follows = "nixos";
       };
     };
   };
@@ -47,7 +60,7 @@
   inputs = {
     latest.url = "github:nixos/nixpkgs/nixos-unstable";
     k8s.url = "github:nixos/nixpkgs/3005f20ce0aaa58169cdee57c8aa12e5f1b6e1b3";
-    nixos.url = "github:nixos/nixpkgs/release-22.11";
+    nixos.url = "github:nixos/nixpkgs/release-23.05";
     nixpkgs.follows = "nixos";
 
     darwin = {
@@ -56,7 +69,7 @@
     };
 
     home = {
-      url = "github:nix-community/home-manager/release-22.11";
+      url = "github:nix-community/home-manager/release-23.05";
       inputs.nixpkgs.follows = "nixos";
     };
   };

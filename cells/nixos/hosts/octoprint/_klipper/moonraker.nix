@@ -37,9 +37,9 @@ in {
 
   systemd.services.moonraker = {
     script = lib.mkForce ''
-      cp /etc/moonraker.cfg ${moonrakerCfg.configDir}/moonraker-temp.cfg
-      chmod u+w ${moonrakerCfg.configDir}/moonraker-temp.cfg
-      exec ${pkgs.moonraker}/bin/moonraker -c ${moonrakerCfg.configDir}/moonraker-temp.cfg -d ${moonrakerCfg.stateDir}/
+      cp /etc/moonraker.cfg ${moonrakerCfg.stateDir}/config/moonraker-temp.cfg
+      chmod u+w ${moonrakerCfg.stateDir}/config/moonraker-temp.cfg
+      exec ${pkgs.moonraker}/bin/moonraker -c ${moonrakerCfg.stateDir}/config/moonraker-temp.cfg -d ${moonrakerCfg.stateDir}/
     '';
 
     serviceConfig = {

@@ -58,12 +58,14 @@
   services.openssh = {
     enable = lib.mkDefault true;
 
-    # Use only public keys
-    passwordAuthentication = lib.mkForce false;
-    kbdInteractiveAuthentication = lib.mkForce false;
+    settings = {
+      # Use only public keys
+      PasswordAuthentication = lib.mkForce false;
+      KbdInteractiveAuthentication = lib.mkForce false;
 
-    # root login is never welcome, except for remote builders
-    permitRootLogin = lib.mkForce "prohibit-password";
+      # root login is never welcome, except for remote builders
+      PermitRootLogin = lib.mkForce "prohibit-password";
+    };
 
     startWhenNeeded = lib.mkDefault true;
     openFirewall = lib.mkDefault false;

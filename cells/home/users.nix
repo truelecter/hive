@@ -44,6 +44,8 @@ in {
         home.stateVersion = "22.11";
       };
 
+      programs.zsh.enable = true;
+
       users.users.truelecter = {
         isNormalUser = true;
         shell = pkgs.zsh;

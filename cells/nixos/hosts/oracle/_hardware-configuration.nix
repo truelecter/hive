@@ -6,7 +6,7 @@
   imports = [(modulesPath + "/profiles/qemu-guest.nix")];
   boot.loader.grub = {
     efiSupport = true;
-    efiInstallAsRemovable = true;
+    efiInstallAsRemovable = false;
     device = "nodev";
     configurationLimit = 1;
   };

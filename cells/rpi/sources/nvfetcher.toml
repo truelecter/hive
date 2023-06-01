@@ -6,8 +6,6 @@ fetch.github = "raspberrypi/libcamera"
 src.git = "https://github.com/raspberrypi/libcamera-apps"
 fetch.github = "raspberrypi/libcamera-apps"
 
-# src.manual = "6bade0b112aca37fd9762d180203e376867ff09c"
-[rtsp-simple-server]
-# src.git = "https://github.com/aler9/rtsp-simple-server"
-fetch.github = "aler9/rtsp-simple-server"
-src.manual = "79562b15ab342bb34d29ffc3cae6a076ed51490a"
+[mediamtx]
+src.git = "https://github.com/bluenviron/mediamtx"
+fetch.github = "bluenviron/mediamtx"
