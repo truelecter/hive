@@ -6,7 +6,7 @@ metadata:
 spec:
   repo: https://argoproj.github.io/argo-helm
   chart: argo-cd
-  version: 5.8.7
+  version: 5.34.6
   helmVersion: v3
   bootstrap: true
   targetNamespace: argocd
