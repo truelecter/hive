@@ -1,6 +1,7 @@
 {
     "klipper": {
         "cargoLocks": null,
+        "date": "2023-05-31",
         "extract": null,
         "name": "klipper",
         "passthru": null,
@@ -12,14 +13,15 @@
             "name": null,
             "owner": "Klipper3d",
             "repo": "klipper",
-            "rev": "5f0d252b408ef0cd182367ba4cc224b8d105f0ec",
-            "sha256": "sha256-daessNpicGYFn60wDupRkz8mPJmmpqpxjHng1pnnh1s=",
+            "rev": "0539e9f2666839d9adeecdfcf492a45a0d3aac1a",
+            "sha256": "sha256-BKq7vbsI2HIrpx61sJryqBNTqLf4VgnwJlt95bpDGNc=",
             "type": "github"
         },
-        "version": "5f0d252b408ef0cd182367ba4cc224b8d105f0ec"
+        "version": "0539e9f2666839d9adeecdfcf492a45a0d3aac1a"
     },
     "klipper-led_effect": {
         "cargoLocks": null,
+        "date": "2023-02-04",
         "extract": null,
         "name": "klipper-led_effect",
         "passthru": null,
@@ -39,6 +41,7 @@
     },
     "klipper-screen": {
         "cargoLocks": null,
+        "date": "2023-05-28",
         "extract": null,
         "name": "klipper-screen",
         "passthru": null,
@@ -50,14 +53,15 @@
             "name": null,
             "owner": "jordanruthe",
             "repo": "KlipperScreen",
-            "rev": "5d4459ff0b4716f46ddacecab9c692cd6ecff199",
-            "sha256": "sha256-S6nbAF56uUMWubSQ39EqietWStW7WhTtEm1zju1sDII=",
+            "rev": "1e4885d29181af8ac29dd727450d06b08b57df36",
+            "sha256": "sha256-1QpQ0uKLnrsq3NYC835MT5PoT/0bPIxco5zINUk6YOw=",
             "type": "github"
         },
-        "version": "5d4459ff0b4716f46ddacecab9c692cd6ecff199"
+        "version": "1e4885d29181af8ac29dd727450d06b08b57df36"
     },
     "mainsail": {
         "cargoLocks": null,
+        "date": "2023-05-18",
         "extract": null,
         "name": "mainsail",
         "passthru": null,
@@ -77,6 +81,7 @@
     },
     "moonraker": {
         "cargoLocks": null,
+        "date": "2023-06-01",
         "extract": null,
         "name": "moonraker",
         "passthru": null,
@@ -88,14 +93,15 @@
             "name": null,
             "owner": "Arksine",
             "repo": "moonraker",
-            "rev": "c41c5881c834f2af7f5b187a226d10a03c8e22b5",
-            "sha256": "sha256-RQOxwLXL9A9jSF96mC0vFuToFqvn5TiMvx+TdPcv8m4=",
+            "rev": "d6231634db27a86c3674c051b991b1276c0d1397",
+            "sha256": "sha256-guqnrUjvqIS1c+DL6eAE8riGwV0n/7POsrJhqJH5gzM=",
             "type": "github"
         },
-        "version": "c41c5881c834f2af7f5b187a226d10a03c8e22b5"
+        "version": "d6231634db27a86c3674c051b991b1276c0d1397"
     },
     "moonraker-telegram-bot": {
         "cargoLocks": null,
+        "date": "2023-05-13",
         "extract": null,
         "name": "moonraker-telegram-bot",
         "passthru": null,
@@ -115,6 +121,7 @@
     },
     "python-networkmanager": {
         "cargoLocks": null,
+        "date": null,
         "extract": null,
         "name": "python-networkmanager",
         "passthru": null,
@@ -129,6 +136,7 @@
     },
     "rel": {
         "cargoLocks": null,
+        "date": "2023-05-23",
         "extract": null,
         "name": "rel",
         "passthru": null,
@@ -148,6 +156,7 @@
     },
     "wsaccel": {
         "cargoLocks": null,
+        "date": null,
         "extract": null,
         "name": "wsaccel",
         "passthru": null,
