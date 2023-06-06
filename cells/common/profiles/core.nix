@@ -23,13 +23,9 @@ in {
       git
       bottom
       jq
-      manix
-      moreutils
       nix-index
       nmap
       ripgrep
-      skim
-      tealdeer
       tmux
       whois
       zsh
@@ -98,28 +94,36 @@ in {
 
       # Give root user and wheel group special Nix privileges.
       trusted-users = ["root" "@wheel"];
+
+      keep-outputs = true;
+      keep-derivations = true;
+      builders-use-substitutes = true;
+      experimental-features = ["flakes" "nix-command"];
+      fallback = true;
+      warn-dirty = false;
     };
 
     # Improve nix store disk usage
     gc = {
       automatic = true;
-      options = "--max-freed $((20 * 1024**3))";
+      options = "--delete-older-than 7d";
     };
 
     # Generally useful nix option defaults
-    extraOptions = ''
-      min-free = 536870912
-      keep-outputs = true
-      keep-derivations = true
-      fallback = true
-      builders-use-substitutes = true
-      warn-dirty = false
-      experimental-features = flakes nix-command
+    extraOptions = let
+      GB = 1024 * 1024 * 1024;
+    in ''
+      min-free = ${toString (5 * GB)}
     '';
 
     nixPath = [
       "nixpkgs=${inputs.nixos}"
       "home-manager=${inputs.home}"
     ];
+
+    registry = let
+      inputs' = lib.filterAttrs (n: _: !(builtins.elem n ["cells" "self" "nixpkgs"])) inputs;
+    in
+      lib.mapAttrs (_: v: {flake = v;}) inputs';
   };
 }

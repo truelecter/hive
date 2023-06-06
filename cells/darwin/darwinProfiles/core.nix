@@ -114,9 +114,6 @@
   };
 
   fonts.fontDir.enable = true;
-  fonts.fonts = [
-    pkgs.terminus-nerdfont
-  ];
 
   system.defaults = {
     CustomUserPreferences = {

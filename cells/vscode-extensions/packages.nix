@@ -8,7 +8,10 @@
 
   l = inputs.nixpkgs.lib // builtins;
 
-  sources = nixpkgs.callPackage ./sources/generated.nix {};
+  sources = let
+    f = import ./sources/generated.nix;
+  in
+    f (builtins.intersectAttrs (builtins.functionArgs f) nixpkgs);
 
   buildVscodeExtension = name': value': let
     fullname = l.removePrefix "\"" (l.removeSuffix "\"" name');
