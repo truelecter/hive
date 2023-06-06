@@ -9,13 +9,6 @@ in {
   imports = [
     suites.base
     profiles.common.networking.tailscale
-    ({options, ...}: {
-      wsl.enable = builtins.trace options.systemd true;
-
-      imports = [
-        inputs.nixos-wsl.nixosModules.wsl
-      ];
-    })
   ];
 
   networking.hostName = "wsl";
