@@ -32,36 +32,3 @@ in
       )
   )
   hosts
-# l.listToAttrs (
-#   l.map
-#   (
-#     d: {
-#       name = d.name;
-#       value =
-#         hosts."${d.name}"
-#         // {
-#           deployment = {
-#             targetHost = d.name;
-#             targetPort = 22;
-#             targetUser = "truelecter";
-#           };
-#         }
-#         // (
-#           if overrides ? "${d.name}"
-#           then overrides."${d.name}"
-#           else {}
-#         );
-#     }
-#   )
-#   (
-#     l.filter (d: d.type == "directory")
-#     (
-#       l.mapAttrsToList (k: v: {
-#         name = k;
-#         type = v;
-#       })
-#       (l.readDir ./hosts)
-#     )
-#   )
-# )
-

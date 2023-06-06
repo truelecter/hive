@@ -6,8 +6,6 @@
       url = "github:divnix/std";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        # arion.follows = "arion";
-        # microvm.follows = "microvm";
       };
     };
 
@@ -22,7 +20,6 @@
         haumea.follows = "haumea";
         nixos-generators.follows = "nixos-generators";
         colmena.follows = "colmena";
-        # disko.follows = "disko";
       };
     };
   };
@@ -36,17 +33,11 @@
 
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
-    # disko.url = "github:nix-community/disko";
-    # disko.inputs.nixpkgs.follows = "nixpkgs";
+    nixos-wsl.url = "github:nix-community/NixOS-WSL";
+    nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
 
     colmena.url = "github:zhaofengli/colmena";
     colmena.inputs.nixpkgs.follows = "nixpkgs";
-
-    # microvm.url = "github:astro/microvm.nix";
-    # microvm.inputs.nixpkgs.follows = "nixpkgs";
-
-    # arion.url = "github:hercules-ci/arion";
-    # arion.inputs.nixpkgs.follows = "nixpkgs";
 
     sops-nix = {
       url = "github:TrueLecter/sops-nix/darwin";
@@ -73,10 +64,6 @@
       inputs.nixpkgs.follows = "nixos";
     };
   };
-
-  # individual inputs
-  # use callInputs instead, for the subflake
-  inputs = {};
 
   outputs = {
     self,
