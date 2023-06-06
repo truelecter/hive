@@ -11,6 +11,11 @@ in {
   fonts.fonts = with pkgs; [
     powerline-fonts
     dejavu_fonts
-    iosevka
+    (
+      nerdfonts.override
+      {
+        fonts = ["Iosevka" "IosevkaTerm"];
+      }
+    )
   ];
 }
