@@ -3,15 +3,15 @@
 {
   klipper = {
     pname = "klipper";
-    version = "0539e9f2666839d9adeecdfcf492a45a0d3aac1a";
+    version = "645a1b8364c3110f706db0f976ac5fa20b968c36";
     src = fetchFromGitHub ({
       owner = "Klipper3d";
       repo = "klipper";
-      rev = "0539e9f2666839d9adeecdfcf492a45a0d3aac1a";
+      rev = "645a1b8364c3110f706db0f976ac5fa20b968c36";
       fetchSubmodules = false;
-      sha256 = "sha256-BKq7vbsI2HIrpx61sJryqBNTqLf4VgnwJlt95bpDGNc=";
+      sha256 = "sha256-eodwEA6RHLfLc4zEgqGmUYbDfgId1NbkioCO56zhvwY=";
     });
-    date = "2023-05-31";
+    date = "2023-06-07";
   };
   klipper-led_effect = {
     pname = "klipper-led_effect";
@@ -27,15 +27,15 @@
   };
   klipper-screen = {
     pname = "klipper-screen";
-    version = "1e4885d29181af8ac29dd727450d06b08b57df36";
+    version = "65588424bf4d9f276aeb9525f1f728315d3ac597";
     src = fetchFromGitHub ({
       owner = "jordanruthe";
       repo = "KlipperScreen";
-      rev = "1e4885d29181af8ac29dd727450d06b08b57df36";
+      rev = "65588424bf4d9f276aeb9525f1f728315d3ac597";
       fetchSubmodules = false;
-      sha256 = "sha256-1QpQ0uKLnrsq3NYC835MT5PoT/0bPIxco5zINUk6YOw=";
+      sha256 = "sha256-r7kr/ILqm0qwZQxcSvvCPmt/rx5XTdhwMprKvRskOus=";
     });
-    date = "2023-05-28";
+    date = "2023-06-04";
   };
   mainsail = {
     pname = "mainsail";
@@ -51,15 +51,15 @@
   };
   moonraker = {
     pname = "moonraker";
-    version = "d6231634db27a86c3674c051b991b1276c0d1397";
+    version = "aa0f89c2a47697c9eae615e97e154a091fdf737c";
     src = fetchFromGitHub ({
       owner = "Arksine";
       repo = "moonraker";
-      rev = "d6231634db27a86c3674c051b991b1276c0d1397";
+      rev = "aa0f89c2a47697c9eae615e97e154a091fdf737c";
       fetchSubmodules = false;
-      sha256 = "sha256-guqnrUjvqIS1c+DL6eAE8riGwV0n/7POsrJhqJH5gzM=";
+      sha256 = "sha256-mZEYsHm/FCkGJnA/jKzp/FM8nHTRnZtE/SkhfzUtcDw=";
     });
-    date = "2023-06-01";
+    date = "2023-06-08";
   };
   moonraker-telegram-bot = {
     pname = "moonraker-telegram-bot";
