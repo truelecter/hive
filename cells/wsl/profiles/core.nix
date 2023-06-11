@@ -5,20 +5,21 @@
 }: {
   lib,
   pkgs,
+  modulesPath,
   ...
 }: {
   imports = [
     nixos.core
-    inputs.nixos-wsl.nixosModules.wsl
   ];
 
+  bee.wsl = lib.mkDefault inputs.nixos-wsl;
+
   wsl = {
-    enable = true;
+    # enable = false;
     wslConf.automount.root = "/mnt";
-    # defaultUser = "truelecter";
 
     startMenuLaunchers = true;
     # docker-native.enable = true;
-    docker-desktop.enable = true;
+    # docker-desktop.enable = true;
   };
 }

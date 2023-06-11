@@ -8,20 +8,16 @@
 in {
   imports = [
     suites.base
+    profiles.docker
     profiles.common.networking.tailscale
   ];
 
-  networking.hostName = "wsl";
+  networking.hostName = "tl-wsl";
 
-  # wsl = {
-  #   enable = false;
-  #   wslConf.automount.root = "/mnt";
-  #   defaultUser = "truelecter";
-
-  #   startMenuLaunchers = true;
-  #   # docker-native.enable = true;
-  #   docker-desktop.enable = true;
-  # };
+  wsl = {
+    defaultUser = "truelecter";
+    nativeSystemd = true;
+  };
 
   bee.system = system;
   bee.home = inputs.home;

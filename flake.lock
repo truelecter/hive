@@ -363,17 +363,17 @@
         "paisano": "paisano"
       },
       "locked": {
-        "lastModified": 1682451355,
-        "narHash": "sha256-sLSiDkU9oNpcl1QEge0xVviD7N87iVdrwl7l9i+6mxQ=",
-        "owner": "divnix",
-        "repo": "hive",
-        "rev": "e3acba4bacfde185becc20d1b2cbaac89dca6580",
+        "lastModified": 1686499338,
+        "narHash": "sha256-FUoH13IZJnL2N7DANALMFGswzCJCHRuWvW7C7FO0OII=",
+        "owner": "truelecter",
+        "repo": "nix-hive",
+        "rev": "e28c57dcc2633440659163af051b20d43eda5a4c",
         "type": "github"
       },
       "original": {
-        "owner": "divnix",
-        "ref": "refs/pull/9/head",
-        "repo": "hive",
+        "owner": "truelecter",
+        "ref": "feature/wsl-integration",
+        "repo": "nix-hive",
         "type": "github"
       }
     },
@@ -662,15 +662,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1685915461,
-        "narHash": "sha256-JXAsxQgncO8KdivllYMRr9TFdWRQqSjuP/gPgqqFvpE=",
+        "lastModified": 1686490753,
+        "narHash": "sha256-2RdLx7n1fXv6VvOkD5Tl7mWvT5/+nR0uyi5JLIJgofM=",
         "owner": "nix-community",
         "repo": "NixOS-WSL",
-        "rev": "da6473d711f02e6324238192a8a123656dd1bb24",
+        "rev": "570d6b2dcd292ff0d0eec240db5931f2c5702b78",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
+        "ref": "refs/pull/243/merge",
         "repo": "NixOS-WSL",
         "type": "github"
       }

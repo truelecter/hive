@@ -15,7 +15,8 @@
     };
 
     hive = {
-      url = "github:divnix/hive?ref=refs/pull/9/head";
+      # url = "github:divnix/hive?ref=refs/pull/9/head";
+      url = "github:truelecter/nix-hive/feature/wsl-integration";
       inputs = {
         haumea.follows = "haumea";
         nixos-generators.follows = "nixos-generators";
@@ -33,8 +34,11 @@
 
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
-    nixos-wsl.url = "github:nix-community/NixOS-WSL";
-    nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
+    nixos-wsl = {
+      # url = "github:divnix/hive?ref=refs/pull/9/head"
+      url = "github:nix-community/NixOS-WSL?ref=refs/pull/243/merge";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     colmena.url = "github:zhaofengli/colmena";
     colmena.inputs.nixpkgs.follows = "nixpkgs";
