@@ -6,9 +6,6 @@
   l = nixpkgs.lib // builtins;
   hosts = cell.nixosConfigurations;
   overrides = {
-    depsos = {
-      deployment.targetPort = 2265;
-    };
   };
 in
   l.mapAttrs
