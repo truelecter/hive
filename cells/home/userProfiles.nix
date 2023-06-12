@@ -36,4 +36,5 @@ in {
       ];
   };
   minimal = {...}: {imports = suites.base;};
+  server-dev = {...}: {imports = [inputs.nixos-vscode-server.homeModules.default];};
 }

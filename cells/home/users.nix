@@ -39,7 +39,7 @@ in {
   nixos = {
     truelecter = {pkgs, ...}: {
       home-manager.users.truelecter = _: {
-        imports = [userProfiles.minimal];
+        imports = with userProfiles; [minimal server-dev];
 
         home.stateVersion = "22.11";
       };

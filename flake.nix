@@ -69,6 +69,13 @@
     };
   };
 
+  inputs = {
+    nixos-vscode-server = {
+      url = "github:nix-community/nixos-vscode-server";
+      inputs.nixpkgs.follows = "nixos";
+    };
+  };
+
   outputs = {
     self,
     std,
