@@ -20,6 +20,7 @@ in {
     ./_postgres.nix
     ./_mongo.nix
     ./_wireguard.nix
+    ./_tailscale-exit-node.nix
   ];
 
   bee.system = system;
