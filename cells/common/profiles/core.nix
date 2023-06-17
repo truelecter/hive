@@ -117,8 +117,8 @@ in {
     '';
 
     nixPath = [
-      "nixpkgs=${inputs.nixos}"
-      "home-manager=${inputs.home}"
+      "nixpkgs=flake:nixos"
+      "home-manager=flake:home"
     ];
 
     registry = let
