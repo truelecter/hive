@@ -12,6 +12,7 @@
     cachix
     nix-index
     statix
+    nvfetcher
     ;
 
   inherit
@@ -19,7 +20,6 @@
     sops
     editorconfig-checker
     mdbook
-    nvfetcher
     gnupg
     ;
 

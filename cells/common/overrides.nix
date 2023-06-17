@@ -29,6 +29,7 @@ in {
     kubectl
     kubernetes-helmPlugins
     direnv
+    nvfetcher
     #
     
     tailscale
