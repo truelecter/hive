@@ -58,21 +58,26 @@
       if [ ! -d "$CELL_PATH" ]; then
         echo "'$CELL' does not appear to be a cell!"
         exit 1
-      fi;
+      fi
 
       if [ ! -f "$CELL_PATH/sources/nvfetcher.toml" ]; then
         echo "'$CELL' does not appear to have valid sources structure!"
         echo "Sources should be located in 'sources' dir of cell and contain 'nvfetcher.toml' file within it"
         exit 1
-      fi;
+      fi
 
       CELLS=( $CELL_PATH )
     fi
 
     for C in "''${CELLS[@]}"; do
-      [ -f "$C/sources/nvfetcher.toml" ] && updateCellSources "$C" $@
+      if [ -f "$C/sources/nvfetcher.toml" ]; then
+        updateCellSources "$C" $@
+      else
+        echo "'$C/sources/nvfetcher.toml' does not exist. Ignoring..."
+      fi
     done
 
+    exit 0
   '';
 in
   l.mapAttrs (_: std.lib.dev.mkShell) {
