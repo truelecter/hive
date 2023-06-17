@@ -3,101 +3,101 @@
 {
   klipper = {
     pname = "klipper";
-    version = "645a1b8364c3110f706db0f976ac5fa20b968c36";
-    src = fetchFromGitHub ({
+    version = "38e79dffb68fd522e6b83f47515691afa12898fb";
+    src = fetchFromGitHub {
       owner = "Klipper3d";
       repo = "klipper";
-      rev = "645a1b8364c3110f706db0f976ac5fa20b968c36";
+      rev = "38e79dffb68fd522e6b83f47515691afa12898fb";
       fetchSubmodules = false;
-      sha256 = "sha256-eodwEA6RHLfLc4zEgqGmUYbDfgId1NbkioCO56zhvwY=";
-    });
-    date = "2023-06-07";
+      sha256 = "sha256-AOMyv/JchAvIFL5Pby715pV2ILgoRXndSQyeR5TSzcI=";
+    };
+    date = "2023-06-16";
   };
   klipper-led_effect = {
     pname = "klipper-led_effect";
     version = "35cf587fe958fe15a07c11b60564856582890460";
-    src = fetchFromGitHub ({
+    src = fetchFromGitHub {
       owner = "julianschill";
       repo = "klipper-led_effect";
       rev = "35cf587fe958fe15a07c11b60564856582890460";
       fetchSubmodules = false;
       sha256 = "sha256-AZase17sO85Bp14DocUn+m6jT8P5ABXBJFdH7t4ANog=";
-    });
+    };
     date = "2023-02-04";
   };
   klipper-screen = {
     pname = "klipper-screen";
-    version = "65588424bf4d9f276aeb9525f1f728315d3ac597";
-    src = fetchFromGitHub ({
+    version = "92ed72e48b08ee123901e39dc3058ab6438f23fa";
+    src = fetchFromGitHub {
       owner = "jordanruthe";
       repo = "KlipperScreen";
-      rev = "65588424bf4d9f276aeb9525f1f728315d3ac597";
+      rev = "92ed72e48b08ee123901e39dc3058ab6438f23fa";
       fetchSubmodules = false;
-      sha256 = "sha256-r7kr/ILqm0qwZQxcSvvCPmt/rx5XTdhwMprKvRskOus=";
-    });
-    date = "2023-06-04";
+      sha256 = "sha256-ymbwg76OYAAF05z3K1IzsI3TliU9RhgMh/BCXXQJVsU=";
+    };
+    date = "2023-06-16";
   };
   mainsail = {
     pname = "mainsail";
-    version = "84814080291e6f037230491c3e273ddd49ed6e53";
-    src = fetchFromGitHub ({
+    version = "7468f882c1b0c45051edb64ab8cb90ab82616feb";
+    src = fetchFromGitHub {
       owner = "mainsail-crew";
       repo = "mainsail";
-      rev = "84814080291e6f037230491c3e273ddd49ed6e53";
+      rev = "7468f882c1b0c45051edb64ab8cb90ab82616feb";
       fetchSubmodules = false;
-      sha256 = "sha256-/FJoQFIWJFqBK7ILo2QPoTrEN7uqWP1HI/Emd7Ds5xI=";
-    });
-    date = "2023-05-18";
+      sha256 = "sha256-FYhRaxM5k72dZh0bGJ6ylezfjV5T8NNz0EU73IALSuA=";
+    };
+    date = "2023-06-15";
   };
   moonraker = {
     pname = "moonraker";
     version = "aa0f89c2a47697c9eae615e97e154a091fdf737c";
-    src = fetchFromGitHub ({
+    src = fetchFromGitHub {
       owner = "Arksine";
       repo = "moonraker";
       rev = "aa0f89c2a47697c9eae615e97e154a091fdf737c";
       fetchSubmodules = false;
       sha256 = "sha256-mZEYsHm/FCkGJnA/jKzp/FM8nHTRnZtE/SkhfzUtcDw=";
-    });
+    };
     date = "2023-06-08";
   };
   moonraker-telegram-bot = {
     pname = "moonraker-telegram-bot";
-    version = "b1285e0155040b92fba34b80f07c63dda91dfa5b";
-    src = fetchFromGitHub ({
+    version = "ca30751a6924ffe28e26d8d708033607ad7f8e92";
+    src = fetchFromGitHub {
       owner = "nlef";
       repo = "moonraker-telegram-bot";
-      rev = "b1285e0155040b92fba34b80f07c63dda91dfa5b";
+      rev = "ca30751a6924ffe28e26d8d708033607ad7f8e92";
       fetchSubmodules = false;
-      sha256 = "sha256-+fy0NUP8XTCs4KGIq5dsgF558d9NXOmFFGT7CkT5bN0=";
-    });
-    date = "2023-05-13";
+      sha256 = "sha256-a4PyQaxicSHEPwM4wgh3Z57gh1zrsHXeIUwf7lWFDXY=";
+    };
+    date = "2023-06-15";
   };
   python-networkmanager = {
     pname = "python-networkmanager";
     version = "2.2";
     src = fetchurl {
-      url = "https://pypi.io/packages/source/p/python-networkmanager/python-networkmanager-2.2.tar.gz";
+      url = "https://pypi.org/packages/source/p/python-networkmanager/python-networkmanager-2.2.tar.gz";
       sha256 = "sha256-3m65IdlKunVJ9CjtKzqkgqXVQ+y2lly6oPu1VasxudU=";
     };
   };
   rel = {
     pname = "rel";
     version = "ed891f2963dfe8e15133365e4c362756a0a5f282";
-    src = fetchFromGitHub ({
+    src = fetchFromGitHub {
       owner = "bubbleboy14";
       repo = "registeredeventlistener";
       rev = "ed891f2963dfe8e15133365e4c362756a0a5f282";
       fetchSubmodules = false;
       sha256 = "sha256-PrhVG1NbgpYwgzFFMNI2azQjoGKOkEJdf4MrbG0tTpg=";
-    });
+    };
     date = "2023-05-23";
   };
   wsaccel = {
     pname = "wsaccel";
     version = "0.6.4";
     src = fetchurl {
-      url = "https://pypi.io/packages/source/w/wsaccel/wsaccel-0.6.4.tar.gz";
+      url = "https://pypi.org/packages/source/w/wsaccel/wsaccel-0.6.4.tar.gz";
       sha256 = "sha256-y/ZqiLyvbGrRbVDqKSFYkVJrbpk8S8ftRLBE7m/jrT0=";
     };
   };

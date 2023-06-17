@@ -1,7 +1,7 @@
 {
     "s5cmd": {
         "cargoLocks": null,
-        "date": "2023-02-02",
+        "date": "2023-06-16",
         "extract": null,
         "name": "s5cmd",
         "passthru": null,
@@ -13,11 +13,11 @@
             "name": null,
             "owner": "peak",
             "repo": "s5cmd",
-            "rev": "3e080613218175bb7b1f62cf45cee16eee901792",
-            "sha256": "sha256-jhjptEDak591vziIj6CIc4I85MM73EVi+OyBAfFOtkg=",
+            "rev": "0993c6dca380cbf95e92afcdf02a38a47ca65281",
+            "sha256": "sha256-Cni1tJDwqKi6EBLJxj/NX1Im+jFvy2sNXguKasAk4QY=",
             "type": "github"
         },
-        "version": "3e080613218175bb7b1f62cf45cee16eee901792"
+        "version": "0993c6dca380cbf95e92afcdf02a38a47ca65281"
     },
     "tfenv": {
         "cargoLocks": null,

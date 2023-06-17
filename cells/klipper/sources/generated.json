@@ -1,7 +1,7 @@
 {
     "klipper": {
         "cargoLocks": null,
-        "date": "2023-06-07",
+        "date": "2023-06-16",
         "extract": null,
         "name": "klipper",
         "passthru": null,
@@ -13,11 +13,11 @@
             "name": null,
             "owner": "Klipper3d",
             "repo": "klipper",
-            "rev": "645a1b8364c3110f706db0f976ac5fa20b968c36",
-            "sha256": "sha256-eodwEA6RHLfLc4zEgqGmUYbDfgId1NbkioCO56zhvwY=",
+            "rev": "38e79dffb68fd522e6b83f47515691afa12898fb",
+            "sha256": "sha256-AOMyv/JchAvIFL5Pby715pV2ILgoRXndSQyeR5TSzcI=",
             "type": "github"
         },
-        "version": "645a1b8364c3110f706db0f976ac5fa20b968c36"
+        "version": "38e79dffb68fd522e6b83f47515691afa12898fb"
     },
     "klipper-led_effect": {
         "cargoLocks": null,
@@ -41,7 +41,7 @@
     },
     "klipper-screen": {
         "cargoLocks": null,
-        "date": "2023-06-04",
+        "date": "2023-06-16",
         "extract": null,
         "name": "klipper-screen",
         "passthru": null,
@@ -53,15 +53,15 @@
             "name": null,
             "owner": "jordanruthe",
             "repo": "KlipperScreen",
-            "rev": "65588424bf4d9f276aeb9525f1f728315d3ac597",
-            "sha256": "sha256-r7kr/ILqm0qwZQxcSvvCPmt/rx5XTdhwMprKvRskOus=",
+            "rev": "92ed72e48b08ee123901e39dc3058ab6438f23fa",
+            "sha256": "sha256-ymbwg76OYAAF05z3K1IzsI3TliU9RhgMh/BCXXQJVsU=",
             "type": "github"
         },
-        "version": "65588424bf4d9f276aeb9525f1f728315d3ac597"
+        "version": "92ed72e48b08ee123901e39dc3058ab6438f23fa"
     },
     "mainsail": {
         "cargoLocks": null,
-        "date": "2023-05-18",
+        "date": "2023-06-15",
         "extract": null,
         "name": "mainsail",
         "passthru": null,
@@ -73,11 +73,11 @@
             "name": null,
             "owner": "mainsail-crew",
             "repo": "mainsail",
-            "rev": "84814080291e6f037230491c3e273ddd49ed6e53",
-            "sha256": "sha256-/FJoQFIWJFqBK7ILo2QPoTrEN7uqWP1HI/Emd7Ds5xI=",
+            "rev": "7468f882c1b0c45051edb64ab8cb90ab82616feb",
+            "sha256": "sha256-FYhRaxM5k72dZh0bGJ6ylezfjV5T8NNz0EU73IALSuA=",
             "type": "github"
         },
-        "version": "84814080291e6f037230491c3e273ddd49ed6e53"
+        "version": "7468f882c1b0c45051edb64ab8cb90ab82616feb"
     },
     "moonraker": {
         "cargoLocks": null,
@@ -101,7 +101,7 @@
     },
     "moonraker-telegram-bot": {
         "cargoLocks": null,
-        "date": "2023-05-13",
+        "date": "2023-06-15",
         "extract": null,
         "name": "moonraker-telegram-bot",
         "passthru": null,
@@ -113,11 +113,11 @@
             "name": null,
             "owner": "nlef",
             "repo": "moonraker-telegram-bot",
-            "rev": "b1285e0155040b92fba34b80f07c63dda91dfa5b",
-            "sha256": "sha256-+fy0NUP8XTCs4KGIq5dsgF558d9NXOmFFGT7CkT5bN0=",
+            "rev": "ca30751a6924ffe28e26d8d708033607ad7f8e92",
+            "sha256": "sha256-a4PyQaxicSHEPwM4wgh3Z57gh1zrsHXeIUwf7lWFDXY=",
             "type": "github"
         },
-        "version": "b1285e0155040b92fba34b80f07c63dda91dfa5b"
+        "version": "ca30751a6924ffe28e26d8d708033607ad7f8e92"
     },
     "python-networkmanager": {
         "cargoLocks": null,
@@ -130,7 +130,7 @@
             "name": null,
             "sha256": "sha256-3m65IdlKunVJ9CjtKzqkgqXVQ+y2lly6oPu1VasxudU=",
             "type": "url",
-            "url": "https://pypi.io/packages/source/p/python-networkmanager/python-networkmanager-2.2.tar.gz"
+            "url": "https://pypi.org/packages/source/p/python-networkmanager/python-networkmanager-2.2.tar.gz"
         },
         "version": "2.2"
     },
@@ -165,7 +165,7 @@
             "name": null,
             "sha256": "sha256-y/ZqiLyvbGrRbVDqKSFYkVJrbpk8S8ftRLBE7m/jrT0=",
             "type": "url",
-            "url": "https://pypi.io/packages/source/w/wsaccel/wsaccel-0.6.4.tar.gz"
+            "url": "https://pypi.org/packages/source/w/wsaccel/wsaccel-0.6.4.tar.gz"
         },
         "version": "0.6.4"
     }
