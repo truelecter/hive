@@ -3,26 +3,26 @@
 {
   s5cmd = {
     pname = "s5cmd";
-    version = "3e080613218175bb7b1f62cf45cee16eee901792";
-    src = fetchFromGitHub ({
+    version = "0993c6dca380cbf95e92afcdf02a38a47ca65281";
+    src = fetchFromGitHub {
       owner = "peak";
       repo = "s5cmd";
-      rev = "3e080613218175bb7b1f62cf45cee16eee901792";
+      rev = "0993c6dca380cbf95e92afcdf02a38a47ca65281";
       fetchSubmodules = false;
-      sha256 = "sha256-jhjptEDak591vziIj6CIc4I85MM73EVi+OyBAfFOtkg=";
-    });
-    date = "2023-02-02";
+      sha256 = "sha256-Cni1tJDwqKi6EBLJxj/NX1Im+jFvy2sNXguKasAk4QY=";
+    };
+    date = "2023-06-16";
   };
   tfenv = {
     pname = "tfenv";
     version = "1ccfddb22005b34eacaf06a9c33f58f14e816ec9";
-    src = fetchFromGitHub ({
+    src = fetchFromGitHub {
       owner = "tfutils";
       repo = "tfenv";
       rev = "1ccfddb22005b34eacaf06a9c33f58f14e816ec9";
       fetchSubmodules = false;
       sha256 = "sha256-UNvLJQB47IRcNZpoUGXTW2g63ApijnIB3oUb7Zu4lUY=";
-    });
+    };
     date = "2022-10-01";
   };
   transmissionic = {
