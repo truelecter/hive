@@ -187,12 +187,12 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "name": "vscode-eslint-2.4.1.zip",
-            "sha256": "sha256-RitdNF/fOJQxheJWCCS4v1pJvjeo/q+w1F6ERAHmtQc=",
+            "name": "vscode-eslint-2.4.2.zip",
+            "sha256": "sha256-eIjaiVQ7PNJUtOiZlM+lw6VmW07FbMWPtY7UoedWtbw=",
             "type": "url",
-            "url": "https://dbaeumer.gallery.vsassets.io/_apis/public/gallery/publisher/dbaeumer/extension/vscode-eslint/2.4.1/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://dbaeumer.gallery.vsassets.io/_apis/public/gallery/publisher/dbaeumer/extension/vscode-eslint/2.4.2/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "2.4.1"
+        "version": "2.4.2"
     },
     "\"donjayamanne.githistory\"": {
         "cargoLocks": null,
@@ -217,12 +217,12 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "name": "gitlens-2023.6.1705.zip",
-            "sha256": "sha256-1xAJho9uBkVUrhtu5mV27UeIKhrmYoZ7kEFSNsQTSlI=",
+            "name": "gitlens-2023.6.2005.zip",
+            "sha256": "sha256-6JMyVU23GrhUpw3d1HDytgLlovMDHPc0qZILzJ+80/c=",
             "type": "url",
-            "url": "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2023.6.1705/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://eamodio.gallery.vsassets.io/_apis/public/gallery/publisher/eamodio/extension/gitlens/2023.6.2005/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "2023.6.1705"
+        "version": "2023.6.2005"
     },
     "\"editorconfig.editorconfig\"": {
         "cargoLocks": null,
@@ -352,12 +352,12 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "name": "terraform-2.26.2023051115.zip",
-            "sha256": "sha256-8RvVJh0GgTRMUolmH1j1qA5qZoBopkS2tv9s227cSic=",
+            "name": "terraform-2.27.2023062109.zip",
+            "sha256": "sha256-im1YWQ6kpgpteN8mSo+Qt/SdKwefMwMdbuGlP3u8q6U=",
             "type": "url",
-            "url": "https://hashicorp.gallery.vsassets.io/_apis/public/gallery/publisher/hashicorp/extension/terraform/2.26.2023051115/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://hashicorp.gallery.vsassets.io/_apis/public/gallery/publisher/hashicorp/extension/terraform/2.27.2023062109/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "2.26.2023051115"
+        "version": "2.27.2023062109"
     },
     "\"ipedrazas.kubernetes-snippets\"": {
         "cargoLocks": null,
@@ -382,12 +382,12 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "name": "dvc-1.0.6.zip",
-            "sha256": "sha256-w2bIslRiVjNQ27QedQZWn7MbNQ1wMapVBLoBSZSk7qM=",
+            "name": "dvc-1.0.10.zip",
+            "sha256": "sha256-kf25u7ErjvcnwDDqii3JnYrvA2gYyGzraiwD1FxPJ8c=",
             "type": "url",
-            "url": "https://iterative.gallery.vsassets.io/_apis/public/gallery/publisher/iterative/extension/dvc/1.0.6/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://iterative.gallery.vsassets.io/_apis/public/gallery/publisher/iterative/extension/dvc/1.0.10/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "1.0.6"
+        "version": "1.0.10"
     },
     "\"ivory-lab.jenkinsfile-support\"": {
         "cargoLocks": null,
@@ -547,12 +547,12 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "name": "direnv-0.13.0.zip",
-            "sha256": "sha256-KdLJ7QTi9jz+JbbQuhXqyE3WV9oF+wyC/9ZJ/XTFOYc=",
+            "name": "direnv-0.14.0.zip",
+            "sha256": "sha256-T+bt6ku+zkqzP1gXNLcpjtFAevDRiSKnZaE7sM4pUOs=",
             "type": "url",
-            "url": "https://mkhl.gallery.vsassets.io/_apis/public/gallery/publisher/mkhl/extension/direnv/0.13.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://mkhl.gallery.vsassets.io/_apis/public/gallery/publisher/mkhl/extension/direnv/0.14.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "0.13.0"
+        "version": "0.14.0"
     },
     "\"ms-azuretools.vscode-docker\"": {
         "cargoLocks": null,
@@ -607,12 +607,12 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "name": "isort-2023.9.11661018.zip",
-            "sha256": "sha256-s9gsFOlY/tX4Jle5Ps5iB0uX6OpSsYZNxb4ZhIUI10Q=",
+            "name": "isort-2023.9.11721010.zip",
+            "sha256": "sha256-s+TEhmB27mZVMnem2DDV62656Q31umLMRP6fxeHSvY0=",
             "type": "url",
-            "url": "https://ms-python.gallery.vsassets.io/_apis/public/gallery/publisher/ms-python/extension/isort/2023.9.11661018/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://ms-python.gallery.vsassets.io/_apis/public/gallery/publisher/ms-python/extension/isort/2023.9.11721010/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "2023.9.11661018"
+        "version": "2023.9.11721010"
     },
     "\"ms-python.python\"": {
         "cargoLocks": null,
@@ -622,12 +622,12 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "name": "python-2023.11.11671008.zip",
-            "sha256": "sha256-llfqAP5Dh9NdbdHHg2rvke6z0XZqpB6/REzx9LnCb1k=",
+            "name": "python-2023.11.11741005.zip",
+            "sha256": "sha256-bDs+2w0b2gZtCk19pIyFE+l3NmT3eTS2eGaco3ZpHe4=",
             "type": "url",
-            "url": "https://ms-python.gallery.vsassets.io/_apis/public/gallery/publisher/ms-python/extension/python/2023.11.11671008/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://ms-python.gallery.vsassets.io/_apis/public/gallery/publisher/ms-python/extension/python/2023.11.11741005/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "2023.11.11671008"
+        "version": "2023.11.11741005"
     },
     "\"ms-python.vscode-pylance\"": {
         "cargoLocks": null,
@@ -637,12 +637,12 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "name": "vscode-pylance-2023.6.21.zip",
-            "sha256": "sha256-d3MYBTO3GlnbJlHmwUPTXKQKqmmWOzl+G+BoyduO7uA=",
+            "name": "vscode-pylance-2023.6.31.zip",
+            "sha256": "sha256-xE1nwoMOIIDMjgNYnGrLvYYQ+dnvb3ZNk+dwYy3D0hE=",
             "type": "url",
-            "url": "https://ms-python.gallery.vsassets.io/_apis/public/gallery/publisher/ms-python/extension/vscode-pylance/2023.6.21/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://ms-python.gallery.vsassets.io/_apis/public/gallery/publisher/ms-python/extension/vscode-pylance/2023.6.31/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "2023.6.21"
+        "version": "2023.6.31"
     },
     "\"ms-toolsai.jupyter\"": {
         "cargoLocks": null,
@@ -652,12 +652,12 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "name": "jupyter-2023.6.1001691100.zip",
-            "sha256": "sha256-BxXvEWwKHhmHdp5NeA3agaEGrjKLIpUZ0CaXAINev30=",
+            "name": "jupyter-2023.6.1001761100.zip",
+            "sha256": "sha256-JT+uweSRVq5olVQmc2cLkdhmDevDja0qfH91MSxURsk=",
             "type": "url",
-            "url": "https://ms-toolsai.gallery.vsassets.io/_apis/public/gallery/publisher/ms-toolsai/extension/jupyter/2023.6.1001691100/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://ms-toolsai.gallery.vsassets.io/_apis/public/gallery/publisher/ms-toolsai/extension/jupyter/2023.6.1001761100/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "2023.6.1001691100"
+        "version": "2023.6.1001761100"
     },
     "\"ms-toolsai.jupyter-keymap\"": {
         "cargoLocks": null,
@@ -742,12 +742,12 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "name": "remote-ssh-0.103.2023061415.zip",
-            "sha256": "sha256-600snUYti7HkLYK4CRTZsI20FZhTHOhxvZfMJLbzt4Y=",
+            "name": "remote-ssh-0.103.2023062115.zip",
+            "sha256": "sha256-aIeT+1K67UleLobzu+0ShcHP/Lkql+NVNn0RKeqG2gU=",
             "type": "url",
-            "url": "https://ms-vscode-remote.gallery.vsassets.io/_apis/public/gallery/publisher/ms-vscode-remote/extension/remote-ssh/0.103.2023061415/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://ms-vscode-remote.gallery.vsassets.io/_apis/public/gallery/publisher/ms-vscode-remote/extension/remote-ssh/0.103.2023062115/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "0.103.2023061415"
+        "version": "0.103.2023062115"
     },
     "\"ms-vscode-remote.remote-ssh-edit\"": {
         "cargoLocks": null,
@@ -802,12 +802,12 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "name": "cmake-tools-1.15.13.zip",
-            "sha256": "sha256-DT1JtGFWYkQUnlZd0XXWwhlTXqLQOIhIb1DYj8p/zFg=",
+            "name": "cmake-tools-1.15.14.zip",
+            "sha256": "sha256-Ukdb72lyY/kcPGzy+YLK3G2qKkMSUjf1FffRusPc9tw=",
             "type": "url",
-            "url": "https://ms-vscode.gallery.vsassets.io/_apis/public/gallery/publisher/ms-vscode/extension/cmake-tools/1.15.13/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://ms-vscode.gallery.vsassets.io/_apis/public/gallery/publisher/ms-vscode/extension/cmake-tools/1.15.14/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "1.15.13"
+        "version": "1.15.14"
     },
     "\"ms-vscode.cpptools-extension-pack\"": {
         "cargoLocks": null,
@@ -952,12 +952,12 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "name": "java-1.20.2023061704.zip",
-            "sha256": "sha256-VD0K6EaS1jbSLc+hqu9OS1t57TWIcwSBJMF12yeurSI=",
+            "name": "java-1.20.2023062304.zip",
+            "sha256": "sha256-fRl1zTrqylzl7xqE6AFLPYVldWR/eztj9HCJZuX8raw=",
             "type": "url",
-            "url": "https://redhat.gallery.vsassets.io/_apis/public/gallery/publisher/redhat/extension/java/1.20.2023061704/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://redhat.gallery.vsassets.io/_apis/public/gallery/publisher/redhat/extension/java/1.20.2023062304/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "1.20.2023061704"
+        "version": "1.20.2023062304"
     },
     "\"redhat.vscode-commons\"": {
         "cargoLocks": null,
@@ -982,12 +982,12 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "name": "vscode-xml-0.25.2023061604.zip",
-            "sha256": "sha256-b09f5Ve4RCW8W3BGft0VmhAYjs8vRppyyidq1vyKIy4=",
+            "name": "vscode-xml-0.25.2023062304.zip",
+            "sha256": "sha256-wUWJOxJg0b4jzqvh2Xg7FDRArVXNeNIn+X8KoYth+Ig=",
             "type": "url",
-            "url": "https://redhat.gallery.vsassets.io/_apis/public/gallery/publisher/redhat/extension/vscode-xml/0.25.2023061604/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+            "url": "https://redhat.gallery.vsassets.io/_apis/public/gallery/publisher/redhat/extension/vscode-xml/0.25.2023062304/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "0.25.2023061604"
+        "version": "0.25.2023062304"
     },
     "\"redhat.vscode-yaml\"": {
         "cargoLocks": null,
