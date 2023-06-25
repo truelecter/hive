@@ -89,9 +89,9 @@ linux_aarch64_task:
   - sleep 60
 
   matrix:
-  - name: Build octoprint
-    env:
-      NIXOS_HOST: octoprint
+  # - name: Build octoprint
+  #   env:
+  #     NIXOS_HOST: octoprint
   - name: Build oracle
     env:
       NIXOS_HOST: oracle

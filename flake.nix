@@ -1,11 +1,34 @@
 {
   description = "The Hive - The secretly open NixOS-Society";
 
+  # common for deduplication
   inputs = {
+    flake-utils = {
+      url = "github:numtide/flake-utils";
+    };
+  };
+
+  # hive
+  inputs = {
+    devshell = {
+      url = "github:numtide/devshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixago = {
+      url = "github:nix-community/nixago";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-utils.follows = "flake-utils";
+      };
+    };
+
     std = {
       url = "github:divnix/std";
       inputs = {
         nixpkgs.follows = "nixpkgs";
+        devshell.follows = "devshell";
+        nixago.follows = "nixago";
       };
     };
 
@@ -37,11 +60,19 @@
     nixos-wsl = {
       # url = "github:divnix/hive?ref=refs/pull/9/head"
       url = "github:nix-community/NixOS-WSL?ref=refs/pull/243/merge";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-utils.follows = "flake-utils";
+      };
     };
 
-    colmena.url = "github:zhaofengli/colmena";
-    colmena.inputs.nixpkgs.follows = "nixpkgs";
+    colmena = {
+      url = "github:zhaofengli/colmena";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-utils.follows = "flake-utils";
+      };
+    };
 
     sops-nix = {
       url = "github:TrueLecter/sops-nix/darwin";
@@ -69,10 +100,21 @@
     };
   };
 
+  # tools
   inputs = {
     nixos-vscode-server = {
       url = "github:nix-community/nixos-vscode-server";
-      inputs.nixpkgs.follows = "nixos";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-utils.follows = "flake-utils";
+      };
+    };
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-utils.follows = "flake-utils";
+      };
     };
   };
 
@@ -83,7 +125,7 @@
     hive,
     ...
   } @ inputs:
-    hive.growOn {
+    std.growOn {
       inherit inputs;
 
       nixpkgsConfig = {
@@ -120,13 +162,11 @@
         (functions "darwinSuites")
         (functions "homeSuites")
 
-        (functions "debug")
-
         (devshells "shells")
 
+        (files "files")
         (installables "packages")
         (pkgs "overrides")
-        (files "files")
         (functions "overlays")
 
         colmenaConfigurations

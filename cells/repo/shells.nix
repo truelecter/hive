@@ -90,37 +90,7 @@ in
       ];
 
       nixago = [
-        (std.lib.cfg.conform {
-          data = {
-            inherit (inputs) cells;
-            commit = {
-              header = {
-                length = 89;
-                imperative = true;
-              };
-              body.required = false;
-              gpg.required = true;
-              maximumOfOneCommit = false;
-              conventional = {
-                types = [
-                  "fix"
-                  "feat"
-                  "build"
-                  "chore"
-                  "ci"
-                  "docs"
-                  "style"
-                  "refactor"
-                  "test"
-                ];
-                scopes = [
-                  "ci"
-                ];
-                descriptionLength = 72;
-              };
-            };
-          };
-        })
+        config.conform
         config.treefmt
         config.editorconfig
         config.githubsettings
@@ -134,32 +104,29 @@ in
         update-cell-sources
       ];
 
-      commands =
-        [
-          (nix nixUnstable)
-          (nix cachix)
-          (nix nix-index)
-          (nix statix)
+      commands = [
+        (nix nixUnstable)
+        (nix cachix)
+        (nix nix-index)
+        (nix statix)
 
-          (infra sops)
-          (infra inputs.colmena.packages.colmena)
-          (infra inputs.home.packages.home-manager)
-          (infra inputs.nixos-generators.packages.nixos-generate)
+        (infra sops)
+        (infra inputs.colmena.packages.colmena)
+        (infra inputs.home.packages.home-manager)
+        (infra inputs.nixos-generators.packages.nixos-generate)
 
-          {
-            category = "infra";
-            name = "update-cell-sources";
-            help = "Update cell package sources with nvfetcher";
-            package = update-cell-sources;
-          }
+        {
+          category = "infra";
+          name = "update-cell-sources";
+          help = "Update cell package sources with nvfetcher";
+          package = update-cell-sources;
+        }
 
-          (linter editorconfig-checker)
-          (linter alejandra)
+        (linter editorconfig-checker)
+        (linter alejandra)
 
-          (docs mdbook)
-        ]
-        ++ l.optional (nixpkgs.stdenv.hostPlatform.isLinux && !nixpkgs.stdenv.buildPlatform.isDarwin)
-        (infra inputs.nixos-generators.defaultPackage.${nixpkgs.system});
+        (docs mdbook)
+      ];
     };
 
     ci = {
