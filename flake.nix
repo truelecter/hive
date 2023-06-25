@@ -164,6 +164,7 @@
 
         (devshells "shells")
 
+        (files "files")
         (installables "packages")
         (pkgs "overrides")
         (functions "overlays")
