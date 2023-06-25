@@ -3,8 +3,9 @@
   cell,
 }: let
   inherit (inputs) nixpkgs std;
+  inherit (std.lib.dev) mkNixago;
 in {
-  editorconfig = std.lib.cfg.editorconfig {
+  editorconfig = mkNixago std.lib.cfg.editorconfig {
     data = {
       root = true;
       "*" = {
@@ -29,7 +30,7 @@ in {
   };
 
   # Tool Homepage: https://numtide.github.io/treefmt/
-  treefmt = std.lib.cfg.treefmt {
+  treefmt = mkNixago std.lib.cfg.treefmt {
     packages = [
       inputs.cells.common.overrides.alejandra
       inputs.nixpkgs.nodePackages.prettier
@@ -37,7 +38,7 @@ in {
       inputs.nixpkgs.shfmt
     ];
     devshell.startup.prettier-plugin-toml = inputs.nixpkgs.lib.stringsWithDeps.noDepEntry ''
-      export NODE_PATH=${inputs.nixpkgs.nodePackages.prettier-plugin-toml}/lib/node_modules:$NODE_PATH
+      export NODE_PATH=${inputs.nixpkgs.nodePackages.prettier-plugin-toml}/lib/node_modules:''${NODE_PATH:-}
     '';
     data = {
       global.excludes = ["cells/*/sources/generated.*" "cells/secrets/*"];
@@ -73,7 +74,7 @@ in {
   };
 
   # Tool Homepage: https://github.com/evilmartians/lefthook
-  lefthook = std.lib.cfg.lefthook {
+  lefthook = mkNixago std.lib.cfg.lefthook {
     data = {
       commit-msg = {
         commands = {
@@ -102,7 +103,7 @@ in {
 
   # Tool Hompeage: https://github.com/apps/settings
   # Install Setting App in your repo to enable it
-  githubsettings = std.lib.cfg.githubsettings {
+  githubsettings = mkNixago std.lib.cfg.githubsettings {
     data = {
       repository = {
         name = "hive";
@@ -119,6 +120,38 @@ in {
         has_projects = false;
         has_wiki = false;
         has_downloads = false;
+      };
+    };
+  };
+
+  conform = mkNixago std.lib.cfg.conform {
+    data = {
+      inherit (inputs) cells;
+      commit = {
+        header = {
+          length = 89;
+          imperative = true;
+        };
+        body.required = false;
+        gpg.required = true;
+        maximumOfOneCommit = false;
+        conventional = {
+          types = [
+            "fix"
+            "feat"
+            "build"
+            "chore"
+            "ci"
+            "docs"
+            "style"
+            "refactor"
+            "test"
+          ];
+          scopes = [
+            "ci"
+          ];
+          descriptionLength = 72;
+        };
       };
     };
   };

@@ -22,18 +22,18 @@
       cp -pR * "$out/Applications/${name}.app"
     '';
   };
+  vs-exts = inputs.nix-vscode-extensions.extensions.vscode-marketplace;
 in {
   programs.vscode = {
     enable = true;
     package = inputs.cells.common.overrides.vscodium;
     # TODO split extensions based on active modules
-    extensions = with pkgs.vscode-extensions;
-    with inputs.cells.vscode-extensions.packages; [
+    extensions = with vs-exts; [
       arrterian.nix-env-selector
       bbenoist.nix
       coolbear.systemd-unit-file
       davidanson.vscode-markdownlint
-      inputs.cells.vscode-extensions.packages."4ops".packer
+      vs-exts."4ops".packer
       apollographql.vscode-apollo
       christian-kohler.path-intellisense
       davidnussio.vscode-jq-playground
@@ -74,7 +74,7 @@ in {
       xadillax.viml
       # yzane.markdown-pdf
       roscop.activefileinstatusbar
-      PKief.material-icon-theme
+      pkief.material-icon-theme
       bungcip.better-toml
       mads-hartmann.bash-ide-vscode
       ericadamski.carbon-now-sh
