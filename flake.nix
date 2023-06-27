@@ -38,8 +38,7 @@
     };
 
     hive = {
-      # url = "github:divnix/hive?ref=refs/pull/9/head";
-      url = "github:truelecter/nix-hive/feature/wsl-integration";
+      url = "github:divnix/hive";
       inputs = {
         haumea.follows = "haumea";
         nixos-generators.follows = "nixos-generators";

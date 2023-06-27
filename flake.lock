@@ -325,17 +325,16 @@
         "paisano": "paisano"
       },
       "locked": {
-        "lastModified": 1687648633,
-        "narHash": "sha256-mTXiUcGVLKzoH99uIoVqHHoUO38tlNHp0yhkHlBjT3E=",
-        "owner": "truelecter",
-        "repo": "nix-hive",
-        "rev": "35c119c6110812d6f0949fb237efc8b2b5ee63f2",
+        "lastModified": 1687808704,
+        "narHash": "sha256-yrov+SNCHXUfVZmSKSFio1tzMvskjNvIuINcNo2smF4=",
+        "owner": "divnix",
+        "repo": "hive",
+        "rev": "ab85a68eea36e79de4ad0bc53919a9c7e5e98678",
         "type": "github"
       },
       "original": {
-        "owner": "truelecter",
-        "ref": "feature/wsl-integration",
-        "repo": "nix-hive",
+        "owner": "divnix",
+        "repo": "hive",
         "type": "github"
       }
     },
