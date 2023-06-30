@@ -7,6 +7,9 @@
         Host oracle depsos hyperos octoprint
           User truelecter
           ForwardAgent yes
+
+        Host depsos
+          Port 2265
       '';
     };
   };

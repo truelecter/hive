@@ -147,6 +147,7 @@
         # Modules
         (functions "nixosModules")
         (functions "darwinModules")
+        (functions "homeModules")
 
         # Profiles
         (functions "commonProfiles")
@@ -188,6 +189,10 @@
         ["tailscale" "nixosModules"]
         ["klipper" "nixosModules"]
         ["k8s" "nixosModules"]
+      ];
+
+      homeModules = hive.pick inputs.self [
+        ["home" "homeModules"]
       ];
     }
     {

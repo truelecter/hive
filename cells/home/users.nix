@@ -5,21 +5,27 @@
   inherit (inputs) nixpkgs std haumea;
   l = nixpkgs.lib // builtins;
   userProfiles = cell.userProfiles;
+  homeModules = cell.homeModules;
+  modulesImportables = l.attrValues homeModules;
 in {
   darwin = {
     "andrii.panasiuk" = {...}: let
       home = "/Users/andrii.panasiuk";
     in {
       users.users."andrii.panasiuk".home = home;
+
       home-manager.users."andrii.panasiuk" = _: {
-        imports = [
-          userProfiles.workstation
-          inputs.cells.darwin.homeProfiles.shell.iterm
-          inputs.cells.darwin.homeProfiles.smart-card-fix
-        ];
+        imports =
+          [
+            userProfiles.workstation
+            inputs.cells.darwin.homeProfiles.shell.iterm
+            inputs.cells.darwin.homeProfiles.smart-card-fix
+          ]
+          ++ modulesImportables;
 
         home.stateVersion = "22.11";
       };
+
       home-manager.backupFileExtension = ".bak";
 
       users.groups.keys.members = ["andrii.panasiuk"];
@@ -39,7 +45,9 @@ in {
   nixos = {
     truelecter = {pkgs, ...}: {
       home-manager.users.truelecter = _: {
-        imports = with userProfiles; [minimal server-dev];
+        imports = with userProfiles;
+          [minimal server-dev]
+          ++ modulesImportables;
 
         home.stateVersion = "22.11";
       };
