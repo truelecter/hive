@@ -23,6 +23,13 @@ in {
           ]
           ++ modulesImportables;
 
+        programs.git.extraConfig = {
+          user = {
+            email = "andrew.panassiouk@gmail.com";
+            name = "Andrii Panasiuk";
+          };
+        };
+
         home.stateVersion = "22.11";
       };
 
@@ -48,6 +55,13 @@ in {
         imports = with userProfiles;
           [minimal server-dev]
           ++ modulesImportables;
+
+        programs.git.extraConfig = {
+          user = {
+            email = "andrew.panassiouk@gmail.com";
+            name = "Andrii Panasiuk";
+          };
+        };
 
         home.stateVersion = "22.11";
       };

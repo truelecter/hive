@@ -31,11 +31,13 @@
 
   mkSocketOption = name: desc: {
     enable = lib.mkEnableOption desc // {default = true;};
+
     windowsRelativePath = lib.mkOption {
       type = lib.types.str;
       description = "Socket path relative to windowsSocketsPath";
       default = socketDefaultNames.${name};
     };
+
     wslRelativePath = lib.mkOption {
       type = lib.types.str;
       description = "Socket path relative to wslSocketsPath";
@@ -49,7 +51,7 @@
     lib.mkIf sock.enable {
       systemd.user.services."win-gpg-agent-${name}" = {
         Unit = {
-          Description = "WinGPG agent passthrough for ${name} socket";
+          Description = "Windows gpg-agent passthrough for ${name} socket";
         };
 
         Install = {
@@ -57,8 +59,10 @@
         };
 
         Service = {
+          Environment = "PATH=${pkgs.wslu}/bin:${pkgs.socat}/bin:${pkgs.coreutils}/bin";
           ExecStart = pkgs.writeShellScript "win-gpg-agent-${name}" ''
             getWinEnv() {
+              # TODO this should be configurable
               /mnt/c/Windows/system32/cmd.exe /c "echo %$1%" 2> /dev/null
             }
 
@@ -82,15 +86,18 @@
               ''
             }
 
-            WINDOWS_SOCKET_PATH="$WINGPGAGENT_SOCKETS_DIR/${sock.windowsRelativePath}"
             UNIX_SOCKET_PATH="$UNIX_SOCKET_BASE_DIR/${sock.wslRelativePath}"
 
             mkdir -p "$UNIX_SOCKET_BASE_DIR"
-            chmod 0700 "$UNIX_SOCKET_BASE_DIR"
+            chmod 0700 -R "$UNIX_SOCKET_BASE_DIR"
 
             [ -e "$UNIX_SOCKET_PATH" ] && rm "$UNIX_SOCKET_PATH"
 
-            ${pkgs.socat}/bin/socat UNIX-LISTEN:"\"$UNIX_SOCKET_PATH\"",fork EXEC:"\"\'${cfg.sorelayPath}\' -a \'$WINDOWS_SOCKET_PATH\'\"",nofork 1>/dev/null 2>&1
+            socat UNIX-LISTEN:"\"$UNIX_SOCKET_PATH\"",fork EXEC:"\"\'${cfg.relayPath}\' ${
+              if name == "ssh"
+              then ""
+              else "--gpgConfigBasepath \'$WINGPGAGENT_SOCKETS_DIR\' --gpg \'${sock.windowsRelativePath}\'"
+            }\"" 1>/dev/null 2>&1
           '';
           Restart = "always";
         };
@@ -100,7 +107,7 @@ in {
   options.tl.services.win-gpg-agent = {
     enable = lib.mkEnableOption "Enable win-gpg-agent integration";
 
-    sorelayPath = lib.mkOption {
+    relayPath = lib.mkOption {
       type = lib.types.str;
       description = "sorelay.exe location from WSL perspective";
       example = "/mnt/C/Users/truelecter/scoop/apps/win-gpg-agent/current/sorelay.exe";

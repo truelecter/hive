@@ -39,8 +39,13 @@ in {
 
     tl.services.win-gpg-agent = {
       enable = true;
-      sorelayPath = "/mnt/d/Soft/Scoop/user/apps/win-gpg-agent/current/sorelay.exe";
-      windowsSocketsPath = "D:/Soft/Scoop/user/apps/gpg/current/gnupg";
+      # sockets.ssh.assuan = true;
+      sockets = {
+        gpg.enable = false;
+        extra.wslRelativePath = "S.gpg-agent";
+      };
+      relayPath = "/mnt/d/Soft/wsl2-ssh-bridge.exe";
+      windowsSocketsPath = "D:/Soft/Scoop/user/apps/gnupg/current/gnupg";
     };
   };
 }
