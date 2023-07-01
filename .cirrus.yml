@@ -48,7 +48,7 @@ linux_task:
   << : *REGULAR_SCRIPTS_TEMPLATE
 
   build_script:
-  - $NIX build ".#nixosConfigurations.nixos-$NIXOS_HOST.config.system.build.toplevel"
+  - $NIX build ".#nixosConfigurations.$NIXOS_HOST.config.system.build.toplevel"
   - $NIX develop --command "menu"
   # for cachix to finish uploading things
   - sleep 60
@@ -56,13 +56,16 @@ linux_task:
   matrix:
   - name: Build nas
     env:
-      NIXOS_HOST: nas
+      NIXOS_HOST: nixos-nas
   - name: Build depsos
     env:
-      NIXOS_HOST: depsos
+      NIXOS_HOST: nixos-depsos
   - name: Build hyperos
     env:
-      NIXOS_HOST: hyperos
+      NIXOS_HOST: nixos-hyperos
+  - name: Build tl-wsl
+    env:
+      NIXOS_HOST: wsl-tl-wsl
 
 linux_aarch64_task:
   << : *REGULAR_TASK_TEMPLATE
