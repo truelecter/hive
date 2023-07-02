@@ -79,6 +79,13 @@
         nixpkgs.follows = "nixos";
       };
     };
+
+    nmd = {
+      url = "sourcehut:~rycee/nmd";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
   };
 
   # nixpkgs & home-manager
@@ -168,6 +175,7 @@
         (installables "packages")
         (pkgs "overrides")
         (functions "overlays")
+        (functions "nmd")
 
         colmenaConfigurations
         homeConfigurations
@@ -194,6 +202,8 @@
       homeModules = hive.pick inputs.self [
         ["home" "homeModules"]
       ];
+
+      docs = hive.harvest inputs.self ["docs" "nmd"];
     }
     {
       colmenaHive = hive.collect self "colmenaConfigurations";
@@ -203,7 +213,5 @@
     }
     {
       darwinConfigurations.squadbook = self.darwinConfigurations.darwin-squadbook;
-
-      debug = hive.harvest inputs.self ["repo" "debug"];
     };
 }
