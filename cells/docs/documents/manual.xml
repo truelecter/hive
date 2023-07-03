@@ -2,9 +2,9 @@
   xmlns:xlink="http://www.w3.org/1999/xlink"
   xmlns:xi="http://www.w3.org/2001/XInclude"
   version="5.0"
-  xml:id="book-nur-rycee-manual">
+  xml:id="book-hive-tl-manual">
   <info>
-    <title>rycee's NUR manual</title>
+    <title>truelecters's hive manual</title>
   </info>
   <preface>
     <title>Preface</title>
@@ -18,38 +18,58 @@
         login as root user or temporarily switching to it using <literal>sudo</literal> for example. </para>
     </note>
   </preface>
-  <appendix xml:id="ch-hm-options">
-    <title>Home Manager configuration options</title>
-    <section xml:id="sec-hm-usage">
-      <title>Usage</title>
+  <chapter xml:id="ch-hm-options">
+    <title>home-manager</title>
 
-      <para> To use these options modify your <filename>home.nix</filename> such that it has the format
-
-        where <replaceable>name</replaceable> is <variablelist>
-          <varlistentry>
-            <term>
-              <varname>emacs-init</varname>
-            </term>
-            <listitem>
-              <para> for options under <varname>programs.emacs.init</varname>, or </para>
-            </listitem>
-          </varlistentry>
-          <varlistentry>
-            <term>
-              <varname>theme-base16</varname>
-            </term>
-            <listitem>
-              <para> for options under <varname>theme.base16</varname> and <varname>
-        enableBase16Theme</varname> options for various Home Manager modules. </para>
-            </listitem>
-          </varlistentry>
-        </variablelist>
+    <section xml:id="sec-hm-installation">
+      <title>Installation</title>
+      <para> To use these options modify your <filename>flake.nix</filename> such that it
+        has the format <programlisting language="nix">
+          # Add installation instructions
+        </programlisting>
       </para>
     </section>
+
     <section xml:id="sec-hm-options">
       <title>Options</title>
 
       <xi:include href="./nmd-result/tl-hm-options.xml" />
     </section>
-  </appendix>
+  </chapter>
+  <chapter xml:id="ch-nixos-options">
+    <title>nixos</title>
+
+    <section xml:id="sec-nixos-installation">
+      <title>Installation</title>
+      <para> To use these options modify your <filename>flake.nix</filename> such that it
+        has the format <programlisting language="nix">
+          # Add installation instructions
+        </programlisting>
+      </para>
+    </section>
+
+    <section xml:id="sec-nixos-options">
+      <title>Options</title>
+
+      <xi:include href="./nmd-result/tl-nixos-options.xml" />
+    </section>
+  </chapter>
+  <chapter xml:id="ch-darwin-options">
+    <title>nix-darwin</title>
+
+    <section xml:id="sec-darwin-installation">
+      <title>Installation</title>
+      <para> To use these options modify your <filename>flake.nix</filename> such that it
+        has the format <programlisting language="nix">
+          # Add installation instructions
+        </programlisting>
+      </para>
+    </section>
+
+    <section xml:id="sec-darwin-options">
+      <title>Options</title>
+
+      <xi:include href="./nmd-result/tl-darwin-options.xml" />
+    </section>
+  </chapter>
 </book>

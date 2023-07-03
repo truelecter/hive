@@ -29,6 +29,7 @@
         nixpkgs.follows = "nixpkgs";
         devshell.follows = "devshell";
         nixago.follows = "nixago";
+        # haumea.follows = "haumea";
       };
     };
 
