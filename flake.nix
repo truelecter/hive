@@ -191,6 +191,7 @@
         ["common" "packages"]
         ["pam-reattach" "packages"]
         ["rpi" "packages"]
+        ["docs" "packages"]
       ];
 
       nixosModules = hive.pick inputs.self [

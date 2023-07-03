@@ -23,22 +23,8 @@
     <section xml:id="sec-hm-usage">
       <title>Usage</title>
 
-      <para> To use these options modify your <filename>home.nix</filename> such that it has the
-        format <programlisting language="nix">
-{ pkgs, ... }:
+      <para> To use these options modify your <filename>home.nix</filename> such that it has the format
 
-let
-
-  nurNoPkgs = import &lt;nur&gt; { pkgs = null; };
-
-in
-
-{
-  import = [ nurNoPkgs.repos.rycee.hmModules.<replaceable>name</replaceable> … ];
-
-  # …
-}
-</programlisting>
         where <replaceable>name</replaceable> is <variablelist>
           <varlistentry>
             <term>
@@ -63,7 +49,7 @@ in
     <section xml:id="sec-hm-options">
       <title>Options</title>
 
-      <xi:include href="./nmd-result/nur-rycee-hm-options.xml" />
+      <xi:include href="./nmd-result/tl-hm-options.xml" />
     </section>
   </appendix>
 </book>

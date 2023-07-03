@@ -32,23 +32,21 @@
         setupModule
       ];
     moduleRootPaths = [../home/homeModules];
-    mkModuleUrl = path:
-      "https://gitlab.com/rycee/nur-expressions/blob/master"
-      + "/hm-modules/${path}#blob-content-holder";
-    channelName = "nur-rycee";
+    mkModuleUrl = path: "https://github.com/truelecter/hive/tree/master/cells/home/homeModules/${path}";
+    channelName = "hive-tl";
     docBook = {
-      id = "nur-rycee-hm-options";
+      id = "tl-hm-options";
       optionIdPrefix = "hm-opt";
     };
   };
 
   docs = nmd.lib.buildDocBookDocs {
-    pathName = "nur-rycee";
+    pathName = "hive-tl";
     modulesDocs = [hmModulesDocs];
     documentsDirectory = ./documents;
     chunkToc = ''
       <toc>
-        <d:tocentry xmlns:d="http://docbook.org/ns/docbook" linkend="book-nur-rycee-manual"><?dbhtml filename="index.html"?>
+        <d:tocentry xmlns:d="http://docbook.org/ns/docbook" linkend="book-hive-tl-manual"><?dbhtml filename="index.html"?>
           <d:tocentry linkend="ch-hm-options"><?dbhtml filename="hm-options.html"?></d:tocentry>
         </d:tocentry>
       </toc>
