@@ -149,6 +149,7 @@ in {
           ];
           scopes = [
             "ci"
+            "flake"
           ];
           descriptionLength = 72;
         };

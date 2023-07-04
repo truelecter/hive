@@ -206,6 +206,12 @@
       ];
 
       docs = hive.harvest inputs.self ["docs" "nmd"];
+
+      overlays = hive.pick inputs.self [
+        ["common" "overlays"]
+        ["k8s" "overlays"]
+        ["klipper" "overlays"]
+      ];
     }
     {
       colmenaHive = hive.collect self "colmenaConfigurations";
