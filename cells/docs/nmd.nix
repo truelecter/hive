@@ -2,8 +2,13 @@
   inputs,
   cell,
 }: let
-  inherit (inputs) haumea latest nmd self;
-  inherit (inputs.cells) home;
+  inherit (inputs) latest nmd;
+
+  nixpkgs = import latest {inherit (inputs.nixpkgs) system;};
+
+  l = inputs.nixpkgs.lib // builtins;
+
+  cellsPath = ./..;
 
   selectModules = attr:
     l.flatten (
@@ -11,10 +16,6 @@
         l.catAttrs attr (l.attrValues inputs.cells)
       )
     );
-
-  nixpkgs = import latest {inherit (inputs.nixpkgs) system;};
-
-  l = inputs.nixpkgs.lib // builtins;
 
   # Make sure the used package is scrubbed to avoid actually
   # instantiating derivations.
@@ -30,59 +31,30 @@
     ];
   };
 
-  hmModules = selectModules "homeModules";
-
-  hmModulesDocs = nmd.lib.buildModulesDocs {
-    modules =
-      hmModules
-      ++ [
-        setupModule
-      ];
-    moduleRootPaths = [../home/homeModules];
-    mkModuleUrl = path: "https://github.com/truelecter/hive/tree/master/cells/home/homeModules/${path}";
-    channelName = "hive-tl";
-    docBook = {
-      id = "tl-hm-options";
-      optionIdPrefix = "hm-opt";
+  mkModulesDocs = modulesAttr: modulesType: let
+    selectedModules = selectModules modulesAttr;
+  in
+    nmd.lib.buildModulesDocs {
+      modules =
+        selectedModules
+        ++ [
+          setupModule
+        ];
+      moduleRootPaths = [cellsPath];
+      mkModuleUrl = path: "https://github.com/truelecter/hive/tree/master/cells/${path}";
+      channelName = "hive/cells";
+      docBook = {
+        id = "tl-${modulesType}-options";
+        optionIdPrefix = "${modulesType}-opt";
+      };
     };
-  };
 
-  nixosModules = selectModules "nixosModules";
-
-  nixosModulesDocs = nmd.lib.buildModulesDocs {
-    modules =
-      nixosModules
-      ++ [
-        setupModule
-      ];
-    moduleRootPaths = [../tailscale/nixosModules]; # TOOD: fill this
-    mkModuleUrl = path: "https://github.com/truelecter/hive/tree/master/cells/home/homeModules/${path}";
-    channelName = "hive-tl";
-    docBook = {
-      id = "tl-nixos-options";
-      optionIdPrefix = "nixos-opt";
-    };
-  };
-
-  darwinModules = selectModules "darwinModules";
-
-  darwinModulesDocs = nmd.lib.buildModulesDocs {
-    modules =
-      darwinModules
-      ++ [
-        setupModule
-      ];
-    moduleRootPaths = [../tailscale/darwinModules]; # TOOD: fill this automatically
-    mkModuleUrl = path: "https://github.com/truelecter/hive/tree/master/cells/home/homeModules/${path}";
-    channelName = "hive-tl";
-    docBook = {
-      id = "tl-darwin-options";
-      optionIdPrefix = "darwin-opt";
-    };
-  };
+  hmModulesDocs = mkModulesDocs "homeModules" "hm";
+  nixosModulesDocs = mkModulesDocs "nixosModules" "nixos";
+  darwinModulesDocs = mkModulesDocs "darwinModules" "darwin";
 
   docs = nmd.lib.buildDocBookDocs {
-    pathName = "hive-tl";
+    pathName = "hive";
     modulesDocs = [hmModulesDocs nixosModulesDocs darwinModulesDocs];
     documentsDirectory = ./documents;
     chunkToc = ''
