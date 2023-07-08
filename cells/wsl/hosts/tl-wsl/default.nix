@@ -2,17 +2,22 @@
   inputs,
   suites,
   profiles,
+  overlays,
   ...
 }: let
   system = "x86_64-linux";
   pkgs = import inputs.nixos {
     inherit system;
     config.allowUnfree = true;
+    overlays = [
+      overlays.wsl-nvidia-docker
+    ];
   };
 in {
   imports = [
     suites.base
     profiles.docker
+    profiles.nvidia
     profiles.common.networking.tailscale
     profiles.vscode-server
 

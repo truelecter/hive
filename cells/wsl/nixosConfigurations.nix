@@ -22,5 +22,6 @@ in
           users = cells.home.users.nixos;
         };
       userProfiles = cells.home.userProfiles;
+      inherit (cell) overlays;
     };
   }
