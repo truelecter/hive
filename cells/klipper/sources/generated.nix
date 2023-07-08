@@ -3,15 +3,15 @@
 {
   klipper = {
     pname = "klipper";
-    version = "a96608add40e316f25f15d9c9d1c1fbd86dbbebe";
+    version = "6d48adf9ef5d17632acf53a7e3a07964f6cfd642";
     src = fetchFromGitHub {
       owner = "Klipper3d";
       repo = "klipper";
-      rev = "a96608add40e316f25f15d9c9d1c1fbd86dbbebe";
+      rev = "6d48adf9ef5d17632acf53a7e3a07964f6cfd642";
       fetchSubmodules = false;
-      sha256 = "sha256-bGJSeWq2TN7ukStu+oiYboGnm/RHbO6N0NdZC81IQ8k=";
+      sha256 = "sha256-KNs10C7fYGMq07kjfLeMSYKaisivnzLh3oqV4NB3Pr4=";
     };
-    date = "2023-06-29";
+    date = "2023-07-05";
   };
   klipper-led_effect = {
     pname = "klipper-led_effect";
@@ -27,39 +27,39 @@
   };
   klipper-screen = {
     pname = "klipper-screen";
-    version = "294623c13f3d30faade370338cc73ac7efc9e081";
+    version = "3ba6bd657ffbca4ec616c6ab58d335029c0932da";
     src = fetchFromGitHub {
       owner = "jordanruthe";
       repo = "KlipperScreen";
-      rev = "294623c13f3d30faade370338cc73ac7efc9e081";
+      rev = "3ba6bd657ffbca4ec616c6ab58d335029c0932da";
       fetchSubmodules = false;
-      sha256 = "sha256-gJbQ7dy/lHf+G6yIkV6/SxQU4IObBNfP5h8inxiOOxE=";
+      sha256 = "sha256-53iMQFJlo7IJQP/2+7QMLEGfI/sQiRy24/BtpRNBwuM=";
     };
-    date = "2023-06-30";
+    date = "2023-07-04";
   };
   mainsail = {
     pname = "mainsail";
-    version = "d8441254db04d672fe2137f64e39127f524c4769";
+    version = "ef2d17cadde566e8b713031cb7292d65ca1bec12";
     src = fetchFromGitHub {
       owner = "mainsail-crew";
       repo = "mainsail";
-      rev = "d8441254db04d672fe2137f64e39127f524c4769";
+      rev = "ef2d17cadde566e8b713031cb7292d65ca1bec12";
       fetchSubmodules = false;
-      sha256 = "sha256-EUd3O4vAFcLAcItFMH0bQ1NedfNDKfgLelekfTPXrFY=";
+      sha256 = "sha256-xhqmoYoOtdtIkxyVo31vnSJez2SsyC6ZRtC0Tp+DDZ0=";
     };
-    date = "2023-06-28";
+    date = "2023-07-01";
   };
   moonraker = {
     pname = "moonraker";
-    version = "a7e154fbe4e1f3dec4fc051e24af2d6188d979bd";
+    version = "8eddec88cbcdf0515e086367630068df8379375c";
     src = fetchFromGitHub {
       owner = "Arksine";
       repo = "moonraker";
-      rev = "a7e154fbe4e1f3dec4fc051e24af2d6188d979bd";
+      rev = "8eddec88cbcdf0515e086367630068df8379375c";
       fetchSubmodules = false;
-      sha256 = "sha256-YwG8ork2FS5oip9gVzSysV86hAntr1wbxgLmxQv4Gvo=";
+      sha256 = "sha256-1Nj/paPSQbvV9yxo6EzXdfkATMc362AwUtKg4B1AnIU=";
     };
-    date = "2023-06-29";
+    date = "2023-07-06";
   };
   moonraker-telegram-bot = {
     pname = "moonraker-telegram-bot";

@@ -3,15 +3,15 @@
 {
   s5cmd = {
     pname = "s5cmd";
-    version = "fa8f356b1087bd925a12926c23a8f6e4d485fad0";
+    version = "bb3723b224ef53e073429a974d2d69fdcd56cf83";
     src = fetchFromGitHub {
       owner = "peak";
       repo = "s5cmd";
-      rev = "fa8f356b1087bd925a12926c23a8f6e4d485fad0";
+      rev = "bb3723b224ef53e073429a974d2d69fdcd56cf83";
       fetchSubmodules = false;
-      sha256 = "sha256-QBQR/0N3GoHURpAyuR/3Lbmv2vqJuqa8c3WR8gGfGj4=";
+      sha256 = "sha256-xwhpFpHbL/7UrA/tLa82q/aIXusbEeiFFr3AOAPrAO0=";
     };
-    date = "2023-06-20";
+    date = "2023-07-06";
   };
   tfenv = {
     pname = "tfenv";
