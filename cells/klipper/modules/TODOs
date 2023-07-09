@@ -1,0 +1,4 @@
+- Firmware presets
+- Host MCU presets
+- Deprecate klipper-screen
+- klipper module with plugins support
