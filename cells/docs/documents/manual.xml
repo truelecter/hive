@@ -4,27 +4,105 @@
   version="5.0"
   xml:id="book-hive-tl-manual">
   <info>
-    <title>truelecters's hive manual</title>
+    <title>truelecters's hive</title>
   </info>
   <preface>
     <title>Preface</title>
     <para>
-      Some basic documentation of rycee's NUR.
+      Overview of truelecter's hive modules and other potentially useful things
     </para>
-    <para> If you encounter problems or bugs then please report them on the <link
-        xlink:href="https://gitlab.com/rycee/nur-expressions/issues">issue tracker</link>. </para>
-    <note>
-      <para> Commands prefixed with <literal>#</literal> have to be run as root, either requiring to
-        login as root user or temporarily switching to it using <literal>sudo</literal> for example. </para>
-    </note>
+    <para>In case of any issues, report them to <link
+        xlink:href="https://github.com/truelecter/hive/issues">the issue tracker</link>. </para>
   </preface>
+  <chapter xml:id="ch-general-usage">
+    <title>General usage</title>
+
+    <section xml:id="sec-usage-installation">
+      <title>Installation</title>
+      <para>To use these options modify your <filename>flake.nix</filename> such that it has the
+        format <programlisting language="nix">
+{
+  description = "NixOS configuration";
+
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    darwin = {
+      url = "github:lnl7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    tl-hive = {
+      url = "github:nix-community/home-manager";
+
+      inputs = {
+        nixos.follows = "nixpkgs";
+        latest.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+        darwin.follows = "darwin";
+        # It is recommended to pin this input to separate nixpkgs version
+        # to ensure cluster will not break after updating nixpkgs
+        k8s.follows = "nixpkgs";
+      };
+    }.
+  };
+
+  outputs = inputs@{ nixpkgs, tl-hive, home-manager, darwin, ... }: {
+    nixosConfigurations = {
+      hostname = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./nixos-configuration.nix
+          tl-hive.nixosModules."nixosModuleName"
+          home-manager.nixosModules.home-manager
+          {
+            imports = [
+              tl-hive.homeModules.win-gpg-agent-passtrough
+            ];
+
+            # Other home-mamanger options...
+          }
+        ];
+      };
+    };
+
+    darwinConfigurations = {
+      hostname = darwin.lib.darwinSystem {
+        system = "x86_64-darwin";
+        modules = [
+          ./darwin-configuration.nix
+          tl-hive.darwinModules."darwinModuleName"
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.jdoe = import ./home.nix;
+
+            # Optionally, use home-manager.extraSpecialArgs to pass
+            # arguments to home.nix
+          }
+        ];
+      };
+    };
+  };
+}
+        </programlisting>
+      </para>
+    </section>
+  </chapter>
+  <xi:include href="test.xml" />
   <chapter xml:id="ch-hm-options">
-    <title>home-manager</title>
+    <title>home-manager modules</title>
 
     <section xml:id="sec-hm-installation">
       <title>Installation</title>
-      <para> To use these options modify your <filename>flake.nix</filename> such that it
-        has the format <programlisting language="nix">
+      <para> To use these options modify your <filename>flake.nix</filename> such that it has the
+        format <programlisting language="nix">
           # Add installation instructions
         </programlisting>
       </para>
@@ -37,12 +115,12 @@
     </section>
   </chapter>
   <chapter xml:id="ch-nixos-options">
-    <title>nixos</title>
+    <title>nixos modules</title>
 
     <section xml:id="sec-nixos-installation">
       <title>Installation</title>
-      <para> To use these options modify your <filename>flake.nix</filename> such that it
-        has the format <programlisting language="nix">
+      <para> To use these options modify your <filename>flake.nix</filename> such that it has the
+        format <programlisting language="nix">
           # Add installation instructions
         </programlisting>
       </para>
@@ -55,12 +133,12 @@
     </section>
   </chapter>
   <chapter xml:id="ch-darwin-options">
-    <title>nix-darwin</title>
+    <title>nix-darwin modules</title>
 
     <section xml:id="sec-darwin-installation">
       <title>Installation</title>
-      <para> To use these options modify your <filename>flake.nix</filename> such that it
-        has the format <programlisting language="nix">
+      <para> To use these options modify your <filename>flake.nix</filename> such that it has the
+        format <programlisting language="nix">
           # Add installation instructions
         </programlisting>
       </para>

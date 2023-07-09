@@ -60,9 +60,11 @@
     chunkToc = ''
       <toc>
         <d:tocentry xmlns:d="http://docbook.org/ns/docbook" linkend="book-hive-tl-manual"><?dbhtml filename="index.html"?>
-          <d:tocentry linkend="ch-hm-options"><?dbhtml filename="hm-options.html"?></d:tocentry>
-          <d:tocentry linkend="ch-nixos-options"><?dbhtml filename="nixos-options.html"?></d:tocentry>
-          <d:tocentry linkend="ch-darwin-options"><?dbhtml filename="darwin-options.html"?></d:tocentry>
+          <!--
+            <d:tocentry linkend="ch-hm-options"><?dbhtml filename="hm-options.html"?></d:tocentry>
+            <d:tocentry linkend="ch-nixos-options"><?dbhtml filename="nixos-options.html"?></d:tocentry>
+            <d:tocentry linkend="ch-darwin-options"><?dbhtml filename="darwin-options.html"?></d:tocentry>
+          -->
         </d:tocentry>
       </toc>
     '';

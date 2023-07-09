@@ -1,0 +1,17 @@
+<chapter xmlns="http://docbook.org/ns/docbook"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  version="5.0"
+  xml:id="ch-test">
+  <title>General usage</title>
+
+  <section xml:id="sec-test-installation">
+    <title>Installation</title>
+    <para>test for packages</para>
+  </section>
+
+  <section xml:id="sec-test-options">
+    <title>Options</title>
+    <para>test for packages</para>
+  </section>
+</chapter>
