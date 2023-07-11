@@ -30,6 +30,7 @@ in {
     kubernetes-helmPlugins
     direnv
     nvfetcher
+    amazon-ecr-credential-helper
     #
     
     tailscale
