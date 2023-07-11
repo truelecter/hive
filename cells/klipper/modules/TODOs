@@ -1,4 +1,4 @@
 - Firmware presets
 - Host MCU presets
-- Deprecate klipper-screen
+- Deprecate klipper-screen, mainsail packages, mainsail module
 - klipper module with plugins support

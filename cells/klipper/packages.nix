@@ -19,3 +19,5 @@ in
       loader = haumea.lib.loaders.path;
     }
   )
+  // {
+  }
