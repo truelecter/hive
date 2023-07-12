@@ -10,8 +10,8 @@ stdenvNoCC.mkDerivation rec {
   inherit (sources.klipper-led_effect) version src;
 
   installPhase = ''
-    mkdir -p $out/lib/klipper-led_effect
-    cp ./src/led_effect.py $out/lib/klipper-led_effect
+    mkdir -p $out/lib/klipper-led_effect/extras
+    cp ./src/led_effect.py $out/lib/klipper-led_effect/extras
   '';
 
   meta = with lib; {
