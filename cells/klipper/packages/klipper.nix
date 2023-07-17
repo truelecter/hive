@@ -53,7 +53,7 @@ stdenv.mkDerivation rec {
     ${
       lib.concatStringsSep "\n" (
         builtins.map
-        (plugin: "ln -sf ${plugin}/lib/${plugin.pname}/*.py $out/lib/klipper/extras/")
+        (plugin: "ln -sf ${plugin}/lib/${plugin.pname}/extras/*.py $out/lib/klipper/extras/")
         plugins
       )
     }
@@ -64,7 +64,6 @@ stdenv.mkDerivation rec {
   meta = with lib; {
     description = "The Klipper 3D printer firmware";
     homepage = "https://github.com/KevinOConnor/klipper";
-    maintainers = with maintainers; [lovesegfault zhaofengli cab404];
     platforms = platforms.linux;
     license = licenses.gpl3Only;
   };

@@ -15,10 +15,6 @@ fetch.github = "jordanruthe/KlipperScreen"
 src.pypi = "python-networkmanager"
 fetch.pypi = "python-networkmanager"
 
-[klipper-led_effect]
-src.git = "https://github.com/julianschill/klipper-led_effect"
-fetch.github = "julianschill/klipper-led_effect"
-
 [moonraker-telegram-bot]
 src.git = "https://github.com/nlef/moonraker-telegram-bot"
 src.branch = "development"
@@ -36,3 +32,16 @@ fetch.pypi = "wsaccel"
 src.git = "https://github.com/mainsail-crew/mainsail"
 src.branch = "develop"
 fetch.github = "mainsail-crew/mainsail"
+
+# Klipper plugins
+[klipper-led_effect]
+src.git = "https://github.com/julianschill/klipper-led_effect"
+fetch.github = "julianschill/klipper-led_effect"
+
+[klipper-ercf-happy-hare]
+src.git = "https://github.com/moggieuk/ERCF-Software-V3"
+fetch.github = "moggieuk/ERCF-Software-V3"
+
+[klipper-ercf]
+src.git = "https://github.com/EtteGit/EnragedRabbitProject"
+fetch.github = "EtteGit/EnragedRabbitProject"

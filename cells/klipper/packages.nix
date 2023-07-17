@@ -10,7 +10,7 @@
 
   sources = nixpkgs.callPackage ./sources/generated.nix {};
 
-  loadPackages = path:
+  loadPackages = pkgs: path:
     l.mapAttrs (
       _: v: nixpkgs.callPackage v {inherit sources cell;}
     )
@@ -20,8 +20,16 @@
         loader = haumea.lib.loaders.path;
       }
     );
+
+  klipper-plugins = loadPackages nixpkgs ./klipper-plugins;
+  packages = loadPackages nixpkgs ./packages;
+
+  excluded-plugins-from-full = ["klipper-ercf"];
 in
-  (loadPackages ./packages)
-  // (loadPackages ./klipper-plugins)
+  packages
+  // klipper-plugins
   // {
+    klipper-full-plugins = packages.klipper.override {
+      plugins = l.attrValues (l.filterAttrs (n: _: !builtins.elem n excluded-plugins-from-full) klipper-plugins);
+    };
   }
