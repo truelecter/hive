@@ -1,7 +1,7 @@
 {
     "libcamera": {
         "cargoLocks": null,
-        "date": "2023-07-07",
+        "date": "2023-07-20",
         "extract": null,
         "name": "libcamera",
         "passthru": null,
@@ -13,15 +13,15 @@
             "name": null,
             "owner": "raspberrypi",
             "repo": "libcamera",
-            "rev": "2783c8d8aa97cf1df21d8480840a6276bc2bd272",
-            "sha256": "sha256-t0RLvmeD4ipx65JShrbp+KCQiJJWZWabML62Y9/ZwWY=",
+            "rev": "bde9b04ff2ce49d343e36c86d6ae99ff53cbf11a",
+            "sha256": "sha256-tbA+FLBvIZ7wasRaqYus8vTAwJFIspUsgHlGIS8/0yU=",
             "type": "github"
         },
-        "version": "2783c8d8aa97cf1df21d8480840a6276bc2bd272"
+        "version": "bde9b04ff2ce49d343e36c86d6ae99ff53cbf11a"
     },
     "libcamera-apps": {
         "cargoLocks": null,
-        "date": "2023-06-30",
+        "date": "2023-07-21",
         "extract": null,
         "name": "libcamera-apps",
         "passthru": null,
@@ -33,15 +33,15 @@
             "name": null,
             "owner": "raspberrypi",
             "repo": "libcamera-apps",
-            "rev": "d932d3132a2414b976a08373ff8dc5e83f568ef5",
-            "sha256": "sha256-Zv83ia2bf1IsEgJUWNPwEhl3AxWzxkuxvov/kBZ4gj0=",
+            "rev": "9e172655e257972e5da45d59a720192516f7d769",
+            "sha256": "sha256-1nlX6tXUbtI1rprOi7X/mStevHCw98CnriaBfHybZr8=",
             "type": "github"
         },
-        "version": "d932d3132a2414b976a08373ff8dc5e83f568ef5"
+        "version": "9e172655e257972e5da45d59a720192516f7d769"
     },
     "mediamtx": {
         "cargoLocks": null,
-        "date": "2023-07-07",
+        "date": "2023-07-21",
         "extract": null,
         "name": "mediamtx",
         "passthru": null,
@@ -53,10 +53,10 @@
             "name": null,
             "owner": "bluenviron",
             "repo": "mediamtx",
-            "rev": "625e7da91d3991f366283597ab5002290811449e",
-            "sha256": "sha256-D3JVSDeWCzrzzi2bmlD7zT7+50aR6ebkf4InG71diNg=",
+            "rev": "fcba131c988b5b16b922f0fb4e0c0b43ed5e02cf",
+            "sha256": "sha256-EDYQ82Sq1SJeVJl3ZAZa/BEpHtk2zacQ51hZNlWvRbs=",
             "type": "github"
         },
-        "version": "625e7da91d3991f366283597ab5002290811449e"
+        "version": "fcba131c988b5b16b922f0fb4e0c0b43ed5e02cf"
     }
 }
