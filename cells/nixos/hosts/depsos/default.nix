@@ -21,6 +21,7 @@ in {
     ./_mongo.nix
     ./_wireguard.nix
     ./_tailscale-exit-node.nix
+    ./_zabbix.nix
   ];
 
   bee.system = system;
@@ -46,6 +47,14 @@ in {
       "interface-name:wireguard.cali"
       "interface-name:wg-v6.cali"
     ];
+  };
+
+  # we are in tight free space situation
+  nix.settings = let
+    MB = 1024 * 1024;
+  in {
+    min-free = 100 * MB;
+    max-free = 500 * MB;
   };
 
   systemd.services.NetworkManager-wait-online.enable = false;
