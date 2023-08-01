@@ -18,13 +18,15 @@ in
 
     home.packages = let
       helm-wrapped = overrides.wrapHelm overrides.kubernetes-helm {plugins = [overrides.kubernetes-helmPlugins.helm-diff];};
-    in
-      with pkgs; [
-        kubectl
-        packages.k9s
-        dive
-        overrides.kubelogin-oidc
-        helm-wrapped
-        overrides.minikube
-      ];
+    in [
+      helm-wrapped
+
+      pkgs.kubectl
+
+      packages.k9s
+
+      overrides.dive
+      overrides.kubelogin-oidc
+      overrides.minikube
+    ];
   }

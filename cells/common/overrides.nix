@@ -31,6 +31,7 @@ in {
     direnv
     nvfetcher
     amazon-ecr-credential-helper
+    dive
     #
     
     tailscale
