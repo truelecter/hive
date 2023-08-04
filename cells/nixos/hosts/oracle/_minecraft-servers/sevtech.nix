@@ -1,14 +1,4 @@
 {pkgs, ...}: {
-  users = {
-    groups = {
-      minecraft-servers = {};
-    };
-    users.minecraft-sevtech = {
-      isSystemUser = true;
-      group = "minecraft-servers";
-    };
-  };
-
   systemd.services.sevtech = {
     description = "SevTech: Ages minecraft server";
 

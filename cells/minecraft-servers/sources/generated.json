@@ -1,0 +1,44 @@
+{
+    "graalvm-ee-17-aarch64-linux": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "graalvm-ee-17-aarch64-linux",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "sha256": "sha256-UomOanK5WJmx58OvMCDr5JBPPVrQ3jMyJfQYWD2xeAY=",
+            "type": "tarball",
+            "url": "https://oca.opensource.oracle.com/gds/GRAALVM_EE_JAVA17_22_3_1/graalvm-ee-java17-linux-aarch64-22.3.1.tar.gz"
+        },
+        "version": "22.3.1"
+    },
+    "graalvm-ee-17-x86_64-darwin": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "graalvm-ee-17-x86_64-darwin",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "sha256": "sha256-2s2B6FYO8lvOj9uVl4gTiDcQDix9/KkFGWDeyqcu30c=",
+            "type": "tarball",
+            "url": "https://oca.opensource.oracle.com/gds/GRAALVM_EE_JAVA17_22_3_1/graalvm-ee-java17-darwin-amd64-22.3.1.tar.gz"
+        },
+        "version": "22.3.1"
+    },
+    "graalvm-ee-17-x86_64-linux": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "graalvm-ee-17-x86_64-linux",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "sha256": "sha256-M0mQAchpPt09lQvZePyaIQ86Hw1QZvghY7FTEeanRTc=",
+            "type": "tarball",
+            "url": "https://oca.opensource.oracle.com/gds/GRAALVM_EE_JAVA17_22_3_1/graalvm-ee-java17-linux-amd64-22.3.1.tar.gz"
+        },
+        "version": "22.3.1"
+    }
+}

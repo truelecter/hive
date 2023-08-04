@@ -182,7 +182,7 @@
         ["klipper" "packages"]
         ["common" "packages"]
         ["pam-reattach" "packages"]
-        ["rpi" "packages"]
+        ["minecraft-servers" "packages"]
       ];
 
       nixosModules = hive.pick inputs.self [

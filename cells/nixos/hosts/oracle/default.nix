@@ -11,7 +11,7 @@ in {
     profiles.common.networking.tailscale
     profiles.remote-builds
     ./_hardware-configuration.nix
-    ./_minecraft-servers.nix
+    ./_minecraft-servers
   ];
 
   bee.system = system;
@@ -19,6 +19,9 @@ in {
   bee.pkgs = import inputs.nixos {
     inherit system;
     config.allowUnfree = true;
+    overlays = with inputs.cells.minecraft-servers.overlays; [
+      java
+    ];
   };
 
   systemd.services.NetworkManager-wait-online.enable = false;
