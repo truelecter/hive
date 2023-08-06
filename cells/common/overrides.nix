@@ -10,7 +10,7 @@ in {
   inherit
     (latest)
     android-tools
-    vscodium
+    vscode
     alejandra
     rnix-lsp
     nil

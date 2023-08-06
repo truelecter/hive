@@ -26,7 +26,7 @@
 in {
   programs.vscode = {
     enable = true;
-    package = inputs.cells.common.overrides.vscodium;
+    package = inputs.cells.common.overrides.vscode;
     # TODO split extensions based on active modules
     extensions = with vs-exts; [
       arrterian.nix-env-selector
@@ -41,7 +41,6 @@ in {
       donjayamanne.githistory
       eamodio.gitlens
       editorconfig.editorconfig
-      eg2.vscode-npm-script
       # erd0s.terraform-autocomplete
       golang.go
       graphql.vscode-graphql
@@ -75,10 +74,13 @@ in {
       # yzane.markdown-pdf
       roscop.activefileinstatusbar
       pkief.material-icon-theme
-      bungcip.better-toml
+      tamasfe.even-better-toml
       mads-hartmann.bash-ide-vscode
       ericadamski.carbon-now-sh
       # mkhl.direnv
+      # remote
+      ms-vscode-remote.remote-ssh
+      ms-vscode-remote.remote-ssh-edit
     ];
     userSettings =
       lib.recursiveUpdate
@@ -86,9 +88,5 @@ in {
       {
         "python.defaultInterpreterPath" = "${pkgs.python39}/bin/python3";
       };
-  };
-
-  home.shellAliases = {
-    code = "codium";
   };
 }
