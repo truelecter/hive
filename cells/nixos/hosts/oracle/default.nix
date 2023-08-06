@@ -7,11 +7,15 @@
   system = "aarch64-linux";
 in {
   imports = [
+    inputs.nixos-vscode-server.nixosModules.default
+
     suites.base
     profiles.common.networking.tailscale
     profiles.remote-builds
+
     ./_hardware-configuration.nix
     ./_minecraft-servers
+    ./_vscode-server.nix
   ];
 
   bee.system = system;
