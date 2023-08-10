@@ -40,5 +40,70 @@
             "url": "https://oca.opensource.oracle.com/gds/GRAALVM_EE_JAVA17_22_3_1/graalvm-ee-java17-linux-amd64-22.3.1.tar.gz"
         },
         "version": "22.3.1"
+    },
+    "knock": {
+        "cargoLocks": null,
+        "date": "2023-03-10",
+        "extract": null,
+        "name": "knock",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "Metalcape",
+            "repo": "knock",
+            "rev": "a690305c6d960374fd9b1024db85a8cdfa0bf1a4",
+            "sha256": "sha256-RHSNvaQdIUjzN7MCDyLOosHo22CSkFlzCERCg0TFxhI=",
+            "type": "github"
+        },
+        "version": "a690305c6d960374fd9b1024db85a8cdfa0bf1a4"
+    },
+    "mcs-enigmatica-6-expert": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "mcs-enigmatica-6-expert",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-rmMzXGBqKREWKqUqJ8nNfZOyngamfukA15AmUTjKKIY=",
+            "type": "url",
+            "url": "https://mediafilez.forgecdn.net/files/4437/745/Enigmatica6ExpertServer-1.8.0.zip"
+        },
+        "version": "1.8.0"
+    },
+    "mp-server-pause-forge-1_16_5": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "mp-server-pause-forge-1_16_5",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-XhfCex4pwFM3TKQtF+1YdYeIPhR+5pITgKoR+BZN6EA=",
+            "type": "url",
+            "url": "https://www.curseforge.com/api/v1/mods/556491/files/3803691/download"
+        },
+        "version": "1.1.0"
+    },
+    "server-starter": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "server-starter",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-cL7Cdx/QACCah3i4RX8jG/jmJEuz2Numu3OcNmLgmbQ=",
+            "type": "url",
+            "url": "https://github.com/EnigmaticaModpacks/ServerStarter/releases/download/v2.4.0/serverstarter-2.4.0.jar"
+        },
+        "version": "2.4.0"
     }
 }

@@ -9,3 +9,21 @@ fetch.tarball = "https://oca.opensource.oracle.com/gds/GRAALVM_EE_JAVA17_22_3_1/
 [graalvm-ee-17-x86_64-darwin]
 src.manual = "22.3.1"
 fetch.tarball = "https://oca.opensource.oracle.com/gds/GRAALVM_EE_JAVA17_22_3_1/graalvm-ee-java17-darwin-amd64-22.3.1.tar.gz"
+
+[knock]
+src.git = "https://github.com/Metalcape/knock"
+src.branch = "cooldown"
+fetch.github = "Metalcape/knock"
+
+[mp-server-pause-forge-1_16_5]
+src.manual = "1.1.0"
+fetch.url = "https://www.curseforge.com/api/v1/mods/556491/files/3803691/download"
+
+[server-starter]
+src.github = "EnigmaticaModpacks/ServerStarter"
+src.prefix = "v"
+fetch.url = "https://github.com/EnigmaticaModpacks/ServerStarter/releases/download/v$ver/serverstarter-$ver.jar"
+
+[mcs-enigmatica-6-expert]
+src.manual = "1.8.0"
+fetch.url = "https://mediafilez.forgecdn.net/files/4437/745/Enigmatica6ExpertServer-1.8.0.zip"

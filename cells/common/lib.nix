@@ -55,15 +55,17 @@ in rec {
     packages,
   }: let
     sources' = nixpkgs.callPackage sources {};
-  in
-    nixpkgs.lib.mapAttrs (
-      _: v: nixpkgs.callPackage v (extraArguments // {sources = sources';})
-    )
-    (
-      haumea.lib.load {
-        src = packages;
+    pkgs =
+      nixpkgs.lib.mapAttrs (
+        _: v: nixpkgs.callPackage v (extraArguments // {sources = sources';})
+      )
+      (
+        haumea.lib.load {
+          src = packages;
 
-        loader = haumea.lib.loaders.path;
-      }
-    );
+          loader = haumea.lib.loaders.path;
+        }
+      );
+  in
+    pkgs;
 }

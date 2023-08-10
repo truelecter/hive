@@ -25,4 +25,40 @@
       sha256 = "sha256-M0mQAchpPt09lQvZePyaIQ86Hw1QZvghY7FTEeanRTc=";
     };
   };
+  knock = {
+    pname = "knock";
+    version = "a690305c6d960374fd9b1024db85a8cdfa0bf1a4";
+    src = fetchFromGitHub {
+      owner = "Metalcape";
+      repo = "knock";
+      rev = "a690305c6d960374fd9b1024db85a8cdfa0bf1a4";
+      fetchSubmodules = false;
+      sha256 = "sha256-RHSNvaQdIUjzN7MCDyLOosHo22CSkFlzCERCg0TFxhI=";
+    };
+    date = "2023-03-10";
+  };
+  mcs-enigmatica-6-expert = {
+    pname = "mcs-enigmatica-6-expert";
+    version = "1.8.0";
+    src = fetchurl {
+      url = "https://mediafilez.forgecdn.net/files/4437/745/Enigmatica6ExpertServer-1.8.0.zip";
+      sha256 = "sha256-rmMzXGBqKREWKqUqJ8nNfZOyngamfukA15AmUTjKKIY=";
+    };
+  };
+  mp-server-pause-forge-1_16_5 = {
+    pname = "mp-server-pause-forge-1_16_5";
+    version = "1.1.0";
+    src = fetchurl {
+      url = "https://www.curseforge.com/api/v1/mods/556491/files/3803691/download";
+      sha256 = "sha256-XhfCex4pwFM3TKQtF+1YdYeIPhR+5pITgKoR+BZN6EA=";
+    };
+  };
+  server-starter = {
+    pname = "server-starter";
+    version = "2.4.0";
+    src = fetchurl {
+      url = "https://github.com/EnigmaticaModpacks/ServerStarter/releases/download/v2.4.0/serverstarter-2.4.0.jar";
+      sha256 = "sha256-cL7Cdx/QACCah3i4RX8jG/jmJEuz2Numu3OcNmLgmbQ=";
+    };
+  };
 }
