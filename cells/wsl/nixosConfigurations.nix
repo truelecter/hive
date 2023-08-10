@@ -2,26 +2,22 @@
   inputs,
   cell,
 }: let
-  inherit (inputs) haumea nixpkgs;
-  l = nixpkgs.lib // builtins;
+  inherit (inputs) nixpkgs;
+  lib = nixpkgs.lib // builtins;
   cells = inputs.cells;
 in
-  haumea.lib.load {
+  cells.common.lib.importSystemConfigurations {
     src = ./hosts;
-    # loader = haumea.lib.loaders.default;
-    transformer = haumea.lib.transformers.liftDefault;
-    inputs = {
-      inherit inputs;
-      lib = l;
-      suites = cell.nixosSuites;
-      profiles =
-        cell.nixosProfiles
-        // {
-          common = cells.common.commonProfiles;
-          secrets = cells.secrets.nixosProfiles.secrets;
-          users = cells.home.users.nixos;
-        };
-      userProfiles = cells.home.userProfiles;
-      inherit (cell) overlays;
-    };
+
+    inherit inputs lib;
+    suites = cell.nixosSuites;
+    profiles =
+      cell.nixosProfiles
+      // {
+        common = cells.common.commonProfiles;
+        secrets = cells.secrets.nixosProfiles.secrets;
+        users = cells.home.users.nixos;
+      };
+    userProfiles = cells.home.userProfiles;
+    inherit (cell) overlays;
   }

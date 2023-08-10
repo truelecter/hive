@@ -2,15 +2,13 @@
   inputs,
   cell,
 }: let
-  inherit (inputs) nixpkgs std haumea darwin;
-  l = nixpkgs.lib // builtins;
+  inherit (inputs.cells) common;
 in
-  haumea.lib.load {
-    src = ./darwinProfiles;
-    # loader = haumea.lib.loaders.path;
-    # transformer = haumea.lib.transformers.liftDefault;
+  common.lib.importProfiles {
+    src = ./profiles;
+
     inputs = {
-      common = inputs.cells.common.commonProfiles;
+      common = common.commonProfiles;
       inherit cell inputs;
     };
   }

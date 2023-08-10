@@ -1,16 +1,11 @@
 {
   inputs,
   cell,
-}: let
-  inherit (inputs) nixpkgs std haumea nixos;
-  l = nixpkgs.lib // builtins;
-in
-  haumea.lib.load {
-    src = ./profiles;
-    # loader = haumea.lib.loaders.path;
-    transformer = haumea.lib.transformers.liftDefault;
+}:
+cell.lib.importProfiles {
+  src = ./profiles;
 
-    inputs = {
-      inherit cell inputs;
-    };
-  }
+  inputs = {
+    inherit cell inputs;
+  };
+}

@@ -2,16 +2,9 @@
   inputs,
   cell,
 }: let
-  inherit (inputs) nixpkgs std haumea;
-  l = nixpkgs.lib // builtins;
+  inherit (inputs.cells) common;
 in {
-  minecraft = _: {
-    imports = l.attrValues (haumea.lib.load {
-      src = ./modules;
-      loader = haumea.lib.loaders.path;
-      inputs = {
-        pkgs = inputs.nixpkgs;
-      };
-    });
+  minecraft = common.lib.combineModules {
+    src = ./modules;
   };
 }

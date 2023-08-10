@@ -2,15 +2,14 @@
   inputs,
   cell,
 }: let
-  inherit (inputs) haumea;
+  inherit (inputs.cells) common nixos;
 in
-  haumea.lib.load {
+  common.lib.importProfiles {
     src = ./profiles;
-    # loader = haumea.lib.loaders.path;
-    transformer = haumea.lib.transformers.liftDefault;
+
     inputs = {
-      common = inputs.cells.common.commonProfiles;
-      nixos = inputs.cells.nixos.nixosProfiles;
+      common = common.commonProfiles;
+      nixos = nixos.nixosProfiles;
       inherit cell inputs;
     };
   }

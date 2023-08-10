@@ -9,24 +9,6 @@
   system = "aarch64-darwin";
 in {
   imports = [
-    # core
-    # security.pam
-    # security.one-password
-    # messengers
-    # secrets
-
-    # editors.sublime-text
-
-    # system-preferences.dock
-    # system-preferences.finder
-    # system-preferences.firewall
-    # system-preferences.general
-    # system-preferences.keyboard
-    # system-preferences.trackpad
-
-    # games.minecraft
-    # games.steam
-
     suites.base
     suites.editors
     suites.system-preferences
@@ -40,19 +22,6 @@ in {
     profiles.users."andrii.panasiuk"
     profiles.users.root
   ];
-  # imp = [
-  #   suites.base
-  #   suites.editors
-  #   suites.system-preferences
-  #   suites.games
-  # ];
-  #   ++ [
-  #     profiles.networking.tailscale
-  #     profiles.users."andrii.panasiuk"
-  #     profiles.users.root
-  #     profiles.darwin.security.yubikey
-  #     profiles.darwin._3dprint
-  #   ];
 
   bee.system = system;
   bee.home = inputs.home;

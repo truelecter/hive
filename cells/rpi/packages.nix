@@ -2,20 +2,11 @@
   inputs,
   cell,
 }: let
-  inherit (inputs) haumea latest;
-
-  nixpkgs = import latest {inherit (inputs.nixpkgs) system;};
-
-  l = inputs.nixpkgs.lib // builtins;
-
-  sources = nixpkgs.callPackage ./sources/generated.nix {};
+  inherit (inputs) latest nixpkgs;
+  inherit (inputs.cells) common;
 in
-  l.mapAttrs (
-    _: v: nixpkgs.callPackage v {inherit sources cell;}
-  )
-  (
-    haumea.lib.load {
-      src = ./packages;
-      loader = haumea.lib.loaders.path;
-    }
-  )
+  common.lib.importPackages {
+    nixpkgs = import latest {inherit (nixpkgs) system;};
+    sources = ./sources/generated.nix;
+    packages = ./packages;
+  }
