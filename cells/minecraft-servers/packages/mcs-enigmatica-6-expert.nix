@@ -36,7 +36,7 @@ in
 
     outputHashMode = "recursive";
     outputHashAlgo = "sha256";
-    outputHash = "sha256-eWb8syFDlemSxBjRb2qlD30sy/zEclj0BPCWyXcqXS0=";
+    outputHash = "sha256-yKd/Wi3GbL5f0oSqmX/YxWyKzqfOvZf5han/e7n5Sg8=";
 
     meta = with lib; {
       description = "GraalVM Enterprise Edition";
