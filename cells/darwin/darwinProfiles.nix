@@ -5,7 +5,7 @@
   inherit (inputs.cells) common;
 in
   common.lib.importProfiles {
-    src = ./profiles;
+    src = ./darwinProfiles;
 
     inputs = {
       common = common.commonProfiles;
