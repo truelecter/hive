@@ -11,3 +11,4 @@ repository:
   has_wiki: false
   name: hive
   private: false
+  topics: nix, nixos, hive, flake, flakes, nix-flake
