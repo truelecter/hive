@@ -9,4 +9,7 @@ in
     nixpkgs = import latest {inherit (nixpkgs) system;};
     sources = ./sources/generated.nix;
     packages = ./packages;
+    extraArguments = {
+      inherit cell;
+    };
   }
