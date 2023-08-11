@@ -2,7 +2,7 @@
   stdenv,
   lib,
   sources,
-  temurin-jre-bin-17,
+  jdk17,
   unzip,
   ...
 }: let
@@ -13,30 +13,38 @@ in
 
     inherit (sources.mcs-enigmatica-6-expert) version src;
 
-    nativeBuildInputs = [temurin-jre-bin-17 unzip];
+    nativeBuildInputs = [jdk17 unzip];
 
     dontConfigure = true;
     dontBuild = true;
-    dontUnpack = true;
     dontFixup = true;
 
-    installPhase = ''
+    unpackPhase = ''
       mkdir -p $out
       unzip $src -d $out
-      cd $out
+    '';
 
-      # Temporary accept, so isntaller will pass
-      # echo "# EULA" > eula.txt
-      # echo "eula = true" >> eula.txt
+    installPhase = ''
+      cd $out
 
       java -jar ${ss} install
 
       rm installer.jar.log
+      rm modpack-download.zip
+
+      # this is stupid repacking hack to fix whatever causing srg jar
+      # to have differeces despite classes inside being identical
+      mkdir tmp
+      cd tmp
+      jar xvf ../libraries/net/minecraft/server/*/server*-srg.jar
+      jar cf ../libraries/net/minecraft/server/*/server*-srg.jar *
+      cd ..
+      rm -rf tmp
     '';
 
     outputHashMode = "recursive";
     outputHashAlgo = "sha256";
-    outputHash = "sha256-yKd/Wi3GbL5f0oSqmX/YxWyKzqfOvZf5han/e7n5Sg8=";
+    outputHash = "sha256-8Gk/NwUqDr6plEAAyg66ukKdqmrMD/nn0Tc6shlGV8I=";
 
     meta = with lib; {
       description = "GraalVM Enterprise Edition";
