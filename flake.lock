@@ -322,14 +322,16 @@
           "nixos-generators"
         ],
         "nixpkgs": "nixpkgs",
-        "paisano": "paisano"
+        "paisano": [
+          "paisano-core"
+        ]
       },
       "locked": {
-        "lastModified": 1687808704,
-        "narHash": "sha256-yrov+SNCHXUfVZmSKSFio1tzMvskjNvIuINcNo2smF4=",
+        "lastModified": 1691517535,
+        "narHash": "sha256-CLqUlTyaLXZb9MDy5QkfZiNJOxeLK4H6VeyRXmlK5KU=",
         "owner": "divnix",
         "repo": "hive",
-        "rev": "ab85a68eea36e79de4ad0bc53919a9c7e5e98678",
+        "rev": "295e8bd3498b04bc73b28d48dda0a0766833b3b5",
         "type": "github"
       },
       "original": {
@@ -750,41 +752,27 @@
         "type": "github"
       }
     },
-    "nosys_2": {
-      "locked": {
-        "lastModified": 1668010795,
-        "narHash": "sha256-JBDVBnos8g0toU7EhIIqQ1If5m/nyBqtHhL3sicdPwI=",
-        "owner": "divnix",
-        "repo": "nosys",
-        "rev": "feade0141487801c71ff55623b421ed535dbdefa",
-        "type": "github"
-      },
-      "original": {
-        "owner": "divnix",
-        "repo": "nosys",
-        "type": "github"
-      }
-    },
-    "paisano": {
+    "paisano-core": {
       "inputs": {
+        "call-flake": "call-flake",
         "nixpkgs": [
-          "hive",
           "nixpkgs"
         ],
         "nosys": "nosys",
         "yants": "yants"
       },
       "locked": {
-        "lastModified": 1678562978,
-        "narHash": "sha256-GaPyKdB0RvSBIgPxKkdJHTG/FyKsT0Ku5zifLEjr3QQ=",
-        "owner": "divnix",
-        "repo": "paisano",
-        "rev": "f71a2db9414d66663c03a65ade97a9f353fb6d55",
+        "lastModified": 1691766854,
+        "narHash": "sha256-AoljOefnQE8nVF7sC51aAXDs3mbAaqoeUc8a2zGrnIQ=",
+        "owner": "truelecter",
+        "repo": "paisano-core",
+        "rev": "a5d71f8f020e8eb5765a422bb04bc3d4cfbc5e8c",
         "type": "github"
       },
       "original": {
-        "owner": "divnix",
-        "repo": "paisano",
+        "owner": "truelecter",
+        "ref": "testing",
+        "repo": "paisano-core",
         "type": "github"
       }
     },
@@ -802,33 +790,6 @@
         "owner": "paisano-nix",
         "ref": "0.1.1",
         "repo": "tui",
-        "type": "github"
-      }
-    },
-    "paisano_2": {
-      "inputs": {
-        "call-flake": "call-flake",
-        "nixpkgs": [
-          "std",
-          "nixpkgs"
-        ],
-        "nosys": "nosys_2",
-        "yants": [
-          "std",
-          "yants"
-        ]
-      },
-      "locked": {
-        "lastModified": 1688099125,
-        "narHash": "sha256-j6LMz00orEKZrQb14wRRw7kMLm+aj7zBJt05AY4UcRI=",
-        "owner": "paisano-nix",
-        "repo": "core",
-        "rev": "10270dc46532c947de473ee88c8f5a3346a396fb",
-        "type": "github"
-      },
-      "original": {
-        "owner": "paisano-nix",
-        "repo": "core",
         "type": "github"
       }
     },
@@ -854,6 +815,7 @@
         "nixpkgs": [
           "nixos"
         ],
+        "paisano-core": "paisano-core",
         "sops-nix": "sops-nix",
         "std": "std"
       }
@@ -926,7 +888,9 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "paisano": "paisano_2",
+        "paisano": [
+          "paisano-core"
+        ],
         "paisano-tui": "paisano-tui",
         "terranix": [
           "std",
@@ -935,11 +899,11 @@
         "yants": "yants_2"
       },
       "locked": {
-        "lastModified": 1689337213,
-        "narHash": "sha256-qa0B38ihDW1MuAshwgvlbkk3CgheWlvYr35oMpDrxJs=",
+        "lastModified": 1691752017,
+        "narHash": "sha256-x8FlxAeLX5Qs0W1auXq1jiD3SrtXg6MiDUu41S03DQg=",
         "owner": "divnix",
         "repo": "std",
-        "rev": "17dc4eb9587517397dad00617b020769fece3cfe",
+        "rev": "c2652f26fabacd4952c801977e5882e734104652",
         "type": "github"
       },
       "original": {
@@ -981,8 +945,7 @@
     "yants": {
       "inputs": {
         "nixpkgs": [
-          "hive",
-          "paisano",
+          "paisano-core",
           "nixpkgs"
         ]
       },

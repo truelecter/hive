@@ -10,6 +10,11 @@
 
   # hive
   inputs = {
+    paisano-core = {
+      url = "github:truelecter/paisano-core/testing";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     devshell = {
       url = "github:numtide/devshell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -29,6 +34,7 @@
         nixpkgs.follows = "nixpkgs";
         devshell.follows = "devshell";
         nixago.follows = "nixago";
+        paisano.follows = "paisano-core";
       };
     };
 
@@ -43,6 +49,7 @@
         haumea.follows = "haumea";
         nixos-generators.follows = "nixos-generators";
         colmena.follows = "colmena";
+        paisano.follows = "paisano-core";
       };
     };
   };
@@ -122,21 +129,22 @@
     std,
     nixpkgs,
     hive,
+    paisano-core,
     ...
-  } @ inputs:
+  } @ inputs: let
+    systems = [
+      "aarch64-darwin"
+      "aarch64-linux"
+      "x86_64-darwin"
+      "x86_64-linux"
+    ];
+  in
     std.growOn {
-      inherit inputs;
+      inherit inputs systems;
 
       nixpkgsConfig = {
         allowUnfree = true;
       };
-
-      systems = [
-        "aarch64-darwin"
-        "aarch64-linux"
-        "x86_64-darwin"
-        "x86_64-linux"
-      ];
 
       cellsFrom = ./cells;
 
@@ -180,12 +188,30 @@
     # soil
     {
       devShells = hive.harvest inputs.self ["repo" "shells"];
-      packages = hive.harvest inputs.self [
-        ["klipper" "packages"]
-        ["common" "packages"]
-        ["pam-reattach" "packages"]
-        ["minecraft-servers" "packages"]
-      ];
+      # packages = hive.harvest inputs.self [
+      #   ["klipper" "packages"]
+      #   ["common" "packages"]
+      #   ["pam-reattach" "packages"]
+      #   ["minecraft-servers" "packages"]
+      # ];
+
+      packages =
+        hive.winnow (
+          {
+            system,
+            value,
+            ...
+          }: let
+            l = nixpkgs.lib;
+          in
+            l.elem system (l.attrByPath ["meta" "platforms"] systems value)
+        )
+        inputs.self [
+          ["klipper" "packages"]
+          ["common" "packages"]
+          ["pam-reattach" "packages"]
+          ["minecraft-servers" "packages"]
+        ];
 
       nixosModules = hive.pick inputs.self [
         ["tailscale" "nixosModules"]
