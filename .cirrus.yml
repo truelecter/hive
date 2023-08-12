@@ -6,8 +6,7 @@ env:
 
 common_task_template: &REGULAR_TASK_TEMPLATE
   timeout_in: 120m
-  only_if: "changesInclude('.cirrus.yml', 'flake.{nix,lock}', 'cells/**', '.ci/*')"
-  # auto_cancellation: "$CIRRUS_BRANCH != 'master' || $CIRRUS_BRANCH == 'master'"
+  only_if: $CIRRUS_BRANCH == 'master' || $CIRRUS_PR != ''
 
 common_scripts_template: &REGULAR_SCRIPTS_TEMPLATE
   # TODO add cache?
