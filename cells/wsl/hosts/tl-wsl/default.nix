@@ -22,6 +22,8 @@ in {
     profiles.vscode-server
 
     inputs.nixos-vscode-server.nixosModules.default
+
+    ./_remote-builders.nix
   ];
 
   networking.hostName = "tl-wsl";
