@@ -10,6 +10,7 @@ in {
     suites.base
 
     profiles.common.networking.tailscale
+    profiles.faster-linux
 
     inputs.cells.klipper.nixosModules.klipper
 

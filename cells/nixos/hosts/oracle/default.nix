@@ -12,6 +12,7 @@ in {
     suites.base
     profiles.common.networking.tailscale
     profiles.remote-builds
+    profiles.faster-linux
 
     ./_hardware-configuration.nix
     ./_minecraft-servers
