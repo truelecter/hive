@@ -1,20 +1,20 @@
 {
-  stdenv,
+  stdenvNoCC,
   lib,
   sources,
-  jdk17,
+  jdk8,
   unzip,
   strip-nondeterminism,
   ...
 }: let
   ss = sources.server-starter.src;
 in
-  stdenv.mkDerivation rec {
+  stdenvNoCC.mkDerivation rec {
     pname = "enigmatica-6-expert";
 
     inherit (sources.mcs-enigmatica-6-expert) version src;
 
-    nativeBuildInputs = [jdk17 unzip strip-nondeterminism];
+    nativeBuildInputs = [jdk8 unzip strip-nondeterminism];
 
     dontConfigure = true;
     dontBuild = true;
@@ -27,6 +27,9 @@ in
     installPhase = ''
       cd $out
 
+      cp ${./_files/start-forge.sh} start.sh
+      chmod +x start.sh
+
       java -jar ${ss} install
     '';
 
@@ -38,7 +41,7 @@ in
 
     outputHashMode = "recursive";
     outputHashAlgo = "sha256";
-    outputHash = "sha256-90ffB2yDbPLSKhRCCYP6CNpq36MO6l1ARxHtiT4nVgM=";
+    outputHash = "sha256-cBXT4/vm57l7BjoWUkU3+1Ewcn1ESXFIEr8kPNifXcI=";
 
     meta = with lib; {
       description = "GraalVM Enterprise Edition";

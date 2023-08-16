@@ -2,6 +2,7 @@
   imports = [
     ./sevtech.nix
     ./dawncraft.nix
+    ./test-packaged.nix
   ];
 
   users = {

@@ -26,6 +26,7 @@ in {
     config.allowUnfree = true;
     overlays = with inputs.cells.minecraft-servers.overlays; [
       java
+      minecraft-servers
     ];
   };
 
