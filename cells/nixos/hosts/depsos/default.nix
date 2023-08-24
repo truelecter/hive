@@ -22,6 +22,7 @@ in {
     ./_wireguard.nix
     ./_tailscale-exit-node.nix
     ./_zabbix.nix
+    ./_journal.nix
   ];
 
   bee.system = system;
