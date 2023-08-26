@@ -59,6 +59,13 @@ in {
       '';
     };
 
+    serverPackage = mkOption {
+      type = types.package;
+      description = ''
+        Server package used as lowerdir of server state overlay.
+      '';
+    };
+
     jvmPackage = mkOption {
       type = types.package;
       default = pkgs.jre8;
@@ -117,6 +124,23 @@ in {
       readOnly = true;
       description = ''
         The compiled value of $JVMOPTS, exported as a read-only value.
+      '';
+    };
+
+    dirnames = mkOption {
+      type = types.attrs;
+      default = rec {
+        base = "/var/lib/minecraft-servers/${name}";
+        state = "${base}/state";
+        workdir = "${base}/workdir";
+        overlayContainingDir = "${base}/overlays";
+        overlayCombined = "${overlayContainingDir}/overlay";
+        overlayWorkdir = "${overlayContainingDir}/work";
+      };
+      readOnly = true;
+      internal = true;
+      description = ''
+        Calculated paths for the server. May be will be customizable some day
       '';
     };
 
