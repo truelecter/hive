@@ -2,6 +2,7 @@
   pkgs,
   lib,
   config,
+  options,
   ...
 }: let
   l = lib // builtins;
@@ -66,7 +67,10 @@ in {
     };
 
     instances = l.mkOption {
-      type = l.types.attrsOf (l.types.submodule (import ./_options-minecraft-instance.nix pkgs));
+      type = l.types.attrsOf (l.types.submodule (import ./_options-minecraft-instance.nix {
+        inherit pkgs;
+        globalOptions = options;
+      }));
       default = {};
       description = ''
         Define instances of Minecraft servers to run.
@@ -77,8 +81,12 @@ in {
   config = let
     enabledInstances = l.filterAttrs (_: x: x.enable) cfg.instances;
 
+    enabledResticBackups = l.filterAttrs (_: x: x.backup.restic.enable) enabledInstances;
+
     # Attrset options
-    eachEnabledInstance = f: l.mapAttrs' (i: c: let n = mkInstanceName i; in l.nameValuePair n (f n c)) enabledInstances;
+    eachEnabledInstanceFrom = instances: f: l.mapAttrs' (i: c: let n = mkInstanceName i; in l.nameValuePair n (f n c)) instances;
+
+    eachEnabledInstance = f: eachEnabledInstanceFrom enabledInstances f;
 
     serverPorts = l.mapAttrsToList (_: v: v.serverProperties.server-port) enabledInstances;
     rconPorts =
@@ -102,17 +110,17 @@ in {
 
       {
         assertion = (l.unique serverPorts) == serverPorts;
-        message = "Your Minecraft instances have overlapping server ports. They must be unique.";
+        message = "Your Minecraft server instances have overlapping server ports. They must be unique.";
       }
 
       {
         assertion = (l.unique rconPorts) == rconPorts;
-        message = "Your Minecraft instances have overlapping RCON ports. They must be unique.";
+        message = "Your Minecraft server instances have overlapping RCON ports. They must be unique.";
       }
 
       {
         assertion = (l.unique queryPorts) == queryPorts;
-        message = "Your Minecraft instances have overlapping query ports. They must be unique.";
+        message = "Your Minecraft server instances have overlapping query ports. They must be unique.";
       }
 
       (
@@ -132,45 +140,58 @@ in {
     networking.firewall.allowedUDPPorts = queryPorts;
     networking.firewall.allowedTCPPorts = serverPorts ++ queryPorts ++ openRconPorts;
 
-    systemd.services = eachEnabledInstance (name: icfg: {
-      description = "Minecraft Server ${name}";
-      wantedBy = ["multi-user.target"];
-      after = ["network.target"];
+    systemd.services =
+      eachEnabledInstance (name: icfg: {
+        description = "Minecraft Server ${name}";
+        wantedBy = ["multi-user.target"];
+        after = ["network.target"];
 
-      path = [
-        icfg.jvmPackage
-        pkgs.bash
-      ];
+        path = [
+          icfg.jvmPackage
+          pkgs.bash
+        ];
 
-      environment = {
-        JVMOPTS = icfg.jvmOptString;
-        MCRCON_PORT = toString icfg.serverProperties.rcon-port;
-        MCRCON_PASS = icfg.serverProperties.rcon-password;
-      };
+        environment = {
+          JVMOPTS = icfg.jvmOptString;
+          MCRCON_PORT = toString icfg.serverProperties.rcon-port;
+          MCRCON_PASS = icfg.serverProperties.rcon-password;
+        };
 
-      serviceConfig = {
-        Restart = "always";
-        ExecStart = "${icfg.dirnames.workdir}/start.sh";
-        ExecStop = ''
-          ${pkgs.mcrcon}/bin/mcrcon stop
+        serviceConfig = {
+          Restart = "always";
+          ExecStart = "${icfg.dirnames.workdir}/start.sh";
+          ExecStop = ''
+            ${pkgs.mcrcon}/bin/mcrcon stop
+          '';
+          TimeoutStopSec = "60";
+          User = name;
+          WorkingDirectory = icfg.dirnames.workdir;
+          EnvironmentFile = l.optionalString (l.isPath icfg.environmentFile) icfg.environmentFile;
+        };
+
+        preStart = ''
+          rm eula.txt || echo no eula yet
+
+          # Ensure EULA is accepted
+          ln -sf ${eulaFile} eula.txt
+
+          # This file must be writeable, because Mojang.
+          cp ${serverPropertiesFile icfg.serverProperties} server.properties
+          chmod 644 server.properties
         '';
-        TimeoutStopSec = "60";
-        User = name;
-        WorkingDirectory = icfg.dirnames.workdir;
-        EnvironmentFile = l.optionalString (l.isPath icfg.environmentFile) icfg.environmentFile;
-      };
+      })
+      // l.mapAttrs' (
+        n: icfg:
+          l.nameValuePair "restic-backups-${mkInstanceName n}" {
+            environment = {
+              MCRCON_PORT = toString icfg.serverProperties.rcon-port;
+              MCRCON_PASS = icfg.serverProperties.rcon-password;
+            };
 
-      preStart = ''
-        rm eula.txt || echo no eula yet
-
-        # Ensure EULA is accepted
-        ln -sf ${eulaFile} eula.txt
-
-        # This file must be writeable, because Mojang.
-        cp ${serverPropertiesFile icfg.serverProperties} server.properties
-        chmod 644 server.properties
-      '';
-    });
+            serviceConfig.EnvironmentFile = l.optionals (l.isPath icfg.environmentFile) [icfg.environmentFile];
+          }
+      )
+      enabledResticBackups;
 
     users = {
       users = eachEnabledInstance (name: icfg: {
@@ -213,7 +234,7 @@ in {
             type = "overlay";
 
             where = p.overlayCombined;
-            options = lib.concatStringsSep "," [
+            options = l.concatStringsSep "," [
               "lowerdir=${icfg.serverPackage}"
               "upperdir=${p.state}"
               "workdir=${p.overlayWorkdir}"
@@ -225,7 +246,7 @@ in {
             type = "fuse.bindfs";
 
             where = p.workdir;
-            options = lib.concatStringsSep "," [
+            options = l.concatStringsSep "," [
               "force-user=${name}"
               "force-group=minecraft-servers"
               "perms=0664:ug+X"
@@ -238,5 +259,19 @@ in {
         ]
       )
     ));
+
+    services.restic.backups = eachEnabledInstanceFrom enabledResticBackups (
+      name: icfg:
+        {
+          paths = [icfg.dirnames.state];
+          user = name;
+          backupPrepareCommand = ''
+            ${pkgs.mcrcon}/bin/mcrcon save-off
+            ${pkgs.mcrcon}/bin/mcrcon save-all
+          '';
+          backupCleanupCommand = "${pkgs.mcrcon}/bin/mcrcon save-on";
+        }
+        // l.filterAttrs (n: _: n != "enable") icfg.backup.restic
+    );
   };
 }
