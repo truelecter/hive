@@ -2,11 +2,13 @@
   lib,
   config,
   ...
-}:
-with lib; {
+}: let
+  l = builtins // lib;
+  inherit (lib) types mkOption;
+in {
   options = {
     allow-flight = mkOption {
-      type = with types; bool;
+      type = types.bool;
       default = false;
       description = ''
         Allows users to use flight on the server while in Survival mode, if
@@ -24,7 +26,7 @@ with lib; {
       '';
     };
     allow-nether = mkOption {
-      type = with types; bool;
+      type = types.bool;
       default = true;
       description = ''
         Allows players to travel to the Nether.
@@ -38,21 +40,21 @@ with lib; {
       '';
     };
     broadcast-console-to-ops = mkOption {
-      type = with types; bool;
+      type = types.bool;
       default = true;
       description = ''
         Send console command outputs to all online operators.
       '';
     };
     broadcast-rcon-to-ops = mkOption {
-      type = with types; bool;
+      type = types.bool;
       default = true;
       description = ''
         Send rcon console command outputs to all online operators.
       '';
     };
     difficulty = mkOption {
-      type = with types; ints.between 0 3;
+      type = types.ints.between 0 3;
       default = 1;
       description = ''
         Defines the difficulty (such as damage dealt by mobs and the way
@@ -60,14 +62,14 @@ with lib; {
       '';
     };
     enable-command-block = mkOption {
-      type = with types; bool;
+      type = types.bool;
       default = false;
       description = ''
         Enables command blocks
       '';
     };
     enable-jmx-monitoring = mkOption {
-      type = with types; bool;
+      type = types.bool;
       default = false;
       description = ''
         Exposes an MBean with the Object name
@@ -83,7 +85,7 @@ with lib; {
       '';
     };
     enable-rcon = mkOption {
-      type = with types; bool;
+      type = types.bool;
       default = true;
       description = ''
         Enables remote access to the server console. Must be enabled for systemd
@@ -96,14 +98,14 @@ with lib; {
       '';
     };
     sync-chunk-writes = mkOption {
-      type = with types; bool;
+      type = types.bool;
       default = true;
       description = ''
         Enables synchronous chunk writes.
       '';
     };
     enable-status = mkOption {
-      type = with types; bool;
+      type = types.bool;
       default = true;
       description = ''
         Makes the server appear as "online" on the server list.
@@ -113,7 +115,7 @@ with lib; {
       '';
     };
     enable-query = mkOption {
-      type = with types; bool;
+      type = types.bool;
       default = false;
       description = ''
         Enables GameSpy4 protocol server listener. Used to get information
@@ -121,7 +123,7 @@ with lib; {
       '';
     };
     entity-broadcast-range-percentage = mkOption {
-      type = with types; ints.between 0 500;
+      type = types.ints.between 0 500;
       default = 100;
       description = ''
         Controls how close entities need to be before being sent to clients. Higher
@@ -135,7 +137,7 @@ with lib; {
       '';
     };
     force-gamemode = mkOption {
-      type = with types; bool;
+      type = types.bool;
       default = false;
       description = ''
         Force players to join in the default game mode.
@@ -147,21 +149,21 @@ with lib; {
       '';
     };
     function-permission-level = mkOption {
-      type = with types; ints.between 1 4;
+      type = types.ints.between 1 4;
       default = 2;
       description = ''
         Sets the default permission level for functions.
       '';
     };
     gamemode = mkOption {
-      type = with types; ints.between 0 3;
+      type = types.ints.between 0 3;
       default = 0;
       description = ''
         Defines the mode of gameplay.
       '';
     };
     generate-structures = mkOption {
-      type = with types; bool;
+      type = types.bool;
       default = true;
       description = ''
         Defines whether structures (such as villages) can be generated.
@@ -175,7 +177,7 @@ with lib; {
       '';
     };
     generator-settings = mkOption {
-      type = with types; lines;
+      type = types.lines;
       default = "";
       description = ''
         The settings used to customize world generation. Follow <link
@@ -185,7 +187,7 @@ with lib; {
       '';
     };
     hardcore = mkOption {
-      type = with types; bool;
+      type = types.bool;
       default = false;
       description = ''
         If set to true, server difficulty is ignored and set to hard and
@@ -193,7 +195,7 @@ with lib; {
       '';
     };
     level-name = mkOption {
-      type = with types; str;
+      type = types.str;
       default = "world";
       description = ''
         The "level-name" value is used as the world name and its folder
@@ -205,7 +207,7 @@ with lib; {
       '';
     };
     level-seed = mkOption {
-      type = with types; str;
+      type = types.str;
       default = "";
       description = ''
         Sets a world seed for the player's world, as in Singleplayer. The
@@ -215,7 +217,7 @@ with lib; {
       '';
     };
     level-type = mkOption {
-      type = with types; str;
+      type = types.str;
       default = "default";
       description = ''
         Determines the type of map that is generated.
@@ -240,7 +242,7 @@ with lib; {
       '';
     };
     max-players = mkOption {
-      type = with types; ints.positive;
+      type = types.ints.positive;
       default = 20;
       description = ''
         The maximum number of players that can play on the server at the
@@ -257,7 +259,7 @@ with lib; {
       '';
     };
     max-tick-time = mkOption {
-      type = with types; int;
+      type = types.int;
       default = 60000;
       description = ''
         The maximum number of milliseconds a single tick may take before
@@ -274,7 +276,7 @@ with lib; {
       '';
     };
     max-world-size = mkOption {
-      type = with types; ints.between 1 29999984;
+      type = types.ints.between 1 29999984;
       default = 29999984;
       description = ''
         This sets the maximum possible size in blocks, expressed as a
@@ -297,7 +299,7 @@ with lib; {
       '';
     };
     motd = mkOption {
-      type = with types; str;
+      type = types.str;
       default = "A Minecraft Server";
       description = ''
         This is the message that is displayed in the server list of the client, below the name.
@@ -321,7 +323,7 @@ with lib; {
       '';
     };
     network-compression-threshold = mkOption {
-      type = with types; int;
+      type = types.int;
       default = 256;
       description = ''
         By default it allows packets that are n-1 bytes big to go
@@ -346,7 +348,7 @@ with lib; {
       '';
     };
     online-mode = mkOption {
-      type = with types; bool;
+      type = types.bool;
       default = true;
       description = ''
         Server checks connecting players against Minecraft account
@@ -372,7 +374,7 @@ with lib; {
       '';
     };
     op-permission-level = mkOption {
-      type = with types; ints.between 1 4;
+      type = types.ints.between 1 4;
       default = 4;
       description = ''
         Sets the default permission level for ops when using /op. All
@@ -404,7 +406,7 @@ with lib; {
       '';
     };
     player-idle-timeout = mkOption {
-      type = with types; int;
+      type = types.int;
       default = 0;
       description = ''
         If non-zero, players are kicked from the server if they are idle
@@ -429,7 +431,7 @@ with lib; {
       '';
     };
     prevent-proxy-connections = mkOption {
-      type = with types; bool;
+      type = types.bool;
       default = false;
       description = ''
         If the ISP/AS sent from the server is different from the one from
@@ -442,7 +444,7 @@ with lib; {
       '';
     };
     pvp = mkOption {
-      type = with types; bool;
+      type = types.bool;
       default = true;
       description = ''
         Enable PvP on the server. Players shooting themselves with arrows
@@ -465,7 +467,7 @@ with lib; {
       '';
     };
     query-port = mkOption {
-      type = with types; port;
+      type = types.port;
       default = 25565;
       description = ''
         Minecraft: <literal>query.port</literal>
@@ -474,7 +476,7 @@ with lib; {
       '';
     };
     rate-limit = mkOption {
-      type = with types; int;
+      type = types.int;
       default = 0;
       description = ''
         Sets the maximum amount of packets a user can send before getting
@@ -482,7 +484,7 @@ with lib; {
       '';
     };
     rcon-password = mkOption {
-      type = with types; str;
+      type = types.str;
       default = "whatisloveohbabydonthurtmedonthurtmenomore";
       description = ''
         Minecraft: <literal>rcon.password</literal>.
@@ -504,7 +506,7 @@ with lib; {
       '';
     };
     rcon-port = mkOption {
-      type = with types; port;
+      type = types.port;
       default = config.server-port + 1;
       description = ''
         Minecraft: <literal>rcon.port</literal>.
@@ -518,7 +520,7 @@ with lib; {
       '';
     };
     resource-pack = mkOption {
-      type = with types; str;
+      type = types.str;
       default = "";
       description = ''
         Optional URI to a resource pack. The player may choose to use it.
@@ -529,7 +531,7 @@ with lib; {
       '';
     };
     resource-pack-sha1 = mkOption {
-      type = with types; str;
+      type = types.str;
       default = "";
       description = ''
         Optional SHA-1 digest of the resource pack, in lowercase
@@ -544,7 +546,7 @@ with lib; {
       '';
     };
     require-resource-pack = mkOption {
-      type = with types; bool;
+      type = types.bool;
       default = false;
       description = ''
         When this option is enabled (set to true), players will be
@@ -553,7 +555,7 @@ with lib; {
       '';
     };
     server-ip = mkOption {
-      type = with types; str;
+      type = types.str;
       default = "";
       description = ''
         The player should set this if they want the server to bind to a
@@ -565,14 +567,14 @@ with lib; {
       '';
     };
     server-port = mkOption {
-      type = with types; port;
+      type = types.port;
       default = 25565;
       description = ''
         TCP Port on which this instance will be listening.
       '';
     };
     snooper-enabled = mkOption {
-      type = with types; bool;
+      type = types.bool;
       default = true;
       description = ''
         Sets whether the server sends snoop data regularly to
@@ -580,14 +582,14 @@ with lib; {
       '';
     };
     spawn-animals = mkOption {
-      type = with types; bool;
+      type = types.bool;
       default = true;
       description = ''
         Determines if animals can spawn.
       '';
     };
     spawn-monsters = mkOption {
-      type = with types; bool;
+      type = types.bool;
       default = true;
       description = ''
         Determines if monsters can spawn.
@@ -597,14 +599,14 @@ with lib; {
       '';
     };
     spawn-npcs = mkOption {
-      type = with types; bool;
+      type = types.bool;
       default = true;
       description = ''
         Determines whether villagers can spawn.
       '';
     };
     spawn-protection = mkOption {
-      type = with types; int;
+      type = types.int;
       default = 16;
       description = ''
         Determines the side length of the square spawn protection area as
@@ -617,14 +619,14 @@ with lib; {
       '';
     };
     use-native-transport = mkOption {
-      type = with types; bool;
+      type = types.bool;
       default = true;
       description = ''
         Linux server performance improvements: optimized packet sending/receiving on Linux
       '';
     };
     view-distance = mkOption {
-      type = with types; ints.between 3 32;
+      type = types.ints.between 3 32;
       default = 10;
       description = ''
         Sets the amount of world data the server sends the client,
@@ -633,7 +635,7 @@ with lib; {
       '';
     };
     white-list = mkOption {
-      type = with types; bool;
+      type = types.bool;
       default = false;
       description = ''
         Enables a whitelist on the server.
@@ -651,7 +653,7 @@ with lib; {
       '';
     };
     enforce-white-list = mkOption {
-      type = with types; bool;
+      type = types.bool;
       default = false;
       description = ''
         Enforces the whitelist on the server.
@@ -662,12 +664,9 @@ with lib; {
       '';
     };
     extra-options = mkOption {
-      type = with types; attrs;
+      type = types.attrs;
       default = {};
-      example = options.literalExample ''
-        {
-        }
-      '';
+      example = l.options.literalExample "{}";
       description = ''
         Extra options to be appended to <literal>server.properties</literal>.
 

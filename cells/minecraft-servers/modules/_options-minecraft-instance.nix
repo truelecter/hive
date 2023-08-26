@@ -3,28 +3,19 @@ pkgs: {
   lib,
   config,
   ...
-}:
-with lib; let
-  mkJvmMxFlag = icfg: optionalString (icfg.jvmMaxAllocation != "") "-Xmx${icfg.jvmMaxAllocation}";
-  mkJvmMsFlag = icfg: optionalString (icfg.jvmInitialAllocation != "") "-Xms${icfg.jvmInitialAllocation}";
+}: let
+  l = builtins // lib;
+  inherit (lib) types mkOption mkEnableOption;
+
+  mkJvmMxFlag = icfg: l.optionalString (icfg.jvmMaxAllocation != "") "-Xmx${icfg.jvmMaxAllocation}";
+  mkJvmMsFlag = icfg: l.optionalString (icfg.jvmInitialAllocation != "") "-Xms${icfg.jvmInitialAllocation}";
   mkJvmOptString = icfg: "${mkJvmMxFlag icfg} ${mkJvmMsFlag icfg} ${icfg.jvmOpts}";
 in {
   options = rec {
     enable = mkEnableOption "Enable minecraft server instance ${name}";
 
-    rsyncSSHKeys = mkOption {
-      type = with types; listOf str;
-      default = [];
-      description = ''
-        SSH public keys that will have read/write access to an rsync module
-        scoped to the instance state directory.
-
-        This rsync module can be used to manage the instance files.
-      '';
-    };
-
     openRcon = mkOption {
-      type = with types; bool;
+      type = types.bool;
       default = false;
       description = ''
         Whether to open the RCON port in the firewall. Local RCON is used for server automation. Public RCON requires additional security.
@@ -32,7 +23,7 @@ in {
     };
 
     autoRestartTimer = mkOption {
-      type = with types; int;
+      type = types.int;
       default = 0;
       description = ''
         Sets a wall timer in minutes to restart the server. How often this is
@@ -46,7 +37,7 @@ in {
     };
 
     autoRestartOpportunisticCheckTimer = mkOption {
-      type = with types; int;
+      type = types.int;
       default = 0;
       description = ''
         Opportunistically restart the server when nobody is online. Sets a wall
@@ -58,7 +49,7 @@ in {
     };
 
     autoRestartOpportunisticMinInterval = mkOption {
-      type = with types; int;
+      type = types.int;
       default = 0;
       description = ''
         Minimum online interval for opportunistic server restart. Do not
@@ -69,7 +60,7 @@ in {
     };
 
     jvmPackage = mkOption {
-      type = with types; package;
+      type = types.package;
       default = pkgs.jre8;
       description = ''
         JVM package used to run the server.
@@ -81,7 +72,7 @@ in {
     };
 
     jvmMaxAllocation = mkOption {
-      type = with types; str;
+      type = types.str;
       default = "256M";
       description = ''
         Maximum memory allocation pool for the JVM, as set by
@@ -92,7 +83,7 @@ in {
     };
 
     jvmInitialAllocation = mkOption {
-      type = with types; str;
+      type = types.str;
       default = "";
       description = ''
         Initial memory allocation pool for the JVM, as set by
@@ -103,7 +94,7 @@ in {
     };
 
     jvmOpts = mkOption {
-      type = with types; str;
+      type = types.str;
       default = "-XX:+UseG1GC -Dsun.rmi.dgc.server.gcInterval=2147483646 -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M";
       description = ''
         JVM options used to call Minecraft on server startup.
@@ -121,7 +112,7 @@ in {
     };
 
     jvmOptString = mkOption {
-      type = with types; str;
+      type = types.str;
       default = mkJvmOptString config;
       readOnly = true;
       description = ''
@@ -129,8 +120,8 @@ in {
       '';
     };
 
-    serverConfig = mkOption {
-      type = with types; submodule ./_options-minecraft-properties.nix;
+    serverProperties = mkOption {
+      type = types.submodule ./_options-minecraft-properties.nix;
       description = ''
         Set options for <literal>server.properties</literal>.
 
@@ -146,6 +137,16 @@ in {
         <emphasis>NixOS Note:</emphasis> The white list, as well as the list
         of ops, banned players and banned IPs is maintained statefully, either
         by hand or through console commands/rcon.
+      '';
+    };
+
+    environmentFile = mkOption {
+      type = types.nullOr types.path;
+      default = null;
+      description = ''
+        Environment file for server instance. For format, consult
+        <literal>EnvironmentFile</literal> in <literal>systemd.exec</literal>
+        man.
       '';
     };
   };

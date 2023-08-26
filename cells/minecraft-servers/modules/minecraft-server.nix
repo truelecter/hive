@@ -5,7 +5,7 @@
   ...
 }:
 with lib; let
-  cfg = config.services.modded-minecraft-servers;
+  cfg = config.services.modded-minecraft-servers1;
 
   # Server config rendering
   serverPropertiesFile = serverConfig:
@@ -68,7 +68,7 @@ with lib; let
   mkInstanceName = name: "mc-${name}";
 in {
   options = {
-    services.modded-minecraft-servers = {
+    services.modded-minecraft-servers1 = {
       eula = mkOption {
         type = with types; bool;
         default = false;

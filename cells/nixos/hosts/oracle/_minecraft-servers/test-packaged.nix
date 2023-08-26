@@ -21,13 +21,13 @@
   ];
 
   systemd.tmpfiles.rules = [
-    "d '/var/lib/minecraft-servers/e6e/overlays/combined' 0775 minecraft-e6e minecraft-servers - -"
-    "d '/var/lib/minecraft-servers/e6e/overlays/upper' 0775 minecraft-e6e minecraft-servers - -"
-    "d '/var/lib/minecraft-servers/e6e/overlays/work' 0775 minecraft-e6e minecraft-servers - -"
+    "d '/var/lib/minecraft-servers/e6e3/overlays/overlay' 0775 minecraft-e6e minecraft-servers - -"
+    "d '/var/lib/minecraft-servers/e6e3/overlays/upper' 0775 minecraft-e6e minecraft-servers - -"
+    "d '/var/lib/minecraft-servers/e6e3/overlays/work' 0775 minecraft-e6e minecraft-servers - -"
   ];
 
   systemd.mounts = let
-    ovelayName = "${utils.escapeSystemdPath "/var/lib/minecraft-servers/e6e/overlays/combined"}.mount";
+    ovelayName = "${utils.escapeSystemdPath "/var/lib/minecraft-servers/e6e3/overlays/overlay"}.mount";
   in [
     {
       after = [
@@ -37,21 +37,21 @@
       what = "overlay";
       type = "overlay";
 
-      where = "/var/lib/minecraft-servers/e6e/overlays/combined";
+      where = "/var/lib/minecraft-servers/e6e3/overlays/overlay";
       options = lib.concatStringsSep "," [
         "lowerdir=${pkgs.mcs-enigmatica-6-expert}"
-        "upperdir=/var/lib/minecraft-servers/e6e/overlays/upper"
-        "workdir=/var/lib/minecraft-servers/e6e/overlays/work"
+        "upperdir=/var/lib/minecraft-servers/e6e3/overlays/upper"
+        "workdir=/var/lib/minecraft-servers/e6e3/overlays/work"
       ];
     }
 
     {
       after = [ovelayName];
 
-      what = "/var/lib/minecraft-servers/e6e/overlays/combined";
+      what = "/var/lib/minecraft-servers/e6e3/overlays/overlay";
       type = "fuse.bindfs";
 
-      where = "/var/lib/minecraft-servers/e6e/workdir";
+      where = "/var/lib/minecraft-servers/e6e3/workdir";
       options = lib.concatStringsSep "," [
         "force-user=minecraft-e6e"
         "force-group=minecraft-servers"
@@ -81,13 +81,13 @@
 
     serviceConfig = {
       Restart = "always";
-      ExecStart = "/var/lib/minecraft-servers/e6e/workdir/start.sh";
+      ExecStart = "/var/lib/minecraft-servers/e6e3/workdir/start.sh";
       # ExecStop = ''
       #   ${pkgs.mcrcon}/bin/mcrcon stop
       # '';
       TimeoutStopSec = "20";
       User = "minecraft-e6e";
-      WorkingDirectory = "/var/lib/minecraft-servers/e6e/workdir";
+      WorkingDirectory = "/var/lib/minecraft-servers/e6e3/workdir";
     };
 
     preStart = ''
@@ -102,38 +102,5 @@
       # This file must be writeable, because Mojang.
       chmod 644 server.properties || echo no server.properties
     '';
-  };
-
-  containers.nextcloud = {
-    autoStart = true;
-
-    privateNetwork = true;
-
-    forwardPorts = [
-      {
-        containerPort = 25565;
-        hostPort = 25590;
-        protocol = "tcp";
-      }
-    ];
-
-    config = {
-      config,
-      pkgs,
-      ...
-    }: {
-      environment.systemPackages = [pkgs.fuse-overlayfs];
-
-      networking.firewall = {
-        enable = true;
-        allowedTCPPorts = [25590];
-      };
-
-      # Manually configure nameserver. Using resolved inside the container seems to fail
-      # currently
-      environment.etc."resolv.conf".text = "nameserver 8.8.8.8";
-
-      system.stateVersion = "23.05";
-    };
   };
 }

@@ -37,13 +37,11 @@ in
       rm installer.jar.log
       rm modpack-download.zip
       strip-nondeterminism libraries/net/minecraft/server/*/server*-srg.jar
-      # This will be used later, when mounting overlayfs
-      chmod --recursive u+rw $out/*
     '';
 
     outputHashMode = "recursive";
     outputHashAlgo = "sha256";
-    outputHash = "sha256-VN4iWVhD4J2xNu1KNS/iMdfPX2j1HB5+xcuoCmZmDKU=";
+    outputHash = "sha256-cBXT4/vm57l7BjoWUkU3+1Ewcn1ESXFIEr8kPNifXcI=";
 
     meta = with lib; {
       description = "GraalVM Enterprise Edition";

@@ -8,6 +8,7 @@
 in {
   imports = [
     inputs.nixos-vscode-server.nixosModules.default
+    inputs.cells.minecraft-servers.nixosModules.minecraft-servers
 
     suites.base
     profiles.common.networking.tailscale
