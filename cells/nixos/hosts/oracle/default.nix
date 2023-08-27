@@ -11,6 +11,8 @@ in {
     inputs.cells.minecraft-servers.nixosModules.minecraft-servers
 
     suites.base
+    suites.mc
+
     profiles.common.networking.tailscale
     profiles.remote-builds
     profiles.faster-linux

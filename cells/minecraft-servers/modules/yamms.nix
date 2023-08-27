@@ -8,6 +8,8 @@
   l = lib // builtins;
   cfg = config.services.minecraft-servers;
 
+  inherit (lib) mkOption types;
+
   mkInstanceName = name: "mc-${name}";
 
   # Render EULA file
@@ -58,16 +60,24 @@
     (lib.mapAttrsToList mkOptionLine c);
 in {
   options.services.minecraft-servers = {
-    eula = l.mkOption {
-      type = l.types.bool;
+    eula = mkOption {
+      type = types.bool;
       default = false;
       description = ''
         Whether or not you accept the Minecraft EULA
       '';
     };
 
-    instances = l.mkOption {
-      type = l.types.attrsOf (l.types.submodule (import ./_options-minecraft-instance.nix {
+    users.extraGroups = mkOption {
+      type = types.listOf types.string;
+      default = [];
+      description = ''
+        Extra groups for minecraft instance users
+      '';
+    };
+
+    instances = mkOption {
+      type = types.attrsOf (types.submodule (import ./_options-minecraft-instance.nix {
         inherit pkgs;
         globalOptions = options;
       }));
@@ -181,14 +191,20 @@ in {
         '';
       })
       // l.mapAttrs' (
-        n: icfg:
-          l.nameValuePair "restic-backups-${mkInstanceName n}" {
+        n: icfg: let
+          b = "restic-backups-${mkInstanceName n}";
+        in
+          l.nameValuePair b {
             environment = {
               MCRCON_PORT = toString icfg.serverProperties.rcon-port;
               MCRCON_PASS = icfg.serverProperties.rcon-password;
             };
-
-            serviceConfig.EnvironmentFile = l.optionals (l.isPath icfg.environmentFile) [icfg.environmentFile];
+            # serviceConfig.EnvironmentFile = l.mkForce (
+            #   l.flatten [
+            #     (l.optionals (l.isPath icfg.environmentFile) [icfg.environmentFile])
+            #     # (l.optionals (l.isString config.services.restic.backups.${b}.environmentFile) [config.services.restic.backups.${b}.environmentFile])
+            #   ]
+            # );
           }
       )
       enabledResticBackups;
@@ -200,6 +216,7 @@ in {
         home = icfg.dirnames.base;
         createHome = true;
         homeMode = "775";
+        extraGroups = icfg.user.extraGroups ++ cfg.users.extraGroups;
       });
       groups = {
         minecraft-servers = {};
@@ -270,6 +287,10 @@ in {
             ${pkgs.mcrcon}/bin/mcrcon save-all
           '';
           backupCleanupCommand = "${pkgs.mcrcon}/bin/mcrcon save-on";
+          environmentFile = l.flatten [
+            (l.optionals (l.isString icfg.environmentFile) [icfg.environmentFile])
+            (l.optionals (l.isString icfg.backups.restic.environmentFile) [icfg.backups.restic.environmentFile])
+          ];
         }
         // l.filterAttrs (n: _: n != "enable") icfg.backup.restic
     );

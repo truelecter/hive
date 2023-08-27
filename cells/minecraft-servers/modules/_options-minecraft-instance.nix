@@ -181,5 +181,13 @@ in {
       type = types.submodule (import ./_options-backup-restic.nix {inherit pkgs globalOptions;});
       default = {enable = false;};
     };
+
+    user.extraGroups = mkOption {
+      type = types.listOf types.string;
+      default = [];
+      description = ''
+        Extra groups for minecraft instance user
+      '';
+    };
   };
 }
