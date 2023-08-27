@@ -29,7 +29,6 @@ in {
     kubectl
     kubernetes-helmPlugins
     direnv
-    nvfetcher
     amazon-ecr-credential-helper
     dive
     #
@@ -37,4 +36,6 @@ in {
     tailscale
     ffmpeg_5-full
     ;
+
+  nvfetcher = inputs.nvfetcher.packages.default;
 }
