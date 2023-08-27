@@ -115,6 +115,13 @@
         flake-utils.follows = "flake-utils";
       };
     };
+    nvfetcher = {
+      url = "github:berberman/nvfetcher";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-utils.follows = "flake-utils";
+      };
+    };
   };
 
   outputs = {

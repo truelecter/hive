@@ -190,6 +190,22 @@
         "type": "github"
       }
     },
+    "flake-compat_4": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1673956053,
+        "narHash": "sha256-4gtG9iQuiKITOjNQQeQIpoIB6b16fm+504Ch3sNKLd8=",
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "rev": "35bb57c0c8d8b62bbfd284272c928ceb64ddbde9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems_2"
@@ -765,6 +781,30 @@
         "type": "github"
       }
     },
+    "nvfetcher": {
+      "inputs": {
+        "flake-compat": "flake-compat_4",
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1692372415,
+        "narHash": "sha256-QVrvyRf2LKdvnElp50sORKWmyP8KBVDKL7mTXvSNDqU=",
+        "owner": "berberman",
+        "repo": "nvfetcher",
+        "rev": "447973723f6e284934d3cf5f81ca4cfbf4462aef",
+        "type": "github"
+      },
+      "original": {
+        "owner": "berberman",
+        "repo": "nvfetcher",
+        "type": "github"
+      }
+    },
     "paisano": {
       "inputs": {
         "nixpkgs": [
@@ -854,6 +894,7 @@
         "nixpkgs": [
           "nixos"
         ],
+        "nvfetcher": "nvfetcher",
         "sops-nix": "sops-nix",
         "std": "std"
       }
