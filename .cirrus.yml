@@ -42,7 +42,7 @@ linux_task:
   container:
     image: nixos/nix:2.15.0
     cpu: 2
-    memory: 4G
+    memory: 6G
 
   << : *REGULAR_SCRIPTS_TEMPLATE
 
@@ -80,7 +80,7 @@ linux_aarch64_task:
   arm_container:
     image: nixos/nix:2.15.0
     cpu: 2
-    memory: 4G
+    memory: 6G
 
   << : *REGULAR_SCRIPTS_TEMPLATE
 
