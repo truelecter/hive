@@ -121,6 +121,14 @@ in {
       '';
     };
 
+    serverOpts = mkOption {
+      type = types.str;
+      default = "nogui";
+      description = ''
+        Minecraft server options
+      '';
+    };
+
     jvmOptString = mkOption {
       type = types.str;
       default = mkJvmOptString config;

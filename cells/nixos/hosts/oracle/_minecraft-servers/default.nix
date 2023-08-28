@@ -1,22 +1,20 @@
 {
   imports = [
-    ./sevtech.nix
     ./dawncraft.nix
-    ./test-packaged.nix
+    ./e6e.nix
+    ./sevtech.nix
   ];
 
   users = {
     groups = {
       minecraft-servers = {};
-    };
-    users.minecraft-sevtech = {
-      isSystemUser = true;
-      group = "minecraft-servers";
-    };
-    users.minecraft-dawncraft = {
-      isSystemUser = true;
-      group = "minecraft-servers";
+      minecraft-servers-backup = {};
     };
     users.truelecter.extraGroups = ["minecraft-servers"];
+  };
+
+  services.minecraft-servers = {
+    eula = true;
+    users.extraGroups = ["minecraft-servers-backup"];
   };
 }

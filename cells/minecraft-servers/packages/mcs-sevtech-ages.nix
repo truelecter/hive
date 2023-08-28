@@ -7,12 +7,12 @@
   strip-nondeterminism,
   ...
 }: let
-  ss = sources.server-starter.src;
+  forge-installer = sources.forge-server-14-23-5-2860.src;
 in
   stdenvNoCC.mkDerivation rec {
-    pname = "enigmatica-6-expert";
+    pname = "sevtech-ages";
 
-    inherit (sources.mcs-enigmatica-6-expert) version src;
+    inherit (sources.mcs-sevtech-ages) version src;
 
     nativeBuildInputs = [jdk8 unzip strip-nondeterminism];
 
@@ -30,20 +30,19 @@ in
       cp ${./_files/start-forge-before-1.18.sh} start.sh
       chmod +x start.sh
 
-      java -jar ${ss} install
+      java -jar ${forge-installer} --installServer $out
     '';
 
     fixupPhase = ''
-      rm installer.jar.log modpack-download.zip
-      strip-nondeterminism libraries/net/minecraft/server/*/server*-srg.jar
+      rm forge-*installer.jar *.log ServerStart.sh ServerStart.bat Install.sh Install.bat
     '';
 
     outputHashMode = "recursive";
     outputHashAlgo = "sha256";
-    outputHash = "sha256-b7xc6lKWgafmsgSaCCm32FNAd1nWpurEXcgpEwz/KSg=";
+    outputHash = "sha256-pg7Jtdfi+oNlgioAv1ZHOXqq0ePRv6erKV9kNIQArA0=";
 
     meta = with lib; {
-      description = "Enigmatica 6 Expert is a quest-guided progression modpack for Minecraft 1.16.5";
-      homepage = "https://www.curseforge.com/minecraft/modpacks/enigmatica6expert";
+      description = "SevTech: Ages is a massive modpack packed with content and progression";
+      homepage = "https://www.curseforge.com/minecraft/modpacks/sevtech-ages";
     };
   }

@@ -1,4 +1,34 @@
 {
+    "forge-server-14-23-5-2860": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "forge-server-14-23-5-2860",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-rn+tQBVCUDUDmu27DE1yxof/v3xffixG5K4ACjMw4OY=",
+            "type": "url",
+            "url": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.12.2-14.23.5.2860/forge-1.12.2-14.23.5.2860-installer.jar"
+        },
+        "version": "14.23.5.2860"
+    },
+    "forge-server-40-2-9": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "forge-server-40-2-9",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-N/GpCeXZUH3//IIhUgCTCoI+nCcttlQghIXO7sk3rFk=",
+            "type": "url",
+            "url": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.18.2-40.2.9/forge-1.18.2-40.2.9-installer.jar"
+        },
+        "version": "40.2.9"
+    },
     "graalvm-ee-17-aarch64-linux": {
         "cargoLocks": null,
         "date": null,
@@ -61,6 +91,21 @@
         },
         "version": "a690305c6d960374fd9b1024db85a8cdfa0bf1a4"
     },
+    "mcs-dawncraft": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "mcs-dawncraft",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-kq1MjOpQXLRsCGjIdSh9L5ZgSQpUbnRZlBLNcti9khs=",
+            "type": "url",
+            "url": "https://mediafilez.forgecdn.net/files/4709/791/DawnCraft+1.28_f2+Serverpack.zip"
+        },
+        "version": "1.28_f2"
+    },
     "mcs-enigmatica-6-expert": {
         "cargoLocks": null,
         "date": null,
@@ -75,6 +120,21 @@
             "url": "https://mediafilez.forgecdn.net/files/4437/745/Enigmatica6ExpertServer-1.8.0.zip"
         },
         "version": "1.8.0"
+    },
+    "mcs-sevtech-ages": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "mcs-sevtech-ages",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-StrvXb/5/6sf1vdEB3JUXAsuaRsWPXRcnvZkwMATHpQ=",
+            "type": "url",
+            "url": "https://mediafilez.forgecdn.net/files/3570/46/SevTech_Ages_Server_3.2.3.zip"
+        },
+        "version": "3.2.3"
     },
     "mp-server-pause-forge-1_16_5": {
         "cargoLocks": null,

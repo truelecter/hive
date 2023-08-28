@@ -162,7 +162,8 @@ in {
         ];
 
         environment = {
-          JVMOPTS = icfg.jvmOptString;
+          JVM_ARGS = icfg.jvmOptString;
+          SERVER_ARGS = icfg.serverOpts;
           MCRCON_PORT = toString icfg.serverProperties.rcon-port;
           MCRCON_PASS = icfg.serverProperties.rcon-password;
         };
@@ -177,6 +178,10 @@ in {
           User = name;
           WorkingDirectory = icfg.dirnames.workdir;
           EnvironmentFile = l.optionalString (l.isPath icfg.environmentFile) icfg.environmentFile;
+        };
+
+        unitConfig = {
+          RequiresMountsFor = [icfg.dirnames.workdir];
         };
 
         preStart = ''
@@ -255,6 +260,14 @@ in {
               "lowerdir=${icfg.serverPackage}"
               "upperdir=${p.state}"
               "workdir=${p.overlayWorkdir}"
+            ];
+
+            restartTriggers = [
+              icfg.serverPackage
+            ];
+
+            reloadTriggers = [
+              icfg.serverPackage
             ];
           }
 
