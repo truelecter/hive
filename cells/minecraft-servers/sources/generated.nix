@@ -77,6 +77,30 @@
       sha256 = "sha256-StrvXb/5/6sf1vdEB3JUXAsuaRsWPXRcnvZkwMATHpQ=";
     };
   };
+  mod-changeskincore = {
+    pname = "mod-changeskincore";
+    version = "3.2";
+    src = fetchurl {
+      url = "https://ci.codemc.io/job/Games647/job/ChangeSkin/474/artifact/core/target/ChangeSkinCore.jar";
+      sha256 = "sha256-IR8thoPfzEkj+/BepSqZ8/Qs6s91C+r3HnuM71VUGkM=";
+    };
+  };
+  mod-forge-spongeforge = {
+    pname = "mod-forge-spongeforge";
+    version = "1.12.2-2838-7.4.7";
+    src = fetchurl {
+      url = "https://repo.spongepowered.org/repository/maven-releases/org/spongepowered/spongeforge/1.12.2-2838-7.4.7/spongeforge-1.12.2-2838-7.4.7.jar";
+      sha256 = "sha256-tK9S6r/ZYDw1eLFqSoMWUz38nzRHQZrs+CvT5/l+Jsk=";
+    };
+  };
+  mod-sponge-changeskin = {
+    pname = "mod-sponge-changeskin";
+    version = "3.2";
+    src = fetchurl {
+      url = "https://ci.codemc.io/job/Games647/job/ChangeSkin/474/artifact/sponge/target/ChangeSkinSponge.jar";
+      sha256 = "sha256-rw0zwjPfEQv9Q9ThxQZalaCvoXgPFygAAtfHfoKqb7Y=";
+    };
+  };
   mp-server-pause-forge-1_16_5 = {
     pname = "mp-server-pause-forge-1_16_5";
     version = "1.1.0";

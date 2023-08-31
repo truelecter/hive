@@ -67,5 +67,8 @@ in rec {
         }
       );
   in
-    pkgs;
+    pkgs
+    // {
+      sources = sources';
+    };
 }

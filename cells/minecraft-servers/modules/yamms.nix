@@ -111,6 +111,15 @@ in {
       l.mapAttrsToList
       (_: v: v.serverProperties.query-port)
       (l.filterAttrs (_: x: x.serverProperties.enable-query) enabledInstances);
+
+    instancesWithFileConflict =
+      l.filterAttrs (
+        _: x: let
+          targets = l.mapAttrsToList (_: v: v.target) x.customization.create;
+        in
+          (l.unique targets) != targets
+      )
+      enabledInstances;
   in {
     assertions = [
       {
@@ -138,9 +147,14 @@ in {
           allPorts = serverPorts ++ rconPorts ++ queryPorts;
         in {
           assertion = (l.unique allPorts) == allPorts;
-          message = "Your Minecraft instances have some overlapping ports among server, rcon and query ports. They must all be unique.";
+          message = "Your Minecraft server instances have some overlapping ports among server, rcon and query ports. They must all be unique.";
         }
       )
+
+      {
+        assertion = (l.length (l.attrValues instancesWithFileConflict)) == 0;
+        message = "Minecraft instances ${l.concatStringsSep ", " (l.mapAttrsToList (n: _: n) instancesWithFileConflict)} have conflicting file creation rules";
+      }
     ];
 
     environment.systemPackages = [
@@ -168,12 +182,33 @@ in {
           MCRCON_PASS = icfg.serverProperties.rcon-password;
         };
 
-        serviceConfig = {
-          Restart = "always";
-          ExecStart = "${icfg.dirnames.workdir}/start.sh";
-          ExecStop = ''
-            ${pkgs.mcrcon}/bin/mcrcon stop
+        serviceConfig = let
+          rmState = l.escapeShellArg "${icfg.dirnames.overlayRemove}";
+          workdir = l.escapeShellArg "${icfg.dirnames.overlayWorkdirRemove}";
+          rmTarget = l.escapeShellArg "${icfg.dirnames.overlayTargetRemove}";
+          serverTarget = l.escapeShellArg "${icfg.dirnames.overlayCombined}";
+
+          removeCommandsScript = pkgs.writeShellScript "${name}-remove-generator" ''
+            # Try to umount in scae of disaster
+            trap "${pkgs.umount}/bin/umount ${rmTarget}" EXIT
+
+            # Clear rm state
+            rm -rf ${rmState}/*
+
+            # Mount to temporary directories to create required whiteouts
+            ${pkgs.mount}/bin/mount -t overlay overlay -o lowerdir=${icfg.serverPackage},upperdir=${rmState},workdir=${workdir} ${rmTarget}
+
+            # Remove files
+            ${lib.concatMapStrings (path: "\n rm -rf ${l.escapeShellArg "${icfg.dirnames.overlayTargetRemove}/${path}"}") icfg.customization.remove}
+
+            # Relaod main overlay
+            ${pkgs.mount}/bin/mount -oremount ${serverTarget}
           '';
+        in {
+          Restart = "always";
+          ExecStartPre = lib.optionals (l.length icfg.customization.remove > 0) ["+${removeCommandsScript}"];
+          ExecStart = "${icfg.dirnames.workdir}/start.sh";
+          ExecStop = "${pkgs.mcrcon}/bin/mcrcon stop";
           TimeoutStopSec = "60";
           User = name;
           WorkingDirectory = icfg.dirnames.workdir;
@@ -236,6 +271,9 @@ in {
           "d '${p.overlayContainingDir}' 0775 ${name} minecraft-servers - -"
           "d '${p.overlayCombined}' 0775 ${name} minecraft-servers - -"
           "d '${p.overlayWorkdir}' 0775 ${name} minecraft-servers - -"
+          "d '${p.overlayRemove}' 0775 ${name} minecraft-servers - -"
+          "d '${p.overlayWorkdirRemove}' 0775 ${name} minecraft-servers - -"
+          "d '${p.overlayTargetRemove}' 0775 ${name} minecraft-servers - -"
           "d '${p.state}' 0775 ${name} minecraft-servers - -"
           "d '${p.workdir}' 0775 ${name} minecraft-servers - -"
         ]
@@ -246,6 +284,36 @@ in {
       eachEnabledInstance (
         name: icfg: let
           p = icfg.dirnames;
+
+          createCommands =
+            l.mapAttrsToList (_: {
+              target,
+              source,
+              ...
+            }: let
+              to = l.escapeShellArg "${target}";
+              from = l.escapeShellArg "${source}";
+            in ''
+              mkdir -p "$(dirname ${to})"
+
+              if [ -d ${from} ]; then
+                ${pkgs.outils}/bin/lndir -silent ${from} ${to}
+              elif [ -f ${from} ]; then
+                ln -s ${from} ${to}
+              else
+                echo "${from} is not a file or directory"
+                exit 1
+              fi
+            '')
+            (
+              l.filterAttrs (_: v: v.enable) icfg.customization.create
+            );
+
+          createOverlay = pkgs.runCommandLocal "${name}-create-overlay" {} ''
+            mkdir -p $out
+            cd $out
+            ${l.concatStrings createCommands}
+          '';
         in [
           {
             after = [
@@ -257,18 +325,17 @@ in {
 
             where = p.overlayCombined;
             options = l.concatStringsSep "," [
-              "lowerdir=${icfg.serverPackage}"
+              "lowerdir=${l.optionalString ((l.length icfg.customization.remove) > 0) "${icfg.dirnames.overlayRemove}:"}${l.optionalString ((l.length createCommands) > 0) "${createOverlay}:"}${icfg.serverPackage}"
               "upperdir=${p.state}"
               "workdir=${p.overlayWorkdir}"
             ];
 
-            restartTriggers = [
-              icfg.serverPackage
-            ];
-
-            reloadTriggers = [
-              icfg.serverPackage
-            ];
+            restartTriggers =
+              [
+                icfg.serverPackage
+              ]
+              ++ lib.optionals ((l.length createCommands) > 0) [createOverlay]
+              ++ icfg.customization.remove;
           }
 
           {

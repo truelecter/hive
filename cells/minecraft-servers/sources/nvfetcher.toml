@@ -43,3 +43,15 @@ fetch.url = "https://maven.minecraftforge.net/net/minecraftforge/forge/1.12.2-$v
 [mcs-sevtech-ages]
 src.manual = "3.2.3"
 fetch.url = "https://mediafilez.forgecdn.net/files/3570/46/SevTech_Ages_Server_3.2.3.zip"
+
+[mod-sponge-changeskin]
+src.manual = "3.2"
+fetch.url = "https://ci.codemc.io/job/Games647/job/ChangeSkin/474/artifact/sponge/target/ChangeSkinSponge.jar"
+
+[mod-changeskincore]
+src.manual = "3.2"
+fetch.url = "https://ci.codemc.io/job/Games647/job/ChangeSkin/474/artifact/core/target/ChangeSkinCore.jar"
+
+[mod-forge-spongeforge]
+src.manual = "1.12.2-2838-7.4.7"
+fetch.url = "https://repo.spongepowered.org/repository/maven-releases/org/spongepowered/spongeforge/$ver/spongeforge-$ver.jar"

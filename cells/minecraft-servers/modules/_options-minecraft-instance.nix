@@ -13,6 +13,8 @@
   mkJvmMxFlag = icfg: l.optionalString (icfg.jvmMaxAllocation != "") "-Xmx${icfg.jvmMaxAllocation}";
   mkJvmMsFlag = icfg: l.optionalString (icfg.jvmInitialAllocation != "") "-Xms${icfg.jvmInitialAllocation}";
   mkJvmOptString = icfg: "${mkJvmMxFlag icfg} ${mkJvmMsFlag icfg} ${icfg.jvmOpts}";
+
+  instanceName = name;
 in {
   options = rec {
     enable = mkEnableOption "Enable minecraft server instance ${name}";
@@ -147,6 +149,9 @@ in {
         overlayContainingDir = "${base}/overlays";
         overlayCombined = "${overlayContainingDir}/overlay";
         overlayWorkdir = "${overlayContainingDir}/work";
+        overlayRemove = "${overlayContainingDir}/remove";
+        overlayWorkdirRemove = "${overlayContainingDir}/removeWork";
+        overlayTargetRemove = "${overlayContainingDir}/removeTarget";
       };
       readOnly = true;
       internal = true;
@@ -194,8 +199,33 @@ in {
       type = types.listOf types.string;
       default = [];
       description = ''
-        Extra groups for minecraft instance user
+        Extra groups for minecraft instance user.
       '';
+    };
+
+    customization = {
+      remove = mkOption {
+        type = types.listOf types.string;
+        default = [];
+        description = ''
+          List of files to remove before starting server from server package.
+          Takes priority over file creation (i.e. if the same file will be specified in <literal>
+          create</literal>, it will be deleted).
+
+          <emphasis>Note:</emphasis> root access is required to temporary mount overlay to create
+          whiteouts for listed files.
+        '';
+      };
+
+      create = mkOption {
+        type = types.attrsOf (
+          types.submodule (import ./_options-customization-file.nix {inherit pkgs instanceName;})
+        );
+        default = {};
+        description = ''
+          Set of files to place in overlay on top of server package
+        '';
+      };
     };
   };
 }

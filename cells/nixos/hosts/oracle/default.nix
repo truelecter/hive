@@ -30,6 +30,7 @@ in {
     overlays = with inputs.cells.minecraft-servers.overlays; [
       java
       minecraft-servers
+      minecraft-mods
     ];
   };
 

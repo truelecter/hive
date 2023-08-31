@@ -136,6 +136,51 @@
         },
         "version": "3.2.3"
     },
+    "mod-changeskincore": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "mod-changeskincore",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-IR8thoPfzEkj+/BepSqZ8/Qs6s91C+r3HnuM71VUGkM=",
+            "type": "url",
+            "url": "https://ci.codemc.io/job/Games647/job/ChangeSkin/474/artifact/core/target/ChangeSkinCore.jar"
+        },
+        "version": "3.2"
+    },
+    "mod-forge-spongeforge": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "mod-forge-spongeforge",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-tK9S6r/ZYDw1eLFqSoMWUz38nzRHQZrs+CvT5/l+Jsk=",
+            "type": "url",
+            "url": "https://repo.spongepowered.org/repository/maven-releases/org/spongepowered/spongeforge/1.12.2-2838-7.4.7/spongeforge-1.12.2-2838-7.4.7.jar"
+        },
+        "version": "1.12.2-2838-7.4.7"
+    },
+    "mod-sponge-changeskin": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "mod-sponge-changeskin",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-rw0zwjPfEQv9Q9ThxQZalaCvoXgPFygAAtfHfoKqb7Y=",
+            "type": "url",
+            "url": "https://ci.codemc.io/job/Games647/job/ChangeSkin/474/artifact/sponge/target/ChangeSkinSponge.jar"
+        },
+        "version": "3.2"
+    },
     "mp-server-pause-forge-1_16_5": {
         "cargoLocks": null,
         "date": null,
