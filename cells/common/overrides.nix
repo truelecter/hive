@@ -31,6 +31,7 @@ in {
     direnv
     amazon-ecr-credential-helper
     dive
+    act
     #
     
     tailscale

@@ -4,7 +4,6 @@ on:
   schedule:
     - cron: "0 0 * * 6" # At 00:00 on Saturday
 
-# TODO: Add nvfetcher
 jobs:
   lockfile:
     runs-on: ubuntu-latest

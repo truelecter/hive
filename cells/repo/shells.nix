@@ -13,6 +13,7 @@
     nix-index
     statix
     nvfetcher
+    act
     ;
 
   inherit
@@ -28,6 +29,7 @@
   linter = pkgWithCategory "linter";
   docs = pkgWithCategory "docs";
   infra = pkgWithCategory "infra";
+  ci = pkgWithCategory "ci";
 
   inherit (cell) config;
 
@@ -109,6 +111,8 @@ in
         (nix cachix)
         (nix nix-index)
         (nix statix)
+
+        (ci act)
 
         (infra sops)
         (infra inputs.colmena.packages.colmena)
