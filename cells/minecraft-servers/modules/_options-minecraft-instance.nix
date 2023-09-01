@@ -191,7 +191,10 @@ in {
     };
 
     backup.restic = mkOption {
-      type = types.submodule (import ./_options-backup-restic.nix {inherit pkgs globalOptions;});
+      type = types.submodule (import ./_options-backup-restic.nix {
+        inherit pkgs globalOptions;
+        instanceConfig = config;
+      });
       default = {enable = false;};
     };
 

@@ -360,7 +360,6 @@ in {
     services.restic.backups = eachEnabledInstanceFrom enabledResticBackups (
       name: icfg:
         {
-          paths = [icfg.dirnames.state];
           user = name;
           backupPrepareCommand = ''
             ${pkgs.mcrcon}/bin/mcrcon save-off

@@ -1,6 +1,7 @@
 {
   pkgs,
   globalOptions,
+  instanceConfig,
 }: {
   lib,
   config,
@@ -27,6 +28,19 @@ in {
         description = lib.mdDoc ''
           File containing the credentials to access the repository, in the
           format of an EnvironmentFile as described by systemd.exec(5)
+        '';
+      };
+
+      paths = mkOption {
+        type = types.nullOr (types.listOf types.str);
+        default = [
+          instanceConfig.dirnames.state
+        ];
+        defaultText = "Path of the upperdir of server overlay";
+        description = lib.mdDoc ''
+          Which paths to backup. If null or an empty array, no
+          backup command will be run.  This can be used to create a
+          prune-only job.
         '';
       };
     }
