@@ -9,11 +9,10 @@ on:
 
 env:
   REF: ${{ github.event_name == 'workflow_run' && 'auto/upgrade-dependencies' || github.ref }}
-  SKIP: ${{ (contains(fromJSON('["push", "workflow_dispatch"]'), github.event_name) || github.event.workflow_run.conclusion == 'success') && 'false' || 'true' }}
 
 jobs:
   build_system:
-    if: env.SKIP != 'true'
+    if: (contains(fromJSON('["push", "workflow_dispatch"]'), github.event_name) || github.event.workflow_run.conclusion == 'success')
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -44,7 +43,7 @@ jobs:
 
   build_shell:
     runs-on: ubuntu-latest
-    if: env.SKIP != 'true'
+    if: (contains(fromJSON('["push", "workflow_dispatch"]'), github.event_name) || github.event.workflow_run.conclusion == 'success')
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
