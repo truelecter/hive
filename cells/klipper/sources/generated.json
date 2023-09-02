@@ -41,7 +41,7 @@
     },
     "klipper-screen": {
         "cargoLocks": null,
-        "date": "2023-08-26",
+        "date": "2023-08-29",
         "extract": null,
         "name": "klipper-screen",
         "passthru": null,
@@ -53,15 +53,15 @@
             "name": null,
             "owner": "jordanruthe",
             "repo": "KlipperScreen",
-            "rev": "fba15bd7666e87f250ebc6c1e5905219d280fd6e",
-            "sha256": "sha256-zHc7woNrMx9ELi1zqkZfIwGYbfs7cBFQm1tIt4zt75I=",
+            "rev": "71b0ace83c7ca0207a2d9181f535fcc22dc1f19f",
+            "sha256": "sha256-wK4ITG7yLzLU3MTNYSPlDkRr7T0zkCwesE1vhZ5e0lM=",
             "type": "github"
         },
-        "version": "fba15bd7666e87f250ebc6c1e5905219d280fd6e"
+        "version": "71b0ace83c7ca0207a2d9181f535fcc22dc1f19f"
     },
     "mainsail": {
         "cargoLocks": null,
-        "date": "2023-08-22",
+        "date": "2023-09-01",
         "extract": null,
         "name": "mainsail",
         "passthru": null,
@@ -73,11 +73,11 @@
             "name": null,
             "owner": "mainsail-crew",
             "repo": "mainsail",
-            "rev": "18a5c732b28ba36391fba4b41535981e922fa95d",
-            "sha256": "sha256-Iq6ca2JHuiuGPAGP7N/PN0xxntYNUog0lV3DMCFJJDM=",
+            "rev": "98d99d2d118ac52d622c3f9980c199a5a5b7e498",
+            "sha256": "sha256-PQhlG2F6RYqjD6V11tM1BreBDwoktkxd8ViNhQBJEJk=",
             "type": "github"
         },
-        "version": "18a5c732b28ba36391fba4b41535981e922fa95d"
+        "version": "98d99d2d118ac52d622c3f9980c199a5a5b7e498"
     },
     "moonraker": {
         "cargoLocks": null,
@@ -136,7 +136,7 @@
     },
     "rel": {
         "cargoLocks": null,
-        "date": "2023-05-23",
+        "date": "2023-08-30",
         "extract": null,
         "name": "rel",
         "passthru": null,
@@ -148,11 +148,11 @@
             "name": null,
             "owner": "bubbleboy14",
             "repo": "registeredeventlistener",
-            "rev": "ed891f2963dfe8e15133365e4c362756a0a5f282",
-            "sha256": "sha256-PrhVG1NbgpYwgzFFMNI2azQjoGKOkEJdf4MrbG0tTpg=",
+            "rev": "b4fbdebca5434c7296d7211246cfb1728280164f",
+            "sha256": "sha256-0rZIePCCXJGHi9oydiN6fhi2i4EmthsAA2I96nDMMA8=",
             "type": "github"
         },
-        "version": "ed891f2963dfe8e15133365e4c362756a0a5f282"
+        "version": "b4fbdebca5434c7296d7211246cfb1728280164f"
     },
     "wsaccel": {
         "cargoLocks": null,
