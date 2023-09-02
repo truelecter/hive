@@ -1,7 +1,6 @@
 name: Build x86
 on:
   push:
-  pull_request:
   workflow_run:
     workflows:
       - "Update flake.lock"
