@@ -2,13 +2,9 @@
   inputs,
   cell,
 }: let
-  inherit (inputs) nixpkgs std haumea;
-  l = nixpkgs.lib // builtins;
+  inherit (inputs.cells) common;
 in {
-  tailscale = _: {
-    imports = l.attrValues (haumea.lib.load {
-      src = ./darwinModules;
-      loader = haumea.lib.loaders.path;
-    });
+  tailscale = common.lib.combineModules {
+    src = ./darwinModules;
   };
 }

@@ -1,0 +1,52 @@
+name: Build x86
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build_system:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        host:
+          - nixos-nas
+          - nixos-depsos
+          - nixos-hyperos
+          - wsl-tl-wsl
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install Nix
+        uses: cachix/install-nix-action@v20
+        with:
+          nix_path: nixpkgs=channel:nixos-23.05
+          extra_nix_config: |
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+      - uses: cachix/cachix-action@v12
+        with:
+          name: truelecter
+          extraPullNames: cuda-maintainers, mic92, nix-community, nrdxp
+          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
+      - name: Build system configuration
+        run: |
+          nix build ".#nixosConfigurations.${{ matrix.host }}.config.system.build.toplevel"
+
+  build_shell:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install Nix
+        uses: cachix/install-nix-action@v20
+        with:
+          nix_path: nixpkgs=channel:nixos-23.05
+          extra_nix_config: |
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+      - uses: cachix/cachix-action@v12
+        with:
+          name: truelecter
+          extraPullNames: cuda-maintainers, mic92, nix-community, nrdxp
+          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
+      - name: Build shell
+        run: |
+          nix develop --command "menu"

@@ -10,7 +10,7 @@ in {
   inherit
     (latest)
     android-tools
-    vscodium
+    vscode
     alejandra
     rnix-lsp
     nil
@@ -29,10 +29,14 @@ in {
     kubectl
     kubernetes-helmPlugins
     direnv
-    nvfetcher
+    amazon-ecr-credential-helper
+    dive
+    act
     #
     
     tailscale
     ffmpeg_5-full
     ;
+
+  nvfetcher = inputs.nvfetcher.packages.default;
 }

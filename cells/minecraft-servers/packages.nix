@@ -2,14 +2,11 @@
   inputs,
   cell,
 }: let
-  inherit (inputs) latest nixpkgs;
+  inherit (inputs) nixpkgs;
   inherit (inputs.cells) common;
 in
   common.lib.importPackages {
-    nixpkgs = import latest {inherit (nixpkgs) system;};
+    inherit nixpkgs;
     sources = ./sources/generated.nix;
     packages = ./packages;
-    extraArguments = {
-      inherit cell;
-    };
   }

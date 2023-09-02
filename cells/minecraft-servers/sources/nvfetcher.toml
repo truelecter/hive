@@ -1,0 +1,11 @@
+[graalvm-ee-17-aarch64-linux]
+src.manual = "22.3.1"
+fetch.tarball = "https://oca.opensource.oracle.com/gds/GRAALVM_EE_JAVA17_22_3_1/graalvm-ee-java17-linux-aarch64-22.3.1.tar.gz"
+
+[graalvm-ee-17-x86_64-linux]
+src.manual = "22.3.1"
+fetch.tarball = "https://oca.opensource.oracle.com/gds/GRAALVM_EE_JAVA17_22_3_1/graalvm-ee-java17-linux-amd64-22.3.1.tar.gz"
+
+[graalvm-ee-17-x86_64-darwin]
+src.manual = "22.3.1"
+fetch.tarball = "https://oca.opensource.oracle.com/gds/GRAALVM_EE_JAVA17_22_3_1/graalvm-ee-java17-darwin-amd64-22.3.1.tar.gz"

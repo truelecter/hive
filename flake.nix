@@ -115,6 +115,13 @@
         flake-utils.follows = "flake-utils";
       };
     };
+    nvfetcher = {
+      url = "github:berberman/nvfetcher";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-utils.follows = "flake-utils";
+      };
+    };
   };
 
   outputs = {
@@ -164,6 +171,8 @@
 
         (devshells "shells")
 
+        (functions "lib")
+
         (files "files")
         (installables "packages")
         (pkgs "overrides")
@@ -182,7 +191,7 @@
         ["klipper" "packages"]
         ["common" "packages"]
         ["pam-reattach" "packages"]
-        ["rpi" "packages"]
+        ["minecraft-servers" "packages"]
       ];
 
       nixosModules = hive.pick inputs.self [

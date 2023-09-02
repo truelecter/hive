@@ -4,7 +4,6 @@ on:
   schedule:
     - cron: "0 0 * * 6" # At 00:00 on Saturday
 
-# TODO: Add nvfetcher
 jobs:
   lockfile:
     runs-on: ubuntu-latest
@@ -34,6 +33,7 @@ jobs:
           commit-msg: "deps(flake-lock): Updated flake.lock"
           pr-title: "[Automated] Update 'flake.lock' and sources"
           branch: "auto/upgrade-dependencies"
+          token: ${{ secrets.PR_WF_ENABLED_TOKEN }}
           pr-labels: |
             dependencies
             automated

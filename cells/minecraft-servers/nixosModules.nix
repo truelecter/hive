@@ -4,7 +4,7 @@
 }: let
   inherit (inputs.cells) common;
 in {
-  tailscale = common.lib.combineModules {
-    src = ./nixosModules;
+  minecraft = common.lib.combineModules {
+    src = ./modules;
   };
 }

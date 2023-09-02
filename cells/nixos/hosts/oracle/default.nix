@@ -7,11 +7,16 @@
   system = "aarch64-linux";
 in {
   imports = [
+    inputs.nixos-vscode-server.nixosModules.default
+
     suites.base
     profiles.common.networking.tailscale
     profiles.remote-builds
+    profiles.faster-linux
+
     ./_hardware-configuration.nix
-    ./_minecraft-servers.nix
+    ./_minecraft-servers
+    ./_vscode-server.nix
   ];
 
   bee.system = system;
@@ -19,6 +24,9 @@ in {
   bee.pkgs = import inputs.nixos {
     inherit system;
     config.allowUnfree = true;
+    overlays = with inputs.cells.minecraft-servers.overlays; [
+      java
+    ];
   };
 
   systemd.services.NetworkManager-wait-online.enable = false;

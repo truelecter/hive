@@ -109,7 +109,7 @@ in {
         name = "hive";
         inherit (import (inputs.self + /flake.nix)) description;
         # homepage = "CONFIGURE-ME";
-        # topics = "CONFIGURE-ME";
+        topics = "nix, nixos, hive, flake, flakes, nix-flake, nix-flakes, haumea, colmena, std";
         default_branch = "master";
         allow_squash_merge = true;
         allow_merge_commit = true;

@@ -5,9 +5,8 @@ env:
   # CIRRUS_SHELL: "/bin/bash"
 
 common_task_template: &REGULAR_TASK_TEMPLATE
-  timeout_in: 120m
-  only_if: "changesInclude('.cirrus.yml', 'flake.{nix,lock}', 'cells/**', '.ci/*')"
-  # auto_cancellation: "$CIRRUS_BRANCH != 'master' || $CIRRUS_BRANCH == 'master'"
+  timeout_in: 60m
+  only_if: $CIRRUS_BRANCH == 'master' || $CIRRUS_PR != ''
 
 common_scripts_template: &REGULAR_SCRIPTS_TEMPLATE
   # TODO add cache?
@@ -28,45 +27,6 @@ common_scripts_template: &REGULAR_SCRIPTS_TEMPLATE
 
   cachix_background_script: cachix watch-store --compression-method xz --compression-level 9 --jobs 2 truelecter
 
-
-linux_task:
-  << : *REGULAR_TASK_TEMPLATE
-
-  name: Build NixOS x86_64 systems
-
-  env:
-    NIXOS_HOST: nonexisting
-    USER: "root"
-    HOME: "/root"
-    PATH: "$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/per-user/$USER/profile/bin:$PATH"
-
-  container:
-    image: nixos/nix:2.15.0
-    cpu: 4
-    memory: 8G
-
-  << : *REGULAR_SCRIPTS_TEMPLATE
-
-  build_script:
-  - $NIX build ".#nixosConfigurations.$NIXOS_HOST.config.system.build.toplevel"
-  - $NIX develop --command "menu"
-  # for cachix to finish uploading things
-  - sleep 60
-
-  matrix:
-  - name: Build nas
-    env:
-      NIXOS_HOST: nixos-nas
-  - name: Build depsos
-    env:
-      NIXOS_HOST: nixos-depsos
-  - name: Build hyperos
-    env:
-      NIXOS_HOST: nixos-hyperos
-  - name: Build tl-wsl
-    env:
-      NIXOS_HOST: wsl-tl-wsl
-
 linux_aarch64_task:
   << : *REGULAR_TASK_TEMPLATE
 
@@ -80,8 +40,10 @@ linux_aarch64_task:
 
   arm_container:
     image: nixos/nix:2.15.0
-    cpu: 4
-    memory: 8G
+    cpu: 8
+    memory: 32G
+    # try to overcome https://github.com/cirruslabs/cirrus-ci-docs/discussions/1225
+    use_in_memory_disk: true
 
   << : *REGULAR_SCRIPTS_TEMPLATE
 

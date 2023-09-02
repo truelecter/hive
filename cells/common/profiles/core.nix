@@ -88,7 +88,9 @@ in {
   };
 
   nix = {
-    settings = {
+    settings = let
+      GB = 1024 * 1024 * 1024;
+    in {
       # Prevents impurities in builds
       sandbox = true;
 
@@ -101,6 +103,9 @@ in {
       experimental-features = ["flakes" "nix-command"];
       fallback = true;
       warn-dirty = false;
+
+      # Some free space
+      min-free = lib.mkDefault (5 * GB);
     };
 
     # Improve nix store disk usage
@@ -108,13 +113,6 @@ in {
       automatic = true;
       options = "--delete-older-than 7d";
     };
-
-    # Generally useful nix option defaults
-    extraOptions = let
-      GB = 1024 * 1024 * 1024;
-    in ''
-      min-free = ${toString (5 * GB)}
-    '';
 
     nixPath = [
       "nixpkgs=flake:nixos"

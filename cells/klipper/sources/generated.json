@@ -176,7 +176,7 @@
     },
     "rel": {
         "cargoLocks": null,
-        "date": "2023-05-23",
+        "date": "2023-08-30",
         "extract": null,
         "name": "rel",
         "passthru": null,
@@ -188,11 +188,11 @@
             "name": null,
             "owner": "bubbleboy14",
             "repo": "registeredeventlistener",
-            "rev": "ed891f2963dfe8e15133365e4c362756a0a5f282",
-            "sha256": "sha256-PrhVG1NbgpYwgzFFMNI2azQjoGKOkEJdf4MrbG0tTpg=",
+            "rev": "b4fbdebca5434c7296d7211246cfb1728280164f",
+            "sha256": "sha256-0rZIePCCXJGHi9oydiN6fhi2i4EmthsAA2I96nDMMA8=",
             "type": "github"
         },
-        "version": "ed891f2963dfe8e15133365e4c362756a0a5f282"
+        "version": "b4fbdebca5434c7296d7211246cfb1728280164f"
     },
     "wsaccel": {
         "cargoLocks": null,

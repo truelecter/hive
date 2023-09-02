@@ -61,5 +61,7 @@ in {
       echo >&2 "setting up custom pam..."
       ${mkSudoTouchIdAuthScript cfg.enableSudoTouchIdAuthWithReattach}
     '';
+    environment.systemPackages = lib.optionals cfg.enableSudoTouchIdAuthWithReattach [cell.packages.pam-reattach];
+    environment.pathsToLink = lib.optional cfg.enableSudoTouchIdAuthWithReattach "/lib/pam";
   };
 }

@@ -61,5 +61,7 @@
   "vetur.format.options.useTabs": true,
   "vetur.validation.templateProps": true,
 
-  "typescript.updateImportsOnFileMove.enabled": "always"
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  "remote.SSH.localServerDownload": "off"
 }
