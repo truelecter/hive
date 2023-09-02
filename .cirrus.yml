@@ -41,7 +41,9 @@ linux_aarch64_task:
   arm_container:
     image: nixos/nix:2.15.0
     cpu: 8
-    memory: 8G
+    memory: 32G
+    # try to overcome https://github.com/cirruslabs/cirrus-ci-docs/discussions/1225
+    use_in_memory_disk: true
 
   << : *REGULAR_SCRIPTS_TEMPLATE
 
