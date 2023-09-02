@@ -1,18 +1,14 @@
 name: Build x86
 on:
   push:
-  workflow_dispatch:
+  pull_request:
   workflow_run:
     workflows:
       - "Update flake.lock"
     types: [completed]
 
-env:
-  REF: ${{ github.event_name == 'workflow_run' && 'auto/upgrade-dependencies' || github.ref }}
-
 jobs:
   build_system:
-    if: (contains(fromJSON('["push", "workflow_dispatch"]'), github.event_name) || github.event.workflow_run.conclusion == 'success')
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -24,8 +20,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-        with:
-          ref: ${{ env.REF }}
       - name: Install Nix
         uses: cachix/install-nix-action@v20
         with:
@@ -43,12 +37,9 @@ jobs:
 
   build_shell:
     runs-on: ubuntu-latest
-    if: (contains(fromJSON('["push", "workflow_dispatch"]'), github.event_name) || github.event.workflow_run.conclusion == 'success')
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-        with:
-          ref: ${{ env.REF }}
       - name: Install Nix
         uses: cachix/install-nix-action@v20
         with:

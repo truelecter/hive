@@ -33,6 +33,7 @@ jobs:
           commit-msg: "deps(flake-lock): Updated flake.lock"
           pr-title: "[Automated] Update 'flake.lock' and sources"
           branch: "auto/upgrade-dependencies"
+          token: ${{ secrets.PR_WF_ENABLED_TOKEN }}
           pr-labels: |
             dependencies
             automated
