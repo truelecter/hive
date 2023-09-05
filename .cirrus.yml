@@ -50,7 +50,7 @@ linux_aarch64_task:
   build_system_script: |
     set +e
 
-    max_attempts=5
+    max_attempts=10
     attempt_num=1
     success=false
 
