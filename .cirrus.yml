@@ -39,9 +39,10 @@ linux_aarch64_task:
     PATH: "$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/per-user/$USER/profile/bin:$PATH"
 
   arm_container:
-    image: nixos/nix:2.15.0
-    cpu: 8
-    memory: 32G
+    image: nixos/nix:2.17.0
+    cpu: 4
+    memory: 16G
+    stateful: true
     # try to overcome https://github.com/cirruslabs/cirrus-ci-docs/discussions/1225
     use_in_memory_disk: true
 
