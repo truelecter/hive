@@ -48,6 +48,8 @@ linux_aarch64_task:
   << : *COMMON_SCRIPTS_TEMPLATE
 
   build_system_script: |
+    set +e
+
     max_attempts=5
     attempt_num=1
     success=false
@@ -67,6 +69,7 @@ linux_aarch64_task:
       exit 1
     fi
 
+    set -e
   # build_devshell_script:
   # - $NIX develop --command "menu"
 
