@@ -28,7 +28,7 @@
     };
   };
 
-  excluded-plugins-from-full = [];
+  excluded-plugins-from-full = ["sources"];
 in
   packages
   # TODO: prefix plugins with klipper- if the do not have this prefix
