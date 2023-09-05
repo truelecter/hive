@@ -4,7 +4,7 @@ env:
   NIX: nix --extra-experimental-features nix-command --extra-experimental-features flakes
   # CIRRUS_SHELL: "/bin/bash"
 
-common_task_template: &LINUX_TASK_TEMPLATE
+common_task_template: &COMMON_TASK_TEMPLATE
   timeout_in: 60m
   only_if: $CIRRUS_BRANCH == 'master' || $CIRRUS_PR != ''
 
@@ -32,7 +32,7 @@ common_finishing_script_template: &COMMON_FINISHING_SCRIPTS_TEMPLATE
   upload_paths_to_cachix_script: .ci/push-paths.sh cachix "--compression-method xz --compression-level 9 --jobs 8" truelecter ""  ""
 
 linux_aarch64_task:
-  << : *LINUX_TASK_TEMPLATE
+  << : *COMMON_TASK_TEMPLATE
 
   name: Build NixOS aarch64 systems
 
