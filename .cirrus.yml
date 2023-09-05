@@ -50,8 +50,8 @@ linux_aarch64_task:
   build_system_script:
   - $NIX build ".#nixosConfigurations.nixos-$NIXOS_HOST.config.system.build.toplevel"
 
-  build_devshell_script:
-  - $NIX develop --command "menu"
+  # build_devshell_script:
+  # - $NIX develop --command "menu"
 
 
   << : *COMMON_FINISHING_SCRIPTS_TEMPLATE
