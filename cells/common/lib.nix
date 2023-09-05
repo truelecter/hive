@@ -58,15 +58,19 @@ in rec {
       if builtins.isPath sources
       then (nixpkgs.callPackage sources {})
       else sources;
+    pkgs =
+      nixpkgs.lib.mapAttrs (
+        _: v: nixpkgs.callPackage v (extraArguments // {sources = sources';})
+      )
+      (
+        haumea.lib.load {
+          src = packages;
+          loader = haumea.lib.loaders.path;
+        }
+      );
   in
-    nixpkgs.lib.mapAttrs (
-      _: v: nixpkgs.callPackage v (extraArguments // {sources = sources';})
-    )
-    (
-      haumea.lib.load {
-        src = packages;
-
-        loader = haumea.lib.loaders.path;
-      }
-    );
+    pkgs
+    // {
+      sources = sources';
+    };
 }

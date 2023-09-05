@@ -4,11 +4,11 @@ env:
   NIX: nix --extra-experimental-features nix-command --extra-experimental-features flakes
   # CIRRUS_SHELL: "/bin/bash"
 
-common_task_template: &REGULAR_TASK_TEMPLATE
+common_task_template: &COMMON_TASK_TEMPLATE
   timeout_in: 60m
   only_if: $CIRRUS_BRANCH == 'master' || $CIRRUS_PR != ''
 
-common_scripts_template: &REGULAR_SCRIPTS_TEMPLATE
+common_scripts_template: &COMMON_SCRIPTS_TEMPLATE
   # TODO add cache?
   # nix_cache:
 
@@ -24,11 +24,13 @@ common_scripts_template: &REGULAR_SCRIPTS_TEMPLATE
   - cachix use mic92
   - cachix use nrdxp
   - cachix use truelecter
+  - ./.ci/install-nix.sh > /tmp/store-path-pre-build
 
-  cachix_background_script: cachix watch-store --compression-method xz --compression-level 9 --jobs 2 truelecter
+common_finishing_script_template: &COMMON_FINISHING_SCRIPTS_TEMPLATE
+  upload_paths_to_cachix_script: .ci/push-paths.sh cachix "--compression-method xz --compression-level 9 --jobs 8" truelecter ""  ""
 
 linux_aarch64_task:
-  << : *REGULAR_TASK_TEMPLATE
+  << : *COMMON_TASK_TEMPLATE
 
   name: Build NixOS aarch64 systems
 
@@ -39,19 +41,40 @@ linux_aarch64_task:
     PATH: "$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/per-user/$USER/profile/bin:$PATH"
 
   arm_container:
-    image: nixos/nix:2.15.0
-    cpu: 8
-    memory: 32G
-    # try to overcome https://github.com/cirruslabs/cirrus-ci-docs/discussions/1225
-    use_in_memory_disk: true
+    image: nixos/nix:2.17.0
+    cpu: 4
+    memory: 16G
 
-  << : *REGULAR_SCRIPTS_TEMPLATE
+  << : *COMMON_SCRIPTS_TEMPLATE
 
-  build_systems_script:
-  - $NIX build ".#nixosConfigurations.nixos-$NIXOS_HOST.config.system.build.toplevel"
-  - $NIX develop --command "menu"
-  # for cachix to finish uploading things
-  - sleep 60
+  build_system_script: |
+    set +e
+
+    max_attempts=10
+    attempt_num=1
+    success=false
+
+    while [ $success = false ] && [ $attempt_num -le $max_attempts ]; do
+      $NIX build ".#nixosConfigurations.nixos-$NIXOS_HOST.config.system.build.toplevel"
+
+      if [ $? -eq 0 ]; then
+        success=true
+      else
+        echo "Attempt $attempt_num failed. Trying again..."
+        attempt_num=$(( attempt_num + 1 ))
+      fi
+    done
+
+    if [ $success = false ]; then
+      exit 1
+    fi
+
+    set -e
+  # build_devshell_script:
+  # - $NIX develop --command "menu"
+
+
+  << : *COMMON_FINISHING_SCRIPTS_TEMPLATE
 
   matrix:
   # - name: Build octoprint
@@ -62,7 +85,7 @@ linux_aarch64_task:
       NIXOS_HOST: oracle
 
 macos_task:
-  << : *REGULAR_TASK_TEMPLATE
+  << : *COMMON_TASK_TEMPLATE
 
   name: Build Nix-Darwin system
 
@@ -79,13 +102,15 @@ macos_task:
 
   install_nix_script: ./.ci/install-nix.sh
 
-  << : *REGULAR_SCRIPTS_TEMPLATE
+  << : *COMMON_SCRIPTS_TEMPLATE
 
-  build_script:
+  build_system_script:
   - nix build ".#darwinConfigurations.darwin-$NIXOS_HOST.config.system.build.toplevel"
+
+  build_devshell_script:
   - nix develop --command "menu"
-  # for cachix to finish uploading things
-  - sleep 60
+
+  << : *COMMON_FINISHING_SCRIPTS_TEMPLATE
 
   matrix:
   - name: Build squadbook

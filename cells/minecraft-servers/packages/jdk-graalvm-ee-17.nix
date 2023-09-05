@@ -15,7 +15,7 @@
   source = sources."graalvm-ee-17-${system}";
 in
   stdenv.mkDerivation rec {
-    pname = "graalvm-ee-17";
+    pname = "jdk-graalvm-ee-17";
 
     inherit (source) version src;
 
@@ -45,5 +45,3 @@ in
       description = "GraalVM Enterprise Edition";
     };
   }
-#
-

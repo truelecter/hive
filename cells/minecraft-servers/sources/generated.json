@@ -1,4 +1,34 @@
 {
+    "forge-server-14-23-5-2860": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "forge-server-14-23-5-2860",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-rn+tQBVCUDUDmu27DE1yxof/v3xffixG5K4ACjMw4OY=",
+            "type": "url",
+            "url": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.12.2-14.23.5.2860/forge-1.12.2-14.23.5.2860-installer.jar"
+        },
+        "version": "14.23.5.2860"
+    },
+    "forge-server-40-2-9": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "forge-server-40-2-9",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-N/GpCeXZUH3//IIhUgCTCoI+nCcttlQghIXO7sk3rFk=",
+            "type": "url",
+            "url": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.18.2-40.2.9/forge-1.18.2-40.2.9-installer.jar"
+        },
+        "version": "40.2.9"
+    },
     "graalvm-ee-17-aarch64-linux": {
         "cargoLocks": null,
         "date": null,
@@ -40,5 +70,145 @@
             "url": "https://oca.opensource.oracle.com/gds/GRAALVM_EE_JAVA17_22_3_1/graalvm-ee-java17-linux-amd64-22.3.1.tar.gz"
         },
         "version": "22.3.1"
+    },
+    "knock": {
+        "cargoLocks": null,
+        "date": "2023-03-10",
+        "extract": null,
+        "name": "knock",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "Metalcape",
+            "repo": "knock",
+            "rev": "a690305c6d960374fd9b1024db85a8cdfa0bf1a4",
+            "sha256": "sha256-RHSNvaQdIUjzN7MCDyLOosHo22CSkFlzCERCg0TFxhI=",
+            "type": "github"
+        },
+        "version": "a690305c6d960374fd9b1024db85a8cdfa0bf1a4"
+    },
+    "mcs-dawncraft": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "mcs-dawncraft",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-kq1MjOpQXLRsCGjIdSh9L5ZgSQpUbnRZlBLNcti9khs=",
+            "type": "url",
+            "url": "https://mediafilez.forgecdn.net/files/4709/791/DawnCraft+1.28_f2+Serverpack.zip"
+        },
+        "version": "1.28_f2"
+    },
+    "mcs-enigmatica-6-expert": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "mcs-enigmatica-6-expert",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-rmMzXGBqKREWKqUqJ8nNfZOyngamfukA15AmUTjKKIY=",
+            "type": "url",
+            "url": "https://mediafilez.forgecdn.net/files/4437/745/Enigmatica6ExpertServer-1.8.0.zip"
+        },
+        "version": "1.8.0"
+    },
+    "mcs-sevtech-ages": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "mcs-sevtech-ages",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-StrvXb/5/6sf1vdEB3JUXAsuaRsWPXRcnvZkwMATHpQ=",
+            "type": "url",
+            "url": "https://mediafilez.forgecdn.net/files/3570/46/SevTech_Ages_Server_3.2.3.zip"
+        },
+        "version": "3.2.3"
+    },
+    "mod-changeskincore": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "mod-changeskincore",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-IR8thoPfzEkj+/BepSqZ8/Qs6s91C+r3HnuM71VUGkM=",
+            "type": "url",
+            "url": "https://ci.codemc.io/job/Games647/job/ChangeSkin/474/artifact/core/target/ChangeSkinCore.jar"
+        },
+        "version": "3.2"
+    },
+    "mod-forge-spongeforge": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "mod-forge-spongeforge",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-tK9S6r/ZYDw1eLFqSoMWUz38nzRHQZrs+CvT5/l+Jsk=",
+            "type": "url",
+            "url": "https://repo.spongepowered.org/repository/maven-releases/org/spongepowered/spongeforge/1.12.2-2838-7.4.7/spongeforge-1.12.2-2838-7.4.7.jar"
+        },
+        "version": "1.12.2-2838-7.4.7"
+    },
+    "mod-sponge-changeskin": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "mod-sponge-changeskin",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-rw0zwjPfEQv9Q9ThxQZalaCvoXgPFygAAtfHfoKqb7Y=",
+            "type": "url",
+            "url": "https://ci.codemc.io/job/Games647/job/ChangeSkin/474/artifact/sponge/target/ChangeSkinSponge.jar"
+        },
+        "version": "3.2"
+    },
+    "mp-server-pause-forge-1_16_5": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "mp-server-pause-forge-1_16_5",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-XhfCex4pwFM3TKQtF+1YdYeIPhR+5pITgKoR+BZN6EA=",
+            "type": "url",
+            "url": "https://www.curseforge.com/api/v1/mods/556491/files/3803691/download"
+        },
+        "version": "1.1.0"
+    },
+    "server-starter": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "server-starter",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-cL7Cdx/QACCah3i4RX8jG/jmJEuz2Numu3OcNmLgmbQ=",
+            "type": "url",
+            "url": "https://github.com/EnigmaticaModpacks/ServerStarter/releases/download/v2.4.0/serverstarter-2.4.0.jar"
+        },
+        "version": "2.4.0"
     }
 }

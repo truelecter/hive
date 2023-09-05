@@ -1,0 +1,11 @@
+name: Build depsos
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  call-workflow-passing-data:
+    uses: ./.github/workflows/build-x86-host.yaml
+    with:
+      configuration: nixos-depsos
+    secrets: inherit
