@@ -47,8 +47,25 @@ linux_aarch64_task:
 
   << : *COMMON_SCRIPTS_TEMPLATE
 
-  build_system_script:
-  - $NIX build ".#nixosConfigurations.nixos-$NIXOS_HOST.config.system.build.toplevel"
+  build_system_script: |
+    max_attempts=5
+    attempt_num=1
+    success=false
+
+    while [ $success = false ] && [ $attempt_num -le $max_attempts ]; do
+      $NIX build ".#nixosConfigurations.nixos-$NIXOS_HOST.config.system.build.toplevel"
+
+      if [ $? -eq 0 ]; then
+        success=true
+      else
+        echo "Attempt $attempt_num failed. Trying again..."
+        attempt_num=$(( attempt_num + 1 ))
+      fi
+    done
+
+    if [ $success = false ]; then
+      exit 1
+    fi
 
   # build_devshell_script:
   # - $NIX develop --command "menu"
