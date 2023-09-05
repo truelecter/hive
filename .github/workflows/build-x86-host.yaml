@@ -12,6 +12,7 @@ on:
         required: true
 jobs:
   build_system:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
