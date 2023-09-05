@@ -8,8 +8,11 @@
 in {
   imports = [
     inputs.nixos-vscode-server.nixosModules.default
+    inputs.cells.minecraft-servers.nixosModules.minecraft-servers
 
     suites.base
+    suites.mc
+
     profiles.common.networking.tailscale
     profiles.remote-builds
     profiles.faster-linux
@@ -26,6 +29,8 @@ in {
     config.allowUnfree = true;
     overlays = with inputs.cells.minecraft-servers.overlays; [
       java
+      minecraft-servers
+      minecraft-mods
     ];
   };
 

@@ -17,4 +17,10 @@ in
         inputs.cells.secrets.nixosProfiles.secrets
       ];
     };
+
+    mc = _: {
+      imports = [
+        inputs.cells.secrets.nixosProfiles.minecraft
+      ];
+    };
   }

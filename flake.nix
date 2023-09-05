@@ -198,6 +198,7 @@
         ["tailscale" "nixosModules"]
         ["klipper" "nixosModules"]
         ["k8s" "nixosModules"]
+        ["minecraft-servers" "nixosModules"]
       ];
 
       homeModules = hive.pick inputs.self [

@@ -13,7 +13,12 @@ creation_rules:
     key_groups:
       - pgp:
           - *truelecter
-  - path_regex: secrets/sops/[^/]+\.yaml$
+  - path_regex: cells/secrets/sops/backups.yaml$
+    key_groups:
+      - pgp:
+          - *truelecter
+          - *oracle
+  - path_regex: cells/secrets/sops/[^/]+\.yaml$
     key_groups:
       - pgp:
           - *truelecter
@@ -24,7 +29,7 @@ creation_rules:
           - *depsos
           - *oracle
           - *tl-wsl
-  - path_regex: secrets/sops/ssh.*$
+  - path_regex: cells/secrets/sops/ssh.*$
     key_groups:
       - pgp:
           - *truelecter

@@ -9,3 +9,49 @@ fetch.tarball = "https://oca.opensource.oracle.com/gds/GRAALVM_EE_JAVA17_22_3_1/
 [graalvm-ee-17-x86_64-darwin]
 src.manual = "22.3.1"
 fetch.tarball = "https://oca.opensource.oracle.com/gds/GRAALVM_EE_JAVA17_22_3_1/graalvm-ee-java17-darwin-amd64-22.3.1.tar.gz"
+
+[knock]
+src.git = "https://github.com/Metalcape/knock"
+src.branch = "cooldown"
+fetch.github = "Metalcape/knock"
+
+[mp-server-pause-forge-1_16_5]
+src.manual = "1.1.0"
+fetch.url = "https://www.curseforge.com/api/v1/mods/556491/files/3803691/download"
+
+[server-starter]
+src.github = "EnigmaticaModpacks/ServerStarter"
+src.prefix = "v"
+fetch.url = "https://github.com/EnigmaticaModpacks/ServerStarter/releases/download/v$ver/serverstarter-$ver.jar"
+
+[mcs-enigmatica-6-expert]
+src.manual = "1.8.0"
+fetch.url = "https://mediafilez.forgecdn.net/files/4437/745/Enigmatica6ExpertServer-1.8.0.zip"
+
+[mcs-dawncraft]
+src.manual = "1.28_f2"
+fetch.url = "https://mediafilez.forgecdn.net/files/4709/791/DawnCraft+1.28_f2+Serverpack.zip"
+
+[forge-server-40-2-9]
+src.manual = "40.2.9"
+fetch.url = "https://maven.minecraftforge.net/net/minecraftforge/forge/1.18.2-$ver/forge-1.18.2-$ver-installer.jar"
+
+[forge-server-14-23-5-2860]
+src.manual = "14.23.5.2860"
+fetch.url = "https://maven.minecraftforge.net/net/minecraftforge/forge/1.12.2-$ver/forge-1.12.2-$ver-installer.jar"
+
+[mcs-sevtech-ages]
+src.manual = "3.2.3"
+fetch.url = "https://mediafilez.forgecdn.net/files/3570/46/SevTech_Ages_Server_3.2.3.zip"
+
+[mod-sponge-changeskin]
+src.manual = "3.2"
+fetch.url = "https://ci.codemc.io/job/Games647/job/ChangeSkin/474/artifact/sponge/target/ChangeSkinSponge.jar"
+
+[mod-changeskincore]
+src.manual = "3.2"
+fetch.url = "https://ci.codemc.io/job/Games647/job/ChangeSkin/474/artifact/core/target/ChangeSkinCore.jar"
+
+[mod-forge-spongeforge]
+src.manual = "1.12.2-2838-7.4.7"
+fetch.url = "https://repo.spongepowered.org/repository/maven-releases/org/spongepowered/spongeforge/$ver/spongeforge-$ver.jar"
