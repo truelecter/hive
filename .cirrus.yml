@@ -26,8 +26,6 @@ common_scripts_template: &COMMON_SCRIPTS_TEMPLATE
   - cachix use truelecter
   - ./.ci/install-nix.sh > /tmp/store-path-pre-build
 
-  # cachix_background_script: cachix watch-store --compression-method xz --compression-level 9 --jobs 2 truelecter
-
 common_finishing_script_template: &COMMON_FINISHING_SCRIPTS_TEMPLATE
   upload_paths_to_cachix_script: .ci/push-paths.sh cachix "--compression-method xz --compression-level 9 --jobs 8" truelecter ""  ""
 
@@ -46,16 +44,15 @@ linux_aarch64_task:
     image: nixos/nix:2.17.0
     cpu: 4
     memory: 16G
-    stateful: true
-    # try to overcome https://github.com/cirruslabs/cirrus-ci-docs/discussions/1225
-    use_in_memory_disk: true
 
   << : *COMMON_SCRIPTS_TEMPLATE
 
-  build_systems_script:
+  build_system_script:
   - $NIX build ".#nixosConfigurations.nixos-$NIXOS_HOST.config.system.build.toplevel"
-  # - $NIX develop --command "menu"
-  # for cachix to finish uploading things
+
+  build_devshell_script:
+  - $NIX develop --command "menu"
+
 
   << : *COMMON_FINISHING_SCRIPTS_TEMPLATE
 
@@ -87,10 +84,11 @@ macos_task:
 
   << : *COMMON_SCRIPTS_TEMPLATE
 
-  build_script:
+  build_system_script:
   - nix build ".#darwinConfigurations.darwin-$NIXOS_HOST.config.system.build.toplevel"
+
+  build_devshell_script:
   - nix develop --command "menu"
-  # for cachix to finish uploading things
 
   << : *COMMON_FINISHING_SCRIPTS_TEMPLATE
 
