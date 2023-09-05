@@ -6,8 +6,6 @@ on:
         required: true
         type: string
     secrets:
-      GITHUB_TOKEN:
-        required: true
       CACHIX_AUTH_TOKEN:
         required: true
 jobs:
