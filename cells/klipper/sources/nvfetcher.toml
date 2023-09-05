@@ -38,10 +38,18 @@ fetch.github = "mainsail-crew/mainsail"
 src.git = "https://github.com/julianschill/klipper-led_effect"
 fetch.github = "julianschill/klipper-led_effect"
 
-[klipper-ercf-happy-hare]
-src.git = "https://github.com/moggieuk/ERCF-Software-V3"
-fetch.github = "moggieuk/ERCF-Software-V3"
+[klipper-happy-hare]
+src.git = "https://github.com/moggieuk/Happy-Hare"
+fetch.github = "moggieuk/Happy-Hare"
 
 [klipper-ercf]
 src.git = "https://github.com/EtteGit/EnragedRabbitProject"
 fetch.github = "EtteGit/EnragedRabbitProject"
+
+[klipper-kamp]
+src.github = "kyleisah/Klipper-Adaptive-Meshing-Purging"
+fetch.github = "kyleisah/Klipper-Adaptive-Meshing-Purging"
+
+[klipper-z-calibration]
+src.github = "protoloft/klipper_z_calibration"
+fetch.github = "protoloft/klipper_z_calibration"

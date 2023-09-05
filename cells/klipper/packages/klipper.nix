@@ -7,7 +7,15 @@
   plugins ? [],
   ...
 }: let
-  pluginDependencies = plugins;
+  pluginDependencies = lib.unique (
+    lib.flatten (
+      builtins.map (p:
+        if p ? pythonDependencies
+        then p.pythonDependencies
+        else [])
+      plugins
+    )
+  );
 in
   stdenv.mkDerivation rec {
     inherit (sources.klipper) pname version src;
@@ -52,16 +60,20 @@ in
       chmod 755 $out/lib/klipper/klippy.py
       makeWrapper $out/lib/klipper/klippy.py $out/bin/klippy --chdir $out/lib/klipper
 
+      # Symlink plugins
       ${
         lib.concatStringsSep "\n" (
           builtins.map
-          (plugin: "ln -sf ${plugin}/lib/${plugin.pname}/extras/*.py $out/lib/klipper/extras/")
-          plugins
+          # Filter only plugins with extras. There was a lib function for getting output in lib/attrset.nix
+          (plugin: "ln -sf ${plugin}/lib/extras/*.py $out/lib/klipper/extras/")
+          (builtins.filter (p: p ? klipper && p.klipper.extras) plugins)
         )
       }
 
       runHook postInstall
     '';
+
+    passthru.plugins = plugins;
 
     meta = with lib; {
       description = "The Klipper 3D printer firmware";

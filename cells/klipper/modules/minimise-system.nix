@@ -12,8 +12,8 @@ in {
   };
 
   config = mkIf cfg.enable {
-    imports = [
-      (modulesPath + "/profiles/minimal.nix")
-    ];
+    # imports = [
+    #   (modulesPath + "/profiles/minimal.nix")
+    # ];
   };
 }

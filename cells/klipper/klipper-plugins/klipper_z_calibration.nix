@@ -4,10 +4,10 @@
   sources,
   ...
 }:
-stdenvNoCC.mkDerivation rec {
-  pname = "klipper-led_effect";
+stdenvNoCC.mkDerivation {
+  pname = "klipper_z_calibration";
 
-  inherit (sources.klipper-led_effect) version src;
+  inherit (sources.klipper-z-calibration) version src;
 
   dontPatch = true;
   dontConfigure = true;
@@ -15,7 +15,7 @@ stdenvNoCC.mkDerivation rec {
 
   installPhase = ''
     mkdir -p $out/lib/extras
-    cp ./src/led_effect.py $out/lib/extras
+    cp ./z_calibration.py $out/lib/extras
   '';
 
   passthru.klipper = {
@@ -24,9 +24,9 @@ stdenvNoCC.mkDerivation rec {
   };
 
   meta = with lib; {
-    description = "LED effects plugin for klipper";
+    description = "Klipper plugin for self-calibrating z-offset";
     platforms = platforms.linux;
-    homepage = "https://github.com/julianschill/klipper-led_effect";
+    homepage = "https://github.com/protoloft/klipper_z_calibration";
     license = licenses.gpl3Only;
   };
 }

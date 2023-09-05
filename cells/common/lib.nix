@@ -54,7 +54,10 @@ in rec {
     extraArguments ? {},
     packages,
   }: let
-    sources' = nixpkgs.callPackage sources {};
+    sources' =
+      if builtins.isPath sources
+      then (nixpkgs.callPackage sources {})
+      else sources;
   in
     nixpkgs.lib.mapAttrs (
       _: v: nixpkgs.callPackage v (extraArguments // {sources = sources';})

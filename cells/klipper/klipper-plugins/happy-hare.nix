@@ -5,16 +5,23 @@
   ...
 }:
 stdenvNoCC.mkDerivation rec {
-  pname = "klipper-ercf-happy-hare";
+  pname = "happy-hare";
 
-  inherit (sources.klipper-ercf-happy-hare) version src;
+  inherit (sources.klipper-happy-hare) version src;
+
+  dontPatch = true;
+  dontConfigure = true;
+  dontBuild = true;
 
   installPhase = ''
-    mkdir -p $out/lib/${pname}/{extras,config}
-    cp ./extras/* $out/lib/${pname}/extras
-    cp ./*.cfg $out/lib/${pname}/config
-    cp -r ./doc $out/lib/${pname}/doc
+    mkdir -p $out/lib/
+    cp -r ./doc ./extras ./config $out/lib
   '';
+
+  passthru.klipper = {
+    config = false;
+    extras = true;
+  };
 
   meta = with lib; {
     description = "New software driver for ERCF control under Klipper";

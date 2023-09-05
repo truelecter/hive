@@ -2,31 +2,36 @@
   inputs,
   cell,
 }: let
-  inherit (inputs) haumea latest;
+  inherit (inputs) latest;
+  inherit (inputs.cells) common;
 
   nixpkgs = import latest {inherit (inputs.nixpkgs) system;};
-
-  l = inputs.nixpkgs.lib // builtins;
-
   sources = nixpkgs.callPackage ./sources/generated.nix {};
 
-  loadPackages = pkgs: path:
-    l.mapAttrs (
-      _: v: nixpkgs.callPackage v {inherit sources cell;}
-    )
-    (
-      haumea.lib.load {
-        src = path;
-        loader = haumea.lib.loaders.path;
-      }
-    );
+  l = builtins // nixpkgs.lib;
 
-  klipper-plugins = loadPackages nixpkgs ./klipper-plugins;
-  packages = loadPackages nixpkgs ./packages;
+  klipper-plugins = common.lib.importPackages {
+    inherit nixpkgs sources;
 
-  excluded-plugins-from-full = ["klipper-ercf"];
+    packages = ./klipper-plugins;
+    extraArguments = {
+      inherit cell;
+    };
+  };
+
+  packages = common.lib.importPackages {
+    inherit nixpkgs sources;
+
+    packages = ./packages;
+    extraArguments = {
+      inherit cell;
+    };
+  };
+
+  excluded-plugins-from-full = [];
 in
   packages
+  # TODO: prefix plugins with klipper- if the do not have this prefix
   // klipper-plugins
   // {
     klipper-full-plugins = packages.klipper.override {
