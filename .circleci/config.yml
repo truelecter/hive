@@ -1,10 +1,16 @@
+---
 version: 2.1
 
 workflows:
   version: 2
   workflow:
     jobs:
-      - build
+    - build:
+        filters:
+          branches:
+            only:
+              - master
+              - auto/upgrade-dependencies
 
 orbs:
   nix: eld/nix@1.1.1
