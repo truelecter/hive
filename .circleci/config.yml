@@ -1,0 +1,38 @@
+version: 2.1
+
+workflows:
+  version: 2
+  workflow:
+    jobs:
+      - build
+
+orbs:
+  nix: eld/nix@1.1.1
+
+jobs:
+  build:
+    machine:
+      image: ubuntu-2204:2023.07.1
+    resource_class: arm.large
+    steps:
+      - nix/install:
+          channels: nixpkgs=https://nixos.org/channels/nixpkgs-unstable
+          extra-conf: |
+            experimental-features = flakes nix-command
+      - nix/install-cachix
+      - checkout
+      - run:
+          name: Setup Cachix repos
+          command: |
+            cachix use nix-community
+            cachix use mic92
+            cachix use nrdxp
+            ./.ci/install-nix.sh > /tmp/store-path-pre-build
+      - run:
+          name: Build system
+          command: |
+            nix build ".#nixosConfigurations.nixos-oracle.config.system.build.toplevel"
+      - run:
+          name: Push cache
+          command: |
+            ./.ci/push-paths.sh cachix "--compression-method xz --compression-level 9 --jobs 8" truelecter ""  ""
