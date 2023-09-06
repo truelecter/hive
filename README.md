@@ -47,5 +47,5 @@ darwin-rebuild switch --flake .
 
 <!-- CirrusCI -->
 
-[oracle]: https://cirrus-ci.com/github/truelecter/hive/
+[oracle]: https://app.circleci.com/pipelines/github/truelecter/hive?branch=master
 [squadbook]: https://cirrus-ci.com/github/truelecter/hive/
