@@ -27,6 +27,7 @@ jobs:
             cachix use nix-community
             cachix use mic92
             cachix use nrdxp
+            cachix use truelecter
             ./.ci/install-nix.sh > /tmp/store-path-pre-build
       - run:
           name: Build system
