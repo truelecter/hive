@@ -1,10 +1,16 @@
+---
 version: 2.1
 
 workflows:
   version: 2
   workflow:
     jobs:
-      - build
+    - build:
+        filters:
+          branches:
+            only:
+              - master
+              - auto/upgrade-dependencies
 
 orbs:
   nix: eld/nix@1.1.1
@@ -27,6 +33,7 @@ jobs:
             cachix use nix-community
             cachix use mic92
             cachix use nrdxp
+            cachix use truelecter
             ./.ci/install-nix.sh > /tmp/store-path-pre-build
       - run:
           name: Build system
