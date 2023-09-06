@@ -29,61 +29,6 @@ common_scripts_template: &COMMON_SCRIPTS_TEMPLATE
 common_finishing_script_template: &COMMON_FINISHING_SCRIPTS_TEMPLATE
   upload_paths_to_cachix_script: .ci/push-paths.sh cachix "--compression-method xz --compression-level 9 --jobs 8" truelecter ""  ""
 
-linux_aarch64_task:
-  << : *COMMON_TASK_TEMPLATE
-
-  name: Build NixOS aarch64 systems
-
-  env:
-    NIXOS_HOST: nonexisting
-    USER: "root"
-    HOME: "/root"
-    PATH: "$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/per-user/$USER/profile/bin:$PATH"
-
-  arm_container:
-    image: nixos/nix:2.17.0
-    cpu: 4
-    memory: 16G
-
-  << : *COMMON_SCRIPTS_TEMPLATE
-
-  build_system_script: |
-    set +e
-
-    max_attempts=10
-    attempt_num=1
-    success=false
-
-    while [ $success = false ] && [ $attempt_num -le $max_attempts ]; do
-      $NIX build ".#nixosConfigurations.nixos-$NIXOS_HOST.config.system.build.toplevel"
-
-      if [ $? -eq 0 ]; then
-        success=true
-      else
-        echo "Attempt $attempt_num failed. Trying again..."
-        attempt_num=$(( attempt_num + 1 ))
-      fi
-    done
-
-    if [ $success = false ]; then
-      exit 1
-    fi
-
-    set -e
-  # build_devshell_script:
-  # - $NIX develop --command "menu"
-
-
-  << : *COMMON_FINISHING_SCRIPTS_TEMPLATE
-
-  matrix:
-  # - name: Build octoprint
-  #   env:
-  #     NIXOS_HOST: octoprint
-  - name: Build oracle
-    env:
-      NIXOS_HOST: oracle
-
 macos_task:
   << : *COMMON_TASK_TEMPLATE
 
