@@ -10,7 +10,7 @@ This repository is home to the nix code that builds my systems.
 [![hyperos](https://img.shields.io/github/actions/workflow/status/truelecter/hive/build-hyperos.yaml?event=push&logo=nixos&logoColor=white&label=hyperos)][hyperos]
 [![nas](https://img.shields.io/github/actions/workflow/status/truelecter/hive/build-nas.yaml?event=push&logo=nixos&logoColor=white&label=nas)][nas]
 [![squadbook](https://img.shields.io/cirrus/github/truelecter/hive?label=squadbook&logo=nixos&logoColor=white&task=Build%20squadbook)][squadbook]
-[![oracle](https://img.shields.io/cirrus/github/truelecter/hive?label=oracle&logo=nixos&logoColor=white&task=Build%20oracle)][oracle]
+[![oracle](https://img.shields.io/circleci/build/github/truelecter/hive/master?logo=nixos&logoColor=white&label=oracle)][oracle]
 
 ## Why Nix?
 
@@ -47,5 +47,5 @@ darwin-rebuild switch --flake .
 
 <!-- CirrusCI -->
 
-[oracle]: https://cirrus-ci.com/github/truelecter/hive/
+[oracle]: https://app.circleci.com/pipelines/github/truelecter/hive?branch=master
 [squadbook]: https://cirrus-ci.com/github/truelecter/hive/
