@@ -6,6 +6,7 @@
   system = "x86_64-linux";
 in {
   imports = [
+    suites.base
     suites.tailscale
   ];
 
@@ -20,5 +21,5 @@ in {
     ];
   };
 
-  system.stateVersion = "22.05";
+  system.stateVersion = "23.05";
 }

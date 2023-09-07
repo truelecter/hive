@@ -12,12 +12,16 @@ in {
       wslProfiles.core
     ];
   };
-  tailscale = _: {
+  base = _: {
     imports = [
       nixosProfiles.core
-      profiles.tailscale
       users.truelecter
       profiles.root-user
+    ];
+  };
+  tailscale = _: {
+    imports = [
+      profiles.tailscale
     ];
   };
 }

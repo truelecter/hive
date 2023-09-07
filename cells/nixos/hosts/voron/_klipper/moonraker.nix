@@ -52,16 +52,16 @@ in {
   security.polkit.enable = true;
 
   systemd.services.moonraker = {
-    script = lib.mkForce ''
-      cp /etc/moonraker.cfg ${moonrakerCfg.stateDir}/config/moonraker-temp.cfg
-      chmod u+w ${moonrakerCfg.stateDir}/config/moonraker-temp.cfg
-      exec ${pkgs.moonraker}/bin/moonraker -c ${moonrakerCfg.stateDir}/config/moonraker-temp.cfg -d ${moonrakerCfg.stateDir}/
-    '';
+    # script = lib.mkForce ''
+    #   cp /etc/moonraker.cfg ${moonrakerCfg.stateDir}/config/moonraker-temp.cfg
+    #   chmod u+w ${moonrakerCfg.stateDir}/config/moonraker-temp.cfg
+    #   exec ${pkgs.moonraker}/bin/moonraker -c ${moonrakerCfg.stateDir}/config/moonraker-temp.cfg -d ${moonrakerCfg.stateDir}/
+    # '';
 
     serviceConfig = {
       SupplementaryGroups = config.users.users.klipper.extraGroups;
-      Environment = "PYTHONPATH=${pkgs.python39Packages.libgpiod}";
-      BindReadOnlyPaths = "${pkgs.python39Packages.libgpiod}/lib/python3.9:/usr/lib/python3.9:norbind";
+      # Environment = "PYTHONPATH=${pkgs.python39Packages.libgpiod}";
+      # BindReadOnlyPaths = "${pkgs.python39Packages.libgpiod}/lib/python3.9:/usr/lib/python3.9:norbind";
     };
   };
 }

@@ -11,7 +11,7 @@ buildNpmPackage {
 
   inherit (sources.mainsail) version src;
 
-  npmDepsHash = "sha256-447jhOrxVVaFUX1tM6k75kxlvNoTBP9PT/+K4DDt5LU";
+  npmDepsHash = "sha256-4NMPrqq8RLz55Kp4aKVV+FtlSxroi8LEb4ctFRX65y4=";
 
   # convert to native
   nativeBuildInputs = [

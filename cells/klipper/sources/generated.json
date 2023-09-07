@@ -41,7 +41,7 @@
     },
     "klipper-happy-hare": {
         "cargoLocks": null,
-        "date": "2023-09-03",
+        "date": "2023-09-05",
         "extract": null,
         "name": "klipper-happy-hare",
         "passthru": null,
@@ -53,11 +53,11 @@
             "name": null,
             "owner": "moggieuk",
             "repo": "Happy-Hare",
-            "rev": "b7990a88113aa24a932243b19a3b89795b61767d",
-            "sha256": "sha256-tqJL+VNFd7UXo6QFJsEflOq9XXtv4i5KUiGHH4W/a9c=",
+            "rev": "6416e02201701c6b8e63a18a32d9f046ce2e16a5",
+            "sha256": "sha256-W3v3aB8vhCPRKaoLMg1dxnHhHlHMANRSL4kmyvch2Qs=",
             "type": "github"
         },
-        "version": "b7990a88113aa24a932243b19a3b89795b61767d"
+        "version": "6416e02201701c6b8e63a18a32d9f046ce2e16a5"
     },
     "klipper-kamp": {
         "cargoLocks": null,
@@ -78,6 +78,26 @@
             "type": "github"
         },
         "version": "v1.1.2"
+    },
+    "klipper-klicky-probe": {
+        "cargoLocks": null,
+        "date": "2023-08-16",
+        "extract": null,
+        "name": "klipper-klicky-probe",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "jlas1",
+            "repo": "Klicky-Probe",
+            "rev": "f8dad75e072ed3cedd6e2179ff192917548deb00",
+            "sha256": "sha256-y0gy5aupACq7d/e+uFZk7ztiOQf4K8Mte/v0tWwRzyI=",
+            "type": "github"
+        },
+        "version": "f8dad75e072ed3cedd6e2179ff192917548deb00"
     },
     "klipper-led_effect": {
         "cargoLocks": null,
@@ -101,7 +121,7 @@
     },
     "klipper-screen": {
         "cargoLocks": null,
-        "date": "2023-09-03",
+        "date": "2023-09-06",
         "extract": null,
         "name": "klipper-screen",
         "passthru": null,
@@ -113,11 +133,11 @@
             "name": null,
             "owner": "jordanruthe",
             "repo": "KlipperScreen",
-            "rev": "ed0dbaea9e6f0d0b88108c8e4843cec6bc57f131",
-            "sha256": "sha256-zeDC3WoAyQNFYgP2LTO81FZt+0iEzk08vf+urfERSlg=",
+            "rev": "14d3fca31c2157e505f332a94e2a1e3f528a00d4",
+            "sha256": "sha256-jZwCXgexupQRQ0gfxkWg/rShl2Ml3jZ88nmiXeIbD1w=",
             "type": "github"
         },
-        "version": "ed0dbaea9e6f0d0b88108c8e4843cec6bc57f131"
+        "version": "14d3fca31c2157e505f332a94e2a1e3f528a00d4"
     },
     "klipper-z-calibration": {
         "cargoLocks": null,
@@ -141,7 +161,7 @@
     },
     "mainsail": {
         "cargoLocks": null,
-        "date": "2023-09-04",
+        "date": "2023-09-05",
         "extract": null,
         "name": "mainsail",
         "passthru": null,
@@ -153,11 +173,11 @@
             "name": null,
             "owner": "mainsail-crew",
             "repo": "mainsail",
-            "rev": "fd293d21ec31a33252fee902f1b8e7e5fd248366",
-            "sha256": "sha256-EAFnBNyvW1qinNr3bUKBMOgvZVXMdopsVF8yCZXNXIM=",
+            "rev": "ecaa894fbb7ae9cb2ebc1dbb9688b7eef312b740",
+            "sha256": "sha256-73hNbe3SLroBTtKKp/odVoSNd/dd2hnkqNN1RBhuRtw=",
             "type": "github"
         },
-        "version": "fd293d21ec31a33252fee902f1b8e7e5fd248366"
+        "version": "ecaa894fbb7ae9cb2ebc1dbb9688b7eef312b740"
     },
     "moonraker": {
         "cargoLocks": null,
@@ -214,6 +234,21 @@
         },
         "version": "2.2"
     },
+    "python-telegram-bot": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "python-telegram-bot",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-g9v0zUYyf9gYu2ZV8lCAJKCt5o69s1RNo1xGmtwjvds=",
+            "type": "url",
+            "url": "https://pypi.org/packages/source/p/python-telegram-bot/python-telegram-bot-13.5.tar.gz"
+        },
+        "version": "13.5"
+    },
     "rel": {
         "cargoLocks": null,
         "date": "2023-08-30",
@@ -243,10 +278,10 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-y/ZqiLyvbGrRbVDqKSFYkVJrbpk8S8ftRLBE7m/jrT0=",
+            "sha256": "sha256-GO/sCnGCWHupcQK0zY33tPZl9F18o28ZeD9fCB6hFOo=",
             "type": "url",
-            "url": "https://pypi.org/packages/source/w/wsaccel/wsaccel-0.6.4.tar.gz"
+            "url": "https://pypi.org/packages/source/w/wsaccel/wsaccel-0.6.6.tar.gz"
         },
-        "version": "0.6.4"
+        "version": "0.6.6"
     }
 }

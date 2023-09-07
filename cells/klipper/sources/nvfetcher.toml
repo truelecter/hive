@@ -28,6 +28,11 @@ fetch.github = "bubbleboy14/registeredeventlistener"
 src.pypi = "wsaccel"
 fetch.pypi = "wsaccel"
 
+[python-telegram-bot]
+src.manual = "13.5"
+fetch.pypi = "python-telegram-bot"
+
+# mainsail
 [mainsail]
 src.git = "https://github.com/mainsail-crew/mainsail"
 src.branch = "develop"
@@ -53,3 +58,7 @@ fetch.github = "kyleisah/Klipper-Adaptive-Meshing-Purging"
 [klipper-z-calibration]
 src.github = "protoloft/klipper_z_calibration"
 fetch.github = "protoloft/klipper_z_calibration"
+
+[klipper-klicky-probe]
+src.git = "https://github.com/jlas1/Klicky-Probe"
+fetch.github = "jlas1/Klicky-Probe"

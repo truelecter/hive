@@ -4,10 +4,10 @@
   lib,
   ...
 }: {
-  sops.secrets.moonraker-tg-bot.owner = config.tl.services.moonraker-telegram-bot.user;
+  # sops.secrets.moonraker-tg-bot.owner = config.tl.services.moonraker-telegram-bot.user;
 
   tl.services.moonraker-telegram-bot = {
-    enable = true;
+    enable = false;
     settings = {
       secrets = {
         secrets_path = config.sops.secrets.moonraker-tg-bot.path;

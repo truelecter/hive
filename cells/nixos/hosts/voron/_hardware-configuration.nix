@@ -15,12 +15,9 @@
       };
       raspberryPi = {
         enable = false;
-        # uboot.enable = true;
-        uboot.configurationLimit = 1;
-        version = 4;
       };
     };
-    consoleLogLevel = 8;
+    consoleLogLevel = 7;
     initrd.availableKernelModules = lib.mkForce [
       "xhci_pci"
       "uas"
@@ -47,11 +44,16 @@
 
   powerManagement.cpuFreqGovernor = "performance";
 
-  hardware.raspberry-pi."4" = {
-    fkms-3d.enable = true;
-  };
+  hardware = {
+    raspberry-pi."4" = {
+      i2c0.enable = true;
+      i2c1.enable = false;
+      fkms-3d.enable = true;
+    };
 
-  hardware.enableRedistributableFirmware = true;
+    enableRedistributableFirmware = true;
+    wirelessRegulatoryDatabase = true;
+  };
 
   environment.systemPackages = with pkgs; [
     libraspberrypi

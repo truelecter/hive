@@ -81,6 +81,14 @@
 
     exit 0
   '';
+
+  sops-reencrypt = nixpkgs.writeScriptBin "sops-reencrypt" ''
+    for filename in "$@"
+    do
+        ${sops}/bin/sops --decrypt --in-place $filename
+        ${sops}/bin/sops --encrypt --in-place $filename
+    done
+  '';
 in
   l.mapAttrs (_: std.lib.dev.mkShell) {
     default = {
@@ -124,6 +132,13 @@ in
           name = "update-cell-sources";
           help = "Update cell package sources with nvfetcher";
           package = update-cell-sources;
+        }
+
+        {
+          category = "infra";
+          name = "sops-reencrypt";
+          help = "Reencrypt sops-encrypted files";
+          package = sops-reencrypt;
         }
 
         (linter editorconfig-checker)

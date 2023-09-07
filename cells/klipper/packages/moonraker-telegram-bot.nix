@@ -3,7 +3,7 @@
   stdenvNoCC,
   makeWrapper,
   sources,
-  python3,
+  python39,
   gnused,
   ...
 }: let
@@ -13,7 +13,25 @@
       emoji
       pillow
       pysocks
-      python-telegram-bot
+      (
+        buildPythonPackage {
+          inherit (sources.python-telegram-bot) pname version src;
+
+          doCheck = false;
+
+          propagatedBuildInputs =
+            [
+              aiolimiter
+              apscheduler
+              cachetools
+              cryptography
+              httpx
+              pytz
+            ]
+            ++ httpx.optional-dependencies.socks
+            ++ httpx.optional-dependencies.http2;
+        }
+      )
       # rel
       (
         buildPythonPackage {
@@ -39,7 +57,7 @@
       opencv4
     ];
 
-  pythonEnv = python3.withPackages reqs;
+  pythonEnv = python39.withPackages reqs;
 in
   stdenvNoCC.mkDerivation {
     pname = "moonraker-telegram-bot";

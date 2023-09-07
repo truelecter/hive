@@ -3,17 +3,14 @@
   suites,
   ...
 }: let
-  system = "x86_64-linux";
+  system = "aarch64-linux";
 in {
   imports = [
     suites.base
-    suites.wsl
     suites.tailscale
-  ];
 
-  wsl = {
-    nativeSystemd = true;
-  };
+    ./_sd.nix
+  ];
 
   bee.system = system;
   bee.home = inputs.home;

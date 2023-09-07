@@ -7,6 +7,7 @@ keys:
   - &depsos 356a82c0e351bd86b093e96706f5748b0e47bff0
   - &oracle 70e8bfb15ea96c3752baafcfc43cfc3d2c42d68e
   - &tl-wsl ceb6cea45e8d7d34c25d166868696097610a4f62
+  - &voron ad74ae276ddcd3b8c05242fc537e0afff9393519
 
 creation_rules:
   - path_regex: cells/secrets/sops/envs.yaml
@@ -29,6 +30,7 @@ creation_rules:
           - *depsos
           - *oracle
           - *tl-wsl
+          - *voron
   - path_regex: cells/secrets/sops/ssh.*$
     key_groups:
       - pgp:

@@ -27,15 +27,15 @@
   };
   klipper-happy-hare = {
     pname = "klipper-happy-hare";
-    version = "b7990a88113aa24a932243b19a3b89795b61767d";
+    version = "6416e02201701c6b8e63a18a32d9f046ce2e16a5";
     src = fetchFromGitHub {
       owner = "moggieuk";
       repo = "Happy-Hare";
-      rev = "b7990a88113aa24a932243b19a3b89795b61767d";
+      rev = "6416e02201701c6b8e63a18a32d9f046ce2e16a5";
       fetchSubmodules = false;
-      sha256 = "sha256-tqJL+VNFd7UXo6QFJsEflOq9XXtv4i5KUiGHH4W/a9c=";
+      sha256 = "sha256-W3v3aB8vhCPRKaoLMg1dxnHhHlHMANRSL4kmyvch2Qs=";
     };
-    date = "2023-09-03";
+    date = "2023-09-05";
   };
   klipper-kamp = {
     pname = "klipper-kamp";
@@ -47,6 +47,18 @@
       fetchSubmodules = false;
       sha256 = "sha256-anBGjLtYlyrxeNVy1TEMcAGTVUFrGClLuoJZuo3xlDM=";
     };
+  };
+  klipper-klicky-probe = {
+    pname = "klipper-klicky-probe";
+    version = "f8dad75e072ed3cedd6e2179ff192917548deb00";
+    src = fetchFromGitHub {
+      owner = "jlas1";
+      repo = "Klicky-Probe";
+      rev = "f8dad75e072ed3cedd6e2179ff192917548deb00";
+      fetchSubmodules = false;
+      sha256 = "sha256-y0gy5aupACq7d/e+uFZk7ztiOQf4K8Mte/v0tWwRzyI=";
+    };
+    date = "2023-08-16";
   };
   klipper-led_effect = {
     pname = "klipper-led_effect";
@@ -62,15 +74,15 @@
   };
   klipper-screen = {
     pname = "klipper-screen";
-    version = "ed0dbaea9e6f0d0b88108c8e4843cec6bc57f131";
+    version = "14d3fca31c2157e505f332a94e2a1e3f528a00d4";
     src = fetchFromGitHub {
       owner = "jordanruthe";
       repo = "KlipperScreen";
-      rev = "ed0dbaea9e6f0d0b88108c8e4843cec6bc57f131";
+      rev = "14d3fca31c2157e505f332a94e2a1e3f528a00d4";
       fetchSubmodules = false;
-      sha256 = "sha256-zeDC3WoAyQNFYgP2LTO81FZt+0iEzk08vf+urfERSlg=";
+      sha256 = "sha256-jZwCXgexupQRQ0gfxkWg/rShl2Ml3jZ88nmiXeIbD1w=";
     };
-    date = "2023-09-03";
+    date = "2023-09-06";
   };
   klipper-z-calibration = {
     pname = "klipper-z-calibration";
@@ -85,15 +97,15 @@
   };
   mainsail = {
     pname = "mainsail";
-    version = "fd293d21ec31a33252fee902f1b8e7e5fd248366";
+    version = "ecaa894fbb7ae9cb2ebc1dbb9688b7eef312b740";
     src = fetchFromGitHub {
       owner = "mainsail-crew";
       repo = "mainsail";
-      rev = "fd293d21ec31a33252fee902f1b8e7e5fd248366";
+      rev = "ecaa894fbb7ae9cb2ebc1dbb9688b7eef312b740";
       fetchSubmodules = false;
-      sha256 = "sha256-EAFnBNyvW1qinNr3bUKBMOgvZVXMdopsVF8yCZXNXIM=";
+      sha256 = "sha256-73hNbe3SLroBTtKKp/odVoSNd/dd2hnkqNN1RBhuRtw=";
     };
-    date = "2023-09-04";
+    date = "2023-09-05";
   };
   moonraker = {
     pname = "moonraker";
@@ -127,6 +139,14 @@
       sha256 = "sha256-3m65IdlKunVJ9CjtKzqkgqXVQ+y2lly6oPu1VasxudU=";
     };
   };
+  python-telegram-bot = {
+    pname = "python-telegram-bot";
+    version = "13.5";
+    src = fetchurl {
+      url = "https://pypi.org/packages/source/p/python-telegram-bot/python-telegram-bot-13.5.tar.gz";
+      sha256 = "sha256-g9v0zUYyf9gYu2ZV8lCAJKCt5o69s1RNo1xGmtwjvds=";
+    };
+  };
   rel = {
     pname = "rel";
     version = "b4fbdebca5434c7296d7211246cfb1728280164f";
@@ -141,10 +161,10 @@
   };
   wsaccel = {
     pname = "wsaccel";
-    version = "0.6.4";
+    version = "0.6.6";
     src = fetchurl {
-      url = "https://pypi.org/packages/source/w/wsaccel/wsaccel-0.6.4.tar.gz";
-      sha256 = "sha256-y/ZqiLyvbGrRbVDqKSFYkVJrbpk8S8ftRLBE7m/jrT0=";
+      url = "https://pypi.org/packages/source/w/wsaccel/wsaccel-0.6.6.tar.gz";
+      sha256 = "sha256-GO/sCnGCWHupcQK0zY33tPZl9F18o28ZeD9fCB6hFOo=";
     };
   };
 }

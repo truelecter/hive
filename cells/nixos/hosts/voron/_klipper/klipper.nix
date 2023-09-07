@@ -33,7 +33,7 @@ in {
 
   users = {
     users.klipper = {
-      extraGroups = ["dialout gpio video dma-heap klipper"];
+      extraGroups = ["dialout video dma-heap klipper"];
     };
   };
 
@@ -49,12 +49,12 @@ in {
 
   environment.etc = builtins.listToAttrs (
     builtins.map (
-      path: {
-        name = "klipper/${builtins.baseNameOf path}";
+      p: {
+        name = "klipper/${lib.path.removePrefix ./configs/klipper.d p}";
         value = {
           inherit (klipperCfg) user group;
 
-          source = path;
+          source = p;
         };
       }
     )
@@ -69,17 +69,18 @@ in {
       pkgs.kamp
     ];
 
-    # TODO make function to have list of files to combine
     settings = {
-      "include /etc/klipper.d/*.cfg" = {};
+      "include /etc/klipper/main.cfg" = {};
       virtual_sdcard = {
         path = gcodePath;
       };
     };
+
+    host-mcu = {
+      enable = false;
+      firmware-package = rpiFirmware;
+    };
   };
 
-  tl.services.klipper.host-mcu = {
-    enable = true;
-    firmware-package = rpiFirmware;
-  };
+  services.mainsail.enable = true;
 }

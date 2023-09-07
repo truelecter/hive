@@ -1,8 +1,6 @@
-# ip link set can0 type can bitrate 500000
-# ip link set can0 txqueuelen 256
 {...}: {
   services.udev.extraRules = ''
-    SUBSYSTEM=="net", ACTION=="add|change", KERNEL=="can*", ATTR{tx_queue_len}="1000"
+    SUBSYSTEM=="net", ACTION=="add|change", KERNEL=="can*", ATTR{tx_queue_len}="1024"
   '';
 
   services.resolved.enable = false;
@@ -18,7 +16,7 @@
         };
         extraConfig = ''
           [CAN]
-          BitRate=500000
+          BitRate=1000000
         '';
       };
     };

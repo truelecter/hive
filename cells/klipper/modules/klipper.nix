@@ -150,6 +150,14 @@ in {
             -w klipper-mcu flag
           '';
         };
+
+        serial = mkOption {
+          type = types.str;
+          default = "/run/klipper/host-mcu";
+          description = l.mdDoc ''
+            Serial file location
+          '';
+        };
       };
     };
   };
@@ -224,22 +232,22 @@ in {
       before = ["klipper.service"];
       wantedBy = ["multi-user.target"];
 
-      serviceConfig = {
-        ExecStart = "${cfg.host-mcu.firmware-package}/klipper.elf${
-          if cfg.host-mcu.realtime
-          then " -r"
-          else ""
-        }${
-          if cfg.host-mcu.watchdog
-          then " -w"
-          else ""
-        }";
-        # SupplementaryGroups = "tty";
-        Group = cfg.group;
-        User = cfg.user;
-        CPUSchedulingPolicy = "fifo";
-        CPUSchedulingPriority = 1;
-      };
+      serviceConfig =
+        {
+          ExecStart = "${cfg.host-mcu.firmware-package}/klipper.elf -I ${cfg.host-mcu.serial}${
+            if cfg.host-mcu.watchdog
+            then " -w"
+            else ""
+          }";
+          # SupplementaryGroups = "tty";
+          Group = cfg.group;
+          User = cfg.user;
+        }
+        // l.optionalAttrs cfg.host-mcu.realtime {
+          # https://github.com/Klipper3d/klipper/blob/master/src/linux/main.c#L25
+          CPUSchedulingPolicy = "fifo";
+          CPUSchedulingPriority = 44;
+        };
     };
 
     users = {
@@ -249,6 +257,7 @@ in {
         group = cfg.group;
         createHome = true;
         home = l.mkDefault cfg.stateDirectory;
+        homeMode = "755";
       };
       groups.${cfg.group} = {};
     };
