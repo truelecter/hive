@@ -27,27 +27,27 @@
   };
   klipper-screen = {
     pname = "klipper-screen";
-    version = "71b0ace83c7ca0207a2d9181f535fcc22dc1f19f";
+    version = "14d3fca31c2157e505f332a94e2a1e3f528a00d4";
     src = fetchFromGitHub {
       owner = "jordanruthe";
       repo = "KlipperScreen";
-      rev = "71b0ace83c7ca0207a2d9181f535fcc22dc1f19f";
+      rev = "14d3fca31c2157e505f332a94e2a1e3f528a00d4";
       fetchSubmodules = false;
-      sha256 = "sha256-wK4ITG7yLzLU3MTNYSPlDkRr7T0zkCwesE1vhZ5e0lM=";
+      sha256 = "sha256-jZwCXgexupQRQ0gfxkWg/rShl2Ml3jZ88nmiXeIbD1w=";
     };
-    date = "2023-08-29";
+    date = "2023-09-06";
   };
   mainsail = {
     pname = "mainsail";
-    version = "98d99d2d118ac52d622c3f9980c199a5a5b7e498";
+    version = "ecaa894fbb7ae9cb2ebc1dbb9688b7eef312b740";
     src = fetchFromGitHub {
       owner = "mainsail-crew";
       repo = "mainsail";
-      rev = "98d99d2d118ac52d622c3f9980c199a5a5b7e498";
+      rev = "ecaa894fbb7ae9cb2ebc1dbb9688b7eef312b740";
       fetchSubmodules = false;
-      sha256 = "sha256-PQhlG2F6RYqjD6V11tM1BreBDwoktkxd8ViNhQBJEJk=";
+      sha256 = "sha256-73hNbe3SLroBTtKKp/odVoSNd/dd2hnkqNN1RBhuRtw=";
     };
-    date = "2023-09-01";
+    date = "2023-09-05";
   };
   moonraker = {
     pname = "moonraker";
@@ -95,10 +95,10 @@
   };
   wsaccel = {
     pname = "wsaccel";
-    version = "0.6.4";
+    version = "0.6.6";
     src = fetchurl {
-      url = "https://pypi.org/packages/source/w/wsaccel/wsaccel-0.6.4.tar.gz";
-      sha256 = "sha256-y/ZqiLyvbGrRbVDqKSFYkVJrbpk8S8ftRLBE7m/jrT0=";
+      url = "https://pypi.org/packages/source/w/wsaccel/wsaccel-0.6.6.tar.gz";
+      sha256 = "sha256-GO/sCnGCWHupcQK0zY33tPZl9F18o28ZeD9fCB6hFOo=";
     };
   };
 }
