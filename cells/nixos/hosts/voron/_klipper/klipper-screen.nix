@@ -78,12 +78,28 @@
   hardware.deviceTree = {
     filter = "bcm2711-rpi-cm4.dtb";
     overlays = [
-      # rpi-ft5406
+      # {
+      #   name = "rpi-ft5406";
+      #   dtboFile = "${pkgs.device-tree_rpi.overlays}/rpi-ft5406.dtbo";
+      # }
       {
-        name = "rpi-ft5406";
-        dtboFile = "${pkgs.device-tree_rpi.overlays}/rpi-ft5406.dtbo";
-      }
+        name = "xhci-fix";
+        dtsText = ''
+          /dts-v1/;
+          /plugin/;
 
+          / {
+            compatible = "brcm,bcm2711";
+            fragment@0 {
+              //target-path = "/scb/xhci@7e9c0000";
+              target = <&xhci>;
+              __overlay__ {
+                status = "okay";
+              };
+            };
+          };
+        '';
+      }
       {
         name = "disable-bt";
         dtboFile = "${pkgs.device-tree_rpi.overlays}/disable-bt.dtbo";

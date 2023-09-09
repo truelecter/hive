@@ -32,6 +32,11 @@ fetch.pypi = "wsaccel"
 src.manual = "13.5"
 fetch.pypi = "python-telegram-bot"
 
+[camera-streamer]
+src.github = "ayufan/camera-streamer"
+fetch.github = "ayufan/camera-streamer"
+git.fetchSubmodules = true
+
 # mainsail
 [mainsail]
 src.git = "https://github.com/mainsail-crew/mainsail"

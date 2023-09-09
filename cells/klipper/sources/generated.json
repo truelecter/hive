@@ -1,4 +1,24 @@
 {
+    "camera-streamer": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "camera-streamer",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": true,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "ayufan",
+            "repo": "camera-streamer",
+            "rev": "v0.2.6",
+            "sha256": "sha256-m47fXOZuStaRPLJYGZKpg6RBPfFSkCafdqujagXTDXo=",
+            "type": "github"
+        },
+        "version": "v0.2.6"
+    },
     "klipper": {
         "cargoLocks": null,
         "date": "2023-08-21",
@@ -41,7 +61,7 @@
     },
     "klipper-happy-hare": {
         "cargoLocks": null,
-        "date": "2023-09-05",
+        "date": "2023-09-09",
         "extract": null,
         "name": "klipper-happy-hare",
         "passthru": null,
@@ -53,11 +73,11 @@
             "name": null,
             "owner": "moggieuk",
             "repo": "Happy-Hare",
-            "rev": "6416e02201701c6b8e63a18a32d9f046ce2e16a5",
-            "sha256": "sha256-W3v3aB8vhCPRKaoLMg1dxnHhHlHMANRSL4kmyvch2Qs=",
+            "rev": "bb8eef4e7741db91a11e932c23d9eb40cfffe3b5",
+            "sha256": "sha256-YU+okOaXoVCW9Df3mZRKKIyNQ8p99OsM/S8GXC2gvls=",
             "type": "github"
         },
-        "version": "6416e02201701c6b8e63a18a32d9f046ce2e16a5"
+        "version": "bb8eef4e7741db91a11e932c23d9eb40cfffe3b5"
     },
     "klipper-kamp": {
         "cargoLocks": null,
@@ -121,7 +141,7 @@
     },
     "klipper-screen": {
         "cargoLocks": null,
-        "date": "2023-09-06",
+        "date": "2023-09-09",
         "extract": null,
         "name": "klipper-screen",
         "passthru": null,
@@ -133,11 +153,11 @@
             "name": null,
             "owner": "jordanruthe",
             "repo": "KlipperScreen",
-            "rev": "14d3fca31c2157e505f332a94e2a1e3f528a00d4",
-            "sha256": "sha256-jZwCXgexupQRQ0gfxkWg/rShl2Ml3jZ88nmiXeIbD1w=",
+            "rev": "f8da43c37966287e1e026d30d1c28873c92a2dcb",
+            "sha256": "sha256-Sw/+8cMWHmn4dHY03oUmTV5F+BP1TSU7zadQx42vi8Y=",
             "type": "github"
         },
-        "version": "14d3fca31c2157e505f332a94e2a1e3f528a00d4"
+        "version": "f8da43c37966287e1e026d30d1c28873c92a2dcb"
     },
     "klipper-z-calibration": {
         "cargoLocks": null,

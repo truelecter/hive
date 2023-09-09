@@ -7,6 +7,7 @@
 }: {
   environment.systemPackages = [
     pkgs.v4l-utils
+    pkgs.camera-streamer
   ];
 
   tl.services.tailscale-tls.enable = true;
@@ -16,8 +17,8 @@
     settings = {
       ffmpeg.bin = "${lib.getBin pkgs.ffmpeg_6-full}/bin/ffmpeg";
       streams = {
-        nozzle = "ffmpeg:device?video=/dev/v4l/by-id/usb-XCG-221208-J_3DO_NOZZLE_CAMERA_4K_01.00.00-video-index0&video_size=800x600#video=h264";
-        printer = "ffmpeg:device?video=/dev/v4l/by-id/usb-046d_HD_Pro_Webcam_C920_89E7787F-video-index0&video_size=800x600#rotate=180#video=h264";
+        nozzle = "ffmpeg:device?video=/dev/v4l/by-id/usb-XCG-221208-J_3DO_NOZZLE_CAMERA_4K_01.00.00-video-index0&video_size=640x480&framerate=30&input_format=yuyv422#video=h264#hardware=v4l2m2m";
+        printer = "ffmpeg:device?video=/dev/v4l/by-id/usb-046d_HD_Pro_Webcam_C920_89E7787F-video-index0&video_size=640x480&framerate=30&input_format=h264#rotate=180#video=h264#hardware=v4l2m2mls";
       };
       log = {
         format = "text";
