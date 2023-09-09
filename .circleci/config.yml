@@ -38,7 +38,7 @@ jobs:
       - run:
           name: Build system
           command: |
-            nix build ".#nixosConfigurations.nixos-oracle.config.system.build.toplevel"
+            nix build ".#nixosConfigurations.nixos-voron.config.system.build.toplevel"
       - run:
           name: Push cache
           command: |
