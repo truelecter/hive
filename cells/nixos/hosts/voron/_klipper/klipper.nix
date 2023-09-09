@@ -82,5 +82,7 @@ in {
     };
   };
 
-  services.mainsail.enable = true;
+  services.mainsail = {
+    enable = true;
+  };
 }

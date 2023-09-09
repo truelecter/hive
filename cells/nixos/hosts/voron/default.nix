@@ -29,6 +29,11 @@ in {
     config.allowUnfree = true;
     overlays = [
       inputs.cells.klipper.overlays.klipper
+      (
+        _:prev: {
+          deviceTree.applyOverlays = prev.callPackage ./_dtmerge.nix {};
+        }
+      )
     ];
   };
 

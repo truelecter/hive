@@ -32,7 +32,7 @@ in {
           "http://my.mainsail.xyz"
           "http://*.local"
           "http://*.lan"
-          "http://vorona"
+          "http://voron"
         ];
 
         trusted_clients = [

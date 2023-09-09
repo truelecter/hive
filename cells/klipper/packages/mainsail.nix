@@ -25,9 +25,9 @@ buildNpmPackage {
   '';
 
   installPhase = ''
-    mkdir -p $out/share/mainsail
+    mkdir -p $out/share
     rm dist/mainsail.zip
-    cp -r dist $out/share/mainsail/htdocs
+    cp -r dist $out/share/mainsail
   '';
 
   meta = with lib; {
