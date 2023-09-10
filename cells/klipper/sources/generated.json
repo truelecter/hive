@@ -21,7 +21,7 @@
     },
     "klipper": {
         "cargoLocks": null,
-        "date": "2023-08-21",
+        "date": "2023-09-10",
         "extract": null,
         "name": "klipper",
         "passthru": null,
@@ -33,11 +33,11 @@
             "name": null,
             "owner": "Klipper3d",
             "repo": "klipper",
-            "rev": "5f990f93d533247d3a675e8c423280f4333ad8ce",
-            "sha256": "sha256-jICOEzLvy2wBInW4qIbFZbhRuHjsio6UM13K9UlZi1U=",
+            "rev": "2acfa282942c13c725af6a2cb3ea314edf53406f",
+            "sha256": "sha256-3tfTkUxlEZS2yZXmz+BywrWk/af9LtF24zBMisS8RbY=",
             "type": "github"
         },
-        "version": "5f990f93d533247d3a675e8c423280f4333ad8ce"
+        "version": "2acfa282942c13c725af6a2cb3ea314edf53406f"
     },
     "klipper-ercf": {
         "cargoLocks": null,
@@ -61,7 +61,7 @@
     },
     "klipper-happy-hare": {
         "cargoLocks": null,
-        "date": "2023-09-09",
+        "date": "2023-09-10",
         "extract": null,
         "name": "klipper-happy-hare",
         "passthru": null,
@@ -73,11 +73,11 @@
             "name": null,
             "owner": "moggieuk",
             "repo": "Happy-Hare",
-            "rev": "bb8eef4e7741db91a11e932c23d9eb40cfffe3b5",
-            "sha256": "sha256-YU+okOaXoVCW9Df3mZRKKIyNQ8p99OsM/S8GXC2gvls=",
+            "rev": "373eade4732447f19ca81231f434fd3ee2395580",
+            "sha256": "sha256-XOiBIA07ueq6/XM52sTFCw9UlXVenKkjtfj8Jl8JMPs=",
             "type": "github"
         },
-        "version": "bb8eef4e7741db91a11e932c23d9eb40cfffe3b5"
+        "version": "373eade4732447f19ca81231f434fd3ee2395580"
     },
     "klipper-kamp": {
         "cargoLocks": null,
@@ -178,6 +178,46 @@
             "type": "github"
         },
         "version": "v1.0.2"
+    },
+    "libdatachannel0_17": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "libdatachannel0_17",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "paullouisageneau",
+            "repo": "libdatachannel",
+            "rev": "v0.17.10",
+            "sha256": "sha256-3f84GxAgQiObe+DYuTQABvK+RTihKKFKaf48lscUex4=",
+            "type": "github"
+        },
+        "version": "v0.17.10"
+    },
+    "libjuice": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "libjuice",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "paullouisageneau",
+            "repo": "libjuice",
+            "rev": "v1.0.4",
+            "sha256": "sha256-LAqi5F6okhGj0LyJasPKRkUz6InlM6rbYN+1sX1N4Qo=",
+            "type": "github"
+        },
+        "version": "v1.0.4"
     },
     "mainsail": {
         "cargoLocks": null,

@@ -23,9 +23,11 @@
     inherit nixpkgs sources;
 
     packages = ./packages;
-    extraArguments = {
-      inherit cell;
-    };
+    extraArguments =
+      {
+        inherit cell;
+      }
+      // packages;
   };
 
   excluded-plugins-from-full = ["sources"];

@@ -14,15 +14,15 @@
   };
   klipper = {
     pname = "klipper";
-    version = "5f990f93d533247d3a675e8c423280f4333ad8ce";
+    version = "2acfa282942c13c725af6a2cb3ea314edf53406f";
     src = fetchFromGitHub {
       owner = "Klipper3d";
       repo = "klipper";
-      rev = "5f990f93d533247d3a675e8c423280f4333ad8ce";
+      rev = "2acfa282942c13c725af6a2cb3ea314edf53406f";
       fetchSubmodules = false;
-      sha256 = "sha256-jICOEzLvy2wBInW4qIbFZbhRuHjsio6UM13K9UlZi1U=";
+      sha256 = "sha256-3tfTkUxlEZS2yZXmz+BywrWk/af9LtF24zBMisS8RbY=";
     };
-    date = "2023-08-21";
+    date = "2023-09-10";
   };
   klipper-ercf = {
     pname = "klipper-ercf";
@@ -38,15 +38,15 @@
   };
   klipper-happy-hare = {
     pname = "klipper-happy-hare";
-    version = "bb8eef4e7741db91a11e932c23d9eb40cfffe3b5";
+    version = "373eade4732447f19ca81231f434fd3ee2395580";
     src = fetchFromGitHub {
       owner = "moggieuk";
       repo = "Happy-Hare";
-      rev = "bb8eef4e7741db91a11e932c23d9eb40cfffe3b5";
+      rev = "373eade4732447f19ca81231f434fd3ee2395580";
       fetchSubmodules = false;
-      sha256 = "sha256-YU+okOaXoVCW9Df3mZRKKIyNQ8p99OsM/S8GXC2gvls=";
+      sha256 = "sha256-XOiBIA07ueq6/XM52sTFCw9UlXVenKkjtfj8Jl8JMPs=";
     };
-    date = "2023-09-09";
+    date = "2023-09-10";
   };
   klipper-kamp = {
     pname = "klipper-kamp";
@@ -104,6 +104,28 @@
       rev = "v1.0.2";
       fetchSubmodules = false;
       sha256 = "sha256-QDsr09aIP09pI2r18atTRvbbMBS0rbjeiWOSnp9nRUk=";
+    };
+  };
+  libdatachannel0_17 = {
+    pname = "libdatachannel0_17";
+    version = "v0.17.10";
+    src = fetchFromGitHub {
+      owner = "paullouisageneau";
+      repo = "libdatachannel";
+      rev = "v0.17.10";
+      fetchSubmodules = false;
+      sha256 = "sha256-3f84GxAgQiObe+DYuTQABvK+RTihKKFKaf48lscUex4=";
+    };
+  };
+  libjuice = {
+    pname = "libjuice";
+    version = "v1.0.4";
+    src = fetchFromGitHub {
+      owner = "paullouisageneau";
+      repo = "libjuice";
+      rev = "v1.0.4";
+      fetchSubmodules = false;
+      sha256 = "sha256-LAqi5F6okhGj0LyJasPKRkUz6InlM6rbYN+1sX1N4Qo=";
     };
   };
   mainsail = {

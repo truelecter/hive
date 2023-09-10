@@ -37,6 +37,14 @@ src.github = "ayufan/camera-streamer"
 fetch.github = "ayufan/camera-streamer"
 git.fetchSubmodules = true
 
+[libdatachannel0_17]
+src.manual = "v0.17.10"
+fetch.github = "paullouisageneau/libdatachannel"
+
+[libjuice]
+src.manual = "v1.0.4"
+fetch.github = "paullouisageneau/libjuice"
+
 # mainsail
 [mainsail]
 src.git = "https://github.com/mainsail-crew/mainsail"
