@@ -43,7 +43,7 @@ jobs:
       - run:
           name: Build system
           command: |
-            nix build ".#nixosConfigurations.nixos-<< parameters.hots >>.config.system.build.toplevel"
+            nix build ".#nixosConfigurations.nixos-<< parameters.host >>.config.system.build.toplevel"
       - run:
           name: Push cache
           command: |
