@@ -11,9 +11,9 @@ workflows:
             only:
               - master
               - auto/upgrade-dependencies
-      matrix:
-        parameters:
-          host: [voron, oracle]
+        matrix:
+          parameters:
+            host: [voron, oracle]
 orbs:
   nix: eld/nix@1.1.1
 
