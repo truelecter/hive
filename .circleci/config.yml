@@ -11,7 +11,9 @@ workflows:
             only:
               - master
               - auto/upgrade-dependencies
-
+      matrix:
+        parameters:
+          host: [voron, oracle]
 orbs:
   nix: eld/nix@1.1.1
 
@@ -19,10 +21,13 @@ jobs:
   build:
     machine:
       image: ubuntu-2204:2023.07.1
+    parameters:
+      host:
+        type: string
     resource_class: arm.large
     steps:
       - nix/install:
-          channels: nixpkgs=https://nixos.org/channels/nixpkgs-unstable
+          channels: nixpkgs=https://nixos.org/channels/nixos-23.05
           extra-conf: |
             experimental-features = flakes nix-command
       - nix/install-cachix
@@ -38,7 +43,7 @@ jobs:
       - run:
           name: Build system
           command: |
-            nix build ".#nixosConfigurations.nixos-voron.config.system.build.toplevel"
+            nix build ".#nixosConfigurations.nixos-<< parameters.hots >>.config.system.build.toplevel"
       - run:
           name: Push cache
           command: |

@@ -6,21 +6,12 @@
   ...
 }: {
   boot = {
-    kernelPackages = pkgs.linuxPackages_rpi4.extend (lib.const (ksuper: {
-      kernel = ksuper.kernel.override {
-        autoModules = false;
-        structuredExtraConfig = with lib.kernel; {
-          CONFIG_USB_XHCI_PCI = yes;
-          CONFIG_USB_XHCI_PCI_RENESAS = yes;
-        };
-      };
-    }));
-    # kernelPackages = pkgs.linuxPackages_rpi4;
+    kernelPackages = pkgs.linuxPackages_rpi4;
     loader = {
       grub.enable = false;
       generic-extlinux-compatible = {
         enable = true;
-        configurationLimit = 1;
+        configurationLimit = 5;
       };
       raspberryPi = {
         enable = false;
@@ -32,23 +23,27 @@
     };
     consoleLogLevel = 7;
     initrd.availableKernelModules = [
+      "xhci_hcd"
+      "xhci-pci-renesas"
+
       "usbhid"
       "usb_storage"
+
+      "sdhci_pci"
+      "mmc_block"
+
+      "simplefb"
+      "pcie-brcmstb"
+
       "vc4"
       "pcie_brcmstb" # required for the pcie bus to work
       "reset-raspberrypi" # required for vl805 firmware to load
     ];
-    kernelParams = ["console=ttyS0,115200n8" "console=tty1" "video=DSI-1:800x480@60" "cma=448M"];
-    # kernelPatches = [
-    #   {
-    #     name = "xhci";
-    #     patch = null;
-    #     extraStructuredConfig = {
-    #       CONFIG_USB_XHCI_PCI = lib.kernel.yes;
-    #       CONFIG_USB_XHCI_PCI_RENESAS = lib.kernel.yes;
-    #     };
-    #   }
-    # ];
+    kernelParams = [
+      "console=ttyS0,115200n8"
+      "console=tty1"
+      "video=DSI-1:800x480@60"
+    ];
   };
 
   fileSystems = {
@@ -63,17 +58,35 @@
     };
   };
 
-  # powerManagement.cpuFreqGovernor = "performance";
+  powerManagement.cpuFreqGovernor = "performance";
 
   hardware = {
-    # raspberry-pi."4" = {
-    #   i2c0.enable = false;
-    #   i2c1.enable = false;
-    #   fkms-3d.enable = false;
-    #   touch-ft5406.enable = false;
-    # };
-
     enableRedistributableFirmware = true;
+    deviceTree = {
+      filter = "bcm2711-rpi-cm4.dtb";
+      overlays = [
+        # Needed for USB
+        {
+          name = "xhci-fix";
+          dtsText = ''
+            /dts-v1/;
+            /plugin/;
+
+            / {
+              compatible = "brcm,bcm2711";
+              fragment@0 {
+                //target-path = "/scb/xhci@7e9c0000";
+                target = <&xhci>;
+                __overlay__ {
+                  status = "okay";
+                };
+              };
+            };
+          '';
+        }
+        #
+      ];
+    };
   };
 
   environment.systemPackages = with pkgs; [
@@ -84,14 +97,7 @@
 
   environment.etc."u-boot-cm4".source = pkgs.ubootRaspberryPi4_64bit.override {
     extraConfig = ''
-      #CONFIG_CMD_NVME=y
-      #CONFIG_NVME=y
-      #CONFIG_NVME_PCI=y
       CONFIG_USB_STORAGE=y
-      CONFIG_USB_FUNCTION_MASS_STORAGE=y
-      CONFIG_USB_EHCI_HCD=y
-      CONFIG_USB_EHCI_GENERIC=y
-      CONFIG_USB_OHCI_HCD=y
       CONFIG_USB_XHCI_BRCM=y
     '';
     extraPatches = [

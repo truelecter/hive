@@ -85,6 +85,7 @@
   inputs = {
     latest.url = "github:nixos/nixpkgs/nixos-unstable";
     k8s.url = "github:nixos/nixpkgs/3005f20ce0aaa58169cdee57c8aa12e5f1b6e1b3";
+    printers.url = "github:nixos/nixpkgs/0bffda19b8af722f8069d09d8b6a24594c80b352";
     nixos.url = "github:nixos/nixpkgs/release-23.05";
     nixpkgs.follows = "nixos";
 

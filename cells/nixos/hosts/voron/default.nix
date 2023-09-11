@@ -10,7 +10,7 @@ in {
     suites.base
 
     profiles.common.networking.tailscale
-    profiles.faster-linux
+    # profiles.faster-linux
 
     inputs.cells.klipper.nixosModules.klipper
 
@@ -20,18 +20,20 @@ in {
     ./_wifi.nix
     ./_camera.nix
     ./_klipper
+    ./_minimize.nix
   ];
 
   bee.system = system;
   bee.home = inputs.home;
-  bee.pkgs = import inputs.latest {
+  bee.pkgs = import inputs.printers {
     inherit system;
     config.allowUnfree = true;
     overlays = [
       inputs.cells.klipper.overlays.klipper
       (
-        _:prev: {
+        _: prev: {
           deviceTree.applyOverlays = prev.callPackage ./_dtmerge.nix {};
+          makeModulesClosure = x: prev.makeModulesClosure (x // {allowMissing = true;});
         }
       )
     ];
