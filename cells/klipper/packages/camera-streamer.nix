@@ -91,16 +91,15 @@ in
       $preInstallPhase
 
       mkdir -p $out/bin
-
       cp camera-streamer list-devices $out/bin/
 
       $postInstallPhase
     '';
 
     meta = with lib; {
-      description = "Touchscreen GUI that interfaces with Klipper via Moonraker";
-      homepage = "https://klipperscreen.readthedocs.io/en/latest/";
+      description = "High-performance low-latency camera streamer for Raspberry PI's";
+      homepage = "https://github.com/ayufan/camera-streamer/tree/main";
       platforms = platforms.linux;
-      license = licenses.gpl3Only;
+      # license = licenses.gpl3Only;
     };
   }

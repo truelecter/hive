@@ -11,7 +11,7 @@
       grub.enable = false;
       generic-extlinux-compatible = {
         enable = true;
-        configurationLimit = 1;
+        configurationLimit = 5;
       };
       raspberryPi = {
         enable = false;
@@ -62,6 +62,31 @@
 
   hardware = {
     enableRedistributableFirmware = true;
+    deviceTree = {
+      filter = "bcm2711-rpi-cm4.dtb";
+      overlays = [
+        # Needed for USB
+        {
+          name = "xhci-fix";
+          dtsText = ''
+            /dts-v1/;
+            /plugin/;
+
+            / {
+              compatible = "brcm,bcm2711";
+              fragment@0 {
+                //target-path = "/scb/xhci@7e9c0000";
+                target = <&xhci>;
+                __overlay__ {
+                  status = "okay";
+                };
+              };
+            };
+          '';
+        }
+        #
+      ];
+    };
   };
 
   environment.systemPackages = with pkgs; [

@@ -76,49 +76,24 @@
   # environment.systemPackages = [pkgs.gnome.adwaita-icon-theme];
 
   hardware.deviceTree = {
-    filter = "bcm2711-rpi-cm4.dtb";
-    overlays = [
-      # {
-      #   name = "rpi-ft5406";
-      #   dtboFile = "${pkgs.device-tree_rpi.overlays}/rpi-ft5406.dtbo";
-      # }
-      {
-        name = "xhci-fix";
-        dtsText = ''
-          /dts-v1/;
-          /plugin/;
-
-          / {
-            compatible = "brcm,bcm2711";
-            fragment@0 {
-              //target-path = "/scb/xhci@7e9c0000";
-              target = <&xhci>;
-              __overlay__ {
-                status = "okay";
-              };
-            };
-          };
-        '';
-      }
-      {
-        name = "disable-bt";
-        dtboFile = "${pkgs.device-tree_rpi.overlays}/disable-bt.dtbo";
-      }
-      {
-        name = "vc4-kms-v3d-pi4";
-        dtboFile = "${pkgs.device-tree_rpi.overlays}/vc4-kms-v3d-pi4.dtbo";
-      }
-      {
-        name = "vc4-kms-dsi-7inch-overlay";
-        dtboFile = "${pkgs.device-tree_rpi.overlays}/vc4-kms-dsi-7inch.dtbo";
-      }
+    overlays = let
+      overlay = name: {
+        name = name;
+        dtboFile = "${pkgs.device-tree_rpi.overlays}/${name}.dtbo";
+      };
+    in [
+      (overlay "disable-bt")
+      (overlay "vc4-kms-v3d-pi4")
+      (overlay "vc4-kms-dsi-7inch")
+      # replace with vc4-kms-dsi-waveshare-panel when kernel is updated
+      (overlay "rpi-ft5406")
     ];
   };
 
-  # hardware.raspberry-pi."4" = {
-  #   dwc2 = {
-  #     enable = false;
-  #     dr_mode = "host";
-  #   };
-  # };
+  hardware.raspberry-pi."4" = {
+    i2c0 = {
+      enable = true;
+      frequency = 50000;
+    };
+  };
 }
