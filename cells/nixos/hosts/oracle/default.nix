@@ -19,7 +19,6 @@ in {
 
     ./_hardware-configuration.nix
     ./_minecraft-servers
-    ./_vscode-server.nix
   ];
 
   bee.system = system;
