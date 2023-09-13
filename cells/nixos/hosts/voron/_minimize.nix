@@ -12,7 +12,6 @@
   environment.systemPackages = [
     pkgs.pciutils
     pkgs.usbutils
-    pkgs.i2c-tools
   ];
 
   # environment.noXlibs = true;
