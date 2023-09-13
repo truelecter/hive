@@ -57,3 +57,5 @@ creation_rules:
     key_groups:
       - pgp:
           - *truelecter
+          - *squadbook
+          - *tl-wsl
