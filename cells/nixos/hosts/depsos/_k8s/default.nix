@@ -29,7 +29,6 @@
       "--kube-apiserver-arg=oidc-groups-claim=groups"
       "--kube-apiserver-arg=oidc-issuer-url=https://auth.tenma.moe/application/o/k8s/"
       "--kube-apiserver-arg=oidc-client-id=3adb5959b9b0e5de02dbc504df445acf3074bd23"
-      # "--kube-apiserver-arg=oidc-ca-file=${config.sops.secrets.authentik-ca.path}"
       "--kubelet-arg='--fail-swap-on=false'"
     ];
   };

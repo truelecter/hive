@@ -196,7 +196,6 @@
       ];
 
       nixosModules = hive.pick inputs.self [
-        ["tailscale" "nixosModules"]
         ["klipper" "nixosModules"]
         ["k8s" "nixosModules"]
         ["minecraft-servers" "nixosModules"]

@@ -14,7 +14,7 @@ in
         profiles.core
         users.truelecter-dev
         users.root
-        inputs.cells.secrets.nixosProfiles.secrets
+        inputs.cells.secrets.nixosProfiles.common
       ];
     };
   }

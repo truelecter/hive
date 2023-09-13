@@ -12,7 +12,6 @@
     common.cachix
     common.gui
     inputs.home.darwinModules.home-manager
-    inputs.cells.tailscale.darwinModules.tailscale
   ];
 
   # https://github.com/LnL7/nix-darwin/issues/158#issuecomment-974598670

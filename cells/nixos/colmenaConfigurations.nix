@@ -34,4 +34,4 @@ in
         )
       )
   )
-  hosts
+  (l.filterAttrs (n: _: n != "octoprint") hosts)

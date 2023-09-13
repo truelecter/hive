@@ -7,11 +7,11 @@
   system = "aarch64-linux";
 in {
   imports = [
-    inputs.nixos-vscode-server.nixosModules.default
     inputs.cells.minecraft-servers.nixosModules.minecraft-servers
+    inputs.cells.secrets.nixosProfiles.minecraft-servers
 
     suites.base
-    suites.mc
+    suites.mc-server
 
     profiles.common.networking.tailscale
     profiles.remote-builds
@@ -38,11 +38,4 @@ in {
   services.vnstat.enable = true;
 
   system.stateVersion = "22.11";
-
-  # for remote builds
-  # users.users.root = {
-  #   openssh.authorizedKeys.keys = [
-  #     (builtins.readFile ./../../../secrets/sops/ssh/root_nas.pub)
-  #   ];
-  # };
 }

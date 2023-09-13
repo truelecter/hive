@@ -18,12 +18,12 @@ in {
     suites.base
     profiles.docker
     profiles.nvidia
-    profiles.common.networking.tailscale
     profiles.vscode-server
 
-    inputs.nixos-vscode-server.nixosModules.default
+    profiles.common.networking.tailscale
+    profiles.common.remote-builders
 
-    ./_remote-builders.nix
+    inputs.nixos-vscode-server.nixosModules.default
   ];
 
   networking.hostName = "tl-wsl";

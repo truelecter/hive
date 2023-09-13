@@ -14,23 +14,45 @@ creation_rules:
     key_groups:
       - pgp:
           - *truelecter
-  - path_regex: cells/secrets/sops/backups.yaml$
+
+  - path_regex: cells/secrets/sops/minecraft-server.yaml
     key_groups:
       - pgp:
           - *truelecter
           - *oracle
-  - path_regex: cells/secrets/sops/[^/]+\.yaml$
+
+  - path_regex: cells/secrets/sops/nixos-common.yaml
     key_groups:
       - pgp:
           - *truelecter
           - *server-nas
-          - *squadbook
           - *octoprint
           - *hyperos
           - *depsos
           - *oracle
           - *tl-wsl
           - *voron
+
+  - path_regex: cells/secrets/sops/k3s.yaml
+    key_groups:
+      - pgp:
+          - *truelecter
+          - *depsos
+
+  - path_regex: cells/secrets/sops/external-ips.yaml
+    key_groups:
+      - pgp:
+          - *truelecter
+          - *depsos
+
+  - path_regex: cells/secrets/sops/wifi.yaml
+    key_groups:
+      - pgp:
+          - *truelecter
+          - *squadbook
+          - *octoprint
+          - *voron
+
   - path_regex: cells/secrets/sops/ssh.*$
     key_groups:
       - pgp:

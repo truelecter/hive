@@ -14,6 +14,7 @@ in {
     profiles.remote-builds
 
     inputs.cells.k8s.nixosModules.k8s
+    inputs.cells.secrets.nixosProfiles.k8s
 
     ./_hardware-configuration.nix
     ./_k8s

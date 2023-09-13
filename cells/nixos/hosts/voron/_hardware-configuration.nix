@@ -62,31 +62,7 @@
 
   hardware = {
     enableRedistributableFirmware = true;
-    deviceTree = {
-      filter = "bcm2711-rpi-cm4.dtb";
-      overlays = [
-        # Needed for USB
-        {
-          name = "xhci-fix";
-          dtsText = ''
-            /dts-v1/;
-            /plugin/;
-
-            / {
-              compatible = "brcm,bcm2711";
-              fragment@0 {
-                //target-path = "/scb/xhci@7e9c0000";
-                target = <&xhci>;
-                __overlay__ {
-                  status = "okay";
-                };
-              };
-            };
-          '';
-        }
-        #
-      ];
-    };
+    raspberry-pi."4".xhci.enable = true;
   };
 
   environment.systemPackages = with pkgs; [

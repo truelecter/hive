@@ -13,6 +13,7 @@ in {
     # profiles.faster-linux
 
     inputs.cells.klipper.nixosModules.klipper
+    inputs.cells.secrets.nixosProfiles.wifi
 
     inputs.nixos-hardware.nixosModules.raspberry-pi-4
 
