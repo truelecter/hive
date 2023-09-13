@@ -80,7 +80,7 @@ in {
       ];
 
       serviceConfig = {
-        ExecStart = "${pkgs.xorg.xinit}/bin/xinit ${cfg.package}/bin/ks-environment --configfile /etc/klipper-screen.cfg -- /etc/X11/xinit/xserverrc";
+        ExecStart = "${pkgs.xorg.xinit}/bin/xinit ${cfg.package}/bin/KlipperScreen --configfile /etc/klipper-screen.cfg -- /etc/X11/xinit/xserverrc";
         SupplementaryGroups = "tty";
         Group = cfg.group;
         User = cfg.user;

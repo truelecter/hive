@@ -62,6 +62,9 @@
 
   hardware = {
     enableRedistributableFirmware = true;
+
+    deviceTree.filter = "bcm2711-rpi-cm4.dtb";
+
     raspberry-pi."4".xhci.enable = true;
   };
 

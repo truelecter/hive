@@ -25,6 +25,7 @@
 
   tl.services.klipper-screen = {
     enable = true;
+    # package = pkgs.klipperscreen;
     settings = {
       "printer Voron 2.4" = {
         moonraker_host = "127.0.0.1";

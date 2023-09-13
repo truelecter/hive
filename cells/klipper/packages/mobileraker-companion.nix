@@ -3,10 +3,6 @@
   stdenvNoCC,
   makeWrapper,
   sources,
-  wrapGAppsHook,
-  gtk3,
-  gobject-introspection,
-  cairo,
   python3,
   ...
 }: let
