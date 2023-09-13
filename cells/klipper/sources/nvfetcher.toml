@@ -19,23 +19,7 @@ fetch.github = "jordanruthe/KlipperScreen"
 src.pypi = "python-networkmanager"
 fetch.pypi = "python-networkmanager"
 
-[moonraker-telegram-bot]
-src.git = "https://github.com/nlef/moonraker-telegram-bot"
-src.branch = "development"
-fetch.github = "nlef/moonraker-telegram-bot"
-
-[rel]
-src.git = "https://github.com/bubbleboy14/registeredeventlistener"
-fetch.github = "bubbleboy14/registeredeventlistener"
-
-[wsaccel]
-src.pypi = "wsaccel"
-fetch.pypi = "wsaccel"
-
-[python-telegram-bot]
-src.manual = "13.5"
-fetch.pypi = "python-telegram-bot"
-
+# camera-streamer dependency
 [camera-streamer]
 src.github = "ayufan/camera-streamer"
 fetch.github = "ayufan/camera-streamer"
@@ -48,6 +32,10 @@ fetch.github = "paullouisageneau/libdatachannel"
 [libjuice]
 src.manual = "v1.0.4"
 fetch.github = "paullouisageneau/libjuice"
+
+[live555]
+src.manual = "2020.03.06"
+fetch.tarball = "https://download.videolan.org/pub/contrib/live555/live.$ver.tar.gz"
 
 # mainsail
 [mainsail]

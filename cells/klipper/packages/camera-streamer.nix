@@ -20,7 +20,7 @@
   useHWH264 ? true,
   useFfmpeg ? false,
   useLibcamera ? false,
-  useRtsp ? false,
+  useRtsp ? false, # Broken while live555 is not compiling for whatever reason
   useLibdatachannel ? true,
   ...
 }: let
@@ -41,6 +41,18 @@
       "-DNO_EXAMPLES=ON"
     ];
   });
+
+  live555Custom = live555.overrideAttrs (_: _: {
+    inherit (sources.live555) version src;
+
+    # env.NIX_CFLAGS_COMPILE = "-DNO_STD_LIB";
+    postPatch = ''
+      sed -i -e 's|/bin/rm|rm|g' genMakefiles
+      sed -i \
+        -e 's/$(INCLUDES) -I. -O2 -DSOCKLEN_T/$(INCLUDES) -I. -O2 -I. -fPIC -DRTSPCLIENT_SYNCHRONOUS_INTERFACE=1 -DSOCKLEN_T/g' \
+        config.linux
+    '';
+  });
 in
   stdenv.mkDerivation rec {
     pname = "camera-streamer";
@@ -49,16 +61,21 @@ in
 
     hardeningDisable = ["all"];
 
+    NIX_DEBUG = 1;
+
     makeFlags =
       [
-        "-DGIT_VERSION=${version}"
-        "-DGIT_REVISION=${version}"
-        "-DUSE_LIBDATACHANNEL=0"
+        # Targets
+        "camera-streamer"
+        "list-devices"
+        "GIT_VERSION=${version}"
+        "GIT_REVISION=${version}"
+        "USE_LIBDATACHANNEL=0"
       ]
-      ++ optional useHWH264 "-DUSE_HW_H264=1"
-      ++ optional useFfmpeg "-DUSE_FFMPEG=1"
-      ++ optional useLibcamera "-DUSE_LIBCAMERA=1"
-      ++ optional useRtsp "-DUSE_RTSP=1";
+      ++ optional useHWH264 "USE_HW_H264=1"
+      ++ optional useFfmpeg "USE_FFMPEG=1"
+      ++ optional useLibcamera "USE_LIBCAMERA=1"
+      ++ optional useRtsp "USE_RTSP=1";
 
     nativeBuildInputs = [pkg-config ccache unixtools.xxd];
 
@@ -66,7 +83,7 @@ in
       [nlohmann_json]
       ++ optional useFfmpeg ffmpeg
       ++ optional useLibcamera libcamera
-      ++ optional useRtsp live555
+      ++ optionals useRtsp [openssl]
       ++ optionals useLibdatachannel ([libdatachannel0_17 usrsctp] ++ libdatachannel0_17.buildInputs);
 
     configurePhase = ''
@@ -80,11 +97,12 @@ in
         export NIX_LDFLAGS="$NIX_LDFLAGS -ljuice -ldatachannel -lsrtp2 -lcrypto -lssl -lusrsctp"
       ''}
 
-      rm -rf third_party/libdatachannel
-    '';
+      ${optionalString useRtsp ''
+        export NIX_CFLAGS_COMPILE="$NIX_CFLAGS_COMPILE -isystem ${live555Custom}/include/liveMedia -isystem ${live555Custom}/include/groupsock -isystem ${live555Custom}/include/UsageEnvironment -isystem ${live555Custom}/include/BasicUsageEnvironment"
+        export NIX_LDFLAGS="$NIX_LDFLAGS -L${live555Custom}/lib -lBasicUsageEnvironment -lliveMedia -lUsageEnvironment -lgroupsock"
+      ''}
 
-    buildPhase = ''
-      make camera-streamer list-devices
+      rm -rf third_party/libdatachannel
     '';
 
     installPhase = ''

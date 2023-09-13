@@ -85,15 +85,15 @@
   };
   klipper-screen = {
     pname = "klipper-screen";
-    version = "cfb38405c623630a8bc9bad819e88076ab303d26";
+    version = "77ecae70b2a81052e3c1f3dc54dd0097ffd4abfa";
     src = fetchFromGitHub {
       owner = "jordanruthe";
       repo = "KlipperScreen";
-      rev = "cfb38405c623630a8bc9bad819e88076ab303d26";
+      rev = "77ecae70b2a81052e3c1f3dc54dd0097ffd4abfa";
       fetchSubmodules = false;
-      sha256 = "sha256-3qnHmT2HwJdWZnPPApz+pTS2fj7TSeuWDbVf64lbRLk=";
+      sha256 = "sha256-oI6kyDwYG6Sh5qZkOjVAWjiG9d8U+XRYmUtUw+cQjSs=";
     };
-    date = "2023-09-12";
+    date = "2023-09-13";
   };
   klipper-z-calibration = {
     pname = "klipper-z-calibration";
@@ -126,6 +126,14 @@
       rev = "v1.0.4";
       fetchSubmodules = false;
       sha256 = "sha256-LAqi5F6okhGj0LyJasPKRkUz6InlM6rbYN+1sX1N4Qo=";
+    };
+  };
+  live555 = {
+    pname = "live555";
+    version = "2020.03.06";
+    src = fetchTarball {
+      url = "https://download.videolan.org/pub/contrib/live555/live.2020.03.06.tar.gz";
+      sha256 = "sha256-UxunbrJC6UVlwexso/cuH9m+mUSf7WEPMLincUrqDWE=";
     };
   };
   mainsail = {
@@ -164,52 +172,12 @@
     };
     date = "2023-08-14";
   };
-  moonraker-telegram-bot = {
-    pname = "moonraker-telegram-bot";
-    version = "ca30751a6924ffe28e26d8d708033607ad7f8e92";
-    src = fetchFromGitHub {
-      owner = "nlef";
-      repo = "moonraker-telegram-bot";
-      rev = "ca30751a6924ffe28e26d8d708033607ad7f8e92";
-      fetchSubmodules = false;
-      sha256 = "sha256-a4PyQaxicSHEPwM4wgh3Z57gh1zrsHXeIUwf7lWFDXY=";
-    };
-    date = "2023-06-15";
-  };
   python-networkmanager = {
     pname = "python-networkmanager";
     version = "2.2";
     src = fetchurl {
       url = "https://pypi.org/packages/source/p/python-networkmanager/python-networkmanager-2.2.tar.gz";
       sha256 = "sha256-3m65IdlKunVJ9CjtKzqkgqXVQ+y2lly6oPu1VasxudU=";
-    };
-  };
-  python-telegram-bot = {
-    pname = "python-telegram-bot";
-    version = "13.5";
-    src = fetchurl {
-      url = "https://pypi.org/packages/source/p/python-telegram-bot/python-telegram-bot-13.5.tar.gz";
-      sha256 = "sha256-g9v0zUYyf9gYu2ZV8lCAJKCt5o69s1RNo1xGmtwjvds=";
-    };
-  };
-  rel = {
-    pname = "rel";
-    version = "b4fbdebca5434c7296d7211246cfb1728280164f";
-    src = fetchFromGitHub {
-      owner = "bubbleboy14";
-      repo = "registeredeventlistener";
-      rev = "b4fbdebca5434c7296d7211246cfb1728280164f";
-      fetchSubmodules = false;
-      sha256 = "sha256-0rZIePCCXJGHi9oydiN6fhi2i4EmthsAA2I96nDMMA8=";
-    };
-    date = "2023-08-30";
-  };
-  wsaccel = {
-    pname = "wsaccel";
-    version = "0.6.6";
-    src = fetchurl {
-      url = "https://pypi.org/packages/source/w/wsaccel/wsaccel-0.6.6.tar.gz";
-      sha256 = "sha256-GO/sCnGCWHupcQK0zY33tPZl9F18o28ZeD9fCB6hFOo=";
     };
   };
 }

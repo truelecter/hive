@@ -30,6 +30,10 @@
           port = 8080;
           listen = "0.0.0.0";
         };
+
+        rtsp = {
+          port = 8554;
+        };
       };
 
       nginx.enable = true;

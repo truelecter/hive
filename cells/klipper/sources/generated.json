@@ -141,7 +141,7 @@
     },
     "klipper-screen": {
         "cargoLocks": null,
-        "date": "2023-09-12",
+        "date": "2023-09-13",
         "extract": null,
         "name": "klipper-screen",
         "passthru": null,
@@ -153,11 +153,11 @@
             "name": null,
             "owner": "jordanruthe",
             "repo": "KlipperScreen",
-            "rev": "cfb38405c623630a8bc9bad819e88076ab303d26",
-            "sha256": "sha256-3qnHmT2HwJdWZnPPApz+pTS2fj7TSeuWDbVf64lbRLk=",
+            "rev": "77ecae70b2a81052e3c1f3dc54dd0097ffd4abfa",
+            "sha256": "sha256-oI6kyDwYG6Sh5qZkOjVAWjiG9d8U+XRYmUtUw+cQjSs=",
             "type": "github"
         },
-        "version": "cfb38405c623630a8bc9bad819e88076ab303d26"
+        "version": "77ecae70b2a81052e3c1f3dc54dd0097ffd4abfa"
     },
     "klipper-z-calibration": {
         "cargoLocks": null,
@@ -219,6 +219,20 @@
         },
         "version": "v1.0.4"
     },
+    "live555": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "live555",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "sha256": "sha256-UxunbrJC6UVlwexso/cuH9m+mUSf7WEPMLincUrqDWE=",
+            "type": "tarball",
+            "url": "https://download.videolan.org/pub/contrib/live555/live.2020.03.06.tar.gz"
+        },
+        "version": "2020.03.06"
+    },
     "mainsail": {
         "cargoLocks": null,
         "date": "2023-09-05",
@@ -279,26 +293,6 @@
         },
         "version": "3d9052d711464cb5ea81cde99769c8f1fd7d3f8d"
     },
-    "moonraker-telegram-bot": {
-        "cargoLocks": null,
-        "date": "2023-06-15",
-        "extract": null,
-        "name": "moonraker-telegram-bot",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "nlef",
-            "repo": "moonraker-telegram-bot",
-            "rev": "ca30751a6924ffe28e26d8d708033607ad7f8e92",
-            "sha256": "sha256-a4PyQaxicSHEPwM4wgh3Z57gh1zrsHXeIUwf7lWFDXY=",
-            "type": "github"
-        },
-        "version": "ca30751a6924ffe28e26d8d708033607ad7f8e92"
-    },
     "python-networkmanager": {
         "cargoLocks": null,
         "date": null,
@@ -313,55 +307,5 @@
             "url": "https://pypi.org/packages/source/p/python-networkmanager/python-networkmanager-2.2.tar.gz"
         },
         "version": "2.2"
-    },
-    "python-telegram-bot": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "python-telegram-bot",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-g9v0zUYyf9gYu2ZV8lCAJKCt5o69s1RNo1xGmtwjvds=",
-            "type": "url",
-            "url": "https://pypi.org/packages/source/p/python-telegram-bot/python-telegram-bot-13.5.tar.gz"
-        },
-        "version": "13.5"
-    },
-    "rel": {
-        "cargoLocks": null,
-        "date": "2023-08-30",
-        "extract": null,
-        "name": "rel",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "bubbleboy14",
-            "repo": "registeredeventlistener",
-            "rev": "b4fbdebca5434c7296d7211246cfb1728280164f",
-            "sha256": "sha256-0rZIePCCXJGHi9oydiN6fhi2i4EmthsAA2I96nDMMA8=",
-            "type": "github"
-        },
-        "version": "b4fbdebca5434c7296d7211246cfb1728280164f"
-    },
-    "wsaccel": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "wsaccel",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-GO/sCnGCWHupcQK0zY33tPZl9F18o28ZeD9fCB6hFOo=",
-            "type": "url",
-            "url": "https://pypi.org/packages/source/w/wsaccel/wsaccel-0.6.6.tar.gz"
-        },
-        "version": "0.6.6"
     }
 }
