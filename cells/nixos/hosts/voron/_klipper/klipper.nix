@@ -84,5 +84,8 @@ in {
 
   services.mainsail = {
     enable = true;
+    nginx.extraConfig = ''
+      client_max_body_size 0;
+    '';
   };
 }
