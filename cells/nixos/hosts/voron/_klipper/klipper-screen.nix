@@ -74,8 +74,6 @@
     };
   };
 
-  # environment.systemPackages = [pkgs.gnome.adwaita-icon-theme];
-
   hardware.deviceTree = {
     overlays = let
       overlay = name: {
