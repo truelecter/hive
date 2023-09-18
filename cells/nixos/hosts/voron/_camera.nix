@@ -6,7 +6,12 @@
   ...
 }: {
   environment.systemPackages = [
-    pkgs.v4l-utils
+    (
+      pkgs.v4l-utils.override
+      {
+        withGUI = false;
+      }
+    )
     pkgs.camera-streamer
   ];
 

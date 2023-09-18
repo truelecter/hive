@@ -137,7 +137,7 @@ in {
 
         realtime = mkOption {
           type = types.bool;
-          default = true;
+          default = false;
           description = lib.mdDoc ''
             Set realtime scheduller priority (like -r flag)
           '';

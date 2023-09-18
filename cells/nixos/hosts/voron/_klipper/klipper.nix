@@ -31,16 +31,21 @@
 in {
   boot.kernelModules = ["gpiod"];
 
-  users = {
-    users.klipper = {
-      extraGroups = ["dialout video dma-heap klipper"];
-    };
-  };
-
   environment.systemPackages = [
-    # pkgs.klipper
-    # pkgs.klipper-firmware
-    pkgs.klipper-genconf
+    # TODO: make things flashable
+    (
+      pkgs.klipper-firmware.override {
+        mcu = "ebb-can";
+        firmwareConfig = ./firmwares/firmware-config-ebb;
+      }
+    )
+
+    (
+      pkgs.klipper-firmware.override {
+        mcu = "manta";
+        firmwareConfig = ./firmwares/firmware-config-manta;
+      }
+    )
   ];
 
   systemd.tmpfiles.rules = [
