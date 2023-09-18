@@ -1,24 +1,17 @@
 {
-  config,
   lib,
   pkgs,
-  modulesPath,
   ...
 }: {
   boot = {
     kernelPackages = pkgs.linuxPackages_rpi4;
     loader = {
       grub.enable = false;
+      raspberryPi.enable = false;
+
       generic-extlinux-compatible = {
         enable = true;
         configurationLimit = 5;
-      };
-      raspberryPi = {
-        enable = false;
-        version = 4;
-        firmwareConfig = ''
-          dtparam=ant2
-        '';
       };
     };
     consoleLogLevel = 7;
