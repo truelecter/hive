@@ -37,7 +37,7 @@
               // Despite this being ant1 instead of ant2,
               // CM4 will use ant2. This is because
               // ant1 is enabled by default and switching
-              // GPI pins causes it to activate ant2
+              // GPIO pins causes it to activate ant2
               target = <&ant1>;
 
               __overlay__ {

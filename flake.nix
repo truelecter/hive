@@ -24,26 +24,20 @@
     };
 
     std = {
-      url = "github:divnix/std";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        devshell.follows = "devshell";
-        nixago.follows = "nixago";
-      };
-    };
-
-    haumea = {
-      url = "github:nix-community/haumea/v0.2.2";
-      inputs.nixpkgs.follows = "nixpkgs";
+      follows = "hive/std";
     };
 
     hive = {
       url = "github:divnix/hive";
       inputs = {
-        haumea.follows = "haumea";
-        nixos-generators.follows = "nixos-generators";
         colmena.follows = "colmena";
+        nixago.follows = "nixago";
+        nixpkgs.follows = "nixpkgs";
       };
+    };
+
+    haumea = {
+      follows = "hive/std/haumea";
     };
   };
 
@@ -85,7 +79,6 @@
   inputs = {
     latest.url = "github:nixos/nixpkgs/nixos-unstable";
     k8s.url = "github:nixos/nixpkgs/3005f20ce0aaa58169cdee57c8aa12e5f1b6e1b3";
-    printers.url = "github:nixos/nixpkgs/0bffda19b8af722f8069d09d8b6a24594c80b352";
     nixos.url = "github:nixos/nixpkgs/release-23.05";
     nixpkgs.follows = "nixos";
 
@@ -97,6 +90,11 @@
     home = {
       url = "github:nix-community/home-manager/release-23.05";
       inputs.nixpkgs.follows = "nixos";
+    };
+
+    home-unstable = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "latest";
     };
   };
 

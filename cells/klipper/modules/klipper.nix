@@ -109,18 +109,32 @@ in {
                 enable = mkEnableOption (lib.mdDoc ''
                   building of firmware for manual flashing.
                 '');
-                enableKlipperFlash = mkEnableOption (lib.mdDoc ''
-                  flashings scripts for firmware. This will add `klipper-flash-$mcu` scripts to your environment which can be called to flash the firmware.
-                  Please check the configs at [klipper](https://github.com/Klipper3d/klipper/tree/master/config) whether your board supports flashing via `make flash`.
-                '');
-                serial = mkOption {
-                  type = types.nullOr types.path;
-                  description = lib.mdDoc "Path to serial port this printer is connected to. Leave `null` to derive it from `service.klipper.settings`.";
-                };
+
                 configFile = mkOption {
                   type = types.path;
                   description = lib.mdDoc "Path to firmware config which is generated using `klipper-genconf`";
                 };
+
+                # flashing = {
+                #   enable = mkEnableOption (lib.mdDoc ''
+                #     Building of firmware for manual flashing with Katapult
+                #   '');
+
+                #   can = {
+                #     interface = mkOption {
+                #       type = types.string;
+                #       description = lib.mdDoc "CAN interface where this device is located";
+                #     };
+
+                #     uuid = mkOption {
+                #       type = types.string;
+                #       description = lib.mdDoc "CAN device UUID";
+                #     };
+                #   };
+
+                #   serial = {
+                #   };
+                # };
               };
             }
           );
@@ -170,10 +184,6 @@ in {
         message = "Option services.klipper.group is not set when services.klipper.user is specified.";
       }
       {
-        assertion = cfg.settings != null -> l.foldl (a: b: a && b) true (l.mapAttrsToList (mcu: _: mcu != null -> (l.hasAttrByPath ["${mcu}" "serial"] cfg.settings)) cfg.firmwares);
-        message = "Option services.klipper.settings.$mcu.serial must be set when settings.klipper.firmware.$mcu is specified";
-      }
-      {
         assertion = (cfg.configFile != null) != (cfg.settings != null);
         message = "You need to either specify services.klipper.settings or services.klipper.configFile.";
       }
@@ -185,6 +195,22 @@ in {
 
     environment.etc = let
       pluginsWithConfig = l.filter (p: p ? klipper && p.klipper.config) (cfg.package.plugins ++ cfg.extraConfigurationPackages);
+
+      enabledFirmwares = l.filterAttrs (n: v: v.enable) cfg.firmwares;
+      enabledFirmwarePackages =
+        l.mapAttrs' (
+          name: fcfg:
+            l.nameValuePair
+            (l.strings.sanitizeDerivationName name)
+            (
+              pkgs.klipper-firmware.override
+              {
+                mcu = l.strings.sanitizeDerivationName name;
+                firmwareConfig = fcfg.configFile;
+              }
+            )
+        )
+        enabledFirmwares;
     in
       {
         "klipper/printer.cfg".source =
@@ -192,8 +218,13 @@ in {
           then format.generate "klipper.cfg" cfg.settings
           else cfg.configFile;
       }
-      // l.listToAttrs (
-        l.map (p: l.nameValuePair "klipper/plugins/${p.pname}" {source = "${p}/lib/config";}) pluginsWithConfig
+      // (
+        l.listToAttrs (
+          l.map (p: l.nameValuePair "klipper/plugins/${p.pname}" {source = "${p}/lib/config";}) pluginsWithConfig
+        )
+      )
+      // (
+        l.mapAttrs' (k: v: l.nameValuePair "klipper/firmwares/${k}" {source = v;}) enabledFirmwarePackages
       );
 
     systemd.services.klipper = let

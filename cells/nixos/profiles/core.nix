@@ -9,7 +9,6 @@
   imports = [
     common.core
     common.cachix
-    inputs.home.nixosModules.home-manager
   ];
 
   #region nix options

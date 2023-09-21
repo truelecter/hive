@@ -2,6 +2,8 @@
   lib,
   stdenv,
   sources,
+  fetchFromGitHub,
+  srcOnly,
   # tools
   pkg-config,
   ccache,
@@ -13,6 +15,7 @@
   live555,
   usrsctp,
   libdatachannel,
+  plog,
   libjuice,
   openssl,
   srtp,
@@ -26,6 +29,16 @@
 }: let
   inherit (lib) optionals optional optionalString;
 
+  customUsrsctp = usrsctp.overrideAttrs (finalAttrs: previousAttrs: {
+    version = "unstable-2021-10-08";
+    src = fetchFromGitHub {
+      owner = "sctplab";
+      repo = "usrsctp";
+      rev = "7c31bd35c79ba67084ce029511193a19ceb97447";
+      hash = "sha256-KeOR/0WDtG1rjUndwTUOhE21PoS+ETs1Vk7jQYy/vNs=";
+    };
+  });
+
   libdatachannel0_17 = libdatachannel.overrideAttrs (_: _: {
     inherit (sources.libdatachannel0_17) version src;
 
@@ -34,6 +47,14 @@
       openssl
       srtp
     ];
+
+    postPatch = ''
+      # TODO: Remove when updating to 0.19.x, and add
+      # -DUSE_SYSTEM_USRSCTP=ON and -DUSE_SYSTEM_PLOG=ON to cmakeFlags instead
+      mkdir -p deps/{usrsctp,plog}
+      cp -r --no-preserve=mode ${srcOnly customUsrsctp}/. deps/usrsctp
+      cp -r --no-preserve=mode ${srcOnly plog}/. deps/plog
+    '';
 
     cmakeFlags = [
       "-DUSE_SYSTEM_SRTP=ON"

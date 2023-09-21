@@ -90,7 +90,7 @@ in {
 
               nbufs = mkOption {
                 type = types.ints.positive;
-                default = 2;
+                default = 3;
                 description = "Set number of capture buffers. Preferred 2 or 3.";
               };
 

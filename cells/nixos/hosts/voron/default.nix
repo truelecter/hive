@@ -10,7 +10,7 @@ in {
     suites.base
 
     profiles.common.networking.tailscale
-    # profiles.faster-linux
+    profiles.faster-linux
 
     inputs.cells.klipper.nixosModules.klipper
     inputs.cells.secrets.nixosProfiles.wifi
@@ -25,8 +25,8 @@ in {
   ];
 
   bee.system = system;
-  bee.home = inputs.home;
-  bee.pkgs = import inputs.printers {
+  bee.home = inputs.home-unstable;
+  bee.pkgs = import inputs.latest {
     inherit system;
     config.allowUnfree = true;
     overlays = [

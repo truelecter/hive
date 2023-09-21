@@ -26,8 +26,8 @@
       settings = {
         camera = {
           path = "/dev/v4l/by-id/usb-XCG-221208-J_3DO_NOZZLE_CAMERA_4K_01.00.00-video-index0";
-          width = 640;
-          height = 480;
+          width = 800;
+          height = 600;
           fps = 60;
         };
 
@@ -43,6 +43,7 @@
 
       nginx.enable = true;
     };
+
     printer = {
       settings = {
         camera = {
@@ -50,7 +51,7 @@
           width = 640;
           height = 480;
           fps = 60;
-          format = "H264";
+          # format = "H264";
         };
 
         http.port = 8081;
@@ -59,4 +60,10 @@
       nginx.enable = true;
     };
   };
+
+  # boot.kernelParams = [
+  #   "cma=256M"
+  # ];
+
+  boot.blacklistedKernelModules = ["snd-usb-audio"]; # Disable mic on cameras for some USB bandwidth
 }

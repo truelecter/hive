@@ -31,23 +31,6 @@
 in {
   boot.kernelModules = ["gpiod"];
 
-  environment.systemPackages = [
-    # TODO: make things flashable
-    (
-      pkgs.klipper-firmware.override {
-        mcu = "ebb-can";
-        firmwareConfig = ./firmwares/firmware-config-ebb;
-      }
-    )
-
-    (
-      pkgs.klipper-firmware.override {
-        mcu = "manta";
-        firmwareConfig = ./firmwares/firmware-config-manta;
-      }
-    )
-  ];
-
   systemd.tmpfiles.rules = [
     "d ${gcodePath} 775 klipper klipper"
   ];
@@ -84,6 +67,23 @@ in {
     host-mcu = {
       enable = false;
       firmware-package = rpiFirmware;
+    };
+
+    firmwares = {
+      ebb = {
+        enable = true;
+        configFile = ./firmwares/firmware-config-ebb;
+      };
+
+      manta = {
+        enable = true;
+        configFile = ./firmwares/firmware-config-manta;
+      };
+
+      xiao2040 = {
+        enable = true;
+        configFile = ./firmwares/firmware-config-xiao2040;
+      };
     };
   };
 
