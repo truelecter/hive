@@ -26,9 +26,10 @@
       settings = {
         camera = {
           path = "/dev/v4l/by-id/usb-XCG-221208-J_3DO_NOZZLE_CAMERA_4K_01.00.00-video-index0";
-          width = 800;
-          height = 600;
+          width = 640;
+          height = 480;
           fps = 60;
+          format = "MJPG";
         };
 
         http = {
@@ -50,8 +51,8 @@
           path = "/dev/v4l/by-id/usb-046d_HD_Pro_Webcam_C920_89E7787F-video-index0";
           width = 640;
           height = 480;
-          fps = 60;
-          # format = "H264";
+          fps = 30;
+          format = "MJPG";
         };
 
         http.port = 8081;

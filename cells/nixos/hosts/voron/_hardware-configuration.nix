@@ -54,7 +54,7 @@
   powerManagement.cpuFreqGovernor = "performance";
 
   hardware = {
-    enableRedistributableFirmware = true;
+    # enableRedistributableFirmware = true;
 
     deviceTree.filter = "bcm2711-rpi-cm4.dtb";
 
