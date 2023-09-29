@@ -28,8 +28,9 @@
           path = "/dev/v4l/by-id/usb-XCG-221208-J_3DO_NOZZLE_CAMERA_4K_01.00.00-video-index0";
           width = 640;
           height = 480;
-          fps = 60;
+          fps = 30;
           format = "MJPG";
+          nbufs = 2;
         };
 
         http = {
@@ -39,6 +40,10 @@
 
         rtsp = {
           port = 8554;
+        };
+
+        log = {
+          debug = true;
         };
       };
 
@@ -53,6 +58,7 @@
           height = 480;
           fps = 30;
           format = "MJPG";
+          nbufs = 2;
         };
 
         http.port = 8081;
