@@ -9,7 +9,6 @@
   ...
 }: {
   wsl = {
-    docker-native.enable = true;
-    # docker-desktop.enable = true;
+    docker-desktop.enable = true;
   };
 }
