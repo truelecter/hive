@@ -51,8 +51,7 @@
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
     nixos-wsl = {
-      # url = "github:divnix/hive?ref=refs/pull/9/head"
-      url = "github:nix-community/NixOS-WSL?ref=refs/pull/243/merge";
+      url = "github:nix-community/NixOS-WSL";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-utils.follows = "flake-utils";
