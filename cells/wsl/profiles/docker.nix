@@ -1,14 +1,7 @@
 {
-  inputs,
-  common,
-  nixos,
-}: {
-  lib,
-  pkgs,
-  modulesPath,
-  ...
-}: {
-  wsl = {
-    docker-desktop.enable = true;
-  };
+  # wsl = {
+  #   docker-desktop.enable = true;
+  # };
+
+  virtualisation.docker.enable = true;
 }
