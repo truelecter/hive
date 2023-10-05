@@ -80,6 +80,11 @@ in {
         configFile = ./firmwares/firmware-config-manta;
       };
 
+      manta-bridge = {
+        enable = true;
+        configFile = ./firmwares/firmware-config-manta-canbridge;
+      };
+
       xiao2040 = {
         enable = true;
         configFile = ./firmwares/firmware-config-xiao2040;
