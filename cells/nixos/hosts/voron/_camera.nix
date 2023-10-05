@@ -31,6 +31,10 @@
           fps = 30;
           format = "MJPG";
           nbufs = 2;
+          options = {
+            whitebalanceautomatic = 0;
+            whitebalancetemperature = 4200;
+          };
         };
 
         http = {
@@ -59,6 +63,10 @@
           fps = 30;
           format = "MJPG";
           nbufs = 2;
+          options = {
+            whitebalanceautomatic = 0;
+            whitebalancetemperature = 5700;
+          };
         };
 
         http.port = 8081;

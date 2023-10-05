@@ -4,6 +4,8 @@
 }: let
   inherit (inputs) nixpkgs std;
   inherit (std.lib.dev) mkNixago;
+
+  l = nixpkgs.lib // builtins;
 in {
   editorconfig = mkNixago std.lib.cfg.editorconfig {
     data = {
@@ -147,10 +149,13 @@ in {
             "refactor"
             "test"
           ];
-          scopes = [
-            "ci"
-            "flake"
-          ];
+          scopes =
+            [
+              "ci"
+              "flake"
+            ]
+            ++ (l.attrNames inputs.cells.nixos.nixosConfigurations)
+            ++ (l.attrNames inputs.cells.darwin.darwinConfigurations);
           descriptionLength = 72;
         };
       };
