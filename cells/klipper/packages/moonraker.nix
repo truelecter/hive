@@ -43,11 +43,6 @@ in
         --add-flags "$out/lib/moonraker/moonraker.py"
     '';
 
-    passthru = {
-      updateScript = unstableGitUpdater {url = meta.homepage;};
-      tests.moonraker = nixosTests.moonraker;
-    };
-
     meta = with lib; {
       description = "API web server for Klipper";
       homepage = "https://github.com/Arksine/moonraker";

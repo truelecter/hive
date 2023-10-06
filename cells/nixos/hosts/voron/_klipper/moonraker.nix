@@ -26,6 +26,8 @@ in {
       octoprint_compat = {};
       history = {};
 
+      machine.validate_service = false;
+
       authorization = {
         cors_domains = [
           "https://my.mainsail.xyz"
@@ -45,6 +47,28 @@ in {
           "FE80::/10"
           "::1/128"
         ];
+      };
+
+      "webcam nozzle" = {
+        enabled = true;
+        location = "nozzle";
+        icon = "mdiPrinter3dNozzle";
+        service = "webrtc-camerastreamer";
+        target_fps = 30;
+        target_fps_idle = 5;
+        stream_url = "/camera/nozzle/webrtc";
+        snapshot_url = "/camera/nozzle/snapshot";
+      };
+
+      "webcam printer" = {
+        enabled = true;
+        location = "printer";
+        icon = "mdiPrinter3d";
+        service = "webrtc-camerastreamer";
+        target_fps = 30;
+        target_fps_idle = 5;
+        stream_url = "/camera/printer/webrtc";
+        snapshot_url = "/camera/printer/snapshot";
       };
     };
   };

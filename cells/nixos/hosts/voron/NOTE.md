@@ -2,7 +2,7 @@
 
 There are some modifications to configs needed. For CM4 with Waveshare DSI crucial are:
 
-- add dtparam=ant2 (this may be done with overlays instead, may be)
+- DONE: add dtparam=ant2 (this may be done with overlays instead, may be)
 - add start_x=1
 - dt_blob.bin for DSI1
 

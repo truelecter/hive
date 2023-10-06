@@ -32,6 +32,7 @@
         moonraker_port = 7125;
         extrude_distances = "5, 10, 25, 50";
         extrude_speeds = "1, 2, 5, 25";
+        camera_url = "rtsp://127.0.0.1:8554/stream.h264";
       };
 
       "preheat ABS+" = {

@@ -45,10 +45,6 @@
         rtsp = {
           port = 8554;
         };
-
-        log = {
-          debug = true;
-        };
       };
 
       nginx.enable = true;
