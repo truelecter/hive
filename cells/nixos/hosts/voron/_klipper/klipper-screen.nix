@@ -32,7 +32,6 @@
         moonraker_port = 7125;
         extrude_distances = "5, 10, 25, 50";
         extrude_speeds = "1, 2, 5, 25";
-        camera_url = "rtsp://127.0.0.1:8554/stream.h264";
       };
 
       "preheat ABS+" = {
@@ -71,6 +70,16 @@
         icon = "extruder";
         method = "printer.gcode.script";
         params = ''{"script":"LED_PROFILE_APPLY PROFILE=toolhead"}'';
+      };
+
+      "menu __main NozzleCam" = {
+        name = "Nozzle camera";
+        icon = "extruder";
+        panel = "camera_cfg";
+      };
+
+      "include nozzle_cam" = {
+        url = "http://127.0.0.1/camera/nozzle/stream";
       };
     };
   };
