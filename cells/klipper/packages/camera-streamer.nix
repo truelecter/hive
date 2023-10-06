@@ -23,7 +23,7 @@
   useHWH264 ? true,
   useFfmpeg ? false,
   useLibcamera ? false,
-  useRtsp ? false, # Broken while live555 is not compiling for whatever reason
+  useRtsp ? true, # Broken while live555 is not compiling for whatever reason
   useLibdatachannel ? true,
   ...
 }: let
@@ -82,8 +82,6 @@ in
 
     hardeningDisable = ["all"];
 
-    NIX_DEBUG = 1;
-
     makeFlags =
       [
         # Targets
@@ -120,7 +118,7 @@ in
 
       ${optionalString useRtsp ''
         export NIX_CFLAGS_COMPILE="$NIX_CFLAGS_COMPILE -isystem ${live555Custom}/include/liveMedia -isystem ${live555Custom}/include/groupsock -isystem ${live555Custom}/include/UsageEnvironment -isystem ${live555Custom}/include/BasicUsageEnvironment"
-        export NIX_LDFLAGS="$NIX_LDFLAGS -L${live555Custom}/lib -lBasicUsageEnvironment -lliveMedia -lUsageEnvironment -lgroupsock"
+        export NIX_LDFLAGS="$NIX_LDFLAGS -L${live555Custom}/lib -lliveMedia -lgroupsock -lBasicUsageEnvironment -lUsageEnvironment"
       ''}
 
       rm -rf third_party/libdatachannel
