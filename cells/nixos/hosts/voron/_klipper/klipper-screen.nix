@@ -3,26 +3,6 @@
   lib,
   ...
 }: {
-  services.xserver = {
-    enable = true;
-    logFile = "/dev/null";
-
-    displayManager = {
-      startx.enable = true;
-      xserverArgs = ["-keeptty" "-logverbose" "-verbose"];
-      # sessionCommands = ''
-      #   ${pkgs.xinput}/bin/xinput set-prop "raspberrypi-ts" "Coordinate Transformation Matrix" -1 0 1 0 -1 1 0 0 1
-      # '';
-    };
-
-    excludePackages = with pkgs; [
-      xterm
-      xdg-utils
-      nixos-icons
-      xorg.iceauth
-    ];
-  };
-
   tl.services.klipper-screen = {
     enable = true;
     # package = pkgs.klipperscreen;
