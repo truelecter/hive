@@ -62,10 +62,8 @@
   };
 
   environment.systemPackages = with pkgs; [
-    libraspberrypi
-    raspberrypi-eeprom
     dtc
-    pkgs.i2c-tools
+    i2c-tools
   ];
 
   environment.etc."u-boot-cm4".source = pkgs.ubootRaspberryPi4_64bit.override {
