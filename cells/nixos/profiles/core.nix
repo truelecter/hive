@@ -19,7 +19,7 @@
       allowed-users = ["root @wheel"];
 
       # This is just a representation of the nix default
-      system-features = ["nixos-test" "benchmark" "big-parallel" "kvm"];
+      system-features = lib.mkDefault ["nixos-test" "benchmark" "big-parallel" "kvm"];
     };
 
     optimise.automatic = true;
@@ -29,12 +29,10 @@
   environment = {
     # Selection of sysadmin tools that can come in handy
     systemPackages = with pkgs; [
-      dosfstools
-      gptfdisk
+      # gptfdisk
       iputils
       usbutils
-      utillinux
-      hexdump
+      util-linux
       pciutils
     ];
   };

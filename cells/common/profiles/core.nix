@@ -4,46 +4,28 @@
   lib,
   pkgs,
   ...
-}: let
-  inherit (lib) fileContents;
-  inherit (pkgs.stdenv.hostPlatform) isDarwin;
-in {
+}: {
   environment = {
     # Selection of sysadmin tools that can come in handy
     systemPackages = with pkgs; [
-      binutils
       coreutils
       curl
       direnv
       delta
       bat
-      thefuck
-      dnsutils
-      fd
       git
       bottom
       jq
-      nix-index
-      nmap
-      ripgrep
       tmux
-      whois
       zsh
       vim
       file
       gnused
-      lsof
-      lnav
-      lsd
-      iftop
       ncdu
+      nix-tree
     ];
 
-    shellAliases = let
-      # The `security.sudo.enable` option does not exist on darwin because
-      # sudo is always available.
-      ifSudo = lib.mkIf (isDarwin || config.security.sudo.enable);
-    in {
+    shellAliases = {
       # quick cd
       ".." = "cd ..";
       "..." = "cd ../..";
@@ -69,6 +51,8 @@ in {
       tm = "tmux new-session -A -s main";
 
       issh = "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null";
+
+      nix-cleanup = "nix-collect-garbage -d && sudo nix-collect-garbage -d";
     };
 
     pathsToLink = ["/share/zsh"];
@@ -97,8 +81,8 @@ in {
       # Give root user and wheel group special Nix privileges.
       trusted-users = ["root" "@wheel"];
 
-      keep-outputs = true;
-      keep-derivations = true;
+      keep-outputs = lib.mkDefault true;
+      keep-derivations = lib.mkDefault true;
       builders-use-substitutes = true;
       experimental-features = ["flakes" "nix-command"];
       fallback = true;
@@ -122,6 +106,10 @@ in {
     registry = let
       inputs' = lib.filterAttrs (n: _: !(builtins.elem n ["cells" "self" "nixpkgs"])) inputs;
     in
-      lib.mapAttrs (_: v: {flake = v;}) inputs';
+      (lib.mapAttrs (_: v: {flake = v;}) inputs')
+      // {
+        n.flake = inputs.nixos;
+        l.flake = inputs.latest;
+      };
   };
 }

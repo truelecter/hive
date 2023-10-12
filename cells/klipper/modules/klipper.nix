@@ -203,11 +203,26 @@ in {
             l.nameValuePair
             (l.strings.sanitizeDerivationName name)
             (
-              pkgs.klipper-firmware.override
-              {
-                mcu = l.strings.sanitizeDerivationName name;
-                firmwareConfig = fcfg.configFile;
-              }
+              (
+                pkgs.klipper-firmware.override
+                {
+                  mcu = l.strings.sanitizeDerivationName name;
+                  firmwareConfig = fcfg.configFile;
+                }
+              )
+              .overrideAttrs (
+                _:_: {
+                  strictDeps = true;
+                  disallowedReferences = [pkgs.gcc-arm-embedded];
+
+                  # Exclued .elf from output to not depend on gcc
+                  installPhase = ''
+                    mkdir -p $out
+                    cp ./.config $out/config
+                    cp out/klipper.bin $out/
+                  '';
+                }
+              )
             )
         )
         enabledFirmwares;
@@ -293,7 +308,7 @@ in {
       groups.${cfg.group} = {};
     };
 
-    environment.systemPackages = [pkgs.klipper-genconf];
+    # environment.systemPackages = [pkgs.klipper-genconf];
 
     # environment.systemPackages = with pkgs; let
     #   default = a: b:

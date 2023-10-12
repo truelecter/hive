@@ -50,4 +50,10 @@ in {
   users.users.truelecter = {
     extraGroups = ["video" "gpio"];
   };
+
+  nix.settings = {
+    keep-outputs = false;
+    keep-derivations = false;
+    system-features = [];
+  };
 }
