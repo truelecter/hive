@@ -25,4 +25,8 @@
 
   boot.initrd.includeDefaultModules = false;
   environment.defaultPackages = [pkgs.perl];
+
+  services.journald.extraConfig = ''
+    SystemMaxUse=128M
+  '';
 }
