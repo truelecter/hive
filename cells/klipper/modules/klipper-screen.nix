@@ -106,6 +106,8 @@ in {
       (
         # wayland kiosk
         lib.mkIf (!config.services.xserver.enable) {
+          systemd.services."cage-tty1".serviceConfig.Restart = "always";
+
           services.cage = {
             enable = true;
             user = cfg.user;
