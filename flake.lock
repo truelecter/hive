@@ -336,16 +336,16 @@
         "std": "std"
       },
       "locked": {
-        "lastModified": 1696669943,
+        "lastModified": 1696666451,
         "narHash": "sha256-vVGbhwlGjPI1RgtUK6Z+MqdL6sKWt5QLL5UdhpFXjkI=",
         "owner": "divnix",
         "repo": "hive",
-        "rev": "54415f1dee6f3c0a5970652fe560ffe866f100f7",
+        "rev": "8e73a34438c9b7ec1d912d523cfbfd8b1b502f18",
         "type": "github"
       },
       "original": {
         "owner": "divnix",
-        "ref": "refs/pull/27/merge",
+        "ref": "refs/pull/26/merge",
         "repo": "hive",
         "type": "github"
       }

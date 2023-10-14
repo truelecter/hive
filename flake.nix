@@ -28,7 +28,7 @@
     };
 
     hive = {
-      url = "github:divnix/hive?ref=refs/pull/27/merge";
+      url = "github:divnix/hive?ref=refs/pull/26/merge";
       inputs = {
         colmena.follows = "colmena";
         nixago.follows = "nixago";
