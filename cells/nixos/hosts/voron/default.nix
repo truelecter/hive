@@ -32,8 +32,12 @@ in {
     overlays = [
       inputs.cells.klipper.overlays.klipper
       (
-        _: prev: {
-          deviceTree.applyOverlays = prev.callPackage ./_dtmerge.nix {};
+        final: prev: {
+          deviceTree =
+            prev.deviceTree
+            // {
+              applyOverlays = final.callPackage ./_dtmerge.nix {};
+            };
           makeModulesClosure = x: prev.makeModulesClosure (x // {allowMissing = true;});
         }
       )

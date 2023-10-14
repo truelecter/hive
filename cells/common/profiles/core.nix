@@ -99,17 +99,13 @@
     };
 
     nixPath = [
-      "nixpkgs=flake:nixos"
+      "nixpkgs=${pkgs.path}"
       "home-manager=flake:home"
     ];
 
-    registry = let
-      inputs' = lib.filterAttrs (n: _: !(builtins.elem n ["cells" "self" "nixpkgs"])) inputs;
-    in
-      (lib.mapAttrs (_: v: {flake = v;}) inputs')
-      // {
-        n.flake = inputs.nixos;
-        l.flake = inputs.latest;
-      };
+    registry = {
+      home.flake = inputs.home;
+      l.flake = inputs.latest;
+    };
   };
 }
