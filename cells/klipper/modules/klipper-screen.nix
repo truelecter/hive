@@ -66,12 +66,15 @@ in {
           users.${cfg.user} = {
             isSystemUser = true;
             group = cfg.group;
-            extraGroups = ["tty"];
+            extraGroups = ["tty" "video"];
           };
           groups.${cfg.group} = {};
         };
 
         environment.etc."klipper-screen.cfg".source = format.generate "klipper-screen.cfg" cfg.settings;
+
+        # for MPV and wayland
+        hardware.opengl.enable = lib.mkDefault true;
       }
       (
         # x-server
@@ -86,15 +89,18 @@ in {
               pkgs.xorg.xorgserver
               pkgs.xorg.xauth
               pkgs.xorg.xinit
+              pkgs.xorg.xsetroot
+              pkgs.xorg.xset
               pkgs.nettools
               pkgs.util-linux
             ];
 
             serviceConfig = {
               ExecStart = "${pkgs.xorg.xinit}/bin/xinit ${cfg.package}/bin/KlipperScreen --configfile /etc/klipper-screen.cfg -- /etc/X11/xinit/xserverrc";
-              SupplementaryGroups = "tty";
-              Group = cfg.group;
-              User = cfg.user;
+              SupplementaryGroups = ["tty" "video"];
+              # TODO: Make this work as non-root user as well
+              # Group = cfg.group;
+              # User = cfg.user;
             };
           };
 

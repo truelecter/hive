@@ -29,6 +29,4 @@
   services.journald.extraConfig = ''
     SystemMaxUse=128M
   '';
-
-  hardware.opengl.enable = false;
 }
