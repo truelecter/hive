@@ -1,10 +1,15 @@
 {
+  inputs,
+  cell,
+}: _: let
+  hostnames = builtins.attrNames inputs.cells.nixos.colmenaConfigurations;
+in {
   home.file = {
     ".ssh/config" = {
       text = ''
         Include ~/.ssh/config.local
 
-        Host oracle depsos hyperos octoprint
+        Host ${builtins.concatStringsSep " " hostnames}
           User truelecter
           ForwardAgent yes
 
