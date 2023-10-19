@@ -4,6 +4,8 @@
   lib,
   ...
 }: {
+  users.groups.wifi.members = ["klipper-screen" "truelecter"];
+
   networking.wireless = {
     enable = true;
     interfaces = ["wlan0"];
@@ -17,7 +19,7 @@
     };
     environmentFile = config.sops.secrets.xata-password-env.path;
     extraConfig = ''
-      ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=wheel
+      ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=wifi
       country=UA
       update_config=1
     '';
@@ -37,9 +39,9 @@
               compatible = "brcm,bcm2711";
               fragment@0 {
                 // Despite this being ant1 instead of ant2,
-                // CM4 will use ant2. This is because
+                // CM4 will use external antenna. This is because
                 // ant1 is enabled by default and switching
-                // GPIO pins causes it to activate ant2
+                // GPIO pins causes it to activate external antenna
                 target = <&ant1>;
 
                 __overlay__ {
@@ -51,7 +53,8 @@
                 target = <&ant2>;
 
                 __overlay__ {
-                  gpios = <3 0>;
+                  // output-low is still present here
+                  gpios = <3 1>;
                 };
               };
             };

@@ -85,4 +85,21 @@
       frequency = 50000;
     };
   };
+
+  services.xserver = {
+    enable = true;
+    logFile = "/dev/null";
+
+    displayManager = {
+      startx.enable = true;
+      xserverArgs = ["-keeptty" "-logverbose" "-verbose"];
+    };
+
+    excludePackages = with pkgs; [
+      xterm
+      xdg-utils
+      nixos-icons
+      xorg.iceauth
+    ];
+  };
 }
