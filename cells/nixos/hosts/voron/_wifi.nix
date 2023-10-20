@@ -54,7 +54,7 @@
 
                 __overlay__ {
                   // output-low is still present here
-                  gpios = <3 1>;
+                  gpios = <3 0>;
                 };
               };
             };
