@@ -1,5 +1,5 @@
 # https://discourse.nixos.org/t/how-to-have-a-minimal-nixos/22652/4
-{
+_: {
   modulesPath,
   pkgs,
   ...

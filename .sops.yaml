@@ -8,6 +8,7 @@ keys:
   - &oracle 70e8bfb15ea96c3752baafcfc43cfc3d2c42d68e
   - &tl-wsl ceb6cea45e8d7d34c25d166868696097610a4f62
   - &voron ad74ae276ddcd3b8c05242fc537e0afff9393519
+  - &rockiosk ef5e9b1601de92796784e3cd146a31ffb1cc2f5d
 
 creation_rules:
   - path_regex: cells/secrets/sops/envs.yaml
@@ -32,6 +33,7 @@ creation_rules:
           - *oracle
           - *tl-wsl
           - *voron
+          - *rockiosk
 
   - path_regex: cells/secrets/sops/k3s.yaml
     key_groups:
@@ -52,6 +54,7 @@ creation_rules:
           - *squadbook
           - *octoprint
           - *voron
+          - *rockiosk
 
   - path_regex: cells/secrets/sops/ssh.*$
     key_groups:

@@ -12,6 +12,9 @@
     # voron = {
     #   deployment.targetHost = "10.3.0.86";
     # };
+    rockiosk = {
+      deployment.targetHost = "10.3.0.22";
+    };
   };
 in
   l.mapAttrs
