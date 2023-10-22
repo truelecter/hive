@@ -173,6 +173,7 @@
 
         (files "files")
         (installables "packages")
+        (installables "firmwares")
         (pkgs "overrides")
         (functions "overlays")
 

@@ -9,9 +9,6 @@
     depsos = {
       deployment.targetPort = 2265;
     };
-    # voron = {
-    #   deployment.targetHost = "10.3.0.86";
-    # };
   };
 in
   l.mapAttrs

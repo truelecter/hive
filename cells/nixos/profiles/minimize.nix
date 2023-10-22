@@ -1,7 +1,8 @@
 # https://discourse.nixos.org/t/how-to-have-a-minimal-nixos/22652/4
-{
+_: {
   modulesPath,
   pkgs,
+  lib,
   ...
 }: {
   disabledModules = [
@@ -23,7 +24,7 @@
 
   programs.command-not-found.enable = false;
 
-  boot.initrd.includeDefaultModules = false;
+  boot.initrd.includeDefaultModules = lib.mkDefault false;
   environment.defaultPackages = [pkgs.perl];
 
   services.journald.extraConfig = ''

@@ -11,6 +11,7 @@ in {
 
     profiles.common.networking.tailscale
     profiles.faster-linux
+    profiles.minimize
 
     inputs.cells.klipper.nixosModules.klipper
     inputs.cells.secrets.nixosProfiles.wifi
@@ -21,7 +22,6 @@ in {
     ./wifi.nix
     ./camera.nix
     ./klipper
-    ./minimize.nix
   ];
 
   bee.system = system;
