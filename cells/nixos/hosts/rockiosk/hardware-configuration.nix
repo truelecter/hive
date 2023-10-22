@@ -9,17 +9,27 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.availableKernelModules = ["xhci_pci" "usb_storage" "sd_mod" "sdhci_acpi"];
-  boot.initrd.kernelModules = [];
+  boot = {
+    initrd = {
+      availableKernelModules = ["xhci_pci" "usb_storage" "sd_mod" "sdhci_acpi"];
+      kernelModules = [];
+      includeDefaultModules = true;
+    };
 
-  boot.kernelModules = ["kvm-intel"];
-  boot.kernelParams = ["quiet"];
-  boot.extraModulePackages = [];
+    kernelModules = ["kvm-intel"];
+    kernelParams = ["quiet"];
+    extraModulePackages = [];
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.systemd-boot.configurationLimit = 1;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.timeout = lib.mkForce 0;
+    loader = {
+      systemd-boot = {
+        enable = true;
+        configurationLimit = 1;
+      };
+
+      efi.canTouchEfiVariables = true;
+      timeout = lib.mkForce 5;
+    };
+  };
 
   fileSystems."/" = {
     device = "/dev/disk/by-label/system";
@@ -46,4 +56,6 @@
   hardware.enableRedistributableFirmware = true;
 
   boot.plymouth.enable = true;
+
+  hardware.firmware = [pkgs.rock-pi-x-firmware];
 }

@@ -2,6 +2,7 @@
 _: {
   modulesPath,
   pkgs,
+  lib,
   ...
 }: {
   disabledModules = [
@@ -23,7 +24,7 @@ _: {
 
   programs.command-not-found.enable = false;
 
-  boot.initrd.includeDefaultModules = false;
+  boot.initrd.includeDefaultModules = lib.mkDefault false;
   environment.defaultPackages = [pkgs.perl];
 
   services.journald.extraConfig = ''

@@ -17,6 +17,7 @@ in {
 
     ./hardware-configuration.nix
     ./kiosk.nix
+    ./wifi.nix
   ];
 
   bee.system = system;
@@ -24,11 +25,15 @@ in {
   bee.pkgs = import inputs.nixos {
     inherit system;
     config.allowUnfree = true;
+    overlays = [
+      inputs.cells.nixos.overlays.firmwares
+    ];
   };
 
   systemd.services.NetworkManager-wait-online.enable = false;
 
   networking = {
+    hostName = "rockiosk";
     firewall.enable = false;
   };
 

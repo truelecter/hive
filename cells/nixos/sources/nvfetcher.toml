@@ -1,0 +1,3 @@
+[rock-pi-x-firmware]
+src.manual = "20200828-0711"
+fetch.url = "https://dl.radxa.com/rockpix/drivers/firmware/AP6255_BT_WIFI_Firmware.zip"
