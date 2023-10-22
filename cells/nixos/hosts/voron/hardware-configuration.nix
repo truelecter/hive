@@ -72,7 +72,7 @@
       CONFIG_USB_XHCI_BRCM=y
     '';
     extraPatches = [
-      ./_patches/xhci-uboot.patch
+      ./patches/xhci-uboot.patch
     ];
   };
 }

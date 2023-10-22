@@ -29,7 +29,7 @@
   hardware = {
     deviceTree = {
       overlays = [
-        # Equivalent to dtparam=audio=on
+        # Equivalent to dtparam=ant2
         {
           name = "choose-antenna";
           dtsText = ''
