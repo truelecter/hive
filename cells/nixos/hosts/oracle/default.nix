@@ -17,8 +17,8 @@ in {
     profiles.remote-builds
     profiles.faster-linux
 
-    ./_hardware-configuration.nix
-    ./_minecraft-servers
+    ./hardware-configuration.nix
+    ./minecraft-servers
   ];
 
   bee.system = system;

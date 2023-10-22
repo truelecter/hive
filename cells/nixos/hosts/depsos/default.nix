@@ -16,14 +16,14 @@ in {
     inputs.cells.k8s.nixosModules.k8s
     inputs.cells.secrets.nixosProfiles.k8s
 
-    ./_hardware-configuration.nix
-    ./_k8s
-    ./_postgres.nix
-    ./_mongo.nix
-    ./_wireguard.nix
-    ./_tailscale-exit-node.nix
-    ./_zabbix.nix
-    ./_journal.nix
+    ./hardware-configuration.nix
+    ./k8s
+    ./postgres.nix
+    ./mongo.nix
+    ./wireguard.nix
+    ./tailscale-exit-node.nix
+    ./zabbix.nix
+    ./journal.nix
   ];
 
   bee.system = system;

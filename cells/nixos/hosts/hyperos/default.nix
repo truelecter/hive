@@ -13,7 +13,7 @@ in {
     profiles.remote-builds
     profiles.faster-linux
 
-    ./_hardware-configuration.nix
+    ./hardware-configuration.nix
   ];
 
   bee.system = system;

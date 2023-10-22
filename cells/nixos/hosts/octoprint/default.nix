@@ -17,11 +17,11 @@ in {
 
     inputs.nixos-hardware.nixosModules.raspberry-pi-4
 
-    ./_hardware-configuration.nix
-    ./_wifi.nix
-    ./_gpio.nix
-    ./_camera.nix
-    ./_klipper
+    ./hardware-configuration.nix
+    ./wifi.nix
+    ./gpio.nix
+    ./camera.nix
+    ./klipper
   ];
 
   bee.system = system;
@@ -31,7 +31,7 @@ in {
     config.allowUnfree = true;
     overlays = [
       (final: prev: {
-        deviceTree.applyOverlays = prev.callPackage ./_apply-overlays-dtmerge.nix {};
+        deviceTree.applyOverlays = prev.callPackage ./apply-overlays-dtmerge.nix {};
         makeModulesClosure = x: prev.makeModulesClosure (x // {allowMissing = true;});
         # linuxPackages_rpi4 = (import inputs.latest {inherit system;}).linuxPackages_rpi4;
       })

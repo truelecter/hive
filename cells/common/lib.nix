@@ -5,6 +5,8 @@
   inherit (inputs) haumea;
 
   defaultNixpkgs = import inputs.nixpkgs {inherit (inputs.nixpkgs) system;};
+
+  defaultAsRoot = _: mod: mod.default or mod;
 in rec {
   importProfiles = {
     inputs ? {},
@@ -42,7 +44,7 @@ in rec {
   }:
     haumea.lib.load {
       inherit src;
-      transformer = haumea.lib.transformers.liftDefault;
+      transformer = defaultAsRoot;
       inputs = {
         inherit suites profiles userProfiles lib inputs overlays;
       };

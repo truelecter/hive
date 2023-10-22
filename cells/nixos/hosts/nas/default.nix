@@ -16,12 +16,13 @@ in {
     profiles.docker
     profiles.common.networking.tailscale
     profiles.remote-builds
-    ./_hardware-configuration.nix
-    ./_zfs-mounts.nix
-    ./_media-server.nix
-    ./_torrent.nix
-    ./_samba.nix
-    ./_video-card.nix
+
+    ./hardware-configuration.nix
+    ./zfs-mounts.nix
+    ./media-server.nix
+    ./torrent.nix
+    ./samba.nix
+    ./video-card.nix
   ];
 
   bee.system = system;

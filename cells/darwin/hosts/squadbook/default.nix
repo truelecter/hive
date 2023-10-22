@@ -3,7 +3,6 @@
   lib,
   inputs,
   profiles,
-  userProfiles,
   ...
 }: let
   system = "aarch64-darwin";

@@ -17,11 +17,11 @@ in {
 
     inputs.nixos-hardware.nixosModules.raspberry-pi-4
 
-    ./_hardware-configuration.nix
-    ./_wifi.nix
-    ./_camera.nix
-    ./_klipper
-    ./_minimize.nix
+    ./hardware-configuration.nix
+    ./wifi.nix
+    ./camera.nix
+    ./klipper
+    ./minimize.nix
   ];
 
   bee.system = system;
@@ -36,7 +36,7 @@ in {
           deviceTree =
             prev.deviceTree
             // {
-              applyOverlays = final.callPackage ./_dtmerge.nix {};
+              applyOverlays = final.callPackage ./dtmerge.nix {};
             };
           makeModulesClosure = x: prev.makeModulesClosure (x // {allowMissing = true;});
         }
