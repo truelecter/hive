@@ -67,9 +67,10 @@
     };
 
     sops-nix = {
-      url = "github:TrueLecter/sops-nix/darwin";
+      url = "github:TrueLecter/sops-nix/darwin-upstream";
       inputs = {
         nixpkgs.follows = "nixos";
+        nixpkgs-stable.follows = "nixos";
       };
     };
   };

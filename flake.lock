@@ -858,19 +858,22 @@
       "inputs": {
         "nixpkgs": [
           "nixos"
+        ],
+        "nixpkgs-stable": [
+          "nixos"
         ]
       },
       "locked": {
-        "lastModified": 1657400508,
-        "narHash": "sha256-B4Sy180KA0k1rJopa0MM4zZyClYbrE4Unltwr/Bw8TI=",
+        "lastModified": 1698186302,
+        "narHash": "sha256-2e0eQTq8/lC3qzZMiQG41FHO4tREZpFWbvT8SEQMrAU=",
         "owner": "TrueLecter",
         "repo": "sops-nix",
-        "rev": "06f83d6617767f11b2fc92ee068649a0fde090a0",
+        "rev": "4e50b50aa2c20c2113fca3247064f3a9df456a71",
         "type": "github"
       },
       "original": {
         "owner": "TrueLecter",
-        "ref": "darwin",
+        "ref": "darwin-upstream",
         "repo": "sops-nix",
         "type": "github"
       }
