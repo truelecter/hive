@@ -62,3 +62,9 @@ creation_rules:
           - *truelecter
           - *squadbook
           - *tl-wsl
+
+  - path_regex: cells/secrets/sops/weather-kiosk.yaml
+    key_groups:
+      - pgp:
+          - *truelecter
+          - *rockiosk

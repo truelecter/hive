@@ -14,15 +14,17 @@ in {
     profiles.minimize
 
     inputs.cells.secrets.nixosProfiles.wifi
+    inputs.cells.secrets.nixosProfiles.weather-kiosk
 
     ./hardware-configuration.nix
     ./kiosk.nix
     ./wifi.nix
+    ./weather.nix
   ];
 
   bee.system = system;
-  bee.home = inputs.home;
-  bee.pkgs = import inputs.nixos {
+  bee.home = inputs.home-unstable;
+  bee.pkgs = import inputs.latest {
     inherit system;
     config.allowUnfree = true;
     overlays = [

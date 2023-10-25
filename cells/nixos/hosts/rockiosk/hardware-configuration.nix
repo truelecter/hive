@@ -55,7 +55,5 @@
   hardware.opengl.enable = true;
   hardware.enableRedistributableFirmware = true;
 
-  boot.plymouth.enable = true;
-
   hardware.firmware = [pkgs.rock-pi-x-firmware];
 }

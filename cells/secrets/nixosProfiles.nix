@@ -64,4 +64,21 @@
       };
     };
   };
+
+  weather-kiosk = _: {
+    sops.secrets.wk-openweathermap-api = {
+      key = "openweathermap-api";
+      sopsFile = ./sops/weather-kiosk.yaml;
+    };
+
+    sops.secrets.wk-influx-admin-pw = {
+      key = "influx-admin-pw";
+      sopsFile = ./sops/weather-kiosk.yaml;
+    };
+
+    sops.secrets.wk-influx-admin-token = {
+      key = "influx-admin-token";
+      sopsFile = ./sops/weather-kiosk.yaml;
+    };
+  };
 }

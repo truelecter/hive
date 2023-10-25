@@ -4,7 +4,7 @@
   services.cage = {
     enable = true;
     extraArguments = ["-d"];
-    program = "${pkgs.meteo}/bin/com.gitlab.bitseater.meteo";
+    program = "${pkgs.firefox}/bin/firefox -kiosk -private-window http://127.0.0.1:3000/";
     user = "truelecter";
   };
 }
