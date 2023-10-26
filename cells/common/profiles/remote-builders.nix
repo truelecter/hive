@@ -6,9 +6,9 @@
     inputs.cells.secrets.commonProfiles.remote-builders
   ];
 
-  environment.etc."nix/builder_pk" = {
-    source = config.sops.secrets.remote-builder-pk.path;
-  };
+  # environment.etc."nix/builder_pk" = {
+  #   source = config.sops.secrets.remote-builder-pk.path;
+  # };
 
   nix = {
     distributedBuilds = true;
@@ -31,7 +31,7 @@
         hostName = "oracle";
 
         sshUser = "root";
-        sshKey = "/etc/nix/builder_pk";
+        sshKey = config.sops.secrets.remote-builder-pk.path;
       }
       {
         systems = [
@@ -52,7 +52,7 @@
         hostName = "hyperos";
 
         sshUser = "root";
-        sshKey = "/etc/nix/builder_pk";
+        sshKey = config.sops.secrets.remote-builder-pk.path;
       }
       # {
       #   systems = [
@@ -72,7 +72,7 @@
       #   hostName = "depsos";
 
       #   sshUser = "root";
-      #   sshKey = "/etc/nix/builder_pk";
+      #   sshKey = config.sops.secrets.remote-builder-pk.path;
       # }
     ];
   };
