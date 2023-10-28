@@ -14,15 +14,15 @@
   };
   klipper = {
     pname = "klipper";
-    version = "6749985302fe002a9cb5672dab9badb11e4e3c36";
+    version = "f7567a0db954eabe4c6b8da3f73ce68693698646";
     src = fetchFromGitHub {
       owner = "Klipper3d";
       repo = "klipper";
-      rev = "6749985302fe002a9cb5672dab9badb11e4e3c36";
+      rev = "f7567a0db954eabe4c6b8da3f73ce68693698646";
       fetchSubmodules = false;
-      sha256 = "sha256-kUCzb+jXZ1T2578dOPEcDgZZ/FJa2ObZ2Wy0+qiZA70=";
+      sha256 = "sha256-zOXoHTySTtq2fR7ujU6aiKAgvw11ogM8K+HJF1RoWEQ=";
     };
-    date = "2023-10-19";
+    date = "2023-10-21";
   };
   klipper-ercf = {
     pname = "klipper-ercf";
@@ -38,15 +38,15 @@
   };
   klipper-happy-hare = {
     pname = "klipper-happy-hare";
-    version = "d85cf7d18d79a5950a254721791c36e77876c270";
+    version = "a815539b374326c6853da41626bf4539a73d39da";
     src = fetchFromGitHub {
       owner = "moggieuk";
       repo = "Happy-Hare";
-      rev = "d85cf7d18d79a5950a254721791c36e77876c270";
+      rev = "a815539b374326c6853da41626bf4539a73d39da";
       fetchSubmodules = false;
-      sha256 = "sha256-IAHoNAVyBZEtNbVAy8rxX7VjOwSHJ5bj2ZfSvVZ22vY=";
+      sha256 = "sha256-JyjFKNIrvf72K8y5xHuWl7d3z8G8tBe44HCr6Hdm00Y=";
     };
-    date = "2023-10-12";
+    date = "2023-10-27";
   };
   klipper-kamp = {
     pname = "klipper-kamp";
@@ -85,15 +85,15 @@
   };
   klipper-screen = {
     pname = "klipper-screen";
-    version = "ead94b75b83ba22c97ab8236f02e86d69d13244f";
+    version = "4a14962d3535dccacdb3e3454eb1f7f3f204f6ad";
     src = fetchFromGitHub {
       owner = "jordanruthe";
       repo = "KlipperScreen";
-      rev = "ead94b75b83ba22c97ab8236f02e86d69d13244f";
+      rev = "4a14962d3535dccacdb3e3454eb1f7f3f204f6ad";
       fetchSubmodules = false;
-      sha256 = "sha256-qZzktB49ombmfnu7NvmH2LbM94K7URI0IXL2sOHfm5w=";
+      sha256 = "sha256-UX4R50zGC486wY+Hlp/SK6KwiNh3jzXPxnkYEkcszdw=";
     };
-    date = "2023-10-19";
+    date = "2023-10-24";
   };
   klipper-z-calibration = {
     pname = "klipper-z-calibration";
@@ -138,15 +138,15 @@
   };
   mainsail = {
     pname = "mainsail";
-    version = "6e21642deb77b747dcdb2d34cf0af993ed8c3dbf";
+    version = "b445c8d5b8d67226aca4c50654dc5732f0b64129";
     src = fetchFromGitHub {
       owner = "mainsail-crew";
       repo = "mainsail";
-      rev = "6e21642deb77b747dcdb2d34cf0af993ed8c3dbf";
+      rev = "b445c8d5b8d67226aca4c50654dc5732f0b64129";
       fetchSubmodules = false;
-      sha256 = "sha256-KO35OnyqrU3iOlIXtZQNtLpNcKJ/okIhc1dYBB1z6TI=";
+      sha256 = "sha256-geFxXkXW4/KWdVKNUA1aAcdPkffJL5pi8gPNTGacLcM=";
     };
-    date = "2023-10-19";
+    date = "2023-10-26";
   };
   mobileraker-companion = {
     pname = "mobileraker-companion";
@@ -162,15 +162,15 @@
   };
   moonraker = {
     pname = "moonraker";
-    version = "2641fc54d6932445e54d3c2f72a74e46aaf290cf";
+    version = "a71c5c159d04bae72c2aab9d92b5433aeb0c4d38";
     src = fetchFromGitHub {
       owner = "Arksine";
       repo = "moonraker";
-      rev = "2641fc54d6932445e54d3c2f72a74e46aaf290cf";
+      rev = "a71c5c159d04bae72c2aab9d92b5433aeb0c4d38";
       fetchSubmodules = false;
-      sha256 = "sha256-5OHX4ZFhm2somLBcyA+LEaFKxwqbc1C3NhXl/4M+tBc=";
+      sha256 = "sha256-bc8sxlbjYnqxMnHf7J/yLYFuXsvsMXZhoQxfXNnh1l0=";
     };
-    date = "2023-10-13";
+    date = "2023-10-24";
   };
   python-networkmanager = {
     pname = "python-networkmanager";
