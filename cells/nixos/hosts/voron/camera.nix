@@ -1,10 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  self,
-  ...
-}: {
+{pkgs, ...}: {
   environment.systemPackages = [
     (
       pkgs.v4l-utils.override
@@ -31,6 +25,7 @@
           fps = 30;
           format = "MJPG";
           nbufs = 2;
+          force_active = true;
           options = {
             whitebalanceautomatic = 0;
             whitebalancetemperature = 4200;
@@ -58,6 +53,7 @@
           height = 480;
           fps = 30;
           format = "MJPG";
+          force_active = true;
           nbufs = 2;
           options = {
             whitebalanceautomatic = 0;
