@@ -1,6 +1,14 @@
-{config, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   services.grafana = {
     enable = true;
+
+    declarativePlugins = with pkgs.grafanaPlugins; [
+      grafana-clock-panel
+    ];
 
     settings = {
       server = {
@@ -17,6 +25,10 @@
       "auth.anonymous" = {
         enabled = true;
         org_role = "Admin";
+      };
+
+      panels = {
+        disable_sanitize_html = true;
       };
     };
 
@@ -41,6 +53,12 @@
             token = "$__file{${config.sops.templates.grafana-influx-token.path}}";
           };
         }
+        {
+          name = "Prometheus";
+          type = "prometheus";
+          access = "proxy";
+          url = "http://127.0.0.1:${toString config.services.prometheus.port}";
+        }
       ];
     };
   };
@@ -64,10 +82,35 @@
         bucket = "weather";
         token = "$INFLUX_TOKEN";
       };
+
+      outputs.prometheus_client = {
+        listen = ":9273";
+        expiration_interval = "120s";
+      };
     };
 
     environmentFiles = [
       config.sops.templates."telegraf.env".path
+    ];
+  };
+
+  services.prometheus = {
+    port = 3020;
+    enable = true;
+
+    scrapeConfigs = [
+      {
+        job_name = "telegraf";
+        scrape_interval = "60s";
+        metrics_path = "/metrics";
+        static_configs = [
+          {
+            targets = [
+              "localhost:9273"
+            ];
+          }
+        ];
+      }
     ];
   };
 
