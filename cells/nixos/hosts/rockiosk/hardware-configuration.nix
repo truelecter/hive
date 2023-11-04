@@ -16,8 +16,11 @@
       includeDefaultModules = true;
     };
 
+    consoleLogLevel = 7;
+
+    blacklistedKernelModules = ["dw_i2c_init_driver"];
     kernelModules = ["kvm-intel"];
-    kernelParams = ["quiet"];
+    kernelParams = [];
     extraModulePackages = [];
 
     loader = {
