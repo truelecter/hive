@@ -21,7 +21,13 @@ in {
 
     profiles.users."andrii.panasiuk"
     profiles.users.root
+
+    ./aarch-builder.nix
   ];
+
+  _module.args = {
+    inherit inputs;
+  };
 
   bee.system = system;
   bee.home = inputs.home;
