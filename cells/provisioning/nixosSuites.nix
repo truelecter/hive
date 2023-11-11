@@ -7,21 +7,38 @@
   wslProfiles = inputs.cells.wsl.nixosProfiles;
   users = inputs.cells.home.users.nixos;
 in {
-  wsl = _: {
-    imports = [
-      wslProfiles.core
-    ];
-  };
   base = _: {
     imports = [
+      cell.nixosModules.provision
+
+      nixosProfiles.faster-linux
       nixosProfiles.core
+
       users.truelecter
-      profiles.root-user
+    ];
+
+    services.getty.autologinUser = "truelecter";
+    users.users.root.password = "letmein";
+  };
+
+  rpi = _: {
+    imports = [
+      profiles.wifi
+      profiles.rpi
+
+      nixosProfiles.minimize
     ];
   };
+
   tailscale = _: {
     imports = [
       profiles.tailscale
+    ];
+  };
+
+  wsl = _: {
+    imports = [
+      wslProfiles.core
     ];
   };
 }

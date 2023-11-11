@@ -89,6 +89,60 @@
         ${sops}/bin/sops --encrypt --in-place $filename
     done
   '';
+
+  build-on-target = nixpkgs.writeScriptBin "build-on-target" ''
+    set -e -o pipefail
+
+    show_usage() {
+      echo "$0 --attr <flake attr to build> --remote <ssh remote address>"
+    }
+
+    flakeFlags=(--extra-experimental-features 'nix-command flakes')
+    to="$PWD/result"
+
+    while [ "$#" -gt 0 ]; do
+      i="$1"; shift 1
+
+      case "$i" in
+        --attr)
+          attr="$1"
+          shift 1
+          ;;
+
+        --remote)
+          buildHost="$1"
+          shift 1
+          ;;
+
+        --to)
+          to="$1"
+          shift 1
+          ;;
+
+        *)
+          echo "$0: unknown option \`$i'"
+          show_help
+          exit 1
+          ;;
+      esac
+    done
+
+    # Eval derivation
+    echo evaluating...
+    drv="$(nix "''${flakeFlags[@]}" eval --raw "''${attr}.drvPath")"
+
+    # Copy derivation to target
+    echo copying to target...
+    NIX_SSHOPTS=$SSHOPTS nix "''${flakeFlags[@]}" copy --substitute-on-destination --derivation --to "ssh://$buildHost" "$drv"
+
+    # Build derivation on target
+    echo build on target...
+    ssh $SSHOPTS "$buildHost" sudo -- nix-store --realise "$drv" "''${buildArgs[@]}"
+
+    # Copy result from target
+    echo copying from target...
+    NIX_SSHOPTS=$SSHOPTS nix copy --no-check-sigs --to "$to" --from "ssh://$buildHost" "$drv"
+  '';
 in
   l.mapAttrs (_: std.lib.dev.mkShell) {
     default = {
@@ -139,6 +193,13 @@ in
           name = "sops-reencrypt";
           help = "Reencrypt sops-encrypted files";
           package = sops-reencrypt;
+        }
+
+        {
+          category = "nix";
+          name = "build-on-target";
+          help = "Helper script to build derivation on remote host";
+          package = build-on-target;
         }
 
         (linter editorconfig-checker)

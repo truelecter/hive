@@ -10,7 +10,7 @@ in
     src = ./configurations;
 
     inherit inputs lib;
-    suites = cell.nixosSuites // cells.nixos.nixosSuites;
+    suites = cell.nixosSuites;
     profiles =
       cell.nixosProfiles
       // {
