@@ -46,5 +46,6 @@ jobs:
             nix build ".#nixosConfigurations.nixos-<< parameters.host >>.config.system.build.toplevel"
       - run:
           name: Push cache
+          no_output_timeout: 30m # 10 mins are often not enough
           command: |
             ./.ci/push-paths.sh cachix "--compression-method xz --compression-level 9 --jobs 8" truelecter ""  ""
