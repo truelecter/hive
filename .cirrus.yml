@@ -50,7 +50,8 @@ macos_task:
   << : *COMMON_SCRIPTS_TEMPLATE
 
   build_system_script:
-  - nix build ".#darwinConfigurations.darwin-$NIXOS_HOST.config.system.build.toplevel"
+  - echo "TODO"
+  # - nix build ".#darwinConfigurations.darwin-$NIXOS_HOST.config.system.build.toplevel"
 
   build_devshell_script:
   - nix develop --command "menu"
