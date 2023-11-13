@@ -129,7 +129,10 @@
     nixpkgs,
     hive,
     ...
-  } @ inputs:
+  } @ inputs: let
+    collect-unrenamed = hive.collect // {renamer = _: target: target;};
+    collect-renmaned = hive.collect;
+  in
     std.growOn {
       inherit inputs;
 
@@ -182,6 +185,8 @@
         homeConfigurations
         nixosConfigurations
         darwinConfigurations
+
+        (nixosConfigurations // {name = "provisionConfigurations";})
       ];
     }
     # soil
@@ -203,16 +208,16 @@
       homeModules = hive.pick inputs.self [
         ["home" "homeModules"]
       ];
-    }
-    {
-      colmenaHive = hive.collect self "colmenaConfigurations";
-      nixosConfigurations = hive.collect self "nixosConfigurations";
-      homeConfigurations = hive.collect self "homeConfigurations";
-      darwinConfigurations = hive.collect self "darwinConfigurations";
-    }
-    {
-      darwinConfigurations.squadbook = self.darwinConfigurations.darwin-squadbook;
 
+      provisionConfigurations = hive.pick inputs.self ["provisioning" "provisionConfigurations"];
+    }
+    {
+      colmenaHive = collect-unrenamed self "colmenaConfigurations";
+      nixosConfigurations = collect-unrenamed self "nixosConfigurations";
+      homeConfigurations = collect-unrenamed self "homeConfigurations";
+      darwinConfigurations = collect-unrenamed self "darwinConfigurations";
+    }
+    {
       debug = hive.harvest inputs.self ["repo" "debug"];
     };
 }

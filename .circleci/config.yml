@@ -43,7 +43,7 @@ jobs:
       - run:
           name: Build system
           command: |
-            nix build ".#nixosConfigurations.nixos-<< parameters.host >>.config.system.build.toplevel"
+            nix build ".#nixosConfigurations.<< parameters.host >>.config.system.build.toplevel"
       - run:
           name: Push cache
           no_output_timeout: 30m # 10 mins are often not enough
