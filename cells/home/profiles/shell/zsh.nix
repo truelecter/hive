@@ -35,6 +35,8 @@ _: {
     };
 
     initExtraBeforeCompInit = ''
+      export ZSH_COMPDUMP=$XDG_CACHE_HOME/oh-my-zsh/.zcompdump-$HOST
+
       (( ''${+commands[direnv]} )) && emulate zsh -c "$(direnv export zsh)"
 
       # p10k instant prompt
