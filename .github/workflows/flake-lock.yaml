@@ -21,12 +21,18 @@ jobs:
           name: truelecter
           extraPullNames: cuda-maintainers, mic92, nix-community, nrdxp
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
+      - name: Configure git
+        run: |
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
       - name: Update nvfetcher packages
         run: |
           nix develop '.#ci' --command bash -c "update-cell-sources ALL"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config user.name "github-actions[bot]"
           git commit -am "deps(sources): Updated cell sources"
+      - name: Update deps hashes packages
+        run: |
+          nix run '.#mainsail.npmDepsHash' > cells/klipper/packages/_deps-hash/mainsail-npm.nix
+          git commit -am "deps(sources): Updated deps hash"
       - name: Update flake.lock
         uses: DeterminateSystems/update-flake-lock@v19
         with:
