@@ -31,6 +31,9 @@
 
   customUsrsctp = usrsctp.overrideAttrs (finalAttrs: previousAttrs: {
     version = "unstable-2021-10-08";
+
+    patches = [];
+
     src = fetchFromGitHub {
       owner = "sctplab";
       repo = "usrsctp";

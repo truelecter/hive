@@ -33,7 +33,7 @@
   excluded-plugins-from-full = ["sources"];
 in
   packages
-  # TODO: prefix plugins with klipper- if the do not have this prefix
+  # TODO: prefix plugins with klipper- if the name does not have this prefix
   // klipper-plugins
   // {
     klipper-full-plugins = packages.klipper.override {
