@@ -23,6 +23,7 @@
       gnused
       ncdu
       nix-tree
+      findutils
     ];
 
     shellAliases = {
