@@ -11,7 +11,6 @@
     common.core
     common.cachix
     common.gui
-    inputs.home.darwinModules.home-manager
   ];
 
   # https://github.com/LnL7/nix-darwin/issues/158#issuecomment-974598670

@@ -25,14 +25,10 @@ in {
     ./aarch-builder.nix
   ];
 
-  _module.args = {
-    inherit inputs;
-  };
-
   bee.system = system;
-  bee.home = inputs.home;
+  bee.home = inputs.home-unstable;
   bee.darwin = inputs.darwin;
-  bee.pkgs = import inputs.nixos {
+  bee.pkgs = import inputs.latest {
     inherit system;
     config.allowUnfree = true;
     overlays = [
