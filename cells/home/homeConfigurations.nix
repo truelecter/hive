@@ -36,8 +36,6 @@
     home.homeDirectory = homedir;
     home.stateVersion = "23.05";
 
-    nix.settings.store = "${homedir}/.nix";
-
     targets.genericLinux.enable = true;
 
     tl.home.alien = true;

@@ -14,7 +14,7 @@ in {
     programs.home-manager.enable = true;
 
     nix = {
-      package = pkgs.nix;
+      package = pkgs.nixVersions.nix_2_17;
 
       settings = let
         GB = 1024 * 1024 * 1024;
@@ -34,6 +34,9 @@ in {
 
         # Some free space
         min-free = lib.mkDefault (5 * GB);
+
+        store = "${config.home.homeDirectory}/.nix";
+        use-xdg-base-directories = true;
       };
     };
   };
