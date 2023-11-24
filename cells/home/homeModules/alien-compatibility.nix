@@ -33,17 +33,6 @@ in {
         # Some free space
         min-free = lib.mkDefault (5 * GB);
       };
-
-      # Improve nix store disk usage
-      gc = {
-        automatic = true;
-        options = "--delete-older-than 7d";
-      };
-
-      nixPath = [
-        "nixpkgs=${pkgs.path}"
-        "l=${pkgs.path}"
-      ];
     };
   };
 }
