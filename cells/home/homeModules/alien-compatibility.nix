@@ -14,7 +14,7 @@ in {
     programs.home-manager.enable = true;
 
     nix = {
-      package = pkgs.nixVersions.nix;
+      package = pkgs.nix;
 
       settings = let
         GB = 1024 * 1024 * 1024;
