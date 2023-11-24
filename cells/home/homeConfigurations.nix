@@ -24,25 +24,35 @@
     system ? "x86_64-linux",
     username,
     homedir ? "/home/${username}",
-  }:
-    home.lib.homeManagerConfiguration {
-      pkgs = pkgs-with-overlays;
-      modules =
-        (l.attrValues homeModules)
-        ++ [
-          userProfiles.minimal
-          {
-            home.username = username;
-            home.homeDirectory = homedir;
+  }: {
+    imports =
+      (l.attrValues homeModules)
+      ++ [
+        userProfiles.minimal
+        common.commonProfiles.cachix
+      ];
 
-            targets.genericLinux.enable = true;
+    home.username = username;
+    home.homeDirectory = homedir;
+    home.stateVersion = "23.05";
 
-            tl.home.alien = true;
-          }
-          common.commonProfiles.cachix
-        ];
+    targets.genericLinux.enable = true;
+
+    tl.home.alien = true;
+
+    bee.system = system;
+    bee.home = inputs.home;
+    bee.pkgs = import inputs.nixos {
+      inherit system;
+      config.allowUnfree = true;
+      overlays = with inputs.cells.common.overlays; [
+        common-packages
+        latest-overrides
+      ];
     };
+  };
 in {
   "truelecter@gate2" = defaultUser {username = "truelecter";};
   "truelecter@fido-tazik" = defaultUser {username = "truelecter";};
+  "truelecter@fido2" = defaultUser {username = "truelecter";};
 }
