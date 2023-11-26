@@ -3,6 +3,7 @@
     ./dawncraft.nix
     ./e6e.nix
     ./sevtech.nix
+    ./vanilla.nix
   ];
 
   users = {

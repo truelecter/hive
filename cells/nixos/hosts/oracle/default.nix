@@ -5,6 +5,11 @@
   ...
 }: let
   system = "aarch64-linux";
+
+  l = import inputs.latest {
+    inherit system;
+    config.allowUnfree = true;
+  };
 in {
   imports = [
     inputs.cells.minecraft-servers.nixosModules.minecraft-servers
@@ -30,6 +35,9 @@ in {
       java
       minecraft-servers
       minecraft-mods
+      (_: _: {
+        mcs-vanilla-1-20 = l.minecraftServers.vanilla-1-20;
+      })
     ];
   };
 
