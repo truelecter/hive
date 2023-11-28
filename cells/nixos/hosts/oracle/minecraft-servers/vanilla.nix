@@ -13,6 +13,7 @@
       motd = "\\u00A7d\\u00A7oRealVanillaCock\\: \\u00A741.20";
       white-list = false;
       view-distance = 20;
+      online-mode = false;
     };
   };
 }
