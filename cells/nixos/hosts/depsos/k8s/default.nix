@@ -13,7 +13,7 @@
     root = "/srv/containerd";
   };
 
-  virtualisation.docker.extraOptions = "-g /srv/docker";
+  virtualisation.docker.extraOptions = "--data-root /srv/docker";
 
   tl.k8s.server = {
     enable = true;
