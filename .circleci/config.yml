@@ -27,7 +27,7 @@ jobs:
     resource_class: arm.large
     steps:
       - nix/install:
-          channels: nixpkgs=https://nixos.org/channels/nixos-23.05
+          channels: nixpkgs=https://nixos.org/channels/nixos-23.11
           extra-conf: |
             experimental-features = flakes nix-command
       - nix/install-cachix
