@@ -37,6 +37,16 @@ in {
       minecraft-mods
       (_: _: {
         mcs-vanilla-1-20 = l.minecraftServers.vanilla-1-20;
+        mcs-vanilla-1-20-3 =
+          l.minecraftServers.vanilla-1-20.overrideAttrs
+          (_: {
+            version = "1.20.3";
+            # 1.20.3
+            src = pkgs.fetchurl {
+              url = "https://piston-data.mojang.com/v1/objects/4fb536bfd4a83d61cdbaf684b8d311e66e7d4c49/server.jar";
+              sha1 = "sha1-T7U2v9SoPWHNuvaEuNMR5m59TEk=";
+            };
+          });
       })
     ];
   };
