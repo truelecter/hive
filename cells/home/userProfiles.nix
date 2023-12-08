@@ -19,6 +19,8 @@
       dev.k8s
       dev.terraform
       dev.nix
+      dev.go
+      dev.python
     ];
     develop-gui = [
       dev.vscode

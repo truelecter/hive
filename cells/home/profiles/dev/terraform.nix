@@ -7,19 +7,26 @@
   ...
 }: let
   overrides = inputs.cells.common.overrides;
+  vs-exts = inputs.nix-vscode-extensions.extensions.vscode-marketplace;
 in {
-  programs.vscode.userSettings = {
-    "[terraform]" = {
-      "editor.defaultFormatter" = "hashicorp.terraform";
-      "editor.formatOnSave" = true;
-    };
-    "terraform.experimentalFeatures.validateOnSave" = true;
-    "terraform.experimentalFeatures.prefillRequiredFields" = true;
-    "terraform.languageServer.path" = "${overrides.terraform-ls}/bin/terraform-ls";
-    "terraform.languageServer.terraform.path" = "${overrides.terraform}/bin/terraform";
-    "terraform.codelens.referenceCount" = true;
-  };
+  programs.vscode = {
+    extensions = with vs-exts; [
+      vs-exts."4ops".packer
+      hashicorp.terraform
+    ];
 
+    userSettings = {
+      "[terraform]" = {
+        "editor.defaultFormatter" = "hashicorp.terraform";
+        "editor.formatOnSave" = true;
+      };
+      "terraform.experimentalFeatures.validateOnSave" = true;
+      "terraform.experimentalFeatures.prefillRequiredFields" = true;
+      "terraform.languageServer.path" = "${overrides.terraform-ls}/bin/terraform-ls";
+      "terraform.languageServer.terraform.path" = "${overrides.terraform}/bin/terraform";
+      "terraform.codelens.referenceCount" = true;
+    };
+  };
   home.packages = with pkgs; [
     inputs.cells.common.packages.tfenv
     terragrunt
