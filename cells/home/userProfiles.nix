@@ -21,6 +21,7 @@
       dev.nix
       dev.go
       dev.python
+      dev.embedded
     ];
     develop-gui = [
       dev.vscode

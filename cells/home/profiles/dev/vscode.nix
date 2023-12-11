@@ -31,15 +31,11 @@ in {
       redhat.vscode-xml
       redhat.vscode-yaml
       whi-tw.klipper-config-syntax
-      xadillax.viml
-      # yzane.markdown-pdf
       roscop.activefileinstatusbar
       pkief.material-icon-theme
       tamasfe.even-better-toml
       mads-hartmann.bash-ide-vscode
       ericadamski.carbon-now-sh
-      # mkhl.direnv
-      # remote
       ms-vscode-remote.remote-ssh
       ms-vscode-remote.remote-ssh-edit
     ];
