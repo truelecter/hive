@@ -131,9 +131,9 @@
     ...
   } @ inputs: let
     collect-unrenamed = hive.collect // {renamer = _: target: target;};
-    collect-renmaned = hive.collect;
+    collect-renamed = hive.collect;
   in
-    std.growOn {
+    hive.growOn {
       inherit inputs;
 
       nixpkgsConfig = {
@@ -208,8 +208,6 @@
       homeModules = hive.pick inputs.self [
         ["home" "homeModules"]
       ];
-
-      provisionConfigurations = hive.pick inputs.self ["provisioning" "provisionConfigurations"];
     }
     {
       colmenaHive = collect-unrenamed self "colmenaConfigurations";
