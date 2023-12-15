@@ -17,7 +17,7 @@ in {
     profiles.three-d-print
 
     profiles.common.networking.tailscale
-    profiles.common.remote-builders
+    profiles.common.remote-builders.x86
 
     profiles.users."andrii.panasiuk"
     profiles.users.root

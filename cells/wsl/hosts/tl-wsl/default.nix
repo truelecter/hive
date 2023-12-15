@@ -21,7 +21,8 @@ in {
     profiles.vscode-server
 
     profiles.common.networking.tailscale
-    profiles.common.remote-builders
+    profiles.common.remote-builders.x86
+    profiles.common.remote-builders.aarch
 
     inputs.nixos-vscode-server.nixosModules.default
   ];
