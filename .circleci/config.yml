@@ -39,7 +39,7 @@ jobs:
             cachix use mic92
             cachix use nrdxp
             cachix use truelecter
-            ./.ci/install-nix.sh > /tmp/store-path-pre-build
+            ./.ci/list-paths.sh > /tmp/store-path-pre-build
       - run:
           name: Build system
           command: |
