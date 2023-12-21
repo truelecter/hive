@@ -4,7 +4,7 @@
   ...
 }: {
   boot = {
-    kernelPackages = pkgs.linuxPackages_rpi4;
+    kernelPackages = pkgs.linuxRpi4Packages;
     loader = {
       grub.enable = false;
       raspberryPi.enable = false;

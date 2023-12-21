@@ -74,8 +74,6 @@
       (overlay "disable-bt")
       (overlay "vc4-kms-v3d-pi4")
       (overlay "vc4-kms-dsi-7inch")
-      # replace with vc4-kms-dsi-waveshare-panel when kernel is updated
-      (overlay "rpi-ft5406")
     ];
   };
 

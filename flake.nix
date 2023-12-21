@@ -73,6 +73,10 @@
         nixpkgs-stable.follows = "nixos";
       };
     };
+
+    nix-rpi-kernel = {
+      url = "github:TrueLecter/nix-rpi-kernel";
+    };
   };
 
   # nixpkgs & home-manager

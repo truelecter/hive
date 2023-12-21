@@ -39,6 +39,7 @@ jobs:
             cachix use mic92
             cachix use nrdxp
             cachix use truelecter
+            cachix use nix-rpi-kernels
             ./.ci/list-paths.sh > /tmp/store-path-pre-build
       - run:
           name: Build system

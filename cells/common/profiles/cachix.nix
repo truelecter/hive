@@ -8,6 +8,7 @@
       "https://nix-community.cachix.org"
       "https://nrdxp.cachix.org"
       "https://truelecter.cachix.org"
+      "https://nix-rpi-kernels.cachix.org"
     ];
     trusted-public-keys = [
       "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
@@ -15,6 +16,7 @@
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "nrdxp.cachix.org-1:Fc5PSqY2Jm1TrWfm88l6cvGWwz3s93c6IOifQWnhNW4="
       "truelecter.cachix.org-1:bWHkQ/OM0MLHB9L6gftyaawCrEYkeZyygAcuojwslE0="
+      "nix-rpi-kernels.cachix.org-1:QSG8mkW+7ITX8g8VZQcJ6EXBuOSk2F8y2D/2iOzdZHc="
     ];
   };
 }

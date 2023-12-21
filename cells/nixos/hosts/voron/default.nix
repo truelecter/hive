@@ -39,6 +39,8 @@ in {
               applyOverlays = final.callPackage ./dtmerge.nix {};
             };
           makeModulesClosure = x: prev.makeModulesClosure (x // {allowMissing = true;});
+
+          inherit (inputs.nix-rpi-kernel.packages) linuxRpi4Packages raspberrypiWirelessFirmware raspberrypifw;
         }
       )
     ];
