@@ -12,6 +12,7 @@ in {
     extensions = with vs-exts; [
       rust-lang.rust-analyzer
       probe-rs.probe-rs-debugger
+      zixuanwang.linkerscript
     ];
     # userSettings = {
     #   "rust-analyzer.cargo.target" = "thumbv7em-none-eabihf";
