@@ -4,6 +4,7 @@
 }: {
   lib,
   pkgs,
+  config,
   ...
 }: {
   # TODO import all darwin modules exported in flake
@@ -79,6 +80,8 @@
     settings = {
       # Administrative users on Darwin are part of this group.
       trusted-users = ["@admin"];
+
+      sandbox = "relaxed";
     };
 
     configureBuildUsers = true;
@@ -117,5 +120,11 @@
     CustomUserPreferences = {
       "com.lwouis.alt-tab-macos" = lib.importJSON ./_files/alt-tab.plist.json;
     };
+  };
+
+  system.systemBuilderArgs = lib.mkIf (config.nix.settings.sandbox == "relaxed") {
+    sandboxProfile = ''
+      (allow file-read* file-write* process-exec mach-lookup (subpath "${builtins.storeDir}"))
+    '';
   };
 }
