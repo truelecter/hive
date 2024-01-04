@@ -513,11 +513,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1703170174,
-        "narHash": "sha256-txQCNeJvJ/LXI2xE/bgISwT9u47F96YknmcZEHF29vw=",
+        "lastModified": 1704398317,
+        "narHash": "sha256-JM3IP/yTsJiRXDoWyTrpQbXXOLpRFDq9RhqhcYT8z+U=",
         "owner": "TrueLecter",
         "repo": "nix-rpi-kernel",
-        "rev": "dc193673a9f6c6e7b205c850e6225a4761f445d8",
+        "rev": "2ef4393ffbc92e48fce344499324b98d2cdaf6ec",
         "type": "github"
       },
       "original": {
