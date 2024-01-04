@@ -42,7 +42,7 @@ linux_aarch64_task:
 
   arm_container:
     image: nixos/nix:2.19.2
-    cpu: 8
+    cpu: 4
     memory: 16G
 
   << : *COMMON_SCRIPTS_TEMPLATE
