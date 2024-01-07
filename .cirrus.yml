@@ -24,45 +24,45 @@ common_scripts_template: &COMMON_SCRIPTS_TEMPLATE
   - cachix use mic92
   - cachix use nrdxp
   - cachix use truelecter
+  - cachix use nix-rpi-kernels
   - ./.ci/install-nix.sh > /tmp/store-path-pre-build
 
 common_finishing_script_template: &COMMON_FINISHING_SCRIPTS_TEMPLATE
   upload_paths_to_cachix_script: .ci/push-paths.sh cachix "--compression-method xz --compression-level 9 --jobs 8" truelecter ""  ""
 
-linux_aarch64_task:
-  << : *COMMON_TASK_TEMPLATE
+# linux_aarch64_task:
+#   << : *COMMON_TASK_TEMPLATE
 
-  name: Build NixOS aarch64 systems
+#   name: Build NixOS aarch64 systems
 
-  env:
-    NIXOS_HOST: nonexisting
-    USER: "root"
-    HOME: "/root"
-    PATH: "$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/per-user/$USER/profile/bin:$PATH"
+#   env:
+#     NIXOS_HOST: nonexisting
+#     USER: "root"
+#     HOME: "/root"
+#     PATH: "$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/nix/var/nix/profiles/per-user/$USER/profile/bin:$PATH"
 
-  arm_container:
-    image: nixos/nix:2.19.2
-    cpu: 4
-    memory: 16G
+#   arm_container:
+#     image: nixos/nix:2.19.2
+#     cpu: 4
+#     memory: 16G
 
-  << : *COMMON_SCRIPTS_TEMPLATE
+#   << : *COMMON_SCRIPTS_TEMPLATE
 
-  build_system_script: |
-    $NIX build ".#nixosConfigurations.$NIXOS_HOST.config.system.build.toplevel"
-  # build_devshell_script:
-  # - $NIX develop --command "menu"
+#   build_system_script: |
+#     $NIX build ".#nixosConfigurations.$NIXOS_HOST.config.system.build.toplevel"
+#   # build_devshell_script:
+#   # - $NIX develop --command "menu"
 
 
-  << : *COMMON_FINISHING_SCRIPTS_TEMPLATE
+#   << : *COMMON_FINISHING_SCRIPTS_TEMPLATE
 
-  matrix:
-  - name: Build voron
-    env:
-      NIXOS_HOST: voron
-  - name: Build oracle
-    env:
-      NIXOS_HOST: oracle
-
+#   matrix:
+#   - name: Build voron
+#     env:
+#       NIXOS_HOST: voron
+#   - name: Build oracle
+#     env:
+#       NIXOS_HOST: oracle
 
 macos_task:
   << : *COMMON_TASK_TEMPLATE
