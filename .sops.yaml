@@ -9,6 +9,7 @@ keys:
   - &tl-wsl ceb6cea45e8d7d34c25d166868696097610a4f62
   - &voron ad74ae276ddcd3b8c05242fc537e0afff9393519
   - &rockiosk ef5e9b1601de92796784e3cd146a31ffb1cc2f5d
+  - &pikiosk 2994ee04eda55d05dae7019ed74ef11ed4a030bc
 
 creation_rules:
   - path_regex: cells/secrets/sops/envs.yaml
@@ -34,6 +35,7 @@ creation_rules:
           - *tl-wsl
           - *voron
           - *rockiosk
+          - *pikiosk
 
   - path_regex: cells/secrets/sops/k3s.yaml
     key_groups:
@@ -55,6 +57,7 @@ creation_rules:
           - *octoprint
           - *voron
           - *rockiosk
+          - *pikiosk
 
   - path_regex: cells/secrets/sops/ssh.*$
     key_groups:
@@ -68,3 +71,4 @@ creation_rules:
       - pgp:
           - *truelecter
           - *rockiosk
+          - *pikiosk

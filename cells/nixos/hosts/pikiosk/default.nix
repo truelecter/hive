@@ -4,7 +4,7 @@
   profiles,
   ...
 }: let
-  system = "x86_64-linux";
+  system = "aarch64-linux";
 in {
   imports = [
     suites.base
@@ -16,26 +16,40 @@ in {
     inputs.cells.secrets.nixosProfiles.wifi
     inputs.cells.secrets.nixosProfiles.weather-kiosk
 
+    inputs.nixos-hardware.nixosModules.raspberry-pi-4
+
     ./hardware-configuration.nix
     ./kiosk.nix
     ./wifi.nix
     ./weather.nix
+    ./display.nix
   ];
 
   bee.system = system;
-  bee.home = inputs.home-unstable;
-  bee.pkgs = import inputs.latest {
+  bee.home = inputs.home;
+  bee.pkgs = import inputs.nixos {
     inherit system;
     config.allowUnfree = true;
     overlays = [
-      inputs.cells.nixos.overlays.firmwares
+      (
+        final: prev: {
+          deviceTree =
+            prev.deviceTree
+            // {
+              applyOverlays = final.callPackage ./dtmerge.nix {};
+            };
+          makeModulesClosure = x: prev.makeModulesClosure (x // {allowMissing = true;});
+
+          inherit (inputs.nix-rpi-kernel.packages) linuxRpi4Packages raspberrypiWirelessFirmware raspberrypifw;
+        }
+      )
     ];
   };
 
   systemd.services.NetworkManager-wait-online.enable = false;
 
   networking = {
-    hostName = "rockiosk";
+    hostName = "pikiosk";
     firewall.enable = false;
   };
 

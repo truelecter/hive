@@ -6,39 +6,31 @@
   ...
 }: {
   boot = {
-    kernelPackages = pkgs.linuxRpi4Packages;
+    kernelPackages = pkgs.linuxPackages_rpi4;
     loader = {
       grub.enable = false;
-      raspberryPi.enable = false;
-
       generic-extlinux-compatible = {
         enable = true;
-        configurationLimit = 5;
+        configurationLimit = 1;
+      };
+      raspberryPi = {
+        enable = false;
+        # uboot.enable = true;
+        uboot.configurationLimit = 1;
+        version = 4;
       };
     };
-    consoleLogLevel = 7;
-    initrd.availableKernelModules = [
-      "xhci_hcd"
-      "xhci-pci-renesas"
-
+    consoleLogLevel = 8;
+    initrd.availableKernelModules = lib.mkForce [
+      "xhci_pci"
+      "uas"
       "usbhid"
       "usb_storage"
-
-      "sdhci_pci"
-      "mmc_block"
-
-      "simplefb"
-      "pcie-brcmstb"
-
       "vc4"
       "pcie_brcmstb" # required for the pcie bus to work
       "reset-raspberrypi" # required for vl805 firmware to load
     ];
-    kernelParams = [
-      "console=ttyS0,115200n8"
-      "console=tty1"
-      "video=DSI-1:800x480@60"
-    ];
+    kernelParams = ["console=ttyS0,115200n8" "console=tty1" "video=DSI-1:800x480@60" "cma=128M"];
   };
 
   fileSystems = {
@@ -54,6 +46,12 @@
   };
 
   powerManagement.cpuFreqGovernor = "performance";
+
+  hardware.raspberry-pi."4" = {
+    fkms-3d.enable = true;
+  };
+
+  hardware.enableRedistributableFirmware = true;
 
   environment.systemPackages = with pkgs; [
     libraspberrypi

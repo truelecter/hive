@@ -9,6 +9,9 @@
     depsos = {
       deployment.targetPort = 2265;
     };
+    pikiosk = {
+      deployment.targetHost = "nixos-4";
+    };
   };
 in
   l.mapAttrs
