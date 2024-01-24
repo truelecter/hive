@@ -31,7 +31,7 @@
       rcon-port = 25598;
       allow-flight = true;
       online-mode = true;
-      difficulty = "hard";
+      difficulty = 3;
       motd = "\\u00A7d\\u00A7oRealMineCock: Enigmatica 9 Expert\\u00A7r - \\u00A741.18.0";
     };
   };
