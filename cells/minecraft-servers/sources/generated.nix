@@ -69,6 +69,14 @@
       sha256 = "sha256-rmMzXGBqKREWKqUqJ8nNfZOyngamfukA15AmUTjKKIY=";
     };
   };
+  mcs-enigmatica-9-expert = {
+    pname = "mcs-enigmatica-9-expert";
+    version = "1.18.0";
+    src = fetchurl {
+      url = "https://mediafilez.forgecdn.net/files/5015/234/Enigmatica9ExpertServer-1.18.0.zip";
+      sha256 = "sha256-yNZb2vRtG7PYJM1HfAfgT6jDXpCe9fJni1axg0Q76Lg=";
+    };
+  };
   mcs-sevtech-ages = {
     pname = "mcs-sevtech-ages";
     version = "3.2.3";

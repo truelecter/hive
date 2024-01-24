@@ -28,7 +28,7 @@
     serverProperties = {
       server-port = 25567;
       rcon-port = 25597;
-      motd = "\\u00A7d\\u00A7oRealMineCock\\: Enigmatica 6 Expert\\u00A7r - \\u00A741.8.0";
+      motd = "\\u00A7d\\u00A7oRealMineCocks: Enigmatica 6 Expert\\u00A7r - \\u00A741.8.0";
     };
   };
 }

@@ -4,7 +4,7 @@
   ...
 }: {
   services.minecraft-servers.instances.sevtech = {
-    enable = true;
+    enable = false;
     serverPackage = pkgs.mcs-sevtech-ages;
     backup.restic = {
       enable = true;
@@ -36,7 +36,7 @@
       allow-flight = true;
       online-mode = false;
       level-seed = "4685753669571566503";
-      motd = "\\u00A7d\\u00A7oRealMineCock\\: Ages\\u00A7r - \\u00A743.2.3";
+      motd = "\\u00A7d\\u00A7oRealMineCock: Ages\\u00A7r - \\u00A743.2.3";
     };
     customization = {
       create = {

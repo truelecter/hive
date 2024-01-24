@@ -2,6 +2,7 @@
   imports = [
     ./dawncraft.nix
     ./e6e.nix
+    ./e9e.nix
     ./sevtech.nix
     ./vanilla.nix
   ];

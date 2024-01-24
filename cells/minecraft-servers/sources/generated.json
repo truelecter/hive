@@ -121,6 +121,21 @@
         },
         "version": "1.8.0"
     },
+    "mcs-enigmatica-9-expert": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "mcs-enigmatica-9-expert",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-yNZb2vRtG7PYJM1HfAfgT6jDXpCe9fJni1axg0Q76Lg=",
+            "type": "url",
+            "url": "https://mediafilez.forgecdn.net/files/5015/234/Enigmatica9ExpertServer-1.18.0.zip"
+        },
+        "version": "1.18.0"
+    },
     "mcs-sevtech-ages": {
         "cargoLocks": null,
         "date": null,
