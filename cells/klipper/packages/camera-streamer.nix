@@ -12,13 +12,14 @@
   nlohmann_json,
   ffmpeg,
   libcamera,
-  live555,
+  cmake,
+  ninja,
   usrsctp,
-  libdatachannel,
   plog,
   libjuice,
   openssl,
   srtp,
+  gcc11Stdenv,
   # Build flags
   useHWH264 ? true,
   useFfmpeg ? false,
@@ -42,8 +43,18 @@
     };
   });
 
-  libdatachannel0_17 = libdatachannel.overrideAttrs (_: _: {
+  libdatachannel0_17 = gcc11Stdenv.mkDerivation {
+    pname = "libdatachannel";
     inherit (sources.libdatachannel0_17) version src;
+
+    outputs = ["out" "dev"];
+    strictDeps = true;
+
+    nativeBuildInputs = [
+      cmake
+      ninja
+      pkg-config
+    ];
 
     buildInputs = [
       libjuice
@@ -64,10 +75,20 @@
       "-DUSE_SYSTEM_JUICE=ON"
       "-DNO_EXAMPLES=ON"
     ];
-  });
 
-  live555Custom = live555.overrideAttrs (_: _: {
+    meta = with lib; {
+      description = "C/C++ WebRTC network library featuring Data Channels, Media Transport, and WebSockets";
+      homepage = "https://libdatachannel.org/";
+      license = with licenses; [mpl20];
+      platforms = platforms.linux;
+    };
+  };
+
+  live555Custom = stdenv.mkDerivation rec {
+    pname = "live555";
     inherit (sources.live555) version src;
+
+    buildInputs = [openssl];
 
     # env.NIX_CFLAGS_COMPILE = "-DNO_STD_LIB";
     postPatch = ''
@@ -76,7 +97,30 @@
         -e 's/$(INCLUDES) -I. -O2 -DSOCKLEN_T/$(INCLUDES) -I. -O2 -I. -fPIC -DRTSPCLIENT_SYNCHRONOUS_INTERFACE=1 -DSOCKLEN_T/g' \
         config.linux
     '';
-  });
+
+    configurePhase = ''
+      runHook preConfigure
+
+      ./genMakefiles linux
+
+      runHook postConfigure
+    '';
+
+    makeFlags = [
+      "DESTDIR=${placeholder "out"}"
+      "PREFIX="
+    ];
+
+    enableParallelBuilding = true;
+
+    meta = with lib; {
+      homepage = "http://www.live555.com/liveMedia/";
+      description = "Set of C++ libraries for multimedia streaming, using open standard protocols (RTP/RTCP, RTSP, SIP)";
+      changelog = "http://www.live555.com/liveMedia/public/changelog.txt";
+      license = licenses.lgpl21Plus;
+      platforms = platforms.linux;
+    };
+  };
 in
   stdenv.mkDerivation rec {
     pname = "camera-streamer";
