@@ -10,7 +10,7 @@
   rpiFirmware =
     (pkgs.klipper-firmware.override {
       mcu = "rpi";
-      firmwareConfig = ./firmwares/firmware-config-rpi-4;
+      firmwareConfig = ./firmwares/klipper-rpi-4;
     })
     .overrideAttrs (o: {
       patches = [
@@ -72,25 +72,49 @@ in {
     firmwares = {
       ebb = {
         enable = true;
-        configFile = ./firmwares/firmware-config-ebb;
+        configFile = ./firmwares/klipper-ebb;
       };
 
       manta = {
         enable = true;
-        configFile = ./firmwares/firmware-config-manta;
+        configFile = ./firmwares/klipper-manta;
       };
 
-      manta-bridge = {
+      manta-v2 = {
         enable = true;
-        configFile = ./firmwares/firmware-config-manta-canbridge;
+        configFile = ./firmwares/klipper-manta-v2;
       };
 
       xiao2040 = {
         enable = true;
-        configFile = ./firmwares/firmware-config-xiao2040;
+        configFile = ./firmwares/klipper-xiao2040;
+      };
+    };
+
+    katapult = {
+      manta = {
+        enable = true;
+        configFile = ./firmwares/katapult-manta;
+      };
+
+      manta-v2 = {
+        enable = true;
+        configFile = ./firmwares/katapult-manta-v2;
+      };
+
+      ebb = {
+        enable = true;
+        configFile = ./firmwares/katapult-ebb;
+      };
+
+      xiao2040 = {
+        enable = true;
+        configFile = ./firmwares/katapult-xiao2040;
       };
     };
   };
+
+  environment.systemPackages = [pkgs.katapult-flashtool];
 
   services.mainsail = {
     enable = true;

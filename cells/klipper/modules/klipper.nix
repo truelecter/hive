@@ -140,6 +140,48 @@ in {
           );
       };
 
+      katapult = mkOption {
+        description = l.mdDoc "Katapult firmwares";
+        default = {};
+        type =
+          types.attrsOf
+          (
+            types.submodule {
+              options = {
+                enable = mkEnableOption (lib.mdDoc ''
+                  Enable building of firmware for manual flashing.
+                '');
+
+                configFile = mkOption {
+                  type = types.path;
+                  description = lib.mdDoc "Path to firmware config which is generated using `klipper-genconf`";
+                };
+
+                # flashing = {
+                #   enable = mkEnableOption (lib.mdDoc ''
+                #     Building of firmware for manual flashing with Katapult
+                #   '');
+
+                #   can = {
+                #     interface = mkOption {
+                #       type = types.string;
+                #       description = lib.mdDoc "CAN interface where this device is located";
+                #     };
+
+                #     uuid = mkOption {
+                #       type = types.string;
+                #       description = lib.mdDoc "CAN device UUID";
+                #     };
+                #   };
+
+                #   serial = {
+                #   };
+                # };
+              };
+            }
+          );
+      };
+
       host-mcu = {
         enable = mkEnableOption "Use host as additional MCU for Klipper";
 
@@ -203,29 +245,30 @@ in {
             l.nameValuePair
             (l.strings.sanitizeDerivationName name)
             (
-              (
-                pkgs.klipper-firmware.override
-                {
-                  mcu = l.strings.sanitizeDerivationName name;
-                  firmwareConfig = fcfg.configFile;
-                }
-              )
-              .overrideAttrs (
-                _:_: {
-                  strictDeps = true;
-                  disallowedReferences = [pkgs.gcc-arm-embedded];
-
-                  # Exclued .elf from output to not depend on gcc
-                  installPhase = ''
-                    mkdir -p $out
-                    cp ./.config $out/config
-                    cp out/klipper.bin $out/
-                  '';
-                }
-              )
+              pkgs.klipper-firmware.override
+              {
+                mcu = l.strings.sanitizeDerivationName name;
+                firmwareConfig = fcfg.configFile;
+              }
             )
         )
         enabledFirmwares;
+
+      enabledKatapultFirmwares = l.filterAttrs (n: v: v.enable) cfg.katapult;
+      enabledKatapultFirmwarePackages =
+        l.mapAttrs' (
+          name: fcfg:
+            l.nameValuePair
+            (l.strings.sanitizeDerivationName name)
+            (
+              pkgs.katapult-firmware.override
+              {
+                mcu = l.strings.sanitizeDerivationName name;
+                firmwareConfig = fcfg.configFile;
+              }
+            )
+        )
+        enabledKatapultFirmwares;
     in
       {
         "klipper/printer.cfg".source =
@@ -240,6 +283,9 @@ in {
       )
       // (
         l.mapAttrs' (k: v: l.nameValuePair "klipper/firmwares/${k}" {source = v;}) enabledFirmwarePackages
+      )
+      // (
+        l.mapAttrs' (k: v: l.nameValuePair "klipper/katapult-firmwares/${k}" {source = v;}) enabledKatapultFirmwarePackages
       );
 
     systemd.services.klipper = let

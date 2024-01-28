@@ -10,6 +10,10 @@ fetch.tarball = "https://oca.opensource.oracle.com/gds/GRAALVM_EE_JAVA17_22_3_1/
 src.manual = "22.3.1"
 fetch.tarball = "https://oca.opensource.oracle.com/gds/GRAALVM_EE_JAVA17_22_3_1/graalvm-ee-java17-darwin-amd64-22.3.1.tar.gz"
 
+[graalvm-ee-17-aarch64-darwin]
+src.manual = "17.0.10"
+fetch.tarball = "https://download.oracle.com/graalvm/17/archive/graalvm-jdk-17.0.10_macos-aarch64_bin.tar.gz"
+
 [knock]
 src.git = "https://github.com/Metalcape/knock"
 src.branch = "cooldown"
