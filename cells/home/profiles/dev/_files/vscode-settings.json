@@ -63,5 +63,7 @@
 
   "typescript.updateImportsOnFileMove.enabled": "always",
 
-  "remote.SSH.localServerDownload": "off"
+  "remote.SSH.localServerDownload": "off",
+
+  "direnv.restart.automatic": true
 }

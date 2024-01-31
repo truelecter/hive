@@ -22,8 +22,6 @@ in {
       editorconfig.editorconfig
       ivory-lab.jenkinsfile-support
       jq-syntax-highlighting.jq-syntax-highlighting
-      maarti.jenkins-doc
-      ms-azuretools.vscode-docker
       natqe.reload
       nicolasvuillamy.vscode-groovy-lint
       plorefice.devicetree
@@ -38,6 +36,7 @@ in {
       ericadamski.carbon-now-sh
       ms-vscode-remote.remote-ssh
       ms-vscode-remote.remote-ssh-edit
+      mkhl.direnv
     ];
     userSettings = builtins.fromJSON (builtins.readFile ./_files/vscode-settings.json);
   };
