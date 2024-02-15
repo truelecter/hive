@@ -51,6 +51,18 @@
       "-XX:-ZProactive"
       "-XX:ConcGCThreads=2"
     ];
+    customization = {
+      create = {
+        "mods/bluemap.jar".source = pkgs.minecraft-mods.forge.bluemap;
+        "config/bluemap/core.conf".text = ''
+          accept-download: true
+          data: "bluemap"
+          render-thread-count: 1
+          scan-for-mod-resources: true
+          metrics: true
+        '';
+      };
+    };
     serverProperties = {
       max-tick-time = 600000;
       server-port = 25568;

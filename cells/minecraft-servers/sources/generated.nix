@@ -17,6 +17,14 @@
       sha256 = "sha256-N/GpCeXZUH3//IIhUgCTCoI+nCcttlQghIXO7sk3rFk=";
     };
   };
+  graalvm-ee-17-aarch64-darwin = {
+    pname = "graalvm-ee-17-aarch64-darwin";
+    version = "17.0.10";
+    src = fetchTarball {
+      url = "https://download.oracle.com/graalvm/17/archive/graalvm-jdk-17.0.10_macos-aarch64_bin.tar.gz";
+      sha256 = "sha256-rvkXzbyNicniF0h8n3DLV7BxO7K7Kgr6X2sPsXpKMx8=";
+    };
+  };
   graalvm-ee-17-aarch64-linux = {
     pname = "graalvm-ee-17-aarch64-linux";
     version = "22.3.1";
@@ -91,6 +99,30 @@
     src = fetchurl {
       url = "https://ci.codemc.io/job/Games647/job/ChangeSkin/474/artifact/core/target/ChangeSkinCore.jar";
       sha256 = "sha256-IR8thoPfzEkj+/BepSqZ8/Qs6s91C+r3HnuM71VUGkM=";
+    };
+  };
+  mod-forge-19-2-dynmap = {
+    pname = "mod-forge-19-2-dynmap";
+    version = "3.7-beta-4";
+    src = fetchurl {
+      url = "https://mediafilez.forgecdn.net/files/4979/21/Dynmap-3.7-beta-4-forge-1.19.2.jar";
+      sha256 = "sha256-f7O24vgIaySn9PrBtedr6mKCUX1i4J7FumZZeTHA5PQ=";
+    };
+  };
+  mod-forge-19-bluemap = {
+    pname = "mod-forge-19-bluemap";
+    version = "3.13";
+    src = fetchurl {
+      url = "https://github.com/BlueMap-Minecraft/BlueMap/releases/download/v3.13/BlueMap-3.13-forge-1.19.1.jar";
+      sha256 = "sha256-iwH5m15LwobZviIlbwNdBBD1mrbgZ0TuYyAzXl3lWCY=";
+    };
+  };
+  mod-forge-19-dynmap-blockscan = {
+    pname = "mod-forge-19-dynmap-blockscan";
+    version = "3.7-SNAPSHOT";
+    src = fetchurl {
+      url = "https://dynmap.us/builds/DynmapBlockScan/DynmapBlockScan-3.7-SNAPSHOT-forge-1.19.jar";
+      sha256 = "sha256-QNkIcV7DztQcvYvAabUh0X+N3vEJiRvMqJomvRt03LU=";
     };
   };
   mod-forge-spongeforge = {

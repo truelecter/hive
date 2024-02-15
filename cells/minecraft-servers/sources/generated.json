@@ -29,6 +29,20 @@
         },
         "version": "40.2.9"
     },
+    "graalvm-ee-17-aarch64-darwin": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "graalvm-ee-17-aarch64-darwin",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "sha256": "sha256-rvkXzbyNicniF0h8n3DLV7BxO7K7Kgr6X2sPsXpKMx8=",
+            "type": "tarball",
+            "url": "https://download.oracle.com/graalvm/17/archive/graalvm-jdk-17.0.10_macos-aarch64_bin.tar.gz"
+        },
+        "version": "17.0.10"
+    },
     "graalvm-ee-17-aarch64-linux": {
         "cargoLocks": null,
         "date": null,
@@ -165,6 +179,51 @@
             "url": "https://ci.codemc.io/job/Games647/job/ChangeSkin/474/artifact/core/target/ChangeSkinCore.jar"
         },
         "version": "3.2"
+    },
+    "mod-forge-19-2-dynmap": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "mod-forge-19-2-dynmap",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-f7O24vgIaySn9PrBtedr6mKCUX1i4J7FumZZeTHA5PQ=",
+            "type": "url",
+            "url": "https://mediafilez.forgecdn.net/files/4979/21/Dynmap-3.7-beta-4-forge-1.19.2.jar"
+        },
+        "version": "3.7-beta-4"
+    },
+    "mod-forge-19-bluemap": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "mod-forge-19-bluemap",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-iwH5m15LwobZviIlbwNdBBD1mrbgZ0TuYyAzXl3lWCY=",
+            "type": "url",
+            "url": "https://github.com/BlueMap-Minecraft/BlueMap/releases/download/v3.13/BlueMap-3.13-forge-1.19.1.jar"
+        },
+        "version": "3.13"
+    },
+    "mod-forge-19-dynmap-blockscan": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "mod-forge-19-dynmap-blockscan",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-QNkIcV7DztQcvYvAabUh0X+N3vEJiRvMqJomvRt03LU=",
+            "type": "url",
+            "url": "https://dynmap.us/builds/DynmapBlockScan/DynmapBlockScan-3.7-SNAPSHOT-forge-1.19.jar"
+        },
+        "version": "3.7-SNAPSHOT"
     },
     "mod-forge-spongeforge": {
         "cargoLocks": null,

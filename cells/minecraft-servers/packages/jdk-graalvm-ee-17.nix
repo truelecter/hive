@@ -43,5 +43,6 @@ in
 
     meta = with lib; {
       description = "GraalVM Enterprise Edition";
+      platforms = platforms.linux;
     };
   }

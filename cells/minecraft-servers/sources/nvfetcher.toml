@@ -63,3 +63,15 @@ fetch.url = "https://ci.codemc.io/job/Games647/job/ChangeSkin/474/artifact/core/
 [mod-forge-spongeforge]
 src.manual = "1.12.2-2838-7.4.7"
 fetch.url = "https://repo.spongepowered.org/repository/maven-releases/org/spongepowered/spongeforge/$ver/spongeforge-$ver.jar"
+
+[mod-forge-19-2-dynmap]
+src.manual = "3.7-beta-4"
+fetch.url = "https://mediafilez.forgecdn.net/files/4979/21/Dynmap-3.7-beta-4-forge-1.19.2.jar"
+
+[mod-forge-19-dynmap-blockscan]
+src.manual = "3.7-SNAPSHOT"
+fetch.url = "https://dynmap.us/builds/DynmapBlockScan/DynmapBlockScan-3.7-SNAPSHOT-forge-1.19.jar"
+
+[mod-forge-19-bluemap]
+src.manual = "3.13"
+fetch.url = "https://github.com/BlueMap-Minecraft/BlueMap/releases/download/v3.13/BlueMap-3.13-forge-1.19.1.jar"
