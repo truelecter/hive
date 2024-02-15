@@ -51,7 +51,7 @@ in {
         };
         prettier = {
           command = "prettier";
-          options = ["--plugin" "prettier-plugin-toml" "--write"];
+          # options = ["--plugin" "prettier-plugin-toml" "--write"];
           includes = [
             "*.css"
             "*.html"
@@ -63,7 +63,7 @@ in {
             "*.scss"
             "*.ts"
             "*.yaml"
-            "*.toml"
+            # "*.toml"
           ];
         };
         shell = {
