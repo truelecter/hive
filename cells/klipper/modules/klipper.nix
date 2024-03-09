@@ -313,6 +313,9 @@ in {
         IOSchedulingClass = "realtime";
         IOSchedulingPriority = 0;
         UMask = "0002";
+        Environment = [
+          "KLIPPER_DIR=${cfg.package}/lib"
+        ];
       };
     };
 

@@ -51,7 +51,7 @@
     };
   };
 
-  powerManagement.cpuFreqGovernor = "performance";
+  powerManagement.cpuFreqGovernor = "powersave";
 
   hardware = {
     # enableRedistributableFirmware = true;

@@ -37,7 +37,7 @@
     function updateCellSources {
       CELL="$1"
       shift
-      ${nvfetcher}/bin/nvfetcher -t -o "$CELL/sources/" -c "$CELL/sources/nvfetcher.toml" $@
+      ${nvfetcher}/bin/nvfetcher -t --keep-old -o "$CELL/sources/" -c "$CELL/sources/nvfetcher.toml" $@
     }
 
     export TMPDIR="/tmp"

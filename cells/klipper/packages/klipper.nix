@@ -48,8 +48,8 @@ in
     # this is used 99% of the time as a service, so it's not worth the effort.
     installPhase = ''
       runHook preInstall
-      mkdir -p $out/lib/klipper
-      cp -r ./* $out/lib/klipper
+      mkdir -p $out/lib/klippy
+      cp -r ./* $out/lib/klippy
 
       # Moonraker expects `config_examples` and `docs` to be available
       # under `klipper_path`
@@ -57,15 +57,15 @@ in
       cp -r $src/config $out/lib/config
 
       mkdir -p $out/bin
-      chmod 755 $out/lib/klipper/klippy.py
-      makeWrapper $out/lib/klipper/klippy.py $out/bin/klippy --chdir $out/lib/klipper
+      chmod 755 $out/lib/klippy/klippy.py
+      makeWrapper $out/lib/klippy/klippy.py $out/bin/klippy --chdir $out/lib/klippy
 
       # Symlink plugins
       ${
         lib.concatStringsSep "\n" (
           builtins.map
           # Filter only plugins with extras. There was a lib function for getting output in lib/attrset.nix
-          (plugin: "ln -sf ${plugin}/lib/extras/*.py $out/lib/klipper/extras/")
+          (plugin: "ln -sf ${plugin}/lib/extras/*.py $out/lib/klippy/extras/")
           (builtins.filter (p: p ? klipper && p.klipper.extras) plugins)
         )
       }
