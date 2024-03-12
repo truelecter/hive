@@ -34,6 +34,7 @@
       usbutils
       util-linux
       pciutils
+      ncdu
     ];
   };
 

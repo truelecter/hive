@@ -21,7 +21,6 @@
       vim
       file
       gnused
-      ncdu
       nix-tree
       findutils
     ];
