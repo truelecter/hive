@@ -21,7 +21,7 @@ in {
     kubernetes-helm
     nixpkgs-fmt
     statix
-    nixUnstable
+    nix
     cachix
     nix-index
     _1password

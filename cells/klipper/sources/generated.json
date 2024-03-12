@@ -41,7 +41,7 @@
     },
     "klipper": {
         "cargoLocks": null,
-        "date": "2024-03-08",
+        "date": "2024-03-10",
         "extract": null,
         "name": "klipper",
         "passthru": null,
@@ -53,11 +53,11 @@
             "name": null,
             "owner": "Klipper3d",
             "repo": "klipper",
-            "rev": "71604b712a0357b8bdea7cdd2eea18f45f7cec44",
-            "sha256": "sha256-S8y8bYbfSerSBZHsinehJxl821EORC2jrJLo+5jX7CE=",
+            "rev": "18de421c4acbdb00946df35dfb412dedb159abca",
+            "sha256": "sha256-4qMjQcrZUkIbZYlbYjLKf4lC7jPwqsBZmj7ymLfj5I8=",
             "type": "github"
         },
-        "version": "71604b712a0357b8bdea7cdd2eea18f45f7cec44"
+        "version": "18de421c4acbdb00946df35dfb412dedb159abca"
     },
     "klipper-ercf": {
         "cargoLocks": null,
@@ -101,7 +101,7 @@
     },
     "klipper-happy-hare": {
         "cargoLocks": null,
-        "date": "2024-03-08",
+        "date": "2024-03-11",
         "extract": null,
         "name": "klipper-happy-hare",
         "passthru": null,
@@ -113,11 +113,11 @@
             "name": null,
             "owner": "moggieuk",
             "repo": "Happy-Hare",
-            "rev": "988f8f84758e1deee7c8f67e9ee477d71beb965a",
-            "sha256": "sha256-PPrCYpPBNQuARH72EgsCzenVzmHUlrR55DYwjrL6cOg=",
+            "rev": "ac2b21ec587f7f59619a7e9b6763304cb0263aa7",
+            "sha256": "sha256-4g3k3PF6ZjjLDobMG5tvxfNacE3cmgFV0F/rmr0Lvcg=",
             "type": "github"
         },
-        "version": "988f8f84758e1deee7c8f67e9ee477d71beb965a"
+        "version": "ac2b21ec587f7f59619a7e9b6763304cb0263aa7"
     },
     "klipper-kamp": {
         "cargoLocks": null,
@@ -161,7 +161,7 @@
     },
     "klipper-klippain-shaketune": {
         "cargoLocks": null,
-        "date": "2024-02-20",
+        "date": "2024-03-11",
         "extract": null,
         "name": "klipper-klippain-shaketune",
         "passthru": null,
@@ -173,11 +173,11 @@
             "name": null,
             "owner": "Frix-x",
             "repo": "klippain-shaketune",
-            "rev": "312a9c9ffa13b6076e28d7df04da61721f5229df",
-            "sha256": "sha256-IJ/vJL2NudrBEcyEhntH0By2uNt1+DJjnqE04aPXf1o=",
+            "rev": "536c3c0effcd53861f7bb84be03f8417454fa42f",
+            "sha256": "sha256-WxDM80LIGQ02XNDkpp6RszWb+Gi4z9jTNr7Ch/V/jzA=",
             "type": "github"
         },
-        "version": "312a9c9ffa13b6076e28d7df04da61721f5229df"
+        "version": "536c3c0effcd53861f7bb84be03f8417454fa42f"
     },
     "klipper-led_effect": {
         "cargoLocks": null,
@@ -201,7 +201,7 @@
     },
     "klipper-screen": {
         "cargoLocks": null,
-        "date": "2024-03-09",
+        "date": "2024-03-10",
         "extract": null,
         "name": "klipper-screen",
         "passthru": null,
@@ -213,11 +213,11 @@
             "name": null,
             "owner": "jordanruthe",
             "repo": "KlipperScreen",
-            "rev": "878d567404b7dd315da8cf1ca8d94bd553f91dbe",
-            "sha256": "sha256-NvWtb2wTRFQay//4qZ0dsaQJlJvHmOCFzX6jqx7Sd80=",
+            "rev": "a32d1d8e8085724068ac6a43adbba9757228aebb",
+            "sha256": "sha256-16Kd70qljlWRDUxYhafM9t2HhbYIGl9JO3PcCzjzUUg=",
             "type": "github"
         },
-        "version": "878d567404b7dd315da8cf1ca8d94bd553f91dbe"
+        "version": "a32d1d8e8085724068ac6a43adbba9757228aebb"
     },
     "klipper-z-calibration": {
         "cargoLocks": null,

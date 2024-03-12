@@ -30,6 +30,7 @@ in {
     inherit system;
     config.allowUnfree = true;
     overlays = [
+      inputs.cells.rpi.overlays.kernel
       inputs.cells.klipper.overlays.klipper
       (
         final: prev: {
@@ -40,7 +41,7 @@ in {
             };
           makeModulesClosure = x: prev.makeModulesClosure (x // {allowMissing = true;});
 
-          inherit (inputs.nix-rpi-kernel.packages) linuxRpi4Packages raspberrypiWirelessFirmware raspberrypifw;
+          # inherit (inputs.nix-rpi-kernel.packages) linuxRpi4Packages raspberrypiWirelessFirmware raspberrypifw;
         }
       )
     ];

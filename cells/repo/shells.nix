@@ -8,7 +8,7 @@
   inherit
     (inputs.cells.common.overrides)
     alejandra
-    nixUnstable
+    nix
     cachix
     nix-index
     statix
@@ -25,7 +25,7 @@
     ;
 
   pkgWithCategory = category: package: {inherit package category;};
-  nix = pkgWithCategory "nix";
+  nixC = pkgWithCategory "nix";
   linter = pkgWithCategory "linter";
   docs = pkgWithCategory "docs";
   infra = pkgWithCategory "infra";
@@ -163,16 +163,15 @@ in
       ];
 
       packages = [
-        nixUnstable
         gnupg
         update-cell-sources
       ];
 
       commands = [
-        (nix nixUnstable)
-        (nix cachix)
-        (nix nix-index)
-        (nix statix)
+        (nixC nix)
+        (nixC cachix)
+        (nixC nix-index)
+        (nixC statix)
 
         (ci act)
 

@@ -12,9 +12,8 @@
       coloredlogs
       websockets
       requests
-      pytz
-      tzlocal
       pillow
+      python-dateutil
     ];
 
   pythonEnv = python3.withPackages reqs;
