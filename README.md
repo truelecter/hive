@@ -32,6 +32,17 @@ colmena apply --on "nixos-$HOST"
 
 ### Darwin hosts
 
+#### First time
+
+Bootstrap default aarch64-linux builder
+
+```bash
+nix run github:nixos/nixpkgs/nixpkgs-23.11-darwin#darwin.linux-builder
+nix build --builders 'builder@localhost aarch64-linux /etc/nix/builder_ed25519' github:truelecter/hive#squadbook
+```
+
+#### Switch configuration
+
 ```bash
 darwin-rebuild switch --flake .
 ```
