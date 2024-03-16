@@ -24,7 +24,7 @@ in {
     # nodePackages.vim-language-server
     # nodePackages.yaml-language-server
     # ccls
-    # rnix-lsp
+    # nil
     # terraform-ls
   ];
 

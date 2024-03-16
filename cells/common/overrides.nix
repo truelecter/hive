@@ -12,7 +12,6 @@ in {
     android-tools
     vscode
     alejandra
-    rnix-lsp
     nil
     terraform
     terraform-ls
