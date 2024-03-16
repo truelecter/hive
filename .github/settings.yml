@@ -1,7 +1,7 @@
 branches:
 - name: master
   protection:
-    enforce_admins: true
+    enforce_admins: false
     required_pull_request_reviews: null
     required_status_checks:
       contexts:

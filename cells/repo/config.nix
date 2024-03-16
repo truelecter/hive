@@ -136,7 +136,7 @@ in {
                 "Build squadbook"
               ];
             };
-            enforce_admins = true;
+            enforce_admins = false;
             restrictions = null;
           };
         }
