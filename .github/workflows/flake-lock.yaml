@@ -34,7 +34,7 @@ jobs:
           nix run '.#mainsail.npmDepsHash' > cells/klipper/packages/_deps-hash/mainsail-npm.nix
           git commit -am "deps(sources): Updated deps hash" || true
       - name: Update flake.lock
-        uses: DeterminateSystems/update-flake-lock@v19
+        uses: DeterminateSystems/update-flake-lock@v21
         with:
           commit-msg: "deps(flake-lock): Updated flake.lock"
           pr-title: "[Automated] Update 'flake.lock' and sources"
