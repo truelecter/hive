@@ -3,7 +3,7 @@ version: 2.1
 
 workflows:
   version: 2
-  workflow:
+  build_aarch64:
     jobs:
     - build:
         filters:

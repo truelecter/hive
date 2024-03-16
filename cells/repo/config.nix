@@ -123,6 +123,24 @@ in {
         has_wiki = false;
         has_downloads = false;
       };
+      branches = [
+        {
+          name = "master";
+          protection = {
+            required_pull_request_reviews = null;
+            required_status_checks = {
+              strict = true;
+              contexts = [
+                "call-workflow-passing-data / build_system"
+                "build_aarch64"
+                "Build squadbook"
+              ];
+            };
+            enforce_admins = true;
+            restrictions = null;
+          };
+        }
+      ];
     };
   };
 
