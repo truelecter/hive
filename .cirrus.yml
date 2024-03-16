@@ -84,9 +84,26 @@ macos_task:
 
   << : *COMMON_SCRIPTS_TEMPLATE
 
+  build_linux_builder_script:
+  - nix build github:nixos/nixpkgs/nixpkgs-23.11-darwin#darwin.linux-builder
+  - mkdir -p /etc/ssh/ssh_config.d/
+  - echo "Host linux-builder" > /etc/ssh/ssh_config.d/100-linux-builder.conf
+  - echo "  Hostname localhost" >> /etc/ssh/ssh_config.d/100-linux-builder.conf
+  - echo "  Port 31022" >> /etc/ssh/ssh_config.d/100-linux-builder.conf
+  - echo "  HostKeyAlias linux-builder" >> /etc/ssh/ssh_config.d/100-linux-builder.conf
+  - echo "  IdentityFile /etc/nix/builder_ed25519" >> /etc/ssh/ssh_config.d/100-linux-builder.conf
+  - echo "  User builder" >> /etc/ssh/ssh_config.d/100-linux-builder.conf
+
+  start_linux_builder_background_script:
+  - nix run github:nixos/nixpkgs/nixpkgs-23.11-darwin#darwin.linux-builder
+
+  wait_for_builder_script:
+  - until ssh linux-builder; do echo not yet online; sleep 1; done
+
   build_system_script:
-  - echo "TODO"
-  # - nix build ".#darwinConfigurations.$NIXOS_HOST.config.system.build.toplevel"
+  - nix build \
+    --builders 'ssh-ng://linux-builder aarch64-linux /etc/nix/builder_ed25519 8 - - - c3NoLWVkMjU1MTkgQUFBQUMzTnphQzFsWkRJMU5URTVBQUFBSUpCV2N4Yi9CbGFxdDFhdU90RStGOFFVV3JVb3RpQzVxQkorVXVFV2RWQ2Igcm9vdEBuaXhvcwo=' \
+    ".#darwinConfigurations.$NIXOS_HOST.config.system.build.toplevel"
 
   build_devshell_script:
   - nix develop --command "menu"
@@ -94,6 +111,6 @@ macos_task:
   << : *COMMON_FINISHING_SCRIPTS_TEMPLATE
 
   matrix:
-  - name: Build squadbook
+  - name: squadbook
     env:
       NIXOS_HOST: squadbook
