@@ -87,12 +87,12 @@ macos_task:
   build_linux_builder_script:
   - nix build github:nixos/nixpkgs/nixpkgs-23.11-darwin#darwin.linux-builder
   - mkdir -p /etc/ssh/ssh_config.d/
-  - sudo echo "Host linux-builder" > /etc/ssh/ssh_config.d/100-linux-builder.conf
-  - sudo echo "  Hostname localhost" >> /etc/ssh/ssh_config.d/100-linux-builder.conf
-  - sudo echo "  Port 31022" >> /etc/ssh/ssh_config.d/100-linux-builder.conf
-  - sudo echo "  HostKeyAlias linux-builder" >> /etc/ssh/ssh_config.d/100-linux-builder.conf
-  - sudo echo "  IdentityFile /etc/nix/builder_ed25519" >> /etc/ssh/ssh_config.d/100-linux-builder.conf
-  - sudo echo "  User builder" >> /etc/ssh/ssh_config.d/100-linux-builder.conf
+  - echo "Host linux-builder"                      | sudo tee /etc/ssh/ssh_config.d/100-linux-builder.conf
+  - echo "  Hostname localhost"                    | sudo tee -a /etc/ssh/ssh_config.d/100-linux-builder.conf
+  - echo "  Port 31022"                            | sudo tee -a /etc/ssh/ssh_config.d/100-linux-builder.conf
+  - echo "  HostKeyAlias linux-builder"            | sudo tee -a /etc/ssh/ssh_config.d/100-linux-builder.conf
+  - echo "  IdentityFile /etc/nix/builder_ed25519" | sudo tee -a /etc/ssh/ssh_config.d/100-linux-builder.conf
+  - echo "  User builder"                          | sudo tee -a /etc/ssh/ssh_config.d/100-linux-builder.conf
 
   start_linux_builder_background_script:
   - nix run github:nixos/nixpkgs/nixpkgs-23.11-darwin#darwin.linux-builder
