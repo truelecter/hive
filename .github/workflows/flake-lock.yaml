@@ -28,7 +28,7 @@ jobs:
       - name: Update nvfetcher packages
         run: |
           nix develop '.#ci' --command bash -c "update-cell-sources ALL"
-          git commit -am "deps(sources): Updated cell sources"
+          git commit -am "deps(sources): Updated cell sources" || true
       - name: Update deps hashes packages
         run: |
           nix run '.#mainsail.npmDepsHash' > cells/klipper/packages/_deps-hash/mainsail-npm.nix
