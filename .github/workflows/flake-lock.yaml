@@ -35,6 +35,7 @@ jobs:
           git commit -am "deps(sources): Updated deps hash" || true
       - name: Update flake.lock
         uses: DeterminateSystems/update-flake-lock@v21
+        id: ufl
         with:
           commit-msg: "deps(flake-lock): Updated flake.lock"
           pr-title: "[Automated] Update 'flake.lock' and sources"
@@ -43,3 +44,9 @@ jobs:
           pr-labels: |
             dependencies
             automated
+      - name: Enable auto-merge
+        uses: peter-evans/enable-pull-request-automerge@v3
+        if: ${{ steps.ufl.outputs.pull-request-number }}
+        with:
+          token: ${{ secrets.PR_WF_ENABLED_TOKEN }}
+          pull-request-number: ${{ steps.ufl.outputs.pull-request-number }}
