@@ -40,6 +40,7 @@ in
         system-preferences.general
         system-preferences.keyboard
         system-preferences.trackpad
+        system-preferences.other
       ];
     };
   }
