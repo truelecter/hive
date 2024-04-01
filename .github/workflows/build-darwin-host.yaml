@@ -34,13 +34,13 @@ jobs:
           sudo chmod 600 /etc/nix/builder_ed25519
 
           sudo mkdir -p /var/root/.ssh
-          ssh-keyscan -H "$BUILDER_HOST,linux-builder" | sudo tee -a /var/root/.ssh/known_hosts > /dev/null
+          ssh-keyscan -H "$BUILDER_HOST" | sudo tee -a /var/root/.ssh/known_hosts > /dev/null
 
           mkdir -p /etc/ssh/
           echo "Host linux-builder"                      | sudo tee -a /etc/ssh/ssh_config
           echo "  Hostname $BUILDER_HOST"                | sudo tee -a /etc/ssh/ssh_config > /dev/null
           echo "  Port 22"                               | sudo tee -a /etc/ssh/ssh_config
-          echo "  HostKeyAlias linux-builder"            | sudo tee -a /etc/ssh/ssh_config
+          echo "  HostKeyAlias $BUILDER_HOST"            | sudo tee -a /etc/ssh/ssh_config > /dev/null
           echo "  IdentityFile /etc/nix/builder_ed25519" | sudo tee -a /etc/ssh/ssh_config
           echo "  User gha-builder"                      | sudo tee -a /etc/ssh/ssh_config
 
