@@ -9,7 +9,7 @@ This repository is home to the nix code that builds my systems.
 [![depsos](https://img.shields.io/github/actions/workflow/status/truelecter/hive/build-depsos.yaml?event=push&logo=nixos&logoColor=white&label=depsos)][depsos]
 [![hyperos](https://img.shields.io/github/actions/workflow/status/truelecter/hive/build-hyperos.yaml?event=push&logo=nixos&logoColor=white&label=hyperos)][hyperos]
 [![nas](https://img.shields.io/github/actions/workflow/status/truelecter/hive/build-nas.yaml?event=push&logo=nixos&logoColor=white&label=nas)][nas]
-[![squadbook](https://img.shields.io/cirrus/github/truelecter/hive?label=squadbook&logo=nixos&logoColor=white&task=Build%20squadbook)][squadbook]
+[![squadbook](https://img.shields.io/github/actions/workflow/status/truelecter/hive/build-squadbook.yaml?event=push&logo=nixos&logoColor=white&label=squadbook)][squadbook]
 [![oracle](https://img.shields.io/circleci/build/github/truelecter/hive/master?logo=nixos&logoColor=white&label=oracle)][oracle]
 [![voron](https://img.shields.io/circleci/build/github/truelecter/hive/master?logo=nixos&logoColor=white&label=voron)][voron]
 
@@ -56,10 +56,10 @@ darwin-rebuild switch --flake .
 [depsos]: https://github.com/truelecter/hive/actions/workflows/build-depsos.yaml
 [hyperos]: https://github.com/truelecter/hive/actions/workflows/build-hyperos.yaml
 [nas]: https://github.com/truelecter/hive/actions/workflows/build-nas.yaml
+[squadbook]: https://github.com/truelecter/hive/actions/workflows/build-squadbook.yaml
 
 <!-- CirrusCI -->
 
-[squadbook]: https://cirrus-ci.com/github/truelecter/hive/
 
 <!-- CircleCI -->
 
