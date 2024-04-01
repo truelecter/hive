@@ -48,6 +48,6 @@ jobs:
 
       - name: Build system configuration
         run: |
-          nix -vv build \
+          nix build \
             --builders 'ssh-ng://linux-builder aarch64-linux /etc/nix/builder_ed25519 8' \
             ".#darwinConfigurations.${{ inputs.configuration }}.config.system.build.toplevel"

@@ -7,7 +7,6 @@ branches:
       contexts:
       - call-workflow-passing-data / build_system
       - build_aarch64
-      - Build squadbook
       strict: true
     restrictions: null
 repository:
