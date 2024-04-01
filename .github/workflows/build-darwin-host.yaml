@@ -15,7 +15,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Install Nix
-        uses: cachix/install-nix-action@v20
+        uses: cachix/install-nix-action@v26
         with:
           nix_path: nixpkgs=channel:nixos-23.11
           extra_nix_config: |
@@ -44,7 +44,7 @@ jobs:
           echo "  IdentityFile /etc/nix/builder_ed25519" | sudo tee -a /etc/ssh/ssh_config
           echo "  User gha-builder"                      | sudo tee -a /etc/ssh/ssh_config
 
-          nix store info --store ssh://linux-builder
+          sudo nix store info --store ssh://linux-builder
 
       - name: Build system configuration
         run: |
