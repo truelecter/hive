@@ -24,6 +24,7 @@ in {
 
     ./hardware-configuration.nix
     ./minecraft-servers
+    ./github-actions-builder.nix
   ];
 
   bee.system = system;
