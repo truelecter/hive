@@ -30,7 +30,7 @@ jobs:
           BUILDER_PK: ${{secrets.AARCH64_BUILDER_PK}}
           BUILDER_HOST: ${{secrets.AARCH64_BUILDER_HOSTNAME}}
         run: |
-          cat "$BUILDER_PK" | sudo tee /etc/nix/builder_ed25519 > /dev/null
+          echo "$BUILDER_PK" | sudo tee /etc/nix/builder_ed25519 > /dev/null
           sudo chmod 600 /etc/nix/builder_ed25519
 
           sudo mkdir -p /var/root/.ssh
