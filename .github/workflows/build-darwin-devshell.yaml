@@ -1,11 +1,11 @@
-name: Build x86 devshell
+name: Build darwin devshell
 on:
   push:
   workflow_dispatch:
 
 jobs:
   build_shell:
-    runs-on: ubuntu-latest
+    runs-on: macos-14
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
