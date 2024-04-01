@@ -31,6 +31,10 @@ jobs:
           BUILDER_HOST: ${{secrets.AARCH64_BUILDER_HOSTNAME}}
         run: |
           cat "$BUILDER_PK" | sudo tee /etc/nix/builder_ed25519 > /dev/null
+          sudo chmod 600 /etc/nix/builder_ed25519
+
+          sudo mkdir -p /var/root/.ssh
+          ssh-keyscan -H "$BUILDER_HOST" | sudo tee -a /var/root/.ssh/known_hosts > /dev/null
 
           mkdir -p /etc/ssh/ssh_config.d/
           echo "Host linux-builder"                      | sudo tee -a /etc/ssh/ssh_config.d/100-linux-builder.conf
@@ -38,10 +42,10 @@ jobs:
           echo "  Port 22"                               | sudo tee -a /etc/ssh/ssh_config.d/100-linux-builder.conf
           echo "  HostKeyAlias linux-builder"            | sudo tee -a /etc/ssh/ssh_config.d/100-linux-builder.conf
           echo "  IdentityFile /etc/nix/builder_ed25519" | sudo tee -a /etc/ssh/ssh_config.d/100-linux-builder.conf
-          echo "  User root"                             | sudo tee -a /etc/ssh/ssh_config.d/100-linux-builder.conf
+          echo "  User gha-builder"                      | sudo tee -a /etc/ssh/ssh_config.d/100-linux-builder.conf
 
       - name: Build system configuration
         run: |
-          nix build \
+          nix -vv build \
             --builders 'ssh-ng://linux-builder aarch64-linux /etc/nix/builder_ed25519 8' \
             ".#darwinConfigurations.${{ inputs.configuration }}.config.system.build.toplevel"
