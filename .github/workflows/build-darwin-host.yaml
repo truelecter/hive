@@ -44,7 +44,7 @@ jobs:
           echo "  IdentityFile /etc/nix/builder_ed25519" | sudo tee -a /etc/ssh/ssh_config
           echo "  User gha-builder"                      | sudo tee -a /etc/ssh/ssh_config
 
-          nix store info nix-command --store ssh://linux-builder
+          nix store info --store ssh://linux-builder
 
       - name: Build system configuration
         run: |
