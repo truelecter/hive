@@ -6,10 +6,6 @@
 }: let
   system = "x86_64-linux";
 in {
-  _module.specialArgs = {
-    inherit inputs;
-  };
-
   imports = [
     suites.base
     profiles.fs.zfs
@@ -41,7 +37,6 @@ in {
   # Weird bug with NM-wait-online restart on new configuration always fails
   systemd.services.NetworkManager-wait-online.enable = false;
   # boot.zfs.enableUnstable = lib.mkForce true;
-  boot.binfmt.emulatedSystems = ["aarch64-linux"];
   powerManagement.cpuFreqGovernor = "performance";
   boot.loader = {
     # systemd-boot.enable = false;
@@ -67,7 +62,7 @@ in {
 
   networking = {
     hostName = "nas";
-    networkmanager.enable = true;
+    networkmanager.enable = false;
     firewall.enable = false;
     hostId = "00000000";
   };
