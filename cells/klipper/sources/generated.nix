@@ -26,15 +26,15 @@
   };
   klipper = {
     pname = "klipper";
-    version = "d9043345b615a4b64333a006d9f1fd40f386a5e4";
+    version = "e37b007f67e5bdc330af45b78643f7789c789907";
     src = fetchFromGitHub {
       owner = "Klipper3d";
       repo = "klipper";
-      rev = "d9043345b615a4b64333a006d9f1fd40f386a5e4";
+      rev = "e37b007f67e5bdc330af45b78643f7789c789907";
       fetchSubmodules = false;
-      sha256 = "sha256-AnFEHBWk6NVRowb0XWUFMmm6263XRr8L/ezgF8zaemQ=";
+      sha256 = "sha256-3IkSU8RXyM8WcrEty2+rGn+K386Pi234n2LCdVi8OkI=";
     };
-    date = "2024-03-21";
+    date = "2024-03-25";
   };
   klipper-ercf = {
     pname = "klipper-ercf";
@@ -50,15 +50,15 @@
   };
   klipper-gcode_shell_command = {
     pname = "klipper-gcode_shell_command";
-    version = "b6c6edb6227a0828abe4ccd15640f895671ffd23";
+    version = "f2691f33d30bfac26591361cdb2295741a401bc1";
     src = fetchFromGitHub {
       owner = "dw-0";
       repo = "kiauh";
-      rev = "b6c6edb6227a0828abe4ccd15640f895671ffd23";
+      rev = "f2691f33d30bfac26591361cdb2295741a401bc1";
       fetchSubmodules = false;
-      sha256 = "sha256-VoyyVq7Yp89r3xMa7emvVT3j+gExJCEOlJp+sJjqqog=";
+      sha256 = "sha256-pSs4XiAis9eltvdKiY6Z3s8zEs/SaQGGX0SVp4Yn+bE=";
     };
-    date = "2024-02-24";
+    date = "2024-03-31";
   };
   klipper-happy-hare = {
     pname = "klipper-happy-hare";
@@ -85,15 +85,15 @@
   };
   klipper-klicky-probe = {
     pname = "klipper-klicky-probe";
-    version = "7cee01de80e71ef78cf1b5cedab5d0239a0d6577";
+    version = "64ad93af5e18f34216caf500e428a3f6df0a7a4d";
     src = fetchFromGitHub {
       owner = "truelecter";
       repo = "Klicky-Probe";
-      rev = "7cee01de80e71ef78cf1b5cedab5d0239a0d6577";
+      rev = "64ad93af5e18f34216caf500e428a3f6df0a7a4d";
       fetchSubmodules = false;
-      sha256 = "sha256-NciHhw3n8CDTfn/kBMNqYC/+7dcdqicysOGaKZ/wxHk=";
+      sha256 = "sha256-BbHkgJ8OlSF89BlSkWcpUEy8A6vPwAj6N4rvOQ7V2EQ=";
     };
-    date = "2024-03-08";
+    date = "2024-03-25";
   };
   klipper-klippain-shaketune = {
     pname = "klipper-klippain-shaketune";
@@ -121,15 +121,15 @@
   };
   klipper-screen = {
     pname = "klipper-screen";
-    version = "54ad2981bc8a137a26a6ba63f36c980dccd9572f";
+    version = "e62b0ac4adeb875464fe70684bf9057824ebea2d";
     src = fetchFromGitHub {
       owner = "jordanruthe";
       repo = "KlipperScreen";
-      rev = "54ad2981bc8a137a26a6ba63f36c980dccd9572f";
+      rev = "e62b0ac4adeb875464fe70684bf9057824ebea2d";
       fetchSubmodules = false;
-      sha256 = "sha256-ONayPCcEiEZTMHv2sERmoCvz/9uASsiB0l3gR0lKj3k=";
+      sha256 = "sha256-aP5cMhH5QJfx4V6tohgdqucWaSivCeycy3iDPHKH5Ak=";
     };
-    date = "2024-03-21";
+    date = "2024-04-01";
   };
   klipper-z-calibration = {
     pname = "klipper-z-calibration";
@@ -174,27 +174,27 @@
   };
   mainsail = {
     pname = "mainsail";
-    version = "c8594406420cb99632e993b2840215c3ceb580be";
+    version = "18a7f6e8a757683ace666f47032b196cf785f2b9";
     src = fetchFromGitHub {
       owner = "mainsail-crew";
       repo = "mainsail";
-      rev = "c8594406420cb99632e993b2840215c3ceb580be";
+      rev = "18a7f6e8a757683ace666f47032b196cf785f2b9";
       fetchSubmodules = false;
-      sha256 = "sha256-aY4QpnxmyyWM1Ez2JwPetrAOXqsSPUlaxCjakBMx6r8=";
+      sha256 = "sha256-vXBvzhLkfZI/IQV2Fq00onJLK7cB4FIF2480HEGYyG8=";
     };
-    date = "2024-03-21";
+    date = "2024-03-27";
   };
   mobileraker-companion = {
     pname = "mobileraker-companion";
-    version = "c252974fbd8b1dfc0d29a6968f8be41e1fa19fa1";
+    version = "409fba1f92ea7aa1196b8dcba40612b9db843cd3";
     src = fetchFromGitHub {
       owner = "Clon1998";
       repo = "mobileraker_companion";
-      rev = "c252974fbd8b1dfc0d29a6968f8be41e1fa19fa1";
+      rev = "409fba1f92ea7aa1196b8dcba40612b9db843cd3";
       fetchSubmodules = false;
-      sha256 = "sha256-ahKgejerjiyRY7C57sS1IsH4Mavm70HrJylpH1WADII=";
+      sha256 = "sha256-MXeQD+pWvr1jjxpRnNcvz2p26XG1L4OP4b0uiw321fM=";
     };
-    date = "2024-03-16";
+    date = "2024-03-25";
   };
   moonraker = {
     pname = "moonraker";
