@@ -6,7 +6,7 @@
     version = "14.23.5.2860";
     src = fetchurl {
       url = "https://maven.minecraftforge.net/net/minecraftforge/forge/1.12.2-14.23.5.2860/forge-1.12.2-14.23.5.2860-installer.jar";
-      sha256 = "sha256-rn+tQBVCUDUDmu27DE1yxof/v3xffixG5K4ACjMw4OY=";
+      sha256 = "sha256-6nwzupXjmTqY0OnjgWjAdZ7DI6GGdacdk44fP3Dm6Oc=";
     };
   };
   forge-server-40-2-9 = {
@@ -14,39 +14,7 @@
     version = "40.2.9";
     src = fetchurl {
       url = "https://maven.minecraftforge.net/net/minecraftforge/forge/1.18.2-40.2.9/forge-1.18.2-40.2.9-installer.jar";
-      sha256 = "sha256-N/GpCeXZUH3//IIhUgCTCoI+nCcttlQghIXO7sk3rFk=";
-    };
-  };
-  graalvm-ee-17-aarch64-darwin = {
-    pname = "graalvm-ee-17-aarch64-darwin";
-    version = "17.0.10";
-    src = fetchTarball {
-      url = "https://download.oracle.com/graalvm/17/archive/graalvm-jdk-17.0.10_macos-aarch64_bin.tar.gz";
-      sha256 = "sha256-rvkXzbyNicniF0h8n3DLV7BxO7K7Kgr6X2sPsXpKMx8=";
-    };
-  };
-  graalvm-ee-17-aarch64-linux = {
-    pname = "graalvm-ee-17-aarch64-linux";
-    version = "22.3.1";
-    src = fetchTarball {
-      url = "https://oca.opensource.oracle.com/gds/GRAALVM_EE_JAVA17_22_3_1/graalvm-ee-java17-linux-aarch64-22.3.1.tar.gz";
-      sha256 = "sha256-UomOanK5WJmx58OvMCDr5JBPPVrQ3jMyJfQYWD2xeAY=";
-    };
-  };
-  graalvm-ee-17-x86_64-darwin = {
-    pname = "graalvm-ee-17-x86_64-darwin";
-    version = "22.3.1";
-    src = fetchTarball {
-      url = "https://oca.opensource.oracle.com/gds/GRAALVM_EE_JAVA17_22_3_1/graalvm-ee-java17-darwin-amd64-22.3.1.tar.gz";
-      sha256 = "sha256-2s2B6FYO8lvOj9uVl4gTiDcQDix9/KkFGWDeyqcu30c=";
-    };
-  };
-  graalvm-ee-17-x86_64-linux = {
-    pname = "graalvm-ee-17-x86_64-linux";
-    version = "22.3.1";
-    src = fetchTarball {
-      url = "https://oca.opensource.oracle.com/gds/GRAALVM_EE_JAVA17_22_3_1/graalvm-ee-java17-linux-amd64-22.3.1.tar.gz";
-      sha256 = "sha256-M0mQAchpPt09lQvZePyaIQ86Hw1QZvghY7FTEeanRTc=";
+      sha256 = "sha256-UUPQjoHir9F18SF+JkUJKoMMfv4s7gJcLsBaCZTEXl4=";
     };
   };
   knock = {
@@ -83,6 +51,14 @@
     src = fetchurl {
       url = "https://mediafilez.forgecdn.net/files/5015/234/Enigmatica9ExpertServer-1.18.0.zip";
       sha256 = "sha256-yNZb2vRtG7PYJM1HfAfgT6jDXpCe9fJni1axg0Q76Lg=";
+    };
+  };
+  mcs-life-in-the-village-3 = {
+    pname = "mcs-life-in-the-village-3";
+    version = "2.7b";
+    src = fetchurl {
+      url = "https://mediafilez.forgecdn.net/files/5177/639/LITV3-1.19.2-Serverpack-2.7b.zip";
+      sha256 = "sha256-rCQjZY3iWd9iLP02z4QcAKDOJiFTVXbtSTYtCQn+0vM=";
     };
   };
   mcs-sevtech-ages = {

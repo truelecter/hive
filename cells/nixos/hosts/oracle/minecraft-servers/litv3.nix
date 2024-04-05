@@ -4,12 +4,12 @@
   lib,
   ...
 }: {
-  services.minecraft-servers.instances.e9e = {
-    enable = false;
-    serverPackage = pkgs.mcs-enigmatica-9-expert;
+  services.minecraft-servers.instances.litv3 = {
+    enable = true;
+    serverPackage = pkgs.mcs-life-in-the-village-3;
     backup.restic = {
       enable = true;
-      repository = "rclone:mega:/mc-backups/e9e";
+      repository = "rclone:mega:/mc-backups/litv3";
       passwordFile = config.sops.secrets.minecraft-restic-pw-file.path;
       environmentFile = config.sops.secrets.minecraft-restic-env-file.path;
       initialize = true;
@@ -68,7 +68,7 @@
       allow-flight = true;
       online-mode = true;
       difficulty = 3;
-      motd = "\\u00A7d\\u00A7oRealMineCock: Enigmatica 9 Expert\\u00A7r - \\u00A741.18.0";
+      motd = "\\u00A7d\\u00A7oRealMineCock: Life in the village 3\\u00A7r - \\u00A742.7b";
     };
   };
 }
