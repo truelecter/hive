@@ -509,6 +509,27 @@
         "type": "github"
       }
     },
+    "nix-diff": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "utils": "utils"
+      },
+      "locked": {
+        "lastModified": 1709402239,
+        "narHash": "sha256-DKOob/JILXk5Z4ZhyKdoEGzL++RUKNCtK4HuQnb1R9A=",
+        "owner": "Gabriella439",
+        "repo": "nix-diff",
+        "rev": "3cbbc3ab0e85221c76a7d0ee6fd4dfe5f21be2fa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Gabriella439",
+        "repo": "nix-diff",
+        "type": "github"
+      }
+    },
     "nix-filter": {
       "locked": {
         "lastModified": 1710156097,
@@ -921,6 +942,7 @@
         "home-unstable": "home-unstable",
         "k8s": "k8s",
         "latest": "latest",
+        "nix-diff": "nix-diff",
         "nix-filter": "nix-filter",
         "nix-rpi-kernel": "nix-rpi-kernel",
         "nix-vscode-extensions": "nix-vscode-extensions",
@@ -1100,6 +1122,21 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "utils": {
+      "locked": {
+        "lastModified": 1667395993,
+        "narHash": "sha256-nuEHfE/LcWyuSWnS8t12N1wc105Qtau+/OdUAjtQ0rA=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "5aed5285a952e0b949eb3ba02c12fa4fcfef535f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
         "type": "github"
       }
     },

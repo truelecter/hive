@@ -133,7 +133,6 @@ in {
               contexts = [
                 "call-workflow-passing-data / build_system"
                 "build_aarch64"
-                "Build squadbook"
               ];
             };
             enforce_admins = false;

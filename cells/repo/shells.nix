@@ -14,6 +14,7 @@
     statix
     nvfetcher
     act
+    nix-diff
     ;
 
   inherit
@@ -172,6 +173,7 @@ in
         (nixC cachix)
         (nixC nix-index)
         (nixC statix)
+        (nixC nix-diff)
 
         (ci act)
 

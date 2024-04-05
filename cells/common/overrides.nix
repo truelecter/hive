@@ -37,5 +37,6 @@ in {
     ffmpeg_5-full
     ;
 
+  nix-diff = inputs.nix-diff.packages.default;
   nvfetcher = inputs.nvfetcher.packages.default;
 }

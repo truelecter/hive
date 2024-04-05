@@ -125,6 +125,12 @@
         flake-utils.follows = "flake-utils";
       };
     };
+    nix-diff = {
+      url = "github:Gabriella439/nix-diff";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
   };
 
   outputs = {
