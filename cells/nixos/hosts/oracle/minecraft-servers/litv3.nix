@@ -4,6 +4,7 @@
   lib,
   ...
 }: {
+  systemd.services.mc-litv3.serviceConfig.LimitNOFILE = 4096 * 1024;
   services.minecraft-servers.instances.litv3 = {
     enable = true;
     serverPackage = pkgs.mcs-life-in-the-village-3;
@@ -22,9 +23,9 @@
         "--keep-weekly 1"
       ];
     };
-    jvmPackage = pkgs.temurin-bin-17;
-    jvmMaxAllocation = "8G";
-    jvmInitialAllocation = "4G";
+    jvmPackage = pkgs.temurin-bin-21;
+    jvmMaxAllocation = "12G";
+    jvmInitialAllocation = "12G";
     jvmOpts = lib.concatStringsSep " " [
       "-XX:+UnlockExperimentalVMOptions"
       "-XX:+UnlockDiagnosticVMOptions"
@@ -46,10 +47,18 @@
       "-XX:+UseCriticalJavaThreadPriority"
       "-XX:ThreadPriorityPolicy=1"
       "-XX:AllocatePrefetchStyle=3"
+      # GC
       "-XX:+UseZGC"
-      "-XX:AllocatePrefetchStyle=1"
-      "-XX:-ZProactive"
-      "-XX:ConcGCThreads=2"
+      "-XX:+ZGenerational"
+      "-XX:+AlwaysPreTouch"
+      "-XX:+PerfDisableSharedMem"
+      "-XX:-ZUncommit"
+      "-XX:+ParallelRefProcEnabled"
+      "-XX:-OmitStackTraceInFastThrow"
+      "-XX:+UseStringDeduplication"
+      "-XX:+DisableExplicitGC"
+      "-XX:ConcGCThreads=4"
+      "-XX:+UseTransparentHugePages"
     ];
     customization = {
       create = {
