@@ -18,6 +18,7 @@ in {
       forge.dynmap-19-2 = sources.mod-forge-19-2-dynmap.src;
       forge.dynmap-blockscan = sources.mod-forge-19-dynmap-blockscan.src;
       forge.bluemap = sources.mod-forge-19-bluemap.src;
+      forge.corail-tombstone-19-2 = sources.mod-forge-192-corail-tombstone.src;
       sponge.changeskin = sources.mod-sponge-changeskin.src;
       generic.changeskincore = sources.mod-changeskincore.src;
     };

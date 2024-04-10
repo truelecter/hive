@@ -189,7 +189,7 @@ in {
           serverTarget = l.escapeShellArg "${icfg.dirnames.overlayCombined}";
 
           removeCommandsScript = pkgs.writeShellScript "${name}-remove-generator" ''
-            # Try to umount in scae of disaster
+            # Try to umount in case of disaster
             trap "${pkgs.umount}/bin/umount ${rmTarget}" EXIT
 
             # Clear rm state
@@ -201,7 +201,7 @@ in {
             # Remove files
             ${lib.concatMapStrings (path: "\n rm -rf ${l.escapeShellArg "${icfg.dirnames.overlayTargetRemove}/${path}"}") icfg.customization.remove}
 
-            # Relaod main overlay
+            # Reload main overlay
             ${pkgs.mount}/bin/mount -oremount ${serverTarget}
           '';
         in {

@@ -63,3 +63,7 @@ fetch.url = "https://github.com/BlueMap-Minecraft/BlueMap/releases/download/v3.1
 [mcs-life-in-the-village-3]
 src.manual = "2.7b"
 fetch.url = "https://mediafilez.forgecdn.net/files/5177/639/LITV3-1.19.2-Serverpack-2.7b.zip"
+
+[mod-forge-192-corail-tombstone]
+src.manual = "8.2.16"
+fetch.url = "https://mediafilez.forgecdn.net/files/5202/57/tombstone-1.19.2-8.2.16.jar"

@@ -184,6 +184,21 @@
         },
         "version": "3.7-SNAPSHOT"
     },
+    "mod-forge-192-corail-tombstone": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "mod-forge-192-corail-tombstone",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-BvdVa4KAqMDI8SqnnZj14cDF2b7o/rhM6wc+GGuFBI8=",
+            "type": "url",
+            "url": "https://mediafilez.forgecdn.net/files/5202/57/tombstone-1.19.2-8.2.16.jar"
+        },
+        "version": "8.2.16"
+    },
     "mod-forge-spongeforge": {
         "cargoLocks": null,
         "date": null,

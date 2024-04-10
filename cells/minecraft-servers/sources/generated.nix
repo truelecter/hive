@@ -101,6 +101,14 @@
       sha256 = "sha256-QNkIcV7DztQcvYvAabUh0X+N3vEJiRvMqJomvRt03LU=";
     };
   };
+  mod-forge-192-corail-tombstone = {
+    pname = "mod-forge-192-corail-tombstone";
+    version = "8.2.16";
+    src = fetchurl {
+      url = "https://mediafilez.forgecdn.net/files/5202/57/tombstone-1.19.2-8.2.16.jar";
+      sha256 = "sha256-BvdVa4KAqMDI8SqnnZj14cDF2b7o/rhM6wc+GGuFBI8=";
+    };
+  };
   mod-forge-spongeforge = {
     pname = "mod-forge-spongeforge";
     version = "1.12.2-2838-7.4.7";

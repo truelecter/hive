@@ -4,7 +4,8 @@
   lib,
   ...
 }: {
-  systemd.services.mc-litv3.serviceConfig.LimitNOFILE = 4096 * 1024;
+  systemd.services.mc-litv3.serviceConfig.LimitNOFILE = 20 * 1024;
+
   services.minecraft-servers.instances.litv3 = {
     enable = true;
     serverPackage = pkgs.mcs-life-in-the-village-3;
@@ -63,6 +64,7 @@
     customization = {
       create = {
         "mods/bluemap.jar".source = pkgs.minecraft-mods.forge.bluemap;
+        "mods/tombstone-1.19.2-8.2.16.jar".source = pkgs.minecraft-mods.forge.corail-tombstone-19-2;
         "config/bluemap/core.conf".text = ''
           accept-download: true
           data: "bluemap"
@@ -71,6 +73,9 @@
           metrics: true
         '';
       };
+      remove = [
+        "mods/tombstone-1.19.2-8.2.15.jar"
+      ];
     };
     serverProperties = {
       max-tick-time = 600000;
