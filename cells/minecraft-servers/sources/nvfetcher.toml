@@ -67,3 +67,15 @@ fetch.url = "https://mediafilez.forgecdn.net/files/5177/639/LITV3-1.19.2-Serverp
 [mod-forge-192-corail-tombstone]
 src.manual = "8.2.16"
 fetch.url = "https://mediafilez.forgecdn.net/files/5202/57/tombstone-1.19.2-8.2.16.jar"
+
+[mod-forge-192-carryon]
+src.manual = "2.1.2.23"
+fetch.url = "https://mediafilez.forgecdn.net/files/5141/759/carryon-forge-1.19.2-2.1.2.23.jar"
+
+[mod-forge-192-passablefolliage]
+src.manual = "5.2.1"
+fetch.url = "https://mediafilez.forgecdn.net/files/4542/72/PassableFoliage-1.19.1-forge-5.2.1.jar"
+
+[mod-forge-192-kiwi]
+src.manual = "8.3.6"
+fetch.url = "https://mediafilez.forgecdn.net/files/5063/293/Kiwi-1.19.2-forge-8.3.6.jar"

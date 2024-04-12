@@ -101,12 +101,36 @@
       sha256 = "sha256-QNkIcV7DztQcvYvAabUh0X+N3vEJiRvMqJomvRt03LU=";
     };
   };
+  mod-forge-192-carryon = {
+    pname = "mod-forge-192-carryon";
+    version = "2.1.2.23";
+    src = fetchurl {
+      url = "https://mediafilez.forgecdn.net/files/5141/759/carryon-forge-1.19.2-2.1.2.23.jar";
+      sha256 = "sha256-Webhy6ffb1SAdF6KRKVOKwdkXAUCXWc83BrzK6CKXQM=";
+    };
+  };
   mod-forge-192-corail-tombstone = {
     pname = "mod-forge-192-corail-tombstone";
     version = "8.2.16";
     src = fetchurl {
       url = "https://mediafilez.forgecdn.net/files/5202/57/tombstone-1.19.2-8.2.16.jar";
       sha256 = "sha256-BvdVa4KAqMDI8SqnnZj14cDF2b7o/rhM6wc+GGuFBI8=";
+    };
+  };
+  mod-forge-192-kiwi = {
+    pname = "mod-forge-192-kiwi";
+    version = "8.3.6";
+    src = fetchurl {
+      url = "https://mediafilez.forgecdn.net/files/5063/293/Kiwi-1.19.2-forge-8.3.6.jar";
+      sha256 = "sha256-dmcXgFHhNkSig4F+OlAXCKZxbf+iVac7t0JMPlK55Es=";
+    };
+  };
+  mod-forge-192-passablefolliage = {
+    pname = "mod-forge-192-passablefolliage";
+    version = "5.2.1";
+    src = fetchurl {
+      url = "https://mediafilez.forgecdn.net/files/4542/72/PassableFoliage-1.19.1-forge-5.2.1.jar";
+      sha256 = "sha256-jjCXKTEV+HFo6yJ9840auq9i2R9ONSuGyLSwmmaSDNY=";
     };
   };
   mod-forge-spongeforge = {

@@ -184,6 +184,21 @@
         },
         "version": "3.7-SNAPSHOT"
     },
+    "mod-forge-192-carryon": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "mod-forge-192-carryon",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-Webhy6ffb1SAdF6KRKVOKwdkXAUCXWc83BrzK6CKXQM=",
+            "type": "url",
+            "url": "https://mediafilez.forgecdn.net/files/5141/759/carryon-forge-1.19.2-2.1.2.23.jar"
+        },
+        "version": "2.1.2.23"
+    },
     "mod-forge-192-corail-tombstone": {
         "cargoLocks": null,
         "date": null,
@@ -198,6 +213,36 @@
             "url": "https://mediafilez.forgecdn.net/files/5202/57/tombstone-1.19.2-8.2.16.jar"
         },
         "version": "8.2.16"
+    },
+    "mod-forge-192-kiwi": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "mod-forge-192-kiwi",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-dmcXgFHhNkSig4F+OlAXCKZxbf+iVac7t0JMPlK55Es=",
+            "type": "url",
+            "url": "https://mediafilez.forgecdn.net/files/5063/293/Kiwi-1.19.2-forge-8.3.6.jar"
+        },
+        "version": "8.3.6"
+    },
+    "mod-forge-192-passablefolliage": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "mod-forge-192-passablefolliage",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-jjCXKTEV+HFo6yJ9840auq9i2R9ONSuGyLSwmmaSDNY=",
+            "type": "url",
+            "url": "https://mediafilez.forgecdn.net/files/4542/72/PassableFoliage-1.19.1-forge-5.2.1.jar"
+        },
+        "version": "5.2.1"
     },
     "mod-forge-spongeforge": {
         "cargoLocks": null,
