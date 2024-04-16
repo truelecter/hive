@@ -79,6 +79,11 @@
     };
   };
 
+  systemd.extraConfig = ''
+    DefaultLimitNOFILE = 102400
+    DefaultLimitNOFILESoft = 102400
+  '';
+
   networking.firewall.allowedTCPPorts = [
     80
     443

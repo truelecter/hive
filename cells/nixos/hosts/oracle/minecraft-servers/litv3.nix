@@ -4,8 +4,6 @@
   lib,
   ...
 }: {
-  systemd.services.mc-litv3.serviceConfig.LimitNOFILE = 20 * 1024;
-
   services.minecraft-servers.instances.litv3 = {
     enable = true;
     serverPackage = pkgs.mcs-life-in-the-village-3;
