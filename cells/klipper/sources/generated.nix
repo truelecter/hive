@@ -26,15 +26,15 @@
   };
   klipper = {
     pname = "klipper";
-    version = "01c7befacb5b71643130433f2afb3f22ece68d71";
+    version = "36f9b26ef9ca7ff7d3c4887b7b1c3534252f5ea4";
     src = fetchFromGitHub {
       owner = "Klipper3d";
       repo = "klipper";
-      rev = "01c7befacb5b71643130433f2afb3f22ece68d71";
+      rev = "36f9b26ef9ca7ff7d3c4887b7b1c3534252f5ea4";
       fetchSubmodules = false;
-      sha256 = "sha256-zFGFhO5EYyJ0qwQN+NOaKDlEu2LIbc9JAJVxFbMDJOU=";
+      sha256 = "sha256-0wfkYswP/89YpW4YqkGAJAneYWp7XpGwCUUKaytDuM8=";
     };
-    date = "2024-04-05";
+    date = "2024-04-12";
   };
   klipper-ercf = {
     pname = "klipper-ercf";
@@ -62,15 +62,15 @@
   };
   klipper-happy-hare = {
     pname = "klipper-happy-hare";
-    version = "f4673ecb76f9163665f0207cfab31c8d24cff19c";
+    version = "a79354d8e6787ed82c13dd9016470ed1e92ffc24";
     src = fetchFromGitHub {
       owner = "moggieuk";
       repo = "Happy-Hare";
-      rev = "f4673ecb76f9163665f0207cfab31c8d24cff19c";
+      rev = "a79354d8e6787ed82c13dd9016470ed1e92ffc24";
       fetchSubmodules = false;
-      sha256 = "sha256-cDspY2O+RlyqJ38gEv7344ymlftfxRJTUFjDF3MU6yM=";
+      sha256 = "sha256-5DOAFRvvj7SMVkOwvlzJ4n1nAmV/0/1HILt9Zbi+qc0=";
     };
-    date = "2024-04-06";
+    date = "2024-04-10";
   };
   klipper-kamp = {
     pname = "klipper-kamp";
@@ -121,15 +121,15 @@
   };
   klipper-screen = {
     pname = "klipper-screen";
-    version = "eb1de5d429ae372c8f2fa2892a4657353a427533";
+    version = "0add3823bdc0f684122fe03b958c4c91ec2251dc";
     src = fetchFromGitHub {
       owner = "jordanruthe";
       repo = "KlipperScreen";
-      rev = "eb1de5d429ae372c8f2fa2892a4657353a427533";
+      rev = "0add3823bdc0f684122fe03b958c4c91ec2251dc";
       fetchSubmodules = false;
-      sha256 = "sha256-crul+4oGOjIVMXjKbhFUxNwcuL+TcSxpOH8qgsRczG4=";
+      sha256 = "sha256-Wpfsj1Au3Wzpj/f/3Sq1haSrZJepnVeF8qW2VAUDAz0=";
     };
-    date = "2024-04-05";
+    date = "2024-04-09";
   };
   klipper-z-calibration = {
     pname = "klipper-z-calibration";
