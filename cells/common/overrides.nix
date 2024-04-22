@@ -31,12 +31,13 @@ in {
     amazon-ecr-credential-helper
     dive
     act
+    nix-diff
     #
     
     tailscale
     ffmpeg_5-full
     ;
 
-  nix-diff = inputs.nix-diff.packages.default;
+  # nix-diff = inputs.nix-diff.packages.default;
   nvfetcher = inputs.nvfetcher.packages.default;
 }

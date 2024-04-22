@@ -509,28 +509,6 @@
         "type": "github"
       }
     },
-    "nix-diff": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "nixpkgs-golden": "nixpkgs-golden",
-        "utils": "utils"
-      },
-      "locked": {
-        "lastModified": 1713149218,
-        "narHash": "sha256-36eiphOwAivbfCHKgfUTu7SKpeXii4/2DgAhAG1ifxQ=",
-        "owner": "Gabriella439",
-        "repo": "nix-diff",
-        "rev": "f31e0c1b5cc21b21e266d823ddca4ab2bce15967",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Gabriella439",
-        "repo": "nix-diff",
-        "type": "github"
-      }
-    },
     "nix-filter": {
       "locked": {
         "lastModified": 1710156097,
@@ -842,22 +820,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-golden": {
-      "locked": {
-        "lastModified": 1668266328,
-        "narHash": "sha256-+nAW+XR8nswyEnt5IkQlkrz9erTcQWBVLkhtNHxckFw=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "5ca8e2e9e1fa5e66a749b39261ad6bd0e07bc87f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "5ca8e2e9e1fa5e66a749b39261ad6bd0e07bc87f",
-        "type": "github"
-      }
-    },
     "nosys": {
       "locked": {
         "lastModified": 1668010795,
@@ -959,7 +921,6 @@
         "home-unstable": "home-unstable",
         "k8s": "k8s",
         "latest": "latest",
-        "nix-diff": "nix-diff",
         "nix-filter": "nix-filter",
         "nix-rpi-kernel": "nix-rpi-kernel",
         "nix-vscode-extensions": "nix-vscode-extensions",
@@ -1139,21 +1100,6 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
-        "type": "github"
-      }
-    },
-    "utils": {
-      "locked": {
-        "lastModified": 1667395993,
-        "narHash": "sha256-nuEHfE/LcWyuSWnS8t12N1wc105Qtau+/OdUAjtQ0rA=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "5aed5285a952e0b949eb3ba02c12fa4fcfef535f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
         "type": "github"
       }
     },
