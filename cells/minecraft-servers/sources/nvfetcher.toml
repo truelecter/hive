@@ -79,3 +79,11 @@ fetch.url = "https://mediafilez.forgecdn.net/files/4542/72/PassableFoliage-1.19.
 [mod-forge-192-kiwi]
 src.manual = "8.3.6"
 fetch.url = "https://mediafilez.forgecdn.net/files/5063/293/Kiwi-1.19.2-forge-8.3.6.jar"
+
+[mod-forge-192-ftb-chunks]
+src.manual = "1902.4.4"
+fetch.url = "https://mediafilez.forgecdn.net/files/5001/266/ftb-chunks-forge-1902.4.4-build.326.jar"
+
+[mod-forge-192-ftb-xmod-compat]
+src.manual = "1.2.3"
+fetch.url = "https://mediafilez.forgecdn.net/files/4857/341/ftb-xmod-compat-forge-1.2.3.jar"

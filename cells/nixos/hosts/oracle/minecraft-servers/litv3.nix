@@ -63,8 +63,10 @@
       create = {
         "mods/carryon-forge-1.19.2-2.1.2.23.jar".source = pkgs.minecraft-mods.forge.carryon-19-2;
         "mods/tombstone-1.19.2-8.2.16.jar".source = pkgs.minecraft-mods.forge.corail-tombstone-19-2;
-        "mods/passablefolliage.jar".source = pkgs.minecraft-mods.forge.passablefolliage-19-2;
-        "mods/kiwi.jar".source = pkgs.minecraft-mods.forge.kiwi-19-2;
+        # "mods/passablefolliage.jar".source = pkgs.minecraft-mods.forge.passablefolliage-19-2;
+        "mods/ftb-chunks.jar".source = pkgs.minecraft-mods.forge.kiwi-19-2;
+        "mods/ftb-xmod-compat.jar".source = pkgs.minecraft-mods.forge.ftb-chunks-19-2;
+        "mods/kiwi.jar".source = pkgs.minecraft-mods.forge.ftb-xmod-compat-19-2;
         "mods/bluemap.jar".source = pkgs.minecraft-mods.forge.bluemap;
         "config/bluemap/core.conf".text = ''
           accept-download: true

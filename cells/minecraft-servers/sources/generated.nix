@@ -117,6 +117,22 @@
       sha256 = "sha256-BvdVa4KAqMDI8SqnnZj14cDF2b7o/rhM6wc+GGuFBI8=";
     };
   };
+  mod-forge-192-ftb-chunks = {
+    pname = "mod-forge-192-ftb-chunks";
+    version = "1902.4.4";
+    src = fetchurl {
+      url = "https://mediafilez.forgecdn.net/files/5001/266/ftb-chunks-forge-1902.4.4-build.326.jar";
+      sha256 = "sha256-3HFeGoU6der00TZr0e7zLxVk9Lqg83xjC4Ms4Hu1fnY=";
+    };
+  };
+  mod-forge-192-ftb-xmod-compat = {
+    pname = "mod-forge-192-ftb-xmod-compat";
+    version = "1.2.3";
+    src = fetchurl {
+      url = "https://mediafilez.forgecdn.net/files/4857/341/ftb-xmod-compat-forge-1.2.3.jar";
+      sha256 = "sha256-1Wref9pIs2bONDUe84tmc+UyXEObqTH5ZqFTACM9TWg=";
+    };
+  };
   mod-forge-192-kiwi = {
     pname = "mod-forge-192-kiwi";
     version = "8.3.6";

@@ -22,6 +22,8 @@ in {
       forge.carryon-19-2 = sources.mod-forge-192-carryon.src;
       forge.passablefolliage-19-2 = sources.mod-forge-192-passablefolliage.src;
       forge.kiwi-19-2 = sources.mod-forge-192-kiwi.src;
+      forge.ftb-chunks-19-2 = sources.mod-forge-192-ftb-chunks.src;
+      forge.ftb-xmod-compat-19-2 = sources.mod-forge-192-ftb-xmod-compat.src;
       sponge.changeskin = sources.mod-sponge-changeskin.src;
       generic.changeskincore = sources.mod-changeskincore.src;
     };
