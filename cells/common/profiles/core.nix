@@ -23,6 +23,7 @@
       gnused
       nix-tree
       findutils
+      csvlens
     ];
 
     shellAliases = {

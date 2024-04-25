@@ -32,6 +32,7 @@ in {
     dive
     act
     nix-diff
+    csvlens
     #
     
     tailscale
