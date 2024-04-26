@@ -1,4 +1,8 @@
-{inputs, ...}: {
+{
+  inputs,
+  cell,
+  ...
+}: {
   self,
   config,
   lib,
@@ -7,24 +11,31 @@
 }: {
   environment = {
     # Selection of sysadmin tools that can come in handy
-    systemPackages = with pkgs; [
-      coreutils
-      curl
-      direnv
-      delta
-      bat
-      git
-      bottom
-      jq
-      tmux
-      zsh
-      vim
-      file
-      gnused
-      nix-tree
-      findutils
-      csvlens
-    ];
+    systemPackages =
+      (
+        with pkgs; [
+          coreutils
+          curl
+          direnv
+          delta
+          bat
+          git
+          bottom
+          jq
+          tmux
+          zsh
+          vim
+          file
+          gnused
+          nix-tree
+          findutils
+        ]
+      )
+      ++ (
+        with cell.overrides; [
+          csvlens
+        ]
+      );
 
     shellAliases = {
       # quick cd
