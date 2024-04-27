@@ -37,6 +37,8 @@ in {
       ms-vscode-remote.remote-ssh
       ms-vscode-remote.remote-ssh-edit
       mkhl.direnv
+      systemticks.c4-dsl-extension
+      likec4.likec4-vscode
     ];
     userSettings = builtins.fromJSON (builtins.readFile ./_files/vscode-settings.json);
   };
