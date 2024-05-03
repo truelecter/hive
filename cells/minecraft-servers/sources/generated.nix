@@ -55,10 +55,10 @@
   };
   mcs-life-in-the-village-3 = {
     pname = "mcs-life-in-the-village-3";
-    version = "2.7b";
+    version = "2.8";
     src = fetchurl {
-      url = "https://mediafilez.forgecdn.net/files/5177/639/LITV3-1.19.2-Serverpack-2.7b.zip";
-      sha256 = "sha256-rCQjZY3iWd9iLP02z4QcAKDOJiFTVXbtSTYtCQn+0vM=";
+      url = "https://mediafilez.forgecdn.net/files/5290/323/LITV3-1.19.2-Serverpack-2.8.zip";
+      sha256 = "sha256-RvfEyNzvv+qKxM8FhgujP3jHfrN5Udb+cIJJLlshjRQ=";
     };
   };
   mcs-sevtech-ages = {

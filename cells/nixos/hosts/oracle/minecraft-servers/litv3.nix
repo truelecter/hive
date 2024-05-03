@@ -80,12 +80,14 @@
         "mods/tombstone-1.19.2-8.2.15.jar"
       ];
     };
-    serverProperties = {
+    serverProperties = let
+      version = pkgs.mcs-life-in-the-village-3.version;
+    in {
       max-tick-time = 600000;
       allow-flight = true;
       online-mode = true;
       difficulty = 3;
-      motd = "\\u00A7d\\u00A7oRealMineCock: Life in the village 3\\u00A7r - \\u00A742.7b";
+      motd = "\\u00A7d\\u00A7oRealMineCock: Life in the village 3\\u00A7r - \\u00A74${version}";
     };
   };
 }
