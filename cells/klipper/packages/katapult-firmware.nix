@@ -51,9 +51,9 @@ in
     installPhase = ''
       mkdir -p $out
       cp ./.config $out/config
-      ls -la out/
       cp out/katapult.bin $out/ || true
       cp out/deployer.bin $out/ || true
+      cp out/katapult.uf2 $out/ || true
     '';
 
     strictDeps = true;

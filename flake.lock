@@ -934,11 +934,28 @@
           "nixos"
         ],
         "nvfetcher": "nvfetcher",
+        "rpi-4-kernel": "rpi-4-kernel",
         "sops-nix": "sops-nix",
         "std": [
           "hive",
           "std"
         ]
+      }
+    },
+    "rpi-4-kernel": {
+      "locked": {
+        "lastModified": 1714096167,
+        "narHash": "sha256-O0+cYJ+D995LRMXCqaT0gEE/U2XerRz3VJWDNRv+ysY=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "c95a445e66cffd32c02548891ad368206d0bd30c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "refs/pull/292880/merge",
+        "repo": "nixpkgs",
+        "type": "github"
       }
     },
     "sops-nix": {

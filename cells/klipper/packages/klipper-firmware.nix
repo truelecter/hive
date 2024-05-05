@@ -50,7 +50,9 @@ stdenv.mkDerivation rec {
   installPhase = ''
     mkdir -p $out
     cp ./.config $out/config
+    ls -la out/
     cp out/klipper.bin $out/ || true
+    cp out/klipper.uf2 $out/ || true
   '';
 
   strictDeps = true;

@@ -1,8 +1,15 @@
 {
   lib,
   pkgs,
+  modulesPath,
   ...
 }: {
+  imports = [
+    "${modulesPath}/installer/sd-card/sd-image-aarch64-installer.nix"
+  ];
+
+  sdImage.compressImage = false;
+
   boot = {
     kernelPackages = pkgs.linuxPackages_rpi4;
     loader = {
