@@ -2,10 +2,10 @@
   inputs,
   cell,
 }: let
-  inherit (inputs) latest;
+  inherit (inputs) nixos;
   inherit (inputs.cells) common;
 
-  nixpkgs = import latest {inherit (inputs.nixpkgs) system;};
+  nixpkgs = import nixos {inherit (inputs.nixpkgs) system;};
   sources = nixpkgs.callPackage ./sources/generated.nix {};
 
   l = builtins // nixpkgs.lib;
