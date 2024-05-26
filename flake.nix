@@ -83,7 +83,7 @@
   inputs = {
     latest.url = "github:nixos/nixpkgs/nixos-unstable";
     k8s.url = "github:nixos/nixpkgs/3005f20ce0aaa58169cdee57c8aa12e5f1b6e1b3";
-    nixos.url = "github:nixos/nixpkgs/release-23.11";
+    nixos.url = "github:nixos/nixpkgs/release-24.05";
     nixpkgs.follows = "nixos";
 
     darwin = {
@@ -92,7 +92,7 @@
     };
 
     home = {
-      url = "github:nix-community/home-manager/release-23.11";
+      url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixos";
     };
 
