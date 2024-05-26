@@ -39,4 +39,7 @@ in
     klipper-full-plugins = packages.klipper.override {
       plugins = l.attrValues (l.filterAttrs (n: _: !builtins.elem n excluded-plugins-from-full) klipper-plugins);
     };
+    danger-klipper-full-plugins = packages.danger-klipper.override {
+      plugins = l.attrValues (l.filterAttrs (n: _: !builtins.elem n excluded-plugins-from-full) klipper-plugins);
+    };
   }

@@ -6,6 +6,10 @@ fetch.github = "Arksine/moonraker"
 src.git = "https://github.com/Klipper3d/klipper"
 fetch.github = "Klipper3d/klipper"
 
+[danger-klipper]
+src.git = "https://github.com/DangerKlippers/danger-klipper"
+fetch.github = "DangerKlippers/danger-klipper"
+
 [katapult]
 src.git = "https://github.com/Arksine/katapult"
 fetch.github = "Arksine/katapult"

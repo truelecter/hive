@@ -52,7 +52,7 @@ in {
   tl.services.klipper = {
     enable = true;
 
-    package = pkgs.klipper-full-plugins;
+    package = pkgs.danger-klipper-full-plugins;
     extraConfigurationPackages = [
       pkgs.kamp
     ];

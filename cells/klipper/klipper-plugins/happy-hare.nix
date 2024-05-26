@@ -15,7 +15,7 @@ stdenvNoCC.mkDerivation rec {
 
   installPhase = ''
     mkdir -p $out/lib/
-    cp -r ./doc ./extras ./config $out/lib
+    cp -r ./extras ./config $out/lib
   '';
 
   passthru.klipper = {
