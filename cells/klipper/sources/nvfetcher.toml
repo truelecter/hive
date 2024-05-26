@@ -80,3 +80,7 @@ fetch.github = "dw-0/kiauh"
 [klipper-klippain-shaketune]
 src.git = "https://github.com/Frix-x/klippain-shaketune"
 fetch.github = "Frix-x/klippain-shaketune"
+
+[klipper_tmc_autotune]
+src.git = "https://github.com/andrewmcgr/klipper_tmc_autotune"
+fetch.github = "andrewmcgr/klipper_tmc_autotune"

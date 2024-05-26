@@ -17,7 +17,6 @@ stdenvNoCC.mkDerivation {
     mkdir -p $out/lib/
 
     cp -r ./K-ShakeTune $out/lib/config
-    chmod +x $out/lib/config/scripts/*.py
   '';
 
   passthru.klipper = {
