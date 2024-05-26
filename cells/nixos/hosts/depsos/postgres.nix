@@ -19,28 +19,28 @@
     ensureUsers = [
       {
         name = "pandora";
-        ensurePermissions = {
-          "DATABASE cqdata" = "ALL PRIVILEGES";
-        };
+        # ensurePermissions = {
+        #   "DATABASE cqdata" = "ALL PRIVILEGES";
+        # };
       }
       {
         name = "authentik";
-        ensurePermissions = {
-          "DATABASE authentik" = "ALL PRIVILEGES";
-        };
+        # ensurePermissions = {
+        #   "DATABASE authentik" = "ALL PRIVILEGES";
+        # };
       }
       {
         name = "truelecter";
-        ensurePermissions = {
-          "ALL TABLES IN SCHEMA public" = "ALL PRIVILEGES";
-          "DATABASE cqdata" = "ALL PRIVILEGES";
-        };
+        # ensurePermissions = {
+        #   "ALL TABLES IN SCHEMA public" = "ALL PRIVILEGES";
+        #   "DATABASE cqdata" = "ALL PRIVILEGES";
+        # };
       }
       {
         name = "superuser";
-        ensurePermissions = {
-          "ALL TABLES IN SCHEMA public" = "ALL PRIVILEGES";
-        };
+        # ensurePermissions = {
+        #   "ALL TABLES IN SCHEMA public" = "ALL PRIVILEGES";
+        # };
       }
     ];
     authentication = pkgs.lib.mkOverride 10 ''

@@ -1,12 +1,16 @@
 {
   inputs,
   common,
-}: {lib, ...}: {
+}: {
+  lib,
+  pkgs,
+  ...
+}: {
   boot = {
     kernelParams = ["nohibernate"];
     zfs = {
-      enableUnstable = false;
       forceImportRoot = false;
+      package = pkgs.zfs_unstable;
     };
     supportedFilesystems = ["zfs"];
   };
