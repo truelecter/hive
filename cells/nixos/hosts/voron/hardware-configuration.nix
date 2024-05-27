@@ -73,13 +73,13 @@
     i2c-tools
   ];
 
-  environment.etc."u-boot-cm4".source = pkgs.ubootRaspberryPi4_64bit.override {
-    extraConfig = ''
-      CONFIG_USB_STORAGE=y
-      CONFIG_USB_XHCI_BRCM=y
-    '';
-    extraPatches = [
-      ./patches/xhci-uboot.patch
-    ];
-  };
+  # environment.etc."u-boot-cm4".source = pkgs.ubootRaspberryPi4_64bit.override {
+  #   extraConfig = ''
+  #     CONFIG_USB_STORAGE=y
+  #     CONFIG_USB_XHCI_BRCM=y
+  #   '';
+  #   extraPatches = [
+  #     ./patches/xhci-uboot.patch
+  #   ];
+  # };
 }

@@ -16,6 +16,7 @@
       exclude = [
         "dumps"
         "logs"
+        "bluemap"
       ];
       pruneOpts = [
         "--keep-daily 3"

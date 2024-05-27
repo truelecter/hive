@@ -32,7 +32,7 @@ stdenv.mkDerivation rec {
     avrdude
     stm32flash
     pkg-config
-    wxGTK32 # Required for bossac
+    # wxGTK32 # Required for bossac
   ];
 
   preBuild = "cp ${firmwareConfig} ./.config";

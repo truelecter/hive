@@ -16,6 +16,7 @@
     "user"
     "paths"
     "environmentFile"
+    "runCheck"
   ];
 in {
   options =

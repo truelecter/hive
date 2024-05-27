@@ -26,15 +26,28 @@ in
       zip
     ];
 
+    dontNpmBuild = true;
+
+    buildPhase = ''
+      runHook preBuild
+
+      npx vite build
+
+      runHook postBuild
+    '';
+
     prePatch = ''
       export CYPRESS_INSTALL_BINARY=0
       export CYPRESS_RUN_BINARY=${cypress}/bin/Cypress
     '';
 
     installPhase = ''
+      runHook preInstall
+
       mkdir -p $out/share
-      rm dist/mainsail.zip
       cp -r dist $out/share/mainsail
+
+      runHook postInstall
     '';
 
     passthru.npmDepsHash = mkNpmDepsHashCalculator sources.mainsail.src;

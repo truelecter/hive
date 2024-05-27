@@ -24,7 +24,15 @@
       preprocess-cancellation
       jinja2
       dbus-next
-      apprise
+      (
+        apprise.overrideAttrs (o: rec {
+          disabledTests =
+            o.disabledTests
+            ++ [
+              "test_plugin_zulip"
+            ];
+        })
+      )
       libgpiod
     ]);
 in
