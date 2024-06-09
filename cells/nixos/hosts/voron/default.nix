@@ -19,9 +19,10 @@ in {
     inputs.nixos-hardware.nixosModules.raspberry-pi-4
 
     ./hardware-configuration.nix
-    ./wifi.nix
+    # ./wifi.nix
     ./camera.nix
     ./klipper
+    ./bluetooth.nix
   ];
 
   bee.system = system;
@@ -40,8 +41,6 @@ in {
               applyOverlays = final.callPackage ./dtmerge.nix {};
             };
           makeModulesClosure = x: prev.makeModulesClosure (x // {allowMissing = true;});
-
-          # inherit (inputs.nix-rpi-kernel.packages) linuxRpi4Packages raspberrypiWirelessFirmware raspberrypifw;
         }
       )
     ];

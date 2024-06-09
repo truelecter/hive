@@ -219,6 +219,26 @@
         },
         "version": "28a3c25220deba27b35b15e96d4dae3b761cdec1"
     },
+    "klipper-nevermore-controller": {
+        "cargoLocks": null,
+        "date": "2024-05-27",
+        "extract": null,
+        "name": "klipper-nevermore-controller",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "SanaaHamel",
+            "repo": "nevermore-controller",
+            "rev": "14e308ff315029c2be0de498676fd23bae25ed98",
+            "sha256": "sha256-m9tSDKoU+w0+OESc2STiwa8vg9aKfxEvxnpqZjRDO5I=",
+            "type": "github"
+        },
+        "version": "14e308ff315029c2be0de498676fd23bae25ed98"
+    },
     "klipper-screen": {
         "cargoLocks": null,
         "date": "2024-06-07",

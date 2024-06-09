@@ -4,11 +4,11 @@
   modulesPath,
   ...
 }: {
-  imports = [
-    "${modulesPath}/installer/sd-card/sd-image-aarch64-installer.nix"
-  ];
-
-  sdImage.compressImage = false;
+  # Breaks bluetooth
+  # imports = [
+  #   "${modulesPath}/installer/sd-card/sd-image-aarch64-installer.nix"
+  # ];
+  # sdImage.compressImage = false;
 
   boot = {
     kernelPackages = pkgs.linuxPackages_rpi4;
@@ -40,7 +40,7 @@
       "reset-raspberrypi" # required for vl805 firmware to load
     ];
     kernelParams = [
-      "console=ttyS0,115200n8"
+      "console=ttyS0,115200"
       "console=tty1"
       "video=DSI-1:800x480@60"
     ];
@@ -61,25 +61,13 @@
   powerManagement.cpuFreqGovernor = "powersave";
 
   hardware = {
-    # enableRedistributableFirmware = true;
-
     deviceTree.filter = "bcm2711-rpi-cm4.dtb";
 
     raspberry-pi."4".xhci.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
-    dtc
-    i2c-tools
+    bluez
+    bluez-tools
   ];
-
-  # environment.etc."u-boot-cm4".source = pkgs.ubootRaspberryPi4_64bit.override {
-  #   extraConfig = ''
-  #     CONFIG_USB_STORAGE=y
-  #     CONFIG_USB_XHCI_BRCM=y
-  #   '';
-  #   extraPatches = [
-  #     ./patches/xhci-uboot.patch
-  #   ];
-  # };
 }

@@ -51,16 +51,6 @@
         method = "printer.gcode.script";
         params = ''{"script":"LED_PROFILE_APPLY PROFILE=toolhead"}'';
       };
-
-      "menu __main NozzleCam" = {
-        name = "Nozzle camera";
-        icon = "extruder";
-        panel = "camera_cfg";
-      };
-
-      "include nozzle_cam" = {
-        url = "http://127.0.0.1/camera/nozzle/stream";
-      };
     };
   };
 
@@ -71,7 +61,7 @@
         dtboFile = "${pkgs.device-tree_rpi.overlays}/${name}.dtbo";
       };
     in [
-      (overlay "disable-bt")
+      # (overlay "disable-bt")
       (overlay "vc4-kms-v3d-pi4")
       (overlay "vc4-kms-dsi-7inch")
       (overlay "rpi-ft5406")

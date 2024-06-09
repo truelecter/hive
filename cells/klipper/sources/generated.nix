@@ -131,6 +131,18 @@
     };
     date = "2024-05-27";
   };
+  klipper-nevermore-controller = {
+    pname = "klipper-nevermore-controller";
+    version = "14e308ff315029c2be0de498676fd23bae25ed98";
+    src = fetchFromGitHub {
+      owner = "SanaaHamel";
+      repo = "nevermore-controller";
+      rev = "14e308ff315029c2be0de498676fd23bae25ed98";
+      fetchSubmodules = false;
+      sha256 = "sha256-m9tSDKoU+w0+OESc2STiwa8vg9aKfxEvxnpqZjRDO5I=";
+    };
+    date = "2024-05-27";
+  };
   klipper-screen = {
     pname = "klipper-screen";
     version = "55526347a03125429e274ceed2811f0150ed6e57";

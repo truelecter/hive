@@ -7,15 +7,18 @@
   plugins ? [],
   ...
 }: let
-  pluginDependencies = lib.unique (
-    lib.flatten (
-      builtins.map (p:
-        if p ? pythonDependencies
-        then p.pythonDependencies
-        else [])
-      plugins
-    )
-  );
+  pluginDependencies = pythonPackages:
+    lib.unique (
+      lib.flatten (
+        builtins.map (
+          plugin:
+            if plugin.passthru ? pythonDependencies
+            then (plugin.passthru.pythonDependencies pythonPackages)
+            else []
+        )
+        plugins
+      )
+    );
 in
   stdenv.mkDerivation rec {
     inherit (sources.klipper) pname version src;
@@ -28,7 +31,7 @@ in
       makeWrapper
     ];
 
-    buildInputs = [(python3.withPackages (p: with p; [can cffi pyserial greenlet jinja2 markupsafe numpy setuptools] ++ pluginDependencies))];
+    buildInputs = [(python3.withPackages (p: with p; [can cffi pyserial greenlet jinja2 markupsafe numpy setuptools] ++ (pluginDependencies p)))];
 
     # we need to run this to prebuild the chelper.
     postBuild = ''
