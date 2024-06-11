@@ -5,7 +5,7 @@
   ...
 }: {
   services.minecraft-servers.instances.litv3 = {
-    enable = true;
+    enable = false;
     serverPackage = pkgs.mcs-life-in-the-village-3;
     backup.restic = {
       enable = true;

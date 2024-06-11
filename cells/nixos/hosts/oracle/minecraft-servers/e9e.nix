@@ -5,7 +5,7 @@
   ...
 }: {
   services.minecraft-servers.instances.e9e = {
-    enable = false;
+    enable = true;
     serverPackage = pkgs.mcs-enigmatica-9-expert;
     backup.restic = {
       enable = true;
@@ -16,6 +16,8 @@
       exclude = [
         "dumps"
         "logs"
+        "backups"
+        "dynmap"
       ];
       pruneOpts = [
         "--keep-daily 3"

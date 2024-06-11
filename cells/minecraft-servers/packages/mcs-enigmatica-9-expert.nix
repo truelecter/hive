@@ -41,7 +41,7 @@ in
 
     outputHashMode = "recursive";
     outputHashAlgo = "sha256";
-    outputHash = "sha256-Ji3vzb1cBRmCzxTLkSuy1Hefi0XHANs5r62ReyNMjvE=";
+    outputHash = "sha256-inctI6SU2PgNiTcwUUIw6J2CIqyfbIXAsqDL0KDmus8=";
 
     meta = with lib; {
       description = "Enigmatica 9 Expert is a quest-guided progression modpack for Minecraft 1.19.2";
