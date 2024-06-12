@@ -31,6 +31,13 @@ in {
         description = l.mdDoc "The Klipper package.";
       };
 
+      firmware-package = mkOption {
+        type = types.package;
+        default = pkgs.klipper-firmware;
+        defaultText = l.literalExpression "pkgs.klipper-firmware";
+        description = l.mdDoc "The Klipper firmware package for overriding.";
+      };
+
       extraConfigurationPackages = mkOption {
         type = types.listOf types.package;
         default = [];
@@ -245,7 +252,7 @@ in {
             l.nameValuePair
             (l.strings.sanitizeDerivationName name)
             (
-              pkgs.klipper-firmware.override
+              cfg.firmware-package.override
               {
                 mcu = l.strings.sanitizeDerivationName name;
                 firmwareConfig = fcfg.configFile;

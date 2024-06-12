@@ -84,41 +84,16 @@ in {
         configFile = ./firmwares/klipper-ebb;
       };
 
-      manta = {
+      skr3 = {
         enable = true;
-        configFile = ./firmwares/klipper-manta;
-      };
-
-      manta-v2 = {
-        enable = true;
-        configFile = ./firmwares/klipper-manta-v2;
-      };
-
-      xiao2040 = {
-        enable = true;
-        configFile = ./firmwares/klipper-xiao2040;
+        configFile = ./firmwares/klipper-skr3;
       };
     };
 
     katapult = {
-      manta = {
-        enable = true;
-        configFile = ./firmwares/katapult-manta;
-      };
-
-      manta-v2 = {
-        enable = true;
-        configFile = ./firmwares/katapult-manta-v2;
-      };
-
       ebb = {
         enable = true;
         configFile = ./firmwares/katapult-ebb;
-      };
-
-      xiao2040 = {
-        enable = true;
-        configFile = ./firmwares/katapult-xiao2040;
       };
     };
   };

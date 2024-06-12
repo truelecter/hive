@@ -1,0 +1,9 @@
+[probe]
+# Until I fix the problem with ge5c on front steppers (it apperas to be on all the steppers, may be shorten them a bit)
+drop_first_result: True
+
+[stepper_x]
+second_homing_speed: 75
+
+[stepper_y]
+second_homing_speed: 75

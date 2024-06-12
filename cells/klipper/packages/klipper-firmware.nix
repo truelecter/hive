@@ -18,7 +18,7 @@
   ...
 }:
 stdenv.mkDerivation rec {
-  name = "klipper-firmware-${mcu}-${version}";
+  name = "${klipper.pname}-firmware-${mcu}-${version}";
   version = klipper.version;
   src = klipper.src;
 

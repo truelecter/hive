@@ -6,7 +6,7 @@
   ...
 }:
 writeShellApplication {
-  name = "klipper-genconf";
+  name = "${klipper.pname}-genconf";
   runtimeInputs = [
     python3
     gnumake

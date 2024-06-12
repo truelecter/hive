@@ -29,6 +29,7 @@
           gnused
           nix-tree
           findutils
+          openssh_hpn
         ]
       )
       ++ (

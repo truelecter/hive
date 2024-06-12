@@ -10,6 +10,7 @@ keys:
   - &voron ad74ae276ddcd3b8c05242fc537e0afff9393519
   - &rockiosk ef5e9b1601de92796784e3cd146a31ffb1cc2f5d
   - &pikiosk 2994ee04eda55d05dae7019ed74ef11ed4a030bc
+  - &trizero 626de251782cdf224d7f89a4277110395ef8b6e3
 
 creation_rules:
   - path_regex: cells/secrets/sops/envs.yaml
@@ -36,6 +37,7 @@ creation_rules:
           - *voron
           - *rockiosk
           - *pikiosk
+          - *trizero
 
   - path_regex: cells/secrets/sops/k3s.yaml
     key_groups:
@@ -58,6 +60,7 @@ creation_rules:
           - *voron
           - *rockiosk
           - *pikiosk
+          - *trizero
 
   - path_regex: cells/secrets/sops/ssh.*$
     key_groups:

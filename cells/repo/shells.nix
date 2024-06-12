@@ -23,6 +23,7 @@
     editorconfig-checker
     mdbook
     gnupg
+    ssh-to-pgp
     ;
 
   pkgWithCategory = category: package: {inherit package category;};
@@ -89,6 +90,21 @@
         ${sops}/bin/sops --decrypt --in-place $filename
         ${sops}/bin/sops --encrypt --in-place $filename
     done
+  '';
+
+  fetch-sops-nix-key = nixpkgs.writeScriptBin "fetch-sops-nix-key" ''
+    set -e -o pipefail
+
+    show_usage() {
+      echo "$0 <ssh-address> <hostname>"
+    }
+
+    if [[ "$#" -lt 2 ]]; then
+      show_usage
+      exit 1
+    fi
+
+    ssh $1 "sudo cat /etc/ssh/ssh_host_rsa_key" | ${ssh-to-pgp}/bin/ssh-to-pgp -o $PRJ_ROOT/cells/repo/keys/hosts/$2.asc
   '';
 
   build-on-target = nixpkgs.writeScriptBin "build-on-target" ''
@@ -194,6 +210,13 @@ in
           name = "sops-reencrypt";
           help = "Reencrypt sops-encrypted files";
           package = sops-reencrypt;
+        }
+
+        {
+          category = "infra";
+          name = "fetch-sops-nix-key";
+          help = "Fetch target host info for sops";
+          package = fetch-sops-nix-key;
         }
 
         {
