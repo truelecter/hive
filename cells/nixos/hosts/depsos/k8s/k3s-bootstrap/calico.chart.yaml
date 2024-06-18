@@ -6,15 +6,15 @@ metadata:
 spec:
   repo: https://projectcalico.docs.tigera.io/charts
   chart: tigera-operator
-  version: v3.24.3
+  version: v3.28.0
   helmVersion: v3
   bootstrap: true
   targetNamespace: tigera-operator
   valuesContent: |-
-    tigeraOperator:
-      version: v1.27.14
-    calicoctl:
-      tag: v3.24.1
+    #tigeraOperator:
+    #  version: v1.27.14
+    #calicoctl:
+    #  tag: v3.24.1
     installation:
       cni:
         type: Calico

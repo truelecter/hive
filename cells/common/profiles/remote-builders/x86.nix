@@ -10,27 +10,26 @@
     distributedBuilds = true;
 
     buildMachines = [
-      # {
-      #   systems = [
-      #     "x86_64-linux"
-      #     # "aarch64-linux"
-      #     "i686-linux"
-      #   ];
+      {
+        systems = [
+          "x86_64-linux"
+          "i686-linux"
+        ];
 
-      #   supportedFeatures = [
-      #     "nixos-test"
-      #     "benchmark"
-      #     "kvm"
-      #     "big-parallel"
-      #   ];
+        supportedFeatures = [
+          "nixos-test"
+          "benchmark"
+          "kvm"
+          "big-parallel"
+        ];
 
-      #   speedFactor = 40;
-      #   maxJobs = 16;
-      #   hostName = "hyperos";
+        speedFactor = 20;
+        maxJobs = 4;
+        hostName = "depsos";
 
-      #   sshUser = "root";
-      #   sshKey = config.sops.secrets.remote-builder-pk.path;
-      # }
+        sshUser = "root";
+        sshKey = config.sops.secrets.remote-builder-pk.path;
+      }
     ];
   };
 }
