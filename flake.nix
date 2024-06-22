@@ -102,8 +102,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "latest";
     };
-
-    rpi-4-kernel.url = "github:nixos/nixpkgs/refs/pull/292880/merge";
   };
 
   # tools
