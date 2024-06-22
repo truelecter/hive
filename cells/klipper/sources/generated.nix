@@ -14,15 +14,15 @@
   };
   danger-klipper = {
     pname = "danger-klipper";
-    version = "d63459732a649a433619c3128806ae5766b23445";
+    version = "83850c0b62b129bf18f05064071d22d5532e8d0c";
     src = fetchFromGitHub {
       owner = "DangerKlippers";
       repo = "danger-klipper";
-      rev = "d63459732a649a433619c3128806ae5766b23445";
+      rev = "83850c0b62b129bf18f05064071d22d5532e8d0c";
       fetchSubmodules = false;
-      sha256 = "sha256-6X/AM0b+02P6enjmE+gZldRRyei7h8cLqvMA1DLAXEs=";
+      sha256 = "sha256-RjuM9MDfqTZV/N29vc20nAfOPQoos1RRu7Q4jFcL2S4=";
     };
-    date = "2024-06-17";
+    date = "2024-06-21";
   };
   katapult = {
     pname = "katapult";
@@ -38,15 +38,15 @@
   };
   klipper = {
     pname = "klipper";
-    version = "11f04ba1bae774d32fd43bed4a0772c58d8df199";
+    version = "6d70050261ec3290f3c2e4015438e4910fd430d0";
     src = fetchFromGitHub {
       owner = "Klipper3d";
       repo = "klipper";
-      rev = "11f04ba1bae774d32fd43bed4a0772c58d8df199";
+      rev = "6d70050261ec3290f3c2e4015438e4910fd430d0";
       fetchSubmodules = false;
-      sha256 = "sha256-nZ69Gp1Wg9kz/ntFJvyPL57yAorwrhfYHZU4bDKnzZc=";
+      sha256 = "sha256-vN1lrFM/ifcMCZfrvfK/MDLYx0qnAMgfBW9UWdyv+MY=";
     };
-    date = "2024-06-17";
+    date = "2024-06-21";
   };
   klipper-ercf = {
     pname = "klipper-ercf";
@@ -145,15 +145,15 @@
   };
   klipper-screen = {
     pname = "klipper-screen";
-    version = "98c6ca5dfaf09bdd2834a6509c2cc5724f1560cf";
+    version = "3d7537216165641e33fec6c8ac284c1d2f6b3c45";
     src = fetchFromGitHub {
       owner = "jordanruthe";
       repo = "KlipperScreen";
-      rev = "98c6ca5dfaf09bdd2834a6509c2cc5724f1560cf";
+      rev = "3d7537216165641e33fec6c8ac284c1d2f6b3c45";
       fetchSubmodules = false;
-      sha256 = "sha256-trgxFwC+Zas7lpmghdOeTr2dEBBmdiWN6yha8JrKzik=";
+      sha256 = "sha256-D9M4jOdaPHR2Gu3mOhQsD8+O2a0FBAVYyY89hTAlaXk=";
     };
-    date = "2024-06-13";
+    date = "2024-06-21";
   };
   klipper-z-calibration = {
     pname = "klipper-z-calibration";

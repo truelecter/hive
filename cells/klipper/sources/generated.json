@@ -21,7 +21,7 @@
     },
     "danger-klipper": {
         "cargoLocks": null,
-        "date": "2024-06-17",
+        "date": "2024-06-21",
         "extract": null,
         "name": "danger-klipper",
         "passthru": null,
@@ -33,11 +33,11 @@
             "name": null,
             "owner": "DangerKlippers",
             "repo": "danger-klipper",
-            "rev": "d63459732a649a433619c3128806ae5766b23445",
-            "sha256": "sha256-6X/AM0b+02P6enjmE+gZldRRyei7h8cLqvMA1DLAXEs=",
+            "rev": "83850c0b62b129bf18f05064071d22d5532e8d0c",
+            "sha256": "sha256-RjuM9MDfqTZV/N29vc20nAfOPQoos1RRu7Q4jFcL2S4=",
             "type": "github"
         },
-        "version": "d63459732a649a433619c3128806ae5766b23445"
+        "version": "83850c0b62b129bf18f05064071d22d5532e8d0c"
     },
     "katapult": {
         "cargoLocks": null,
@@ -61,7 +61,7 @@
     },
     "klipper": {
         "cargoLocks": null,
-        "date": "2024-06-17",
+        "date": "2024-06-21",
         "extract": null,
         "name": "klipper",
         "passthru": null,
@@ -73,11 +73,11 @@
             "name": null,
             "owner": "Klipper3d",
             "repo": "klipper",
-            "rev": "11f04ba1bae774d32fd43bed4a0772c58d8df199",
-            "sha256": "sha256-nZ69Gp1Wg9kz/ntFJvyPL57yAorwrhfYHZU4bDKnzZc=",
+            "rev": "6d70050261ec3290f3c2e4015438e4910fd430d0",
+            "sha256": "sha256-vN1lrFM/ifcMCZfrvfK/MDLYx0qnAMgfBW9UWdyv+MY=",
             "type": "github"
         },
-        "version": "11f04ba1bae774d32fd43bed4a0772c58d8df199"
+        "version": "6d70050261ec3290f3c2e4015438e4910fd430d0"
     },
     "klipper-ercf": {
         "cargoLocks": null,
@@ -241,7 +241,7 @@
     },
     "klipper-screen": {
         "cargoLocks": null,
-        "date": "2024-06-13",
+        "date": "2024-06-21",
         "extract": null,
         "name": "klipper-screen",
         "passthru": null,
@@ -253,11 +253,11 @@
             "name": null,
             "owner": "jordanruthe",
             "repo": "KlipperScreen",
-            "rev": "98c6ca5dfaf09bdd2834a6509c2cc5724f1560cf",
-            "sha256": "sha256-trgxFwC+Zas7lpmghdOeTr2dEBBmdiWN6yha8JrKzik=",
+            "rev": "3d7537216165641e33fec6c8ac284c1d2f6b3c45",
+            "sha256": "sha256-D9M4jOdaPHR2Gu3mOhQsD8+O2a0FBAVYyY89hTAlaXk=",
             "type": "github"
         },
-        "version": "98c6ca5dfaf09bdd2834a6509c2cc5724f1560cf"
+        "version": "3d7537216165641e33fec6c8ac284c1d2f6b3c45"
     },
     "klipper-z-calibration": {
         "cargoLocks": null,
