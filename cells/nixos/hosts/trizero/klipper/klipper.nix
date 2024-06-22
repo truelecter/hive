@@ -65,12 +65,6 @@ in {
       virtual_sdcard = {
         path = gcodePath;
       };
-
-      "gcode_shell_command shaketune" = {
-        command = "${pkgs.klippain-shaketune}/bin/klippain-shaketune";
-        timeout = 600.0;
-        verbose = true;
-      };
     };
 
     host-mcu = {
