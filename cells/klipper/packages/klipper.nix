@@ -12,8 +12,8 @@
       lib.flatten (
         builtins.map (
           plugin:
-            if plugin.passthru ? pythonDependencies
-            then (plugin.passthru.pythonDependencies pythonPackages)
+            if plugin.passthru.klipper ? pythonDependencies
+            then (plugin.passthru.klipper.pythonDependencies pythonPackages)
             else []
         )
         plugins
@@ -68,7 +68,7 @@ in
         lib.concatStringsSep "\n" (
           builtins.map
           # Filter only plugins with extras. There was a lib function for getting output in lib/attrset.nix
-          (plugin: "ln -sf ${plugin}/lib/extras/*.py $out/lib/klippy/extras/")
+          (plugin: "ln -sf ${plugin}/lib/extras/* $out/lib/klippy/extras/")
           (builtins.filter (p: p ? klipper && p.klipper.extras) plugins)
         )
       }

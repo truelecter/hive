@@ -14,14 +14,22 @@ stdenvNoCC.mkDerivation {
   dontBuild = true;
 
   installPhase = ''
-    mkdir -p $out/lib/
+    mkdir -p $out/lib/extras
 
-    cp -r ./K-ShakeTune $out/lib/config
+    cp -r shaketune $out/lib/extras/
   '';
 
   passthru.klipper = {
-    config = true;
-    extras = false;
+    config = false;
+    extras = true;
+    pythonDependencies = p:
+      with p; [
+        matplotlib
+        numpy
+        scipy
+        gitpython
+        pywavelets
+      ];
   };
 
   meta = with lib; {

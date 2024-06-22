@@ -30,6 +30,10 @@
       // packages;
   };
 
+  danger-klipper = packages.klipper.overrideAttrs (_: {
+    inherit (sources.danger-klipper) pname version src;
+  });
+
   excluded-plugins-from-full = ["sources"];
 in
   packages
@@ -40,15 +44,15 @@ in
       plugins = l.attrValues (l.filterAttrs (n: _: !builtins.elem n excluded-plugins-from-full) klipper-plugins);
     };
 
-    danger-klipper-full-plugins = packages.danger-klipper.override {
+    danger-klipper-full-plugins = danger-klipper.override {
       plugins = l.attrValues (l.filterAttrs (n: _: !builtins.elem n excluded-plugins-from-full) klipper-plugins);
     };
 
     danger-klipper-genconf = packages.klipper-genconf.override {
-      klipper = packages.danger-klipper;
+      klipper = danger-klipper;
     };
 
     danger-klipper-firmware = packages.klipper-firmware.override {
-      klipper = packages.danger-klipper;
+      klipper = danger-klipper;
     };
   }
