@@ -8,7 +8,7 @@
   inherit (lib) fileContents;
   inherit (pkgs.stdenv.hostPlatform) isDarwin;
 in {
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     powerline-fonts
     dejavu_fonts
     (

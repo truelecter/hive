@@ -114,8 +114,6 @@
     ];
   };
 
-  fonts.fontDir.enable = true;
-
   system.defaults = {
     CustomUserPreferences = {
       "com.lwouis.alt-tab-macos" = lib.importJSON ./_files/alt-tab.plist.json;
