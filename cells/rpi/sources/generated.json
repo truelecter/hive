@@ -15,13 +15,14 @@
             "repo": "libcamera",
             "rev": "6ddd79b5bdbedc1f61007aed35391f1559f9e29a",
             "sha256": "sha256-qqEMJzMotybf1nJp1dsz3zc910Qj0TmqCm1CwuSb1VY=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "6ddd79b5bdbedc1f61007aed35391f1559f9e29a"
     },
     "libcamera-apps": {
         "cargoLocks": null,
-        "date": "2024-06-14",
+        "date": "2024-06-26",
         "extract": null,
         "name": "libcamera-apps",
         "passthru": null,
@@ -33,11 +34,12 @@
             "name": null,
             "owner": "raspberrypi",
             "repo": "libcamera-apps",
-            "rev": "06cc09aeab912867e6d0e3f59a548aa137458a68",
-            "sha256": "sha256-2IMaN1jjFBxZ7HgStR0eWS/40QkBgmk0qE1Ipe4fHrs=",
+            "rev": "4ec534bc10b0d493f4d358bce3cde46853362148",
+            "sha256": "sha256-I+WEv9st8VmWNOivd8/2LIfxoB2pPeV5exZJJEhy3xU=",
+            "sparseCheckout": [],
             "type": "github"
         },
-        "version": "06cc09aeab912867e6d0e3f59a548aa137458a68"
+        "version": "4ec534bc10b0d493f4d358bce3cde46853362148"
     },
     "mediamtx": {
         "cargoLocks": null,
@@ -55,6 +57,7 @@
             "repo": "mediamtx",
             "rev": "a1dc9f45f5e2a03084274bea139ecaa2e805d659",
             "sha256": "sha256-DlHjf1849YNeCxBBjfBLxBSvivOTXYdToFFHr3a5/L4=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "a1dc9f45f5e2a03084274bea139ecaa2e805d659"

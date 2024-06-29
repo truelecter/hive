@@ -45,6 +45,7 @@
             "repo": "knock",
             "rev": "a690305c6d960374fd9b1024db85a8cdfa0bf1a4",
             "sha256": "sha256-RHSNvaQdIUjzN7MCDyLOosHo22CSkFlzCERCg0TFxhI=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "a690305c6d960374fd9b1024db85a8cdfa0bf1a4"
