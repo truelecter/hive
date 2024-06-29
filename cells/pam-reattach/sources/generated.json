@@ -15,6 +15,7 @@
             "repo": "pam_reattach",
             "rev": "0fbdc4cebce66179cb2daee3d88944acd6cef505",
             "sha256": "sha256-9N944FcYM72hpTkT7jZoOoG7KfWvIhROHKXDh+dNTOQ=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "0fbdc4cebce66179cb2daee3d88944acd6cef505"

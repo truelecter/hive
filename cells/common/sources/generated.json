@@ -15,6 +15,7 @@
             "repo": "s5cmd",
             "rev": "c13b860c763a56fc8b97dbb2e35e7c6f3b950f2c",
             "sha256": "sha256-WulvXhAfZsLECFLNhAKswPYL1vDQEAOzQ6UP+3DI6Cw=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "c13b860c763a56fc8b97dbb2e35e7c6f3b950f2c"
@@ -35,6 +36,7 @@
             "repo": "tfenv",
             "rev": "39d8c27ad9862ffdec57989b66fd2720cb72e76c",
             "sha256": "sha256-h5ZHT4u7oAdwuWpUrL35G8bIAMasx6E81h15lTJSHhQ=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "39d8c27ad9862ffdec57989b66fd2720cb72e76c"
