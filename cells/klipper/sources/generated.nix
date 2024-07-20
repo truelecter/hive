@@ -24,6 +24,18 @@
     };
     date = "2024-07-18";
   };
+  experimental-danger-klipper = {
+    pname = "experimental-danger-klipper";
+    version = "10002c97f87ed19dc80d05dd6dfd917c88ff535f";
+    src = fetchFromGitHub {
+      owner = "DangerKlippers";
+      repo = "danger-klipper";
+      rev = "10002c97f87ed19dc80d05dd6dfd917c88ff535f";
+      fetchSubmodules = false;
+      sha256 = "sha256-zXtuodlHSjnxvKnP2gypMNmNPSay3DzQSS6s7rVssqs=";
+    };
+    date = "2024-07-01";
+  };
   katapult = {
     pname = "katapult";
     version = "3e23332eb188244e88f5ff60aecf077cd32bcd0c";
@@ -47,6 +59,18 @@
       sha256 = "sha256-swjZc3Lu8rOwaYQby8QQvTzuNnxtTAaZx7TY/D8Z7Qg=";
     };
     date = "2024-07-18";
+  };
+  klipper-chopper-resonance-tuner = {
+    pname = "klipper-chopper-resonance-tuner";
+    version = "9d3cb80a2dfb4a0ff1ea7d1bb7c9cf554eef7863";
+    src = fetchFromGitHub {
+      owner = "MRX8024";
+      repo = "chopper-resonance-tuner";
+      rev = "9d3cb80a2dfb4a0ff1ea7d1bb7c9cf554eef7863";
+      fetchSubmodules = false;
+      sha256 = "sha256-lCQDXTJ5+wwprDh/0OA0t9+FUsd8oxlCuHL6il/yKCM=";
+    };
+    date = "2024-07-11";
   };
   klipper-ercf = {
     pname = "klipper-ercf";
@@ -222,15 +246,15 @@
   };
   mobileraker-companion = {
     pname = "mobileraker-companion";
-    version = "e32a50628ddfff91a8b2f357aef31bf23d885913";
+    version = "14f5e432506f801411b19e8654865026411a8ea5";
     src = fetchFromGitHub {
       owner = "Clon1998";
       repo = "mobileraker_companion";
-      rev = "e32a50628ddfff91a8b2f357aef31bf23d885913";
+      rev = "14f5e432506f801411b19e8654865026411a8ea5";
       fetchSubmodules = false;
-      sha256 = "sha256-DeA4/1SYMRH4Y+ftRCKHzSTHwXV0LEIsaXZrMtfotdA=";
+      sha256 = "sha256-VeHzy+MnckEqxbrPs4sEN5RlIp4y6su4381u2sp/afs=";
     };
-    date = "2024-07-16";
+    date = "2024-07-20";
   };
   moonraker = {
     pname = "moonraker";

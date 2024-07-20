@@ -41,6 +41,27 @@
         },
         "version": "c61695ca225d593b0a5450517e474ee9e94aeb2c"
     },
+    "experimental-danger-klipper": {
+        "cargoLocks": null,
+        "date": "2024-07-01",
+        "extract": null,
+        "name": "experimental-danger-klipper",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "DangerKlippers",
+            "repo": "danger-klipper",
+            "rev": "10002c97f87ed19dc80d05dd6dfd917c88ff535f",
+            "sha256": "sha256-zXtuodlHSjnxvKnP2gypMNmNPSay3DzQSS6s7rVssqs=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "10002c97f87ed19dc80d05dd6dfd917c88ff535f"
+    },
     "katapult": {
         "cargoLocks": null,
         "date": "2024-02-10",
@@ -82,6 +103,27 @@
             "type": "github"
         },
         "version": "12cd1d9e81c32b26ccc319af1dfc3633438908f1"
+    },
+    "klipper-chopper-resonance-tuner": {
+        "cargoLocks": null,
+        "date": "2024-07-11",
+        "extract": null,
+        "name": "klipper-chopper-resonance-tuner",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "MRX8024",
+            "repo": "chopper-resonance-tuner",
+            "rev": "9d3cb80a2dfb4a0ff1ea7d1bb7c9cf554eef7863",
+            "sha256": "sha256-lCQDXTJ5+wwprDh/0OA0t9+FUsd8oxlCuHL6il/yKCM=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "9d3cb80a2dfb4a0ff1ea7d1bb7c9cf554eef7863"
     },
     "klipper-ercf": {
         "cargoLocks": null,
@@ -393,7 +435,7 @@
     },
     "mobileraker-companion": {
         "cargoLocks": null,
-        "date": "2024-07-16",
+        "date": "2024-07-20",
         "extract": null,
         "name": "mobileraker-companion",
         "passthru": null,
@@ -405,12 +447,12 @@
             "name": null,
             "owner": "Clon1998",
             "repo": "mobileraker_companion",
-            "rev": "e32a50628ddfff91a8b2f357aef31bf23d885913",
-            "sha256": "sha256-DeA4/1SYMRH4Y+ftRCKHzSTHwXV0LEIsaXZrMtfotdA=",
+            "rev": "14f5e432506f801411b19e8654865026411a8ea5",
+            "sha256": "sha256-VeHzy+MnckEqxbrPs4sEN5RlIp4y6su4381u2sp/afs=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "e32a50628ddfff91a8b2f357aef31bf23d885913"
+        "version": "14f5e432506f801411b19e8654865026411a8ea5"
     },
     "moonraker": {
         "cargoLocks": null,

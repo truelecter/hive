@@ -52,8 +52,8 @@ in {
   tl.services.klipper = {
     enable = true;
 
-    package = pkgs.danger-klipper-full-plugins;
-    firmware-package = pkgs.danger-klipper-firmware;
+    package = pkgs.experimental-danger-klipper-full-plugins;
+    firmware-package = pkgs.experimental-danger-klipper-firmware;
 
     extraConfigurationPackages = [
       pkgs.kamp
@@ -96,6 +96,11 @@ in {
         enable = true;
         configFile = ./firmwares/klipper-xiao2040;
       };
+
+      buttons = {
+        enable = true;
+        configFile = ./firmwares/klipper-buttons;
+      };
     };
 
     katapult = {
@@ -117,6 +122,11 @@ in {
       xiao2040 = {
         enable = true;
         configFile = ./firmwares/katapult-xiao2040;
+      };
+
+      buttons = {
+        enable = true;
+        configFile = ./firmwares/katapult-buttons;
       };
     };
   };

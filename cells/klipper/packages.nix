@@ -14,9 +14,11 @@
     inherit nixpkgs sources;
 
     packages = ./klipper-plugins;
-    extraArguments = {
-      inherit cell;
-    };
+    extraArguments =
+      {
+        inherit cell;
+      }
+      // packages;
   };
 
   packages = common.lib.importPackages {
@@ -30,9 +32,25 @@
       // packages;
   };
 
-  danger-klipper = packages.klipper.overrideAttrs (_: {
-    inherit (sources.danger-klipper) pname version src;
-  });
+  klipper-distribution = name: source: let
+    klipper = packages.klipper.overrideAttrs (_: {
+      inherit (source) pname version src;
+    });
+  in {
+    ${name} = klipper;
+
+    "${name}-full-plugins" = klipper.override {
+      plugins = l.attrValues (l.filterAttrs (n: _: !builtins.elem n excluded-plugins-from-full) klipper-plugins);
+    };
+
+    "${name}-genconf" = packages.klipper-genconf.override {
+      inherit klipper;
+    };
+
+    "${name}-firmware" = packages.klipper-firmware.override {
+      inherit klipper;
+    };
+  };
 
   excluded-plugins-from-full = ["sources"];
 in
@@ -43,16 +61,10 @@ in
     klipper-full-plugins = packages.klipper.override {
       plugins = l.attrValues (l.filterAttrs (n: _: !builtins.elem n excluded-plugins-from-full) klipper-plugins);
     };
-
-    danger-klipper-full-plugins = danger-klipper.override {
-      plugins = l.attrValues (l.filterAttrs (n: _: !builtins.elem n excluded-plugins-from-full) klipper-plugins);
-    };
-
-    danger-klipper-genconf = packages.klipper-genconf.override {
-      klipper = danger-klipper;
-    };
-
-    danger-klipper-firmware = packages.klipper-firmware.override {
-      klipper = danger-klipper;
-    };
   }
+  // (
+    klipper-distribution "danger-klipper" sources.danger-klipper
+  )
+  // (
+    klipper-distribution "experimental-danger-klipper" sources.experimental-danger-klipper
+  )

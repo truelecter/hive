@@ -10,6 +10,11 @@ fetch.github = "Klipper3d/klipper"
 src.git = "https://github.com/DangerKlippers/danger-klipper"
 fetch.github = "DangerKlippers/danger-klipper"
 
+[experimental-danger-klipper]
+src.git = "https://github.com/DangerKlippers/danger-klipper"
+src.branch = "bleeding-edge-v2"
+fetch.github = "DangerKlippers/danger-klipper"
+
 [katapult]
 src.git = "https://github.com/Arksine/katapult"
 fetch.github = "Arksine/katapult"
@@ -92,3 +97,7 @@ fetch.github = "andrewmcgr/klipper_tmc_autotune"
 [klipper-nevermore-controller]
 src.git = "https://github.com/SanaaHamel/nevermore-controller"
 fetch.github = "SanaaHamel/nevermore-controller"
+
+[klipper-chopper-resonance-tuner]
+src.git = "https://github.com/MRX8024/chopper-resonance-tuner"
+fetch.github = "MRX8024/chopper-resonance-tuner"
