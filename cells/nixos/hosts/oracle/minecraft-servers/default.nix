@@ -6,6 +6,7 @@
     ./sevtech.nix
     ./vanilla.nix
     ./litv3.nix
+    ./cae.nix
   ];
 
   users = {
@@ -37,19 +38,19 @@
       rcon-port = 25597;
     };
 
-    instances.e9e = {
-      customization.create."config/bluemap/webserver.conf".text = bluemapConfig 8108;
-      serverProperties = {
-        server-port = 25568;
-        rcon-port = 25598;
-      };
-    };
-
     instances.litv3 = {
       customization.create."config/bluemap/webserver.conf".text = bluemapConfig 8109;
       serverProperties = {
         server-port = 25569;
         rcon-port = 25599;
+      };
+    };
+
+    instances.cae = {
+      customization.create."config/bluemap/webserver.conf".text = bluemapConfig 8110;
+      serverProperties = {
+        server-port = 25570;
+        rcon-port = 25600;
       };
     };
 
@@ -76,6 +77,7 @@
       };
     in {
       "litv3.tenma.moe" = bluemap 8109;
+      "cae.tenma.moe" = bluemap 8110;
     };
   };
 

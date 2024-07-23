@@ -24,6 +24,10 @@ fetch.url = "https://mediafilez.forgecdn.net/files/5356/769/Enigmatica9ExpertSer
 src.manual = "1.28_f2"
 fetch.url = "https://mediafilez.forgecdn.net/files/4709/791/DawnCraft+1.28_f2+Serverpack.zip"
 
+[mcs-create-arcane-engineering]
+src.manual = "0.1.9.3"
+fetch.url = "https://mediafilez.forgecdn.net/files/4852/56/CAEServer1.9.zip"
+
 [forge-server-40-2-9]
 src.manual = "40.2.9"
 fetch.url = "https://maven.minecraftforge.net/net/minecraftforge/forge/1.18.2-$ver/forge-1.18.2-$ver-installer.jar"
@@ -60,6 +64,10 @@ fetch.url = "https://dynmap.us/builds/DynmapBlockScan/DynmapBlockScan-3.7-SNAPSH
 src.manual = "3.13"
 fetch.url = "https://github.com/BlueMap-Minecraft/BlueMap/releases/download/v3.13/BlueMap-3.13-forge-1.19.1.jar"
 
+[mod-forge-18-bluemap]
+src.manual = "5.2"
+fetch.url = "https://github.com/BlueMap-Minecraft/BlueMap/releases/download/v5.2/BlueMap-5.2-forge-1.18.1.jar"
+
 [mcs-life-in-the-village-3]
 src.manual = "2.8"
 fetch.url = "https://mediafilez.forgecdn.net/files/5290/323/LITV3-1.19.2-Serverpack-2.8.zip"
@@ -87,3 +95,11 @@ fetch.url = "https://mediafilez.forgecdn.net/files/5001/266/ftb-chunks-forge-190
 [mod-forge-192-ftb-xmod-compat]
 src.manual = "1.2.3"
 fetch.url = "https://mediafilez.forgecdn.net/files/4857/341/ftb-xmod-compat-forge-1.2.3.jar"
+
+[mod-forge-182-functional-storage]
+src.manual = "1.1.4"
+fetch.url = "https://mediafilez.forgecdn.net/files/5271/589/functionalstorage-1.18.2-1.1.4.jar"
+
+[mod-forge-182-easier-sleeping]
+src.manual  = "2.1.0"
+fetch.url = "https://mediafilez.forgecdn.net/files/3683/922/EasierSleeping-1.18.2-2.1.0.jar"

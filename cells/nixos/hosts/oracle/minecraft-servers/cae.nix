@@ -4,29 +4,30 @@
   lib,
   ...
 }: {
-  services.minecraft-servers.instances.e9e = {
-    enable = false;
-    serverPackage = pkgs.mcs-enigmatica-9-expert;
+  services.minecraft-servers.instances.cae = {
+    enable = true;
+    serverPackage = pkgs.mcs-create-arcane-engineering;
     backup.restic = {
       enable = true;
-      repository = "rclone:mega:/mc-backups/e9e";
+      repository = "rclone:mega:/mc-backups/cae";
       passwordFile = config.sops.secrets.minecraft-restic-pw-file.path;
       environmentFile = config.sops.secrets.minecraft-restic-env-file.path;
       initialize = true;
       exclude = [
-        "dumps"
+        "simplebackups"
         "logs"
-        "backups"
-        "dynmap"
+        "dumps"
+        "bluemap"
       ];
       pruneOpts = [
         "--keep-daily 3"
         "--keep-weekly 1"
       ];
     };
-    jvmPackage = pkgs.temurin-bin-17;
+    jvmPackage = pkgs.temurin-bin-21;
     jvmMaxAllocation = "8G";
-    jvmInitialAllocation = "4G";
+    jvmInitialAllocation = "8G";
+
     jvmOpts = lib.concatStringsSep " " [
       "-XX:+UnlockExperimentalVMOptions"
       "-XX:+UnlockDiagnosticVMOptions"
@@ -48,14 +49,33 @@
       "-XX:+UseCriticalJavaThreadPriority"
       "-XX:ThreadPriorityPolicy=1"
       "-XX:AllocatePrefetchStyle=3"
+      # GC
       "-XX:+UseZGC"
-      "-XX:AllocatePrefetchStyle=1"
-      "-XX:-ZProactive"
-      "-XX:ConcGCThreads=2"
+      "-XX:+ZGenerational"
+      "-XX:+AlwaysPreTouch"
+      "-XX:+PerfDisableSharedMem"
+      "-XX:-ZUncommit"
+      "-XX:+ParallelRefProcEnabled"
+      "-XX:-OmitStackTraceInFastThrow"
+      "-XX:+UseStringDeduplication"
+      "-XX:+DisableExplicitGC"
+      "-XX:ConcGCThreads=4"
+      "-XX:+UseTransparentHugePages"
     ];
+    serverProperties = let
+      version = pkgs.mcs-create-arcane-engineering.version;
+    in {
+      max-tick-time = 180000;
+      allow-flight = true;
+      online-mode = true;
+      difficulty = 3;
+      motd = "\\u00A7d\\u00A7oRealMineCock: Arcane Engineering\\u00A7r - \\u00A74${version}";
+    };
     customization = {
       create = {
-        "mods/bluemap.jar".source = pkgs.minecraft-mods.forge.bluemap;
+        "mods/bluemap.jar".source = pkgs.minecraft-mods.forge._18._2.bluemap;
+        "mods/easier-sleeping.jar".source = pkgs.minecraft-mods.forge._18._2.easier-sleeping;
+        "mods/functionalstorage.jar".source = pkgs.minecraft-mods.forge._18._2.functional-storage;
         "config/bluemap/core.conf".text = ''
           accept-download: true
           data: "bluemap"
@@ -64,13 +84,10 @@
           metrics: true
         '';
       };
-    };
-    serverProperties = {
-      max-tick-time = 600000;
-      allow-flight = true;
-      online-mode = true;
-      difficulty = 3;
-      motd = "\\u00A7d\\u00A7oRealMineCock: Enigmatica 9 Expert\\u00A7r - \\u00A741.18.0";
+
+      remove = [
+        "mods/functionalstorage-1.18.2-1.1.3.jar"
+      ];
     };
   };
 }

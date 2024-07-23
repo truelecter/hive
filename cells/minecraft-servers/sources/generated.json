@@ -50,6 +50,21 @@
         },
         "version": "a690305c6d960374fd9b1024db85a8cdfa0bf1a4"
     },
+    "mcs-create-arcane-engineering": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "mcs-create-arcane-engineering",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-0Fd2g/5yK7z46zKfV0gH6uKCBKcKoceYhIjUUdwgcIo=",
+            "type": "url",
+            "url": "https://mediafilez.forgecdn.net/files/4852/56/CAEServer1.9.zip"
+        },
+        "version": "0.1.9.3"
+    },
     "mcs-dawncraft": {
         "cargoLocks": null,
         "date": null,
@@ -139,6 +154,51 @@
             "url": "https://ci.codemc.io/job/Games647/job/ChangeSkin/474/artifact/core/target/ChangeSkinCore.jar"
         },
         "version": "3.2"
+    },
+    "mod-forge-18-bluemap": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "mod-forge-18-bluemap",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-vZqqu3o0ooM5YxQ4w7zsfA8Eg4G/HG8L73iZofoUF3c=",
+            "type": "url",
+            "url": "https://github.com/BlueMap-Minecraft/BlueMap/releases/download/v5.2/BlueMap-5.2-forge-1.18.1.jar"
+        },
+        "version": "5.2"
+    },
+    "mod-forge-182-easier-sleeping": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "mod-forge-182-easier-sleeping",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-AlCLZ6puDyhyi2YPLN2W/mkuS2enO3L88xC3z3kWlLw=",
+            "type": "url",
+            "url": "https://mediafilez.forgecdn.net/files/3683/922/EasierSleeping-1.18.2-2.1.0.jar"
+        },
+        "version": "2.1.0"
+    },
+    "mod-forge-182-functional-storage": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "mod-forge-182-functional-storage",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-FWW+Z+kRKNz167yjvkNbaij6V1+2VYTwLLsrPp9hMKo=",
+            "type": "url",
+            "url": "https://mediafilez.forgecdn.net/files/5271/589/functionalstorage-1.18.2-1.1.4.jar"
+        },
+        "version": "1.1.4"
     },
     "mod-forge-19-2-dynmap": {
         "cargoLocks": null,

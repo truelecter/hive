@@ -29,6 +29,14 @@
     };
     date = "2023-03-10";
   };
+  mcs-create-arcane-engineering = {
+    pname = "mcs-create-arcane-engineering";
+    version = "0.1.9.3";
+    src = fetchurl {
+      url = "https://mediafilez.forgecdn.net/files/4852/56/CAEServer1.9.zip";
+      sha256 = "sha256-0Fd2g/5yK7z46zKfV0gH6uKCBKcKoceYhIjUUdwgcIo=";
+    };
+  };
   mcs-dawncraft = {
     pname = "mcs-dawncraft";
     version = "1.28_f2";
@@ -75,6 +83,30 @@
     src = fetchurl {
       url = "https://ci.codemc.io/job/Games647/job/ChangeSkin/474/artifact/core/target/ChangeSkinCore.jar";
       sha256 = "sha256-IR8thoPfzEkj+/BepSqZ8/Qs6s91C+r3HnuM71VUGkM=";
+    };
+  };
+  mod-forge-18-bluemap = {
+    pname = "mod-forge-18-bluemap";
+    version = "5.2";
+    src = fetchurl {
+      url = "https://github.com/BlueMap-Minecraft/BlueMap/releases/download/v5.2/BlueMap-5.2-forge-1.18.1.jar";
+      sha256 = "sha256-vZqqu3o0ooM5YxQ4w7zsfA8Eg4G/HG8L73iZofoUF3c=";
+    };
+  };
+  mod-forge-182-easier-sleeping = {
+    pname = "mod-forge-182-easier-sleeping";
+    version = "2.1.0";
+    src = fetchurl {
+      url = "https://mediafilez.forgecdn.net/files/3683/922/EasierSleeping-1.18.2-2.1.0.jar";
+      sha256 = "sha256-AlCLZ6puDyhyi2YPLN2W/mkuS2enO3L88xC3z3kWlLw=";
+    };
+  };
+  mod-forge-182-functional-storage = {
+    pname = "mod-forge-182-functional-storage";
+    version = "1.1.4";
+    src = fetchurl {
+      url = "https://mediafilez.forgecdn.net/files/5271/589/functionalstorage-1.18.2-1.1.4.jar";
+      sha256 = "sha256-FWW+Z+kRKNz167yjvkNbaij6V1+2VYTwLLsrPp9hMKo=";
     };
   };
   mod-forge-19-2-dynmap = {
