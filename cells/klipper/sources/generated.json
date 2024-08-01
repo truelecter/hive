@@ -104,6 +104,27 @@
         },
         "version": "12cd1d9e81c32b26ccc319af1dfc3633438908f1"
     },
+    "klipper-cartographer": {
+        "cargoLocks": null,
+        "date": "2024-07-19",
+        "extract": null,
+        "name": "klipper-cartographer",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "Cartographer3D",
+            "repo": "cartographer-klipper",
+            "rev": "8b5affc66abbca096fc2602619131921149e2439",
+            "sha256": "sha256-Q8D2wNYY0a3yWdy43Xd+7ddjVPH3rsMbMEffksyAiOc=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "8b5affc66abbca096fc2602619131921149e2439"
+    },
     "klipper-chopper-resonance-tuner": {
         "cargoLocks": null,
         "date": "2024-07-11",
@@ -295,7 +316,7 @@
     },
     "klipper-screen": {
         "cargoLocks": null,
-        "date": "2024-07-14",
+        "date": "2024-07-21",
         "extract": null,
         "name": "klipper-screen",
         "passthru": null,
@@ -307,12 +328,12 @@
             "name": null,
             "owner": "jordanruthe",
             "repo": "KlipperScreen",
-            "rev": "f4992e1146c537b8ccc3cc2e0dc7e8f455d03df1",
-            "sha256": "sha256-Jf90FEocjArQ1aoLN/CVA4PW30pcdQd15eliS+w+NQg=",
+            "rev": "4a55dab8ec21585b48251d43cb40dfa16e25f350",
+            "sha256": "sha256-qFBdSYUiv/MU7a6iJ1rC5M7fdZUwRMB7sy7ZU0txpIY=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "f4992e1146c537b8ccc3cc2e0dc7e8f455d03df1"
+        "version": "4a55dab8ec21585b48251d43cb40dfa16e25f350"
     },
     "klipper-z-calibration": {
         "cargoLocks": null,
@@ -456,7 +477,7 @@
     },
     "moonraker": {
         "cargoLocks": null,
-        "date": "2024-07-05",
+        "date": "2024-07-22",
         "extract": null,
         "name": "moonraker",
         "passthru": null,
@@ -468,12 +489,12 @@
             "name": null,
             "owner": "Arksine",
             "repo": "moonraker",
-            "rev": "dc00d38b01915b9aea736999df9287b2846dd6bf",
-            "sha256": "sha256-5woxDg88L3vYf9TUKiC4+1KAMcAQU0SRH8aRm1FGBDw=",
+            "rev": "5c62149fc439f26e10e55783d4d8ce9e9c177c77",
+            "sha256": "sha256-oaM46QhEbLoka8wpDdcsqLi304QBYUKlMMmFgSZ0JlE=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "dc00d38b01915b9aea736999df9287b2846dd6bf"
+        "version": "5c62149fc439f26e10e55783d4d8ce9e9c177c77"
     },
     "python-networkmanager": {
         "cargoLocks": null,

@@ -77,9 +77,14 @@ in {
     };
 
     firmwares = {
-      ebb = {
+      ebb36 = {
         enable = true;
-        configFile = ./firmwares/klipper-ebb;
+        configFile = ./firmwares/klipper-ebb36;
+      };
+
+      ebb-sb = {
+        enable = true;
+        configFile = ./firmwares/klipper-ebb-sb;
       };
 
       manta = {
@@ -114,9 +119,14 @@ in {
         configFile = ./firmwares/katapult-manta-v2;
       };
 
-      ebb = {
+      ebb36 = {
         enable = true;
-        configFile = ./firmwares/katapult-ebb;
+        configFile = ./firmwares/katapult-ebb36;
+      };
+
+      ebb-sb = {
+        enable = true;
+        configFile = ./firmwares/katapult-ebb-sb;
       };
 
       xiao2040 = {

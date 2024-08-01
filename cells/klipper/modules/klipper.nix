@@ -300,11 +300,28 @@ in {
         "--input-tty=${cfg.inputTTY}"
         + l.optionalString (cfg.apiSocket != null) " --api-server=${cfg.apiSocket}"
         + l.optionalString (cfg.logFile != null) " --logfile=${cfg.logFile}";
-      printerConfigPath = "/etc/klipper/printer.cfg";
+
+      statefulConfigFileTemplate = pkgs.writeText "stateful-klipper-config.cfg" ''
+        # WARNING!!!
+        # THIS FILE EXISTS FOR COMPATIBILITY WITH STATEFUL
+        # SETTINGS (MAINLY GENERATED WITH SAVE_CONFIG)
+        # ACTUAL PRINTER CONFIGURATION IS LOCATED IN /etc/klipper/printer.cfg
+        # AND IS MANAGED VIA NIX MODULE
+        [include /etc/klipper/printer.cfg]
+      '';
+
+      printerConfigPath = "${cfg.stateDirectory}/stateful-config.cfg";
     in {
       description = "Klipper 3D Printer Firmware";
       wantedBy = ["multi-user.target"];
       after = ["network.target"];
+      preStart = ''
+        mkdir -p ${cfg.stateDirectory}
+        [ -e ${printerConfigPath} ] || {
+          cp ${statefulConfigFileTemplate} ${printerConfigPath}
+          chmod +w "${printerConfigPath}"
+        }
+      '';
 
       serviceConfig = {
         ExecStart = "${cfg.package}/bin/klippy ${klippyArgs} ${printerConfigPath}";
