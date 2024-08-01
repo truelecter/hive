@@ -34,6 +34,7 @@
         })
       )
       libgpiod
+      importlib-metadata
     ]);
 in
   stdenvNoCC.mkDerivation rec {
