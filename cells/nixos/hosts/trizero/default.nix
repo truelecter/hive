@@ -30,17 +30,9 @@ in {
     config.allowUnfree = true;
     overlays = [
       inputs.cells.rpi.overlays.kernel
+      inputs.cells.rpi.overlays.dtmerge
+
       inputs.cells.klipper.overlays.klipper
-      (
-        final: prev: {
-          deviceTree =
-            prev.deviceTree
-            // {
-              applyOverlays = final.callPackage ./dtmerge.nix {};
-            };
-          makeModulesClosure = x: prev.makeModulesClosure (x // {allowMissing = true;});
-        }
-      )
     ];
   };
 

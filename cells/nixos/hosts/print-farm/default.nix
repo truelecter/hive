@@ -13,16 +13,13 @@ in {
     profiles.faster-linux
     profiles.minimize
 
-    inputs.cells.klipper.nixosModules.klipper
     inputs.cells.secrets.nixosProfiles.wifi
 
     inputs.nixos-hardware.nixosModules.raspberry-pi-4
 
     ./hardware-configuration.nix
-    # ./wifi.nix
-    ./camera.nix
-    ./klipper
-    ./bluetooth.nix
+    ./wifi.nix
+    ./network-switch.nix
   ];
 
   bee.system = system;
@@ -33,25 +30,15 @@ in {
     overlays = [
       inputs.cells.rpi.overlays.kernel
       inputs.cells.rpi.overlays.dtmerge
-
-      inputs.cells.klipper.overlays.klipper
     ];
   };
 
+  systemd.services.NetworkManager-wait-online.enable = false;
+
   networking = {
-    hostName = "voron";
+    hostName = "print-farm";
     firewall.enable = false;
   };
 
   system.stateVersion = "23.05";
-
-  users.users.truelecter = {
-    extraGroups = ["video" "gpio"];
-  };
-
-  nix.settings = {
-    keep-outputs = false;
-    keep-derivations = false;
-    system-features = [];
-  };
 }

@@ -31,18 +31,8 @@ in {
     inherit system;
     config.allowUnfree = true;
     overlays = [
-      (
-        final: prev: {
-          deviceTree =
-            prev.deviceTree
-            // {
-              applyOverlays = final.callPackage ./dtmerge.nix {};
-            };
-          makeModulesClosure = x: prev.makeModulesClosure (x // {allowMissing = true;});
-
-          inherit (inputs.nix-rpi-kernel.packages) linuxRpi4Packages raspberrypiWirelessFirmware raspberrypifw;
-        }
-      )
+      inputs.cells.rpi.overlays.kernel
+      inputs.cells.rpi.overlays.dtmerge
     ];
   };
 

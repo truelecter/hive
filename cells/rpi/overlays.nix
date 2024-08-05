@@ -11,4 +11,12 @@ in {
   kernel = _: _: {
     inherit (latest) raspberrypiWirelessFirmware raspberrypifw linuxPackages_rpi4;
   };
+  dtmerge = final: prev: {
+    deviceTree =
+      prev.deviceTree
+      // {
+        applyOverlays = final.callPackage ./extra/dtmerge.nix {};
+      };
+    makeModulesClosure = x: prev.makeModulesClosure (x // {allowMissing = true;});
+  };
 }
