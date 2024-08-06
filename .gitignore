@@ -13,4 +13,4 @@ result
 # nixago-auto-created: mdbook-build-folder
 docs/build/**
 
-.colmena-*/
+colmena-assets-*/
