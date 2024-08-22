@@ -52,8 +52,8 @@ in {
   tl.services.klipper = {
     enable = true;
 
-    package = pkgs.experimental-danger-klipper-full-plugins;
-    firmware-package = pkgs.experimental-danger-klipper-firmware;
+    package = pkgs.danger-klipper-full-plugins;
+    firmware-package = pkgs.danger-klipper-firmware;
 
     extraConfigurationPackages = [
       pkgs.kamp

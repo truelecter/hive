@@ -105,3 +105,16 @@ fetch.github = "MRX8024/chopper-resonance-tuner"
 [klipper-cartographer]
 src.git = "https://github.com/Cartographer3D/cartographer-klipper"
 fetch.github = "Cartographer3D/cartographer-klipper"
+
+# Spoolman
+[spoolman]
+src.github = "Donkie/Spoolman"
+fetch.url = "https://github.com/Donkie/Spoolman/releases/download/$ver/spoolman.zip"
+
+[python-scheduler]
+src.pypi = "scheduler"
+fetch.pypi = "scheduler"
+
+[python-sqlalchemy-cockroachdb]
+src.pypi = "sqlalchemy-cockroachdb"
+fetch.pypi = "sqlalchemy-cockroachdb"

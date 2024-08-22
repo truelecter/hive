@@ -13,6 +13,7 @@ in {
     profiles.faster-linux
     profiles.minimize
 
+    inputs.cells.klipper.nixosModules.klipper
     inputs.cells.secrets.nixosProfiles.wifi
 
     inputs.nixos-hardware.nixosModules.raspberry-pi-4
@@ -20,6 +21,7 @@ in {
     ./hardware-configuration.nix
     ./wifi.nix
     ./network-switch.nix
+    ./spoolman.nix
   ];
 
   bee.system = system;
@@ -30,6 +32,8 @@ in {
     overlays = [
       inputs.cells.rpi.overlays.kernel
       inputs.cells.rpi.overlays.dtmerge
+
+      inputs.cells.klipper.overlays.klipper
     ];
   };
 

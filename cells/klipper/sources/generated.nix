@@ -14,15 +14,15 @@
   };
   danger-klipper = {
     pname = "danger-klipper";
-    version = "9648ee15763cffa7fc0b9e4b2929d48608e322da";
+    version = "e854a00d8be915ec254f9f7e06ca176fb72ca5aa";
     src = fetchFromGitHub {
       owner = "DangerKlippers";
       repo = "danger-klipper";
-      rev = "9648ee15763cffa7fc0b9e4b2929d48608e322da";
+      rev = "e854a00d8be915ec254f9f7e06ca176fb72ca5aa";
       fetchSubmodules = false;
-      sha256 = "sha256-wr5Yh6RciRT0q0y+Oh3VPuqtGcekbk3hzkm3vEL1bOc=";
+      sha256 = "sha256-1GoacfdQcYe+17o5eejJ59nlDOtyzFrXf/T0w3I6aTY=";
     };
-    date = "2024-08-14";
+    date = "2024-08-17";
   };
   experimental-danger-klipper = {
     pname = "experimental-danger-klipper";
@@ -50,27 +50,27 @@
   };
   klipper = {
     pname = "klipper";
-    version = "d81eb557d7f2aad5e22e3633fbcd53a4d60ac5d1";
+    version = "81de9a8615df667ae2ea6d2b0f9204e7f3b09bcc";
     src = fetchFromGitHub {
       owner = "Klipper3d";
       repo = "klipper";
-      rev = "d81eb557d7f2aad5e22e3633fbcd53a4d60ac5d1";
+      rev = "81de9a8615df667ae2ea6d2b0f9204e7f3b09bcc";
       fetchSubmodules = false;
-      sha256 = "sha256-O6W2xiG5rZzD/40ytIFo4HovKq0ml0oCV6amcAQhoUs=";
+      sha256 = "sha256-XSFgtNJv7Ce1vUbJcIQJvPlwMwgp9jF7FmXr4hSPiaY=";
     };
-    date = "2024-08-14";
+    date = "2024-08-16";
   };
   klipper-cartographer = {
     pname = "klipper-cartographer";
-    version = "a4ca991385ce7a1cde09f9f5e0489775f117b223";
+    version = "9f2160954abb5c37354fe770807ed4beb5aef135";
     src = fetchFromGitHub {
       owner = "Cartographer3D";
       repo = "cartographer-klipper";
-      rev = "a4ca991385ce7a1cde09f9f5e0489775f117b223";
+      rev = "9f2160954abb5c37354fe770807ed4beb5aef135";
       fetchSubmodules = false;
-      sha256 = "sha256-TmMwe1t0H3Yqo7ek4Tmckwr5AGIeM+W7bj8fbcW5rZk=";
+      sha256 = "sha256-nI2jWYgj6Hnd9ruPpnunmnNs9fKDEMLRl5wFlrzw+WU=";
     };
-    date = "2024-08-11";
+    date = "2024-08-21";
   };
   klipper-chopper-resonance-tuner = {
     pname = "klipper-chopper-resonance-tuner";
@@ -110,15 +110,15 @@
   };
   klipper-happy-hare = {
     pname = "klipper-happy-hare";
-    version = "62c6416d51a562a595dbe56dcab4f943411cfca6";
+    version = "5eb72ea4b810750a7e6a8dafa7413e505243ef2c";
     src = fetchFromGitHub {
       owner = "moggieuk";
       repo = "Happy-Hare";
-      rev = "62c6416d51a562a595dbe56dcab4f943411cfca6";
+      rev = "5eb72ea4b810750a7e6a8dafa7413e505243ef2c";
       fetchSubmodules = false;
-      sha256 = "sha256-ea1zTiziyRXTgQ2rq2l+hMLg7/Eq7FOm8WjAzL4ECLE=";
+      sha256 = "sha256-3Pr7DZQX39Um3qKnKGcXQETMnaQdYM3GQ7OFldzE48E=";
     };
-    date = "2024-08-16";
+    date = "2024-08-18";
   };
   klipper-kamp = {
     pname = "klipper-kamp";
@@ -246,15 +246,15 @@
   };
   mainsail = {
     pname = "mainsail";
-    version = "2d12e933b9f00e8a539d71ca4ca22326a2c59a43";
+    version = "e0f5f78d348adc75851d9c468685c15cc454be2c";
     src = fetchFromGitHub {
       owner = "mainsail-crew";
       repo = "mainsail";
-      rev = "2d12e933b9f00e8a539d71ca4ca22326a2c59a43";
+      rev = "e0f5f78d348adc75851d9c468685c15cc454be2c";
       fetchSubmodules = false;
-      sha256 = "sha256-2PCx+5oEzqm6JD1/xEMcgiIjGTtcBiADAgJUgQdqL7M=";
+      sha256 = "sha256-RWelHztANPlfK4rKmAhiO1EgjB9yIEeBODSELhUAa3M=";
     };
-    date = "2024-08-16";
+    date = "2024-08-17";
   };
   mobileraker-companion = {
     pname = "mobileraker-companion";
@@ -286,6 +286,30 @@
     src = fetchurl {
       url = "https://pypi.org/packages/source/p/python-networkmanager/python-networkmanager-2.2.tar.gz";
       sha256 = "sha256-3m65IdlKunVJ9CjtKzqkgqXVQ+y2lly6oPu1VasxudU=";
+    };
+  };
+  python-scheduler = {
+    pname = "python-scheduler";
+    version = "0.8.7";
+    src = fetchurl {
+      url = "https://pypi.org/packages/source/s/scheduler/scheduler-0.8.7.tar.gz";
+      sha256 = "sha256-q1TWR0ZJZQxdBAsMwK4xTGNrEQ/Q3YMlSgSBvJNBXuU=";
+    };
+  };
+  python-sqlalchemy-cockroachdb = {
+    pname = "python-sqlalchemy-cockroachdb";
+    version = "2.0.2";
+    src = fetchurl {
+      url = "https://pypi.org/packages/source/s/sqlalchemy-cockroachdb/sqlalchemy-cockroachdb-2.0.2.tar.gz";
+      sha256 = "sha256-EZdW65BYVdahE0W5nP6FMDGj/lmKnEvzWo3ayfif6Mw=";
+    };
+  };
+  spoolman = {
+    pname = "spoolman";
+    version = "v0.19.3";
+    src = fetchurl {
+      url = "https://github.com/Donkie/Spoolman/releases/download/v0.19.3/spoolman.zip";
+      sha256 = "sha256-Gm1QINrBOFEQyXntJPZMoGZnEATywkcYkjkUguW8+AE=";
     };
   };
 }

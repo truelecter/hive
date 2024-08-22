@@ -1,6 +1,10 @@
 [force_move]
 enable_force_move: True
 
+[safe_z_home]
+home_xy_position: 150, 150
+z_hop: 10
+
 [homing_override]
 axes: XYZ
 gcode:
@@ -107,5 +111,6 @@ gcode:
     {% endif %}
 
     G28 Z0
+    M400
     G0 Z{safe_z} F{z_feedrate}
   {% endif %}

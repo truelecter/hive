@@ -2,7 +2,7 @@
   inputs,
   cell,
 }: let
-  inherit (inputs) nixos;
+  inherit (inputs) nixos pyproject-nix;
   inherit (inputs.cells) common;
 
   nixpkgs = import nixos {inherit (inputs.nixpkgs) system;};
@@ -10,21 +10,21 @@
 
   l = builtins // nixpkgs.lib;
 
-  klipper-plugins = common.lib.importPackages {
-    inherit nixpkgs sources;
-
-    packages = ./klipper-plugins;
-    extraArguments =
-      {
-        inherit cell;
-      }
-      // packages;
-  };
-
   packages = common.lib.importPackages {
     inherit nixpkgs sources;
 
     packages = ./packages;
+    extraArguments =
+      {
+        inherit cell pyproject-nix;
+      }
+      // packages;
+  };
+
+  klipper-plugins = common.lib.importPackages {
+    inherit nixpkgs sources;
+
+    packages = ./klipper-plugins;
     extraArguments =
       {
         inherit cell;

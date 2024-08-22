@@ -1,8 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}: {
+{pkgs, ...}: {
   tl.services.klipper-screen = {
     enable = true;
     # package = pkgs.klipperscreen;
@@ -12,6 +8,10 @@
         moonraker_port = 7125;
         extrude_distances = "5, 10, 25, 50";
         extrude_speeds = "1, 2, 5, 25";
+      };
+
+      "main" = {
+        print_sort_dir = "name_desc";
       };
 
       "preheat ABS+" = {
