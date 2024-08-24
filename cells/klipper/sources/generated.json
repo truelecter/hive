@@ -106,7 +106,7 @@
     },
     "klipper-cartographer": {
         "cargoLocks": null,
-        "date": "2024-08-21",
+        "date": "2024-08-23",
         "extract": null,
         "name": "klipper-cartographer",
         "passthru": null,
@@ -118,16 +118,16 @@
             "name": null,
             "owner": "Cartographer3D",
             "repo": "cartographer-klipper",
-            "rev": "9f2160954abb5c37354fe770807ed4beb5aef135",
-            "sha256": "sha256-nI2jWYgj6Hnd9ruPpnunmnNs9fKDEMLRl5wFlrzw+WU=",
+            "rev": "2c9d8eb36bd84aaadd238a12a8fe200d27dc460b",
+            "sha256": "sha256-3M1JQmnRqA3AR2q99jeDqZmCGMK7J6538NXTQrS6fUs=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "9f2160954abb5c37354fe770807ed4beb5aef135"
+        "version": "2c9d8eb36bd84aaadd238a12a8fe200d27dc460b"
     },
     "klipper-chopper-resonance-tuner": {
         "cargoLocks": null,
-        "date": "2024-08-12",
+        "date": "2024-08-23",
         "extract": null,
         "name": "klipper-chopper-resonance-tuner",
         "passthru": null,
@@ -139,12 +139,12 @@
             "name": null,
             "owner": "MRX8024",
             "repo": "chopper-resonance-tuner",
-            "rev": "34a01a46130af8dbdb9270e1fdc7c0b92fb87721",
-            "sha256": "sha256-y/9955vbRXrQRikrITakhFKOOhQu1QDwQNiUPYjXaYk=",
+            "rev": "1f98212ca9dbfdf15d516115dd4c26e97b914a8d",
+            "sha256": "sha256-KLWWjHgEmQ9yJD6uUgjYieY8S1Td1qB5SaWN1znAGDk=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "34a01a46130af8dbdb9270e1fdc7c0b92fb87721"
+        "version": "1f98212ca9dbfdf15d516115dd4c26e97b914a8d"
     },
     "klipper-ercf": {
         "cargoLocks": null,
@@ -190,7 +190,7 @@
     },
     "klipper-happy-hare": {
         "cargoLocks": null,
-        "date": "2024-08-18",
+        "date": "2024-08-22",
         "extract": null,
         "name": "klipper-happy-hare",
         "passthru": null,
@@ -202,12 +202,12 @@
             "name": null,
             "owner": "moggieuk",
             "repo": "Happy-Hare",
-            "rev": "5eb72ea4b810750a7e6a8dafa7413e505243ef2c",
-            "sha256": "sha256-3Pr7DZQX39Um3qKnKGcXQETMnaQdYM3GQ7OFldzE48E=",
+            "rev": "287b32bf88d801280daa62772f63be0a098cbb73",
+            "sha256": "sha256-WO5lj8ZLpcUQX7V/xX9Zq0CrF3vFZ7KjBUmGLNkY2VI=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "5eb72ea4b810750a7e6a8dafa7413e505243ef2c"
+        "version": "287b32bf88d801280daa62772f63be0a098cbb73"
     },
     "klipper-kamp": {
         "cargoLocks": null,
