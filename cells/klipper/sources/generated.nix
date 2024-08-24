@@ -62,27 +62,27 @@
   };
   klipper-cartographer = {
     pname = "klipper-cartographer";
-    version = "9f2160954abb5c37354fe770807ed4beb5aef135";
+    version = "2c9d8eb36bd84aaadd238a12a8fe200d27dc460b";
     src = fetchFromGitHub {
       owner = "Cartographer3D";
       repo = "cartographer-klipper";
-      rev = "9f2160954abb5c37354fe770807ed4beb5aef135";
+      rev = "2c9d8eb36bd84aaadd238a12a8fe200d27dc460b";
       fetchSubmodules = false;
-      sha256 = "sha256-nI2jWYgj6Hnd9ruPpnunmnNs9fKDEMLRl5wFlrzw+WU=";
+      sha256 = "sha256-3M1JQmnRqA3AR2q99jeDqZmCGMK7J6538NXTQrS6fUs=";
     };
-    date = "2024-08-21";
+    date = "2024-08-23";
   };
   klipper-chopper-resonance-tuner = {
     pname = "klipper-chopper-resonance-tuner";
-    version = "34a01a46130af8dbdb9270e1fdc7c0b92fb87721";
+    version = "1f98212ca9dbfdf15d516115dd4c26e97b914a8d";
     src = fetchFromGitHub {
       owner = "MRX8024";
       repo = "chopper-resonance-tuner";
-      rev = "34a01a46130af8dbdb9270e1fdc7c0b92fb87721";
+      rev = "1f98212ca9dbfdf15d516115dd4c26e97b914a8d";
       fetchSubmodules = false;
-      sha256 = "sha256-y/9955vbRXrQRikrITakhFKOOhQu1QDwQNiUPYjXaYk=";
+      sha256 = "sha256-KLWWjHgEmQ9yJD6uUgjYieY8S1Td1qB5SaWN1znAGDk=";
     };
-    date = "2024-08-12";
+    date = "2024-08-23";
   };
   klipper-ercf = {
     pname = "klipper-ercf";
@@ -110,15 +110,15 @@
   };
   klipper-happy-hare = {
     pname = "klipper-happy-hare";
-    version = "5eb72ea4b810750a7e6a8dafa7413e505243ef2c";
+    version = "287b32bf88d801280daa62772f63be0a098cbb73";
     src = fetchFromGitHub {
       owner = "moggieuk";
       repo = "Happy-Hare";
-      rev = "5eb72ea4b810750a7e6a8dafa7413e505243ef2c";
+      rev = "287b32bf88d801280daa62772f63be0a098cbb73";
       fetchSubmodules = false;
-      sha256 = "sha256-3Pr7DZQX39Um3qKnKGcXQETMnaQdYM3GQ7OFldzE48E=";
+      sha256 = "sha256-WO5lj8ZLpcUQX7V/xX9Zq0CrF3vFZ7KjBUmGLNkY2VI=";
     };
-    date = "2024-08-18";
+    date = "2024-08-22";
   };
   klipper-kamp = {
     pname = "klipper-kamp";
