@@ -14,15 +14,15 @@
   };
   danger-klipper = {
     pname = "danger-klipper";
-    version = "e854a00d8be915ec254f9f7e06ca176fb72ca5aa";
+    version = "89935d2f51b9b3ada0c30e001be8dcba78b728e0";
     src = fetchFromGitHub {
       owner = "DangerKlippers";
       repo = "danger-klipper";
-      rev = "e854a00d8be915ec254f9f7e06ca176fb72ca5aa";
+      rev = "89935d2f51b9b3ada0c30e001be8dcba78b728e0";
       fetchSubmodules = false;
-      sha256 = "sha256-1GoacfdQcYe+17o5eejJ59nlDOtyzFrXf/T0w3I6aTY=";
+      sha256 = "sha256-prX7RV4wBmxBrKqe+5md3M6i3g6VRi3eI94Pn5eb/Rs=";
     };
-    date = "2024-08-17";
+    date = "2024-08-29";
   };
   experimental-danger-klipper = {
     pname = "experimental-danger-klipper";
@@ -50,27 +50,27 @@
   };
   klipper = {
     pname = "klipper";
-    version = "81de9a8615df667ae2ea6d2b0f9204e7f3b09bcc";
+    version = "f71d2c7cfc97d3e7964403463e513ac7f9b90050";
     src = fetchFromGitHub {
       owner = "Klipper3d";
       repo = "klipper";
-      rev = "81de9a8615df667ae2ea6d2b0f9204e7f3b09bcc";
+      rev = "f71d2c7cfc97d3e7964403463e513ac7f9b90050";
       fetchSubmodules = false;
-      sha256 = "sha256-XSFgtNJv7Ce1vUbJcIQJvPlwMwgp9jF7FmXr4hSPiaY=";
+      sha256 = "sha256-XWS3ZAHTuLIXTgorhBLGFngyTgZYOuM4F0Qk8cwmj4U=";
     };
-    date = "2024-08-16";
+    date = "2024-08-29";
   };
   klipper-cartographer = {
     pname = "klipper-cartographer";
-    version = "6e326cbf6152a771b1f51f0b930d85b75ac7ca45";
+    version = "8fe3ee10438480e60cee52a70567b0904bc2ed51";
     src = fetchFromGitHub {
       owner = "Cartographer3D";
       repo = "cartographer-klipper";
-      rev = "6e326cbf6152a771b1f51f0b930d85b75ac7ca45";
+      rev = "8fe3ee10438480e60cee52a70567b0904bc2ed51";
       fetchSubmodules = false;
-      sha256 = "sha256-clMM562W+YBjnTFPxIHslXiWiTpfaELIcZDDDIsY3yo=";
+      sha256 = "sha256-DYMS2qflysr2SDXRAUqxXqDExBUwBqtirq040g+D3aY=";
     };
-    date = "2024-08-26";
+    date = "2024-08-28";
   };
   klipper-chopper-resonance-tuner = {
     pname = "klipper-chopper-resonance-tuner";
@@ -110,15 +110,15 @@
   };
   klipper-happy-hare = {
     pname = "klipper-happy-hare";
-    version = "287b32bf88d801280daa62772f63be0a098cbb73";
+    version = "32c5f55b7cece8f22de4d9cbabbccc6a56412c7d";
     src = fetchFromGitHub {
       owner = "moggieuk";
       repo = "Happy-Hare";
-      rev = "287b32bf88d801280daa62772f63be0a098cbb73";
+      rev = "32c5f55b7cece8f22de4d9cbabbccc6a56412c7d";
       fetchSubmodules = false;
-      sha256 = "sha256-WO5lj8ZLpcUQX7V/xX9Zq0CrF3vFZ7KjBUmGLNkY2VI=";
+      sha256 = "sha256-HXjmdBzkWPOyB13/EZNXqqygMH5orcIqIGdcCVLbC6U=";
     };
-    date = "2024-08-22";
+    date = "2024-08-29";
   };
   klipper-kamp = {
     pname = "klipper-kamp";
@@ -204,15 +204,15 @@
   };
   klipper_tmc_autotune = {
     pname = "klipper_tmc_autotune";
-    version = "6224b7791b537c69ac6dd21e9363ebdb6c1348de";
+    version = "489a1789d5ddb5510dcdd953aaa7780892d63f0e";
     src = fetchFromGitHub {
       owner = "andrewmcgr";
       repo = "klipper_tmc_autotune";
-      rev = "6224b7791b537c69ac6dd21e9363ebdb6c1348de";
+      rev = "489a1789d5ddb5510dcdd953aaa7780892d63f0e";
       fetchSubmodules = false;
-      sha256 = "sha256-9IheggyvEUO7N05RF/OuElwQzvzrvc2P9ETfeuNmA9k=";
+      sha256 = "sha256-Gvv4ewf/BIOjuD3s0nMzq3uxnj0DIsaPRt0Rf0MnEIc=";
     };
-    date = "2024-05-22";
+    date = "2024-08-28";
   };
   libdatachannel0_17 = {
     pname = "libdatachannel0_17";
@@ -246,15 +246,15 @@
   };
   mainsail = {
     pname = "mainsail";
-    version = "85c577434efaa60fdcf1a017ab0fa00b99c9eecf";
+    version = "21dab3913c4ad5833a88d46ee8a8e1f0fa897ff4";
     src = fetchFromGitHub {
       owner = "mainsail-crew";
       repo = "mainsail";
-      rev = "85c577434efaa60fdcf1a017ab0fa00b99c9eecf";
+      rev = "21dab3913c4ad5833a88d46ee8a8e1f0fa897ff4";
       fetchSubmodules = false;
-      sha256 = "sha256-mk9CUOK0SawaMxfiK5x7XkIEmjoaxTLHLO5soo8pbK8=";
+      sha256 = "sha256-BPlSaSO3HveY9V3CwArJfJKLWthjLwyjcLrBUhhU5uU=";
     };
-    date = "2024-08-24";
+    date = "2024-08-27";
   };
   mobileraker-companion = {
     pname = "mobileraker-companion";

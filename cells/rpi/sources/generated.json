@@ -1,7 +1,7 @@
 {
     "libcamera": {
         "cargoLocks": null,
-        "date": "2024-06-17",
+        "date": "2024-08-29",
         "extract": null,
         "name": "libcamera",
         "passthru": null,
@@ -13,16 +13,16 @@
             "name": null,
             "owner": "raspberrypi",
             "repo": "libcamera",
-            "rev": "6ddd79b5bdbedc1f61007aed35391f1559f9e29a",
-            "sha256": "sha256-qqEMJzMotybf1nJp1dsz3zc910Qj0TmqCm1CwuSb1VY=",
+            "rev": "48fe316f38912ec800b73553e3980e7c3fb40409",
+            "sha256": "sha256-nDBNIzMFPvNAp6sPguc5IKqsfda/dKQeUV46xd6sLMM=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "6ddd79b5bdbedc1f61007aed35391f1559f9e29a"
+        "version": "48fe316f38912ec800b73553e3980e7c3fb40409"
     },
     "libcamera-apps": {
         "cargoLocks": null,
-        "date": "2024-08-13",
+        "date": "2024-08-29",
         "extract": null,
         "name": "libcamera-apps",
         "passthru": null,
@@ -34,16 +34,16 @@
             "name": null,
             "owner": "raspberrypi",
             "repo": "libcamera-apps",
-            "rev": "511941fdb1fed8f10668c6177639bcc7770b672d",
-            "sha256": "sha256-/phg1h344bI6c6E+2qrto2U6pvDblAwnnobnb/xYhYE=",
+            "rev": "06c0a29ec3c77347e3e3b724a9e8858476664e67",
+            "sha256": "sha256-9qjK9sGDZL4TGm1c7nUcgq/BgUEIahTORuGLJNqLFew=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "511941fdb1fed8f10668c6177639bcc7770b672d"
+        "version": "06c0a29ec3c77347e3e3b724a9e8858476664e67"
     },
     "mediamtx": {
         "cargoLocks": null,
-        "date": "2024-08-23",
+        "date": "2024-08-26",
         "extract": null,
         "name": "mediamtx",
         "passthru": null,
@@ -55,11 +55,11 @@
             "name": null,
             "owner": "bluenviron",
             "repo": "mediamtx",
-            "rev": "aa1822dd62d15080245869ccb80d643f7bdf8f15",
-            "sha256": "sha256-YTaULVghPC+luidbjeNLe7QWettGNDG5jjkS87zFwVU=",
+            "rev": "3b7b2305d6554de5fc3517742f74f512e003be3b",
+            "sha256": "sha256-1zTT9PBQw042pLljaE7p/K8VuC0gEg4VD7qP1+lj968=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "aa1822dd62d15080245869ccb80d643f7bdf8f15"
+        "version": "3b7b2305d6554de5fc3517742f74f512e003be3b"
     }
 }
