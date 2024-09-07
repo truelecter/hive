@@ -22,7 +22,7 @@
     },
     "danger-klipper": {
         "cargoLocks": null,
-        "date": "2024-08-29",
+        "date": "2024-09-03",
         "extract": null,
         "name": "danger-klipper",
         "passthru": null,
@@ -34,16 +34,16 @@
             "name": null,
             "owner": "DangerKlippers",
             "repo": "danger-klipper",
-            "rev": "89935d2f51b9b3ada0c30e001be8dcba78b728e0",
-            "sha256": "sha256-prX7RV4wBmxBrKqe+5md3M6i3g6VRi3eI94Pn5eb/Rs=",
+            "rev": "3a79f19dbff94f5c5541b7e5693b24a15bfab6e6",
+            "sha256": "sha256-1tXMlIX7cql3CpdEBRj/+wn0XG2WOvTiHc63KRRq03M=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "89935d2f51b9b3ada0c30e001be8dcba78b728e0"
+        "version": "3a79f19dbff94f5c5541b7e5693b24a15bfab6e6"
     },
     "experimental-danger-klipper": {
         "cargoLocks": null,
-        "date": "2024-07-01",
+        "date": "2024-08-31",
         "extract": null,
         "name": "experimental-danger-klipper",
         "passthru": null,
@@ -55,16 +55,16 @@
             "name": null,
             "owner": "DangerKlippers",
             "repo": "danger-klipper",
-            "rev": "10002c97f87ed19dc80d05dd6dfd917c88ff535f",
-            "sha256": "sha256-zXtuodlHSjnxvKnP2gypMNmNPSay3DzQSS6s7rVssqs=",
+            "rev": "762e6fc929e4900872005f1aadb2390ced720091",
+            "sha256": "sha256-eetI8vvxgtGAIZv1AX6derzJNPiebktZGFIQB9jxCHI=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "10002c97f87ed19dc80d05dd6dfd917c88ff535f"
+        "version": "762e6fc929e4900872005f1aadb2390ced720091"
     },
     "katapult": {
         "cargoLocks": null,
-        "date": "2024-08-24",
+        "date": "2024-09-04",
         "extract": null,
         "name": "katapult",
         "passthru": null,
@@ -76,16 +76,16 @@
             "name": null,
             "owner": "Arksine",
             "repo": "katapult",
-            "rev": "42909f8a0d9254aa05e6d6b1c96ddf6633d114a4",
-            "sha256": "sha256-XRsgG9/4WX7YlkSnejsv/nSlQUG6PAL3iHote/eNcp4=",
+            "rev": "772817b4a33bc8838b8a779105b2567e4a0fa02a",
+            "sha256": "sha256-Ptq8gcquJU/lysWvyPnogT1/SiD6JDstd2vnr7NAwOM=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "42909f8a0d9254aa05e6d6b1c96ddf6633d114a4"
+        "version": "772817b4a33bc8838b8a779105b2567e4a0fa02a"
     },
     "klipper": {
         "cargoLocks": null,
-        "date": "2024-08-29",
+        "date": "2024-09-05",
         "extract": null,
         "name": "klipper",
         "passthru": null,
@@ -97,12 +97,12 @@
             "name": null,
             "owner": "Klipper3d",
             "repo": "klipper",
-            "rev": "f71d2c7cfc97d3e7964403463e513ac7f9b90050",
-            "sha256": "sha256-XWS3ZAHTuLIXTgorhBLGFngyTgZYOuM4F0Qk8cwmj4U=",
+            "rev": "14a83103c32fe1590b5b0416f71d1445648c58ed",
+            "sha256": "sha256-rLfzRETugOLPetCmfSiPhP7mfuDADmrNC2ZJHjlv3Nw=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "f71d2c7cfc97d3e7964403463e513ac7f9b90050"
+        "version": "14a83103c32fe1590b5b0416f71d1445648c58ed"
     },
     "klipper-cartographer": {
         "cargoLocks": null,
@@ -169,7 +169,7 @@
     },
     "klipper-gcode_shell_command": {
         "cargoLocks": null,
-        "date": "2024-08-06",
+        "date": "2024-09-01",
         "extract": null,
         "name": "klipper-gcode_shell_command",
         "passthru": null,
@@ -181,16 +181,16 @@
             "name": null,
             "owner": "dw-0",
             "repo": "kiauh",
-            "rev": "854794298679cc6cb187465df7e3e38b5eb0e8c7",
-            "sha256": "sha256-47K9Hdx8c3gRwWdCt+vU16ciOWHHHLb83xsFpMIRACQ=",
+            "rev": "1d06bf76f39a18a49f7b7099853ce4de590bf647",
+            "sha256": "sha256-YQm90+vev2j8TYiDmcgZ+MNX1dXrl5sOBHHxMNYYgOU=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "854794298679cc6cb187465df7e3e38b5eb0e8c7"
+        "version": "1d06bf76f39a18a49f7b7099853ce4de590bf647"
     },
     "klipper-happy-hare": {
         "cargoLocks": null,
-        "date": "2024-08-29",
+        "date": "2024-09-05",
         "extract": null,
         "name": "klipper-happy-hare",
         "passthru": null,
@@ -202,12 +202,12 @@
             "name": null,
             "owner": "moggieuk",
             "repo": "Happy-Hare",
-            "rev": "32c5f55b7cece8f22de4d9cbabbccc6a56412c7d",
-            "sha256": "sha256-HXjmdBzkWPOyB13/EZNXqqygMH5orcIqIGdcCVLbC6U=",
+            "rev": "151d85a1d34fe8a6b4566b1729bb935049fa5005",
+            "sha256": "sha256-2eORJLgyzdqKPWMIBSwhonKRp+jh17EtZ4DGl5kvd1A=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "32c5f55b7cece8f22de4d9cbabbccc6a56412c7d"
+        "version": "151d85a1d34fe8a6b4566b1729bb935049fa5005"
     },
     "klipper-kamp": {
         "cargoLocks": null,
@@ -316,7 +316,7 @@
     },
     "klipper-screen": {
         "cargoLocks": null,
-        "date": "2024-08-25",
+        "date": "2024-09-04",
         "extract": null,
         "name": "klipper-screen",
         "passthru": null,
@@ -328,12 +328,12 @@
             "name": null,
             "owner": "jordanruthe",
             "repo": "KlipperScreen",
-            "rev": "7d75d39c0e18b73c562918f32801316b623e77fc",
-            "sha256": "sha256-KiP7LuvdPwsozD6+iqGj/GvUN741wK93+/kwvZsSP94=",
+            "rev": "7fd759d5fc42ec78acb0c70c8d517a64c63fdf48",
+            "sha256": "sha256-jOsS6jtV/U6cjAwbWXStg3rOdSOyipNqPQX1i/1aFuY=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "7d75d39c0e18b73c562918f32801316b623e77fc"
+        "version": "7fd759d5fc42ec78acb0c70c8d517a64c63fdf48"
     },
     "klipper-z-calibration": {
         "cargoLocks": null,
@@ -435,7 +435,7 @@
     },
     "mainsail": {
         "cargoLocks": null,
-        "date": "2024-08-27",
+        "date": "2024-09-06",
         "extract": null,
         "name": "mainsail",
         "passthru": null,
@@ -447,12 +447,12 @@
             "name": null,
             "owner": "mainsail-crew",
             "repo": "mainsail",
-            "rev": "21dab3913c4ad5833a88d46ee8a8e1f0fa897ff4",
-            "sha256": "sha256-BPlSaSO3HveY9V3CwArJfJKLWthjLwyjcLrBUhhU5uU=",
+            "rev": "f6f3c77d9756d4db90f0a8de1b7a9b4b21dd3c34",
+            "sha256": "sha256-msV8Ec8I0hNQalD/5+ZcQTQXQbFMCMk00eLIyqP0UtY=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "21dab3913c4ad5833a88d46ee8a8e1f0fa897ff4"
+        "version": "f6f3c77d9756d4db90f0a8de1b7a9b4b21dd3c34"
     },
     "mobileraker-companion": {
         "cargoLocks": null,
@@ -477,7 +477,7 @@
     },
     "moonraker": {
         "cargoLocks": null,
-        "date": "2024-08-11",
+        "date": "2024-09-05",
         "extract": null,
         "name": "moonraker",
         "passthru": null,
@@ -489,12 +489,12 @@
             "name": null,
             "owner": "Arksine",
             "repo": "moonraker",
-            "rev": "f735c0419444848b59342a98ad3532eef123ea46",
-            "sha256": "sha256-ch3vkB7+E+lLE9uJtrsNoJZrW9WkcsJdYskgAmFyufY=",
+            "rev": "71f9e677b81afcc6b99dd5002f595025c38edc7b",
+            "sha256": "sha256-g6YnDrQqA1ZvSbIjcjCMQqpko3pwe8yfFqSopDGB3Wg=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "f735c0419444848b59342a98ad3532eef123ea46"
+        "version": "71f9e677b81afcc6b99dd5002f595025c38edc7b"
     },
     "python-networkmanager": {
         "cargoLocks": null,
