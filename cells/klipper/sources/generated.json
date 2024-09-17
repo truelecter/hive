@@ -85,7 +85,7 @@
     },
     "klipper": {
         "cargoLocks": null,
-        "date": "2024-09-13",
+        "date": "2024-09-16",
         "extract": null,
         "name": "klipper",
         "passthru": null,
@@ -97,12 +97,12 @@
             "name": null,
             "owner": "Klipper3d",
             "repo": "klipper",
-            "rev": "900bf2be55f912d5e9804fe31d9e65da175c4e0c",
-            "sha256": "sha256-+n9GfvUFM4PWULfivLHjcnHayNgiCcgdF8tzoIcGCZ8=",
+            "rev": "0532a41c752df66f149cf55d779072f420ee1b6a",
+            "sha256": "sha256-8EGfBaaQnqqAVAwiwF4C2oUrXPLXo41+Vx4cRgcm4hE=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "900bf2be55f912d5e9804fe31d9e65da175c4e0c"
+        "version": "0532a41c752df66f149cf55d779072f420ee1b6a"
     },
     "klipper-cartographer": {
         "cargoLocks": null,
@@ -190,7 +190,7 @@
     },
     "klipper-happy-hare": {
         "cargoLocks": null,
-        "date": "2024-09-05",
+        "date": "2024-09-14",
         "extract": null,
         "name": "klipper-happy-hare",
         "passthru": null,
@@ -202,12 +202,12 @@
             "name": null,
             "owner": "moggieuk",
             "repo": "Happy-Hare",
-            "rev": "151d85a1d34fe8a6b4566b1729bb935049fa5005",
-            "sha256": "sha256-2eORJLgyzdqKPWMIBSwhonKRp+jh17EtZ4DGl5kvd1A=",
+            "rev": "4950aa70dd7e673e3603cc9a4a5f1c0d2c8e5df9",
+            "sha256": "sha256-Wyn8z4KQAA9kriLqp82XjcakQPe6/hFYPMK/slRbvBI=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "151d85a1d34fe8a6b4566b1729bb935049fa5005"
+        "version": "4950aa70dd7e673e3603cc9a4a5f1c0d2c8e5df9"
     },
     "klipper-kamp": {
         "cargoLocks": null,
@@ -314,9 +314,30 @@
         },
         "version": "14e308ff315029c2be0de498676fd23bae25ed98"
     },
+    "klipper-nevermore-max": {
+        "cargoLocks": null,
+        "date": "2023-11-18",
+        "extract": null,
+        "name": "klipper-nevermore-max",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "nevermore3d",
+            "repo": "Nevermore_Max",
+            "rev": "159df10e4f6015680107d1cbd10a3aab23dd5f18",
+            "sha256": "sha256-uPTUlI2F697pDPw5HxU48dEUpBkgovb61ksXW1HRfLY=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "159df10e4f6015680107d1cbd10a3aab23dd5f18"
+    },
     "klipper-screen": {
         "cargoLocks": null,
-        "date": "2024-09-13",
+        "date": "2024-09-16",
         "extract": null,
         "name": "klipper-screen",
         "passthru": null,
@@ -328,12 +349,12 @@
             "name": null,
             "owner": "jordanruthe",
             "repo": "KlipperScreen",
-            "rev": "24d7851091ebe9c6b589817451032b1461a73677",
-            "sha256": "sha256-trSagnKWyDhcnYYzJAyqXGT8a5/pysTRiQssDwrZZ3c=",
+            "rev": "bdf03e8d6f69307d965e70a639318b244971dbac",
+            "sha256": "sha256-MxuUmkuEnfFC0iPwNUc0Wh8bIEl1J1FMgGEYMjHePZ8=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "24d7851091ebe9c6b589817451032b1461a73677"
+        "version": "bdf03e8d6f69307d965e70a639318b244971dbac"
     },
     "klipper-z-calibration": {
         "cargoLocks": null,
@@ -435,7 +456,7 @@
     },
     "mainsail": {
         "cargoLocks": null,
-        "date": "2024-09-11",
+        "date": "2024-09-16",
         "extract": null,
         "name": "mainsail",
         "passthru": null,
@@ -447,12 +468,12 @@
             "name": null,
             "owner": "mainsail-crew",
             "repo": "mainsail",
-            "rev": "f1085452233f5d59e312aa9d379cb1c6ea58404b",
-            "sha256": "sha256-DVsGR04PTuHNWHWPBCUYgeQ82Xe6mZaJOUxO7mkiJGA=",
+            "rev": "de697da87b0c77262c242034988114d01d4bd743",
+            "sha256": "sha256-pllffDPf3t0C5q0kGIaaRLLyOl6YpvL2CRBw+EXXbhk=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "f1085452233f5d59e312aa9d379cb1c6ea58404b"
+        "version": "de697da87b0c77262c242034988114d01d4bd743"
     },
     "mobileraker-companion": {
         "cargoLocks": null,

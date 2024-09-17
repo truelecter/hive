@@ -4,6 +4,9 @@
   sources,
   cypress,
   zip,
+  gnused,
+  gnugrep,
+  findutils,
   # TODO: extract it to common lib
   prefetch-npm-deps,
   writeShellScriptBin,
@@ -24,6 +27,9 @@ in
     nativeBuildInputs = [
       cypress
       zip
+      gnused
+      gnugrep
+      findutils
     ];
 
     dontNpmBuild = true;
@@ -39,6 +45,10 @@ in
     prePatch = ''
       export CYPRESS_INSTALL_BINARY=0
       export CYPRESS_RUN_BINARY=${cypress}/bin/Cypress
+    '';
+
+    postPatch = ''
+      grep -l additionalSensors * -R | xargs sed -i 's+additionalSensors = \[+additionalSensors = \["sgp40",+g'
     '';
 
     installPhase = ''

@@ -42,7 +42,7 @@
     kernelParams = [
       "console=ttyS0,115200"
       "console=tty1"
-      "video=DSI-1:800x480@60"
+      "video=DSI-0:800x480@60"
     ];
   };
 
@@ -58,16 +58,18 @@
     };
   };
 
-  powerManagement.cpuFreqGovernor = "powersave";
+  powerManagement.cpuFreqGovernor = "performance";
 
-  hardware = {
-    deviceTree.filter = "bcm2711-rpi-cm4.dtb";
+  # hardware = {
+  #   deviceTree.filter = "bcm2711-rpi-cm4.dtb";
 
-    raspberry-pi."4".xhci.enable = true;
-  };
+  #   raspberry-pi."4".xhci.enable = true;
+  # };
 
-  environment.systemPackages = with pkgs; [
-    bluez
-    bluez-tools
-  ];
+  hardware.deviceTree.filter = "bcm2711-rpi-4-b.dtb";
+
+  # environment.systemPackages = with pkgs; [
+  #   bluez
+  #   bluez-tools
+  # ];
 }

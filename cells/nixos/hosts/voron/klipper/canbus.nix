@@ -5,6 +5,9 @@
 
   services.resolved.enable = false;
 
+  networking.interfaces.can0.useDHCP = false;
+  networking.dhcpcd.denyInterfaces = ["can*"];
+
   systemd.network = {
     enable = true;
     wait-online.timeout = 0;

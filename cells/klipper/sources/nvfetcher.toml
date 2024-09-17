@@ -98,6 +98,10 @@ fetch.github = "andrewmcgr/klipper_tmc_autotune"
 src.git = "https://github.com/SanaaHamel/nevermore-controller"
 fetch.github = "SanaaHamel/nevermore-controller"
 
+[klipper-nevermore-max]
+src.git = "https://github.com/nevermore3d/Nevermore_Max"
+fetch.github = "nevermore3d/Nevermore_Max"
+
 [klipper-chopper-resonance-tuner]
 src.git = "https://github.com/MRX8024/chopper-resonance-tuner"
 fetch.github = "MRX8024/chopper-resonance-tuner"

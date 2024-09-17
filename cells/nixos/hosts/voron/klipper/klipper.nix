@@ -106,6 +106,11 @@ in {
         enable = true;
         configFile = ./firmwares/klipper-buttons;
       };
+
+      stealthmax = {
+        enable = true;
+        configFile = ./firmwares/klipper-stealthmax;
+      };
     };
 
     katapult = {
@@ -137,6 +142,11 @@ in {
       buttons = {
         enable = true;
         configFile = ./firmwares/katapult-buttons;
+      };
+
+      stealthmax = {
+        enable = true;
+        configFile = ./firmwares/katapult-stealthmax;
       };
     };
   };
