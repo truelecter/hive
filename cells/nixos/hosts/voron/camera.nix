@@ -48,17 +48,17 @@
     printer = {
       settings = {
         camera = {
-          path = "/dev/v4l/by-id/usb-046d_HD_Pro_Webcam_C920_89E7787F-video-index0";
+          path = "/dev/v4l/by-id/usb-3DO_3DO_4K_USB_CAMERA_US_3DO-video-index0";
           width = 640;
           height = 480;
           fps = 30;
           format = "MJPG";
           force_active = true;
           nbufs = 2;
-          options = {
-            whitebalanceautomatic = 0;
-            whitebalancetemperature = 5700;
-          };
+          # options = {
+          #   whitebalanceautomatic = 0;
+          #   whitebalancetemperature = 5700;
+          # };
         };
 
         http.port = 8081;

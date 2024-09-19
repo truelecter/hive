@@ -19,10 +19,8 @@ in {
     inputs.nixos-hardware.nixosModules.raspberry-pi-4
 
     ./hardware-configuration.nix
-    # ./wifi.nix
     ./camera.nix
     ./klipper
-    ./bluetooth.nix
   ];
 
   bee.system = system;

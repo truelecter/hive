@@ -58,18 +58,7 @@
     };
   };
 
-  powerManagement.cpuFreqGovernor = "performance";
-
-  # hardware = {
-  #   deviceTree.filter = "bcm2711-rpi-cm4.dtb";
-
-  #   raspberry-pi."4".xhci.enable = true;
-  # };
+  powerManagement.cpuFreqGovernor = "powersave";
 
   hardware.deviceTree.filter = "bcm2711-rpi-4-b.dtb";
-
-  # environment.systemPackages = with pkgs; [
-  #   bluez
-  #   bluez-tools
-  # ];
 }

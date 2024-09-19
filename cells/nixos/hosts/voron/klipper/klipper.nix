@@ -151,6 +151,13 @@ in {
     };
   };
 
+  systemd.extraConfig = ''
+    [Manager]
+    CPUAffinity=0-1
+  '';
+
+  systemd.services.klipper.serviceConfig.CPUAffinity = "2-3";
+
   environment.systemPackages = [pkgs.katapult-flashtool];
 
   services.mainsail = {
