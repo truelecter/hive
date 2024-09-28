@@ -16,7 +16,7 @@
     settings = {
       # Improve nix store disk usage
       auto-optimise-store = true;
-      allowed-users = ["root @wheel"];
+      trusted-users = ["@wheel"];
 
       # This is just a representation of the nix default
       system-features = lib.mkDefault ["nixos-test" "benchmark" "big-parallel" "kvm"];

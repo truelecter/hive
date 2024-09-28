@@ -19,6 +19,8 @@ in {
     ./torrent.nix
     ./samba.nix
     ./video-card.nix
+    ./external.nix
+    ./postgres.nix
   ];
 
   bee.system = system;
