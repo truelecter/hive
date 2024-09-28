@@ -92,7 +92,7 @@
       sandbox = lib.mkDefault true;
 
       # Give root user and wheel group special Nix privileges.
-      trusted-users = ["root" "@wheel"];
+      trusted-users = ["root"];
 
       keep-outputs = lib.mkDefault true;
       keep-derivations = lib.mkDefault true;

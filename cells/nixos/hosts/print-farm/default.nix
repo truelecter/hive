@@ -37,8 +37,6 @@ in {
     ];
   };
 
-  systemd.services.NetworkManager-wait-online.enable = false;
-
   networking = {
     hostName = "print-farm";
     firewall.enable = false;

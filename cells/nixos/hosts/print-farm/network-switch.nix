@@ -82,7 +82,16 @@ in {
         "option:dns-server,10.3.0.1"
       ];
 
+      dhcp-host = let
+        voronMac = "e4:5f:01:67:cc:6f";
+        voronIp = "10.3.0.150";
+      in [
+        "${voronMac},${voronIp}"
+      ];
+
       interface = ethernetInterface;
     };
   };
+
+  systemd.network.wait-online.enable = false;
 }

@@ -127,6 +127,12 @@
         flake-utils.follows = "flake-utils";
       };
     };
+    pyproject-nix = {
+      url = "github:nix-community/pyproject.nix";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
     # nix-diff = {
     #   url = "github:Gabriella439/nix-diff";
     #   inputs = {

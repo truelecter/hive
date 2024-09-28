@@ -16,39 +16,43 @@
   '';
 
   tl.services.camera-streamer.instances = {
-    # nozzle = {
-    #   settings = {
-    #     camera = {
-    #       path = "/dev/v4l/by-id/usb-XCG-221208-J_3DO_NOZZLE_CAMERA_4K_01.00.00-video-index0";
-    #       width = 640;
-    #       height = 480;
-    #       fps = 30;
-    #       format = "MJPG";
-    #       nbufs = 2;
-    #       force_active = true;
-    #       options = {
-    #         whitebalanceautomatic = 0;
-    #         whitebalancetemperature = 4200;
-    #       };
-    #     };
+    nozzle = {
+      settings = {
+        camera = {
+          path = "/dev/v4l/by-id/usb-3DO_3DO_NOZZLE_CAMERA_V2_3DO-video-index0";
+          width = 640;
+          height = 480;
+          fps = 60;
+          format = "MJPG";
+          nbufs = 2;
+          force_active = true;
+          options = {
+            autoexposure = 3;
+            backlightcompensation = 1;
+            brightness = 0;
+            contrast = 2;
+            gamma = 115;
+            sharpness = 3;
+          };
+        };
 
-    #     http = {
-    #       port = 8080;
-    #       listen = "0.0.0.0";
-    #     };
+        http = {
+          port = 8080;
+          listen = "0.0.0.0";
+        };
 
-    #     rtsp = {
-    #       port = 8554;
-    #     };
-    #   };
+        rtsp = {
+          port = 8554;
+        };
+      };
 
-    #   nginx.enable = true;
-    # };
+      nginx.enable = true;
+    };
 
     printer = {
       settings = {
         camera = {
-          path = "/dev/v4l/by-id/usb-3DO_3DO_4K_USB_CAMERA_US_3DO-video-index0";
+          path = "/dev/v4l/by-id/usb-3DO_3DO_USB_CAMERA_V2_3DO-video-index0";
           width = 640;
           height = 480;
           fps = 30;
