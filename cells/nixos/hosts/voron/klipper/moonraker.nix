@@ -20,7 +20,7 @@ in {
       };
 
       file_manager = {
-        enable_object_processing = true;
+        enable_object_processing = false;
       };
 
       octoprint_compat = {};
