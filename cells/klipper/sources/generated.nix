@@ -50,15 +50,15 @@
   };
   klipper = {
     pname = "klipper";
-    version = "eeb2678ec2faa72af57444657b1b4f2589b77d65";
+    version = "a34034494ea0ed3f3e132e38e80ab03bd998c889";
     src = fetchFromGitHub {
       owner = "Klipper3d";
       repo = "klipper";
-      rev = "eeb2678ec2faa72af57444657b1b4f2589b77d65";
+      rev = "a34034494ea0ed3f3e132e38e80ab03bd998c889";
       fetchSubmodules = false;
-      sha256 = "sha256-oIGZEULBJrebFMOcE+UbC5t6tvbiAD33Jv/Jw2fhJbk=";
+      sha256 = "sha256-+OI7x3fnjs0/cVDhIqd4NiOCY+XyBq0491/vn77Ct+c=";
     };
-    date = "2024-11-01";
+    date = "2024-11-06";
   };
   klipper-cartographer = {
     pname = "klipper-cartographer";
@@ -110,15 +110,15 @@
   };
   klipper-happy-hare = {
     pname = "klipper-happy-hare";
-    version = "179c71d254847a6c3ef25f068e8e91ef9276beae";
+    version = "25db61e088cac1bc8e1285851713b22c696a73dc";
     src = fetchFromGitHub {
       owner = "moggieuk";
       repo = "Happy-Hare";
-      rev = "179c71d254847a6c3ef25f068e8e91ef9276beae";
+      rev = "25db61e088cac1bc8e1285851713b22c696a73dc";
       fetchSubmodules = false;
-      sha256 = "sha256-CEsDTRDpZeFT3qIT+w5UFuUGWiCrefdxu0Mx0m/bRGc=";
+      sha256 = "sha256-zQl8ab3GlHwfZxtZLX5aT1QyY5YyQfZmCl45BiV9XaU=";
     };
-    date = "2024-10-29";
+    date = "2024-11-07";
   };
   klipper-kamp = {
     pname = "klipper-kamp";
@@ -258,15 +258,15 @@
   };
   mainsail = {
     pname = "mainsail";
-    version = "f26af62425d459ffd56c00bdd6d99e484dcc7812";
+    version = "fbeecb0169abe6e86882c5c19640fa9114c7e49b";
     src = fetchFromGitHub {
       owner = "mainsail-crew";
       repo = "mainsail";
-      rev = "f26af62425d459ffd56c00bdd6d99e484dcc7812";
+      rev = "fbeecb0169abe6e86882c5c19640fa9114c7e49b";
       fetchSubmodules = false;
-      sha256 = "sha256-MLj6x7m9qFTKK3aX/xnLe0HN5mqzYO684UeoC1OG1WY=";
+      sha256 = "sha256-j+Zsum/m/WtIhKPsdmGeWIU+HIjTCeJ7ry8jI3v31dI=";
     };
-    date = "2024-10-31";
+    date = "2024-11-09";
   };
   mobileraker-companion = {
     pname = "mobileraker-companion";
