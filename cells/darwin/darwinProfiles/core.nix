@@ -26,16 +26,14 @@
     fi
   '';
 
-  # Recreate /run/current-system symlink after boot
-  services.activate-system.enable = true;
-
   services.nix-daemon.enable = true;
 
   environment = {
     systemPackages = with pkgs; [
       m-cli
       terminal-notifier
-      duti
+      # Until https://github.com/NixOS/nixpkgs/pull/357745
+      # duti
       # iproute2mac
     ];
 

@@ -66,5 +66,6 @@
   "remote.SSH.localServerDownload": "off",
 
   "direnv.restart.automatic": true,
-  "c4.diagram.renderer": "structurizr"
+  "c4.diagram.renderer": "structurizr",
+  "workbench.startupEditor": "none"
 }

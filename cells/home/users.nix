@@ -88,7 +88,7 @@ in {
     root = {config, ...}: {
       users.users.root = {
         uid = 0;
-        passwordFile = config.sops.secrets.root-password.path;
+        hashedPasswordFile = config.sops.secrets.root-password.path;
       };
     };
   };

@@ -20,8 +20,8 @@
       settings = {
         camera = {
           path = "/dev/v4l/by-id/usb-3DO_3DO_NOZZLE_CAMERA_V2_3DO-video-index0";
-          width = 640;
-          height = 480;
+          width = 1920;
+          height = 1080;
           fps = 60;
           format = "MJPG";
           nbufs = 2;
@@ -29,9 +29,9 @@
           options = {
             autoexposure = 3;
             backlightcompensation = 1;
-            brightness = 0;
+            brightness = -10;
             contrast = 2;
-            gamma = 115;
+            gamma = 100;
             sharpness = 3;
           };
         };
@@ -77,4 +77,9 @@
   # ];
 
   boot.blacklistedKernelModules = ["snd-usb-audio"]; # Disable mic on cameras for some USB bandwidth
+
+  hardware.raspberry-pi."4".dwc2 = {
+    enable = true;
+    dr_mode = "host";
+  };
 }

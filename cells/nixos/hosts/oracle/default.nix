@@ -56,5 +56,11 @@ in {
 
   services.vnstat.enable = true;
 
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+    dockerSocket.enable = true;
+  };
+
   system.stateVersion = "22.11";
 }

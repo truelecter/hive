@@ -11,14 +11,14 @@ in {
     enable = true;
     interfaces = [wifiInterface];
     networks."Xata290" = {
-      psk = "@WIFI_PASSWORD@";
+      pskRaw = "ext:WIFI_PASSWORD";
       priority = 5;
     };
     networks."Xata290.5" = {
-      psk = "@WIFI_PASSWORD@";
+      pskRaw = "ext:WIFI_PASSWORD";
       priority = 10;
     };
-    environmentFile = config.sops.secrets.xata-password-env.path;
+    secretsFile = config.sops.secrets.xata-password-env.path;
     extraConfig = ''
       ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=wifi
       country=UA

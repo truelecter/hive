@@ -6,9 +6,9 @@
 
   services.postgresql = {
     enable = true;
-    package = pkgs.postgresql_12;
+    package = pkgs.postgresql_16;
     enableTCPIP = true;
-    dataDir = "/srv/db/pg-12";
+    dataDir = "/srv/db/pg-16";
     ensureDatabases = [
       "cqdata"
       "authentik"

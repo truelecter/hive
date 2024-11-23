@@ -24,9 +24,9 @@ This flake is configured with the use of [hive][hive].
 
 ```bash
 colmena build
-colmena apply
+colmena apply --experimental-flake-eval
 # OR
-colmena apply --on "nixos-$HOST"
+colmena apply --experimental-flake-eval --on "$HOST"
 ```
 
 ### Darwin hosts

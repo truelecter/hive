@@ -85,8 +85,9 @@
   inputs = {
     latest.url = "github:nixos/nixpkgs/nixos-unstable";
     k8s.url = "github:nixos/nixpkgs/9b5328b7f761a7bbdc0e332ac4cf076a3eedb89b";
-    nixos.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixos.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs.follows = "nixos";
+    # nixos.follows = "latest";
 
     darwin = {
       url = "github:LnL7/nix-darwin";
@@ -94,7 +95,7 @@
     };
 
     home = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixos";
     };
 
@@ -121,7 +122,7 @@
       };
     };
     nvfetcher = {
-      url = "github:berberman/nvfetcher";
+      url = "github:berberman/nvfetcher/refs/pull/128/merge";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-utils.follows = "flake-utils";
@@ -133,12 +134,6 @@
         nixpkgs.follows = "nixpkgs";
       };
     };
-    # nix-diff = {
-    #   url = "github:Gabriella439/nix-diff";
-    #   inputs = {
-    #     nixpkgs.follows = "nixpkgs";
-    #   };
-    # };
   };
 
   outputs = {

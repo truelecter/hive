@@ -58,7 +58,7 @@
     };
   };
 
-  powerManagement.cpuFreqGovernor = "powersave";
+  powerManagement.cpuFreqGovernor = "performance";
 
   hardware.deviceTree.filter = "bcm2711-rpi-4-b.dtb";
 }

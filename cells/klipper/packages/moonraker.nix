@@ -23,16 +23,12 @@
       zeroconf
       preprocess-cancellation
       jinja2
-      dbus-next
       (
-        apprise.overrideAttrs (o: rec {
-          disabledTests =
-            o.disabledTests
-            ++ [
-              "test_plugin_zulip"
-            ];
+        dbus-next.overrideAttrs (o: rec {
+          doInstallCheck = false;
         })
       )
+      apprise
       libgpiod
       importlib-metadata
     ]);

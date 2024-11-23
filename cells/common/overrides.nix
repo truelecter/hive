@@ -34,7 +34,6 @@ in {
     nix-diff
     csvlens
     #
-    
     tailscale
     ffmpeg_5-full
     ;

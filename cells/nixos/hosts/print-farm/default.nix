@@ -15,13 +15,18 @@ in {
 
     inputs.cells.klipper.nixosModules.klipper
     inputs.cells.secrets.nixosProfiles.wifi
+    # inputs.cells.rpi.nixosModules.rpi
 
     inputs.nixos-hardware.nixosModules.raspberry-pi-4
+    # "${inputs.argononed}/OS/nixos"
 
     ./hardware-configuration.nix
     ./wifi.nix
     ./network-switch.nix
     ./spoolman.nix
+    ./home-assistant
+
+    ./argon.nix
   ];
 
   bee.system = system;
