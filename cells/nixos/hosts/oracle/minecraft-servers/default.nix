@@ -64,7 +64,7 @@
 
   security.acme = {
     acceptTerms = true;
-    email = "andrew.panassiouk@gmail.com";
+    defaults.email = "andrew.panassiouk@gmail.com";
   };
 
   services.nginx = {

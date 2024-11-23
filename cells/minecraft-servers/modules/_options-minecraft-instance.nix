@@ -199,7 +199,7 @@ in {
     };
 
     user.extraGroups = mkOption {
-      type = types.listOf types.string;
+      type = types.listOf types.str;
       default = [];
       description = ''
         Extra groups for minecraft instance user.
@@ -208,7 +208,7 @@ in {
 
     customization = {
       remove = mkOption {
-        type = types.listOf types.string;
+        type = types.listOf types.str;
         default = [];
         description = ''
           List of files to remove before starting server from server package.

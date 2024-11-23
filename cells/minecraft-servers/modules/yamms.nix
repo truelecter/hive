@@ -69,7 +69,7 @@ in {
     };
 
     users.extraGroups = mkOption {
-      type = types.listOf types.string;
+      type = types.listOf types.str;
       default = [];
       description = ''
         Extra groups for minecraft instance users

@@ -15,13 +15,16 @@ in {
   boot.extraModulePackages = [nvidia_x11];
   environment.systemPackages = [nvidia_x11];
 
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
     extraPackages = [nvidia_gl];
     extraPackages32 = [nvidia_gl_32];
   };
 
-  virtualisation.docker.enableNvidia = true;
+  services.xserver.videoDrivers = ["nvidia"];
+  hardware.nvidia = {
+    nvidiaSettings = false;
+    open = true;
+  };
 }
