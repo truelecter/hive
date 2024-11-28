@@ -87,8 +87,7 @@
   sops-reencrypt = nixpkgs.writeScriptBin "sops-reencrypt" ''
     for filename in "$@"
     do
-        ${sops}/bin/sops --decrypt --in-place $filename
-        ${sops}/bin/sops --encrypt --in-place $filename
+        ${sops}/bin/sops updatekeys $filename
     done
   '';
 

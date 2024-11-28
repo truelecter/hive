@@ -12,6 +12,7 @@ keys:
   - &pikiosk 2994ee04eda55d05dae7019ed74ef11ed4a030bc
   - &trizero 626de251782cdf224d7f89a4277110395ef8b6e3
   - &print-farm 3901b2e5705df031bb41338c5ba8634804f9940d
+  - &sirius age1vpflrapt4lz5akw8jcft6lhhq0h26ptjq6ce8da27gzuvfdmtqvs8rk8h6
 
 creation_rules:
   - path_regex: cells/secrets/sops/envs.yaml
@@ -40,6 +41,8 @@ creation_rules:
           - *pikiosk
           - *trizero
           - *print-farm
+        age:
+          - *sirius
 
   - path_regex: cells/secrets/sops/k3s.yaml
     key_groups:
@@ -64,6 +67,8 @@ creation_rules:
           - *pikiosk
           - *trizero
           - *print-farm
+        age:
+          - *sirius
 
   - path_regex: cells/secrets/sops/ssh.*$
     key_groups:

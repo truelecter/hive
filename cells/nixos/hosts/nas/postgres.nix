@@ -5,7 +5,7 @@
   ];
 
   systemd.tmpfiles.rules = [
-    "d /mnt/db/pg-15 775 postgres postgres"
+    "d /mnt/db/pg-15 750 postgres postgres"
   ];
 
   services.postgresql = {

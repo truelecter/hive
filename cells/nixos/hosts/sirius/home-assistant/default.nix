@@ -1,7 +1,6 @@
 {...}: {
   imports = [
     ./z2m.nix
-    # ./pg.nix
     ./home-assistant.nix
     ./mqtt.nix
   ];

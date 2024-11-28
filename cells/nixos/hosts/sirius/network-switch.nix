@@ -1,6 +1,7 @@
 let
   wifiInterface = "wifi-ext";
-  ethernetInterface = "eth";
+  leftEthernetInterface = "eth-l";
+  rightEthernetInterface = "eth-r";
 in {
   networking.useDHCP = false;
 
@@ -18,13 +19,23 @@ in {
         };
       };
 
-      "10-eth" = {
+      "10-eth-l" = {
         linkConfig = {
-          Name = ethernetInterface;
+          Name = leftEthernetInterface;
         };
 
         matchConfig = {
-          PermanentMACAddress = "dc:a6:32:48:e9:7b";
+          PermanentMACAddress = "00:e0:4c:17:57:56";
+        };
+      };
+
+      "10-eth-r" = {
+        linkConfig = {
+          Name = rightEthernetInterface;
+        };
+
+        matchConfig = {
+          PermanentMACAddress = "00:e0:4c:17:57:54";
         };
       };
     };
@@ -44,10 +55,20 @@ in {
         linkConfig.RequiredForOnline = "routable";
       };
 
-      "40-eth" = {
-        matchConfig.Name = ethernetInterface;
+      # "40-eth-l" = {
+      #   matchConfig.Name = leftEthernetInterface;
+      #   address = [
+      #     "10.3.0.128/27"
+      #   ];
+      #   networkConfig = {
+      #     ConfigureWithoutCarrier = true;
+      #   };
+      # };
+
+      "40-eth-r" = {
+        matchConfig.Name = rightEthernetInterface;
         address = [
-          "10.3.0.128/27"
+          "10.3.0.129/27"
         ];
         networkConfig = {
           ConfigureWithoutCarrier = true;
@@ -62,7 +83,8 @@ in {
       "net.ipv4.conf.all.proxy_arp" = true;
       "net.ipv4.conf.all.rp_filter" = false;
       "net.ipv4.conf.${wifiInterface}.rp_filter" = false;
-      "net.ipv4.conf.${ethernetInterface}.rp_filter" = false;
+      # "net.ipv4.conf.${leftEthernetInterface}.rp_filter" = false;
+      "net.ipv4.conf.${rightEthernetInterface}.rp_filter" = false;
     };
   };
 
@@ -76,7 +98,10 @@ in {
       bogus-priv = true;
       no-resolv = true;
 
-      dhcp-range = ["${ethernetInterface},10.3.0.129,10.3.0.158,24h"];
+      dhcp-range = [
+        # "${leftEthernetInterface},10.3.0.130,10.3.0.158,24h"
+        "${rightEthernetInterface},10.3.0.130,10.3.0.158,24h"
+      ];
       dhcp-option = [
         # "option:router,10.3.0.1"
         "option:dns-server,10.3.0.1"
@@ -88,8 +113,6 @@ in {
       in [
         "${voronMac},${voronIp}"
       ];
-
-      interface = ethernetInterface;
     };
   };
 
