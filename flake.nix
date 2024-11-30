@@ -122,7 +122,7 @@
       };
     };
     nvfetcher = {
-      url = "github:berberman/nvfetcher/refs/pull/128/merge";
+      url = "github:berberman/nvfetcher";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-utils.follows = "flake-utils";
