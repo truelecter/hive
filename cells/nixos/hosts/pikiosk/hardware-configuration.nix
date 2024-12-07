@@ -13,12 +13,6 @@
         enable = true;
         configurationLimit = 1;
       };
-      raspberryPi = {
-        enable = false;
-        # uboot.enable = true;
-        uboot.configurationLimit = 1;
-        version = 4;
-      };
     };
     consoleLogLevel = 8;
     initrd.availableKernelModules = lib.mkForce [

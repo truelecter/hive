@@ -14,8 +14,6 @@
     kernelPackages = pkgs.linuxPackages_rpi4;
     loader = {
       grub.enable = false;
-      raspberryPi.enable = false;
-
       generic-extlinux-compatible = {
         enable = true;
         configurationLimit = 5;
