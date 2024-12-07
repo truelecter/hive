@@ -32,9 +32,9 @@
     systemPackages = with pkgs; [
       m-cli
       terminal-notifier
-      # Until https://github.com/NixOS/nixpkgs/pull/357745
+      # Until https://github.com/NixOS/nixpkgs/pull/358321
       # duti
-      # iproute2mac
+      darwin.iproute2mac
     ];
 
     # darwinConfig = "${self}/lib/compat";

@@ -16,8 +16,10 @@
     show-process-indicators = true;
     show-recents = false;
     showhidden = true;
-    static-only = true;
+    static-only = false;
     tilesize = 60;
+    magnification = true;
+    largesize = 75;
     wvous-bl-corner = 1;
     wvous-br-corner = 1;
     wvous-tl-corner = 1;

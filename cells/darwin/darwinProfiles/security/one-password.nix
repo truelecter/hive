@@ -10,11 +10,11 @@ in
     ];
 
     environment.systemPackages = [
-      overrides._1password
+      overrides._1password-cli
     ];
 
     # Because of 1Password requirements
     system.activationScripts.postActivation.text = ''
-      cp ${overrides._1password}/bin/op /usr/local/bin/op
+      cp ${overrides._1password-cli}/bin/op /usr/local/bin/op
     '';
   }

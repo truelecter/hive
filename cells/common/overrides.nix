@@ -23,7 +23,7 @@ in {
     nix
     cachix
     nix-index
-    _1password
+    _1password-cli
     wrapHelm
     kubectl
     kubernetes-helmPlugins

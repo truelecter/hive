@@ -9,7 +9,7 @@
   modulesImportables = l.attrValues homeModules;
 in {
   darwin = {
-    "andrii.panasiuk" = {...}: let
+    "andrii.panasiuk" = {pkgs, ...}: let
       home = "/Users/andrii.panasiuk";
     in {
       users.users."andrii.panasiuk".home = home;
@@ -32,6 +32,21 @@ in {
 
         home.stateVersion = "22.11";
       };
+
+      system.defaults.dock.persistent-apps = [
+        "/Applications/Arc.app"
+        "/Applications/iTerm.app"
+        "${pkgs.vscode}/Applications/Visual Studio Code.app"
+        "/Applications/Telegram Desktop.app"
+        "/Applications/Slack.app"
+        "/System/Applications/Mail.app"
+        "/System/Applications/Calendar.app"
+        "/Applications/Cisco/Cisco Secure Client.app"
+        "/Applications/Amazon Chime.app"
+        "/Applications/OpenVPN Connect/OpenVPN Connect.app"
+      ];
+
+      system.defaults.dock.persistent-others = [];
 
       home-manager.backupFileExtension = ".bak";
 
