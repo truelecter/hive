@@ -3,6 +3,7 @@
     ./z2m.nix
     ./home-assistant.nix
     ./mqtt.nix
+    ./matter.nix
   ];
 
   systemd.tmpfiles.rules = [
