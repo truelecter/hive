@@ -32,5 +32,6 @@ in {
 
   boot.extraModulePackages = with config.boot.kernelPackages; [
     rtl8852au
+    rtl8821au
   ];
 }

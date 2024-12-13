@@ -23,6 +23,10 @@
         key = "wireless290Env";
         sopsFile = ./sops/wifi.yaml;
       };
+      xata-password = {
+        key = "wireless290Pw";
+        sopsFile = ./sops/wifi.yaml;
+      };
     };
   };
 

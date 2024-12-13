@@ -1,5 +1,6 @@
-let
+{config, ...}: let
   wifiInterface = "wifi-ext";
+  wifiAPInterface = "wifi-ap";
   leftEthernetInterface = "eth-l";
   rightEthernetInterface = "eth-r";
 in {
@@ -16,6 +17,16 @@ in {
 
         matchConfig = {
           PermanentMACAddress = "c8:3a:35:ac:03:f0";
+        };
+      };
+
+      "10-wifi-ap" = {
+        linkConfig = {
+          Name = wifiAPInterface;
+        };
+
+        matchConfig = {
+          PermanentMACAddress = "a8:6e:84:da:99:37";
         };
       };
 
@@ -55,15 +66,15 @@ in {
         linkConfig.RequiredForOnline = "routable";
       };
 
-      # "40-eth-l" = {
-      #   matchConfig.Name = leftEthernetInterface;
-      #   address = [
-      #     "10.3.0.128/27"
-      #   ];
-      #   networkConfig = {
-      #     ConfigureWithoutCarrier = true;
-      #   };
-      # };
+      "40-wifi-ap" = {
+        matchConfig.Name = wifiAPInterface;
+        address = [
+          "10.3.0.161/27"
+        ];
+        networkConfig = {
+          ConfigureWithoutCarrier = true;
+        };
+      };
 
       "40-eth-r" = {
         matchConfig.Name = rightEthernetInterface;
@@ -83,7 +94,7 @@ in {
       "net.ipv4.conf.all.proxy_arp" = true;
       "net.ipv4.conf.all.rp_filter" = false;
       "net.ipv4.conf.${wifiInterface}.rp_filter" = false;
-      # "net.ipv4.conf.${leftEthernetInterface}.rp_filter" = false;
+      "net.ipv4.conf.${wifiAPInterface}.rp_filter" = false;
       "net.ipv4.conf.${rightEthernetInterface}.rp_filter" = false;
     };
   };
@@ -99,7 +110,7 @@ in {
       no-resolv = true;
 
       dhcp-range = [
-        # "${leftEthernetInterface},10.3.0.130,10.3.0.158,24h"
+        "${wifiAPInterface},10.3.0.161,10.3.0.190,24h"
         "${rightEthernetInterface},10.3.0.130,10.3.0.158,24h"
       ];
       dhcp-option = [
@@ -110,9 +121,38 @@ in {
       dhcp-host = let
         voronMac = "e4:5f:01:67:cc:6f";
         voronIp = "10.3.0.150";
+
+        bblMac = "64:e8:33:77:71:b0";
+        bblIp = "10.3.0.162";
       in [
         "${voronMac},${voronIp}"
+        "${bblMac},${bblIp}"
       ];
+    };
+  };
+
+  services.hostapd = {
+    enable = true;
+    radios = {
+      # 2.4GHz
+      ${wifiAPInterface} = {
+        band = "2g";
+        noScan = true;
+        channel = 6;
+        countryCode = "US";
+        wifi4 = {
+          capabilities = ["HT20/HT40"];
+        };
+        networks = {
+          ${wifiAPInterface} = {
+            ssid = "Xata290.2";
+            authentication = {
+              wpaPasswordFile = config.sops.secrets.xata-password.path;
+              mode = "wpa2-sha256";
+            };
+          };
+        };
+      };
     };
   };
 
