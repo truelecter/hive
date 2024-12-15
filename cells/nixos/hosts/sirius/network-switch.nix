@@ -16,7 +16,7 @@ in {
         };
 
         matchConfig = {
-          PermanentMACAddress = "c8:3a:35:ac:03:f0";
+          PermanentMACAddress = "00:c0:ca:b6:86:ff";
         };
       };
 

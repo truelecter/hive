@@ -34,4 +34,7 @@ in {
     rtl8852au
     rtl8821au
   ];
+
+  # ALFA awus036axml bluetooth stack does not work for some reason
+  boot.blacklistedKernelModules = ["btusb" "bluetooth"];
 }

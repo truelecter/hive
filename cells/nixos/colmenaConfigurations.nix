@@ -9,9 +9,6 @@
     depsos = {
       targetPort = 2265;
     };
-    sirius = {
-      targetHost = "10.3.0.23";
-    };
   };
 in
   l.mapAttrs
