@@ -30,9 +30,9 @@
             autoexposure = 3;
             backlightcompensation = 1;
             brightness = -10;
-            contrast = 2;
+            contrast = 1;
             gamma = 100;
-            sharpness = 3;
+            sharpness = 5;
           };
         };
 
