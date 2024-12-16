@@ -16,7 +16,7 @@ in {
         };
 
         matchConfig = {
-          PermanentMACAddress = "00:c0:ca:b6:86:ff";
+          PermanentMACAddress = "c8:3a:35:ac:03:f0";
         };
       };
 
@@ -99,35 +99,94 @@ in {
     };
   };
 
-  services.dnsmasq = {
-    enable = true;
-    settings = {
-      port = 0;
+  services.kea = {
+    dhcp4 = {
+      enable = true;
+      settings = {
+        interfaces-config = {
+          interfaces = [
+            wifiAPInterface
+            rightEthernetInterface
+          ];
+        };
+        lease-database = {
+          name = "/var/lib/kea/dhcp4.leases";
+          persist = true;
+          type = "memfile";
+        };
+        rebind-timer = 2000;
+        renew-timer = 1000;
 
-      # sensible behaviours
-      domain-needed = true;
-      bogus-priv = true;
-      no-resolv = true;
+        host-reservation-identifiers = [
+          "hw-address"
+        ];
 
-      dhcp-range = [
-        "${wifiAPInterface},10.3.0.161,10.3.0.190,24h"
-        "${rightEthernetInterface},10.3.0.130,10.3.0.158,24h"
-      ];
-      dhcp-option = [
-        # "option:router,10.3.0.1"
-        "option:dns-server,10.3.0.1"
-      ];
+        reservations-global = true;
+        reservations-in-subnet = true;
 
-      dhcp-host = let
-        voronMac = "e4:5f:01:67:cc:6f";
-        voronIp = "10.3.0.150";
+        option-data = [
+          {
+            code = 3;
+            data = "10.3.0.1";
+            name = "routers";
+          }
+          {
+            code = 5;
+            data = "10.3.0.1";
+            name = "name-servers";
+          }
+          {
+            code = 6;
+            data = "10.3.0.1";
+            name = "domain-name-servers";
+          }
+        ];
 
-        bblMac = "64:e8:33:77:71:b0";
-        bblIp = "10.3.0.162";
-      in [
-        "${voronMac},${voronIp}"
-        "${bblMac},${bblIp}"
-      ];
+        reservations = [
+          # Voron
+          {
+            hw-address = "e4:5f:01:67:cc:6f";
+            ip-address = "10.3.0.150";
+          }
+
+          # BBL
+          {
+            hw-address = "64:e8:33:77:71:b0";
+            ip-address = "10.3.0.162";
+          }
+        ];
+
+        subnet4 = [
+          {
+            # Ethernet
+            id = 1;
+            pools = [
+              {
+                pool = "10.3.0.130 - 10.3.0.158";
+              }
+            ];
+
+            interface = rightEthernetInterface;
+
+            subnet = "10.3.0.128/27";
+          }
+
+          {
+            # WiFi
+            id = 2;
+            pools = [
+              {
+                pool = "10.3.0.162 - 10.3.0.190";
+              }
+            ];
+
+            interface = wifiAPInterface;
+
+            subnet = "10.3.0.160/27";
+          }
+        ];
+        valid-lifetime = 4000;
+      };
     };
   };
 
@@ -139,7 +198,7 @@ in {
         band = "2g";
         noScan = true;
         channel = 6;
-        countryCode = "US";
+        countryCode = "UA";
         wifi4 = {
           capabilities = ["HT20/HT40"];
         };
