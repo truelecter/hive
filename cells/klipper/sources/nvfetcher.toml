@@ -6,14 +6,14 @@ fetch.github = "Arksine/moonraker"
 src.git = "https://github.com/Klipper3d/klipper"
 fetch.github = "Klipper3d/klipper"
 
-[danger-klipper]
-src.git = "https://github.com/DangerKlippers/danger-klipper"
-fetch.github = "DangerKlippers/danger-klipper"
+[kalico]
+src.git = "https://github.com/KalicoCrew/kalico"
+fetch.github = "KalicoCrew/kalico"
 
-[experimental-danger-klipper]
-src.git = "https://github.com/DangerKlippers/danger-klipper"
+[experimental-kalico]
+src.git = "https://github.com/KalicoCrew/kalico"
 src.branch = "bleeding-edge-v2"
-fetch.github = "DangerKlippers/danger-klipper"
+fetch.github = "KalicoCrew/kalico"
 
 [katapult]
 src.git = "https://github.com/Arksine/katapult"

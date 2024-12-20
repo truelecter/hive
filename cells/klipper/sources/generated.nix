@@ -12,29 +12,29 @@
       sha256 = "sha256-8vV8BMFoDeh22I1/qxk6zttJROaD/lrThBxXHZSPpT4=";
     };
   };
-  danger-klipper = {
-    pname = "danger-klipper";
-    version = "3fcbc0b448c042933f7d3db7692e00e6a427c5a9";
+  experimental-kalico = {
+    pname = "experimental-kalico";
+    version = "b29b5a3c67d36ccbabf6cf65b147a9235995bace";
     src = fetchFromGitHub {
-      owner = "DangerKlippers";
-      repo = "danger-klipper";
-      rev = "3fcbc0b448c042933f7d3db7692e00e6a427c5a9";
+      owner = "KalicoCrew";
+      repo = "kalico";
+      rev = "b29b5a3c67d36ccbabf6cf65b147a9235995bace";
       fetchSubmodules = false;
-      sha256 = "sha256-6Tm7SI2wcIeWuE0YVc9tjYfJxt2pCi+I0AN4tVMH9uo=";
-    };
-    date = "2024-12-10";
-  };
-  experimental-danger-klipper = {
-    pname = "experimental-danger-klipper";
-    version = "23a5b65a2f2582ff43765e38858aa349bc3a75f6";
-    src = fetchFromGitHub {
-      owner = "DangerKlippers";
-      repo = "danger-klipper";
-      rev = "23a5b65a2f2582ff43765e38858aa349bc3a75f6";
-      fetchSubmodules = false;
-      sha256 = "sha256-9KoKY+PZi903+Se96gExiZWSkpm75/Qy1W7XdMDQ4m4=";
+      sha256 = "sha256-F/5B7OdZyizVEnVGuIu4YgyFSx6Qcwxc292H0gHwpQo=";
     };
     date = "2024-12-11";
+  };
+  kalico = {
+    pname = "kalico";
+    version = "b500c382cd6bb290a1e9fd003ee10813532750a1";
+    src = fetchFromGitHub {
+      owner = "KalicoCrew";
+      repo = "kalico";
+      rev = "b500c382cd6bb290a1e9fd003ee10813532750a1";
+      fetchSubmodules = false;
+      sha256 = "sha256-/BNusFOpj4GJsByplOqq/Npv2kykevGz/jPE4vzuhU8=";
+    };
+    date = "2024-12-12";
   };
   katapult = {
     pname = "katapult";
@@ -110,15 +110,15 @@
   };
   klipper-happy-hare = {
     pname = "klipper-happy-hare";
-    version = "27c1c42fb3b34c8afca8cf8ca2e01a195827ca03";
+    version = "9d06d262db90227ef4c7a342ee178faa07d760cf";
     src = fetchFromGitHub {
       owner = "moggieuk";
       repo = "Happy-Hare";
-      rev = "27c1c42fb3b34c8afca8cf8ca2e01a195827ca03";
+      rev = "9d06d262db90227ef4c7a342ee178faa07d760cf";
       fetchSubmodules = false;
-      sha256 = "sha256-fxDcMUKWGdB/stzgJ10CTMieVO8KGMKOGyvjBeD5N4k=";
+      sha256 = "sha256-HrmF+5PMmu9hTbG3ABPjuOLxy52brW04uO8s4Jteg+c=";
     };
-    date = "2024-12-13";
+    date = "2024-12-14";
   };
   klipper-kamp = {
     pname = "klipper-kamp";
@@ -193,15 +193,15 @@
   };
   klipper-screen = {
     pname = "klipper-screen";
-    version = "5df1fd9de3029cddd5f77f3de677a8f5dee19cf3";
+    version = "14fdbc2f4cdeface5fb55a5c600dd935c67ebf97";
     src = fetchFromGitHub {
       owner = "jordanruthe";
       repo = "KlipperScreen";
-      rev = "5df1fd9de3029cddd5f77f3de677a8f5dee19cf3";
+      rev = "14fdbc2f4cdeface5fb55a5c600dd935c67ebf97";
       fetchSubmodules = false;
-      sha256 = "sha256-r1pOlnaG+xgV0SpoGbhBUnvoklDxmu8SEEbJ7LmOUsc=";
+      sha256 = "sha256-f6ZDi9C2glcsDA/1GHFLuVpO3w4l6uY180TgloEA5/o=";
     };
-    date = "2024-12-06";
+    date = "2024-12-15";
   };
   klipper-z-calibration = {
     pname = "klipper-z-calibration";
@@ -216,15 +216,15 @@
   };
   klipper_tmc_autotune = {
     pname = "klipper_tmc_autotune";
-    version = "1aedb0802eca2655ab5bcf9966acf77ce38e8317";
+    version = "eb39e2be4c10c6342ef345e3b52c13f54131bfe3";
     src = fetchFromGitHub {
       owner = "andrewmcgr";
       repo = "klipper_tmc_autotune";
-      rev = "1aedb0802eca2655ab5bcf9966acf77ce38e8317";
+      rev = "eb39e2be4c10c6342ef345e3b52c13f54131bfe3";
       fetchSubmodules = false;
-      sha256 = "sha256-s1P8yqGeZnjLZ2N2gi8PlaUXMPtXHRdWjZ5XOqNGUxY=";
+      sha256 = "sha256-en7i7u6z0uEuxjZ+zK/JAlDBY+7LndTtzn0f7KoST0A=";
     };
-    date = "2024-10-28";
+    date = "2024-12-17";
   };
   libdatachannel0_17 = {
     pname = "libdatachannel0_17";

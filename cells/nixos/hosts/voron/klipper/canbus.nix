@@ -3,8 +3,6 @@
     SUBSYSTEM=="net", ACTION=="add|change", KERNEL=="can*", ATTR{tx_queue_len}="1024"
   '';
 
-  services.resolved.enable = false;
-
   networking.interfaces.can0.useDHCP = false;
   networking.dhcpcd.denyInterfaces = ["can*"];
 

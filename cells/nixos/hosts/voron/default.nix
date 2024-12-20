@@ -21,6 +21,7 @@ in {
     ./hardware-configuration.nix
     ./camera.nix
     ./klipper
+    ./network.nix
   ];
 
   bee.system = system;

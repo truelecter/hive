@@ -20,32 +20,11 @@
         },
         "version": "v0.2.8"
     },
-    "danger-klipper": {
-        "cargoLocks": null,
-        "date": "2024-12-10",
-        "extract": null,
-        "name": "danger-klipper",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "DangerKlippers",
-            "repo": "danger-klipper",
-            "rev": "3fcbc0b448c042933f7d3db7692e00e6a427c5a9",
-            "sha256": "sha256-6Tm7SI2wcIeWuE0YVc9tjYfJxt2pCi+I0AN4tVMH9uo=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "3fcbc0b448c042933f7d3db7692e00e6a427c5a9"
-    },
-    "experimental-danger-klipper": {
+    "experimental-kalico": {
         "cargoLocks": null,
         "date": "2024-12-11",
         "extract": null,
-        "name": "experimental-danger-klipper",
+        "name": "experimental-kalico",
         "passthru": null,
         "pinned": false,
         "src": {
@@ -53,14 +32,35 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "owner": "DangerKlippers",
-            "repo": "danger-klipper",
-            "rev": "23a5b65a2f2582ff43765e38858aa349bc3a75f6",
-            "sha256": "sha256-9KoKY+PZi903+Se96gExiZWSkpm75/Qy1W7XdMDQ4m4=",
+            "owner": "KalicoCrew",
+            "repo": "kalico",
+            "rev": "b29b5a3c67d36ccbabf6cf65b147a9235995bace",
+            "sha256": "sha256-F/5B7OdZyizVEnVGuIu4YgyFSx6Qcwxc292H0gHwpQo=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "23a5b65a2f2582ff43765e38858aa349bc3a75f6"
+        "version": "b29b5a3c67d36ccbabf6cf65b147a9235995bace"
+    },
+    "kalico": {
+        "cargoLocks": null,
+        "date": "2024-12-12",
+        "extract": null,
+        "name": "kalico",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "KalicoCrew",
+            "repo": "kalico",
+            "rev": "b500c382cd6bb290a1e9fd003ee10813532750a1",
+            "sha256": "sha256-/BNusFOpj4GJsByplOqq/Npv2kykevGz/jPE4vzuhU8=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "b500c382cd6bb290a1e9fd003ee10813532750a1"
     },
     "katapult": {
         "cargoLocks": null,
@@ -190,7 +190,7 @@
     },
     "klipper-happy-hare": {
         "cargoLocks": null,
-        "date": "2024-12-13",
+        "date": "2024-12-14",
         "extract": null,
         "name": "klipper-happy-hare",
         "passthru": null,
@@ -202,12 +202,12 @@
             "name": null,
             "owner": "moggieuk",
             "repo": "Happy-Hare",
-            "rev": "27c1c42fb3b34c8afca8cf8ca2e01a195827ca03",
-            "sha256": "sha256-fxDcMUKWGdB/stzgJ10CTMieVO8KGMKOGyvjBeD5N4k=",
+            "rev": "9d06d262db90227ef4c7a342ee178faa07d760cf",
+            "sha256": "sha256-HrmF+5PMmu9hTbG3ABPjuOLxy52brW04uO8s4Jteg+c=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "27c1c42fb3b34c8afca8cf8ca2e01a195827ca03"
+        "version": "9d06d262db90227ef4c7a342ee178faa07d760cf"
     },
     "klipper-kamp": {
         "cargoLocks": null,
@@ -337,7 +337,7 @@
     },
     "klipper-screen": {
         "cargoLocks": null,
-        "date": "2024-12-06",
+        "date": "2024-12-15",
         "extract": null,
         "name": "klipper-screen",
         "passthru": null,
@@ -349,12 +349,12 @@
             "name": null,
             "owner": "jordanruthe",
             "repo": "KlipperScreen",
-            "rev": "5df1fd9de3029cddd5f77f3de677a8f5dee19cf3",
-            "sha256": "sha256-r1pOlnaG+xgV0SpoGbhBUnvoklDxmu8SEEbJ7LmOUsc=",
+            "rev": "14fdbc2f4cdeface5fb55a5c600dd935c67ebf97",
+            "sha256": "sha256-f6ZDi9C2glcsDA/1GHFLuVpO3w4l6uY180TgloEA5/o=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "5df1fd9de3029cddd5f77f3de677a8f5dee19cf3"
+        "version": "14fdbc2f4cdeface5fb55a5c600dd935c67ebf97"
     },
     "klipper-z-calibration": {
         "cargoLocks": null,
@@ -379,7 +379,7 @@
     },
     "klipper_tmc_autotune": {
         "cargoLocks": null,
-        "date": "2024-10-28",
+        "date": "2024-12-17",
         "extract": null,
         "name": "klipper_tmc_autotune",
         "passthru": null,
@@ -391,12 +391,12 @@
             "name": null,
             "owner": "andrewmcgr",
             "repo": "klipper_tmc_autotune",
-            "rev": "1aedb0802eca2655ab5bcf9966acf77ce38e8317",
-            "sha256": "sha256-s1P8yqGeZnjLZ2N2gi8PlaUXMPtXHRdWjZ5XOqNGUxY=",
+            "rev": "eb39e2be4c10c6342ef345e3b52c13f54131bfe3",
+            "sha256": "sha256-en7i7u6z0uEuxjZ+zK/JAlDBY+7LndTtzn0f7KoST0A=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "1aedb0802eca2655ab5bcf9966acf77ce38e8317"
+        "version": "eb39e2be4c10c6342ef345e3b52c13f54131bfe3"
     },
     "libdatachannel0_17": {
         "cargoLocks": null,

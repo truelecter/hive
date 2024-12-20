@@ -52,8 +52,8 @@ in {
   tl.services.klipper = {
     enable = true;
 
-    package = pkgs.danger-klipper-full-plugins;
-    firmware-package = pkgs.danger-klipper-firmware;
+    package = pkgs.kalico-full-plugins;
+    firmware-package = pkgs.kalico-firmware;
 
     extraConfigurationPackages = [
       pkgs.kamp
@@ -82,24 +82,9 @@ in {
         configFile = ./firmwares/klipper-ebb36;
       };
 
-      ebb-sb = {
-        enable = true;
-        configFile = ./firmwares/klipper-ebb-sb;
-      };
-
-      manta = {
-        enable = true;
-        configFile = ./firmwares/klipper-manta;
-      };
-
       manta-v2 = {
         enable = true;
         configFile = ./firmwares/klipper-manta-v2;
-      };
-
-      xiao2040 = {
-        enable = true;
-        configFile = ./firmwares/klipper-xiao2040;
       };
 
       buttons = {
@@ -114,11 +99,6 @@ in {
     };
 
     katapult = {
-      manta = {
-        enable = true;
-        configFile = ./firmwares/katapult-manta;
-      };
-
       manta-v2 = {
         enable = true;
         configFile = ./firmwares/katapult-manta-v2;
@@ -127,16 +107,6 @@ in {
       ebb36 = {
         enable = true;
         configFile = ./firmwares/katapult-ebb36;
-      };
-
-      ebb-sb = {
-        enable = true;
-        configFile = ./firmwares/katapult-ebb-sb;
-      };
-
-      xiao2040 = {
-        enable = true;
-        configFile = ./firmwares/katapult-xiao2040;
       };
 
       buttons = {

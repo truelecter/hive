@@ -74,7 +74,7 @@ in {
         environment.etc."klipper-screen.cfg".source = format.generate "klipper-screen.cfg" cfg.settings;
 
         # for MPV and wayland
-        hardware.opengl.enable = lib.mkDefault true;
+        hardware.graphics.enable = lib.mkDefault true;
       }
       (
         # x-server

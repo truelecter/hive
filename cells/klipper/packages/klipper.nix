@@ -41,7 +41,8 @@ in
     # Python 3 is already supported but shebangs aren't updated yet
     postPatch = ''
       for file in klippy.py console.py parsedump.py; do
-        substituteInPlace $file \
+        # not all distributions have console.py
+        [ -f $file ] && substituteInPlace $file \
           --replace '/usr/bin/env python2' '/usr/bin/env python'
       done
     '';

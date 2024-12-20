@@ -63,8 +63,8 @@ in
     };
   }
   // (
-    klipper-distribution "danger-klipper" sources.danger-klipper
+    klipper-distribution "kalico" sources.kalico
   )
   // (
-    klipper-distribution "experimental-danger-klipper" sources.experimental-danger-klipper
+    klipper-distribution "experimental-kalico" sources.experimental-kalico
   )

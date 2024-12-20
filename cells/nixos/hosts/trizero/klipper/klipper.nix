@@ -52,8 +52,8 @@ in {
   tl.services.klipper = {
     enable = true;
 
-    package = pkgs.danger-klipper-full-plugins;
-    firmware-package = pkgs.danger-klipper-firmware;
+    package = pkgs.kalico-full-plugins;
+    firmware-package = pkgs.kalico-firmware;
 
     extraConfigurationPackages = [
       pkgs.kamp
