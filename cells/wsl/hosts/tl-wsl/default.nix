@@ -25,6 +25,8 @@ in {
     profiles.common.remote-builders.aarch
 
     inputs.nixos-vscode-server.nixosModules.default
+
+    ./secrets.nix
   ];
 
   networking.hostName = "tl-wsl";
@@ -39,6 +41,8 @@ in {
   bee.pkgs = pkgs;
 
   system.stateVersion = "22.11";
+
+  services.openssh.enable = false;
 
   home-manager.users.truelecter = {
     services.vscode-server = {
