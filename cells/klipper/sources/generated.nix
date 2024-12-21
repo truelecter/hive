@@ -38,27 +38,27 @@
   };
   katapult = {
     pname = "katapult";
-    version = "081918ad769d1f1104ca253a4a8ace02147c345d";
+    version = "aa37e30b713f4b94cb17af78c5189e99cb65677a";
     src = fetchFromGitHub {
       owner = "Arksine";
       repo = "katapult";
-      rev = "081918ad769d1f1104ca253a4a8ace02147c345d";
+      rev = "aa37e30b713f4b94cb17af78c5189e99cb65677a";
       fetchSubmodules = false;
-      sha256 = "sha256-4V34JZsTCJol4PVmliH+pGyjAKnI2a3GmjXoXnSSD10=";
+      sha256 = "sha256-r/QdKyKeG/aECo8bSQaJBc/kZ/Iw0GF0Cg4RCiqMXFk=";
     };
-    date = "2024-10-24";
+    date = "2024-12-17";
   };
   klipper = {
     pname = "klipper";
-    version = "383b83d788223d4535d40d053c63f52043fb0bc6";
+    version = "80d185c94c8dbec7f19d791995242af1bb197057";
     src = fetchFromGitHub {
       owner = "Klipper3d";
       repo = "klipper";
-      rev = "383b83d788223d4535d40d053c63f52043fb0bc6";
+      rev = "80d185c94c8dbec7f19d791995242af1bb197057";
       fetchSubmodules = false;
-      sha256 = "sha256-nD7r/ba6jPkuUyhr3RDR7eaDHrfJI6p/l9oo+LsJP4A=";
+      sha256 = "sha256-X0EtBeRuRjtnwj8ic6PUsrpFwrINj63mImWQyryTa3k=";
     };
-    date = "2024-12-12";
+    date = "2024-12-19";
   };
   klipper-cartographer = {
     pname = "klipper-cartographer";
@@ -110,15 +110,15 @@
   };
   klipper-happy-hare = {
     pname = "klipper-happy-hare";
-    version = "27c1c42fb3b34c8afca8cf8ca2e01a195827ca03";
+    version = "9d06d262db90227ef4c7a342ee178faa07d760cf";
     src = fetchFromGitHub {
       owner = "moggieuk";
       repo = "Happy-Hare";
-      rev = "27c1c42fb3b34c8afca8cf8ca2e01a195827ca03";
+      rev = "9d06d262db90227ef4c7a342ee178faa07d760cf";
       fetchSubmodules = false;
-      sha256 = "sha256-fxDcMUKWGdB/stzgJ10CTMieVO8KGMKOGyvjBeD5N4k=";
+      sha256 = "sha256-HrmF+5PMmu9hTbG3ABPjuOLxy52brW04uO8s4Jteg+c=";
     };
-    date = "2024-12-13";
+    date = "2024-12-14";
   };
   klipper-kamp = {
     pname = "klipper-kamp";
@@ -193,15 +193,15 @@
   };
   klipper-screen = {
     pname = "klipper-screen";
-    version = "5df1fd9de3029cddd5f77f3de677a8f5dee19cf3";
+    version = "14fdbc2f4cdeface5fb55a5c600dd935c67ebf97";
     src = fetchFromGitHub {
       owner = "jordanruthe";
       repo = "KlipperScreen";
-      rev = "5df1fd9de3029cddd5f77f3de677a8f5dee19cf3";
+      rev = "14fdbc2f4cdeface5fb55a5c600dd935c67ebf97";
       fetchSubmodules = false;
-      sha256 = "sha256-r1pOlnaG+xgV0SpoGbhBUnvoklDxmu8SEEbJ7LmOUsc=";
+      sha256 = "sha256-f6ZDi9C2glcsDA/1GHFLuVpO3w4l6uY180TgloEA5/o=";
     };
-    date = "2024-12-06";
+    date = "2024-12-15";
   };
   klipper-z-calibration = {
     pname = "klipper-z-calibration";
@@ -216,15 +216,15 @@
   };
   klipper_tmc_autotune = {
     pname = "klipper_tmc_autotune";
-    version = "1aedb0802eca2655ab5bcf9966acf77ce38e8317";
+    version = "eb39e2be4c10c6342ef345e3b52c13f54131bfe3";
     src = fetchFromGitHub {
       owner = "andrewmcgr";
       repo = "klipper_tmc_autotune";
-      rev = "1aedb0802eca2655ab5bcf9966acf77ce38e8317";
+      rev = "eb39e2be4c10c6342ef345e3b52c13f54131bfe3";
       fetchSubmodules = false;
-      sha256 = "sha256-s1P8yqGeZnjLZ2N2gi8PlaUXMPtXHRdWjZ5XOqNGUxY=";
+      sha256 = "sha256-en7i7u6z0uEuxjZ+zK/JAlDBY+7LndTtzn0f7KoST0A=";
     };
-    date = "2024-10-28";
+    date = "2024-12-17";
   };
   libdatachannel0_17 = {
     pname = "libdatachannel0_17";
@@ -258,15 +258,15 @@
   };
   mainsail = {
     pname = "mainsail";
-    version = "7ec9e190e9106f3af2ed8e7d04cac966ca0138a9";
+    version = "4c86d7cd43666a3818c0508e561da641bef4fcbb";
     src = fetchFromGitHub {
       owner = "mainsail-crew";
       repo = "mainsail";
-      rev = "7ec9e190e9106f3af2ed8e7d04cac966ca0138a9";
+      rev = "4c86d7cd43666a3818c0508e561da641bef4fcbb";
       fetchSubmodules = false;
-      sha256 = "sha256-4nkvvEy0eqsBzpMrmkgPNt5fmNjjbKkfnl/B+L6DmrM=";
+      sha256 = "sha256-qD8A1ixHpQdV4QE9qbikXlEBNXtnSuQbQFoBPmRzm4I=";
     };
-    date = "2024-12-12";
+    date = "2024-12-17";
   };
   mobileraker-companion = {
     pname = "mobileraker-companion";
