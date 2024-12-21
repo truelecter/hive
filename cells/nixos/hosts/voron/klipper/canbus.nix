@@ -1,24 +1,29 @@
 {...}: {
-  services.udev.extraRules = ''
-    SUBSYSTEM=="net", ACTION=="add|change", KERNEL=="can*", ATTR{tx_queue_len}="1024"
-  '';
-
-  networking.interfaces.can0.useDHCP = false;
-  networking.dhcpcd.denyInterfaces = ["can*"];
+  # services.udev.extraRules = ''
+  #   SUBSYSTEM=="net", ACTION=="add|change", KERNEL=="can0", ATTR{tx_queue_len}="1024"
+  # '';
 
   systemd.network = {
-    enable = true;
-    wait-online.timeout = 0;
-    networks = {
-      canbus = {
-        enable = true;
-        matchConfig = {
-          Name = "can*";
-        };
-        extraConfig = ''
-          [CAN]
-          BitRate=1000000
-        '';
+    networks."80-can0" = {
+      enable = true;
+      matchConfig = {
+        Name = "can0";
+      };
+      linkConfig = {
+        RequiredForOnline = "no";
+      };
+      canConfig = {
+        BitRate = "1M";
+      };
+    };
+
+    links."80-can0" = {
+      enable = true;
+      matchConfig = {
+        OriginalName = "can0";
+      };
+      linkConfig = {
+        TransmitQueueLength = 256;
       };
     };
   };
