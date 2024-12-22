@@ -64,7 +64,7 @@
       # (overlay "disable-bt")
       (overlay "vc4-kms-v3d-pi4")
       (overlay "vc4-kms-dsi-7inch")
-      (overlay "rpi-ft5406")
+      # (overlay "rpi-ft5406")
     ];
   };
 
