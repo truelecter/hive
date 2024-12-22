@@ -36,6 +36,8 @@ in {
     rtl8821au
   ];
 
+  # TOOD: reset via uhubctl
+
   # ALFA awus036axml bluetooth stack does not work for some reason
   boot.blacklistedKernelModules = ["btusb" "bluetooth"];
 }

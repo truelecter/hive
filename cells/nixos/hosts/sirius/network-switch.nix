@@ -16,7 +16,17 @@ in {
         };
 
         matchConfig = {
-          PermanentMACAddress = "c8:3a:35:ac:03:f0";
+          PermanentMACAddress = "00:c0:ca:b6:86:ff";
+        };
+      };
+
+      "10-wifi-reserve" = {
+        linkConfig = {
+          Name = wifiInterface;
+        };
+
+        matchConfig = {
+          PermanentMACAddress = "00:c0:ca:b6:73:ff";
         };
       };
 
@@ -126,16 +136,6 @@ in {
 
         option-data = [
           {
-            code = 3;
-            data = "10.3.0.1";
-            name = "routers";
-          }
-          {
-            code = 5;
-            data = "10.3.0.1";
-            name = "name-servers";
-          }
-          {
             code = 6;
             data = "10.3.0.1";
             name = "domain-name-servers";
@@ -168,6 +168,14 @@ in {
 
             interface = rightEthernetInterface;
 
+            option-data = [
+              {
+                code = 3;
+                data = "10.3.0.129";
+                name = "routers";
+              }
+            ];
+
             subnet = "10.3.0.128/27";
           }
 
@@ -177,6 +185,14 @@ in {
             pools = [
               {
                 pool = "10.3.0.162 - 10.3.0.190";
+              }
+            ];
+
+            option-data = [
+              {
+                code = 3;
+                data = "10.3.0.161";
+                name = "routers";
               }
             ];
 
