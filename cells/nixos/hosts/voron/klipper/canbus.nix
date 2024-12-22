@@ -23,7 +23,7 @@
         OriginalName = "can0";
       };
       linkConfig = {
-        TransmitQueueLength = 256;
+        TransmitQueueLength = 1024;
       };
     };
   };
