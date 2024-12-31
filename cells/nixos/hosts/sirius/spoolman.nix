@@ -10,9 +10,4 @@ in {
     enable = true;
     host = "0.0.0.0";
   };
-
-  # services.moonraker.settings.spoolman = {
-  #   server = "http://${spoolmanCfg.host}:${spoolmanCfg.port}";
-  #   sync_rate = 5;
-  # };
 }

@@ -30,6 +30,16 @@ in {
         };
       };
 
+      "10-wifi-reserve-rtl" = {
+        linkConfig = {
+          Name = wifiInterface;
+        };
+
+        matchConfig = {
+          PermanentMACAddress = "c8:3a:35:ac:03:f0";
+        };
+      };
+
       "10-wifi-ap" = {
         linkConfig = {
           Name = wifiAPInterface;
