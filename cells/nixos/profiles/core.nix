@@ -26,6 +26,15 @@
   };
   #endregion
 
+  system = {
+    disableInstallerTools = true;
+    tools = {
+      nixos-rebuild.enable = true;
+      nixos-enter.enable = true;
+      nixos-version.enable = true;
+    };
+  };
+
   environment = {
     # Selection of sysadmin tools that can come in handy
     systemPackages = with pkgs; [
