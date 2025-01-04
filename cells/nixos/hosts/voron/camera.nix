@@ -20,8 +20,8 @@
       settings = {
         camera = {
           path = "/dev/v4l/by-id/usb-3DO_3DO_NOZZLE_CAMERA_V2_3DO-video-index0";
-          width = 1920;
-          height = 1080;
+          width = 1280;
+          height = 720;
           fps = 60;
           format = "MJPG";
           nbufs = 2;
@@ -53,8 +53,8 @@
       settings = {
         camera = {
           path = "/dev/v4l/by-id/usb-3DO_3DO_USB_CAMERA_V2_3DO-video-index0";
-          width = 640;
-          height = 480;
+          width = 1280;
+          height = 720;
           fps = 30;
           format = "MJPG";
           force_active = true;
