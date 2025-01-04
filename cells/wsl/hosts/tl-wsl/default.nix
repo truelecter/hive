@@ -20,7 +20,7 @@ in {
     profiles.nvidia
     profiles.vscode-server
 
-    profiles.common.networking.tailscale
+    # profiles.common.networking.tailscale
     profiles.common.remote-builders.x86
     profiles.common.remote-builders.aarch
 
