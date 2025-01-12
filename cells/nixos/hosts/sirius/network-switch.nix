@@ -10,6 +10,16 @@ in {
     enable = true;
 
     links = {
+      "10-wifi-pci" = {
+        linkConfig = {
+          Name = wifiInterface;
+        };
+
+        matchConfig = {
+          PermanentMACAddress = "a0:02:a5:89:d9:ba";
+        };
+      };
+
       "10-wifi-ext" = {
         linkConfig = {
           Name = wifiInterface;
@@ -238,6 +248,20 @@ in {
           };
         };
       };
+    };
+  };
+
+  systemd.services = let
+    systemdEscape = d: builtins.replaceStrings ["-"] ["\\x2d"] d;
+    systemdNetdev = d: "sys-subsystem-net-devices-${systemdEscape d}.device";
+  in {
+    hostapd = {
+      bindsTo = [(systemdNetdev wifiAPInterface)];
+      after = [(systemdNetdev wifiAPInterface)];
+    };
+    kea-dhcp4-server = {
+      bindsTo = [(systemdNetdev wifiAPInterface) (systemdNetdev rightEthernetInterface)];
+      after = [(systemdNetdev wifiAPInterface) (systemdNetdev rightEthernetInterface)];
     };
   };
 
