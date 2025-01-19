@@ -29,6 +29,7 @@ stdenvNoCC.mkDerivation {
         scipy
         gitpython
         pywavelets
+        zstandard
       ];
   };
 
