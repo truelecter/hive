@@ -11,7 +11,6 @@
   pythonEnv = python3.withPackages (packages:
     with packages; [
       tornado
-      pyserial-asyncio
       pillow
       lmdb
       streaming-form-data
@@ -31,6 +30,7 @@
       apprise
       libgpiod
       importlib-metadata
+      dbus-fast
     ]);
 in
   stdenvNoCC.mkDerivation rec {
