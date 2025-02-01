@@ -26,15 +26,15 @@
   };
   kalico = {
     pname = "kalico";
-    version = "e3f84ce0fe180ca4836ed88988cbbb5ce69d25e9";
+    version = "cd18e6f90f5167c159a1a7d7856cf4d9e6f3f380";
     src = fetchFromGitHub {
       owner = "KalicoCrew";
       repo = "kalico";
-      rev = "e3f84ce0fe180ca4836ed88988cbbb5ce69d25e9";
+      rev = "cd18e6f90f5167c159a1a7d7856cf4d9e6f3f380";
       fetchSubmodules = false;
-      sha256 = "sha256-CV+VzyUScjd0sPHOc8rNxVK0+ShfXzq9jzuV2F3DMXI=";
+      sha256 = "sha256-Xkvqcx6hT+jT08JTX/eyitiOnprn4v7UDEqIQcJ+Pf4=";
     };
-    date = "2025-01-21";
+    date = "2025-01-30";
   };
   katapult = {
     pname = "katapult";
@@ -258,15 +258,15 @@
   };
   mainsail = {
     pname = "mainsail";
-    version = "05e9e410a043fa5f2e2e461d34a35391f9982b84";
+    version = "60f7f37630cd9b31f084c8ffb5b9947a46593709";
     src = fetchFromGitHub {
       owner = "mainsail-crew";
       repo = "mainsail";
-      rev = "05e9e410a043fa5f2e2e461d34a35391f9982b84";
+      rev = "60f7f37630cd9b31f084c8ffb5b9947a46593709";
       fetchSubmodules = false;
-      sha256 = "sha256-4BBj8q5SA+q19WqHT+2ZV2p5R+i93oEeKhVV5lKeIEA=";
+      sha256 = "sha256-/9brw8M6D0LlZ9+dGGGd2YsDUwOfJtGPhpaSJ+Lv7Hw=";
     };
-    date = "2025-01-03";
+    date = "2025-01-30";
   };
   mobileraker-companion = {
     pname = "mobileraker-companion";
@@ -282,15 +282,15 @@
   };
   moonraker = {
     pname = "moonraker";
-    version = "d4d2074466c834532b46c965beb233f6341e493a";
+    version = "7e3c86e09a71b922d720b53552247901c13a4610";
     src = fetchFromGitHub {
       owner = "Arksine";
       repo = "moonraker";
-      rev = "d4d2074466c834532b46c965beb233f6341e493a";
+      rev = "7e3c86e09a71b922d720b53552247901c13a4610";
       fetchSubmodules = false;
-      sha256 = "sha256-HTrhQCxCtSVYk8zBmGYPUOfYi2LCPY1wwj0N727GqhM=";
+      sha256 = "sha256-WNLyMSTisBMu7u5IACkBxO6r461PladYYet9A0GM79U=";
     };
-    date = "2025-01-24";
+    date = "2025-01-30";
   };
   python-networkmanager = {
     pname = "python-networkmanager";
