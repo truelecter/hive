@@ -24,6 +24,7 @@
     mdbook
     gnupg
     ssh-to-pgp
+    ssh-to-age
     ;
 
   pkgWithCategory = category: package: {inherit package category;};
@@ -91,7 +92,7 @@
     done
   '';
 
-  fetch-sops-nix-key = nixpkgs.writeScriptBin "fetch-sops-nix-key" ''
+  fetch-sops-nix-ssh-key = nixpkgs.writeScriptBin "fetch-sops-nix-ssh-key" ''
     set -e -o pipefail
 
     show_usage() {
@@ -104,6 +105,23 @@
     fi
 
     ssh $1 "sudo cat /etc/ssh/ssh_host_rsa_key" | ${ssh-to-pgp}/bin/ssh-to-pgp -o $PRJ_ROOT/cells/repo/keys/hosts/$2.asc
+
+    git add $PRJ_ROOT/cells/repo/keys/hosts/$2.asc
+  '';
+
+  fetch-sops-nix-age-key = nixpkgs.writeScriptBin "fetch-sops-nix-age-key" ''
+    set -e -o pipefail
+
+    show_usage() {
+      echo "$0 <ssh-address>"
+    }
+
+    if [[ "$#" -lt 1 ]]; then
+      show_usage
+      exit 1
+    fi
+
+    ssh-keyscan $1 | ${ssh-to-age}/bin/ssh-to-age
   '';
 
   build-on-target = nixpkgs.writeScriptBin "build-on-target" ''
@@ -213,9 +231,16 @@ in
 
         {
           category = "infra";
-          name = "fetch-sops-nix-key";
-          help = "Fetch target host info for sops";
-          package = fetch-sops-nix-key;
+          name = "fetch-sops-nix-ssh-key";
+          help = "Fetch target host info for sops (GPG)";
+          package = fetch-sops-nix-ssh-key;
+        }
+
+        {
+          category = "infra";
+          name = "fetch-sops-nix-age-key";
+          help = "Fetch target host info for sops (age)";
+          package = fetch-sops-nix-age-key;
         }
 
         {

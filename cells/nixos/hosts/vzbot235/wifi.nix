@@ -33,6 +33,7 @@
   boot = {
     extraModprobeConfig = ''
       options cfg80211 ieee80211_regdom="UA"
+      options brcmfmac feature_disable=0x200000
     '';
   };
 }

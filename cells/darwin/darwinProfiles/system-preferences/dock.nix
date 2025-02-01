@@ -6,7 +6,7 @@
     dashboard-in-overlay = false;
     enable-spring-load-actions-on-all-items = false;
     expose-animation-duration = 0.1;
-    expose-group-by-app = true;
+    expose-group-apps = true;
     launchanim = false;
     mineffect = "genie";
     minimize-to-application = true;

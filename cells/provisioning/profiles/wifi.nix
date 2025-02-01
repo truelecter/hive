@@ -5,19 +5,23 @@ _: {config, ...}: {
     enable = config.tl.provision.secrets.secretsPresent;
 
     networks = {
-      "@WIFI_PROVISION_SSID@" = {
-        psk = "@WIFI_PROVISION_PW@";
+      "Xata290.5" = {
+        pskRaw = "ext:WIFI_PROVISION_PW";
+      };
+
+      "Xata290" = {
+        pskRaw = "ext:WIFI_PROVISION_PW";
       };
 
       "last-resort" = {
-        psk = "@WIFI_PROVISION_PW@";
+        pskRaw = "ext:WIFI_PROVISION_PW";
       };
     };
 
-    environmentFile = "${config.tl.provision.secrets.unencryptedBase}/wifi-envs";
+    secretsFile = "${config.tl.provision.secrets.unencryptedBase}/wifi-envs";
     extraConfig = ''
       ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=wifi
-      country=UA
+      country=US
       update_config=1
     '';
   };

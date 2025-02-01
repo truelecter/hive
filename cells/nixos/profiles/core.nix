@@ -88,10 +88,6 @@
     ];
   };
 
-  sops.gnupg.sshKeyPaths = lib.mkDefault [
-    "/etc/ssh/ssh_host_rsa_key"
-  ];
-
   # Service that makes Out of Memory Killer more effective
   services.earlyoom.enable = true;
 

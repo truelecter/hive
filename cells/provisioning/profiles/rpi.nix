@@ -36,7 +36,7 @@ _: {
     kernelPackages = pkgs.linuxPackages_rpi4;
 
     extraModprobeConfig = ''
-      options cfg80211 ieee80211_regdom="UA"
+      options cfg80211 ieee80211_regdom="US"
     '';
 
     initrd.availableKernelModules = [
