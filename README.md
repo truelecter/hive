@@ -9,8 +9,9 @@ This repository is home to the nix code that builds my systems.
 [![depsos](https://img.shields.io/github/actions/workflow/status/truelecter/hive/build-depsos.yaml?event=push&logo=nixos&logoColor=white&label=depsos)][depsos]
 [![nas](https://img.shields.io/github/actions/workflow/status/truelecter/hive/build-nas.yaml?event=push&logo=nixos&logoColor=white&label=nas)][nas]
 [![squadbook](https://img.shields.io/github/actions/workflow/status/truelecter/hive/build-squadbook.yaml?event=push&logo=nixos&logoColor=white&label=squadbook)][squadbook]
-[![oracle](https://img.shields.io/circleci/build/github/truelecter/hive/master?logo=nixos&logoColor=white&label=oracle)][oracle]
-[![voron](https://img.shields.io/circleci/build/github/truelecter/hive/master?logo=nixos&logoColor=white&label=voron)][voron]
+[![voron](https://img.shields.io/github/actions/workflow/status/truelecter/hive/build-voron.yaml?event=push&logo=nixos&logoColor=white&label=voron)][voron]
+[![oracle](https://img.shields.io/github/actions/workflow/status/truelecter/hive/build-oracle.yaml?event=push&logo=nixos&logoColor=white&label=oracle)][oracle]
+[![vzbot235](https://img.shields.io/github/actions/workflow/status/truelecter/hive/build-vzbot235.yaml?event=push&logo=nixos&logoColor=white&label=vzbot235)][vzbot235]
 
 ## Why Nix?
 
@@ -55,11 +56,6 @@ darwin-rebuild switch --flake .
 [depsos]: https://github.com/truelecter/hive/actions/workflows/build-depsos.yaml
 [nas]: https://github.com/truelecter/hive/actions/workflows/build-nas.yaml
 [squadbook]: https://github.com/truelecter/hive/actions/workflows/build-squadbook.yaml
-
-<!-- CirrusCI -->
-
-
-<!-- CircleCI -->
-
-[voron]: https://app.circleci.com/pipelines/github/truelecter/hive?branch=master
-[oracle]: https://app.circleci.com/pipelines/github/truelecter/hive?branch=master
+[vzbot235]: https://github.com/truelecter/hive/actions/workflows/build-vzbot235.yaml
+[voron]: https://github.com/truelecter/hive/actions/workflows/build-voron.yaml
+[oracle]: https://github.com/truelecter/hive/actions/workflows/build-oracle.yaml
