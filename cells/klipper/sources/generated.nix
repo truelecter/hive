@@ -26,15 +26,15 @@
   };
   kalico = {
     pname = "kalico";
-    version = "cd18e6f90f5167c159a1a7d7856cf4d9e6f3f380";
+    version = "b1076474124c030431641087f1e8a1719e3e5f4d";
     src = fetchFromGitHub {
       owner = "KalicoCrew";
       repo = "kalico";
-      rev = "cd18e6f90f5167c159a1a7d7856cf4d9e6f3f380";
+      rev = "b1076474124c030431641087f1e8a1719e3e5f4d";
       fetchSubmodules = false;
-      sha256 = "sha256-Xkvqcx6hT+jT08JTX/eyitiOnprn4v7UDEqIQcJ+Pf4=";
+      sha256 = "sha256-eFCxlrtJniSP/vOWfzJ0aUmD7bab1/KDblhiTtE/SzI=";
     };
-    date = "2025-01-30";
+    date = "2025-02-07";
   };
   katapult = {
     pname = "katapult";
@@ -50,15 +50,15 @@
   };
   klipper = {
     pname = "klipper";
-    version = "0114d72a6cd8140d7dc80a590fc50e7073069edc";
+    version = "fec3e685c92ef263a829a73510c74245d7772c03";
     src = fetchFromGitHub {
       owner = "Klipper3d";
       repo = "klipper";
-      rev = "0114d72a6cd8140d7dc80a590fc50e7073069edc";
+      rev = "fec3e685c92ef263a829a73510c74245d7772c03";
       fetchSubmodules = false;
-      sha256 = "sha256-m6vmxu3hDIi5+M2lvrhj4jqYCukDk5tf8JNgVGNkxuA=";
+      sha256 = "sha256-5qRVRsrLCfyBOw8A7ga7F+cYMJaS4CkveNmTWqcgj2Y=";
     };
-    date = "2025-01-24";
+    date = "2025-02-06";
   };
   klipper-cartographer = {
     pname = "klipper-cartographer";
@@ -110,15 +110,15 @@
   };
   klipper-happy-hare = {
     pname = "klipper-happy-hare";
-    version = "deb714912b70cc15fd8ba91537e1616bb63bda8b";
+    version = "0588078d19dfe0e15d58599026c2299957f978a2";
     src = fetchFromGitHub {
       owner = "moggieuk";
       repo = "Happy-Hare";
-      rev = "deb714912b70cc15fd8ba91537e1616bb63bda8b";
+      rev = "0588078d19dfe0e15d58599026c2299957f978a2";
       fetchSubmodules = false;
-      sha256 = "sha256-NLVNvISIMI/tCjghyYQEfKxxMI+Vz6G0um3fxm73dHY=";
+      sha256 = "sha256-iNFfQnGqNQP4Jv5ZXQr2+6V5uR8Pu2kGfeJP//GtUp8=";
     };
-    date = "2025-01-26";
+    date = "2025-02-05";
   };
   klipper-kamp = {
     pname = "klipper-kamp";
@@ -193,15 +193,15 @@
   };
   klipper-screen = {
     pname = "klipper-screen";
-    version = "7ed39038cec15c55cf05f60965aec4a2e31fa954";
+    version = "57b1749d005432d1e585d0c3e53a2144beb0f1e4";
     src = fetchFromGitHub {
       owner = "jordanruthe";
       repo = "KlipperScreen";
-      rev = "7ed39038cec15c55cf05f60965aec4a2e31fa954";
+      rev = "57b1749d005432d1e585d0c3e53a2144beb0f1e4";
       fetchSubmodules = false;
-      sha256 = "sha256-vzGPjigmjxIO5hY1VXf119jIt8ouyy79Ah4uTs9GVh8=";
+      sha256 = "sha256-u2mXjjv5N+zst4AV2dzBCLzaeQ/SNShHD8z8BUlS1gA=";
     };
-    date = "2025-01-08";
+    date = "2025-02-04";
   };
   klipper-z-calibration = {
     pname = "klipper-z-calibration";
@@ -258,15 +258,15 @@
   };
   mainsail = {
     pname = "mainsail";
-    version = "60f7f37630cd9b31f084c8ffb5b9947a46593709";
+    version = "9db98302c84df90a75d1dfcd0f0f966606ce65b1";
     src = fetchFromGitHub {
       owner = "mainsail-crew";
       repo = "mainsail";
-      rev = "60f7f37630cd9b31f084c8ffb5b9947a46593709";
+      rev = "9db98302c84df90a75d1dfcd0f0f966606ce65b1";
       fetchSubmodules = false;
-      sha256 = "sha256-/9brw8M6D0LlZ9+dGGGd2YsDUwOfJtGPhpaSJ+Lv7Hw=";
+      sha256 = "sha256-zz+AqmL1QASLm3syALBVQMrYRdL3leG9QMTUs5mmBVI=";
     };
-    date = "2025-01-30";
+    date = "2025-02-02";
   };
   mobileraker-companion = {
     pname = "mobileraker-companion";
@@ -282,15 +282,15 @@
   };
   moonraker = {
     pname = "moonraker";
-    version = "7e3c86e09a71b922d720b53552247901c13a4610";
+    version = "1117890327281ec3142cf260d72357c06bad854e";
     src = fetchFromGitHub {
       owner = "Arksine";
       repo = "moonraker";
-      rev = "7e3c86e09a71b922d720b53552247901c13a4610";
+      rev = "1117890327281ec3142cf260d72357c06bad854e";
       fetchSubmodules = false;
-      sha256 = "sha256-WNLyMSTisBMu7u5IACkBxO6r461PladYYet9A0GM79U=";
+      sha256 = "sha256-woSqFq3Isx76ss+4u3WR3qtS6kfFg84d3LM5BMwGXkw=";
     };
-    date = "2025-01-30";
+    date = "2025-02-07";
   };
   python-networkmanager = {
     pname = "python-networkmanager";
