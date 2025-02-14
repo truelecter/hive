@@ -6,7 +6,7 @@ metadata:
 spec:
   repo: https://projectcalico.docs.tigera.io/charts
   chart: tigera-operator
-  version: v3.28.0
+  version: v3.29.2
   helmVersion: v3
   bootstrap: true
   targetNamespace: tigera-operator
