@@ -56,28 +56,34 @@
     };
   };
 
-  hardware.deviceTree = {
-    overlays = let
-      overlay = name: {
-        name = name;
-        dtboFile = "${pkgs.device-tree_rpi.overlays}/${name}.dtbo";
-      };
-    in [
-      (overlay "vc4-fkms-v3d")
-      (overlay "rpi-ft5406")
-    ];
-  };
+  hardware = {
+    raspberry-pi."4" = {
+      xhci.enable = true;
 
-  hardware.raspberry-pi."4" = {
-    i2c0 = {
-      enable = true;
-      frequency = 50000;
+      i2c0 = {
+        enable = true;
+        frequency = 50000;
+      };
+
+      # i2c1 = {
+      #   enable = true;
+      #   frequency = 50000;
+      # };
     };
 
-    # i2c1 = {
-    #   enable = true;
-    #   frequency = 50000;
-    # };
+    deviceTree = {
+      filter = "bcm2711-rpi-cm4.dtb";
+
+      overlays = let
+        overlay = name: {
+          name = name;
+          dtboFile = "${pkgs.device-tree_rpi.overlays}/${name}.dtbo";
+        };
+      in [
+        (overlay "vc4-fkms-v3d")
+        (overlay "rpi-ft5406")
+      ];
+    };
   };
 
   environment.systemPackages = [
@@ -97,10 +103,4 @@
   '';
 
   powerManagement.cpuFreqGovernor = "performance";
-
-  hardware = {
-    deviceTree.filter = "bcm2711-rpi-cm4.dtb";
-
-    raspberry-pi."4".xhci.enable = true;
-  };
 }
