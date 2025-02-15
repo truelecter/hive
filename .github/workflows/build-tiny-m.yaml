@@ -1,4 +1,4 @@
-name: Build vzbot235
+name: Build tiny-m
 on:
   push:
   workflow_dispatch:
