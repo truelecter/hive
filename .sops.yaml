@@ -15,6 +15,7 @@ keys:
   - &sirius age1vpflrapt4lz5akw8jcft6lhhq0h26ptjq6ce8da27gzuvfdmtqvs8rk8h6
   - &nas 70732b3ee3a1c10a8b6b849a959a413b28c00df9
   - &vzbot235 age1whtmnnc0ar8u0htwayr4qkukeyq05jt397prfzkkak0aec29ystsyfzdkt
+  - &tinym age1ygjayuhd3sx0xnxlxuhftz0qj79j95x4cewfj2e5ux9k7f335v2sul9u97
 
 creation_rules:
   - path_regex: cells/secrets/sops/envs.yaml
@@ -46,6 +47,7 @@ creation_rules:
         age:
           - *sirius
           - *vzbot235
+          - *tinym
 
   - path_regex: cells/secrets/sops/k3s.yaml
     key_groups:
@@ -74,6 +76,7 @@ creation_rules:
         age:
           - *sirius
           - *vzbot235
+          - *tinym
 
   - path_regex: cells/secrets/sops/ssh.*$
     key_groups:

@@ -761,6 +761,32 @@
         "type": "github"
       }
     },
+    "nixos-rockchip": {
+      "inputs": {
+        "nixpkgsStable": [
+          "nixos"
+        ],
+        "nixpkgsUnstable": [
+          "nixos"
+        ],
+        "utils": [
+          "flake-utils"
+        ]
+      },
+      "locked": {
+        "lastModified": 1739211403,
+        "narHash": "sha256-35vItZyOyvw0CQtEGEtjvI40rRrtanwe48kiKvj0Jr8=",
+        "owner": "nabam",
+        "repo": "nixos-rockchip",
+        "rev": "009db61c55062bd264695b09b19e5633567707dc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nabam",
+        "repo": "nixos-rockchip",
+        "type": "github"
+      }
+    },
     "nixos-vscode-server": {
       "inputs": {
         "flake-utils": [
@@ -949,6 +975,7 @@
         "nixos": "nixos",
         "nixos-generators": "nixos-generators",
         "nixos-hardware": "nixos-hardware",
+        "nixos-rockchip": "nixos-rockchip",
         "nixos-vscode-server": "nixos-vscode-server",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": [

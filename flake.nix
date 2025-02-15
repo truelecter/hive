@@ -78,6 +78,15 @@
     nix-rpi-kernel = {
       url = "github:TrueLecter/nix-rpi-kernel";
     };
+
+    nixos-rockchip = {
+      url = "github:nabam/nixos-rockchip";
+      inputs = {
+        nixpkgsUnstable.follows = "nixos";
+        nixpkgsStable.follows = "nixos";
+        utils.follows = "flake-utils";
+      };
+    };
   };
 
   # nixpkgs & home-manager

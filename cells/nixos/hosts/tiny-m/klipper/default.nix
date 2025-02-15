@@ -2,8 +2,7 @@
   imports = [
     ./klipper.nix
     ./moonraker.nix
-    ./klipper-screen.nix
+    # ./klipper-screen.nix
     ./canbus.nix
-    # ./spoolman.nix
   ];
 }

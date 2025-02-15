@@ -12,6 +12,7 @@ This repository is home to the nix code that builds my systems.
 [![voron](https://img.shields.io/github/actions/workflow/status/truelecter/hive/build-voron.yaml?event=push&logo=nixos&logoColor=white&label=voron)][voron]
 [![oracle](https://img.shields.io/github/actions/workflow/status/truelecter/hive/build-oracle.yaml?event=push&logo=nixos&logoColor=white&label=oracle)][oracle]
 [![vzbot235](https://img.shields.io/github/actions/workflow/status/truelecter/hive/build-vzbot235.yaml?event=push&logo=nixos&logoColor=white&label=vzbot235)][vzbot235]
+[![tiny-m](https://img.shields.io/github/actions/workflow/status/truelecter/hive/build-tiny-m.yaml?event=push&logo=nixos&logoColor=white&label=tiny-m)][tiny-m]
 
 ## Why Nix?
 
@@ -57,5 +58,6 @@ darwin-rebuild switch --flake .
 [nas]: https://github.com/truelecter/hive/actions/workflows/build-nas.yaml
 [squadbook]: https://github.com/truelecter/hive/actions/workflows/build-squadbook.yaml
 [vzbot235]: https://github.com/truelecter/hive/actions/workflows/build-vzbot235.yaml
+[tiny-m]: https://github.com/truelecter/hive/actions/workflows/build-tiny-m.yaml
 [voron]: https://github.com/truelecter/hive/actions/workflows/build-voron.yaml
 [oracle]: https://github.com/truelecter/hive/actions/workflows/build-oracle.yaml
