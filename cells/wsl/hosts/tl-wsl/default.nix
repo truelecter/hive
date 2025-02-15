@@ -33,7 +33,6 @@ in {
 
   wsl = {
     defaultUser = "truelecter";
-    nativeSystemd = true;
   };
 
   bee.system = system;
