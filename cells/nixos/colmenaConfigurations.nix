@@ -9,6 +9,9 @@
     depsos = {
       targetPort = 2265;
     };
+    tiny-m = {
+      targetHost = "10.3.0.21";
+    };
   };
 in
   l.mapAttrs

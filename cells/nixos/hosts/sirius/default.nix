@@ -21,6 +21,7 @@ in {
     ./network-switch.nix
     ./spoolman.nix
     ./home-assistant
+    ./ide.nix
   ];
 
   bee.system = system;

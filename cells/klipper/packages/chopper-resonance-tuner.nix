@@ -42,7 +42,7 @@ in
 
       sed -i '2i import os' $out/lib/chopper_plot.py
       sed -i '0,/RESULTS_FOLDER/ s/RESULTS_FOLDER = .*/RESULTS_FOLDER = os.environ.get("CHOPPER_RESONANCE_TUNER_RESULTS_FOLDER", "\/var\/lib\/klipper\/chopper-resonance-tuner")/' $out/lib/chopper_plot.py
-      sed -i 's/DATA_FOLDER = .*/DATA_FOLDER = os.environ.get("CHOPPER_RESONANCE_TUNER_DATA_FOLDER", "\/tmp")/g' $out/lib/chopper_plot.py
+      sed -i 's/DATA_FOLDER = .*/DATA_FOLDER = os.environ.get("CHOPPER_RESONANCE_TUNER_DATA_FOLDER", "\/tmp\/")/g' $out/lib/chopper_plot.py
     '';
 
     meta = with lib; {
