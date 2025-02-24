@@ -214,6 +214,7 @@ in
         (infra inputs.colmena.packages.colmena)
         (infra inputs.home.packages.home-manager)
         (infra inputs.nixos-generators.packages.nixos-generate)
+        (infra inputs.nix-fast-build.packages.nix-fast-build)
 
         {
           category = "infra";

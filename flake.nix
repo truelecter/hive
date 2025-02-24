@@ -81,9 +81,11 @@
 
     nixos-rockchip = {
       url = "github:nabam/nixos-rockchip";
-      # inputs = {
-      #   utils.follows = "flake-utils";
-      # };
+      inputs = {
+        utils.follows = "flake-utils";
+        nixpkgsStable.follows = "nixos";
+        nixpkgsUnstable.follows = "nixos";
+      };
     };
   };
 
@@ -120,6 +122,7 @@
         flake-utils.follows = "flake-utils";
       };
     };
+
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
       inputs = {
@@ -127,6 +130,7 @@
         flake-utils.follows = "flake-utils";
       };
     };
+
     nvfetcher = {
       url = "github:berberman/nvfetcher";
       inputs = {
@@ -134,8 +138,16 @@
         flake-utils.follows = "flake-utils";
       };
     };
+
     pyproject-nix = {
       url = "github:nix-community/pyproject.nix";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
+
+    nix-fast-build = {
+      url = "github:Mic92/nix-fast-build";
       inputs = {
         nixpkgs.follows = "nixpkgs";
       };
