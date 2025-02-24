@@ -81,11 +81,9 @@
 
     nixos-rockchip = {
       url = "github:nabam/nixos-rockchip";
-      inputs = {
-        nixpkgsUnstable.follows = "nixos";
-        nixpkgsStable.follows = "nixos";
-        utils.follows = "flake-utils";
-      };
+      # inputs = {
+      #   utils.follows = "flake-utils";
+      # };
     };
   };
 
@@ -218,6 +216,7 @@
         ["common" "packages"]
         ["pam-reattach" "packages"]
         ["minecraft-servers" "packages"]
+        ["rockchip" "packages"]
       ];
 
       nixosModules = hive.pick inputs.self [

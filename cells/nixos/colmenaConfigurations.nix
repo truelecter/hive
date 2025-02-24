@@ -12,6 +12,9 @@
     tiny-m = {
       targetHost = "10.3.0.21";
     };
+    bttpitest = {
+      targetHost = "10.3.0.37";
+    };
   };
 in
   l.mapAttrs

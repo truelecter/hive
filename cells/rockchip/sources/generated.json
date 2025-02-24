@@ -1,0 +1,23 @@
+{
+    "uboot": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "uboot",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "u-boot",
+            "repo": "u-boot",
+            "rev": "v2025.04-rc2",
+            "sha256": "sha256-emuw0j2m7qsamaQveM3rsWUSfi9rym9E3qYbUa3LirY=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v2025.04-rc2"
+    }
+}

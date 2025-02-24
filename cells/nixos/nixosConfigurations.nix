@@ -10,6 +10,7 @@ in
     src = ./hosts;
 
     inherit inputs lib;
+    overlays = cell.overlays;
     suites = cell.nixosSuites;
     profiles =
       cell.nixosProfiles
