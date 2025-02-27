@@ -1,4 +1,46 @@
 {
+    "btt-linux-rockchip": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "btt-linux-rockchip",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "bigtreetech",
+            "repo": "linux-rockchip",
+            "rev": "bpi-rk-6.1-rkr5",
+            "sha256": "sha256-UeXdzByVGW8t7I/unMSHRUBMIRFNoCY1voY4UTpLqy4=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "bpi-rk-6.1-rkr5"
+    },
+    "btt-u-boot": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "btt-u-boot",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "bigtreetech",
+            "repo": "u-boot",
+            "rev": "bpi-v2025.04-rc3",
+            "sha256": "sha256-Dtcc61orqV6HtqrYCeAO5iQfVU9KK3Jgnf+LoS8zTh0=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "bpi-v2025.04-rc3"
+    },
     "uboot": {
         "cargoLocks": null,
         "date": null,
@@ -19,5 +61,26 @@
             "type": "github"
         },
         "version": "v2025.04-rc2"
+    },
+    "uboot-2024-10": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "uboot-2024-10",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "u-boot",
+            "repo": "u-boot",
+            "rev": "v2024.10",
+            "sha256": "sha256-UPy7XM1NGjbEt+pQr4oQrzD7wWWEtYDOPWTD+CNYMHs=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v2024.10"
     }
 }

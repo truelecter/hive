@@ -16,7 +16,7 @@ keys:
   - &nas 70732b3ee3a1c10a8b6b849a959a413b28c00df9
   - &vzbot235 age1whtmnnc0ar8u0htwayr4qkukeyq05jt397prfzkkak0aec29ystsyfzdkt
   - &tinym age1ygjayuhd3sx0xnxlxuhftz0qj79j95x4cewfj2e5ux9k7f335v2sul9u97
-  - &bttpi age1yycwqd9ylkzwjkvrfsgfa7hqgz8yt7la7eaeft8rk8c3c65kqf9qlfssnt
+  - &bttpi age1pcvq86sasvxdqceyjcgxr7lppugasqsfdwt3ewnlufn9xyel5u8qeu0hn5
 
 creation_rules:
   - path_regex: cells/secrets/sops/envs.yaml

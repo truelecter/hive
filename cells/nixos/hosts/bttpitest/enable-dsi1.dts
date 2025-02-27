@@ -1,0 +1,123 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+	metadata {
+		title ="Enable Raspberry Pi 7-inch Touchscreen on ROCK 4 A/B/SE";
+		compatible = "rockchip,rk3566";
+		category = "display";
+		description = "Enable Raspberry Pi 7-inch Touchscreen on ROCK 4 A/B/SE";
+	};
+
+	// fragment@0 {
+	// 	target = <&mipi_dsi>;
+
+	// 	__overlay__ {
+	// 		dsi1-only;
+	// 		status = "okay";
+	// 	};
+	// };
+  // fe070000
+	// fragment@9 {
+	// 	target = <&dsi1>;
+
+	// 	__overlay__ {
+	// 		status = "okay";
+  //     phy-supply = <&vdd_logic>;
+
+	// 		ports {
+	// 			port@0 {
+	// 				reg = <0>;
+
+  //         endpoint@0 {
+  //           reg = <0>;
+  //           status = "disabled";
+  //         };
+
+  //         dsi_out_panel: endpoint@1 {
+  //           reg = <1>;
+  //           remote-endpoint = <&panel_in_dsi>;
+  //           status = "okay";
+  //           phandle = <0x8e>;
+  //         };
+	// 			};
+	// 		};
+	// 	};
+	// };
+
+	// fragment@2 {
+	// 	target = <&i2c1>;
+
+	// 	__overlay__ {
+	// 		status = "okay";
+	// 		#address-cells = <1>;
+	// 		#size-cells = <0>;
+
+	// 		raspits_panel: raspits-panel@45 {
+	// 			compatible = "raspberrypi,7inch-touchscreen-panel";
+	// 			reg = <0x45>;
+
+	// 			port {
+	// 				panel_in_dsi: endpoint {
+	// 					remote-endpoint = <&dsi_out_panel>;
+	// 				};
+	// 			};
+	// 		};
+
+	// 		raspits_touch_ft5426: raspits-touch-ft5426@38 {
+	// 			compatible = "raspits_ft5426";
+	// 			reg = <0x38>;
+	// 		};
+	// 	};
+	// };
+};
+
+&dsi1 {
+  #address-cells = <1>;
+	#size-cells = <0>;
+
+  status = "okay";
+  // phy-supply = <&vdd_logic>;
+
+
+  panel@0 {
+    status = "okay";
+    reg = <0>;
+
+    // power_supply = <&vcc3v3_sys>;
+    compatible = "btt-pitft";
+
+    ports {
+      #address-cells = <1>;
+      #size-cells = <0>;
+
+      port@0 {
+        reg = <0>;
+
+        panel_in_dsi: endpoint {
+          remote-endpoiint = <&dsi_out_panel>;
+        };
+      };
+    };
+  };
+};
+
+&dsi1_in {
+  endpoint@0 {
+    reg = <0>;
+    status = "disabled";
+  };
+
+  dsi_out_panel: endpoint@1 {
+    reg = <1>;
+    remote-endpoint = <&panel_in_dsi>;
+    status = "okay";
+  };
+};
+
+// &dsi0_out {
+//   endpoint@0 {
+//     reg = <0>;
+//     remote-endpoint = <&panel_in_dsi>;
+//   };
+// }

@@ -890,6 +890,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-master": {
+      "locked": {
+        "lastModified": 1740612775,
+        "narHash": "sha256-ygDC2IMHf2ONEZ2XGiOrIPPZ+UTEvOnxJHcA0Za4x0E=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "f377b3c1b4d749cc4ac889e4252f2b4877696243",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "master",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nosys": {
       "locked": {
         "lastModified": 1668010795,
@@ -1025,6 +1041,7 @@
         "nixpkgs": [
           "nixos"
         ],
+        "nixpkgs-master": "nixpkgs-master",
         "nvfetcher": "nvfetcher",
         "pyproject-nix": "pyproject-nix",
         "sops-nix": "sops-nix",

@@ -91,6 +91,7 @@
 
   # nixpkgs & home-manager
   inputs = {
+    nixpkgs-master.url = "github:nixos/nixpkgs/master";
     latest.url = "github:nixos/nixpkgs/nixos-unstable";
     k8s.url = "github:nixos/nixpkgs/9b5328b7f761a7bbdc0e332ac4cf076a3eedb89b";
     nixos.url = "github:nixos/nixpkgs/nixos-24.11";

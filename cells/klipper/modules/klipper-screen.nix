@@ -55,12 +55,12 @@ in {
   config = lib.mkIf cfg.enable (
     lib.mkMerge [
       {
-        assertions = [
-          {
-            assertion = cfg.enable -> config.services.moonraker.enable;
-            message = "klipper-screen requires Moonraker to be enabled on this system. Please enable services.moonraker to use it.";
-          }
-        ];
+        # assertions = [
+        #   {
+        #     assertion = cfg.enable -> config.services.moonraker.enable;
+        #     message = "klipper-screen requires Moonraker to be enabled on this system. Please enable services.moonraker to use it.";
+        #   }
+        # ];
 
         users = {
           users.${cfg.user} = {
@@ -82,7 +82,7 @@ in {
           systemd.services.klipper-screen = {
             description = "KlipperScreen, the touchscreen GUI that interfaces with Klipper via Moonraker";
 
-            after = ["moonraker.service"];
+            after = lib.optionals config.services.moonraker.enable ["moonraker.service"];
             wantedBy = ["multi-user.target"];
 
             path = [
@@ -120,7 +120,7 @@ in {
             environment = {
               GDK_BACKEND = "wayland";
             };
-            extraArguments = ["-d"];
+            extraArguments = ["-ds"];
             program = "${cfg.package}/bin/KlipperScreen --configfile /etc/klipper-screen.cfg";
           };
         }

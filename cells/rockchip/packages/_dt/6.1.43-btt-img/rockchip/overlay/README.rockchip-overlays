@@ -1,0 +1,75 @@
+## Introduction
+
+This document describes overlays provided in the kernel packages.
+For generic device tree overlays documentation please see
+https://wiki.radxa.com/Device-tree-overlays
+
+## Platform and Chips:
+
+rockchip (Rockchip)
+- rk3566
+- rk3568
+
+## usage
+
+Kernel provided DT overlay files are in
+  /boot/dtbs/$(uname -r)/rockchip/overlay/
+
+/boot/uEnv.txt contents:
+
+overlays=bigtree-cb2-camera bigtree-cb2-display bigtree-cb2-hdmi
+
+Add names of overlays you want to activate to overlays= line in /boot/uEnv.txt, separated with spaces.
+Add required parameters with their values to /boot/uEnv.txt, one per line.
+Add optional parameters with their values to /boot/uEnv.txt if you want to change the default value, one per line.
+
+### RK3568 Overlay details:
+ 
+- bigtree-cb2-camera
+#- bigtree-cb2-display
+#- bigtree-cb2-hdmi
+#- bigtree-cb2-spi-display
+
+#### bigtree-cb2-camera
+
+Activates rpi camera  ov5647 on cb2 io csi1
+
+Usage: Add the item "rpi-ov5647-to-csi1" to "overlays=" line in /boot/uEnv.txt.
+
+overlays=bigtree-cb2-camera
+
+##### bigtree-cb2-display
+#
+#Disable HDMI-CEC function when using GPIO4_D1 or SPI3_CS1_M1
+#
+#Usage: Add the item "bigtree-cb2-dsi1" to "overlays=" line in /boot/uEnv.txt.
+#
+#overlays=bigtree-cb2-display
+#
+##### bigtree-cb2-hdmi
+#
+#Disable HDMI-CEC function when using GPIO4_D1 or SPI3_CS1_M1
+#
+#Usage: Add the item "bigtree-cb2-hdmi0" to "overlays=" line in /boot/uEnv.txt.
+#
+#overlays=bigtree-cb2-display
+#
+##### bigtree-cb2-spi-display
+#
+#Disable HDMI-CEC function when using GPIO4_D1 or SPI3_CS1_M1
+#
+#Usage: Add the item "bigtree-cb2-spi1" to "overlays=" line in /boot/uEnv.txt.
+#
+#overlays=bigtree-cb2-display
+
+
+
+
+
+
+
+
+
+
+
+

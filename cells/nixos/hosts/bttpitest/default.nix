@@ -15,13 +15,13 @@ in {
     profiles.minimize
 
     inputs.cells.secrets.nixosProfiles.wifi
+    inputs.cells.klipper.nixosModules.klipper
 
     inputs.cells.rockchip.nixosModules.rockchip
 
-    # inputs.nixos-rockchip.nixosModules.sdImageRockchip
-    # inputs.nixos-rockchip.nixosModules.dtOverlayPCIeFix
-
     ./hardware-configuration.nix
+    ./klipper-screen-test.nix
+    ./moonraker.nix
   ];
 
   bee.system = system;
@@ -30,15 +30,16 @@ in {
     inherit system;
     config.allowUnfree = true;
     overlays = [
-      inputs.cells.rockchip.overlays.dtmerge
       inputs.cells.rockchip.overlays.btt-pi-v2-kernel
+
+      inputs.cells.klipper.overlays.klipper
     ];
   };
 
   systemd.services.NetworkManager-wait-online.enable = false;
 
   networking = {
-    hostName = "rk3566-test";
+    hostName = "bttpitest";
     firewall.enable = false;
   };
 
