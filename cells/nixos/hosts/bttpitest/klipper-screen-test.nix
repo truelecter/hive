@@ -35,11 +35,11 @@
     enable = true;
     logFile = "/dev/null";
 
-    videoDrivers = ["mesa"];
+    # videoDrivers = ["mesa"];
 
     displayManager = {
       startx.enable = true;
-      xserverArgs = ["-keeptty" "-logverbose" "-verbose"];
+      xserverArgs = ["-logverbose" "-verbose" "5" "-logverbose" "5"];
     };
 
     excludePackages = with pkgs; [
@@ -50,11 +50,25 @@
     ];
 
     # extraConfig = ''
+    #   Section "Monitor"
+    #       Identifier "DSI-1"
+    #       Modeline "800x480_56" 26.10 800 859 861 913 480 487 489 510 -hsync -vsync
+    #   EndSection
+
+    #   Section "Screen"
+    #       Identifier "Screen0"
+    #       Device "Framebuffer"
+    #       Monitor "DSI-1"
+    #       DefaultDepth 24
+    #       SubSection "Display"
+    #           Modes "800x480_56"
+    #       EndSubSection
+    #   EndSection
+
     #   Section "Device"
-    #     Identifier      "fbdev"
-    #     Driver          "fbdev"
-    #     Option          "fbdev" "/dev/fb0"
-    #     Option          "Rotate" "CCW"
+    #       Identifier "Framebuffer"
+    #       Driver "fbdev"
+    #       Option "fbdev" "/dev/fb0"
     #   EndSection
     # '';
   };
@@ -81,6 +95,24 @@
       # driSupport = true;
       # setLdLibraryPath = true;
       enable = true;
+      # package =
+      #   (
+      #     (pkgs.mesa.override {
+      #       galliumDrivers = ["llvmpipe" "panfrost"];
+      #       vulkanDrivers = ["swrast" "panfrost"];
+      #     })
+      #     .overrideAttrs
+      #     (o: {
+      #       mesonFlags =
+      #         o.mesonFlags
+      #         ++ [
+      #           (lib.mesonEnable "gallium-vdpau" false)
+      #           (lib.mesonEnable "gallium-va" false)
+      #           (lib.mesonEnable "gallium-xa" false)
+      #         ];
+      #     })
+      #   )
+      #   .drivers;
       # package =
       #   lib.mkForce
       #   (pkgs.mesa.override {

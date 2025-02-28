@@ -96,6 +96,7 @@ in {
             ];
 
             serviceConfig = {
+              Restart = "always";
               ExecStart = "${pkgs.xorg.xinit}/bin/xinit ${cfg.package}/bin/KlipperScreen --configfile /etc/klipper-screen.cfg -- /etc/X11/xinit/xserverrc";
               SupplementaryGroups = ["tty" "video"];
               # TODO: Make this work as non-root user as well

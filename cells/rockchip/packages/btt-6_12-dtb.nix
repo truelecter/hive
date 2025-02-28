@@ -4,7 +4,7 @@
   ...
 }:
 kernel.stdenv.mkDerivation {
-  pname = "rk3566-bigtreetech-cb2-6.14-rc4";
+  pname = "btt-dtb-6.12";
 
   inherit (kernel) version src;
 
@@ -14,10 +14,9 @@ kernel.stdenv.mkDerivation {
   buildPhase = ''
     cp ${kernel.configfile} .config
 
-    cp ${./_dt/6.14-rc4}/* arch/arm64/boot/dts/rockchip/
+    cp ${./_dt/6.12}/* arch/arm64/boot/dts/rockchip/
 
-    echo 'dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3566-bigtreetech-cb2-manta.dtb' > arch/arm64/boot/dts/rockchip/Makefile
-    echo 'dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3566-bigtreetech-pi2.dtb' >> arch/arm64/boot/dts/rockchip/Makefile
+    echo 'dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3566-bigtreetech-pi2.dtb' > arch/arm64/boot/dts/rockchip/Makefile
 
     # Speed up buil by not building other DTBs
     echo 'subdir-y += rockchip' > arch/arm64/boot/dts/Makefile

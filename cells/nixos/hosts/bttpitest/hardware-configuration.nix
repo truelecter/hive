@@ -5,32 +5,25 @@
   modulesPath,
   ...
 }: let
-  customDtbSource = false;
-  # dtbSource = pkgs.bttCb2Dtb;
-  # dtbSource = pkgs.bttCb2DtbMainline6_12;
-  # dtbSource = pkgs.bttPi2DtbPatched;
-  # dtbSource = pkgs.bttCb2DtbRK6_12;
-
-  dtbSource = pkgs.btt-dtb-6_1-rkr5.override {kernel = config.boot.kernelPackages.kernel;};
+  customDtbSource = true;
+  dtbSource = pkgs.btt-6_12-dtb.override {kernel = config.boot.kernelPackages.kernel;};
 in {
   boot = {
-    # kernelPackages = pkgs.linuxPackages_testing;
+    kernelPackages = pkgs.linuxPackages_bttPi2_6_12;
 
-    # kernelPackages = pkgs.linuxPackages_6_12;
-    # kernelPackages = pkgs.linuxPackages_bttPi2_6_12;
-    # kernelPackages = pkgs.linux_6_1_rockchip;
-    kernelPackages = pkgs.linuxPackages_bttPi2_rk;
-    # extraModulePackages = [
-    #   (pkgs.panel-simple-btt.override {kernel = config.boot.kernelPackages.kernel;})
-    # ];
+    extraModulePackages = [
+      (pkgs.panel-simple-btt.override {kernel = config.boot.kernelPackages.kernel;})
+    ];
+
     loader = {
       grub.enable = false;
       generic-extlinux-compatible = {
         enable = true;
-        configurationLimit = 100;
+        configurationLimit = 50;
         useGenerationDeviceTree = true;
       };
     };
+
     consoleLogLevel = 8;
     initrd.availableKernelModules = lib.mkForce [
       "xhci_pci"
@@ -42,22 +35,16 @@ in {
 
       # "ahci_dwc"
       "phy_rockchip_naneng_combphy"
-
-      # "panfrost"
-
-      # "rockchip_saradc"
-      # "rockchip_thermal"
-      # "rockchipdrm"
-      # "rockchip-rga"
     ];
     kernelParams = [
       "console=ttyS2,1500000n8"
       "console=tty1"
-      "video=DSI-1:800x480@60"
+      # "video=DSI-1:800x480@56.06"
+      # "drm.debug=0x1f"
     ];
   };
 
-  rockchip.uBoot = pkgs.uBoot_bttPi2;
+  rockchip.uBoot = pkgs.uboot-btt;
 
   fileSystems = {
     "/" = {
@@ -71,30 +58,14 @@ in {
       enable = true;
 
       # dtbSource = "${dbtSource}/dtbs";
-      name = "rockchip/rk3566-bigtreetech-cb2.dtb";
-      filter = "rk3566-bigtreetech-cb2.dtb";
+      name = "rockchip/rk3566-bigtreetech-pi2.dtb";
+      filter = "rk3566-bigtreetech-pi2.dtb";
 
       overlays = [
-        # {
-        #   name = "rk3566-dsi";
-        #   dtboFile = "${pkgs.bttPi2Dtb}/dtbs/rockchip/overlay/rk3566-dsi.dtbo";
-        # }
-        # {
-        #   name = "enable-dsi1";
-        #   dtsFile = ./enable-dsi1.dts;
-        # }
-        # {
-        #   name = "dsi1";
-        #   dtsFile = ./dsi1.614.dts;
-        # }
-        # {
-        #   name = "dsi1";
-        #   dtsFile = ./dsi1.dts;
-        # }
-        # {
-        #   name = "dsi1-grok";
-        #   dtsFile = ./dsi-grok.dts;
-        # }
+        {
+          name = "opp";
+          dtsFile = ./opp.dts;
+        }
       ];
     }
     // lib.optionalAttrs customDtbSource {
@@ -110,10 +81,9 @@ in {
     }"
   ];
 
-  environment.etc."uboot/uboot-rockchip.bin".source = "${pkgs.uBoot_bttPi2}/u-boot-rockchip.bin";
+  environment.etc."uboot/uboot-rockchip.bin".source = "${config.rockchip.uBoot}/u-boot-rockchip.bin";
 
   powerManagement.cpuFreqGovernor = "schedutil";
-  # powerManagement.cpuFreqGovernor = "performance";
 
   systemd.services."irqbalance-oneshot" = {
     enable = true;

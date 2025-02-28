@@ -1,0 +1,88 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+	metadata {
+		title = "OPP Fix";
+		compatible = "rockchip,rk3566";
+	};
+
+	/* Fragment targeting the CPU0 OPP table for frequency/voltage adjustments */
+	fragment@0 {
+		target = <&cpu0_opp_table>;
+		__overlay__ {
+			/* OPP for 1.8 GHz */
+			opp-1800000000 {
+				opp-hz = <0 1800000000>; /* 1,800,000,000 Hz */
+				opp-microvolt = <1148992 1148992 1148992>; /* Default: 1,150,000 µV */
+				opp-microvolt-L0 = <1148992 1148992 1148992>; /* L0: 1,150,000 µV */
+				opp-microvolt-L1 = <1100000 1100000 1148992>; /* L1: 1,100,000 µV */
+				opp-microvolt-L2 = <1075000 1075000 1148992>; /* L2: 1,075,000 µV */
+				opp-microvolt-L3 = <1050000 1050000 1148992>; /* L3: 1,050,000 µV */
+				opp-supported-hw = <249 65535>;
+				clock-latency-ns = <40000>; /* 40,000 ns */
+			};
+
+			/* OPP for 1.608 GHz */
+			opp-1608000000 {
+				opp-hz = <0 1608000000>; /* 1,608,000,000 Hz */
+				opp-microvolt = <1100000 1100000 1148992>; /* Default: 1,100,000 µV */
+				opp-microvolt-L0 = <1100000 1100000 1148992>; /* L0: 1,100,000 µV */
+				opp-microvolt-L1 = <1050000 1050000 1148992>; /* L1: 1,050,000 µV */
+				opp-microvolt-L2 = <1025000 1025000 1148992>; /* L2: 1,025,000 µV */
+				opp-microvolt-L3 = <1000000 1000000 1148992>; /* L3: 1,000,000 µV */
+				opp-supported-hw = <249 65535>;
+				clock-latency-ns = <40000>; /* 40,000 ns */
+			};
+
+			/* OPP for 1.104 GHz */
+			opp-1104000000 {
+				opp-hz = <0 1104000000>; /* 1,104,000,000 Hz */
+				opp-microvolt = <900000 900000 1148992>; /* Default: 900,000 µV */
+				opp-microvolt-L0 = <900000 900000 1148992>; /* L0: 900,000 µV */
+				opp-microvolt-L1 = <850000 850000 1148992>; /* L1: 850,000 µV */
+				opp-microvolt-L2 = <850000 850000 1148992>; /* L2: 850,000 µV */
+				opp-microvolt-L3 = <850000 850000 1148992>; /* L3: 850,000 µV */
+				opp-supported-hw = <251 65535>;
+				clock-latency-ns = <40000>; /* 40,000 ns */
+			};
+
+			/* OPP for 816 MHz */
+			opp-816000000 {
+				opp-hz = <0 816000000>; /* 816,000,000 Hz */
+				opp-microvolt = <850000 850000 1148992>; /* Default: 850,000 µV */
+				opp-supported-hw = <251 65535>;
+				opp-suspend; /* Marked as suspend state */
+				clock-latency-ns = <40000>; /* 40,000 ns */
+			};
+
+			/* OPP for 600 MHz */
+			opp-600000000 {
+				opp-hz = <0 600000000>; /* 600,000,000 Hz */
+				opp-microvolt = <850000 850000 1148992>; /* Default: 850,000 µV */
+				opp-supported-hw = <251 65535>;
+				clock-latency-ns = <40000>; /* 40,000 ns */
+			};
+
+			/* OPP for 1.416 GHz */
+			opp-1416000000 {
+				opp-hz = <0 1416000000>; /* 1,416,000,000 Hz */
+				opp-microvolt = <1025000 1025000 1148992>; /* Default: 1,025,000 µV */
+				opp-microvolt-L0 = <1025000 1025000 1148992>; /* L0: 1,025,000 µV */
+				opp-microvolt-L1 = <975000 975000 1148992>; /* L1: 975,000 µV */
+				opp-microvolt-L2 = <950000 950000 1148992>; /* L2: 950,000 µV */
+				opp-microvolt-L3 = <925000 925000 1148992>; /* L3: 925,000 µV */
+				opp-supported-hw = <251 65535>;
+				clock-latency-ns = <40000>; /* 40,000 ns */
+			};
+
+			/* OPP for 408 MHz */
+			opp-408000000 {
+				opp-hz = <0 408000000>; /* 408,000,000 Hz */
+				opp-microvolt = <850000 850000 1148992>; /* Default: 850,000 µV */
+				opp-supported-hw = <251 65535>;
+				clock-latency-ns = <40000>; /* 40,000 ns */
+			};
+		};
+	};
+};
