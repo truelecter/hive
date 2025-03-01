@@ -29,7 +29,7 @@ in {
   };
 
   btt-pi-v2-kernel = final: prev: rec {
-    inherit (cell.packages) btt-6_12-dtb uboot-btt;
+    inherit (cell.packages) btt-6_12-dtb uboot-btt panel-simple-btt raspits_ft5426;
 
     linuxPackages_bttPi2_6_12 = nixos-rockchip.legacyPackages.kernel_linux_6_12_rockchip;
 

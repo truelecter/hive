@@ -1060,7 +1060,7 @@
 		dsi1_in: port@0 {
 			reg = <0>;
 			dsi1_in_vp1: endpoint {
-				remote-endpoint = <&vp1_out_dsi1>; // vop port1 endpoint 1
+				remote-endpoint = <&vp1_out_dsi1>;
 			};
 		};
 
@@ -1068,7 +1068,7 @@
 			reg = <1>;
 
 			dsi1_out_panel: endpoint {
-				remote-endpoint = <&dsi_panel_in>; // dsi panel port0 endpoint
+				remote-endpoint = <&dsi_panel_in>;
 			};
 		};
 	};
@@ -1079,14 +1079,7 @@
 		status = "okay";
 		power-supply = <&vcc3v3_sys>;
 		compatible = "btt-pitft";
-
-		// pinctrl-names = "default";
-		// backlight = <&backlight>;
-		// iovcc-supply = <&vcc3v3_sys>;
-		// pinctrl-0 = <&lcd_rst>;
-		// reset-gpios = <&gpio0 RK_PD5 GPIO_ACTIVE_LOW>;
-		// rotation = <270>;
-		// vcc-supply = <&vcc3v3_sys>;
+		backlight = <&backlight>;
 
 		ports {
 			#address-cells = <1>;
@@ -1100,5 +1093,30 @@
 				};
 			};
 		};
+	};
+};
+
+&i2c2 {
+	status = "okay";
+
+	pinctrl-names = "default";
+	pinctrl-0 = <&i2c2m1_xfer>;
+
+	clock-frequency = <400000>;
+
+	backlight: backlight@45 {
+		compatible = "raspberrypi,7inch-touchscreen-panel-regulator";
+		reg = <0x45>;
+		status = "okay";
+	};
+
+	ft5x06_ts@38 {
+		status = "okay";
+		reg = <0x38>;
+
+		compatible = "raspits_ft5426";
+
+		touchscreen-size-x = <800>;
+		touchscreen-size-y = <480>;
 	};
 };

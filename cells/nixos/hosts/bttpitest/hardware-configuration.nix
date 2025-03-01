@@ -11,15 +11,20 @@ in {
   boot = {
     kernelPackages = pkgs.linuxPackages_bttPi2_6_12;
 
+    kernelModules = [
+      # "raspits_ft5426"
+    ];
+
     extraModulePackages = [
       (pkgs.panel-simple-btt.override {kernel = config.boot.kernelPackages.kernel;})
+      (pkgs.raspits_ft5426.override {kernel = config.boot.kernelPackages.kernel;})
     ];
 
     loader = {
       grub.enable = false;
       generic-extlinux-compatible = {
         enable = true;
-        configurationLimit = 50;
+        configurationLimit = 10;
         useGenerationDeviceTree = true;
       };
     };
@@ -62,10 +67,10 @@ in {
       filter = "rk3566-bigtreetech-pi2.dtb";
 
       overlays = [
-        {
-          name = "opp";
-          dtsFile = ./opp.dts;
-        }
+        # {
+        #   name = "opp";
+        #   dtsFile = ./opp.dts;
+        # }
       ];
     }
     // lib.optionalAttrs customDtbSource {
@@ -98,4 +103,8 @@ in {
   };
 
   hardware.enableRedistributableFirmware = true;
+
+  environment.systemPackages = [
+    pkgs.i2c-tools
+  ];
 }
