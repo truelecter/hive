@@ -6,13 +6,13 @@
   lib,
   ...
 }: let
-  vs-exts = inputs.nix-vscode-extensions.extensions.vscode-marketplace;
+  opkgs = inputs.cells.common.overrides;
 in {
   programs.vscode = {
     enable = true;
-    package = inputs.cells.common.overrides.vscode;
+    package = opkgs.vscode;
     # TODO split extensions based on active modules
-    extensions = with vs-exts; [
+    extensions = with opkgs.vscode-marketplace; [
       coolbear.systemd-unit-file
       davidanson.vscode-markdownlint
       christian-kohler.path-intellisense
