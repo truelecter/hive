@@ -4,6 +4,11 @@
 }: let
   latest = import inputs.latest {
     inherit (inputs.nixpkgs) system;
+
+    overlays = [
+      inputs.nix-vscode-extensions.overlays.default
+    ];
+
     config.allowUnfree = true;
   };
 in {
@@ -36,6 +41,8 @@ in {
     #
     tailscale
     ffmpeg_5-full
+    vscode-marketplace
+    open-vsx
     ;
 
   # nix-diff = inputs.nix-diff.packages.default;
