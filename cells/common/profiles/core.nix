@@ -101,6 +101,7 @@
       experimental-features = ["flakes" "nix-command"];
       fallback = true;
       warn-dirty = false;
+      require-sigs = false;
 
       # Some free space
       min-free = lib.mkDefault (5 * GB);

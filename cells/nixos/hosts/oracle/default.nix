@@ -19,7 +19,7 @@ in {
     suites.mc-server
 
     profiles.common.networking.tailscale
-    profiles.remote-builds
+    profiles.common.remote-builder
     profiles.faster-linux
 
     ./hardware-configuration.nix

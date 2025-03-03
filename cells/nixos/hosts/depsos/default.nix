@@ -11,7 +11,7 @@ in {
 
     profiles.docker
     profiles.common.networking.tailscale
-    profiles.remote-builds
+    profiles.common.remote-builder
 
     inputs.cells.k8s.nixosModules.k8s
     inputs.cells.secrets.nixosProfiles.k8s

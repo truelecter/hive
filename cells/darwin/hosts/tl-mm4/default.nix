@@ -11,20 +11,22 @@ in {
     suites.base
     suites.editors
     suites.system-preferences
-    suites.games
-
-    profiles.security.yubikey
-    profiles.three-d-print
 
     profiles.common.networking.tailscale
+    profiles.common.remote-builder
     profiles.common.remote-builders.x86
     profiles.common.remote-builders.aarch
 
-    profiles.users."andrii.panasiuk"
+    profiles.users."truelecter"
     profiles.users.root
 
     ./aarch-builder.nix
   ];
+
+  _module.args = {
+    inherit profiles;
+    nixpkgs = inputs.nixos;
+  };
 
   bee.system = system;
   bee.home = inputs.home;
@@ -39,8 +41,8 @@ in {
   };
 
   networking = {
-    hostName = lib.mkForce "squadbook";
-    computerName = "Andrii.Panasiuk";
+    hostName = lib.mkForce "tl-mm4";
+    computerName = "TL-MM4";
     knownNetworkServices = [
       "Wi-Fi"
       "Thunderbolt Bridge"

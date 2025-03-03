@@ -38,6 +38,14 @@ in {
         android
       ];
   };
+  git = {...}: {
+    programs.git.extraConfig = {
+      user = {
+        email = "andrew.panassiouk@gmail.com";
+        name = "Andrii Panasiuk";
+      };
+    };
+  };
   minimal = {...}: {imports = suites.base;};
   server-dev = {...}: {
     imports = with suites;

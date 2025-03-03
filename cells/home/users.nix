@@ -18,17 +18,11 @@ in {
         imports =
           [
             userProfiles.workstation
+            userProfiles.git
             inputs.cells.darwin.homeProfiles.shell.iterm
             inputs.cells.darwin.homeProfiles.smart-card-fix
           ]
           ++ modulesImportables;
-
-        programs.git.extraConfig = {
-          user = {
-            email = "andrew.panassiouk@gmail.com";
-            name = "Andrii Panasiuk";
-          };
-        };
 
         home.stateVersion = "22.11";
       };
@@ -56,6 +50,46 @@ in {
       system.defaults.screencapture.location = "${home}/Documents/Captures";
     };
 
+    truelecter = {pkgs, ...}: let
+      home = "/Users/truelecter";
+    in {
+      users.users."truelecter".home = home;
+
+      home-manager.users.truelecter = _: {
+        imports =
+          [
+            userProfiles.minimal
+            userProfiles.git
+            inputs.cells.darwin.homeProfiles.shell.iterm
+          ]
+          ++ modulesImportables;
+
+        home.stateVersion = "24.11";
+      };
+
+      system.defaults.dock.persistent-apps = [
+        "/Applications/Arc.app"
+        "/Applications/iTerm.app"
+        "${pkgs.vscode}/Applications/Visual Studio Code.app"
+        "/Applications/Telegram Desktop.app"
+        "/Applications/Slack.app"
+        "/System/Applications/Mail.app"
+        "/System/Applications/Calendar.app"
+        "/Applications/Cisco/Cisco Secure Client.app"
+        "/Applications/Amazon Chime.app"
+        "/Applications/OpenVPN Connect/OpenVPN Connect.app"
+      ];
+
+      system.defaults.dock.persistent-others = [];
+
+      home-manager.backupFileExtension = ".bak";
+
+      users.groups.keys.members = ["truelecter"];
+
+      # The filesystem path to which screencaptures should be written.
+      system.defaults.screencapture.location = "${home}/Documents/Captures";
+    };
+
     root = {...}: {
       users.users.root = {
         uid = 0;
@@ -67,14 +101,7 @@ in {
   nixos = rec {
     truelecter = {pkgs, ...}: {
       home-manager.users.truelecter = {
-        imports = [userProfiles.minimal] ++ modulesImportables;
-
-        programs.git.extraConfig = {
-          user = {
-            email = "andrew.panassiouk@gmail.com";
-            name = "Andrii Panasiuk";
-          };
-        };
+        imports = [userProfiles.minimal userProfiles.git] ++ modulesImportables;
 
         home.stateVersion = "22.11";
       };

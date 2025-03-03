@@ -17,6 +17,7 @@ in
         common = cells.common.commonProfiles;
         secrets = cells.secrets.darwinProfiles.secrets;
         users = cells.home.users.darwin;
+        nixos = cells.nixos.nixosProfiles;
       };
     userProfiles = cells.home.userProfiles;
   }

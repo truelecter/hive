@@ -17,6 +17,7 @@ keys:
   - &vzbot235 age1whtmnnc0ar8u0htwayr4qkukeyq05jt397prfzkkak0aec29ystsyfzdkt
   - &tinym age1ygjayuhd3sx0xnxlxuhftz0qj79j95x4cewfj2e5ux9k7f335v2sul9u97
   - &bttpi age1pcvq86sasvxdqceyjcgxr7lppugasqsfdwt3ewnlufn9xyel5u8qeu0hn5
+  - &tl-mm4 age13xs4xvwm0ythks33uvgv7v9gnqhn9mvhqgyzg8u94060pxjc3urq3ht6r8
 
 creation_rules:
   - path_regex: cells/secrets/sops/envs.yaml
@@ -50,6 +51,7 @@ creation_rules:
           - *vzbot235
           - *tinym
           - *bttpi
+          - *tl-mm4
 
   - path_regex: cells/secrets/sops/k3s.yaml
     key_groups:
@@ -80,6 +82,7 @@ creation_rules:
           - *vzbot235
           - *tinym
           - *bttpi
+          - *tl-mm4
 
   - path_regex: cells/secrets/sops/ssh.*$
     key_groups:
@@ -87,6 +90,8 @@ creation_rules:
           - *truelecter
           - *squadbook
           - *tl-wsl
+        age:
+          - *tl-mm4
 
   - path_regex: cells/secrets/sops/weather-kiosk.yaml
     key_groups:

@@ -11,7 +11,7 @@ in {
     profiles.fs.zfs
     profiles.docker
     profiles.common.networking.tailscale
-    profiles.remote-builds
+    profiles.common.remote-builder
 
     ./hardware-configuration.nix
     ./zfs-mounts.nix
