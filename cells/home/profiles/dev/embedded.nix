@@ -6,7 +6,7 @@
   lib,
   ...
 }: let
-  vs-exts = inputs.nix-vscode-extensions.extensions.vscode-marketplace;
+  vs-exts = inputs.cells.common.overrides.vscode-marketplace;
 in {
   programs.vscode = {
     extensions = with vs-exts; [
