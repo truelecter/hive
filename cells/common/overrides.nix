@@ -11,6 +11,16 @@
 
     config.allowUnfree = true;
   };
+
+  master = import inputs.nixpkgs-master {
+    inherit (inputs.nixpkgs) system;
+
+    overlays = [
+      inputs.nix-vscode-extensions.overlays.default
+    ];
+
+    config.allowUnfree = true;
+  };
 in {
   inherit
     (latest)
@@ -39,11 +49,12 @@ in {
     nix-diff
     csvlens
     #
-    tailscale
     ffmpeg_5-full
     vscode-marketplace
     open-vsx
     ;
+
+  inherit (master) tailscale;
 
   # nix-diff = inputs.nix-diff.packages.default;
   nvfetcher = inputs.nvfetcher.packages.default;
