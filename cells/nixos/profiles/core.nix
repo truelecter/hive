@@ -88,6 +88,10 @@
     ];
   };
 
+  programs.ssh.extraConfig = ''
+    Include /etc/ssh/ssh_config.d/*
+  '';
+
   # Service that makes Out of Memory Killer more effective
   services.earlyoom.enable = true;
 
