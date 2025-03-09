@@ -9,7 +9,7 @@
       repo = "linux-rockchip";
       rev = "bpi-rk-6.1-rkr5";
       fetchSubmodules = false;
-      sha256 = "sha256-UeXdzByVGW8t7I/unMSHRUBMIRFNoCY1voY4UTpLqy4=";
+      sha256 = "sha256-ICaymHitOek1Cfzcx5GssoGkOnghQ794sbtNVKSSaEA=";
     };
   };
   btt-u-boot = {

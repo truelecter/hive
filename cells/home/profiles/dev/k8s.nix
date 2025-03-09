@@ -3,7 +3,7 @@
   cell,
 }: {pkgs, ...}: let
   inherit (inputs.cells.common) overrides packages;
-  vs-exts = inputs.nix-vscode-extensions.extensions.vscode-marketplace;
+  vs-exts = inputs.cells.common.overrides.vscode-marketplace;
   helm-wrapped = overrides.wrapHelm overrides.kubernetes-helm {plugins = [overrides.kubernetes-helmPlugins.helm-diff];};
 in {
   programs.vscode = {
