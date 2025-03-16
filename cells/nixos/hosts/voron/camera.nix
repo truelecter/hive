@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   environment.systemPackages = [
     (
       pkgs.v4l-utils.override
@@ -17,6 +21,7 @@
 
   tl.services.camera-streamer.instances = {
     nozzle = {
+      enable = false;
       settings = {
         camera = {
           path = "/dev/v4l/by-id/usb-3DO_3DO_NOZZLE_CAMERA_V2_3DO-video-index0";
@@ -50,6 +55,7 @@
     };
 
     printer = {
+      enable = true;
       settings = {
         camera = {
           path = "/dev/v4l/by-id/usb-3DO_3DO_USB_CAMERA_V2_3DO-video-index0";
@@ -64,12 +70,41 @@
           #   whitebalancetemperature = 5700;
           # };
         };
-
+        # webrtc.disable_client_ice = true;
         http.port = 8081;
       };
 
       nginx.enable = true;
     };
+  };
+
+  services.go2rtc = {
+    enable = false;
+    settings = {
+      streams = {
+        printer = "ffmpeg:device?video=/dev/v4l/by-id/usb-3DO_3DO_USB_CAMERA_V2_3DO-video-index0&input_format=mjpeg&video_size=1280x720#video=h264#hardware";
+      };
+    };
+  };
+
+  services.nginx = {
+    enable = true;
+    # upstreams = {
+    #   go2rtc-webrtc = {
+    #     servers."localhost:8555" = {};
+    #   };
+    # };
+    # virtualHosts = {
+    #   "localhost".locations."/camera/printer/" = {
+    #     proxyPass = "http://go2rtc-webrtc/printer";
+    #     proxyWebsockets = true;
+    #     extraConfig = ''
+    #       postpone_output 0;
+    #       proxy_buffering off;
+    #       proxy_ignore_headers X-Accel-Buffering;
+    #     '';
+    #   };
+    # };
   };
 
   # boot.kernelParams = [
