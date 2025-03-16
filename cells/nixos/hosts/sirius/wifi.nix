@@ -19,6 +19,10 @@ in {
       pskRaw = "ext:WIFI_PASSWORD";
       priority = 10;
     };
+    networks."Xata290.5S" = {
+      pskRaw = "ext:WIFI_PASSWORD";
+      priority = 100;
+    };
     secretsFile = config.sops.secrets.xata-password-env.path;
     extraConfig = ''
       ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=wifi
