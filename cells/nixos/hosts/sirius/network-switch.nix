@@ -174,6 +174,12 @@ in {
             hw-address = "64:e8:33:77:71:b0";
             ip-address = "10.3.0.162";
           }
+
+          # VZBot
+          {
+            hw-address = "d8:3a:dd:43:45:dc";
+            ip-address = "10.3.0.131";
+          }
         ];
 
         subnet4 = [
