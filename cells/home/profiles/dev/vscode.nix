@@ -11,6 +11,8 @@ in {
   programs.vscode = {
     enable = true;
     package = opkgs.vscode;
+    enableExtensionUpdateCheck = false;
+    enableUpdateCheck = false;
     # TODO split extensions based on active modules
     extensions = with opkgs.vscode-marketplace; [
       coolbear.systemd-unit-file

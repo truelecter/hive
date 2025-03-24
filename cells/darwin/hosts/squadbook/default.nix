@@ -38,6 +38,14 @@ in {
     ];
   };
 
+  # Needed for cursor to work
+  home-manager.users."andrii.panasiuk" = {
+    imports = [./vscode.nix];
+    disabledModules = [
+      "${inputs.home}/modules/programs/vscode.nix"
+    ];
+  };
+
   networking = {
     hostName = lib.mkForce "squadbook";
     computerName = "Andrii.Panasiuk";

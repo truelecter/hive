@@ -30,7 +30,8 @@ in {
       system.defaults.dock.persistent-apps = [
         "/Applications/Arc.app"
         "/Applications/iTerm.app"
-        "${pkgs.vscode}/Applications/Visual Studio Code.app"
+        # "${pkgs.vscode}/Applications/Visual Studio Code.app"
+        "${pkgs.code-cursor}/Applications/Cursor.app"
         "/Applications/Telegram Desktop.app"
         "/Applications/Slack.app"
         "/System/Applications/Mail.app"

@@ -52,6 +52,9 @@ in {
     ffmpeg_5-full
     vscode-marketplace
     open-vsx
+    vscode-marketplace-release
+    open-vsx-release
+    code-cursor
     ;
 
   inherit (master) tailscale;

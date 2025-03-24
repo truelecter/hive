@@ -24,7 +24,8 @@
       dev.embedded
     ];
     develop-gui = [
-      dev.vscode
+      # dev.vscode
+      dev.cursor
     ];
     android = [dev.android];
   };
