@@ -22,6 +22,7 @@ in {
     ./klipper
     ./network.nix
     ./wifi.nix
+    ./camera.nix
   ];
 
   bee.system = system;

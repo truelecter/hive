@@ -48,6 +48,17 @@ in {
           "::1/128"
         ];
       };
+
+      "webcam printer" = {
+        enabled = true;
+        location = "printer";
+        icon = "mdiPrinter3d";
+        service = "webrtc-camerastreamer";
+        target_fps = 30;
+        target_fps_idle = 5;
+        stream_url = "/camera/printer/webrtc";
+        snapshot_url = "/camera/printer/snapshot";
+      };
     };
   };
 

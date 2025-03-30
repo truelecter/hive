@@ -73,28 +73,7 @@
       enable = true;
       frequency = 50000;
     };
-
-    # i2c1 = {
-    #   enable = true;
-    #   frequency = 50000;
-    # };
   };
-
-  environment.systemPackages = [
-    (
-      pkgs.v4l-utils.override
-      {
-        withGUI = false;
-      }
-    )
-    pkgs.camera-streamer
-  ];
-
-  users.groups.dma-heap = {};
-
-  services.udev.extraRules = ''
-    SUBSYSTEM=="dma_heap", GROUP="dma-heap", MODE="0660"
-  '';
 
   powerManagement.cpuFreqGovernor = "performance";
 
