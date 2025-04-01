@@ -2,7 +2,7 @@
   inputs,
   cell,
 }: let
-  inherit (inputs) haumea nixpkgs;
+  inherit (inputs) nixpkgs;
   l = nixpkgs.lib // builtins;
   hosts = cell.nixosConfigurations;
   deploymentOverrides = {

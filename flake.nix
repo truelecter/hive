@@ -87,35 +87,7 @@
         nixpkgsUnstable.follows = "nixos";
       };
     };
-  };
 
-  # nixpkgs & home-manager
-  inputs = {
-    nixpkgs-master.url = "github:nixos/nixpkgs/master";
-    latest.url = "github:nixos/nixpkgs/nixos-unstable";
-    k8s.url = "github:nixos/nixpkgs/9b5328b7f761a7bbdc0e332ac4cf076a3eedb89b";
-    nixos.url = "github:nixos/nixpkgs/nixos-24.11";
-    nixpkgs.follows = "nixos";
-    # nixos.follows = "latest";
-
-    darwin = {
-      url = "github:LnL7/nix-darwin/nix-darwin-24.11";
-      inputs.nixpkgs.follows = "nixos";
-    };
-
-    home = {
-      url = "github:nix-community/home-manager/release-24.11";
-      inputs.nixpkgs.follows = "nixos";
-    };
-
-    home-unstable = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "latest";
-    };
-  };
-
-  # tools
-  inputs = {
     nixos-vscode-server = {
       url = "github:nix-community/nixos-vscode-server";
       inputs = {
@@ -152,6 +124,31 @@
       inputs = {
         nixpkgs.follows = "nixpkgs";
       };
+    };
+  };
+
+  # nixpkgs & home-manager
+  inputs = {
+    nixpkgs-master.url = "github:nixos/nixpkgs/master";
+    latest.url = "github:nixos/nixpkgs/nixos-unstable";
+    k8s.url = "github:nixos/nixpkgs/9b5328b7f761a7bbdc0e332ac4cf076a3eedb89b";
+    nixos.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.follows = "nixos";
+    # nixos.follows = "latest";
+
+    darwin = {
+      url = "github:LnL7/nix-darwin/nix-darwin-24.11";
+      inputs.nixpkgs.follows = "nixos";
+    };
+
+    home = {
+      url = "github:nix-community/home-manager/release-24.11";
+      inputs.nixpkgs.follows = "nixos";
+    };
+
+    home-unstable = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "latest";
     };
   };
 

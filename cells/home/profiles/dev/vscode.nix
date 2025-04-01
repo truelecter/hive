@@ -41,6 +41,7 @@ in {
       mkhl.direnv
       systemticks.c4-dsl-extension
       likec4.likec4-vscode
+      ms-azuretools.vscode-docker
     ];
     userSettings = builtins.fromJSON (builtins.readFile ./_files/vscode-settings.json);
   };
