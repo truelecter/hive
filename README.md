@@ -12,7 +12,7 @@ This flake is configured using [flake-parts](https://github.com/hercules-ci/flak
 
 - `/nixos` - NixOS configurations
   - `/nixos/hosts/x86_64` - x86_64 NixOS hosts
-    - [![tl-wsl](https://img.shields.io/github/actions/workflow/status/truelecter/hive/build-tl-wsl.yaml?event=push&logo=nixos&logoColor=white&label=tl-wsl&style=social)][tl-wsl]
+    - [![tl-wsl](https://img.shields.io/github/actions/workflow/status/truelecter/hive/build-tl-wsl.yaml?event=push&logo=nixos&logoColor=white&label=tl-wsl)][tl-wsl]
     - [![depsos](https://img.shields.io/github/actions/workflow/status/truelecter/hive/build-depsos.yaml?event=push&logo=nixos&logoColor=white&label=depsos)][depsos]
     - [![nas](https://img.shields.io/github/actions/workflow/status/truelecter/hive/build-nas.yaml?event=push&logo=nixos&logoColor=white&label=nas)][nas]
     - [![sirius](https://img.shields.io/github/actions/workflow/status/truelecter/hive/build-sirius.yaml?event=push&logo=nixos&logoColor=white&label=sirius)][sirius]
@@ -43,11 +43,7 @@ This flake is configured using [flake-parts](https://github.com/hercules-ci/flak
 For NixOS hosts, you can use [deploy-rs](https://github.com/serokell/deploy-rs) to deploy configurations:
 
 ```bash
-# Build all hosts
-deploy-rs .
-
-# Build a specific host
-deploy-rs . -- --host <hostname>
+deploy-rs --skip-checks '.#<hostname>'
 ```
 
 ### Darwin Hosts
@@ -59,8 +55,11 @@ For macOS hosts running nix-darwin:
 nix run github:nixos/nixpkgs/nixpkgs-23.11-darwin#darwin.linux-builder
 nix build --builders 'builder@localhost aarch64-linux /etc/nix/builder_ed25519' .#darwinConfigurations.<hostname>.system
 
-# Switch configuration
+# Switch configuration (local)
 darwin-rebuild switch --flake .#<hostname>
+
+# Switch configuration (remote)
+deploy-rs --skip-checks '.#<hostname>'
 ```
 
 ## Development

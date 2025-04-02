@@ -28,6 +28,7 @@ exts.conform {
         [
           "ci"
           "flake"
+          "repo"
         ]
         ++ (builtins.attrNames self.nixosConfigurations)
         ++ (builtins.attrNames self.darwinConfigurations);
