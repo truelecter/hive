@@ -1,7 +1,7 @@
 {
   sops.secrets = {
     k3s-token = {
-      key = "token";
+      key = "k3sToken";
       sopsFile = ../../../secrets/k3s.yaml;
     };
 
