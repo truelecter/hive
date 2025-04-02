@@ -34,6 +34,7 @@ in {
 
       inherit
         (latest)
+        k9s
         android-tools
         vscode
         alejandra

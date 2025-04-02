@@ -73,13 +73,6 @@
       };
     };
 
-    nix-filter.url = "github:numtide/nix-filter";
-
-    nixos-generators = {
-      url = "github:nix-community/nixos-generators";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
     nixos-wsl = {
@@ -90,10 +83,9 @@
     };
 
     sops-nix = {
-      url = "github:TrueLecter/sops-nix/darwin-upstream";
+      url = "github:Mic92/sops-nix";
       inputs = {
         nixpkgs.follows = "nixos";
-        nixpkgs-stable.follows = "nixos";
       };
     };
 
