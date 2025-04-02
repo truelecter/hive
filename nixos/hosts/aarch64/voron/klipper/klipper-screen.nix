@@ -57,7 +57,7 @@
   hardware.deviceTree = {
     overlays = let
       overlay = name: {
-        name = name;
+        inherit name;
         dtboFile = "${pkgs.device-tree_rpi.overlays}/${name}.dtbo";
       };
     in [

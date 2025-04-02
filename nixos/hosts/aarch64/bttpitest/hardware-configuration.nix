@@ -5,7 +5,7 @@
   ...
 }: let
   customDtbSource = true;
-  dtbSource = pkgs.btt-6_12-dtb.override {kernel = config.boot.kernelPackages.kernel;};
+  dtbSource = pkgs.btt-6_12-dtb.override {inherit (config.boot.kernelPackages) kernel;};
 in {
   boot = {
     kernelPackages = pkgs.linuxPackages_bttPi2_6_12;
@@ -15,8 +15,8 @@ in {
     ];
 
     extraModulePackages = [
-      (pkgs.panel-simple-btt.override {kernel = config.boot.kernelPackages.kernel;})
-      (pkgs.raspits_ft5426.override {kernel = config.boot.kernelPackages.kernel;})
+      (pkgs.panel-simple-btt.override {inherit (config.boot.kernelPackages) kernel;})
+      (pkgs.raspits_ft5426.override {inherit (config.boot.kernelPackages) kernel;})
     ];
 
     loader = {

@@ -1,4 +1,4 @@
-{...}: let
+let
   matter-version = "6.6.1";
 in {
   virtualisation.oci-containers = {

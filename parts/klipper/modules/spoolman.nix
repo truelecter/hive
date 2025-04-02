@@ -82,7 +82,7 @@ in {
       };
 
       script = let
-        python = cfg.package.python;
+        inherit (cfg.package) python;
         networking = "--host ${cfg.host} --port ${toString cfg.port}";
       in ''
         ${python.pkgs.uvicorn}/bin/uvicorn ${networking} \

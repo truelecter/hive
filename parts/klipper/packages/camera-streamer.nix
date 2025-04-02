@@ -38,9 +38,7 @@
     inherit (sources.libjuice) version src;
 
     cmakeFlags =
-      [
-      ]
-      ++ optional libjuiceNoServer "-DNO_SERVER=ON"
+      optional libjuiceNoServer "-DNO_SERVER=ON"
       ++ optional libjuiceNoTests "-DNO_TESTS=ON";
 
     nativeBuildInputs = [cmake];

@@ -7,7 +7,7 @@
     pkgs.lib.pipe list [
       (
         builtins.map (v: {
-          name = v.name;
+          inherit (v) name;
           value = v.src;
         })
       )
@@ -16,15 +16,15 @@
 
   engine-by-versions = engine:
     l.pipe engine [
-      (l.groupBy (mod: mod.mc-version))
+      (builtins.groupBy (mod: mod.mc-version))
       (l.mapAttrs (_: v: (listToMods v)))
     ];
 
   mods = l.pipe sources [
     (l.filterAttrs (_: v: l.isAttrs v && l.hasAttr "mod" v))
     l.attrValues
-    (l.groupBy (mod: mod.mod))
-    (l.mapAttrs (k: v: engine-by-versions v))
+    (builtins.groupBy (mod: mod.mod))
+    (l.mapAttrs (k: engine-by-versions))
   ];
 in {
   _module.args = {

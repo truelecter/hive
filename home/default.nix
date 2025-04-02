@@ -4,7 +4,7 @@
   lib,
   ...
 }: let
-  profiles = self.profiles;
+  inherit (self) profiles;
 
   hmSuites = self.lib.buildSuites profiles (profiles: suites: {
     base = with profiles.home; [

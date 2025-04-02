@@ -47,8 +47,7 @@ in {
     services.k3s = {
       enable = true;
 
-      tokenFile = cfg.tokenFile;
-      serverAddr = cfg.serverAddr;
+      inherit (cfg) tokenFile serverAddr;
       role = "server";
 
       inherit (cfg) configPath disableAgent;

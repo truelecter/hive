@@ -45,7 +45,7 @@ in {
     };
 
     settings = mkOption {
-      type = format.type;
+      inherit (format) type;
       default = {};
       description = lib.mdDoc ''
         Configuration for mobileraker-companion. See the [documentation](https://github.com/Clon1998/mobileraker_companion#companion---config)
@@ -83,7 +83,7 @@ in {
       users.${cfg.user} = {
         isSystemUser = true;
 
-        group = cfg.group;
+        inherit (cfg) group;
 
         extraGroups = ["tty"];
       };

@@ -21,7 +21,7 @@
   };
 
   config.sdImage = let
-    uBoot = config.rockchip.uBoot;
+    inherit (config.rockchip) uBoot;
 
     idbloaderOffset = 64; # 0x40
     ubootOffset = 16384; # 0x4000

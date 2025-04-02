@@ -34,9 +34,7 @@
       };
     }
     (
-      if deploymentOverrides ? "${name}"
-      then deploymentOverrides."${name}"
-      else {}
+      deploymentOverrides."${name}" or {}
     );
 
   # TODO: add darwin nodes

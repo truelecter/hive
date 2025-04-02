@@ -373,7 +373,7 @@ in {
       users.${cfg.user} = {
         isSystemUser = true;
         extraGroups = ["dialout"];
-        group = cfg.group;
+        inherit (cfg) group;
         createHome = true;
         home = l.mkDefault cfg.stateDirectory;
         homeMode = "755";

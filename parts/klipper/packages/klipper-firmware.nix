@@ -19,8 +19,7 @@
 }:
 stdenv.mkDerivation rec {
   name = "${klipper.pname}-firmware-${mcu}-${version}";
-  version = klipper.version;
-  src = klipper.src;
+  inherit (klipper) version src;
 
   nativeBuildInputs = [
     python3

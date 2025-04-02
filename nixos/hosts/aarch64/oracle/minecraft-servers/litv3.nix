@@ -83,7 +83,7 @@
       ];
     };
     serverProperties = let
-      version = pkgs.mcs-life-in-the-village-3.version;
+      inherit (pkgs.mcs-life-in-the-village-3) version;
     in {
       max-tick-time = 600000;
       allow-flight = true;

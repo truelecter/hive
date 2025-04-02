@@ -64,7 +64,7 @@
       "-XX:+UseTransparentHugePages"
     ];
     serverProperties = let
-      version = pkgs.mcs-create-arcane-engineering.version;
+      inherit (pkgs.mcs-create-arcane-engineering) version;
     in {
       max-tick-time = 180000;
       allow-flight = true;

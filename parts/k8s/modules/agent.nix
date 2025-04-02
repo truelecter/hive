@@ -38,8 +38,7 @@ in {
     services.k3s = {
       enable = true;
       role = "agent";
-      tokenFile = cfg.tokenFile;
-      serverAddr = cfg.serverAddr;
+      inherit (cfg) tokenFile serverAddr;
       extraFlags = "--container-runtime-endpoint unix:///run/containerd/containerd.sock ${cfg.extraFlags}";
       # --node-ip ${config.networking.doctorwho.currentHost.ipv4} --snapshotter=zfs
     };

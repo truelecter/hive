@@ -11,7 +11,7 @@
   mkBoolIntOpion = default: desc:
     (mkEnableOption desc)
     // {
-      default = default;
+      inherit default;
       apply = v:
         if v
         then 1
@@ -307,7 +307,7 @@ in {
     ];
 
     systemd.services = l.mapAttrs' (name: icfg: let
-      settings = icfg.settings;
+      inherit (icfg) settings;
 
       stringifyOptions = f: a: l.mapAttrsToList f (l.filterAttrs (_: v: !(l.isAttrs v || l.isNull v || l.isList v || (l.isString v && v == ""))) a);
 

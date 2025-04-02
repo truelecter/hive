@@ -5,8 +5,7 @@
 }: {
   environment = {
     # Selection of sysadmin tools that can come in handy
-    systemPackages = (
-      with pkgs; [
+    systemPackages = with pkgs; [
         coreutils
         curl
         direnv
@@ -25,8 +24,7 @@
         openssh_hpn
         rsync
         wget
-      ]
-    );
+      ];
 
     shellAliases = {
       # quick cd

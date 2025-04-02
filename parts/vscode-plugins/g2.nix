@@ -3,7 +3,7 @@
 
 let
   inherit (pkgs.stdenv) isDarwin isLinux isi686 isx86_64 isAarch32 isAarch64;
-  vscode-utils = pkgs.vscode-utils;
+  inherit (pkgs) vscode-utils;
   merge = lib.attrsets.recursiveUpdate;
 in
 merge

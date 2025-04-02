@@ -100,7 +100,7 @@ in {
       };
 
       userSettings = mkOption {
-        type = jsonFormat.type;
+        inherit (jsonFormat) type;
         default = {};
         example = literalExpression ''
           {
@@ -115,7 +115,7 @@ in {
       };
 
       userTasks = mkOption {
-        type = jsonFormat.type;
+        inherit (jsonFormat) type;
         default = {};
         example = literalExpression ''
           {
@@ -151,7 +151,7 @@ in {
             };
 
             when = mkOption {
-              type = types.nullOr (types.str);
+              type = types.nullOr types.str;
               default = null;
               example = "textInputFocus";
               description = "Optional context filter.";
@@ -159,7 +159,7 @@ in {
 
             # https://code.visualstudio.com/docs/getstarted/keybindings#_command-arguments
             args = mkOption {
-              type = types.nullOr (jsonFormat.type);
+              type = types.nullOr jsonFormat.type;
               default = null;
               example = {direction = "up";};
               description = "Optional arguments for a command.";
@@ -202,7 +202,7 @@ in {
       };
 
       languageSnippets = mkOption {
-        type = jsonFormat.type;
+        inherit (jsonFormat) type;
         default = {};
         example = {
           haskell = {
@@ -217,7 +217,7 @@ in {
       };
 
       globalSnippets = mkOption {
-        type = jsonFormat.type;
+        inherit (jsonFormat) type;
         default = {};
         example = {
           fixme = {

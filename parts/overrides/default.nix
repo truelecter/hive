@@ -67,12 +67,12 @@ in {
 
     overlays.lix = final: prev: {
       nixStable = prev.nix;
-      nixUnstable = prev.nixUnstable;
+      inherit (prev) nixUnstable;
       nix = final.lix;
 
       nix-prefetch-git =
         if (prev.lib.functionArgs prev.nix-prefetch-git.override) ? "nix"
-        then prev.nix-prefetch-git.override {nix = prev.nix;}
+        then prev.nix-prefetch-git.override {inherit (prev) nix;}
         else prev.nix-prefetch-git;
     };
 

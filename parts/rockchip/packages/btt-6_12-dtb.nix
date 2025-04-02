@@ -8,8 +8,7 @@ kernel.stdenv.mkDerivation {
 
   inherit (kernel) version src;
 
-  nativeBuildInputs = kernel.nativeBuildInputs;
-  buildInputs = kernel.buildInputs;
+  inherit (kernel) nativeBuildInputs buildInputs;
 
   buildPhase = ''
     cp ${kernel.configfile} .config

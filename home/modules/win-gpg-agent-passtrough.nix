@@ -6,23 +6,6 @@
 }: let
   cfg = config.tl.services.win-gpg-agent;
 
-  gpgPkg = config.programs.gpg.package;
-
-  homedir = config.programs.gpg.homedir;
-
-  gpgSshSupportStr = ''
-    ${gpgPkg}/bin/gpg-connect-agent updatestartuptty /bye > /dev/null
-  '';
-
-  gpgInitStr =
-    ''
-      GPG_TTY="$(tty)"
-      export GPG_TTY
-    ''
-    + lib.optionalString cfg.sockets.ssh.enable gpgSshSupportStr;
-
-  # mkSocketOption = name: lib.mkEnableOption name // {default = true;};
-
   socketDefaultNames = {
     gpg = "S.gpg-agent";
     extra = "S.gpg-agent.extra";

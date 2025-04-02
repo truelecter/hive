@@ -1,4 +1,4 @@
-{...}: let
+let
   spoolmanServer = "sirius:7912";
 in {
   services.moonraker.settings.spoolman = {

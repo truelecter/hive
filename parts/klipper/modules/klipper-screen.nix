@@ -43,7 +43,7 @@ in {
     };
 
     settings = mkOption {
-      type = format.type;
+      inherit (format) type;
       default = {};
       description = lib.mdDoc ''
         Configuration for KlipperScreen. See the [documentation](https://klipperscreen.readthedocs.io/en/latest/Configuration/)
@@ -65,7 +65,7 @@ in {
         users = {
           users.${cfg.user} = {
             isSystemUser = true;
-            group = cfg.group;
+            inherit (cfg) group;
             extraGroups = ["tty" "video"];
           };
           groups.${cfg.group} = {};
@@ -117,7 +117,7 @@ in {
 
           services.cage = {
             enable = true;
-            user = cfg.user;
+            inherit (cfg) user;
             environment = {
               GDK_BACKEND = "wayland";
             };

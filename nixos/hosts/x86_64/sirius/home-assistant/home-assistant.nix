@@ -1,4 +1,4 @@
-{...}: let
+let
   hass-version = "2024.11.1";
 in {
   virtualisation.oci-containers = {

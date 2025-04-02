@@ -1,16 +1,15 @@
 {
-  config,
-  pkgs,
-  ...
-}: {
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
+  hardware = {
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+    nvidia = {
+      nvidiaSettings = false;
+      open = true;
+    };
+    nvidia-container-toolkit.enable = true;
   };
+
   services.xserver.videoDrivers = ["nvidia"];
-  hardware.nvidia = {
-    nvidiaSettings = false;
-    open = true;
-  };
-  hardware.nvidia-container-toolkit.enable = true;
 }
