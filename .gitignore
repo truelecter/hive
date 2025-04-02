@@ -10,7 +10,4 @@ result
 /.editorconfig
 /.conform.yaml
 /treefmt.toml
-# nixago-auto-created: mdbook-build-folder
-docs/build/**
 
-colmena-assets-*/

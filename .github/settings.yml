@@ -1,26 +1,25 @@
 branches:
-- name: master
-  protection:
-    enforce_admins: false
-    required_pull_request_reviews: null
-    required_status_checks:
-      contexts:
-      - call-workflow-passing-data / build_system
-      - build_aarch64
-      strict: true
-    restrictions: null
+  - name: master
+    protection:
+      enforce_admins: false
+      required_pull_request_reviews: null
+      required_status_checks:
+        contexts:
+          - call-workflow-passing-data / build_system
+          - build_aarch64
+        strict: true
+      restrictions: null
 repository:
   allow_merge_commit: true
   allow_rebase_merge: false
   allow_squash_merge: true
   default_branch: master
   delete_branch_on_merge: true
-  description: The Hive - The secretly open NixOS-Society
+  description: My Nix-managed stuff configuration
   has_downloads: false
   has_issues: false
   has_projects: false
   has_wiki: false
-  name: hive
+  name: infra
   private: false
-  topics: nix, nixos, hive, flake, flakes, nix-flake, nix-flakes, haumea, colmena,
-    std
+  topics: nix, nixos, nix-darwin, flake-parts, flake, flakes, nix-flake, nix-flakes, haumea, deploy-rs, nixago

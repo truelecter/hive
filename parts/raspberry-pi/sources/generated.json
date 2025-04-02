@@ -1,0 +1,65 @@
+{
+    "libcamera": {
+        "cargoLocks": null,
+        "date": "2025-02-13",
+        "extract": null,
+        "name": "libcamera",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "raspberrypi",
+            "repo": "libcamera",
+            "rev": "29156679717bec7cc4784aeba3548807f2c27fca",
+            "sha256": "sha256-89uo3ajxozSpM4AGVIVb5GJ70giAQeyw0duIj5PRBgo=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "29156679717bec7cc4784aeba3548807f2c27fca"
+    },
+    "libcamera-apps": {
+        "cargoLocks": null,
+        "date": "2025-02-28",
+        "extract": null,
+        "name": "libcamera-apps",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "raspberrypi",
+            "repo": "libcamera-apps",
+            "rev": "74abee8f2de519fed9cb88d39473d1dd4cf50b62",
+            "sha256": "sha256-05E3n/+Jg/EFJZgJjkcxXmVvEBRkuprQ7Ann0EGkiMc=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "74abee8f2de519fed9cb88d39473d1dd4cf50b62"
+    },
+    "mediamtx": {
+        "cargoLocks": null,
+        "date": "2025-03-16",
+        "extract": null,
+        "name": "mediamtx",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "bluenviron",
+            "repo": "mediamtx",
+            "rev": "6532a82670e208fc8c2bc422e0d43d5edc578dce",
+            "sha256": "sha256-t4VXGcM7+M2Q5qAjON5xJxMnAIgo05Dmb6hAOzu5rMM=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "6532a82670e208fc8c2bc422e0d43d5edc578dce"
+    }
+}

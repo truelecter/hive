@@ -20,18 +20,18 @@ keys:
   - &tl-mm4 age13xs4xvwm0ythks33uvgv7v9gnqhn9mvhqgyzg8u94060pxjc3urq3ht6r8
 
 creation_rules:
-  - path_regex: cells/secrets/sops/envs.yaml
+  - path_regex: secrets/envs.yaml
     key_groups:
       - pgp:
           - *truelecter
 
-  - path_regex: cells/secrets/sops/minecraft-server.yaml
+  - path_regex: secrets/minecraft-server.yaml
     key_groups:
       - pgp:
           - *truelecter
           - *oracle
 
-  - path_regex: cells/secrets/sops/nixos-common.yaml
+  - path_regex: secrets/nixos-common.yaml
     key_groups:
       - pgp:
           - *truelecter
@@ -53,19 +53,19 @@ creation_rules:
           - *bttpi
           - *tl-mm4
 
-  - path_regex: cells/secrets/sops/k3s.yaml
+  - path_regex: secrets/k3s.yaml
     key_groups:
       - pgp:
           - *truelecter
           - *depsos
 
-  - path_regex: cells/secrets/sops/external-ips.yaml
+  - path_regex: secrets/external-ips.yaml
     key_groups:
       - pgp:
           - *truelecter
           - *depsos
 
-  - path_regex: cells/secrets/sops/wifi.yaml
+  - path_regex: secrets/wifi.yaml
     key_groups:
       - pgp:
           - *truelecter
@@ -84,7 +84,7 @@ creation_rules:
           - *bttpi
           - *tl-mm4
 
-  - path_regex: cells/secrets/sops/ssh.*$
+  - path_regex: secrets/ssh.*$
     key_groups:
       - pgp:
           - *truelecter
@@ -93,7 +93,7 @@ creation_rules:
         age:
           - *tl-mm4
 
-  - path_regex: cells/secrets/sops/weather-kiosk.yaml
+  - path_regex: secrets/weather-kiosk.yaml
     key_groups:
       - pgp:
           - *truelecter

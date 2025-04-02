@@ -1,15 +1,48 @@
 {
-  description = "The Hive - The secretly open NixOS-Society";
+  description = "The Hive - The secretly open NixOS-Society (flake.parts edition)";
 
-  # common for deduplication
+  # nixpkgs & home-manager
   inputs = {
-    flake-utils = {
-      url = "github:numtide/flake-utils";
+    nixpkgs-master.url = "github:nixos/nixpkgs/master";
+    latest.url = "github:nixos/nixpkgs/nixos-unstable";
+    k8s.url = "github:nixos/nixpkgs/9b5328b7f761a7bbdc0e332ac4cf076a3eedb89b";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixos.follows = "nixpkgs";
+    # nixos.follows = "latest";
+
+    darwin = {
+      url = "github:LnL7/nix-darwin/nix-darwin-24.11";
+      inputs.nixpkgs.follows = "nixos";
+    };
+
+    home = {
+      url = "github:nix-community/home-manager/release-24.11";
+      inputs.nixpkgs.follows = "nixos";
+    };
+
+    home-unstable = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "latest";
     };
   };
 
-  # hive
+  # Library
   inputs = {
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
+
+    flake-utils = {
+      # For deduplication
+      url = "github:numtide/flake-utils";
+    };
+
+    haumea = {
+      url = "github:nix-community/haumea";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     devshell = {
       url = "github:numtide/devshell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -17,32 +50,29 @@
 
     nixago = {
       url = "github:nix-community/nixago";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-utils.follows = "flake-utils";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+      inputs.nixago-exts.follows = "nixago-exts";
     };
 
-    std = {
-      follows = "hive/std";
-    };
-
-    hive = {
-      url = "github:divnix/hive";
-      inputs = {
-        colmena.follows = "colmena";
-        nixago.follows = "nixago";
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
-
-    haumea = {
-      follows = "hive/std/haumea";
+    nixago-exts = {
+      url = "github:nix-community/nixago-extensions";
+      inputs.flake-utils.follows = "flake-utils";
+      inputs.nixago.follows = "nixago";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  # tools
+  # Tools
   inputs = {
+    deploy-rs = {
+      url = "github:serokell/deploy-rs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        utils.follows = "flake-utils";
+      };
+    };
+
     nix-filter.url = "github:numtide/nix-filter";
 
     nixos-generators = {
@@ -53,17 +83,9 @@
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
     nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL";
+      url = "github:nix-community/NixOS-WSL/73b681db219446267eb323763319d9438f26faf7";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-      };
-    };
-
-    colmena = {
-      url = "github:zhaofengli/colmena";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-utils.follows = "flake-utils";
       };
     };
 
@@ -73,10 +95,6 @@
         nixpkgs.follows = "nixos";
         nixpkgs-stable.follows = "nixos";
       };
-    };
-
-    nix-rpi-kernel = {
-      url = "github:TrueLecter/nix-rpi-kernel";
     };
 
     nixos-rockchip = {
@@ -104,6 +122,13 @@
       };
     };
 
+    nix4vscode = {
+      url = "github:nix-community/nix4vscode";
+      inputs = {
+        nixpkgs.follows = "latest";
+      };
+    };
+
     nvfetcher = {
       url = "github:berberman/nvfetcher";
       inputs = {
@@ -118,134 +143,83 @@
         nixpkgs.follows = "nixpkgs";
       };
     };
-
-    nix-fast-build = {
-      url = "github:Mic92/nix-fast-build";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
   };
 
-  # nixpkgs & home-manager
-  inputs = {
-    nixpkgs-master.url = "github:nixos/nixpkgs/master";
-    latest.url = "github:nixos/nixpkgs/nixos-unstable";
-    k8s.url = "github:nixos/nixpkgs/9b5328b7f761a7bbdc0e332ac4cf076a3eedb89b";
-    nixos.url = "github:nixos/nixpkgs/nixos-24.11";
-    nixpkgs.follows = "nixos";
-    # nixos.follows = "latest";
+  outputs = inputs @ {flake-parts, ...}:
+    flake-parts.lib.mkFlake {inherit inputs;} (
+      {
+        config,
+        lib,
+        self,
+        ...
+      }: let
+        selfLib = import ./lib {inherit inputs lib;};
+      in {
+        debug = true;
 
-    darwin = {
-      url = "github:LnL7/nix-darwin/nix-darwin-24.11";
-      inputs.nixpkgs.follows = "nixos";
-    };
+        systems = [
+          "aarch64-darwin"
+          "aarch64-linux"
+          "x86_64-darwin"
+          "x86_64-linux"
+        ];
 
-    home = {
-      url = "github:nix-community/home-manager/release-24.11";
-      inputs.nixpkgs.follows = "nixos";
-    };
+        flake.lib =
+          selfLib
+          // {
+            inherit (config) systems;
+          };
 
-    home-unstable = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "latest";
-    };
-  };
+        flake.profiles = selfLib.rakeLeaves ./profiles;
 
-  outputs = {
-    self,
-    std,
-    nixpkgs,
-    hive,
-    ...
-  } @ inputs: let
-    collect-unrenamed = hive.collect // {renamer = _: target: target;};
-    collect-renamed = hive.collect;
-  in
-    hive.growOn {
-      inherit inputs;
+        imports = [
+          inputs.flake-parts.flakeModules.modules
+          inputs.devshell.flakeModule
 
-      nixpkgsConfig = {
-        allowUnfree = true;
-      };
+          ./parts/nixpkgs.nix
+          ./parts/klipper
+          ./parts/minecraft-servers
+          ./parts/overrides
+          ./parts/raspberry-pi
+          ./parts/rockchip
+          ./parts/k8s
+          ./parts/deploy-rs.nix
+          # ./parts/vscode-plugins
 
-      systems = [
-        "aarch64-darwin"
-        "aarch64-linux"
-        "x86_64-darwin"
-        "x86_64-linux"
-      ];
+          ./shell
 
-      cellsFrom = ./cells;
+          ./nixos
+          ./darwin
+          ./home
+        ];
 
-      cellBlocks = with std.blockTypes;
-      with hive.blockTypes; [
-        (nixago "config")
+        perSystem = {
+          config,
+          self',
+          inputs',
+          pkgs,
+          system,
+          ...
+        }: {
+          nixpkgs = {
+            config = {
+              allowUnfree = true;
+            };
+            overlays = [
+              inputs.deploy-rs.overlays.default
+              inputs.nvfetcher.overlays.default
+              # inputs.nix4vscode.overlays.nix4vscode
+              (final: prev: {
+                nix4vscode = inputs.nix4vscode.packages.${prev.stdenv.hostPlatform.system}.default;
+              })
+            ];
+          };
+        };
 
-        # Modules
-        (functions "nixosModules")
-        (functions "darwinModules")
-        (functions "homeModules")
-
-        # Profiles
-        (functions "commonProfiles")
-        (functions "nixosProfiles")
-        (functions "darwinProfiles")
-        (functions "homeProfiles")
-        (functions "userProfiles")
-        (functions "users")
-
-        # Suites
-        (functions "nixosSuites")
-        (functions "darwinSuites")
-        (functions "homeSuites")
-
-        (devshells "shells")
-
-        (functions "lib")
-
-        (files "files")
-        (installables "packages")
-        (installables "firmwares")
-        (pkgs "overrides")
-        (functions "overlays")
-
-        colmenaConfigurations
-        homeConfigurations
-        nixosConfigurations
-        darwinConfigurations
-
-        (nixosConfigurations // {name = "provisionConfigurations";})
-      ];
-    }
-    # soil
-    {
-      devShells = hive.harvest inputs.self ["repo" "shells"];
-      packages = hive.harvest inputs.self [
-        ["klipper" "packages"]
-        ["common" "packages"]
-        ["pam-reattach" "packages"]
-        ["minecraft-servers" "packages"]
-        ["rockchip" "packages"]
-      ];
-
-      nixosModules = hive.pick inputs.self [
-        ["klipper" "nixosModules"]
-        ["k8s" "nixosModules"]
-        ["minecraft-servers" "nixosModules"]
-      ];
-
-      homeModules = hive.pick inputs.self [
-        ["home" "homeModules"]
-      ];
-    }
-    {
-      colmenaHive = collect-unrenamed self "colmenaConfigurations";
-      nixosConfigurations = collect-unrenamed self "nixosConfigurations";
-      homeConfigurations = collect-unrenamed self "homeConfigurations";
-      darwinConfigurations = collect-unrenamed self "darwinConfigurations";
-    }
-    {
-      debug = hive.harvest inputs.self ["repo" "debug"];
-    };
+        flake = {
+          nixosModules = self.modules.nixos;
+          homeModules = self.modules.homeManager;
+        };
+      }
+    );
 }

@@ -1,3 +1,0 @@
-[pam-reattach]
-src.git = "https://github.com/fabianishere/pam_reattach"
-fetch.github = "fabianishere/pam_reattach"
