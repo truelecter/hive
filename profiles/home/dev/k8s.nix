@@ -26,10 +26,12 @@ in {
 
     kubectl
 
-    k9s
-
     dive
     kubelogin-oidc
     minikube
   ];
+
+  programs.k9s = {
+    enable = true;
+  };
 }

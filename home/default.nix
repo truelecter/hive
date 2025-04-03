@@ -78,7 +78,11 @@
 
       home-manager = {
         # TODO: move to system config?
-        sharedModules = modulesImportables;
+        sharedModules =
+          modulesImportables
+          ++ [
+            inputs.catppuccin.homeModules.catppuccin
+          ];
         useUserPackages = true;
         useGlobalPkgs = true;
         backupFileExtension = ".bak";

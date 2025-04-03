@@ -75,7 +75,7 @@
     arch,
     configuration,
   }: let
-    inherit (inputs) nixpkgs home;
+    inherit (inputs) nixpkgs home catppuccin;
     system = "${arch}-linux";
   in {
     ${hostname} = nixpkgs.lib.nixosSystem {
@@ -87,7 +87,10 @@
       modules =
         # commonNixosModules
         # ++
-        [home.nixosModules.home-manager]
+        [
+          home.nixosModules.home-manager
+          catppuccin.nixosModules.catppuccin
+        ]
         ++ [
           (
             {

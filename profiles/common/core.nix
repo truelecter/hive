@@ -4,27 +4,19 @@
   ...
 }: {
   environment = {
-    # Selection of sysadmin tools that can come in handy
     systemPackages = with pkgs; [
-        coreutils
-        curl
-        direnv
-        delta
-        bat
-        git
-        bottom
-        jq
-        tmux
-        zsh
-        vim
-        file
-        gnused
-        nix-tree
-        findutils
-        openssh_hpn
-        rsync
-        wget
-      ];
+      coreutils
+      curl
+      wget
+      git
+      jq
+      neovim
+      openssh_hpn
+      rsync
+      file
+      gnused
+      findutils
+    ];
 
     shellAliases = {
       # quick cd

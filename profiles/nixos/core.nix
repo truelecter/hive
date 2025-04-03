@@ -92,4 +92,9 @@
 
   # Disable by default (why is it enabled even lol)
   services.speechd.enable = lib.mkOverride 999 false;
+
+  catppuccin = {
+    flavor = "mocha";
+    enable = true;
+  };
 }

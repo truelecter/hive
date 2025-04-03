@@ -21,12 +21,20 @@
       lib.listToAttrs
     ];
   in {
-    devshells.default.devshell.startup.nixago.text = lib.pipe ./nixago [
-      self.lib.rakeLeaves
-      builtins.attrValues
-      (builtins.map (cfg: self.lib.importAttrOrFunction cfg {inherit self exts pkgs lib;}))
-      nixago.makeAll
-      (v: v.shellHook)
-    ];
+    devshells.default = {
+      packages = [
+        pkgs.lefthook
+        pkgs.treefmt
+        pkgs.conform
+      ];
+
+      devshell.startup.nixago.text = lib.pipe ./nixago [
+        self.lib.rakeLeaves
+        builtins.attrValues
+        (builtins.map (cfg: self.lib.importAttrOrFunction cfg {inherit self exts pkgs lib;}))
+        nixago.makeAll
+        (v: v.shellHook)
+      ];
+    };
   };
 }

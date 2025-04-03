@@ -1,9 +1,10 @@
 {
   lib,
   pkgs,
+  config,
   ...
 }: {
-  # programs.tmux.shell = lib.mkForce "${pkgs.zsh}/bin/zsh";
+  programs.tmux.shell = lib.getExe config.programs.zsh.package;
 
   programs.direnv = {
     enableZshIntegration = true;
@@ -16,7 +17,7 @@
     history = {
       extended = true;
       ignoreDups = true;
-      ignorePatterns = ["&" "[bf]g" "c" "clear" "history" "exit" "q" "pwd" "* --help"];
+      ignorePatterns = ["&" "[bf]g" "c" "clear" "history" "exit" "q" "pwd" "* --help" "reset"];
       ignoreSpace = true;
       share = false;
     };
@@ -25,9 +26,6 @@
       enable = true;
 
       plugins = [
-        # "aws"
-        # "kubectl"
-        # "kube-ps1"
         "git"
         "tmux"
         # "thefuck"
@@ -75,6 +73,9 @@
     ];
 
     localVariables = {
+      DISABLE_AUTO_UPDATE = "true";
+      DISABLE_MAGIC_FUNCTIONS = "true";
+      DISABLE_COMPFIX = "true";
       ZSH_DISABLE_COMPFIX = "true";
       COMPLETION_WAITING_DOTS = "true";
       DISABLE_UNTRACKED_FILES_DIRTY = "true";

@@ -11,7 +11,6 @@
     systemPackages = with pkgs; [
       m-cli
       terminal-notifier
-      # Until https://github.com/NixOS/nixpkgs/pull/358321
       duti
       darwin.iproute2mac
     ];
@@ -19,9 +18,7 @@
     # darwinConfig = "${self}/lib/compat";
 
     shellAliases = {
-      nrb = "sudo darwin-rebuild switch --flake";
-
-      ls = "ls -G";
+      nrb = "darwin-rebuild switch --flake";
 
       hide-desktop-icons = "defaults write com.apple.finder CreateDesktop -bool false && killall Finder";
       show-desktop-icons = "defaults write com.apple.finder CreateDesktop -bool true && killall Finder";
