@@ -1,5 +1,5 @@
 {
-  description = "The Hive - The secretly open NixOS-Society (flake.parts edition)";
+  description = "Infra Mk3.0 - The Parts";
 
   # nixpkgs & home-manager
   inputs = {
