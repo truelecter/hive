@@ -44,6 +44,10 @@ in {
       category = "secrets";
     }
     {
+      package = pkgs.gnupg;
+      category = "secrets";
+    }
+    {
       category = "secrets";
       name = "sops-reencrypt";
       help = "update keys for all sops file";

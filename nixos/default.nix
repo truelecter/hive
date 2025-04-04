@@ -55,6 +55,9 @@
 
     wsl = with profiles;
       [
+        common.core
+        common.cachix
+
         nixos.core
 
         nixos.wsl.core
