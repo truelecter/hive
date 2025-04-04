@@ -46,7 +46,7 @@ This flake is configured using [flake-parts](https://github.com/hercules-ci/flak
 For NixOS hosts, you can use [deploy-rs](https://github.com/serokell/deploy-rs) to deploy configurations:
 
 ```bash
-deploy-rs --skip-checks '.#<hostname>'
+deploy --skip-checks '.#<hostname>'
 ```
 
 ### Darwin Hosts
@@ -62,7 +62,7 @@ nix build --builders 'builder@localhost aarch64-linux /etc/nix/builder_ed25519' 
 darwin-rebuild switch --flake .#<hostname>
 
 # Switch configuration (remote)
-deploy-rs --skip-checks '.#<hostname>'
+deploy --skip-checks '.#<hostname>'
 ```
 
 ## Development
