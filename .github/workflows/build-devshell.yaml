@@ -1,11 +1,16 @@
-name: Build darwin devshell
+name: Build devshell
 on:
   push:
   workflow_dispatch:
 
 jobs:
   build_shell:
-    runs-on: macos-14
+    strategy:
+      matrix:
+        os:
+        - ubuntu-22.04
+        - macos-14
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3

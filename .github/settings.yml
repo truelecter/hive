@@ -5,8 +5,8 @@ branches:
       required_pull_request_reviews: null
       required_status_checks:
         contexts:
-          - call-workflow-passing-data / build_system
-          - build_aarch64
+          - build_system
+          - build_shell
         strict: true
       restrictions: null
 repository:
