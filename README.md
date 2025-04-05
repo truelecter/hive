@@ -1,6 +1,14 @@
-# Nix Configuration
+<div align="center">
+  <h1>truelecter's infra</h1>
+  <img alt="hosts build" src="https://img.shields.io/github/actions/workflow/status/truelecter/infra/build-nixos-hosts.yaml?branch=master&event=push&style=for-the-badge&logo=github&label=hosts&labelColor=303446&color=40a02b" />
+  <img alt="shells build" src="https://img.shields.io/github/actions/workflow/status/truelecter/infra/build-devshell.yaml?branch=master&event=push&style=for-the-badge&logo=github&label=shells&labelColor=303446&color=40a02b" />
+  <img alt="nixos 24.11" src="https://img.shields.io/badge/NixOS-24.11-4bb7c9?style=for-the-badge&logo=nixos&logoColor=white&labelColor=303446" />
+</div>
 
-This repository contains the Nix code that builds my systems using flake-parts.
+## Introduction
+
+This repository contains the Nix code that builds my systems using flake-parts. None of these NixOS and Darwin configurations will work out of the box for you (unless do not have my keys 😱).<br/>
+This repo is intended for sharing some interesting parts of my infra and for some inspiration for how I was inspired myself based on other similar repos.<br/>
 
 ## Why Nix?
 
@@ -12,21 +20,21 @@ This flake is configured using [flake-parts](https://github.com/hercules-ci/flak
 
 - `/nixos` - NixOS configurations
   - `/nixos/hosts/x86_64` - x86_64 NixOS hosts
-    - <a href="https://github.com/truelecter/hive/actions/workflows/build-tl-wsl.yaml"><img align="center" src="https://img.shields.io/github/actions/workflow/status/truelecter/hive/build-tl-wsl.yaml?event=push&logo=nixos&logoColor=white&label=tl-wsl" alt="tl-wsl"></a> - WSL system
-    - <a href="https://github.com/truelecter/hive/actions/workflows/build-depsos.yaml"><img align="center" src="https://img.shields.io/github/actions/workflow/status/truelecter/hive/build-depsos.yaml?event=push&logo=nixos&logoColor=white&label=depsos" alt="depsos"></a> - Server for publically hosted services
-    - <a href="https://github.com/truelecter/hive/actions/workflows/build-nas.yaml"><img align="center" src="https://img.shields.io/github/actions/workflow/status/truelecter/hive/build-nas.yaml?event=push&logo=nixos&logoColor=white&label=nas" alt="nas"></a> - NAS with some multimedia stuff
-    - <a href="https://github.com/truelecter/hive/actions/workflows/build-sirius.yaml"><img align="center" src="https://img.shields.io/github/actions/workflow/status/truelecter/hive/build-sirius.yaml?event=push&logo=nixos&logoColor=white&label=sirius" alt="sirius"></a> - Home Assistant and 3D printer coordination
+    - **tl-wsl** - WSL system
+    - **depsos** - Server for publically hosted services
+    - **nas** - NAS with some multimedia stuff
+    - **sirius** - Home Assistant and 3D printer coordination
   - `/nixos/hosts/aarch64` - aarch64 NixOS hosts
     - 3D Printers:
-      - <a href="https://github.com/truelecter/hive/actions/workflows/build-voron.yaml"><img align="center" src="https://img.shields.io/github/actions/workflow/status/truelecter/hive/build-voron.yaml?event=push&logo=nixos&logoColor=white&label=voron" alt="voron"></a> - Voron 2.4 300mm
-      - <a href="https://github.com/truelecter/hive/actions/workflows/build-vzbot235.yaml"><img align="center" src="https://img.shields.io/github/actions/workflow/status/truelecter/hive/build-vzbot235.yaml?event=push&logo=nixos&logoColor=white&label=vzbot235" alt="vzbot235"></a> - VzBot 235
-      - <a href="https://github.com/truelecter/hive/actions/workflows/build-tiny-m.yaml"><img align="center" src="https://img.shields.io/github/actions/workflow/status/truelecter/hive/build-tiny-m.yaml?event=push&logo=nixos&logoColor=white&label=tiny-m" alt="tiny-m"></a> - Tiny-M 150mm
+      - **voron** - Voron 2.4 300mm
+      - **vzbot235** - VzBot 235
+      - **tiny-m** - Tiny-M 150mm
     - Misc:
-      - <a href="https://github.com/truelecter/hive/actions/workflows/build-oracle.yaml"><img align="center" src="https://img.shields.io/github/actions/workflow/status/truelecter/hive/build-oracle.yaml?event=push&logo=nixos&logoColor=white&label=oracle" alt="oracle"></a> - Game servers and remote builder
+      - **oracle** - Game servers and remote builder
 - `/darwin` - Darwin configurations
   - `/darwin/hosts` - aarch64-darwin hosts
-    - <a href="https://github.com/truelecter/hive/actions/workflows/build-squadbook.yaml"><img align="center" src="https://img.shields.io/github/actions/workflow/status/truelecter/hive/build-squadbook.yaml?event=push&logo=nixos&logoColor=white&label=squadbook" alt="squadbook"></a> - Manual workstation
-    - <a href="https://github.com/truelecter/hive/actions/workflows/build-tl-mm4.yaml"><img align="center" src="https://img.shields.io/github/actions/workflow/status/truelecter/hive/build-tl-mm4.yaml?event=push&logo=nixos&logoColor=white&label=tl-mm4" alt="tl-mm4"></a> - aarch64-darwin and aarch64-linux builder
+    - **suadbook** - Main workstation
+    - **tl-mm4** - aarch64-darwin and aarch64-linux builder
 - `/home` - Home-manager configurations
 - `/parts` - flake-parts modules
   - `/parts/klipper` - Klipper 3D printer related configurations
@@ -102,3 +110,9 @@ nix develop
 ### Notable mentions
 
 - [linyinfeng/dotfiles](https://github.com/linyinfeng/dotfiles) - Big inspiration for this flake structure and some library functions.
+
+## Previous configurations
+
+This is a third iteration of repository structure. You can find previous attempts here:
+- [divnix/digga](https://github.com/divnix/digga)-based - [truelecter/infra@old-digga-config](https://github.com/truelecter/infra/tree/old-digga-config)
+- [divnix/hive](https://github.com/divnix/hive)-based - [truelecter/infra@old-hive-config](https://github.com/truelecter/infra/tree/old-hive-config)
