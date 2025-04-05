@@ -27,7 +27,7 @@ jobs:
           git config user.name "github-actions[bot]"
       - name: Update nvfetcher packages
         run: |
-          nix develop '.#ci' --command bash -c "update-cell-sources ALL"
+          nix develop '.#ci' --command bash -c "update-sources ALL"
           git commit -am "deps(sources): Updated cell sources" || true
       - name: Update deps hashes packages
         run: |
