@@ -1,31 +1,57 @@
-name: Build darwin host
+# TODO: generate with nixago?
+name: Build machine configurations
 on:
+  push:
   workflow_call:
-    inputs:
-      configuration:
-        required: true
-        type: string
-    secrets:
-      CACHIX_AUTH_TOKEN:
-        required: true
+
 jobs:
   build_system:
-    runs-on: macos-14
+    strategy:
+      matrix:
+        host:
+        - os: ubuntu-22.04-arm
+          hostname: voron
+        - os: ubuntu-22.04-arm
+          hostname: vzbot235
+        - os: ubuntu-22.04-arm
+          hostname: tiny-m
+        - os: ubuntu-22.04-arm
+          hostname: oracle
+
+        - os: ubuntu-22.04
+          hostname: depsos
+        - os: ubuntu-22.04
+          hostname: sirius
+        - os: ubuntu-22.04
+          hostname: nas
+        - os: ubuntu-22.04
+          hostname: tl-wsl
+
+        - os: macos-14
+          hostname: squadbook
+        - os: macos-14
+          hostname: tl-mm4
+
+    runs-on: ${{ matrix.host.os }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+
       - name: Install Nix
         uses: cachix/install-nix-action@v30
         with:
           nix_path: nixpkgs=channel:nixos-24.11
           extra_nix_config: |
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+
       - uses: cachix/cachix-action@v15
         with:
           name: truelecter
           extraPullNames: cuda-maintainers, mic92, nix-community, nrdxp
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
-      - name: Create builder
+
+      - name: Create aarch64-linux builder
+        if: ${{ startsWith(matrix.host.os, 'macos') }}
         env:
           BUILDER_PK: ${{secrets.AARCH64_BUILDER_PK}}
           BUILDER_HOST: ${{secrets.AARCH64_BUILDER_HOSTNAME}}
@@ -44,10 +70,11 @@ jobs:
           echo "  IdentityFile /etc/nix/builder_ed25519" | sudo tee -a /etc/ssh/ssh_config
           echo "  User gha-builder"                      | sudo tee -a /etc/ssh/ssh_config
 
+          echo "ssh://linux-builder aarch64-linux /etc/nix/builder_ed25519 4 40 nixos-test,benchmark,kvm,big-parallel - -" | sudo tee machines
+
           sudo nix store info --store ssh://linux-builder
 
       - name: Build system configuration
         run: |
-          nix build \
-            --builders 'ssh-ng://linux-builder aarch64-linux /etc/nix/builder_ed25519 8' \
-            ".#darwinConfigurations.${{ inputs.configuration }}.config.system.build.toplevel"
+          [[ "${{ matrix.host.os }}" == macos* ]] && configuration=darwin || configuration=nixos
+          nix build ".#${configuration}Configurations.${{ matrix.host.hostname }}.config.system.build.toplevel"
