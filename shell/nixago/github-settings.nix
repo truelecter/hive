@@ -24,8 +24,8 @@ exts.ghsettings {
         required_status_checks = {
           strict = true;
           contexts = [
-            "call-workflow-passing-data / build_system"
-            "build_aarch64"
+            "build_system"
+            "build_shell"
           ];
         };
         enforce_admins = false;
